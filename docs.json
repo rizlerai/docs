@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
             "group": "Get Started",
@@ -57,11 +57,6 @@
     ],
     "global": {
       "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://rizzdial.com/docs",
-          "icon": "book-open-cover"
-        },
         {
           "anchor": "Community",
           "href": "https://rizzdial.com/community",
