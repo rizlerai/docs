@@ -94,9 +94,9 @@
   },
   "footer": {
     "socials": {
-      "x": "",
-      "github": "",
-      "linkedin": ""
+      "x": "https://app.rizzdial.com/",
+      "github": "https://app.rizzdial.com/",
+      "linkedin": "https://app.rizzdial.com/"
     }
   }
 }
