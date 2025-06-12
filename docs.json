@@ -17,8 +17,7 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "Onbaord"
             ]
           },
           {
@@ -79,7 +78,7 @@
       "anchors": [
         {
           "anchor": "Community",
-          "href": "https://rizzdial.com/community",
+          "href": "https://www.skool.com/evolving-ai-hub/about?ref=e1c2ca4f514546b38823baafdd6e6566",
           "icon": "slack"
         },
         {
