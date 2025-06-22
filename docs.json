@@ -17,18 +17,15 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "Demo"
+              "demo"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Artificial Intelligence",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "ai/dashboard",
+              "ai/agent",
+              "ai/phone-numbers"
             ]
           }
         ]
