@@ -3,84 +3,76 @@ title: "Phone Numbers"
 description: "Manage phone number integrations for AI voice services"
 ---
 
-# Phone Numbers Management
+Manage your AI phone numbers with comprehensive controls for SIP trunks, Rizz Numbers, and Twilio integrations.
 
-Configure and manage phone numbers for your AI voice services and call handling systems.
+## AI Numbers Overview
 
-## Overview
+The AI Numbers interface provides complete management of your phone number infrastructure:
 
-Phone number integration allows your AI agents to handle voice calls, providing automated customer service, lead qualification, and support through intelligent voice interactions.
+- **Multiple Number Types** - Manage SIP trunks, Rizz Numbers, and purchase Twilio numbers
+- **Phone Number Table** - View all numbers with detailed information and status
+- **Action Controls** - Edit, protect, manage tokens, and delete phone numbers
+- **Search & Filter** - Find specific numbers and control display options
 
-## Phone Number Setup
+## Number Management Tabs
 
-### Adding New Numbers
-1. **Purchase Numbers** - Acquire phone numbers from supported carriers
-2. **Verify Ownership** - Complete verification process for new numbers
-3. **Configure Settings** - Set up call routing and AI agent assignment
-4. **Test Integration** - Verify proper functionality before going live
+### Available Number Types
+- **SIP trunks** - Manage SIP trunk connections and configurations
+- **Rizz Numbers** - View and manage Rizz platform phone numbers  
+- **Purchase Twilio No** - Acquire new Twilio phone numbers for your system
 
-### Supported Features
-- **Inbound Call Handling** - Route incoming calls to AI agents
-- **Outbound Calling** - Enable AI agents to make outbound calls
-- **Call Recording** - Record conversations for quality and training
-- **Voicemail Integration** - Handle voicemail with AI transcription
-- **SMS Integration** - Combine voice and text messaging capabilities
+## Phone Numbers Table
 
-## Configuration Options
+### Table Columns
+- **#** - Sequential number for each phone number entry
+- **Name** - Custom identifier/name for the phone number (e.g., "devSIPDUP", "gmeet")
+- **Phone Number** - Full phone number including country code (e.g., "+13156663670")
+- **Spam Status** - Current spam protection status ("Clean" indicates good standing)
+- **Area Code** - Geographic area code for the phone number (e.g., "315")
+- **Renewal At** - When the phone number subscription renews
+- **Updated At** - Last modification timestamp (e.g., "05-19-2025 11:29 PM")
+- **Action** - Available management actions for each number
 
-### Call Routing
-- **Direct Assignment** - Route specific numbers to designated AI agents
-- **Time-based Routing** - Different agents for business hours vs. after-hours
-- **Skill-based Routing** - Route calls based on caller intent or department
-- **Fallback Options** - Human handoff when AI cannot handle the request
+### Action Buttons
+- **Spam Protect** - Enable or manage spam protection settings
+- **Edit** - Modify phone number settings and configuration
+- **Token** - Manage authentication tokens for the phone number
+- **Delete** - Remove the phone number from your system
 
-### Voice Settings
-- **Voice Selection** - Choose from available AI voice options
-- **Speaking Rate** - Adjust conversation pace
-- **Language Settings** - Configure multiple language support
-- **Custom Responses** - Set specific responses for common scenarios
+## Table Features
 
-## Monitoring & Analytics
+### Display Controls
+- **Show Entries** - Select 10, 25, 50, or 100 entries per page
+- **Search Functionality** - Search across all phone number data
+- **Entry Counter** - Shows "1 to 2 of 2 entries" for current view status
 
-### Call Metrics
-- Total call volume
-- Average call duration
-- Resolution rates
-- Customer satisfaction scores
+### Navigation
+- **Pagination Controls** - Previous/Next buttons and numbered pages
+- **Current Page Indicator** - Highlighted page number (currently showing page 1)
 
-### Performance Tracking
-- Response accuracy
-- Call completion rates
-- Escalation frequency
-- Cost per interaction
+## Phone Number Status
 
-## Number Management
+### Current Numbers
+The interface shows active phone numbers with:
+- **Clean Spam Status** - All numbers show "Clean" status indicating good reputation
+- **315 Area Code** - Numbers from the Syracuse, NY area
+- **Recent Updates** - Timestamps showing recent activity
+- **Full Action Access** - All management functions available
+
+## Quick Actions
 
 <CardGroup cols={2}>
-  <Card title="Active Numbers" icon="phone-volume">
-    View and manage currently active phone numbers
+  <Card title="Manage Numbers" icon="phone">
+    Use action buttons to edit, protect, and configure phone numbers
   </Card>
-  <Card title="Call History" icon="clock-rotate-left">
-    Review detailed call logs and interactions
+  <Card title="Search Numbers" icon="magnifying-glass">
+    Find specific phone numbers using the search functionality
   </Card>
-  <Card title="Settings" icon="gear">
-    Configure call routing and voice parameters
+  <Card title="Spam Protection" icon="shield">
+    Monitor and manage spam protection status for all numbers
   </Card>
-  <Card title="Analytics" icon="chart-bar">
-    Analyze call performance and metrics
+  <Card title="Purchase Numbers" icon="plus">
+    Add new phone numbers through Twilio integration
   </Card>
 </CardGroup>
 
-## Best Practices
-
-- **Regular Testing** - Periodically test call flows to ensure proper operation
-- **Monitor Quality** - Review call recordings for training and improvement opportunities
-- **Update Scripts** - Keep AI responses current with business changes
-- **Backup Plans** - Always have human handoff options available
-
-## Troubleshooting
-
-Common issues and solutions:
-- **Call Quality** - Check network connectivity and bandwidth
-- **Routing Problems** - Verify configuration settings and number assignments
-- **AI Response Issues** - Review agent training and response scripts 

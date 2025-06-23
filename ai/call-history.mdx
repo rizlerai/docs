@@ -1,0 +1,116 @@
+---
+title: "Call History"
+description: "Review detailed call logs and analyze interaction patterns"
+---
+
+Access comprehensive call records, analyze conversation patterns, and track customer interactions across your AI call system with advanced filtering and search capabilities.
+
+## Call History Overview
+
+The AI Call History interface provides complete visibility into all call activities with powerful filtering options:
+
+- **Advanced Filtering System** - Filter calls by agent, date range, duration, direction, sentiment, and success status
+- **Comprehensive Call Records** - View all call details including timestamps, agent names, phone numbers, and call types
+- **Real-time Data** - Access up-to-date call information with live status indicators
+- **Flexible Display Options** - Choose how many entries to show and navigate through paginated results
+
+## Filter Controls
+
+### Primary Filters
+- **Select Agent** - Choose specific agents or search by agent name
+- **Date Range** - Predefined options (Last 30 Days) or custom date selection
+- **Start Date / End Date** - Precise date range selection with calendar picker
+- **Min Duration / Max Duration** - Filter calls by length (0 Sec to No Limit)
+
+![AI Dashboard Interface](/images/ai/call-history-primaryfilter.png)
+ 
+
+### Advanced Filters
+- **Call Direction** - Filter by "All", inbound, or outbound calls
+- **User Sentiment** - Filter by customer sentiment analysis results
+- **Call Successful** - Show successful, unsuccessful, or all call attempts
+- **From Number / To Number** - Search by specific phone numbers
+- **Hangup Reason** - Filter by how calls ended
+
+![AI Dashboard Interface](/images/ai/call-history-advancefilter.png)
+
+
+## Call Records Table
+
+### Complete Table Columns
+- **ID** - Unique identifier for each call record
+- **Action** - Interactive buttons for call record actions
+- **Time** - Exact timestamp of when the call occurred
+- **Agent Name** - AI agent that handled the call
+- **From Number** - Calling party's phone number
+- **To Number** - Receiving party's phone number
+- **Call Duration** - Total call length in HH:MM:SS format
+- **Call Type** - Web Call or Phone Call designation
+- **Direction** - Inbound, outbound, or web call direction
+- **Hangup Reason** - Why the call ended (User Hangup, Dial Failed, etc.)
+- **User Sentiment** - Customer sentiment analysis (Neutral, Positive, Negative, Unknown)
+- **Call Successful** - Success status of the call (Yes/No)
+- **Recording** - Audio recording availability and playback controls
+
+![AI Dashboard Interface](/images/ai/call-history-id.png)
+
+
+
+## Detailed Call View
+
+When you click the "View" action for any call record, a comprehensive call details page opens:
+
+### Call Information Header
+- **Call Timestamp** - Exact date and time (e.g., "06-19-2025 12:01 AM")
+- **Agent Details** - Shows which AI agent handled the call
+- **Call Context** - Additional call metadata and context information
+
+### Audio Playback Controls
+- **Audio Timeline** - Visual representation of call duration with playback controls
+- **Play/Pause Controls** - Listen to the actual call recording
+- **Timeline Navigation** - Jump to specific points in the conversation
+
+### Conversation Analysis
+- **Call Summary** - AI-generated overview of the call content and outcomes
+- **Key Insights** - Important points and decisions made during the call
+- **Performance Metrics** - Call success indicators and quality scores
+
+### Full Transcription
+- **Complete Transcript** - Word-for-word conversation between user and agent
+- **Speaker Identification** - Clear labeling of "User:" and "Agent:" dialogue
+- **Timestamped Entries** - Each part of conversation with precise timing
+- **Conversation Flow** - Sequential display of the entire interaction
+- **Searchable Content** - Find specific words or phrases within the transcript
+
+
+
+
+
+
+
+## Navigation & Pagination
+
+### Table Navigation
+- **Entries Display Control** - Select 10, 25, 50, or 100 entries per page (currently set to 10)
+- **Pagination Controls** - Navigate through pages using Previous/Next buttons or direct page numbers
+- **Results Counter** - "Showing 0 to 0 of 0 entries" displays current empty state
+- **Search Functionality** - "Search Log..." placeholder in search box for finding call records
+
+
+
+## Quick Actions
+
+<CardGroup cols={2}>
+  <Card title="Filter Calls" icon="filter">
+    Use advanced filters to find specific call records
+  </Card>
+  <Card title="View Details" icon="eye">
+    Click view action to see full call transcripts and analysis
+  </Card>
+  <Card title="Search Records" icon="magnifying-glass">
+    Search across all call history data
+  </Card>
+  <Card title="Navigate Pages" icon="chevron-right">
+    Browse through paginated call records
+  </Card>
+</CardGroup> 

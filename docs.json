@@ -24,8 +24,10 @@
             "group": "Artificial Intelligence",
             "pages": [
               "ai/dashboard",
+              "ai/knowledge-base",
               "ai/agent",
-              "ai/phone-numbers"
+              "ai/phone-numbers",
+              "ai/call-history"
             ]
           }
         ]
