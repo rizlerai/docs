@@ -5,74 +5,125 @@ description: "Manage phone number integrations for AI voice services"
 
 Manage your AI phone numbers with comprehensive controls for SIP trunks, Rizz Numbers, and Twilio integrations.
 
-## AI Numbers Overview
+## AI Numbers Interface
 
-The AI Numbers interface provides complete management of your phone number infrastructure:
+The AI Numbers section provides centralized management of your phone number infrastructure:
 
-- **Multiple Number Types** - Manage SIP trunks, Rizz Numbers, and purchase Twilio numbers
-- **Phone Number Table** - View all numbers with detailed information and status
-- **Action Controls** - Edit, protect, manage tokens, and delete phone numbers
-- **Search & Filter** - Find specific numbers and control display options
+- **Multi-Platform Support** - Manage SIP trunks, Rizz Numbers, and Twilio phone numbers
+- **Real-Time Status** - Live spam status monitoring and system health indicators  
+- **Action Management** - Complete control over phone number configuration and security
+- **Search & Filter** - Advanced search capabilities for phone number management
 
-## Number Management Tabs
 
-### Available Number Types
-- **SIP trunks** - Manage SIP trunk connections and configurations
-- **Rizz Numbers** - View and manage Rizz platform phone numbers  
-- **Purchase Twilio No** - Acquire new Twilio phone numbers for your system
+## Management Tabs
+
+### Available Platforms
+- **SIP trunks** - Currently active tab for SIP trunk phone number management
+- **Rizz Numbers** - Native platform phone numbers and configurations  
+- **Purchase Twilio No** - Acquire and configure new Twilio phone numbers
+![AI Dashboard Interface](/images/ai/Ai-numbers-platform.png)
+
+## SIP Trunk Configuration
+
+Click **Edit** to open the SIP trunking configuration dialog:
+
+### Required Fields
+- **Phone Number** - Number to configure
+- **Termination URI** - SIP routing endpoint
+- **SIP Trunk User Name** - Authentication username
+- **SIP Trunk Password** - Authentication password
+- **Inbound Agent** - AI agent for incoming calls
+- **Outbound Agent** - AI agent for outgoing calls
+
+### Optional
+- **Nickname** - Custom identifier for the trunk
+
+### Actions
+- **Cancel** - Close without saving
+- **Save** - Apply configuration
+
+![AI Dashboard Interface](/images/ai/Ai-numbers-SIP-trunk.png)
+
+## Rizz Number Configuration
+
+Click **Rizz Numbers** tab to access native platform number configuration:
+
+### Required Fields
+- **Setup Number** - Select from available Rizz numbers dropdown
+- **Inbound Agent** - AI agent for incoming calls
+- **Outbound Agent** - AI agent for outgoing calls
+
+### Optional
+- **Nickname** - Custom identifier for the number
+
+### Actions
+- **Cancel** - Close without saving
+- **Save** - Apply configuration
+
+
+![AI Dashboard Interface](/images/ai/Ai-numbers-Rizz-number.png)
+
+## Twilio Number Purchase
+
+Click **Purchase Twilio No** to buy new numbers:
+
+### Fields
+- **Nickname** - Optional identifier
+- **Inbound Agent** - AI agent for incoming calls
+- **Outbound Agent** - AI agent for outgoing calls
+- **Countries** - Select country (USA)
+- **Search By** - AreaCode filter
+- **AreaCode/Region/City** - Search criteria
+
+### Actions
+- **Search** - Find available numbers
+- **Cancel** - Close without purchasing
+- **Purchase Number** - Buy selected number
+
+![AI Dashboard Interface](/images/ai/Ai-numbers-purchase-number.png)
 
 ## Phone Numbers Table
 
-### Table Columns
-- **#** - Sequential number for each phone number entry
-- **Name** - Custom identifier/name for the phone number (e.g., "devSIPDUP", "gmeet")
-- **Phone Number** - Full phone number including country code (e.g., "+13156663670")
-- **Spam Status** - Current spam protection status ("Clean" indicates good standing)
-- **Area Code** - Geographic area code for the phone number (e.g., "315")
-- **Renewal At** - When the phone number subscription renews
-- **Updated At** - Last modification timestamp (e.g., "05-19-2025 11:29 PM")
-- **Action** - Available management actions for each number
+### Table Structure
+The table displays all configured phone numbers with the following columns:
 
-### Action Buttons
-- **Spam Protect** - Enable or manage spam protection settings
-- **Edit** - Modify phone number settings and configuration
-- **Token** - Manage authentication tokens for the phone number
-- **Delete** - Remove the phone number from your system
+- **#** - Sequential number identifier for each entry
+- **Name** - Custom identifier/label for the phone number
+- **Phone Number** - Complete phone number with country code (+1)
+- **Spam Status** - Current spam protection and reputation status
+- **Area Code** - Geographic area code designation
+- **Renewal At** - Phone number subscription renewal date
+- **Updated At** - Last modification timestamp with date and time
+- **Action** - Available management actions for each phone number
 
-## Table Features
+![AI Dashboard Interface](/images/ai/Ai-numbers-table.png)
 
-### Display Controls
-- **Show Entries** - Select 10, 25, 50, or 100 entries per page
-- **Search Functionality** - Search across all phone number data
-- **Entry Counter** - Shows "1 to 2 of 2 entries" for current view status
 
-### Navigation
-- **Pagination Controls** - Previous/Next buttons and numbered pages
-- **Current Page Indicator** - Highlighted page number (currently showing page 1)
+## Action Management
 
-## Phone Number Status
+### Available Actions
+- **Spam Protect**  - Configure spam protection settings and monitoring
+- **Edit** - Modify phone number configuration and settings
+- **Token**  - Manage API tokens and authentication credentials
+- **Delete** - Remove phone number from system (permanent action)
 
-### Current Numbers
-The interface shows active phone numbers with:
-- **Clean Spam Status** - All numbers show "Clean" status indicating good reputation
-- **315 Area Code** - Numbers from the Syracuse, NY area
-- **Recent Updates** - Timestamps showing recent activity
-- **Full Action Access** - All management functions available
+![AI Dashboard Interface](/images/ai/Ai-numbers-actions.png)
+
+
 
 ## Quick Actions
 
 <CardGroup cols={2}>
-  <Card title="Manage Numbers" icon="phone">
-    Use action buttons to edit, protect, and configure phone numbers
+  <Card title="Configure Numbers" icon="phone">
+    Manage SIP trunk connections and phone number settings
   </Card>
-  <Card title="Search Numbers" icon="magnifying-glass">
-    Find specific phone numbers using the search functionality
+  <Card title="Monitor Status" icon="shield">
+    Track spam protection and reputation status
   </Card>
-  <Card title="Spam Protection" icon="shield">
-    Monitor and manage spam protection status for all numbers
+  <Card title="Search & Filter" icon="magnifying-glass">
+    Find specific phone numbers using search functionality
   </Card>
-  <Card title="Purchase Numbers" icon="plus">
-    Add new phone numbers through Twilio integration
+  <Card title="Manage Security" icon="key">
+    Configure tokens and authentication for phone access
   </Card>
 </CardGroup>
-

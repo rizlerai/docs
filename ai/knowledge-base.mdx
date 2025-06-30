@@ -3,71 +3,59 @@ title: "AI Knowledge Base"
 description: "Manage and organize your AI training data and knowledge repository"
 ---
 
-Create and manage your AI knowledge base with an intuitive interface for adding, organizing, and maintaining training data for your AI agents.
+Manage your AI knowledge base with status tracking and renewal management for optimal AI performance.
 
-## Knowledge Base Overview
 
-The Knowledge Base interface provides a streamlined approach to managing your AI training content:
 
-- **Add New Knowledge** - Create new knowledge base entries with the "Add" button
-- **Knowledge Records Table** - View all knowledge entries in an organized table format
-- **Search Functionality** - Find specific knowledge entries using the search box
-- **Entry Management** - Control how many entries are displayed per page
+## Knowledge Entry Management
 
-## Interface Elements
+### Add Knowledge Base
+Create new knowledge bases  using the  "Add" button for expanding your AI training data.
 
-### Add Button
-- **Blue "Add" Button** - Located at the top left to create new knowledge base entries
-- **Quick Access** - One-click access to add new training data
+![AI Dashboard Interface](/images/ai/knowledge-add-6.png)
 
-### Knowledge Table
+The knowledge base creation form includes:
 
-#### Table Columns
-- **#** - Sequential number for each knowledge entry
-- **Name** - Title or identifier of the knowledge entry
-- **Status** - Current status of the knowledge entry
-- **Renewal At** - When the knowledge entry needs to be renewed or updated
-- **Created At** - Timestamp of when the entry was created
-- **Action** - Available actions for each knowledge entry
+- **Name Field** - Enter a descriptive name for your knowledge base
+- **Document Section** - Upload training documents using the "+ Add" button
+  - Click "+ Add" to browse and select documents
+  - Multiple documents can be added to a single knowledge base
+- **Form Controls**:
+  - **Submit** - Save and create the knowledge base
+  - **Back** - Return to the previous screen without saving
 
-#### Table Features
-- **Empty State** - Shows "No data available in table" when no entries exist
-- **Entry Counter** - Displays "Showing 0 to 0 of 0 entries" for current view status
-- **Sortable Columns** - Column headers with sorting indicators
+![AI Dashboard Interface](/images/ai/knowledge-Base-add.png)
 
-## Navigation & Display
+### Knowledge Base interface
+- **#** - Sequential entry identifier
+- **Name** - Knowledge entry name (e.g., "QAtest", "QA test2")
+- **Status** - Current progress status (in_progress, completed, etc.)
+- **Renewal At** - Renewal date behavior:
+  - **Date displayed**: System will automatically renew for the next month and charge your account
+  - **Empty/Not displayed**: Free usage within your package limits
+- **Created At** - Entry creation timestamp
+- **Action** - Delete option for entry removal
 
-### Entry Display Control
-- **Show Entries** - Dropdown to select 10, 25, 50, or 100 entries per page
-- **Search Box** - Top-right search functionality to find specific knowledge entries
-- **Pagination** - Previous/Next buttons for navigating through multiple pages of entries
+![AI Dashboard Interface](/images/ai/knowledge-add-2.png)
 
-### Current Status
-- **Empty Knowledge Base** - Interface shows no knowledge entries currently exist
-- **Ready to Add** - System is prepared for adding new knowledge base content
 
-## Getting Started
+### Actions
+- **Delete** - Remove knowledge entries permanently
 
-To begin using your Knowledge Base:
-
-1. **Click the "Add" button** - Start creating your first knowledge entry
-2. **Define entry details** - Add name, status, and other relevant information
-3. **Organize content** - Use the table structure to manage multiple entries
-4. **Search and filter** - Use search functionality to find specific entries quickly
-
+![AI Dashboard Interface](/images/ai/knowledge-add-5.png)
 ## Quick Actions
 
 <CardGroup cols={2}>
   <Card title="Add Knowledge" icon="plus">
-    Click the Add button to create new knowledge base entries
+    Create new knowledge base entries for AI training
+  </Card>
+  <Card title="Monitor Status" icon="chart-line">
+    Track progress status of knowledge entries
+  </Card>
+  <Card title="Manage Renewals" icon="calendar">
+    Schedule and track knowledge entry validity renewals
   </Card>
   <Card title="Search Entries" icon="magnifying-glass">
-    Use the search box to find specific knowledge content
-  </Card>
-  <Card title="Manage Display" icon="list">
-    Control how many entries are shown per page
-  </Card>
-  <Card title="Table Navigation" icon="chevron-right">
-    Navigate through paginated knowledge entries
+    Find specific knowledge entries quickly
   </Card>
 </CardGroup>
