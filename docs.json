@@ -25,7 +25,7 @@
             "pages": [
               "ai/dashboard",
               "ai/knowledge-base",
-              "ai/agent",
+              "ai/agents",
               "ai/phone-numbers",
               "ai/call-history"
             ]
