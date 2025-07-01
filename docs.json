@@ -32,7 +32,8 @@
                   "ai/agents/manage-agent",
                   "ai/agents/test-call",
                   "ai/agents/endpoint",
-                  "ai/agents/ai-widget-configure"
+                  "ai/agents/ai-widget-configure",
+                  "ai/agents/duplicate"
                 ]
               },
               "ai/phone-numbers",
