@@ -3,60 +3,74 @@ title: "AI Agents"
 description: "Configure and manage your intelligent AI agents for automated customer interactions"
 ---
 
-Manage your AI agents that handle customer calls with human-like conversation capabilities, smart routing, and automated workflows.
+Complete AI agent management system with folder organization, comprehensive controls, and detailed monitoring.
 
-## Agent Overview
+## Folder Management System
 
-AI Agents are the core of your automated call system, providing intelligent conversation handling with:
+**Sidebar Navigation**
+- **All Agents** - View complete agent inventory across all folders
+- **Custom Folders** - Organize agents by project, client, or purpose
+- **+ Add** - Create new folders with custom names
+- **Folder Actions** - Edit and delete folders via context menu
 
-- **Natural Language Processing** - Human-like conversation capabilities
-- **Smart Call Routing** - Intelligent call distribution and handling
-- **Custom Training** - Personalized agent behavior and responses
-- **Real-time Monitoring** - Live agent performance tracking
 
-![AI Agents Interface](/images/ai/AI_Agents.png)
+![AI Dashboard Interface](/images/ai/Ai-Agents-folders.png)
+**Creating Folders**
+- Click **+ Add** to open folder creation dialog
+- Enter folder name in text field
+- Click **Save** to create new organizational folder
+- Manage folder contents by moving agents between folders
 
-## Agent Management
+![AI Dashboard Interface](/images/ai/Ai-Agents-add.png)
+## Agent Dashboard
 
-### Creating AI Agents
-- **Agent Configuration** - Set up agent personality, voice, and behavior
-- **Knowledge Base Integration** - Connect agents to your custom knowledge base
-- **Call Flow Design** - Define conversation paths and responses
-- **Performance Optimization** - Fine-tune agent responses and accuracy
+**Header Controls**
+- **+ Add Agent** - Create new AI agents
+- **Search** - Find agents by name or ID
+- **Show Entries** - Display 10, 25, 50, or 100 agents per page
+- **Pagination** - Navigate through large agent lists
+![AI Dashboard Interface](/images/ai/Ai-Agents-header.png)
+**Agent Table Overview**
 
-### Agent Capabilities
-- **Multi-language Support** - Handle calls in different languages
-- **Sentiment Analysis** - Detect and respond to customer emotions
-- **Call Transfer Logic** - Smart escalation to human agents when needed
-- **Appointment Scheduling** - Automated booking and calendar integration
+| Column | Description |
+|--------|-------------|
+| **#** | Sequential agent number |
+| **Name** | Agent identifier (e.g., n60hIfrJ8r, 2tZ4kVkV5F) |
+| **Renewal At** | Subscription renewal dates |
+| **Status** | Active/inactive toggle switches |
+| **Created At** | Agent creation timestamps |
+| **Action** | Management options menu |
 
-## Agent Performance
+![AI Dashboard Interface](/images/ai/Ai-Agents-overview.png)
+## Agent Actions Menu
 
-### Key Metrics
-- **Call Handling Rate** - Percentage of calls successfully managed by AI
-- **Customer Satisfaction** - Feedback scores from AI interactions
-- **Response Accuracy** - Correctness of agent responses
-- **Conversation Quality** - Natural flow and engagement metrics
+**Primary Actions**
+- **Edit** - Basic agent configuration and settings
+- **Edit V2** - Advanced agent configuration options
+- **Test Call** - Real-time agent performance testing
+- **AI Widget Configure** - Customize agent interface widgets
+- **Endpoints** - Manage API endpoints and integrations
 
-### Optimization Features
-- **Continuous Learning** - Agents improve from each interaction
-- **A/B Testing** - Compare different agent configurations
-- **Performance Analytics** - Detailed insights into agent effectiveness
-- **Custom Improvements** - Manual tuning and optimization options
+**Secondary Actions**
+- **Duplicate** - Clone existing agent configurations
+- **Delete** - Remove agents (confirmation required)
+![AI Dashboard Interface](/images/ai/Ai-Agents-action.png)
 
-## Quick Actions
+## Agent Status Management
+**Status Controls**
+- **Toggle Switches** - Enable/disable agents instantly
+- **Bulk Operations** - Manage multiple agents simultaneously
+- **Real-time Updates** - Status changes reflect immediately
 
-<CardGroup cols={2}>
-  <Card title="Dashboard Analytics" icon="chart-line" href="/ai/dashboard">
-    View comprehensive agent performance metrics
-  </Card>
-  <Card title="Knowledge Base" icon="brain" href="/ai/knowledge-base">
-    Manage agent training data and responses
-  </Card>
-  <Card title="Phone Numbers" icon="phone" href="/ai/phone-numbers">
-    Configure phone number routing to agents
-  </Card>
-  <Card title="Call History" icon="clock-rotate-left" href="/ai/call-history">
-    Review detailed call logs and interactions
-  </Card>
-</CardGroup>
+![AI Dashboard Interface](/images/ai/Ai-Agents-status.png)
+
+## Search & Filtering
+
+**Search Functionality**
+- **Agent Name Search** - Find agents by identifier
+- **Folder Filtering** - View agents within specific folders
+- **Status Filtering** - Filter by active/inactive status
+- **Date Range** - Filter by creation or renewal dates
+
+![AI Dashboard Interface](/images/ai/Ai-Agents-search.png)
+
