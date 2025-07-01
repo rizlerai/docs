@@ -25,7 +25,16 @@
             "pages": [
               "ai/dashboard",
               "ai/knowledge-base",
-              "ai/agents",
+              {
+                "group": "AI Agents",
+                "pages": [
+                  "ai/agents/listing",
+                  "ai/agents/manage-agent",
+                  "ai/agents/test-call",
+                  "ai/agents/endpoint",
+                  "ai/agents/ai-widget-configure"
+                ]
+              },
               "ai/phone-numbers",
               "ai/call-history"
             ]
