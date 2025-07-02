@@ -4,6 +4,75 @@ description: "Connect your agent with third-party services, APIs, and external p
 icon: "link"
 ---
 
-# Integration
+Configure GoHighLevel (GHL) integration and automated post-call analysis workflows. This section enables seamless data synchronization between your AI agent and GHL CRM system.
 
-Connect your agent with third-party services, APIs, and external platforms. Set up webhook endpoints, CRM integrations, and data synchronization. 
+## GHL Integration & Post-Call Analysis
+
+### Recording & Transcription
+
+**Send Recording to GHL**
+- **Purpose**: Automatically upload call recordings to GoHighLevel CRM
+- **Configuration**: Select GHL field/location for recording storage
+- **Benefit**: Centralized call record management and compliance
+
+**Send Transcription To GHL**
+- **Purpose**: Transfer AI-generated call transcripts to GHL
+- **Configuration**: Choose destination field for transcript data
+- **Benefit**: Searchable conversation records and analysis
+
+### Call Data Management
+
+**Send Call Duration to GHL**
+- **Purpose**: Log call length metrics in GoHighLevel
+- **Configuration**: Map to specific GHL duration field
+- **Usage**: Performance tracking and billing analysis
+
+**GHL Tag Call Direction**
+- **Purpose**: Categorize calls as inbound/outbound in GHL
+- **Configuration**: Select tag field for call direction
+- **Benefit**: Directional call analytics and reporting
+
+### Call Status Tags
+
+Automatically tag calls in GHL based on call outcomes:
+
+**GHL Tag on Answered**
+- **Trigger**: When calls are successfully answered
+- **Configuration**: Select tag for answered calls
+- **Purpose**: Track successful connection rates
+
+**GHL Tag on No-Answered**
+- **Trigger**: When calls go unanswered
+- **Configuration**: Choose tag for missed calls
+- **Purpose**: Identify follow-up opportunities
+
+**GHL Tag on Busy**
+- **Trigger**: When calls encounter busy signals
+- **Configuration**: Set tag for busy call status
+- **Purpose**: Schedule optimal callback times
+
+**GHL Tag On Voicemail**
+- **Trigger**: When calls reach voicemail systems
+- **Configuration**: Select voicemail detection tag
+- **Purpose**: Track voicemail delivery rates
+
+### Appointment Tags
+
+**GHL Tag On Appointment**
+- **Purpose**: Automatically tag contacts when appointments are scheduled
+- **Configuration**: Choose appointment confirmation tag
+- **Benefit**: Streamlined appointment management workflow
+
+## Configuration Process
+
+1. **Select Integration Fields**: Use dropdown menus to map AI agent data to GHL fields
+2. **Configure Tags**: Set up automated tagging rules for call outcomes
+3. **Test Integration**: Verify data flow between systems
+4. **Monitor Performance**: Track integration success rates
+
+## Benefits
+
+- **Automated Data Flow**: Eliminate manual data entry
+- **Enhanced Analytics**: Comprehensive call performance insights
+- **Streamlined Workflow**: Seamless CRM integration
+- **Improved Follow-up**: Automated lead nurturing based on call outcomes 
