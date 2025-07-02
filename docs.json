@@ -12,9 +12,11 @@
     "tabs": [
       {
         "tab": "Documentation",
+        "icon": "book-open",
         "groups": [
           {
             "group": "Get Started",
+            "icon": "rocket",
             "pages": [
               "index",
               "demo"
@@ -22,17 +24,19 @@
           },
           {
             "group": "Artificial Intelligence",
+            "icon": "brain",
             "pages": [
               "ai/dashboard",
               "ai/knowledge-base",
               {
                 "group": "AI Agents",
+                "icon": "robot",
                 "pages": [
                   "ai/agents/listing",
                   {
                     "group": "Edit/Manage Agent",
+                    "icon": "gear",
                     "pages": [
-                      "ai/manage-agent/overview",
                       "ai/manage-agent/general",
                       "ai/manage-agent/voice-language",
                       "ai/manage-agent/call-handling",
@@ -55,15 +59,18 @@
       },
       {
         "tab": "API Reference",
+        "icon": "code",
         "groups": [
           {
             "group": "API Documentation",
+            "icon": "file-code",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
             "group": "Endpoint Examples",
+            "icon": "plug",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
@@ -75,15 +82,18 @@
       },
       {
         "tab": "Video Tutorials",
+        "icon": "play-circle",
         "groups": [
           {
             "group": "API Documentation",
+            "icon": "file-video",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
             "group": "Endpoint Examples",
+            "icon": "video",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
