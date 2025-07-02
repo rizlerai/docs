@@ -29,7 +29,18 @@
                 "group": "AI Agents",
                 "pages": [
                   "ai/agents/listing",
-                  "ai/agents/manage-agent",
+                  {
+                    "group": "Edit/Manage Agent",
+                    "pages": [
+                      "ai/manage-agent/overview",
+                      "ai/manage-agent/general",
+                      "ai/manage-agent/voice-language",
+                      "ai/manage-agent/call-handling",
+                      "ai/manage-agent/intelligence",
+                      "ai/manage-agent/integration",
+                      "ai/manage-agent/advanced"
+                    ]
+                  },
                   "ai/agents/test-call",
                   "ai/agents/endpoint",
                   "ai/agents/ai-widget-configure",

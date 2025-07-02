@@ -1,0 +1,135 @@
+---
+title: "* General"
+description: "Configure basic agent settings, identity, and core behavior prompts"
+---
+
+# General
+
+The General tab is the primary configuration area for your AI agent's basic settings, identity, and core behavior. This is where you define the fundamental characteristics and personality of your agent.
+
+## Agent Identity
+
+### Agent Name
+- **Editable Name Field**: Click the pencil icon to modify your agent's display name
+- **Current Example**: `n60h1frJ8r` (can be customized to any descriptive name)
+- **Best Practice**: Use clear, descriptive names that identify the agent's purpose
+
+### Status Control
+- **Active Toggle**: Enable/disable your agent with the status switch
+- **Current Status**: "Active and ready" indicates the agent is operational
+- **Real-time Control**: Changes take effect immediately
+
+### Organization Settings
+
+**Folder Assignment**:
+- **Dropdown Menu**: "Select a folder" to organize agents by project or category
+- **Purpose**: Group related agents for better management
+- **Options**: Choose from existing folders or create new ones
+
+**GHL Location**:
+- **Integration Setting**: Connect to specific GoHighLevel locations
+- **Current Example**: "Rizler Dev" 
+- **Function**: Links agent to your CRM and location-specific data
+
+## Welcome Message
+
+Configure the initial greeting that users receive when starting a conversation with your agent.
+
+**Current Setting**: "AI Initiates: Rizler AI begins with a dynamic begin message."
+
+**Purpose**: 
+- Sets the tone for conversations
+- Provides initial context to users
+- Can include dynamic personalization
+
+## General Prompt
+
+The core instruction set that defines your agent's personality, behavior, and conversation guidelines.
+
+### Available Dynamic Variables
+
+The system provides numerous dynamic variables for personalization:
+
+```
+{{phone_number}} - User's phone number
+{{first_name}} - User's first name  
+{{last_name}} - User's last name
+{{email_Address}} - User's email address
+{{address}} - User's physical address
+{{city}} - User's city
+{{zip_code}} - User's ZIP code
+{{country}} - User's country
+{{hello_how_are_you_i_am_check_last_field_for_testing_layout_okay}} - Extended variable example
+{{phone_number}} - Phone number (duplicate for multiple uses)
+{{current_dateTime}} - Current date and time
+{{talk_meeting_opt}} - Meeting options
+```
+
+### Prompt Configuration
+
+**Text Area**: Large input field for detailed instructions
+**Placeholder**: "Enter your agent's general prompt here..."
+**Functionality**: 
+- Define agent personality and communication style
+- Set conversation boundaries and guidelines
+- Include role-specific instructions
+- Incorporate dynamic variables for personalization
+
+### Prompt Management Features
+
+**Prompt Name Dropdown**: 
+- Save and manage multiple prompt versions
+- Quickly switch between different prompt configurations
+- Organize prompts by use case or testing scenarios
+
+## Action Buttons
+
+### Save
+- **Function**: Preserve all current configuration changes
+- **Color**: Blue primary button
+- **Usage**: Click after making any modifications
+
+### New Version
+- **Function**: Create a versioned backup before major changes
+- **Color**: Green secondary button  
+- **Best Practice**: Use before significant prompt modifications
+
+### Generate with ChatGPT
+- **Function**: AI-assisted prompt creation and optimization
+- **Color**: Blue accent button
+- **Feature**: Leverage AI to improve prompt quality and effectiveness
+
+## Configuration Tips
+
+### Agent Naming
+- Use descriptive names that clearly identify purpose
+- Consider including version numbers for testing
+- Avoid special characters that might cause issues
+
+### Prompt Engineering Best Practices
+- Be specific about the agent's role and capabilities
+- Include clear boundaries and limitations
+- Test prompts thoroughly using dynamic variables
+- Keep prompts concise but comprehensive
+
+### Dynamic Variable Usage
+- Use variables to personalize conversations
+- Test variable functionality with sample data
+- Ensure variables are properly formatted in prompts
+
+### Version Management
+- Create new versions before major changes
+- Document changes for future reference
+- Keep successful configurations as fallbacks
+
+## Troubleshooting
+
+**Common Issues**:
+- **Agent not responding**: Check status toggle and prompt configuration
+- **Variables not working**: Verify correct syntax and spelling
+- **Folder assignment fails**: Ensure proper permissions and folder exists
+
+**Testing Recommendations**:
+- Use the "Talk With Agent" button to test configurations
+- Test with various dynamic variable scenarios
+- Verify welcome message displays correctly 
