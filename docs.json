@@ -23,6 +23,30 @@
             ]
           },
           {
+            "group": "Dashboard",
+            "icon": "chart-line",
+            "pages": [
+              "dashboard/analytics",
+              "dashboard/leader-board"
+            ]
+          },
+          {
+            "group": "Companies",
+            "icon": "building",
+            "pages": [
+              "companies/manage",
+              "companies/settings"
+            ]
+          },
+          {
+            "group": "Reselling Setup",
+            "icon": "handshake",
+            "pages": [
+              "reselling/configuration",
+              "reselling/pricing"
+            ]
+          },
+          {
             "group": "Artificial Intelligence",
             "icon": "brain",
             "pages": [
@@ -53,6 +77,70 @@
               },
               "ai/phone-numbers",
               "ai/call-history"
+            ]
+          },
+          {
+            "group": "AI Call Monitoring",
+            "icon": "phone-volume",
+            "pages": [
+              "call-monitoring/real-time",
+              "call-monitoring/analytics"
+            ]
+          },
+          {
+            "group": "Spam Protected Numbers",
+            "icon": "shield",
+            "pages": [
+              "spam-protection/numbers",
+              "spam-protection/settings"
+            ]
+          },
+          {
+            "group": "User Management",
+            "icon": "users",
+            "pages": [
+              "user-management/users",
+              "user-management/roles"
+            ]
+          },
+          {
+            "group": "Manage",
+            "icon": "cog",
+            "pages": [
+              "manage/general",
+              "manage/advanced"
+            ]
+          },
+          {
+            "group": "Setup",
+            "icon": "wrench",
+            "pages": [
+              "setup/initial",
+              "setup/configuration"
+            ]
+          },
+          {
+            "group": "Reports",
+            "icon": "chart-bar",
+            "pages": [
+              "reports/call-reports",
+              "reports/performance"
+            ]
+          },
+          {
+            "group": "Billing",
+            "icon": "credit-card",
+            "pages": [
+              "billing/invoices",
+              "billing/payment-methods"
+            ]
+          },
+          {
+            "group": "Calendar",
+            "icon": "calendar",
+            "pages": [
+              "calendar/appointments",
+              "calendar/scheduling"
             ]
           }
         ]
