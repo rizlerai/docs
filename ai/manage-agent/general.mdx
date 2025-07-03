@@ -1,12 +1,8 @@
 ---
 title: " General"
-description: "Configure basic agent settings, identity, and core behavior prompts"
+description: "The General tab is the primary configuration area for your AI agent's basic settings, identity, and core behavior. This is where you define the fundamental characteristics and personality of your agenty"
 icon: "sliders"
 ---
-
-# General
-
-The General tab is the primary configuration area for your AI agent's basic settings, identity, and core behavior. This is where you define the fundamental characteristics and personality of your agent.
 
 ## Agent Identity
 
@@ -15,11 +11,14 @@ The General tab is the primary configuration area for your AI agent's basic sett
 - **Current Example**: `n60h1frJ8r` (can be customized to any descriptive name)
 - **Best Practice**: Use clear, descriptive names that identify the agent's purpose
 
+![AI Dashboard Interface](/images/ai/Edit-name.png)
+
 ### Status Control
 - **Active Toggle**: Enable/disable your agent with the status switch
 - **Current Status**: "Active and ready" indicates the agent is operational
 - **Real-time Control**: Changes take effect immediately
 
+![AI Dashboard Interface](/images/ai/general-status.png)
 ### Organization Settings
 
 **Folder Assignment**:
@@ -27,22 +26,31 @@ The General tab is the primary configuration area for your AI agent's basic sett
 - **Purpose**: Group related agents for better management
 - **Options**: Choose from existing folders or create new ones
 
+![AI Dashboard Interface](/images/ai/general-folder.png)
+
 **GHL Location**:
 - **Integration Setting**: Connect to specific GoHighLevel locations
 - **Current Example**: "Rizler Dev" 
 - **Function**: Links agent to your CRM and location-specific data
 
+![AI Dashboard Interface](/images/ai/general-location.png)
+
 ## Welcome Message
 
-Configure the initial greeting that users receive when starting a conversation with your agent.
+Configure the initial greeting and conversation initiation behavior for your AI agent.
 
-**Current Setting**: "AI Initiates: Rizler AI begins with a dynamic begin message."
+### Initiation Options
 
-**Purpose**: 
-- Sets the tone for conversations
-- Provides initial context to users
-- Can include dynamic personalization
+The system provides multiple ways to handle conversation start:
 
+**AI Initiates Options**:
+- **"AI Initiates: Rizler AI begins with a dynamic begin message"** - Agent starts with an automatically generated greeting
+- **"AI Initiates: Rizler AI begins with your defined begin message"** - Agent starts with your custom welcome message
+
+**User Initiates Option**:
+- **"User Initiates: Rizler AI remains silent until users speak first"** - Agent waits for the user to start the conversation
+
+![AI Dashboard Interface](/images/ai/welcome-message.png)
 ## General Prompt
 
 The core instruction set that defines your agent's personality, behavior, and conversation guidelines.
@@ -66,71 +74,16 @@ The system provides numerous dynamic variables for personalization:
 {{talk_meeting_opt}} - Meeting options
 ```
 
-### Prompt Configuration
-
-**Text Area**: Large input field for detailed instructions
-**Placeholder**: "Enter your agent's general prompt here..."
-**Functionality**: 
-- Define agent personality and communication style
-- Set conversation boundaries and guidelines
-- Include role-specific instructions
-- Incorporate dynamic variables for personalization
-
-### Prompt Management Features
-
-**Prompt Name Dropdown**: 
-- Save and manage multiple prompt versions
-- Quickly switch between different prompt configurations
-- Organize prompts by use case or testing scenarios
-
+![AI Dashboard Interface](/images/ai/general-prompt.png)
 ## Action Buttons
 
 ### Save
 - **Function**: Preserve all current configuration changes
-- **Color**: Blue primary button
 - **Usage**: Click after making any modifications
 
-### New Version
-- **Function**: Create a versioned backup before major changes
-- **Color**: Green secondary button  
-- **Best Practice**: Use before significant prompt modifications
-
+![AI Dashboard Interface](/images/ai/general-save.png)
 ### Generate with ChatGPT
 - **Function**: AI-assisted prompt creation and optimization
-- **Color**: Blue accent button
 - **Feature**: Leverage AI to improve prompt quality and effectiveness
 
-## Configuration Tips
-
-### Agent Naming
-- Use descriptive names that clearly identify purpose
-- Consider including version numbers for testing
-- Avoid special characters that might cause issues
-
-### Prompt Engineering Best Practices
-- Be specific about the agent's role and capabilities
-- Include clear boundaries and limitations
-- Test prompts thoroughly using dynamic variables
-- Keep prompts concise but comprehensive
-
-### Dynamic Variable Usage
-- Use variables to personalize conversations
-- Test variable functionality with sample data
-- Ensure variables are properly formatted in prompts
-
-### Version Management
-- Create new versions before major changes
-- Document changes for future reference
-- Keep successful configurations as fallbacks
-
-## Troubleshooting
-
-**Common Issues**:
-- **Agent not responding**: Check status toggle and prompt configuration
-- **Variables not working**: Verify correct syntax and spelling
-- **Folder assignment fails**: Ensure proper permissions and folder exists
-
-**Testing Recommendations**:
-- Use the "Talk With Agent" button to test configurations
-- Test with various dynamic variable scenarios
-- Verify welcome message displays correctly 
+![AI Dashboard Interface](/images/ai/Chat-gpt.png)
