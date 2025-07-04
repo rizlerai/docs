@@ -31,22 +31,6 @@
             ]
           },
           {
-            "group": "Companies",
-            "icon": "building",
-            "pages": [
-              "companies/manage",
-              "companies/settings"
-            ]
-          },
-          {
-            "group": "Reselling Setup",
-            "icon": "handshake",
-            "pages": [
-              "reselling/configuration",
-              "reselling/pricing"
-            ]
-          },
-          {
             "group": "Artificial Intelligence",
             "icon": "brain",
             "pages": [
@@ -77,6 +61,22 @@
               },
               "ai/phone-numbers",
               "ai/call-history"
+            ]
+          },
+          {
+            "group": "Companies",
+            "icon": "building",
+            "pages": [
+              "companies/manage",
+              "companies/settings"
+            ]
+          },
+          {
+            "group": "Reselling Setup",
+            "icon": "handshake",
+            "pages": [
+              "reselling/configuration",
+              "reselling/pricing"
             ]
           },
           {
