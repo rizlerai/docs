@@ -1,0 +1,356 @@
+---
+title: "10DLC Campaign"
+description: "Create and manage 10DLC campaigns for compliant messaging operations"
+icon: "bullhorn"
+---
+
+# 10DLC Campaign
+
+Create and manage 10DLC campaigns to define your messaging use cases and ensure compliance with carrier requirements for A2P messaging.
+
+## Overview
+
+A 10DLC Campaign defines the specific use case for your messaging operations. Each campaign must be approved by carriers and specifies what types of messages you can send, to whom, and under what circumstances.
+
+## What is a 10DLC Campaign?
+
+A 10DLC Campaign includes:
+
+- **Use Case Definition**: The specific purpose of your messaging
+- **Message Content**: Types of messages you plan to send
+- **Target Audience**: Who will receive your messages
+- **Opt-in Process**: How you obtain consent to message
+- **Sample Messages**: Examples of actual message content
+
+## Campaign Types and Use Cases
+
+### Standard Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Marketing" icon="megaphone">
+    Promotional messages, offers, and marketing communications
+  </Card>
+  <Card title="Customer Care" icon="headset">
+    Support messages, service updates, and customer assistance
+  </Card>
+  <Card title="Account Notifications" icon="bell">
+    Account alerts, security notifications, and service updates
+  </Card>
+  <Card title="Delivery Notifications" icon="truck">
+    Shipping updates, delivery confirmations, and logistics
+  </Card>
+</CardGroup>
+
+### Specialized Use Cases
+
+<AccordionGroup>
+  <Accordion title="Two-Factor Authentication">
+    - Security codes and login verification
+    - High trust requirements
+    - Strict content guidelines
+    - Higher throughput allowances
+  </Accordion>
+
+  <Accordion title="Emergency Notifications">
+    - Critical alerts and emergency communications
+    - Government and healthcare entities
+    - Special approval process
+    - Priority delivery
+  </Accordion>
+
+  <Accordion title="Appointment Reminders">
+    - Healthcare appointment confirmations
+    - Service appointment scheduling
+    - Calendar notifications
+    - Booking confirmations
+  </Accordion>
+
+  <Accordion title="Polling and Voting">
+    - Survey responses and polls
+    - Election-related communications
+    - Feedback collection
+    - Research participation
+  </Accordion>
+</AccordionGroup>
+
+## Campaign Creation Process
+
+### Step-by-Step Setup
+
+<Steps>
+  <Step title="Select Use Case">
+    Choose the appropriate use case category for your campaign
+  </Step>
+  <Step title="Define Campaign Details">
+    Provide campaign name, description, and messaging details
+  </Step>
+  <Step title="Configure Opt-in Process">
+    Specify how you will obtain and manage consent
+  </Step>
+  <Step title="Submit Sample Messages">
+    Provide examples of actual message content
+  </Step>
+  <Step title="Carrier Review">
+    Wait for carrier approval and throughput assignment
+  </Step>
+</Steps>
+
+## Campaign Configuration
+
+### Basic Campaign Information
+
+Complete the following campaign details:
+
+<CardGroup cols={2}>
+  <Card title="Campaign Name" icon="tag">
+    Descriptive name for internal reference
+  </Card>
+  <Card title="Use Case" icon="list">
+    Primary messaging purpose and category
+  </Card>
+  <Card title="Brand Association" icon="link">
+    Link campaign to registered brand
+  </Card>
+  <Card title="Message Volume" icon="chart-line">
+    Expected daily/monthly message volume
+  </Card>
+</CardGroup>
+
+### Detailed Campaign Attributes
+
+- **Campaign Description**: Detailed explanation of messaging purpose
+- **Target Audience**: Demographics and characteristics of recipients
+- **Message Frequency**: How often messages will be sent
+- **Campaign Duration**: Expected lifespan of the campaign
+- **Geographic Scope**: Regions where messages will be sent
+
+## Opt-in Requirements
+
+### Consent Management
+
+All 10DLC campaigns require proper consent from recipients:
+
+<CheckGroup>
+  <Check>Clear and conspicuous opt-in language</Check>
+  <Check>Explicit consent for message frequency</Check>
+  <Check>Easy opt-out mechanism (STOP/UNSUBSCRIBE)</Check>
+  <Check>Confirmation of opt-in (double opt-in recommended)</Check>
+  <Check>Record keeping of consent</Check>
+</CheckGroup>
+
+### Opt-in Methods
+
+<AccordionGroup>
+  <Accordion title="Website Forms">
+    - Web form submissions with clear consent language
+    - Checkbox confirmation for messaging
+    - Privacy policy acknowledgment
+    - Terms of service agreement
+  </Accordion>
+
+  <Accordion title="SMS Keywords">
+    - Text-to-join campaigns (e.g., "Text JOIN to 12345")
+    - Keyword-based subscriptions
+    - Immediate confirmation messages
+    - Clear unsubscribe instructions
+  </Accordion>
+
+  <Accordion title="Point of Sale">
+    - In-store opt-in forms
+    - Verbal consent with documentation
+    - Receipt-based opt-in
+    - Staff training on consent collection
+  </Accordion>
+
+  <Accordion title="Customer Service">
+    - Phone-based opt-in during support calls
+    - Email confirmation of SMS consent
+    - Account portal preferences
+    - Service agreement modifications
+  </Accordion>
+</AccordionGroup>
+
+## Message Content Requirements
+
+### Content Guidelines
+
+Your campaign messages must comply with carrier guidelines:
+
+<Warning>
+  **Prohibited Content**: No adult content, gambling, illegal activities, or misleading information
+</Warning>
+
+<Warning>
+  **Required Elements**: All messages must include business identification and opt-out instructions
+</Warning>
+
+### Sample Messages
+
+Provide actual examples of messages you plan to send:
+
+<CodeGroup>
+```text Marketing Message
+[YourBrand] Flash Sale! 30% off all items today only. Use code FLASH30. Shop now: [link]. Reply STOP to opt out.
+```
+
+```text Account Notification
+[YourBank] Your account balance is low ($25.43). Consider setting up auto-transfer to avoid fees. Reply STOP to opt out.
+```
+
+```text Delivery Update
+[YourStore] Your order #12345 is out for delivery today between 2-6 PM. Track: [link]. Reply STOP to opt out.
+```
+
+```text Appointment Reminder
+[YourClinic] Reminder: Dr. Smith appointment tomorrow at 2 PM. Confirm by replying Y or call us. Reply STOP to opt out.
+```
+</CodeGroup>
+
+## Campaign Approval Process
+
+### Review Timeline
+
+Campaign approval typically takes:
+
+- **Standard Use Cases**: 5-10 business days
+- **Special Use Cases**: 10-15 business days
+- **High-Risk Industries**: 15-30 business days
+
+### Approval Factors
+
+Carriers evaluate campaigns based on:
+
+- **Brand Trust Score**: Higher scores get faster approval
+- **Use Case Legitimacy**: Clear business purpose
+- **Compliance History**: Past messaging behavior
+- **Content Quality**: Professional, compliant message samples
+- **Opt-in Process**: Clear and documented consent procedures
+
+## Throughput and Limits
+
+### Message Throughput
+
+Approved campaigns receive throughput allocations:
+
+<CardGroup cols={3}>
+  <Card title="Basic Throughput" icon="gauge-simple">
+    **1 msg/sec per number**
+    - Standard approval
+    - Most common allocation
+    - Suitable for small to medium campaigns
+  </Card>
+  <Card title="Enhanced Throughput" icon="gauge">
+    **3-10 msg/sec per number**
+    - Verified high-trust brands
+    - Established businesses
+    - Higher volume requirements
+  </Card>
+  <Card title="Premium Throughput" icon="gauge-high">
+    **10+ msg/sec per number**
+    - Enterprise customers
+    - Critical use cases
+    - Special carrier agreements
+  </Card>
+</CardGroup>
+
+### Volume Management
+
+Monitor and manage your message volumes:
+
+- **Daily Limits**: Based on approved throughput rates
+- **Burst Capabilities**: Short-term volume increases
+- **Scaling Options**: Upgrade throughput as needed
+- **Usage Monitoring**: Track actual vs. allocated volume
+
+## Campaign Management
+
+### Monitoring Campaign Performance
+
+Track key metrics for your campaigns:
+
+- **Delivery Rates**: Percentage of messages successfully delivered
+- **Opt-out Rates**: Rate of unsubscribe requests
+- **Carrier Feedback**: Carrier-specific delivery metrics
+- **Compliance Scores**: Ongoing compliance assessment
+
+### Campaign Modifications
+
+To modify an existing campaign:
+
+1. **Submit Change Request**: Describe proposed modifications
+2. **Provide Documentation**: Support changes with evidence
+3. **Carrier Review**: Wait for approval of modifications
+4. **Implementation**: Apply approved changes
+
+<Note>
+  Significant campaign changes may require full re-approval and could affect throughput.
+</Note>
+
+## Best Practices
+
+### Campaign Optimization
+
+<CheckGroup>
+  <Check>Start with conservative volume estimates</Check>
+  <Check>Use clear, professional message content</Check>
+  <Check>Implement robust opt-out handling</Check>
+  <Check>Monitor delivery rates and adjust</Check>
+  <Check>Maintain detailed consent records</Check>
+</CheckGroup>
+
+### Compliance Maintenance
+
+- **Regular Audits**: Review messaging practices quarterly
+- **Content Updates**: Keep message samples current
+- **Opt-in Reviews**: Ensure consent processes remain compliant
+- **Volume Monitoring**: Stay within approved limits
+- **Carrier Communication**: Respond promptly to carrier feedback
+
+## Troubleshooting
+
+### Common Campaign Issues
+
+<AccordionGroup>
+  <Accordion title="Campaign Rejection">
+    **Causes**: Unclear use case, poor sample messages, inadequate opt-in process
+    **Solutions**: Clarify purpose, improve message quality, strengthen consent procedures
+  </Accordion>
+
+  <Accordion title="Low Throughput Assignment">
+    **Causes**: Low brand trust score, high-risk use case, new business
+    **Solutions**: Improve brand verification, demonstrate compliance history, start small and scale
+  </Accordion>
+
+  <Accordion title="Delivery Issues">
+    **Causes**: Compliance violations, carrier filtering, volume spikes
+    **Solutions**: Review message content, ensure opt-in compliance, monitor sending patterns
+  </Accordion>
+</AccordionGroup>
+
+### Performance Optimization
+
+1. **Message Content**: Keep messages concise and professional
+2. **Sending Patterns**: Avoid sudden volume spikes
+3. **Opt-out Handling**: Process unsubscribes immediately
+4. **Compliance Monitoring**: Regular review of messaging practices
+5. **Carrier Relationships**: Maintain good standing with all carriers
+
+## Advanced Features
+
+### Campaign Analytics
+
+Access detailed analytics for your campaigns:
+
+- **Delivery Reports**: Real-time delivery status
+- **Performance Metrics**: Engagement and response rates
+- **Compliance Dashboards**: Ongoing compliance monitoring
+- **Cost Analysis**: Message costs and ROI tracking
+
+### Integration Options
+
+Integrate campaigns with your existing systems:
+
+- **CRM Integration**: Sync with customer relationship management
+- **Marketing Automation**: Connect with marketing platforms
+- **API Access**: Programmatic campaign management
+- **Webhook Notifications**: Real-time event notifications 

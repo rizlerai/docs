@@ -1,0 +1,166 @@
+---
+title: "Webhooks"
+description: "Configure and manage webhook endpoints for real-time event notifications"
+icon: "webhook"
+---
+
+# Webhooks
+
+Configure webhook endpoints to receive real-time notifications when events occur in your Rizler system.
+
+## Overview
+
+Webhooks allow your application to receive instant notifications when specific events happen in Rizler. This enables you to build integrations and automate workflows based on call events, agent status changes, and other system activities.
+
+## Setting Up Webhooks
+
+### Create a New Webhook
+
+1. **Navigate to Setup > Webhooks**
+2. **Click "Add Webhook"**
+3. **Configure the following settings:**
+   - **Endpoint URL**: The URL where notifications will be sent
+   - **Events**: Select which events to monitor
+   - **Secret Key**: Optional security key for payload verification
+   - **Status**: Enable or disable the webhook
+
+### Webhook Events
+
+Available webhook events include:
+
+<AccordionGroup>
+  <Accordion title="Call Events">
+    - `call.started` - When a call begins
+    - `call.ended` - When a call ends
+    - `call.answered` - When a call is answered
+    - `call.failed` - When a call fails
+  </Accordion>
+
+  <Accordion title="Agent Events">
+    - `agent.created` - When a new agent is created
+    - `agent.updated` - When an agent is modified
+    - `agent.deleted` - When an agent is removed
+  </Accordion>
+
+  <Accordion title="System Events">
+    - `system.error` - When system errors occur
+    - `system.maintenance` - During maintenance windows
+  </Accordion>
+</AccordionGroup>
+
+## Webhook Payload Structure
+
+### Standard Payload Format
+
+```json
+{
+  "event": "call.ended",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "data": {
+    "call_id": "call_123456",
+    "agent_id": "agent_789",
+    "duration": 180,
+    "status": "completed"
+  },
+  "signature": "sha256=abc123..."
+}
+```
+
+### Event-Specific Data
+
+<CodeGroup>
+```json Call Events
+{
+  "event": "call.ended",
+  "data": {
+    "call_id": "call_123456",
+    "agent_id": "agent_789",
+    "caller_number": "+1234567890",
+    "duration": 180,
+    "status": "completed",
+    "transcript": "...",
+    "recording_url": "https://..."
+  }
+}
+```
+
+```json Agent Events
+{
+  "event": "agent.updated",
+  "data": {
+    "agent_id": "agent_789",
+    "name": "Sales Agent",
+    "status": "active",
+    "updated_fields": ["voice", "prompt"]
+  }
+}
+```
+</CodeGroup>
+
+## Security
+
+### Signature Verification
+
+Verify webhook authenticity using the signature header:
+
+```python
+import hmac
+import hashlib
+
+def verify_signature(payload, signature, secret):
+    expected = hmac.new(
+        secret.encode(),
+        payload.encode(),
+        hashlib.sha256
+    ).hexdigest()
+    return hmac.compare_digest(f"sha256={expected}", signature)
+```
+
+### Best Practices
+
+- **Use HTTPS endpoints** for secure communication
+- **Verify signatures** to ensure authenticity
+- **Implement idempotency** to handle duplicate deliveries
+- **Return appropriate status codes** (200-299 for success)
+- **Handle retries** gracefully
+
+## Testing Webhooks
+
+### Test Endpoint
+
+Use the built-in test feature to verify your webhook endpoint:
+
+1. **Enter your webhook URL**
+2. **Select test event type**
+3. **Click "Send Test"**
+4. **Verify response in logs**
+
+### Common Issues
+
+<Warning>
+  **Endpoint Timeout**: Ensure your endpoint responds within 10 seconds
+</Warning>
+
+<Warning>
+  **Invalid Response**: Return HTTP 200-299 status codes for successful processing
+</Warning>
+
+<Tip>
+  Use webhook logs to troubleshoot delivery issues and monitor performance
+</Tip>
+
+## Webhook Management
+
+### Monitoring
+
+- **Delivery Status**: Track successful and failed deliveries
+- **Response Times**: Monitor endpoint performance
+- **Error Logs**: Review failed delivery details
+- **Retry History**: See automatic retry attempts
+
+### Limits and Quotas
+
+- **Maximum Endpoints**: 10 per account
+- **Rate Limit**: 1000 requests per minute
+- **Retry Attempts**: Up to 5 automatic retries
+- **Timeout**: 10 seconds per request 

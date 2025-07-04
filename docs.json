@@ -83,8 +83,8 @@
             "group": "AI Call Monitoring",
             "icon": "phone-volume",
             "pages": [
-              "call-monitoring/real-time",
-              "call-monitoring/analytics"
+              "ai-call-monitoring/dashboard",
+              "ai-call-monitoring/history"
             ]
           },
           {
@@ -100,23 +100,48 @@
             "icon": "users",
             "pages": [
               "user-management/users",
-              "user-management/roles"
+              "user-management/roles",
+              "user-management/teams"
             ]
           },
           {
             "group": "Manage",
             "icon": "cog",
             "pages": [
-              "manage/general",
-              "manage/advanced"
+              "manage/disposition",
+              "manage/sms-template",
+              "manage/voice-template",
+              "manage/voice-campaign",
+              "manage/rizz-numbers",
+              "manage/setup-contact-fields",
+              "manage/powerlists",
+              "manage/powerlist-notes",
+              "manage/contacts",
+              {
+                "group": "Tags",
+                "icon": "tags",
+                "pages": [
+                  "manage/tags/contact-tags",
+                  "manage/tags/powerlist-tags"
+                ]
+              }
             ]
           },
           {
             "group": "Setup",
             "icon": "wrench",
             "pages": [
-              "setup/initial",
-              "setup/configuration"
+              "setup/webhooks",
+              "setup/trigger-hooks",
+              {
+                "group": "10DLC",
+                "icon": "tower-cell",
+                "pages": [
+                  "setup/10dlc/profile",
+                  "setup/10dlc/brand",
+                  "setup/10dlc/campaign"
+                ]
+              }
             ]
           },
           {
