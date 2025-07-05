@@ -64,19 +64,18 @@
             ]
           },
           {
-            "group": "Companies",
-            "icon": "building",
+            "group": "White Label",
+            "icon": "palette",
             "pages": [
-              "companies/manage",
-              "companies/settings"
+              "white-label/overview"
             ]
           },
           {
-            "group": "Reselling Setup",
-            "icon": "handshake",
+            "group": "Business Management",
+            "icon": "briefcase",
             "pages": [
-              "reselling/configuration",
-              "reselling/pricing"
+              "companies",
+              "reselling-setup"
             ]
           },
           {
@@ -148,8 +147,8 @@
             "group": "Reports",
             "icon": "chart-bar",
             "pages": [
-              "reports/call-reports",
-              "reports/performance"
+              "reports/calls",
+              "reports/call-statistics"
             ]
           },
           {
