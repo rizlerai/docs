@@ -31,6 +31,14 @@
             ]
           },
           {
+            "group": "Dialer",
+            "icon": "phone",
+            "pages": [
+              "dialer/predictive-dialer",
+              "dialer/power-dialer"
+            ]
+          },
+          {
             "group": "Artificial Intelligence",
             "icon": "brain",
             "pages": [
@@ -63,13 +71,7 @@
               "ai/call-history"
             ]
           },
-          {
-            "group": "White Label",
-            "icon": "palette",
-            "pages": [
-              "white-label/overview"
-            ]
-          },
+
           {
             "group": "Business Management",
             "icon": "briefcase",
@@ -155,16 +157,32 @@
             "group": "Billing",
             "icon": "credit-card",
             "pages": [
-              "billing/invoices",
-              "billing/payment-methods"
+              "billing/manage-subscription",
+              "billing/transaction-history",
+              "billing/usage-history"
             ]
           },
           {
             "group": "Calendar",
             "icon": "calendar",
             "pages": [
-              "calendar/appointments",
-              "calendar/scheduling"
+              "calendar/google-calendar"
+            ]
+          },
+          {
+            "group": "Settings",
+            "icon": "gear",
+            "pages": [
+              "settings/business-detail",
+              "settings/whitelabel-settings",
+              "settings/personal-settings",
+              "settings/password-settings",
+              "settings/social-sign-in-integration",
+              "settings/twilio-credentials",
+              "settings/ai-settings",
+              "settings/plivo-credentials",
+              "settings/working-hours",
+              "settings/browser-sessions"
             ]
           }
         ]
