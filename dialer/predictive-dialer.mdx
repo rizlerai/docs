@@ -1,79 +1,65 @@
 ---
 title: 'Predictive Dialer'
-description: 'Advanced predictive dialing system for automated outbound calling campaigns'
+description: 'The Predictive Dialer is an advanced automated calling system that enables efficient outbound calling campaigns by predicting agent availability and optimizing call connection rates.'
 icon: 'phone-arrow-up-right'
 ---
+## Add Voice Campaign
 
-# Predictive Dialer
+To create a new predictive dialer campaign, fill out the following form:
 
-The Predictive Dialer uses advanced algorithms to automatically dial multiple numbers simultaneously, connecting answered calls to available agents for maximum efficiency.
+https://app.rizzdial.com/manage/voice_campaign
 
-## How Predictive Dialing Works
+**Title**
+Enter a unique name for your campaign (e.g., "TEST1"). Use descriptive names to easily identify different campaigns.
 
-### Intelligent Call Prediction
-- **Algorithm-Based Dialing** - Uses statistical models to predict agent availability
-- **Multiple Line Dialing** - Dials multiple numbers per agent simultaneously
-- **Real-time Optimization** - Adjusts dialing rates based on answer rates and agent availability
-- **Smart Connection** - Only connects answered calls to available agents
+**Campaign Type**
+Select "Predictive" for automated dialing. This automatically calls multiple numbers and connects answered calls to available agents.
 
-### Key Features
-- **Automated Dialing** - No manual dialing required from agents
-- **Pacing Algorithm** - Automatically adjusts call volume to match agent capacity
-- **Answer Rate Analysis** - Tracks and optimizes based on historical answer rates
-- **Abandon Rate Control** - Maintains acceptable abandon rates to comply with regulations
+**Agent**
+Choose "All" to assign all available agents, or select specific agents. The system distributes calls based on agent availability.
 
-## Campaign Configuration
+**Powerlist**
+Select a contact list from the dropdown. Ensure your powerlist contains valid phone numbers for optimal performance.
 
-### Dialer Settings
-- **Dialing Ratio** - Configure calls per agent ratio (1:1 to 5:1)
-- **Pacing Mode** - Aggressive, Normal, or Conservative dialing speeds
-- **Answer Rate Threshold** - Minimum expected answer rate percentage
-- **Agent Availability** - Real-time agent status monitoring
+**Call Staggering**
+Set the interval between calls (default: "1 Second"). This controls call pacing - shorter intervals increase volume, longer intervals give agents more time.
 
-### Call Management
-- **Contact List Import** - Upload contact databases for campaigns
-- **Do Not Call (DNC) Management** - Automatic DNC list filtering
-- **Time Zone Compliance** - Respect calling time restrictions by region
-- **Retry Logic** - Configure callback attempts for busy/no answer calls
+**Voice Templates**
+Choose a voice script from the dropdown. Templates ensure consistent messaging during calls.
 
-## Performance Optimization
+Click **Submit** to create your campaign.
 
-### Efficiency Metrics
-- **Agent Utilization** - Maximize agent talk time percentage
-- **Contact Rate** - Optimize connections to live contacts
-- **Campaign Velocity** - Increase calls completed per hour
-- **Abandon Rate Monitoring** - Maintain regulatory compliance
-
-### Real-time Adjustments
-- **Dynamic Pacing** - Automatically adjust dialing intensity
-- **Queue Management** - Balance call volume with agent availability
-- **Performance Analytics** - Real-time campaign performance tracking
-- **Conversion Tracking** - Monitor lead quality and conversion rates
-
-## Compliance Features
-
-### Regulatory Compliance
-- **TCPA Compliance** - Telephone Consumer Protection Act adherence
-- **DNC Registry Integration** - Automatic Do Not Call list checking
-- **Call Recording Consent** - Manage consent requirements
-- **Time Restrictions** - Enforce calling hour limitations
-
-### Call Quality Management
-- **Abandon Rate Control** - Keep abandons within acceptable limits
-- **Connection Quality** - Ensure clear audio connections
-- **Agent Monitoring** - Supervisor call monitoring capabilities
-- **Compliance Reporting** - Generate regulatory compliance reports
+![AI Dashboard Interface](/images/ai/add-voice.png)
 
 ## Campaign Management
 
-### Campaign Setup
-- **Contact Database** - Import and manage contact lists
-- **Script Management** - Create and assign call scripts
-- **Agent Assignment** - Assign specific agents to campaigns
-- **Schedule Configuration** - Set campaign running times and dates
+Once created, campaigns appear in the [campaign management table](https://app.rizzdial.com/manage/voice_campaign) with the following information:
 
-### Monitoring and Control
-- **Real-time Dashboard** - Live campaign performance monitoring
-- **Agent Performance** - Individual agent statistics and metrics
-- **Campaign Analytics** - Detailed reporting and analysis
-- **Quality Assurance** - Call monitoring and scoring tools 
+- **Time**: Campaign start and end times
+- **Start/End Date**: Campaign duration dates
+- **Status**: Current campaign state (completed, in progress)
+- **Campaign Type**: Shows "predictive" for predictive dialer campaigns
+- **Calls Per Hour**: Call volume metrics
+- **Created At**: Campaign creation timestamp
+- **Actions**: Campaign controls (Edit, Delete, View, Pause, Speed Dial)
+
+### Campaign Actions
+
+**Edit**: Modify campaign settings
+**Pause**: Temporarily stop the campaign
+**Speed Dial**: Launch real-time dialing interface
+
+## Speed Dial Interface
+
+The Speed Dial feature provides real-time campaign monitoring and control:
+
+**Calls to Make**: Displays the number of calls queued based on available agents
+- Visual bars show call volume (12, 24, etc.)
+- Dynamic scaling based on agent availability
+
+**Agents**: Shows active agent count and capacity
+- Real-time agent status (e.g., "1: 12.00", "2: 12.00")
+- Agent availability tracking
+
+**CPA**: Cost Per Acquisition monitoring with status indicators
+
