@@ -9,6 +9,8 @@ To create a new predictive dialer campaign, fill out the following form:
 
 https://app.rizzdial.com/manage/voice_campaign
 
+![AI Dashboard Interface](/images/ai/add-voice.png)
+
 **Title**
 Enter a unique name for your campaign (e.g., "TEST1"). Use descriptive names to easily identify different campaigns.
 
@@ -29,37 +31,42 @@ Choose a voice script from the dropdown. Templates ensure consistent messaging d
 
 Click **Submit** to create your campaign.
 
-![AI Dashboard Interface](/images/ai/add-voice.png)
-
-## Campaign Management
-
-Once created, campaigns appear in the [campaign management table](https://app.rizzdial.com/manage/voice_campaign) with the following information:
-
-- **Time**: Campaign start and end times
-- **Start/End Date**: Campaign duration dates
-- **Status**: Current campaign state (completed, in progress)
-- **Campaign Type**: Shows "predictive" for predictive dialer campaigns
-- **Calls Per Hour**: Call volume metrics
-- **Created At**: Campaign creation timestamp
-- **Actions**: Campaign controls (Edit, Delete, View, Pause, Speed Dial)
+![AI Dashboard Interface](/images/ai/voice-campaign.png)
 
 ### Campaign Actions
 
-**Edit**: Modify campaign settings
-**Pause**: Temporarily stop the campaign
-**Speed Dial**: Launch real-time dialing interface
+Each campaign row provides these action buttons:
+- **Speed Dial**: Launch real-time dialing interface 
+
+![AI Dashboard Interface](/images/ai/speedd-dial.png)
 
 ## Speed Dial Interface
 
-The Speed Dial feature provides real-time campaign monitoring and control:
+The Speed Dial modal provides real-time campaign monitoring and control with the title "Calls to make based on available agents":
 
-**Calls to Make**: Displays the number of calls queued based on available agents
-- Visual bars show call volume (12, 24, etc.)
-- Dynamic scaling based on agent availability
+### Call Volume Display
 
-**Agents**: Shows active agent count and capacity
-- Real-time agent status (e.g., "1: 12.00", "2: 12.00")
-- Agent availability tracking
+**Calls**: Shows queued call numbers with visual bar indicators
+- Example: "12" and "24" calls displayed as progress bars
+- Yellow sections at bottom indicate call progress/completion
+- Plus (+) button to increase call volume
 
-**CPA**: Cost Per Acquisition monitoring with status indicators
+### Agent Management
 
+**Agents**: Displays active agent information
+- Agent 1: "12.00" (availability/capacity metric)
+- Agent 2: "12.00" (availability/capacity metric)
+- Real-time tracking of agent status and workload
+
+### Performance Monitoring
+
+**CPA**: Cost Per Acquisition tracking
+- Red X indicator showing current CPA status
+- Real-time performance metrics for campaign optimization
+
+### Interface Controls
+
+- **Close**: X button in top-right corner to exit Speed Dial
+- **Dynamic Updates**: Interface updates in real-time based on agent availability and call progress
+
+![AI Dashboard Interface](/images/ai/speed-dial2.png)
