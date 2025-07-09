@@ -32,11 +32,43 @@ Choose a voice script from the dropdown. Templates ensure consistent messaging d
 Click **Submit** to create your campaign.
 
 ![AI Dashboard Interface](/images/ai/voice-campaign.png)
+## 🎯 Predictive Dialer + AI Agent Handling
+### 🔄 Dialing Behavior:
+The system dials 5 numbers at a time using predictive dialing.
 
-### Campaign Actions
+When multiple contacts pick up:
 
-Each campaign row provides these action buttons:
-- **Speed Dial**: Launch real-time dialing interface 
+Example: 3 people answer, but only 1 human agent is available:
+
+    - ✅ 1 call → routed to available human agent
+
+    - 🤖 2 remaining calls → routed to AI agents
+
+### ⚙️ AI Agent Assignment (Per PowerList):
+Each PowerList can have a dedicated AI agent assigned.
+![AI Agent Assign to PowerList](/images/dialer/predictive/ai-agent-powerlist.png)
+
+This allows dynamic customization of:
+
+    - 🤝 Tone & behavior
+    - 📜 Script logic
+    - 🎯 Lead type handling
+
+AI agents act as backups for overflow or after-hours handling.
+
+### 🔁 Callback Handling Logic:
+If a contact picks up but drops (due to no human agent available) or misses the call:
+
+That lead is automatically flagged for callback.
+
+The PowerList-assigned AI agent will:
+
+    - Re-engage the lead via automated callback
+    - Attempt to qualify, reschedule, or book appointment directly
+
+
+## Speed Dial: 
+Launch real-time dialing interface 
 
 ![AI Dashboard Interface](/images/ai/speedd-dial.png)
 
