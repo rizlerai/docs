@@ -1,169 +1,39 @@
 ---
 title: 'AI Settings'
-description: 'Configure artificial intelligence features and AI agent behavior'
+description: 'The AI Settings page allows you to configure various artificial intelligence features and manage AI agent behavior limits to optimize performance and control costs.'
 icon: 'brain'
 ---
+### AI Call Concurrent Limits
 
-# AI Settings
+Control how many AI calls can run simultaneously to manage system resources and costs.
 
-Configure artificial intelligence features, AI agent behavior, and machine learning parameters for optimal performance.
 
-## AI Model Configuration
+#### Base Limit
+Your base concurrent call limit is determined by your subscription plan. This represents the number of simultaneous AI calls included in your plan.
 
-### Primary AI Models
-- **Language Model** - Select primary language model (GPT-4, GPT-3.5, Claude, etc.)
-- **Model Version** - Choose specific model version for consistency
-- **Fallback Models** - Configure backup models for high availability
-- **Model Switching** - Automatic model switching based on performance
-- **Custom Models** - Integration with custom-trained models
+#### Additional Limit
+You can purchase additional concurrent call capacity beyond your base limit:
 
-### Model Parameters
-- **Temperature** - Control creativity vs. consistency (0.0 - 1.0)
-- **Max Tokens** - Maximum response length limit
-- **Top-p Sampling** - Nucleus sampling parameter for response diversity
-- **Frequency Penalty** - Reduce repetition in AI responses
-- **Presence Penalty** - Encourage topic diversity in conversations
+- **Pricing**: $8.00 per additional concurrent call per month
+- **Adjustment**: Use the `-` and `+` buttons to adjust your additional limit
+- **Cost Calculation**: The total cost is automatically calculated based on your additional limit
 
-## Conversation Management
+#### Managing Concurrent Limits
 
-### Response Settings
-- **Response Time** - Target response time for AI interactions
-- **Context Window** - Conversation history length to maintain
-- **Memory Retention** - How long to remember conversation context
-- **Session Management** - Configure conversation session handling
-- **Multi-turn Conversations** - Enable complex multi-turn dialogues
+1. Click the **Adjust Limit** button on the AI Call Concurrent card
+2. Review your current base limit from your plan
+3. Set your desired additional limit using the adjustment controls
+4. Review the pricing and total cost
+5. Click **Save changes** to apply the new limit
 
-### Content Filtering
-- **Content Moderation** - Enable content filtering for inappropriate content
-- **Profanity Filter** - Block or replace profane language
-- **Sensitive Topics** - Configure handling of sensitive subject matter
-- **Compliance Filters** - Industry-specific content compliance
-- **Custom Filters** - Create custom content filtering rules
+### Daily Calls Per Number
 
-## Agent Personality and Behavior
+Set limits on how many calls each phone number can make per day to prevent overuse and manage costs.
 
-### Personality Configuration
-- **Tone and Style** - Configure AI agent personality traits
-- **Communication Style** - Formal, casual, friendly, professional
-- **Brand Voice** - Align AI responses with brand personality
-- **Cultural Sensitivity** - Configure culturally appropriate responses
-- **Emotional Intelligence** - Enable empathetic response capabilities
+#### Setting Daily Limits
 
-### Behavioral Parameters
-- **Proactivity Level** - How proactive the AI should be in conversations
-- **Assertiveness** - Confidence level in providing recommendations
-- **Helpfulness** - Willingness to provide additional assistance
-- **Patience Level** - Tolerance for repetitive or unclear questions
-- **Escalation Triggers** - When to escalate to human agents
+1. Click the **Set Limit** button on the Daily Calls Per Number card
+2. Enter your desired daily call limit (between 1 and the maximum allowed)
+3. The system will validate that your limit is within acceptable ranges
+4. Click **Save changes** to apply the new daily limit
 
-## Knowledge Base Integration
-
-### Knowledge Sources
-- **Document Upload** - Upload documents for AI knowledge base
-- **Website Crawling** - Automatically crawl and index website content
-- **API Integrations** - Connect external knowledge sources
-- **Database Connections** - Link to internal knowledge databases
-- **Real-time Updates** - Keep knowledge base current with live data
-
-### Knowledge Management
-- **Content Curation** - Review and approve knowledge base content
-- **Version Control** - Manage versions of knowledge base updates
-- **Knowledge Gaps** - Identify and fill knowledge gaps
-- **Quality Assurance** - Ensure accuracy of knowledge base information
-- **Search Optimization** - Optimize knowledge retrieval and search
-
-## Learning and Adaptation
-
-### Machine Learning Settings
-- **Continuous Learning** - Enable AI learning from interactions
-- **Feedback Integration** - Learn from user feedback and corrections
-- **Performance Tracking** - Monitor and improve AI performance
-- **A/B Testing** - Test different AI configurations for optimization
-- **Model Fine-tuning** - Customize models based on specific use cases
-
-### Training Data Management
-- **Training Data** - Manage datasets for AI training
-- **Data Quality** - Ensure high-quality training data
-- **Data Privacy** - Protect sensitive information in training data
-- **Bias Detection** - Monitor and mitigate AI bias in responses
-- **Validation Sets** - Use validation data to test AI improvements
-
-## Voice and Speech Settings
-
-### Speech Recognition
-- **Speech-to-Text Engine** - Select speech recognition service
-- **Language Support** - Configure supported languages for speech
-- **Accent Recognition** - Enable recognition of different accents
-- **Noise Reduction** - Filter background noise from audio input
-- **Real-time Processing** - Enable real-time speech processing
-
-### Text-to-Speech
-- **Voice Selection** - Choose AI voice characteristics
-- **Speech Speed** - Configure speaking rate and pace
-- **Pronunciation** - Custom pronunciation rules and corrections
-- **Emotional Inflection** - Add emotional tone to speech output
-- **Multi-language Support** - Enable multiple language speech output
-
-## Integration and APIs
-
-### AI Service Integrations
-- **OpenAI Integration** - Configure OpenAI API credentials and settings
-- **Anthropic Claude** - Set up Claude AI integration
-- **Google AI** - Connect with Google AI services
-- **Microsoft Cognitive** - Azure Cognitive Services integration
-- **Custom AI Services** - Integrate with custom AI platforms
-
-### API Management
-- **Rate Limiting** - Configure API request limits and throttling
-- **Cost Control** - Monitor and control AI service costs
-- **Load Balancing** - Distribute requests across multiple AI services
-- **Failover Handling** - Automatic failover between AI services
-- **Performance Monitoring** - Track AI service performance metrics
-
-## Analytics and Optimization
-
-### Performance Metrics
-- **Response Quality** - Measure AI response quality and accuracy
-- **User Satisfaction** - Track user satisfaction with AI interactions
-- **Conversation Success** - Monitor successful conversation completion
-- **Resolution Rate** - Track problem resolution effectiveness
-- **Escalation Rate** - Monitor when conversations require human intervention
-
-### Optimization Tools
-- **Performance Dashboard** - Real-time AI performance monitoring
-- **Quality Scoring** - Automated quality assessment of AI responses
-- **Conversation Analysis** - Analyze conversation patterns and outcomes
-- **Improvement Recommendations** - AI-powered suggestions for optimization
-- **Benchmarking** - Compare AI performance against industry standards
-
-## Compliance and Ethics
-
-### Ethical AI Guidelines
-- **Bias Prevention** - Implement measures to prevent AI bias
-- **Fairness Assurance** - Ensure fair treatment across all user groups
-- **Transparency** - Provide clear information about AI capabilities
-- **Accountability** - Establish responsibility for AI decisions
-- **Human Oversight** - Maintain human supervision of AI systems
-
-### Regulatory Compliance
-- **Data Protection** - GDPR, CCPA compliance for AI processing
-- **AI Regulations** - Comply with emerging AI regulations
-- **Industry Standards** - Meet industry-specific AI compliance requirements
-- **Audit Trails** - Maintain detailed logs of AI decisions and actions
-- **Risk Assessment** - Regular assessment of AI-related risks
-
-## Advanced AI Features
-
-### Specialized Capabilities
-- **Sentiment Analysis** - Real-time emotion and sentiment detection
-- **Intent Recognition** - Identify user intentions and goals
-- **Entity Extraction** - Extract relevant information from conversations
-- **Conversation Summarization** - Automatic conversation summaries
-- **Predictive Analytics** - Predict user needs and behaviors
-
-### Experimental Features
-- **Beta Features** - Enable experimental AI capabilities
-- **Custom Workflows** - Create specialized AI-powered workflows
-- **Multi-modal AI** - Integrate text, voice, and visual AI capabilities
-- **AI Collaboration** - Enable AI-to-AI communication and coordination
-- **Advanced Reasoning** - Enable complex reasoning and problem-solving 
