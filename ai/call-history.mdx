@@ -3,65 +3,70 @@ title: "AI Call History"
 description: "Access comprehensive call records, analyze conversation patterns, and track customer interactions across your AI call system with advanced filtering and search capabilities."
 icon: "clock-rotate-left"
 ---
-## Call History Overview
-
-The AI Call History interface provides complete visibility into all call activities with powerful filtering options:
-
-- **Advanced Filtering System** - Filter calls by agent, date range, duration, direction, sentiment, and success status
-- **Comprehensive Call Records** - View all call details including timestamps, agent names, phone numbers, and call types
-- **Real-time Data** - Access up-to-date call information with live status indicators
-- **Flexible Display Options** - Choose how many entries to show and navigate through paginated results
-
 ## Filter Controls
 
 ### Primary Filters
-- **Select Agent** - Choose specific agents or search by agent name
-- **Date Range** - Predefined options (Last 30 Days) or custom date selection
-- **Start Date / End Date** - Precise date range selection with calendar picker
-- **Min Duration / Max Duration** - Filter calls by length (0 Sec to No Limit)
+- **Select Agent** - Choose specific agents using dropdown search
+- **Date Range** - Quick options: "Today", "Yesterday", "Last 7 Days", "Last 30 Days", or custom range
+- **Start/End Date** - Calendar picker with DD/MM/YYYY format
+- **Min/Max Duration** - Filter calls by length from "0 Sec" to "No Limit"
 
 ![AI Dashboard Interface](/images/ai/call-history-primaryfilter.png)
  
 
 ### Advanced Filters
-- **Call Direction** - Filter by "All", inbound, or outbound calls
-- **User Sentiment** - Filter by customer sentiment analysis results
-- **Call Successful** - Show successful, unsuccessful, or all call attempts
-- **From Number / To Number** - Search by specific phone numbers
-- **Hangup Reason** - Filter by how calls ended
+- **Call Direction** - "All", "Inbound", or "Outbound"
+- **User Sentiment** - "All", "Positive", "Negative", "Neutral", "Unknown"
+- **Call Successful** - "All", "Successful", or "Unsuccessful"
+- **From/To Number** - Search by specific phone numbers
+- **Hangup Reason** - Filter by termination cause
 
 ![AI Dashboard Interface](/images/ai/call-history-advancefilter.png)
 
+## Column Visibility Management
+Use checkmark toggles to filter which data columns are displayed in the table
+
+**How Column Filtering Works:**
+- **Checked (✓)** - Column is visible in the table
+- **Unchecked** - Column is hidden from table view
+- **Instant Filter** - Toggle checkmarks to immediately filter displayed data
+- **Custom View** - Create personalized data views by selecting relevant columns only
+
+![AI Dashboard Interface](/images/ai/filter-option.png)
+
+## Data Export & Management
+Access powerful export functionality through dedicated action buttons:
+
+- **CSV Export** - Download call data in comma-separated values format. Compatible with Excel and Google Sheets for analysis.
+- **Excel Export** - Export to Microsoft Excel format (.xlsx) with formatted headers and data types for immediate use.
+- **PDF Export** - Generate professional PDF reports with proper layout and formatting for documentation.
+- **Filter** - Export only the filtered results based on your current search and column settings.
+
+![AI Dashboard Interface](/images/ai/cvc-pdf.png)
+
+
 
 ## Call Records Table
-
-### Complete Table Columns
-- **ID** - Unique identifier for each call record
-- **Action** - Interactive buttons for call record actions
-- **Time** - Exact timestamp of when the call occurred
-- **Agent Name** - AI agent that handled the call
-- **From Number** - Calling party's phone number
-- **To Number** - Receiving party's phone number
-- **Call Duration** - Total call length in HH:MM:SS format
-- **Call Type** - Web Call or Phone Call designation
-- **Direction** - Inbound, outbound, or web call direction
-- **Hangup Reason** - Why the call ended (User Hangup, Dial Failed, etc.)
-- **User Sentiment** - Customer sentiment analysis (Neutral, Positive, Negative, Unknown)
-- **Call Successful** - Success status of the call (Yes/No)
-- **Recording** - Audio recording availability and playback controls
+- **ID** - Unique identifier (sortable)
+- **Action** - View, Edit, Delete buttons
+- **Time** - Call timestamp (sortable)
+- **Agent Name** - Handling agent (filterable)
+- **From/To Number** - Phone numbers (searchable)
+- **Call Duration** - Length in HH:MM:SS (sortable)
+- **Call Type** - Web or Phone designation
+- **Direction** - Visual call direction indicators
+- **User Sentiment** - Color-coded sentiment badges
+- **Hangup Reason** - Termination details (optional)
+- **Call Successful** - Status indicator (optional)
+- **Recording** - Audio playback controls
+- **Call Summary** - AI overview (optional)
+- **Call Transcript** - Transcription access (optional)
 
 ![AI Dashboard Interface](/images/ai/call-history-id.png)
 
-
-
 ## Detailed Call View
 
-When you click the "View" action for any call record, a comprehensive call details page opens:
-
-### Call Information Header
-- **Call Timestamp** - Exact date and time (e.g., "06-19-2025 12:01 AM")
-- **Agent Details** - Shows which AI agent handled the call
-- **Call Context** - Additional call metadata and context information
+Click "View" action for comprehensive call details:
 
 ### Audio Playback Controls
 - **Audio Timeline** - Visual representation of call duration with playback controls
@@ -70,11 +75,10 @@ When you click the "View" action for any call record, a comprehensive call detai
 
 ![AI Dashboard Interface](/images/ai/call-history-header.png)
 
-
-### Conversation Analysis
-- **Call Summary** - AI-generated overview of the call content and outcomes
-- **Key Insights** - Important points and decisions made during the call
-- **Performance Metrics** - Call success indicators and quality scores
+### Analysis & Transcription
+- **Call Summary** - AI-generated overview and insights
+- **Performance Metrics** - Success indicators and quality scores
+- **Full Transcript** - Complete conversation with speaker identification and timestamps
 
 ![AI Dashboard Interface](/images/ai/call-history-conversation,analysis.png)
 
@@ -85,37 +89,4 @@ When you click the "View" action for any call record, a comprehensive call detai
 - **Conversation Flow** - Sequential display of the entire interaction
 - **Searchable Content** - Find specific words or phrases within the transcript
 
-
 ![AI Dashboard Interface](/images/ai/call-history-transcription.png)
-
-
-
-
-## Navigation & Pagination
-
-### Table Navigation
-- **Entries Display Control** - Select 10, 25, 50, or 100 entries per page (currently set to 10)
-- **Pagination Controls** - Navigate through pages using Previous/Next buttons or direct page numbers
-- **Results Counter** - "Showing 0 to 0 of 0 entries" displays current empty state
-- **Search Functionality** - "Search Log..." placeholder in search box for finding call records
-
-![AI Dashboard Interface](/images/ai/call-history-pagination.png)
-
-
-
-## Quick Actions
-
-<CardGroup cols={2}>
-  <Card title="Filter Calls" icon="filter">
-    Use advanced filters to find specific call records
-  </Card>
-  <Card title="View Details" icon="eye">
-    Click view action to see full call transcripts and analysis
-  </Card>
-  <Card title="Search Records" icon="magnifying-glass">
-    Search across all call history data
-  </Card>
-  <Card title="Navigate Pages" icon="chevron-right">
-    Browse through paginated call records
-  </Card>
-</CardGroup> 
