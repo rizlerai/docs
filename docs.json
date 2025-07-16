@@ -166,6 +166,7 @@
             "group": "Calendar",
             "icon": "calendar",
             "pages": [
+              "calendar/calendar",
               "calendar/google-calendar"
             ]
           },
