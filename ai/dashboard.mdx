@@ -9,14 +9,12 @@ icon: "chart-line"
 The AI Dashboard provides a complete view of your call center operations with advanced filtering options:
 
 - **Agent Selection** - Filter data by specific agents or view all agents
-- **Date Range Controls** - Analyze performance over custom time periods (Last 7 Days default)
+- **Date Range Controls** - Analyze performance over custom time periods 
 - **Real-time Updates** - Live data refresh for current metrics
 
 ![AI Dashboard Interface](/images/ai/dashbaord-filter.png)
 
 ## Key Performance Metrics
-
-### Primary KPIs
 - **Total Agents** - Number of active AI agents in your system
 - **Total Numbers** - Phone numbers configured for inbound/outbound calls
 - **Total Calls** - Complete call volume for selected period
@@ -35,23 +33,35 @@ The AI Dashboard provides a complete view of your call center operations with ad
 
 ![AI Dashboard Interface](/images/ai/dashbaord-call-counts.png)
 
-### Performance Metrics
 
-#### Call Success Analytics
-- **Call Success Rate** - Percentage breakdown of successful vs. unsuccessful calls
-- **Call Directions** - Inbound vs. outbound call distribution
+### Call Performance Overview
+
+Monitor call center effectiveness through interactive donut charts showing success rates and call direction distribution.
+
+### Call Success Rate Analysis
+- **Successful Calls** - Calls that achieved their intended outcome
+- **Unsuccessful Calls** - Calls that didn't meet success criteria
+- **Unknown Status** - Calls with unclear outcomes requiring follow-up
+
+### Call Direction Distribution
+- **Outbound Calls** - Proactive calls to prospects and customers
+- **Web-initiated Calls** - Calls from web interactions or forms
+- **Inbound Calls** - Calls received from customers and prospects
+
+![AI Dashboard Interface](/images/ai/call-direction.png)
+
+#### Customer Experience Insights
+- **Disconnection Reasons** - Analysis of why calls end (user hangup, voicemail reached, etc.)
+- **User Sentiment Distribution** - Customer satisfaction analysis from call interactions
+
+![AI Dashboard Interface](/images/ai/dashbaord-disconnection-reason.png)
+
+### Performance Metrics
 - **Call Picked Up Rate** - Answer rate for outbound calls
-- **Call Successful Rate** - Completion rate for all call types
+- **Call Success Rate** - Percentage breakdown of successful vs. unsuccessful calls
 
 ![AI Dashboard Interface](/images/ai/dashbaord-call-rate.png)
 
-
-
-#### Customer Experience Insights
-- **User Sentiment Distribution** - Customer satisfaction analysis from call interactions
-- **Disconnection Reasons** - Analysis of why calls end (user hangup, voicemail reached, etc.)
-
-![AI Dashboard Interface](/images/ai/dashbaord-disconnection-reason.png)
 
 - **Call Transfer Rate** - Frequency of calls requiring human intervention
 - **Voicemail Rate** - Percentage of calls reaching voicemail systems
@@ -61,34 +71,9 @@ The AI Dashboard provides a complete view of your call center operations with ad
 
 #### Operational Efficiency
 - **Average Call Duration Trends** - Track how call lengths change over time
-- **Appointment Conversion** - Calls that result in scheduled appointments
+- **Appointment Tracking** - Monitor scheduled meetings and conversion rates over time
 - **Peak Performance Hours** - Identify optimal calling times
 
-![AI Dashboard Interface](/images/ai/dashbaord-average-callduration.png)
-
-## Understanding Your Data
-
-### Success Rate Indicators
-- **Green Metrics** - Positive performance indicators (successful calls, appointments)
-- **Red Metrics** - Negative performance indicators (unsuccessful calls,no appointments)
-
-![AI Dashboard Interface](/images/ai/dashbaord-call-success.png)
+![AI Dashboard Interface](/images/ai/appointment.png)
 
 
-
-## Quick Actions
-
-<CardGroup cols={2}>
-  <Card title="Manage AI Agents" icon="robot" href="/ai/agents">
-    Configure and monitor your AI agents performance
-  </Card>
-  <Card title="Phone Numbers" icon="phone" href="/ai/phone-numbers">
-    Manage phone number integrations and call routing
-  </Card>
-  <Card title="Call Analytics" icon="chart-line">
-    Deep dive into call performance and customer insights
-  </Card>
-  <Card title="Reports" icon="file-chart-column">
-    Generate detailed reports for stakeholders
-  </Card>
-</CardGroup> 
