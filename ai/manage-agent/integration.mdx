@@ -3,64 +3,90 @@ title: "Integration"
 description: "Configure GoHighLevel (GHL) integration and automated post-call analysis workflows. This section enables seamless data synchronization between your AI agent and GHL CRM system."
 icon: "link"
 ---
-## GHL Integration & Post-Call Analysis
 
-### Recording & Transcription
 
-**Send Recording to GHL**
+# 🔗 Integration
+
+## 🎙️ Recording & Transcription
+
+### 📼 Send Recording to GHL
 - **Purpose**: Automatically upload call recordings to GoHighLevel CRM
 - **Configuration**: Select GHL field/location for recording storage
 - **Benefit**: Centralized call record management and compliance
 
-**Send Transcription To GHL**
+### 📝 Send Transcription To GHL
 - **Purpose**: Transfer AI-generated call transcripts to GHL
 - **Configuration**: Choose destination field for transcript data
 - **Benefit**: Searchable conversation records and analysis
 
-![Integration](/images/ai/recording-transcription.png)
-### Call Data Management
+### 😊 Send User Sentiment to GHL
+- **Purpose**: Log AI-detected user sentiment (positive, neutral, negative) in GoHighLevel
+- **Configuration**: Map sentiment data to a GHL field
+- **Benefit**: Enables advanced customer experience analytics and follow-up prioritization
 
-**Send Call Duration to GHL**
+### 🗒️ Send Call Summary to GHL
+- **Purpose**: Store AI-generated call summaries in GHL
+- **Configuration**: Choose summary destination field
+- **Benefit**: Quick review of call outcomes and context for future interactions
+
+![Integration](/images/edit-manage-agent/integration/image1.png)
+
+## ⏱️ Call Data Management
+
+### ⏳ Send Call Duration to GHL
 - **Purpose**: Log call length metrics in GoHighLevel
 - **Configuration**: Map to specific GHL duration field
 - **Usage**: Performance tracking and billing analysis
 
-**GHL Tag Call Direction**
+### 🔄 GHL Tag Call Direction
 - **Purpose**: Categorize calls as inbound/outbound in GHL
 - **Configuration**: Select tag field for call direction
 - **Benefit**: Directional call analytics and reporting
 
-![Integration](/images/ai/data-call.png)
-### Call Status Tags
+![Integration](/images/edit-manage-agent/integration/image2.png)
+
+## 🏷️ Call Status Tags
 
 Automatically tag calls in GHL based on call outcomes:
 
-**GHL Tag on Answered**
+### ✅ GHL Tag on Answered
 - **Trigger**: When calls are successfully answered
 - **Configuration**: Select tag for answered calls
 - **Purpose**: Track successful connection rates
 
-**GHL Tag on No-Answered**
+### ❌ GHL Tag on No-Answered
 - **Trigger**: When calls go unanswered
 - **Configuration**: Choose tag for missed calls
 - **Purpose**: Identify follow-up opportunities
 
-**GHL Tag on Busy**
+### 📵 GHL Tag on Busy
 - **Trigger**: When calls encounter busy signals
 - **Configuration**: Set tag for busy call status
 - **Purpose**: Schedule optimal callback times
 
-**GHL Tag On Voicemail**
+### 📬 GHL Tag On Voicemail
 - **Trigger**: When calls reach voicemail systems
 - **Configuration**: Select voicemail detection tag
 - **Purpose**: Track voicemail delivery rates
 
-![Integration](/images/ai/status-tag.png)
-### Appointment Tags
-
-**GHL Tag On Appointment**
+### 📅 GHL Tag On Appointment
 - **Purpose**: Automatically tag contacts when appointments are scheduled
 - **Configuration**: Choose appointment confirmation tag
 - **Benefit**: Streamlined appointment management workflow
 
-![](/images/ai/appointment-tag.png)
+### 🔀 GHL Tag On Call Transfer
+- **Trigger**: When calls are transferred to another agent or department
+- **Configuration**: Select tag for transferred calls
+- **Purpose**: Track and analyze call transfer frequency and reasons
+
+### 🙋‍♂️ GHL Tag On User Hang Up
+- **Trigger**: When the user disconnects the call
+- **Configuration**: Choose tag for user-initiated hang ups
+- **Purpose**: Identify and address potential drop-off points in call flows
+
+### 🚫 GHL Tag On Failed Outbound call
+- **Trigger**: Applied when an outbound call fails due to reasons such as agent inactivity, zero account balance, missing client or outbound number, concurrent limit exceeded, or telephony/system errors (e.g., SIP, internal, or platform errors).
+- **Configuration**: Set tag for failed outbound attempts
+- **Purpose**: Monitor and improve outbound call success rates
+
+![Integration](/images/edit-manage-agent/integration/image3.png)
