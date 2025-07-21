@@ -6,8 +6,185 @@ icon: "users"
 
 # User Management
 
-Manage users, permissions, and access controls for your system.
+The User Management section allows administrators to create, edit, and manage user accounts within the system. This includes setting up different user roles, configuring access permissions, and managing user statuses.
 
-## User Administration
+## Overview
 
-Add, edit, and manage user accounts and their permissions. 
+The User Management interface provides a comprehensive dashboard for managing all user accounts. The main screen displays a table listing all users with their key information and provides tools for adding new users, searching, and performing actions on existing accounts.
+
+### Key Features
+
+- **User Listing**: View all users in a sortable table format
+- **Add Users**: Create new user accounts with specific configurations
+- **Edit Users**: Modify existing user settings and permissions
+- **Search & Filter**: Quickly find specific users
+- **Bulk Actions**: Perform actions on multiple users
+- **Role Management**: Assign different roles and permissions
+
+## User Listing
+
+The main user listing page displays all users in a table format with the following information:
+
+### Table Columns
+
+| Column | Description |
+|--------|-------------|
+| **#** | Row number/User ID |
+| **Name** | User's full name |
+| **Email** | User's email address |
+| **Phone #** | User's primary phone number |
+| **Phone EXT** | User's phone extension (if applicable) |
+| **Status** | Account status (Active, Pending, Inactive) |
+| **Created At** | Date and time when the account was created |
+| **Action** | Available actions (Login, Edit, Delete) |
+
+### Table Controls
+
+- **Add Button**: Blue button to create new users
+- **Show Entries**: Dropdown to control number of entries displayed per page (default: 10)
+- **Search Bar**: Search users by name, email, or other criteria
+- **Sortable Headers**: Click column headers to sort data
+
+### Action Buttons
+
+Each user row includes three action buttons:
+
+- **Login** : Allows administrators to log in as that user
+- **Edit** : Opens the edit form for that user
+- **Delete**: Removes the user account (with confirmation)
+
+## Adding New Users
+
+To add a new user, click the **Add** button in the top-left corner of the user listing page.
+
+### Add User Form Fields
+
+#### Basic Information
+- **Name**: User's full name
+- **Email**: User's email address (used for login)
+- **Phone Number**: User's primary contact number
+- **Password**: User's login password
+
+#### Account Settings
+- **Status**: Account status (Pending, Active, Inactive)
+- **Role**: User role (Agent, Admin, etc.)
+- **Dialer**: Whether user can access dialer features (Yes/No)
+- **Use Balance**: Balance allocation (User/Company)
+- **EXT Phone**: Phone extension or area code
+- **Local Presence**: Local presence settings (Yes/No)
+
+#### Billing Configuration
+- **Pay for seat**: Who pays for the user seat
+  - "No (Company Pay for seat)"
+  - "Rizzler (Direct to Rizzler)"
+- **Use Package Seats Limits**: Package seat limit configuration
+  - "No (Subscription with company card)"
+  - "Yes" (if company has user limits from package)
+
+### Configuration Guidelines
+
+The form includes helpful guidelines for different account setups:
+
+#### Admin Account Setup
+- **Dialer**: No (If dialer Yes then admin also need to pay for use.)
+- **Pay for seat**: No (Company Pay for seat)
+- **Use Package Seats Limits**: Yes
+
+#### Agent Directly Pay To Rizler
+- **Dialer**: Yes
+- **Pay for Seat**: Rizzler (Direct to Rizzler)
+
+#### Company Paying for Agents
+- **Dialer**: Yes
+- **Pay for seat**: No (Company Pay for seat)
+- **Use Package Seats Limits**: If company have user limits from package then select Yes, if no limit remaining then select No (Subscription with company card)
+
+## Editing Users
+
+To edit an existing user, click the **Edit** button in the user's action column.
+
+### Edit User Form
+
+The edit form displays the same fields as the add form, but with current values pre-filled. You can modify any field and save changes by clicking the **Submit** button.
+
+### Common Edits
+
+- **Status Changes**: Activate/deactivate user accounts
+- **Role Updates**: Change user permissions and access levels
+- **Contact Information**: Update phone numbers and extensions
+- **Billing Settings**: Modify payment and seat allocation settings
+
+## User Status Management
+
+### Available Statuses
+
+- **Active**: User can access the system normally
+- **Pending**: User account created but not yet activated
+- **Inactive**: User account temporarily disabled
+
+### Status Change Workflow
+
+1. Select the user from the listing
+2. Click the **Edit** button
+3. Change the status in the dropdown
+4. Click **Submit** to save changes
+
+## Search and Filtering
+
+### Search Functionality
+
+Use the search bar to find specific users by:
+- Name
+- Email address
+- Phone number
+
+### Pagination
+
+The system supports pagination for large user lists:
+- Navigate between pages using Previous/Next buttons
+- View current page number
+- See total number of entries displayed
+
+## Best Practices
+
+### User Creation
+- Always verify email addresses before creating accounts
+- Set appropriate roles based on user responsibilities
+- Configure billing settings according to company policies
+- Use strong passwords for initial accounts
+
+### User Management
+- Regularly review user statuses and permissions
+- Update contact information when users change roles
+- Monitor seat usage and billing allocations
+- Archive inactive users instead of deleting them
+
+### Security Considerations
+- Limit admin access to authorized personnel only
+- Regularly audit user permissions
+- Use the login-as-user feature sparingly and for troubleshooting only
+- Implement password policies and regular updates
+
+## Troubleshooting
+
+### Common Issues
+
+**User Cannot Login**
+- Check if account status is set to "Active"
+- Verify email address is correct
+- Ensure password meets complexity requirements
+
+**Billing Issues**
+- Confirm "Pay for seat" settings match company policy
+- Check "Use Package Seats Limits" configuration
+- Verify dialer permissions are set correctly
+
+**Missing Permissions**
+- Review user role assignments
+- Check dialer access settings
+- Verify balance allocation settings
+
+### Support
+
+For additional assistance with user management, contact your system administrator or refer to the support documentation.
+

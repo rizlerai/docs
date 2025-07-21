@@ -8,73 +8,120 @@ Easily manage your calendars, appointments, and bookings from a single dashboard
 
 ![calendar](/images/calendar/image1.png)
 
-## Dashboard stats
-  At the top, see quick stats for:
-  - Total Calendars
-  - Active Bookings
-  - Pending Bookings
-  - Google Connected accounts
+## Dashboard Overview
+
+At the top of the Calendar Management page, you'll see four colored stat cards:
+
+- **Total Calendars** 
+- **Active Bookings** 
+- **Pending Bookings** 
+- **Google Connected**
+
+Each card displays a large number and a label. The navigation breadcrumb at the top right is:
 
 ![Calendar](/images/calendar/image2.png)
 
-## My Calendars
+---
 
-The "My Calendars" section displays all your created calendars in an organized card-based layout. Each calendar card provides essential information at a glance and quick access to management options.
+## Tab Navigation
 
-### Calendar Card Information
+Below the stats, there are three main tabs:
 
-Each calendar card displays:
+- **Calendar**: View and manage your calendars and events
+- **Appointments**: See all appointments and events in a table with filters
+- **Settings**: Manage calendar settings and create new calendars
 
-- **Calendar Icon**: A colored circular icon representing the calendar
-- **Calendar Name**: The name you assigned to the calendar 
-- **Type Tag**: A colored tag indicating the calendar type:
-  - **Personal** : For individual appointments and personal scheduling
-  - **Company**: For business meetings and corporate events
-- **Description**: Brief details about the calendar's purpose (e.g., "Testing", "No description")
-- **Status Tags**: Important indicators showing calendar functionality:
-  - **Booking Enabled** : Users can book appointments on this calendar
-  - **Google Connected**: Calendar is synced with Google Calendar
-- **Action Menu**: Three-dot menu (•••) in the top-right corner for additional options
+The selected tab is highlighted with a blue underline. Switching tabs updates the content below.
+
+---
+
+## My Calendars Sidebar
+
+On the **Calendar** tab, the left sidebar lists "My Calendars":
+
+- Each calendar has a checkbox to select/deselect it for viewing
+- A "Select All" button at the top right of the list lets you quickly select or deselect all calendars
+- Each calendar has a three-dot menu (**•••**) with these options:
+  - **Manage**: Open detailed management for the calendar
+  - **Bookings**: View all bookings for the calendar
+  - **Delete**: Remove the calendar (confirmation required)
+
+Selecting calendars updates the main calendar view to show events for the selected calendars.
 
 ![calendar](/images/calendar/image3.png)
 
-### Creating a New Calendar
+---
 
-When you click the "+ Create Calendar" button, a modal will open with the following options:
+## Appointments & Events
+
+The **Appointments** tab provides a comprehensive table of all your appointments and events. You can:
+
+- **Filter by status** using colored pills at the top:
+  - **All** (shows total count)
+  - **Pending** 
+  - **Confirmed** 
+  - **Cancelled** 
+  - **Completed** 
+  - **Upcoming** 
+- **Select Calendars**: Filter events by specific calendars using the selector at the top right.
+- **Search**: Use the search box to quickly find events by title, attendee, or other details.
+- **Pagination**: Navigate through pages of events using the Previous/Next controls at the bottom right.
+
+### Table Columns
+
+- **Title**: Name of the event or appointment
+- **Calendar**: The calendar this event belongs to
+- **Date & Time**: When the event is scheduled
+- **Duration**: Length of the event (e.g., 30 min)
+- **Status**: Current status (e.g., Confirmed, Pending)
+- **Attendees**: List of participants
+- **Location**: Where the event will take place (or N/A)
+- **Actions**: View or manage the event (eye icon for view, other icons for additional actions)
+
+![calendar](/images/calendar/image-appointment.png)
+
+---
+
+## Settings Tab
+
+The **Settings** tab allows you to manage all your calendars in one place. At the top right, you'll find the **+ Create New Calendar** button to add a new calendar.
+
+Below, the **Calendar Settings Management** table lists all calendars with the following columns:
+
+- **Name**: Calendar name
+- **Type**: Personal or Business
+- **Description**: Brief details about the calendar
+- **Booking Enabled**: Shows if booking is enabled (green "Enabled" tag)
+- **Google Connected**: Shows if the calendar is connected to Google (blue "Connected" or "Not Connected" tag)
+- **Status**: Current status (green "Active" tag)
+- **Created**: Date the calendar was created
+- **Actions**: Manage (gear icon), Bookings (calendar icon), Edit (yellow icon), Delete (red trash icon)
+
+You can search calendars using the search box, and navigate through pages using the pagination controls at the bottom right.
+
+![calendar](/images/calendar/image-settings.png)
+
+---
+
+## Creating a New Calendar
+
+Click the **+ Create New Calendar** button (in the Settings tab) to open a modal with these options:
+
+![calendar](/images/calendar/image-new2.png)
 
 - **Calendar Name** (required): Enter a name for your calendar.
-- **Type**: Select the calendar type (e.g., Personal, Company).
-- **Description**: Add optional details about the calendar's purpose.
-- **Color**: Choose a color to help visually distinguish this calendar.
-- **Booking Settings**: Enable "Allow slot booking" to let users book time slots on this calendar.
+- **Type**: Select the calendar type (Personal or Business) from the dropdown.
+- **Description**: Optionally add details about the calendar's purpose.
+- **Color**: Choose a calendar color using the color picker.
+- **Who can book appointments?**: Choose who can book appointments (e.g., Internal only/company users, Public, or Both).
+- **Calendar URL**: Shows the booking link for your calendar. If set to internal, a note will indicate that only company users can book. Change the booking type to "public" or "both" to enable external bookings.
+- **Slot Duration**: Set the default appointment length (e.g., 30 minutes).
+- **Buffer Time**: Add buffer time between appointments (e.g., No buffer, 10 min, etc.).
+- **Max Advance Days**: Set how many days in advance bookings can be made (e.g., 30).
 
-Click **Create Calendar** to save your new calendar, or **Cancel** to close the modal without saving.
+At the bottom, use **Cancel** to close the modal without saving, or **Create Calendar** to save your new calendar.
 
-![calendar](/images/calendar/image8.png)
-
-### Calendar Actions
-
-Click the three-dot menu (•••) on any calendar card to access:
-
-- **Manage Calendar**: Opens the comprehensive calendar management interface with five tabs (Overview, Settings, Availability, Booking, Integration)
-- **View Events**: Shows all scheduled events and appointments for the selected calendar
-- **View Bookings**: Displays all pending and confirmed bookings
-- **Edit Calendar**: Quick access to modify basic calendar information
-- **Delete Calendar**: Remove the calendar and all associated data (requires confirmation)
-
-![calendar](/images/calendar/image4.png)
-
-### Calendar View Integration
-
-The right panel "Calendar View" works in conjunction with My Calendars:
-
-- **Select Calendar**: Choose which calendar to display in the main view
-- **Event Display**: View all events and bookings for the selected calendar
-- **Empty State**: When no calendar is selected, shows helpful guidance to choose a calendar
-
-![calendar](/images/calendar/image5.png)
-
-
+![calendar](/images/calendar/image-new1.png)
 
 ## Managing Calendars
 
