@@ -1,68 +1,16 @@
 ---
 title: "Reselling Setup"
-description: "Configure reseller programs, pricing models, and partner management within Rizler"
+description: "Comprehensive package management system with dynamic pricing, multiplier-based rates, and real-time profit tracking for reseller operations"
 icon: "handshake"
 ---
 
-Configure and manage your reseller program, partner relationships, and pricing packages within the Rizler platform.
+Manage your complete reselling package portfolio with advanced pricing controls, multiplier-based rates, and real-time profit tracking within the Rizler platform.
 
 ## 📋 Overview
 
-The Reselling Setup module allows you to manage your complete reseller operation including Stripe payment integration, contact information, payout details, and comprehensive package management for all your services.
+The Reselling Package Management system provides comprehensive tools for creating, configuring, and optimizing service packages with dynamic pricing multipliers, real-time cost calculations, and transparent profit margin tracking. Manage everything from basic communication services to AI-powered solutions with flexible pricing tiers for different customer segments.
 
-## 🚀 Initial Setup
 
-### 💳 Stripe Payment Integration
-
-To begin accepting payments for your reseller program, you need to configure Stripe integration:
-
-<Steps>
-  <Step title="Stripe Setup">
-    Click the "Stripe Setup" button to configure your payment processing
-  </Step>
-  <Step title="Connect Account">
-    Connect your Stripe account to enable payment processing
-  </Step>
-  <Step title="Configure Webhooks">
-    Set up webhooks for real-time payment notifications
-  </Step>
-  <Step title="Test Integration">
-    Verify payment processing with test transactions
-  </Step>
-</Steps>
-
-## 📞 Contact Information Configuration
-
-### 🏢 Business Details Setup
-
-Configure your business contact information for customer communications:
-
-<AccordionGroup>
-  <Accordion title="Basic Information">
-    **Required Fields:**
-    - **Name**: Your business or contact name
-    - **Account Email**: Primary email for account communications
-    - **Website**: Your business website URL
-  </Accordion>
-
-  <Accordion title="Support Information">
-    **Support Contact Details:**
-    - **Support Email**: Dedicated email for customer support
-    - **Support Phone**: Phone number for customer assistance
-    - **Support Website**: URL to your support portal or help center
-  </Accordion>
-</AccordionGroup>
-
-## 💰 Payout Information
-
-### 🏦 Payment Configuration
-
-Set up your payout preferences and banking information:
-
-- **Payment Methods**: Configure preferred payment methods for commissions
-- **Banking Details**: Add bank account information for direct deposits
-- **Payment Schedule**: Set up automatic payout frequency (daily, weekly, monthly)
-- **Minimum Payout**: Configure minimum payout thresholds
 
 ## 📦 Package Management
 
@@ -104,329 +52,367 @@ To create a new service package, use the "Add New Record" feature:
     Activate the package for reseller availability
   </Step>
 
-  
-
 </Steps>
-![Reselling packages](/images/business-management/reselling-edit-pakages.png)
+  ### ✏️ Editing Packages
+
+Modify existing packages through the package management interface. **Edit Button** directs you to editing interface where you can manage all billing and other features.
 ## 🛍️ Available Service Packages
 
-### One Time Setup Fee
+### 🔧 One Time Setup Fee
+![One Time Setup](/images/business-management/oneTime-fee.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $0.50
-    - Package Price: $1.99
+    **One-Time Setup Fee:**
+    A configurable charge applied once per customer during initial onboarding.
     
-    **Pricing Range:** $0.50 - $1.99
+    **Billing Structure:**
+    - Setup Fee: Configurable amount
+    - Applied: Once per customer
+
+  </Accordion>
+</AccordionGroup>
+### 📦 Package Price
+
+![One Time Setup](/images/business-management/package-price.png)
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Package Price:**
+    Monthly subscription fee for complete service packages.
+    
+    **Billing Structure:**
+    - Monthly Rate: Custom amount
+    - Billing: Monthly recurring
   </Accordion>
 </AccordionGroup>
 
-### Per Seat With Carrier
+### 💺 Per Seat With Carrier
+![One Time Setup](/images/business-management/per-seat-with-carrier.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 1.9x: Premium rate  
-    - 100x: Enterprise rate
+    **Per Seat With Carrier Configuration:**
+    Per-seat pricing model that includes carrier services and connectivity. Charges apply per user account with full carrier integration and telephony features.
     
     **Billing Structure:**
-    - Per Seat With Carrier: $0.00/m
-    - Monthly charge to customer: $0.00/m
-    - Monthly Profit: $0.00/m
+    - Per Seat Rate: Configurable monthly amount
+    - Includes: Carrier services and connectivity
+    - Applied: Per active user seat
   </Accordion>
 </AccordionGroup>
 
-### Per Seat Without Carrier
+### 🚀 Per Seat Without Carrier
+
+![Per Seat Without Carrier](/images/business-management/per-seat-without-carrier.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 1.7x: Premium rate
-    - 100x: Enterprise rate
+    **Per Seat Without Carrier Configuration:**
+    Per-seat pricing model for standalone services without carrier dependencies. Ideal for software-only solutions and API-based integrations.
     
     **Billing Structure:**
-    - Per Seat Without Carrier: $0.00/m
-    - Monthly charge to customer: $0.00/m
-    - Monthly Profit: $0.00/m
+    - Per Seat Rate: Configurable monthly amount
+    - Includes: Software services and features
+    - Applied: Per active user seat
   </Accordion>
 </AccordionGroup>
 
-### Rizz Inbound Call Cost
+### 📞 Rizz Inbound Call Cost
+
+![Rizz Inbound Call Cost](/images/business-management/rizz-inbound-call.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 3.1x: Premium rate
-    - 100x: Enterprise rate
+    **Rizz Inbound Call Cost Configuration:**
+    Per-minute pricing for incoming voice calls with intelligent routing and call management features. Includes AI-powered call handling and analytics.
     
     **Billing Structure:**
-    - Inbound Call Cost: $0.30
-    - Monthly charge to customer: $0.93/Min
-    - Monthly Profit: $0.63/Min
+    - Base Cost: Configurable per-minute rate
+    - Customer Rate: Multiplier-based pricing
+    - Applied: Per minute of inbound calls
   </Accordion>
 </AccordionGroup>
 
-### Rizz Outbound Call Cost
+### 📱 Rizz Outbound Call Cost
+
+![Rizz Outbound Call Cost](/images/business-management/rizz-outbound-call.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 1.5x: Premium rate
-    - 100x: Enterprise rate
+    **Rizz Outbound Call Cost Configuration:**
+    Per-minute pricing for outgoing voice calls with advanced dialing capabilities and call quality optimization. Includes automated dialing and campaign management.
     
     **Billing Structure:**
-    - Outbound Call Cost: $0.30
-    - Monthly charge to customer: $0.45/Min
-    - Monthly Profit: $0.15/Min
+    - Base Cost: Configurable per-minute rate
+    - Customer Rate: Multiplier-based pricing
+    - Applied: Per minute of outbound calls
   </Accordion>
 </AccordionGroup>
 
-### Rizz SMS Inbound
+### 📨 Rizz SMS Inbound
+
+![Rizz SMS Inbound](/images/business-management/rizz-sms-inbound.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 1.4x: Premium rate
-    - 100x: Enterprise rate
+    **Rizz SMS Inbound Configuration:**
+    Per-message pricing for incoming SMS and MMS messages with automated processing and routing. Includes keyword recognition and auto-response capabilities.
     
     **Billing Structure:**
-    - SMS Inbound Cost: $0.20
-    - Monthly charge to customer: $0.28/Min
-    - Monthly Profit: $0.08/Min
+    - Base Cost: Configurable per-message rate
+    - Customer Rate: Multiplier-based pricing
+    - Applied: Per incoming SMS/MMS message
   </Accordion>
 </AccordionGroup>
 
-### Rizz SMS Outbound
+### 📤 Rizz SMS Outbound
+
+![Rizz SMS Outbound](/images/business-management/rizz-sms-outbound.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Pricing Multipliers:**
-    - 1x: Standard rate
-    - 1.1x: Premium rate
-    - 100x: Enterprise rate
+    **Rizz SMS Outbound Configuration:**
+    Per-message pricing for outgoing SMS and MMS campaigns with bulk sending capabilities. Includes delivery tracking and campaign management features.
     
     **Billing Structure:**
-    - SMS Outbound Cost: $0.20
-    - Monthly charge to customer: $0.22/Min
-    - Monthly Profit: $0.02/Min
+    - Base Cost: Configurable per-message rate
+    - Customer Rate: Multiplier-based pricing
+    - Applied: Per outgoing SMS/MMS message
   </Accordion>
 </AccordionGroup>
 
-### Rizz Phone Number Cost
+### 🔢 Rizz Phone Number Cost
+
+![Rizz Phone Number Cost](/images/business-management/rizz-phone-number.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Service Features:**
-    - Phone number provisioning and management
-    - Number portability support
-    - Geographic and toll-free options
-    - Advanced routing capabilities
+    **Rizz Phone Number Cost Configuration:**
+    Monthly subscription for phone number provisioning and management with advanced routing capabilities. Includes number portability and geographic/toll-free options.
+    
+    **Billing Structure:**
+    - Monthly Rate: Configurable per-number cost
+    - Includes: Number provisioning and routing
+    - Applied: Per active phone number
   </Accordion>
 </AccordionGroup>
-### AI Call GPT-4.1
+### 🤖 AI Call GPT-4.1
+
+![AI Call GPT-4.1](/images/business-management/ai-call-gpt4.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.50
-    - Package Price: $149.99
+    **AI Call GPT-4.1 Configuration:**
+    Advanced AI-powered call handling using GPT-4.1 technology for intelligent conversation management, automated responses, and natural language processing.
     
-    **Pricing Range:** $3.50 - $149.99
+    **Billing Structure:**
+    - Base Cost: Configurable AI processing rate
+    - Customer Rate: Multiplier-based pricing
+    - Applied: Per AI call interaction
+  </Accordion>
+</AccordionGroup>
+ 
+
+### 📊 AI Call GPT-4.1 Nano
+
+![AI Call GPT-4.1 Nano](/images/business-management/ai-call-gpt4-nano.png)
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **AI Call GPT-4.1 Nano Configuration:**
+    Lightweight GPT-4.1 Nano AI call service optimized for fast processing and cost-effective operations with streamlined functionality.
+    
+    **Billing Structure:**
+    - Base Cost: Nano AI processing rates
+    - Customer Rate: Lightweight service multipliers
+    - Applied: Per nano AI interaction
   </Accordion>
 </AccordionGroup>
 
-### AI Call GPT-4.1 Cost
+### ⏱️ AI Call GPT-4.1 Mini  Cost
+
+![AI Call GPT-4.1 Mini Cost](/images/business-management/ai-call-gpt4-mini.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $4.00
-    - Package Price: $169.99
+    **AI Call GPT-4.1 Mini Cost Configuration:**
+    Per-minute billing for GPT-4.1 AI call services designed for enterprise applications with precise time-based cost tracking.
     
-    **Pricing Range:** $4.00 - $169.99
+    **Billing Structure:**
+    - Base Cost: Per-minute AI processing rate
+    - Customer Rate: Time-based multiplier pricing
+    - Applied: Per minute of AI call usage
+  </Accordion>
+</AccordionGroup>
+### 🎭 AI Call Claude 3.7 haiku
+
+![AI Call Claude 3.7 haiku](/images/business-management/ai-call-claude-haiku-3.7.png)
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **AI Call Claude 3.7 Haiku Configuration:**
+    Creative AI call service powered by Claude 3.7 Haiku model for intelligent and artistic conversation responses with natural language understanding.
+    
+    **Billing Structure:**
+    - Base Cost: Claude Haiku processing rate
+    - Customer Rate: Creative AI multiplier pricing
+    - Applied: Per Claude AI call interaction
+  </Accordion>
+</AccordionGroup>
+### 🎭 AI Call Claude 3.5 haiku
+
+![AI Call Claude 3.5 haiku](/images/business-management/ai-call-claude-haiku-3.5.png)
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **AI Call Claude 3.5 Haiku Configuration:**
+    Creative AI call service powered by Claude 3.5 Haiku model for intelligent and artistic conversation responses with natural language understanding.
+    
+    **Billing Structure:**
+    - Base Cost: Claude Haiku processing rate
+    - Customer Rate: Creative AI multiplier pricing
+    - Applied: Per Claude AI call interaction
   </Accordion>
 </AccordionGroup>
 
-### AI Call GPT-4.1 items
+ 
+
+### ⚡ AI Call Gemini 2.0 Flash
+
+![AI Call Gemini 2.0 Flash](/images/business-management/ai-call-gemini.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $2.75
-    - Package Price: $124.99
+    **AI Call Gemini 2.0 Flash Configuration:**
+    High-speed AI call service powered by Gemini 2.0 Flash for rapid response and lightning-fast processing with advanced multimodal capabilities.
     
-    **Pricing Range:** $2.75 - $124.99
+    **Billing Structure:**
+    - Base Cost: High-speed Gemini processing rate
+    - Customer Rate: Flash performance multiplier
+    - Applied: Per high-speed AI interaction
   </Accordion>
 </AccordionGroup>
 
-### AI Call GPT-4.1 Mins Cost
+### 💸 AI Call Gemini 2.0 Flash Lite Cost
+
+![AI Call Gemini 2.0 Flash Cost](/images/business-management/ai-call-gemini-flash.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $4.50
-    - Package Price: $199.99
+    **AI Call Gemini 2.0 Flash Cost Configuration:**
+    Cost-structured Gemini 2.0 Flash service with enterprise billing options and optimized pricing for high-volume AI processing needs.
     
-    **Pricing Range:** $4.50 - $199.99
+    **Billing Structure:**
+    - Base Cost: Enterprise Gemini processing rates
+    - Customer Rate: Volume-optimized multipliers
+    - Applied: Per enterprise AI interaction
   </Accordion>
 </AccordionGroup>
 
-### AI Call Claude 3.5 haiku
+### 📞 Twilio Inbound Call Cost 
+
+![Twilio Inbound Call Cost](/images/business-management/twilio-inbound-call.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.25
-    - Package Price: $134.99
+    **Twilio Inbound Call Cost Configuration:**
+    Reliable Twilio-powered inbound call service for receiving and processing voice calls with automated routing and call handling capabilities.
     
-    **Pricing Range:** $3.25 - $134.99
+    **Billing Structure:**
+    - Base Cost: Twilio call receiving rates
+    - Customer Rate: Inbound call multipliers
+    - Applied: Per received voice call
   </Accordion>
 </AccordionGroup>
 
-### AI Call Claude 3.5 haiku Cost
+### 📞 Twilio Outbound Call Cost 
+
+![Twilio Outbound Call Cost](/images/business-management/twilio-outbound-call.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.75
-    - Package Price: $154.99
+    **Twilio Outbound Call Cost Configuration:**
+    Reliable Twilio-powered outbound call service for making and managing voice calls with automated dialing and call tracking capabilities.
     
-    **Pricing Range:** $3.75 - $154.99
+    **Billing Structure:**
+    - Base Cost: Twilio call making rates
+    - Customer Rate: Outbound call multipliers
+    - Applied: Per made voice call
   </Accordion>
 </AccordionGroup>
 
-### AI Call Gemini 2.0 Flash
+### 📱 Twilio Phone Number Cost 
+
+![Twilio Phone Number Cost](/images/business-management/twilio-phone-number.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $2.50
-    - Package Price: $114.99
+    **Twilio Phone Number Cost Configuration:**
+    Reliable Twilio-powered phone number provisioning service for acquiring and managing dedicated phone numbers with automated setup and maintenance capabilities.
     
-    **Pricing Range:** $2.50 - $114.99
+    **Billing Structure:**
+    - Base Cost: Twilio phone number rental rates
+    - Customer Rate: Number provisioning multipliers
+    - Applied: Per provisioned phone number
   </Accordion>
 </AccordionGroup>
 
-### AI Call Gemini 2.0 Flash Cost
+### 📥 Twilio SMS Inbound
+
+![Twilio SMS Inbound](/images/business-management/twilio-sms-inbound.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.25
-    - Package Price: $144.99
+    **Twilio SMS Inbound Configuration:**
+    Reliable Twilio-powered inbound SMS service for receiving and processing text messages with automated routing and response capabilities.
     
-    **Pricing Range:** $3.25 - $144.99
+    **Billing Structure:**
+    - Base Cost: Twilio SMS receiving rates
+    - Customer Rate: Inbound message multipliers
+    - Applied: Per received SMS message
   </Accordion>
 </AccordionGroup>
 
-### AI Call Claude 3.5 Flash Lite
+ 
+
+### 📤 Twilio SMS Outbound
+
+![Twilio SMS Outbound](/images/business-management/twilio-sms-outbound.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $2.00
-    - Package Price: $94.99
+    **Twilio SMS Outbound Configuration:**
+    Twilio outbound SMS service for sending messages and marketing campaigns with delivery tracking and campaign management features.
     
-    **Pricing Range:** $2.00 - $94.99
+    **Billing Structure:**
+    - Base Cost: Twilio SMS sending rates
+    - Customer Rate: Outbound campaign multipliers
+    - Applied: Per sent SMS message
   </Accordion>
 </AccordionGroup>
 
-### AI Call Claude 3.5 Flash Cost
+### 🤖 Additional KB Price
+
+![Additional KB Price](/images/business-management/additional-kb-price.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.85
-    - Package Price: $164.99
+    **Additional KB Price Configuration:**
+    Additional KB service pricing for extended artificial intelligence capabilities, advanced machine learning features, and premium AI processing power.
     
-    **Pricing Range:** $3.85 - $164.99
+    **Billing Structure:**
+    - Base Cost: Extended AI processing rates
+    - Customer Rate: Advanced capability multipliers
+    - Applied: Per additional AI feature usage
   </Accordion>
 </AccordionGroup>
 
-### Twilio Enhanced Call Cost
+### 🔄 AI CC Charge
+
+![AI OCC Charge](/images/business-management/ai-cc-charge.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $1.40
-    - Package Price: $69.99
+    **AI CC Charge Configuration:**
+    AI-powered outbound calling change service with intelligent adaptation features, dynamic call routing, and automated campaign optimization.
     
-    **Pricing Range:** $1.40 - $69.99
+    **Billing Structure:**
+    - Base Cost: AI outbound calling rates
+    - Customer Rate: Intelligent adaptation multipliers
+    - Applied: Per AI-optimized call change
   </Accordion>
 </AccordionGroup>
 
-### Twilio Phone Number Cost
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $0.60
-    - Package Price: $29.99
-    
-    **Pricing Range:** $0.60 - $29.99
-  </Accordion>
-</AccordionGroup>
+### 🛡️ Spam Protected Price
 
-### Twilio SMS Inbound
+![Spam Protected Price](/images/business-management/spam-protected-price.png)
 <AccordionGroup>
   <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $0.45
-    - Package Price: $24.99
+    **Spam Protected Price Configuration:**
+    Spam protection service pricing for advanced filtering, threat detection, and automated security measures to protect communication channels.
     
-    **Pricing Range:** $0.45 - $24.99
-  </Accordion>
-</AccordionGroup>
-
-### Twilio SMS Inbound Cost
-<AccordionGroup>
-  <Accordion title="Pricing Details">
     **Billing Structure:**
-    - Monthly Charge: $0.65
-    - Package Price: $34.99
-    
-    **Pricing Range:** $0.65 - $34.99
-  </Accordion>
-</AccordionGroup>
-
-### Twilio SMS Outbound
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $0.35
-    - Package Price: $19.99
-    
-    **Pricing Range:** $0.35 - $19.99
-  </Accordion>
-</AccordionGroup>
-
-### Twilio SMS Outbound Cost
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $0.55
-    - Package Price: $29.99
-    
-    **Pricing Range:** $0.55 - $29.99
-  </Accordion>
-</AccordionGroup>
-
-### Additional HS Price
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $1.60
-    - Package Price: $79.99
-    
-    **Pricing Range:** $1.60 - $79.99
-  </Accordion>
-</AccordionGroup>
-
-### AI OC Change
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $2.75
-    - Package Price: $119.99
-    
-    **Pricing Range:** $2.75 - $119.99
-  </Accordion>
-</AccordionGroup>
-
-### Additional AI Price
-<AccordionGroup>
-  <Accordion title="Pricing Details">
-    **Billing Structure:**
-    - Monthly Charge: $3.50
-    - Package Price: $159.99
-    
-    **Pricing Range:** $3.50 - $159.99
+    - Base Cost: Spam protection processing rates
+    - Customer Rate: Security feature multipliers
+    - Applied: Per protected communication channel
   </Accordion>
 </AccordionGroup>
 
@@ -446,9 +432,8 @@ Configure flexible pricing for your service packages:
     - Bandwidth usage fees
   </Card>
   <Card title="Subscription" icon="credit-card">
-    **Monthly/Annual Plans**
+    **Monthly Plans**
     - Fixed monthly rates
-    - Annual discounts
     - Tiered service levels
     - Unlimited usage options
   </Card>
@@ -461,7 +446,6 @@ Configure flexible pricing for your service packages:
   </Card>
 </CardGroup>
 
-### ⚙️ Package Configuration Options
 
 <CheckGroup>
   <Check>Set monthly subscription fees</Check>
@@ -472,75 +456,5 @@ Configure flexible pricing for your service packages:
   <Check>Enable/disable package features</Check>
 </CheckGroup>
 
-## 🔧 Package Administration
 
-### ✏️ Editing Packages
-
-Modify existing packages through the package management interface:
-
-- **Package Details**: Update names, descriptions, and features
-- **Pricing Changes**: Modify rates, limits, and billing terms
-- **Feature Updates**: Add or remove package capabilities
-- **Status Management**: Activate, deactivate, or archive packages
-
-### 📈 Package Tracking
-
-Monitor package performance and usage:
-
-<CardGroup cols={2}>
-  <Card title="Usage Analytics" icon="chart-line">
-    Track package adoption, usage patterns, and revenue generation
-  </Card>
-  <Card title="Customer Feedback" icon="comments">
-    Monitor customer satisfaction and feature requests for packages
-  </Card>
-</CardGroup>
-
-## 💳 Billing and Revenue Management
-
-### 📊 Revenue Tracking
-
-Monitor your reseller program financial performance:
-
-- **Package Revenue**: Track income by individual package
-- **Customer Metrics**: Monitor customer acquisition and retention
-- **Usage Analytics**: Analyze service usage patterns and trends
-- **Profit Margins**: Calculate and optimize package profitability
-
-### 🔄 Billing Integration
-
-Seamless billing integration with your configured payment systems:
-
-<Steps>
-  <Step title="Automated Billing">
-    Set up automatic billing cycles for subscription packages
-  </Step>
-  <Step title="Usage Calculation">
-    Configure real-time usage tracking and billing
-  </Step>
-  <Step title="Invoice Generation">
-    Automate invoice creation and delivery
-  </Step>
-  <Step title="Payment Processing">
-    Process payments through integrated Stripe system
-  </Step>
-</Steps>
-
-## ✨ Best Practices
-
-### 📋 Package Management
-
-<CheckGroup>
-  <Check>Regularly review and update package pricing</Check>
-  <Check>Monitor usage patterns to optimize offerings</Check>
-  <Check>Maintain competitive pricing in the market</Check>
-  <Check>Provide clear package descriptions and terms</Check>
-  <Check>Test new packages with pilot customers</Check>
-</CheckGroup>
-
-### 🎯 Customer Success
-
-- **Clear Documentation**: Provide detailed package documentation
-- **Responsive Support**: Maintain excellent customer support
-- **Regular Communication**: Keep customers informed of updates
-- **Feedback Integration**: Incorporate customer feedback into package improvements 
+ 

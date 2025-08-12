@@ -76,9 +76,9 @@
             "group": "Business Management",
             "icon": "briefcase",
             "pages": [
-              "business-management/companies",
-              "business-management/reselling-setup",
-              "business-management/stripe-setup"
+                     "business-management/stripe-setup",
+                     "business-management/reselling-setup",
+                    "business-management/companies"
             ]
           },
           {
