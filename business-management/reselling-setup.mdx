@@ -4,407 +4,543 @@ description: "Configure reseller programs, pricing models, and partner managemen
 icon: "handshake"
 ---
 
-# Reselling Setup
+Configure and manage your reseller program, partner relationships, and pricing packages within the Rizler platform.
 
-Configure and manage your reseller program, partner relationships, and white-label solutions within the Rizler platform.
+## 📋 Overview
 
-## Overview
+The Reselling Setup module allows you to manage your complete reseller operation including Stripe payment integration, contact information, payout details, and comprehensive package management for all your services.
 
-The Reselling Setup section enables you to create and manage reseller partnerships, configure pricing models, and set up white-label solutions for your business partners and customers.
+## 🚀 Initial Setup
 
-## Reseller Program Configuration
+### 💳 Stripe Payment Integration
 
-### Getting Started
-
-Set up your reseller program with these essential steps:
+To begin accepting payments for your reseller program, you need to configure Stripe integration:
 
 <Steps>
-  <Step title="Program Structure">
-    Define your reseller program tiers, benefits, and requirements
+  <Step title="Stripe Setup">
+    Click the "Stripe Setup" button to configure your payment processing
   </Step>
-  <Step title="Pricing Models">
-    Configure pricing strategies and commission structures
+  <Step title="Connect Account">
+    Connect your Stripe account to enable payment processing
   </Step>
-  <Step title="Partner Onboarding">
-    Set up the partner registration and approval process
+  <Step title="Configure Webhooks">
+    Set up webhooks for real-time payment notifications
   </Step>
-  <Step title="Resource Management">
-    Provide marketing materials, training, and support resources
+  <Step title="Test Integration">
+    Verify payment processing with test transactions
   </Step>
 </Steps>
 
-## Reseller Tiers and Programs
+## 📞 Contact Information Configuration
 
-### Program Types
+### 🏢 Business Details Setup
 
-<CardGroup cols={2}>
-  <Card title="Authorized Reseller" icon="certificate">
-    Basic partnership with standard pricing and commission rates
-  </Card>
-  <Card title="Premium Partner" icon="star">
-    Enhanced partnership with better pricing and additional benefits
-  </Card>
-  <Card title="White Label Partner" icon="palette">
-    Full white-label solution with custom branding and pricing
-  </Card>
-  <Card title="Enterprise Distributor" icon="building">
-    Large-scale distribution partnership with custom terms
-  </Card>
-</CardGroup>
-
-### Tier Benefits and Requirements
+Configure your business contact information for customer communications:
 
 <AccordionGroup>
-  <Accordion title="Authorized Reseller">
-    **Benefits:**
-    - Standard commission rates (15-20%)
-    - Access to basic marketing materials
-    - Partner portal access
-    - Email support
-    
-    **Requirements:**
-    - Minimum monthly commitment
-    - Basic sales training completion
-    - Agreement to terms and conditions
+  <Accordion title="Basic Information">
+    **Required Fields:**
+    - **Name**: Your business or contact name
+    - **Account Email**: Primary email for account communications
+    - **Website**: Your business website URL
   </Accordion>
 
-  <Accordion title="Premium Partner">
-    **Benefits:**
-    - Enhanced commission rates (20-30%)
-    - Co-marketing opportunities
-    - Priority support
-    - Advanced training resources
-    - Custom marketing materials
-    
-    **Requirements:**
-    - Higher monthly commitment
-    - Proven sales track record
-    - Advanced certification completion
-    - Dedicated account management
-  </Accordion>
-
-  <Accordion title="White Label Partner">
-    **Benefits:**
-    - Custom branding and domain
-    - Full platform customization
-    - Direct customer billing
-    - Maximum commission rates (30-40%)
-    - Technical integration support
-    
-    **Requirements:**
-    - Significant minimum commitment
-    - Technical certification
-    - Brand compliance standards
-    - Dedicated implementation support
+  <Accordion title="Support Information">
+    **Support Contact Details:**
+    - **Support Email**: Dedicated email for customer support
+    - **Support Phone**: Phone number for customer assistance
+    - **Support Website**: URL to your support portal or help center
   </Accordion>
 </AccordionGroup>
 
-## Pricing and Commission Structure
+## 💰 Payout Information
 
-### Commission Models
+### 🏦 Payment Configuration
 
-Choose the appropriate commission structure for your reseller program:
+Set up your payout preferences and banking information:
 
+- **Payment Methods**: Configure preferred payment methods for commissions
+- **Banking Details**: Add bank account information for direct deposits
+- **Payment Schedule**: Set up automatic payout frequency (daily, weekly, monthly)
+- **Minimum Payout**: Configure minimum payout thresholds
+
+## 📦 Package Management
+
+### 🎯 Package Overview
+
+The package management system allows you to create, edit, and manage all your service offerings. Each package includes detailed pricing, usage limits, and billing configurations.
+
+### 📋 Package List Management
+
+Your packages are displayed in a comprehensive table with the following information:
+![Stripe Hosted Onboarding](/images/business-management/reselling-package.png)
 <CardGroup cols={3}>
-  <Card title="Percentage-Based" icon="percent">
-    **Fixed percentage of revenue**
-    - Simple to calculate
-    - Transparent for partners
-    - Scales with business growth
+  <Card title="Package Details" icon="box">
+    Package title, description, and service type identification
   </Card>
-  <Card title="Tiered Commission" icon="layer-group">
-    **Increasing rates by volume**
-    - Rewards higher performance
-    - Encourages growth
-    - Multiple breakpoints
+  <Card title="Timestamps" icon="clock">
+    Updated At and Created At dates for tracking package lifecycle
   </Card>
-  <Card title="Flat Fee" icon="dollar-sign">
-    **Fixed fee per sale/customer**
-    - Predictable costs
-    - Good for standardized products
-    - Easy partner understanding
+  <Card title="Actions" icon="gear">
+    Edit and delete options for package management
   </Card>
 </CardGroup>
 
-### Pricing Configuration
+### ➕ Adding New Packages
 
-#### Wholesale Pricing
-
-Set up wholesale pricing for your reseller partners:
-
-- **Base Pricing**: Standard wholesale rates for all partners
-- **Tier-Based Pricing**: Different rates based on partner level
-- **Volume Discounts**: Progressive discounts for higher volumes
-- **Custom Pricing**: Negotiated rates for enterprise partners
-
-#### Retail Price Controls
-
-Manage retail pricing to maintain market stability:
-
-<CheckGroup>
-  <Check>Set minimum advertised prices (MAP)</Check>
-  <Check>Define suggested retail prices (SRP)</Check>
-  <Check>Implement price protection policies</Check>
-  <Check>Monitor competitor pricing</Check>
-</CheckGroup>
-
-## Partner Management
-
-### Partner Onboarding
-
-#### Registration Process
+To create a new service package, use the "Add New Record" feature:
 
 <Steps>
-  <Step title="Application Submission">
-    Partners complete detailed application with business information
+  <Step title="Package Title">
+    Define a clear, descriptive name for your service package
   </Step>
-  <Step title="Qualification Review">
-    Evaluate partner fit based on established criteria
+  <Step title="Service Configuration">
+    Set up the specific service parameters and features
   </Step>
-  <Step title="Agreement Execution">
-    Execute partnership agreement and terms
+  <Step title="Pricing Structure">
+    Configure pricing, usage limits, and billing terms
   </Step>
-  <Step title="Account Setup">
-    Create partner accounts and provide access credentials
+  <Step title="Package Activation">
+    Activate the package for reseller availability
   </Step>
-  <Step title="Training and Certification">
-    Complete required training programs and certifications
+
+  
+
+</Steps>
+![Reselling packages](/images/business-management/reselling-edit-pakages.png)
+## 🛍️ Available Service Packages
+
+### One Time Setup Fee
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.50
+    - Package Price: $1.99
+    
+    **Pricing Range:** $0.50 - $1.99
+  </Accordion>
+</AccordionGroup>
+
+### Per Seat With Carrier
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 1.9x: Premium rate  
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - Per Seat With Carrier: $0.00/m
+    - Monthly charge to customer: $0.00/m
+    - Monthly Profit: $0.00/m
+  </Accordion>
+</AccordionGroup>
+
+### Per Seat Without Carrier
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 1.7x: Premium rate
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - Per Seat Without Carrier: $0.00/m
+    - Monthly charge to customer: $0.00/m
+    - Monthly Profit: $0.00/m
+  </Accordion>
+</AccordionGroup>
+
+### Rizz Inbound Call Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 3.1x: Premium rate
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - Inbound Call Cost: $0.30
+    - Monthly charge to customer: $0.93/Min
+    - Monthly Profit: $0.63/Min
+  </Accordion>
+</AccordionGroup>
+
+### Rizz Outbound Call Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 1.5x: Premium rate
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - Outbound Call Cost: $0.30
+    - Monthly charge to customer: $0.45/Min
+    - Monthly Profit: $0.15/Min
+  </Accordion>
+</AccordionGroup>
+
+### Rizz SMS Inbound
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 1.4x: Premium rate
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - SMS Inbound Cost: $0.20
+    - Monthly charge to customer: $0.28/Min
+    - Monthly Profit: $0.08/Min
+  </Accordion>
+</AccordionGroup>
+
+### Rizz SMS Outbound
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Pricing Multipliers:**
+    - 1x: Standard rate
+    - 1.1x: Premium rate
+    - 100x: Enterprise rate
+    
+    **Billing Structure:**
+    - SMS Outbound Cost: $0.20
+    - Monthly charge to customer: $0.22/Min
+    - Monthly Profit: $0.02/Min
+  </Accordion>
+</AccordionGroup>
+
+### Rizz Phone Number Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Service Features:**
+    - Phone number provisioning and management
+    - Number portability support
+    - Geographic and toll-free options
+    - Advanced routing capabilities
+  </Accordion>
+</AccordionGroup>
+### AI Call GPT-4.1
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.50
+    - Package Price: $149.99
+    
+    **Pricing Range:** $3.50 - $149.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call GPT-4.1 Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $4.00
+    - Package Price: $169.99
+    
+    **Pricing Range:** $4.00 - $169.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call GPT-4.1 items
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $2.75
+    - Package Price: $124.99
+    
+    **Pricing Range:** $2.75 - $124.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call GPT-4.1 Mins Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $4.50
+    - Package Price: $199.99
+    
+    **Pricing Range:** $4.50 - $199.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Claude 3.5 haiku
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.25
+    - Package Price: $134.99
+    
+    **Pricing Range:** $3.25 - $134.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Claude 3.5 haiku Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.75
+    - Package Price: $154.99
+    
+    **Pricing Range:** $3.75 - $154.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Gemini 2.0 Flash
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $2.50
+    - Package Price: $114.99
+    
+    **Pricing Range:** $2.50 - $114.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Gemini 2.0 Flash Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.25
+    - Package Price: $144.99
+    
+    **Pricing Range:** $3.25 - $144.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Claude 3.5 Flash Lite
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $2.00
+    - Package Price: $94.99
+    
+    **Pricing Range:** $2.00 - $94.99
+  </Accordion>
+</AccordionGroup>
+
+### AI Call Claude 3.5 Flash Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.85
+    - Package Price: $164.99
+    
+    **Pricing Range:** $3.85 - $164.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio Enhanced Call Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $1.40
+    - Package Price: $69.99
+    
+    **Pricing Range:** $1.40 - $69.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio Phone Number Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.60
+    - Package Price: $29.99
+    
+    **Pricing Range:** $0.60 - $29.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio SMS Inbound
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.45
+    - Package Price: $24.99
+    
+    **Pricing Range:** $0.45 - $24.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio SMS Inbound Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.65
+    - Package Price: $34.99
+    
+    **Pricing Range:** $0.65 - $34.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio SMS Outbound
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.35
+    - Package Price: $19.99
+    
+    **Pricing Range:** $0.35 - $19.99
+  </Accordion>
+</AccordionGroup>
+
+### Twilio SMS Outbound Cost
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $0.55
+    - Package Price: $29.99
+    
+    **Pricing Range:** $0.55 - $29.99
+  </Accordion>
+</AccordionGroup>
+
+### Additional HS Price
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $1.60
+    - Package Price: $79.99
+    
+    **Pricing Range:** $1.60 - $79.99
+  </Accordion>
+</AccordionGroup>
+
+### AI OC Change
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $2.75
+    - Package Price: $119.99
+    
+    **Pricing Range:** $2.75 - $119.99
+  </Accordion>
+</AccordionGroup>
+
+### Additional AI Price
+<AccordionGroup>
+  <Accordion title="Pricing Details">
+    **Billing Structure:**
+    - Monthly Charge: $3.50
+    - Package Price: $159.99
+    
+    **Pricing Range:** $3.50 - $159.99
+  </Accordion>
+</AccordionGroup>
+
+
+## 💲 Package Pricing Structure
+
+### 📊 Pricing Models
+
+Configure flexible pricing for your service packages:
+
+<CardGroup cols={3}>
+  <Card title="Usage-Based" icon="calculator">
+    **Pay-per-use Model**
+    - Per-minute billing
+    - Per-call charges
+    - Per-message pricing
+    - Bandwidth usage fees
+  </Card>
+  <Card title="Subscription" icon="credit-card">
+    **Monthly/Annual Plans**
+    - Fixed monthly rates
+    - Annual discounts
+    - Tiered service levels
+    - Unlimited usage options
+  </Card>
+  <Card title="Hybrid Pricing" icon="chart-mixed">
+    **Combined Models**
+    - Base subscription + usage
+    - Included allowances
+    - Overage charges
+    - Volume discounts
+  </Card>
+</CardGroup>
+
+### ⚙️ Package Configuration Options
+
+<CheckGroup>
+  <Check>Set monthly subscription fees</Check>
+  <Check>Configure usage limits and allowances</Check>
+  <Check>Define overage rates and billing</Check>
+  <Check>Set up volume discount tiers</Check>
+  <Check>Configure billing cycles and terms</Check>
+  <Check>Enable/disable package features</Check>
+</CheckGroup>
+
+## 🔧 Package Administration
+
+### ✏️ Editing Packages
+
+Modify existing packages through the package management interface:
+
+- **Package Details**: Update names, descriptions, and features
+- **Pricing Changes**: Modify rates, limits, and billing terms
+- **Feature Updates**: Add or remove package capabilities
+- **Status Management**: Activate, deactivate, or archive packages
+
+### 📈 Package Tracking
+
+Monitor package performance and usage:
+
+<CardGroup cols={2}>
+  <Card title="Usage Analytics" icon="chart-line">
+    Track package adoption, usage patterns, and revenue generation
+  </Card>
+  <Card title="Customer Feedback" icon="comments">
+    Monitor customer satisfaction and feature requests for packages
+  </Card>
+</CardGroup>
+
+## 💳 Billing and Revenue Management
+
+### 📊 Revenue Tracking
+
+Monitor your reseller program financial performance:
+
+- **Package Revenue**: Track income by individual package
+- **Customer Metrics**: Monitor customer acquisition and retention
+- **Usage Analytics**: Analyze service usage patterns and trends
+- **Profit Margins**: Calculate and optimize package profitability
+
+### 🔄 Billing Integration
+
+Seamless billing integration with your configured payment systems:
+
+<Steps>
+  <Step title="Automated Billing">
+    Set up automatic billing cycles for subscription packages
+  </Step>
+  <Step title="Usage Calculation">
+    Configure real-time usage tracking and billing
+  </Step>
+  <Step title="Invoice Generation">
+    Automate invoice creation and delivery
+  </Step>
+  <Step title="Payment Processing">
+    Process payments through integrated Stripe system
   </Step>
 </Steps>
 
-#### Required Documentation
+## ✨ Best Practices
 
-Partners must provide:
-
-<AccordionGroup>
-  <Accordion title="Business Documentation">
-    - Business registration/incorporation documents
-    - Tax identification numbers
-    - Business licenses and permits
-    - Insurance certificates
-  </Accordion>
-
-  <Accordion title="Financial Information">
-    - Bank account details for commission payments
-    - Credit references
-    - Financial statements (for larger partners)
-    - Proof of business stability
-  </Accordion>
-
-  <Accordion title="Marketing Compliance">
-    - Marketing plan and strategy
-    - Sample marketing materials
-    - Website and digital presence review
-    - Brand compliance acknowledgment
-  </Accordion>
-</AccordionGroup>
-
-### Partner Portal
-
-#### Portal Features
-
-Provide partners with comprehensive self-service capabilities:
-
-<CardGroup cols={2}>
-  <Card title="Account Management" icon="user-gear">
-    Profile management, settings, and contact information updates
-  </Card>
-  <Card title="Sales Dashboard" icon="chart-line">
-    Real-time sales data, commission tracking, and performance metrics
-  </Card>
-  <Card title="Marketing Resources" icon="bullhorn">
-    Downloadable materials, campaign templates, and brand assets
-  </Card>
-  <Card title="Training Center" icon="graduation-cap">
-    Training modules, certifications, and product knowledge base
-  </Card>
-</CardGroup>
-
-#### Commission Tracking
-
-- **Real-Time Updates**: Live commission calculations and tracking
-- **Historical Reports**: Detailed commission history and trends
-- **Payment Schedules**: Clear payment dates and methods
-- **Dispute Resolution**: Process for handling commission disputes
-
-## White Label Solutions
-
-### Branding Customization
-
-#### Visual Identity
-
-<AccordionGroup>
-  <Accordion title="Logo and Branding">
-    - Custom logo integration
-    - Brand color scheme application
-    - Typography and font selection
-    - Favicon and brand elements
-  </Accordion>
-
-  <Accordion title="Platform Customization">
-    - Custom domain configuration
-    - White-label interface design
-    - Branded email templates
-    - Custom login pages
-  </Accordion>
-
-  <Accordion title="Marketing Materials">
-    - Co-branded collateral
-    - Custom sales presentations
-    - Branded documentation
-    - Social media assets
-  </Accordion>
-</AccordionGroup>
-
-#### Technical Implementation
-
-- **Domain Configuration**: Set up custom domains and SSL certificates
-- **API Integration**: Custom API endpoints and webhooks
-- **Single Sign-On**: SSO integration with partner systems
-- **Data Segregation**: Isolated data environments for each partner
-
-## Sales Support and Training
-
-### Training Programs
-
-#### Certification Tracks
-
-<CardGroup cols={2}>
-  <Card title="Sales Fundamentals" icon="handshake">
-    Basic product knowledge, sales process, and customer engagement
-  </Card>
-  <Card title="Technical Certification" icon="code">
-    Platform configuration, integration setup, and troubleshooting
-  </Card>
-  <Card title="Advanced Solutions" icon="rocket">
-    Complex implementations, enterprise sales, and custom solutions
-  </Card>
-  <Card title="Marketing Excellence" icon="megaphone">
-    Digital marketing, content creation, and lead generation strategies
-  </Card>
-</CardGroup>
-
-#### Training Resources
-
-- **Video Library**: Comprehensive product and sales training videos
-- **Documentation**: Detailed guides, API documentation, and best practices
-- **Webinars**: Regular training sessions and product updates
-- **One-on-One Coaching**: Personalized training for key partners
-
-### Sales Tools and Resources
-
-#### Marketing Materials
-
-Provide partners with professional marketing assets:
+### 📋 Package Management
 
 <CheckGroup>
-  <Check>Product brochures and fact sheets</Check>
-  <Check>Case studies and success stories</Check>
-  <Check>Competitive comparison guides</Check>
-  <Check>ROI calculators and tools</Check>
-  <Check>Demo environments and trials</Check>
+  <Check>Regularly review and update package pricing</Check>
+  <Check>Monitor usage patterns to optimize offerings</Check>
+  <Check>Maintain competitive pricing in the market</Check>
+  <Check>Provide clear package descriptions and terms</Check>
+  <Check>Test new packages with pilot customers</Check>
 </CheckGroup>
 
-#### Lead Management
+### 🎯 Customer Success
 
-- **Lead Distribution**: Automated lead routing to appropriate partners
-- **Lead Tracking**: Complete lead lifecycle management
-- **Performance Metrics**: Lead conversion and partner performance analytics
-- **Lead Qualification**: Standardized lead scoring and qualification
-
-## Performance Management
-
-### KPI Tracking
-
-Monitor partner performance with key metrics:
-
-<CardGroup cols={3}>
-  <Card title="Sales Metrics" icon="chart-bar">
-    Revenue, deals closed, average deal size, and sales cycle length
-  </Card>
-  <Card title="Activity Metrics" icon="activity">
-    Leads generated, demos conducted, and proposal submissions
-  </Card>
-  <Card title="Customer Metrics" icon="users">
-    Customer satisfaction, retention rates, and support quality
-  </Card>
-</CardGroup>
-
-### Performance Reviews
-
-#### Regular Assessments
-
-- **Quarterly Reviews**: Comprehensive performance and goal assessment
-- **Monthly Check-ins**: Progress tracking and support needs identification
-- **Annual Planning**: Strategic planning and goal setting for the year
-- **Performance Improvement Plans**: Support for underperforming partners
-
-#### Incentive Programs
-
-<AccordionGroup>
-  <Accordion title="Volume Bonuses">
-    Additional rewards for achieving specific sales volumes
-  </Accordion>
-
-  <Accordion title="Growth Incentives">
-    Bonuses for year-over-year growth achievements
-  </Accordion>
-
-  <Accordion title="Certification Rewards">
-    Incentives for completing training and certification programs
-  </Accordion>
-
-  <Accordion title="Special Promotions">
-    Limited-time incentives for specific products or markets
-  </Accordion>
-</AccordionGroup>
-
-## Legal and Compliance
-
-### Partnership Agreements
-
-#### Standard Terms
-
-Essential elements of reseller agreements:
-
-- **Territory and Market Definition**: Geographic and market boundaries
-- **Exclusivity Provisions**: Exclusive vs. non-exclusive partnerships
-- **Performance Requirements**: Minimum sales commitments and KPIs
-- **Intellectual Property**: Usage rights and brand protection
-- **Termination Clauses**: Conditions for agreement termination
-
-#### Compliance Requirements
-
-<CheckGroup>
-  <Check>Data protection and privacy compliance</Check>
-  <Check>Industry-specific regulatory requirements</Check>
-  <Check>Anti-corruption and ethical business practices</Check>
-  <Check>Export control and international trade regulations</Check>
-</CheckGroup>
-
-### Risk Management
-
-- **Financial Risk**: Credit checks and financial monitoring
-- **Operational Risk**: Performance monitoring and support
-- **Reputational Risk**: Brand compliance and market conduct
-- **Legal Risk**: Contract compliance and dispute resolution
-
-## Best Practices
-
-### Program Success Factors
-
-<CheckGroup>
-  <Check>Clear and attractive value proposition for partners</Check>
-  <Check>Comprehensive training and support programs</Check>
-  <Check>Competitive pricing and commission structures</Check>
-  <Check>Strong communication and relationship management</Check>
-  <Check>Regular program evaluation and optimization</Check>
-</CheckGroup>
-
-### Common Pitfalls to Avoid
-
-- **Overly Complex Pricing**: Keep pricing structures simple and transparent
-- **Inadequate Support**: Provide sufficient training and ongoing support
-- **Channel Conflict**: Manage territory and customer conflicts proactively
-- **Poor Communication**: Maintain regular and clear communication
-- **Lack of Differentiation**: Clearly differentiate partner tiers and benefits 
+- **Clear Documentation**: Provide detailed package documentation
+- **Responsive Support**: Maintain excellent customer support
+- **Regular Communication**: Keep customers informed of updates
+- **Feedback Integration**: Incorporate customer feedback into package improvements 
