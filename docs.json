@@ -68,6 +68,7 @@
                 ]
               },
               "ai/phone-numbers",
+              "ai/purchase-number",
               "ai/call-history"
             ]
           },
