@@ -1,287 +1,177 @@
----
-title: "Companies"
-description: "Manage company accounts, settings, and organizational structure within Rizler"
-icon: "building"
----
+# 🏢 Companies Management
+Transform your business operations with our comprehensive Companies module - your all-in-one solution for managing client relationships and business partnerships. This powerful platform empowers administrators to effortlessly oversee company onboarding, profile management, real-time monitoring, and service provisioning. Experience seamless connectivity across all your essential services: AI Numbers, AI-powered agents, billing management, and user administration, e.t.c.
 
-# Companies
+## What You Can Accomplish
 
-Manage company accounts, organizational settings, and business configurations within the Rizler platform.
+Our Companies management platform puts you in complete control of your business ecosystem. Whether you're onboarding new clients, tracking account performance, or customizing service packages, everything you need is at your fingertips. 
 
-## Overview
+### Key Features
 
-The Companies section allows you to manage multiple business entities, configure company-specific settings, and organize your business operations efficiently within Rizler.
+- **Complete Account Lifecycle Management**: From registration to activation, including status monitoring and account modifications
+- **Multi-Service Integration**: Seamless integration with dialer services, AI agents, and telephony features
+- **Advanced Access Control**: Role-based permissions with secure authentication and audit trail capabilities
+- **Real-time Operations**: Live status updates, instant search functionality, and immediate configuration changes
+- **Business Intelligence**: Comprehensive reporting, data export capabilities, and usage analytics
 
-## Company Management
+## 🔍 Company Listing Interface
 
-### Creating a New Company
+![Company Listing Dashboard](/images/business-management/companies/overview.png)
 
-Add new companies to your Rizler account:
+The main Companies dashboard provides a comprehensive view of all registered companies in your system. This interface serves as the primary hub for company management operations.
 
-<Steps>
-  <Step title="Company Information">
-    Enter basic company details including name, industry, and contact information
-  </Step>
-  <Step title="Business Settings">
-    Configure company-specific settings and preferences
-  </Step>
-  <Step title="User Assignment">
-    Assign users and define access permissions
-  </Step>
-  <Step title="Integration Setup">
-    Configure integrations and external connections
-  </Step>
-</Steps>
+### 📊 Dashboard Features
 
-### Company Details
+#### Navigation & Access
+- **📍 Breadcrumb Navigation**: Clear path showing `Users » Companies` for easy navigation
+- **🔍 Search Functionality**: Real-time search bar for quickly finding specific companies
 
-<CardGroup cols={2}>
-  <Card title="Basic Information" icon="info-circle">
-    Company name, legal entity type, registration details, and contact information
-  </Card>
-  <Card title="Business Profile" icon="briefcase">
-    Industry classification, business model, target market, and operational details
-  </Card>
-  <Card title="Contact Details" icon="address-book">
-    Primary contacts, support information, billing contacts, and communication preferences
-  </Card>
-  <Card title="Compliance Info" icon="shield-check">
-    Regulatory requirements, certifications, compliance status, and documentation
-  </Card>
-</CardGroup>
 
-## Company Configuration
+ 
 
-### General Settings
+### 📋 Data Columns
 
-Configure core company settings:
+| Column | Purpose | Description |
+|--------|---------|-------------|
+| **#** | Row Number | Sequential numbering for easy reference |
+| **Name** | Company Identity | Official company name for identification |
+| **Email** | Contact Information | Primary email for communication and login |
+| **Account Type** | Classification | Business model classification (Company, Individual, etc.) |
+| **Status** | Account State | Current operational status (Active, Inactive, Pending) |
+| **Added By** | Creator Tracking | User who created the company account |
+| **Created At** | Timestamp | Account creation date and time |
+| **Action** | Operations | Available actions (Login, Edit, Delete) |
+### 📋 Data Columns
 
-<AccordionGroup>
-  <Accordion title="Company Profile">
-    - **Company Name**: Legal business name and display name
-    - **Industry**: Business industry classification
-    - **Size**: Company size and employee count
-    - **Timezone**: Primary business timezone
-    - **Currency**: Default currency for billing and reporting
-  </Accordion>
+| Column | Purpose | Description |
+|--------|---------|-------------|
+| **#** | Row Number | Sequential numbering for easy reference |
+| **Name** | Company Identity | Official company name for identification |
+| **Email** | Contact Information | Primary email for communication and login |
+| **Account Type** | Classification | Business model classification (Company, Individual, etc.) |
+| **Status** | Account State | Current operational status (Active, Inactive, Pending) |
+| **Added By** | Creator Tracking | User who created the company account |
+| **Created At** | Timestamp | Account creation date and time |
+| **Action** | Operations | Available actions (Login, Edit, Delete) |
 
-  <Accordion title="Contact Information">
-    - **Business Address**: Primary business location
-    - **Phone Numbers**: Main business phone and support lines
-    - **Email Addresses**: Primary contact and support emails
-    - **Website**: Company website and social media links
-  </Accordion>
+### 🎛️ Action Controls
+![Add Company Form](/images/business-management/companies/actions.png)
+#### Available Actions
+- **🔑 Login**: Direct impersonation access to company account
+- **✏️ Edit**: Modify company information and settings
+- **🗑️ Delete**: Remove company account (with confirmation)
+- **➕ Add**: Create new company accounts
 
-  <Accordion title="Branding">
-    - **Company Logo**: Upload and manage company logos
-    - **Brand Colors**: Define brand color schemes
-    - **Custom Themes**: Configure platform appearance
-    - **White Labeling**: Custom branding options for enterprise
-  </Accordion>
-</AccordionGroup>
 
-### Business Operations
+
+
+##  Add Company Interface
+
+The Add Company form is a comprehensive interface for registering new business entities on your platform. This form captures all essential information required for company onboarding and account setup.
+
+### 📝 Form Sections
+
+#### Basic Information
+Essential company identi
+![Add Company Form](/images/business-management/companies/add-company.png)
+**📋 Name Field**
+- **Purpose**: Official company name for identification
+- **Usage**: Displayed across the platform for company identification
+
+**📧 Email Field**
+- **Purpose**: Primary communication and login credential
+- **Usage**: Account access, notifications, and official communications
+
+**📞 Phone Number Field**
+- **Purpose**: Direct contact method for support and communication
+- **Usage**: Support contacts, verification, and emergency communications
+
+#### Security Configuration
+
+**🔒 Password Field**
+- **Purpose**: Secure access credential for company account
+- **Usage**: Account authentication and access control
+
+#### Account Configuration
+
+**📊 Status Dropdown**
+- **Options**: 
+  - `Pending` - Account awaiting approval
+  - `Active` - Fully operational account
+  - `Inactive` - Suspended or disabled account
+- **Purpose**: Control account access and operational state
+
+**📞 Dialer Configuration**
+- **Options**: `Yes` / `No`
+- **Purpose**: Enable/disable dialer functionality for the company
 
 #### Service Configuration
 
-Set up your business services and offerings:
+**📦 Reselling Packages**
+- **Purpose**: Assign service packages available to the company
+- **Usage**: Determines available features and service limits
 
-- **Service Types**: Define the services your company provides
-- **Service Areas**: Geographic areas where you operate
-- **Operating Hours**: Business hours and availability
-- **Holiday Schedule**: Company holidays and closures
+**💰 Free Account Status**
+- **Options**: `Yes` / `No`
+- **Purpose**: Designate whether the account has free tier access
+- **Usage**: Controls billing, feature access, and service limitations
 
-#### Billing and Pricing
+**✅ BYOC (Bring Your Own Carrier)**
+- **Options**: `Yes` / `No`
+- **Purpose**: Allow companies to use their own telecom carriers
+- **Usage**: Enables integration with existing telecom infrastructure
 
-<CardGroup cols={2}>
-  <Card title="Billing Settings" icon="credit-card">
-    Configure billing cycles, payment methods, and invoicing preferences
-  </Card>
-  <Card title="Pricing Models" icon="dollar-sign">
-    Set up pricing structures, discount schedules, and promotional offers
-  </Card>
-</CardGroup>
+### 🔧 Configuration Matrix
 
-## User Management
+| Setting | Options | Impact | Use Case |
+|---------|---------|---------|----------|
+| **Status** | Pending/Active/Inactive | Account access | Account lifecycle management |
+| **Dialer** | Yes/No | Calling features | Telephony service control |
+| **Free Account** | Yes/No | Billing & features | Service tier management |
+| **BYOC** | Yes/No | Carrier integration | Infrastructure flexibility |
 
-### Team Organization
+## 🚀 Workflow & Usage
 
-Organize your team within the company structure:
+### Company Registration Process
 
-<CheckGroup>
-  <Check>Define departments and teams</Check>
-  <Check>Assign roles and permissions</Check>
-  <Check>Set up reporting structures</Check>
-  <Check>Configure access controls</Check>
-</CheckGroup>
+1. **📝 Information Gathering**
+   - Collect basic company information (name, email, phone)
+   - Set initial security credentials
+   - Configure account parameters
+
+2. **⚙️ Service Configuration**
+   - Select appropriate reselling package
+   - Configure dialer access
+   - Set account type (free/paid)
+   - Configure BYOC if needed
+
+3. **✅ Review & Approval**
+   - Account typically starts in "Pending" status
+   - Administrative review of company details
+   - Approval process activation
+
+4. **🎯 Account Activation**
+   - Status change to "Active"
+   - Service provisioning
+   - Account access enablement
+
+### Administrative Operations
+
+#### Regular Management Tasks
+- **📊 Monitor**: Track company activities and usage
+- **🔄 Update**: Modify company information as needed
+- **🎛️ Configure**: Adjust service settings and packages
+- **🔍 Audit**: Review account activities and changes
+
+#### Bulk Operations
+- **📥 Import**: Bulk company creation from CSV/Excel
+- **📤 Export**: Generate reports and data exports
+- **🔄 Update**: Mass status changes and configuration updates
+
+## 🔐 Security & Permissions
 
 ### Access Control
+- **Role-based access**: Different permission levels for various administrative roles
+- **Audit logging**: Complete tracking of all company-related actions
+- **Secure authentication**: Encrypted password storage and secure login processes
 
-- **Role-Based Access**: Define user roles with specific permissions
-- **Department Access**: Limit access based on department membership
-- **Feature Permissions**: Control access to specific platform features
-- **Data Security**: Implement data access and sharing policies
 
-## Integration and Connectivity
-
-### CRM Integration
-
-Connect your company with external CRM systems:
-
-<AccordionGroup>
-  <Accordion title="Salesforce Integration">
-    - Account synchronization
-    - Lead management
-    - Contact data sync
-    - Activity tracking
-  </Accordion>
-
-  <Accordion title="HubSpot Integration">
-    - Contact management
-    - Deal pipeline sync
-    - Marketing automation
-    - Analytics integration
-  </Accordion>
-
-  <Accordion title="Custom CRM">
-    - API-based integration
-    - Custom field mapping
-    - Webhook configuration
-    - Data transformation
-  </Accordion>
-</AccordionGroup>
-
-### Communication Platforms
-
-Integrate with communication and collaboration tools:
-
-- **Microsoft Teams**: Channel integration and notifications
-- **Slack**: Workspace connectivity and alerts
-- **Email Platforms**: SMTP configuration and templates
-- **Calendar Systems**: Appointment and meeting synchronization
-
-## Compliance and Security
-
-### Regulatory Compliance
-
-Ensure your company meets industry regulations:
-
-<CardGroup cols={2}>
-  <Card title="Data Protection" icon="shield">
-    GDPR, CCPA, and other data privacy regulations
-  </Card>
-  <Card title="Industry Standards" icon="certificate">
-    HIPAA, PCI-DSS, SOX, and sector-specific requirements
-  </Card>
-  <Card title="Communication Compliance" icon="phone">
-    TCPA, CAN-SPAM, and messaging regulations
-  </Card>
-  <Card title="Record Keeping" icon="file-archive">
-    Data retention policies and audit trail requirements
-  </Card>
-</CardGroup>
-
-### Security Configuration
-
-- **Access Policies**: Define security policies and access controls
-- **Data Encryption**: Configure encryption for data at rest and in transit
-- **Audit Logging**: Enable comprehensive audit trails
-- **Backup Policies**: Set up data backup and recovery procedures
-
-## Reporting and Analytics
-
-### Company Metrics
-
-Track key performance indicators for your company:
-
-- **Performance Dashboard**: Real-time company performance metrics
-- **Usage Analytics**: Platform usage and feature adoption
-- **Financial Reports**: Revenue, costs, and profitability analysis
-- **Compliance Reports**: Regulatory compliance status and reports
-
-### Custom Reports
-
-Create custom reports tailored to your business needs:
-
-- **Executive Dashboards**: High-level business insights
-- **Operational Reports**: Detailed operational metrics
-- **Compliance Audits**: Regulatory compliance documentation
-- **Performance Reviews**: Team and individual performance analysis
-
-## Multi-Company Management
-
-### Company Hierarchy
-
-For organizations with multiple companies:
-
-<Steps>
-  <Step title="Parent Company Setup">
-    Configure the main parent company with administrative privileges
-  </Step>
-  <Step title="Subsidiary Management">
-    Add and manage subsidiary companies with inherited settings
-  </Step>
-  <Step title="Shared Resources">
-    Configure shared resources and cross-company access
-  </Step>
-  <Step title="Consolidated Reporting">
-    Set up consolidated reporting across all companies
-  </Step>
-</Steps>
-
-### Cross-Company Features
-
-- **Shared User Access**: Users with access to multiple companies
-- **Consolidated Billing**: Unified billing across company entities
-- **Shared Resources**: Common templates, settings, and configurations
-- **Global Reporting**: Cross-company analytics and insights
-
-## Best Practices
-
-### Company Setup Guidelines
-
-<CheckGroup>
-  <Check>Complete all required company information during setup</Check>
-  <Check>Configure security settings and access controls early</Check>
-  <Check>Set up integrations with existing business systems</Check>
-  <Check>Define clear user roles and permissions</Check>
-  <Check>Establish data backup and recovery procedures</Check>
-</CheckGroup>
-
-### Ongoing Management
-
-- **Regular Reviews**: Quarterly review of company settings and access
-- **Security Audits**: Regular security assessments and updates
-- **Compliance Monitoring**: Ongoing compliance status monitoring
-- **Performance Optimization**: Regular review and optimization of settings
-- **User Training**: Ongoing training for team members on platform features
-
-## Troubleshooting
-
-### Common Issues
-
-<AccordionGroup>
-  <Accordion title="Access Problems">
-    **Issue**: Users unable to access company features
-    **Solutions**: Check user permissions, verify company association, review access controls
-  </Accordion>
-
-  <Accordion title="Integration Failures">
-    **Issue**: Third-party integrations not working
-    **Solutions**: Verify API credentials, check connection settings, review data mapping
-  </Accordion>
-
-  <Accordion title="Billing Discrepancies">
-    **Issue**: Billing calculations or charges appear incorrect
-    **Solutions**: Review pricing settings, check usage reports, verify billing configuration
-  </Accordion>
-</AccordionGroup>
-
-### Getting Support
-
-For additional assistance with company management:
-
-1. **Documentation**: Review detailed feature documentation
-2. **Support Portal**: Submit tickets through the support portal
-3. **Account Manager**: Contact your dedicated account manager
-4. **Training Resources**: Access training materials and best practices 
