@@ -1,150 +1,137 @@
 ---
-title: "SMS Template"
-description: "Create, manage, and customize SMS templates for automated messaging campaigns and customer communications"
+title: "SMS Templates"
+description: "Create and manage SMS templates for automated messaging"
 icon: "message"
 ---
 
-# SMS Template
+# 📱 SMS Templates
 
-Create, manage, and customize SMS templates for automated messaging campaigns, customer communications, and marketing outreach.
+Create reusable SMS templates for automated messaging, appointment reminders, and customer communications.
 
-## Overview
+## 📋 Template Overview
 
-SMS templates provide pre-designed message formats for consistent, professional customer communication. Streamline your messaging workflows with customizable templates for various use cases.
+<img
+  src="/images/manage/sms-template/overview.png"
+  alt="SMS Templates Interface"
+  className="rounded-lg border"
+/>
 
-## Template Categories
+View all your SMS templates in one place with easy access to edit, delete, and manage your messaging content.
 
-### Marketing Templates
-- **Promotional Messages**: Special offers and discounts
-- **Product Announcements**: New product launches
-- **Event Invitations**: Event notifications and invites
-- **Seasonal Campaigns**: Holiday and seasonal messaging
+### 📊 Template Fields
 
-### Operational Templates
-- **Appointment Reminders**: Automated appointment notifications
-- **Payment Reminders**: Billing and payment notifications
-- **Delivery Updates**: Shipping and delivery status
-- **Service Notifications**: System and service updates
+| Field | Description | Example |
+|-------|-------------|---------|
+| **#** | Template ID | `1`, `2`, `3` |
+| **Title** | Template name | `devSMS`, `Reminder` |
+| **Template** | Message content | Full message text with variables |
+| **Updated At** | Last modification | `08-15-2025 03:47 PM` |
+| **Created At** | Creation date | `08-15-2025 03:41 PM` |
+| **Action** | Available operations | `Edit` `Delete` |
 
-### Customer Service Templates
-- **Welcome Messages**: New customer onboarding
-- **Thank You Messages**: Post-purchase appreciation
-- **Feedback Requests**: Customer satisfaction surveys
-- **Support Responses**: Common support scenarios
+## ➕ Creating Templates
 
-## Template Management
+### 🎯 Quick Setup
 
-### Create Templates
-- **Template Name**: Descriptive template identification
-- **Message Content**: Customizable message body
-- **Variable Integration**: Dynamic content placeholders
-- **Character Optimization**: SMS length optimization
+<CardGroup cols={2}>
+  <Card title="Template Name" icon="tag">
+    Give your template a clear, descriptive name
+    <br />**Example**: "Appointment Reminder", "Welcome Message"
+  </Card>
+  
+  <Card title="Message Content" icon="pencil">
+    Write your SMS message with dynamic variables
+    <br />**Tip**: Keep messages under 160 characters
+  </Card>
+</CardGroup>
 
-### Template Editor
-- **Rich Text Editor**: Enhanced text formatting options
-- **Preview Mode**: Real-time template preview
-- **Variable Insertion**: Easy variable placement
-- **Compliance Checking**: Regulatory compliance validation
+### 💬 Message Examples
 
-### Template Organization
-- **Folder Structure**: Organize templates by category
-- **Tagging System**: Tag templates for easy filtering
-- **Search Functionality**: Quick template discovery
-- **Version Control**: Track template modifications
+<Tabs>
+  <Tab title="Appointment Reminder">
+    ```
+    Hi {{first_name}}! This is a reminder for your appointment 
+    at {{business_name}} on {{appointment_date}} at 
+    {{appointment_time}}. Reply CONFIRM to confirm.
+    ```
+  </Tab>
+  
+  <Tab title="Welcome Message">
+    ```
+    Welcome to {{business_name}}, {{first_name}}! 
+    We're excited to have you. Contact us at {{business_phone}} 
+    if you have any questions.
+    ```
+  </Tab>
+  
+  <Tab title="Follow-up">
+    ```
+    Hi {{first_name}}, thanks for your interest! 
+    Our team will contact you within 24 hours. 
+    Questions? Call {{business_phone}}.
+    ```
+  </Tab>
+</Tabs>
 
-## Dynamic Variables
+## 🔧 Dynamic Variables
 
-### Contact Variables
-- **{{first_name}}**: Customer first name
-- **{{last_name}}**: Customer last name
-- **{{phone_number}}**: Customer phone number
-- **{{email}}**: Customer email address
-- **{{company}}**: Customer company name
+Add personalization to your messages with these variables:
 
-### Business Variables
-- **{{business_name}}**: Your business name
-- **{{business_phone}}**: Your business phone
-- **{{business_address}}**: Your business address
-- **{{website}}**: Your website URL
+### 👤 Customer Info
+- `{{first_name}}` - Customer's first name
+- `{{last_name}}` - Customer's last name  
+- `{{phone_number}}` - Customer's phone
+- `{{email}}` - Customer's email
 
-### Date/Time Variables
-- **{{current_date}}**: Current date
-- **{{current_time}}**: Current time
-- **{{appointment_date}}**: Appointment date
-- **{{appointment_time}}**: Appointment time
+### 🏢 Business Info
+- `{{business_name}}` - Your business name
+- `{{business_phone}}` - Your phone number
+- `{{business_address}}` - Your address
 
-## Campaign Integration
+### 📅 Date & Time
+- `{{current_date}}` - Today's date
+- `{{appointment_date}}` - Appointment date
+- `{{appointment_time}}` - Appointment time
 
-### Automated Campaigns
-- **Trigger Setup**: Define campaign triggers
-- **Audience Targeting**: Target specific customer segments
-- **Scheduling Options**: Schedule message delivery
-- **Follow-up Sequences**: Multi-message campaigns
+## ⚡ Template Actions
 
-### Personalization
-- **Dynamic Content**: Personalized message content
-- **Segmentation**: Target-specific messaging
-- **Behavioral Triggers**: Behavior-based messaging
-- **A/B Testing**: Test different template variations
+### ✏️ Edit Template
+Click the **Edit** button to modify:
+<img
+  src="/images/manage/sms-template/edit.png"
+  alt="SMS Templates Interface"
+  className="rounded-lg border"
+/>
+- Template name
+- Message content
+- Variable usage
 
-## Compliance & Regulations
+### 🗑️ Delete Template
+<Warning>
+Deleted templates cannot be recovered. Make sure you don't need the template before deleting.
+</Warning>
 
-### Regulatory Compliance
-- **TCPA Compliance**: Telephone Consumer Protection Act
-- **GDPR Compliance**: General Data Protection Regulation
-- **CAN-SPAM Compliance**: Anti-spam regulations
-- **Local Regulations**: Regional compliance requirements
+## 📊 Usage Tips
 
-### Opt-out Management
-- **Unsubscribe Links**: Easy opt-out mechanisms
-- **Preference Centers**: Communication preferences
-- **Compliance Tracking**: Monitor compliance status
-- **Audit Trails**: Maintain compliance records
+<CardGroup cols={2}>
+  <Card title="Keep It Short" icon="clock">
+    SMS messages work best under 160 characters
+    <br />Longer messages may be split or cost more
+  </Card>
+  
+  <Card title="Clear Call-to-Action" icon="hand-pointer">
+    Tell recipients what to do next
+    <br />**Examples**: "Reply YES", "Call us", "Visit our website"
+  </Card>
+  
+  <Card title="Test Your Messages" icon="flask">
+    Send test messages to yourself first
+    <br />Check that variables populate correctly
+  </Card>
+  <Card title="Include Opt-out" icon="circle-x">
+    Always include "Reply STOP to opt-out"
+    <br />Required for compliance and good practice
+  </Card>
+</CardGroup>
 
-## Analytics & Performance
-
-### Message Analytics
-- **Delivery Rates**: Track message delivery success
-- **Open Rates**: Monitor message engagement
-- **Click-through Rates**: Link click tracking
-- **Response Rates**: Customer response metrics
-
-### Template Performance
-- **Usage Statistics**: Track template utilization
-- **Effectiveness Metrics**: Measure template success
-- **Conversion Tracking**: Track conversion rates
-- **ROI Analysis**: Return on investment metrics
-
-## Integration Features
-
-### CRM Integration
-- **Contact Sync**: Synchronize contact information
-- **Campaign Tracking**: Track campaigns in CRM
-- **Lead Management**: Manage leads from SMS responses
-- **Activity Logging**: Log SMS activities
-
-### Marketing Platforms
-- **Email Integration**: Coordinate with email campaigns
-- **Social Media**: Cross-platform campaign coordination
-- **Analytics Tools**: Connect with analytics platforms
-- **Automation Tools**: Integrate with marketing automation
-
-## Best Practices
-
-### Message Design
-- Keep messages concise and clear
-- Include clear call-to-action statements
-- Maintain consistent brand voice
-- Optimize for mobile viewing
-
-### Timing & Frequency
-- Send messages at appropriate times
-- Respect customer preferences
-- Avoid message fatigue
-- Time zone considerations
-
-### Compliance Best Practices
-- Always include opt-out instructions
-- Maintain accurate contact lists
-- Regular compliance audits
-- Stay updated on regulations 
+ 

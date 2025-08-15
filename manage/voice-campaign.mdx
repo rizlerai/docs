@@ -1,169 +1,226 @@
 ---
-title: "Voice Campaign"
+title: "Voice Campaigns"
 description: "Create, manage, and execute voice marketing campaigns with automated calling and AI-powered interactions"
 icon: "bullhorn"
 ---
 
-# Voice Campaign
+# 📢 Voice Campaigns
 
-Create, manage, and execute comprehensive voice marketing campaigns with automated calling, AI-powered interactions, and performance tracking.
+Launch powerful voice marketing campaigns with automated calling, AI-powered conversations, and comprehensive performance tracking to reach your audience at scale.
 
-## Overview
+## 📋 Campaign Overview
 
-Voice campaigns enable automated outreach through AI-powered voice interactions, allowing you to reach customers at scale while maintaining personalized, professional communication.
+<img
+  src="/images/manage/voice-compaign/overview.png"
+  alt="Voice Campaign Interface"
+  className="rounded-lg border"
+/>
 
-## Campaign Types
+Manage all your voice campaigns from a centralized dashboard with detailed scheduling, performance tracking, and comprehensive campaign controls.
 
-### Sales Campaigns
-- **Lead Generation**: Identify and qualify potential customers
-- **Product Launches**: Introduce new products or services
-- **Upselling/Cross-selling**: Promote additional offerings to existing customers
-- **Win-back Campaigns**: Re-engage inactive or lost customers
+### 📊 Campaign Fields
 
-### Marketing Campaigns
-- **Promotional Campaigns**: Share special offers and discounts
-- **Brand Awareness**: Increase brand recognition and recall
-- **Event Promotion**: Promote events, webinars, or launches
-- **Survey Campaigns**: Gather customer feedback and insights
+| Field | Description | Example |
+|-------|-------------|---------|
+| **#** | Campaign ID | `1`, `2`, `3` |
+| **Title** | Campaign name | `dev`, `Dev Testing 2`, `Testing` |
+| **Start Time** | Daily start time | `08:14:00`, `04:19:00` |
+| **End Time** | Daily end time | `21:18:00`, `10:24:00` |
+| **Start Date** | Campaign start date | `2025-03-07`, `2025-04-21` |
+| **End Date** | Campaign end date | `2025-03-13`, `2025-04-22` |
+| **Status** | Campaign status | `completed`, `active`, `paused` |
+| **Campaign Type** | Calling strategy | `predictive` |
+| **Calls Per Hour** | Call frequency rate | Configurable calling rate |
+| **Created At** | Creation timestamp | `03-25-2025 06:13 PM` |
+| **Action** | Available operations | `Edit` `Delete` `View Details` |
 
-### Service Campaigns
-- **Appointment Reminders**: Automated appointment confirmations
-- **Payment Reminders**: Gentle payment and billing reminders
-- **Service Notifications**: Important service updates and announcements
-- **Customer Satisfaction**: Post-service feedback collection
+## ➕ Creating Voice Campaigns
 
-## Campaign Setup
+### 🎯 Campaign Setup
+ <img
+  src="/images/manage/voice-compaign/add.png"
+  alt="Voice Campaign Interface"
+  className="rounded-lg border"
+/>
+<CardGroup cols={2}>
+  <Card title="Campaign Title" icon="tag">
+    Give your campaign a clear, descriptive name
+    <br />**Example**: "Holiday Promotion", "Lead Follow-up"
+  </Card>
+  
+  <Card title="AI Agents" icon="robot">
+    Select the AI agent for your voice campaign
+    <br />**Agent**: Choose from available AI agents
+    <br />**Configuration**: Agent-specific settings and behavior
+  </Card>
+  
+  <Card title="Power List" icon="list">
+    Choose your contact list for the campaign
+    <br />**List**: Select from available power lists
+    <br />**Contacts**: Review target audience and contact count
+  </Card>
+  
+  <Card title="Calls Per Hour" icon="gauge">
+    Set the calling rate to control campaign pace
+    <br />**Rate**: Number of calls attempted hourly
+    <br />**Optimization**: Balance volume with quality
+  </Card>
+  
+  <Card title="Call Staggering" icon="clock">
+    Configure delay between consecutive calls in seconds
+    <br />**Delay Setting**: Time interval between each outbound call
+    <br />**Optimal Spacing**: Prevent call clustering and improve answer rates
+  </Card>
 
-### Campaign Configuration
-- **Campaign Name**: Descriptive campaign identification
-- **Campaign Objectives**: Define clear campaign goals
-- **Target Audience**: Specify target customer segments
-- **Call Schedule**: Set optimal calling times and frequency
 
-### Voice Script Integration
-- **Script Selection**: Choose appropriate voice templates
-- **Personalization**: Configure dynamic content and variables
-- **Call Flow Design**: Map conversation pathways and responses
-- **Fallback Options**: Handle various customer responses
+  
+  <Card title="Actions" icon="gear">
+    Available campaign management operations
+    <br />**Edit**: Modify campaign settings and parameters
+    <br />**Delete**: Remove campaign permanently
+    <br />**View Details**: Monitor performance and analytics
+  </Card>
+</CardGroup>
+## 👁️ Campaign Details View
+<img
+  src="/images/manage/voice-compaign/details.png"
+  alt="Voice Campaign Details Interface"
+  className="rounded-lg border"
+/>
 
-### Contact Management
-- **Contact Lists**: Import and manage contact databases
-- **List Segmentation**: Create targeted contact segments
-- **Data Validation**: Ensure contact information accuracy
-- **Compliance Checking**: Verify call permission and opt-in status
+View comprehensive campaign performance with real-time analytics, call status tracking, and detailed reporting dashboard.
 
-## Campaign Execution
+### 📊 Campaign Performance Metrics
 
-### Automated Dialing
-- **Progressive Dialing**: Systematic contact progression
-- **Predictive Dialing**: AI-optimized calling patterns
-- **Call Scheduling**: Time-zone aware scheduling
-- **Retry Logic**: Intelligent retry and follow-up strategies
+| Metric | Description | Value |
+|--------|-------------|-------|
+| **Campaign Status** | Current campaign state | `Active`, `Paused`, `Completed` |
+| **Attempted** | Total calls attempted | `0` (Red indicator) |
+| **No Answer** | Calls with no response | `0` (Red indicator) |
+| **Busy** | Busy signals received | `0` (Yellow indicator) |
+| **Voicemail** | Voicemail detections | `0` (Blue indicator) |
+| **Dropped** | Dropped/failed calls | `0` (Gray indicator) |
 
-### Real-time Monitoring
-- **Live Dashboard**: Real-time campaign performance monitoring
-- **Call Status**: Track individual call outcomes and status
-- **Performance Metrics**: Monitor key performance indicators
-- **Alert System**: Notifications for important campaign events
+### 📈 Real-Time Analytics
 
-### Call Handling
-- **AI Interaction**: Automated AI-powered conversations
-- **Human Handoff**: Seamless transfer to human agents
-- **Voicemail Detection**: Handle voicemail scenarios
-- **Busy Signal Management**: Manage busy lines and callbacks
+<CardGroup cols={3}>
+  <Card title="Call Progress" icon="chart-line">
+    Monitor live calling activity and completion rates
+    <br />**Updates**: Real-time status changes
+  </Card>
+  
+  <Card title="Success Metrics" icon="target">
+    Track campaign effectiveness and conversion rates
+    <br />**KPIs**: Connect rate, response quality
+  </Card>
+  
+  <Card title="Performance Data" icon="chart-bar">
+    Detailed breakdown of call outcomes and timing
+    <br />**Analysis**: Hourly, daily, and total statistics
+  </Card>
+</CardGroup>
 
-## Performance Analytics
+ 
+ 
 
-### Campaign Metrics
-- **Call Volume**: Total calls made and attempted
-- **Connection Rate**: Successful call connection percentage
-- **Conversation Rate**: Percentage of meaningful conversations
-- **Conversion Rate**: Campaign goal achievement rate
+### 📈 Campaign Lifecycle
 
-### Detailed Analytics
-- **Call Duration**: Average call length and engagement time
-- **Response Analysis**: Customer response patterns and trends
-- **Outcome Tracking**: Track specific campaign outcomes
-- **ROI Analysis**: Return on investment calculations
+<Tabs>
+  <Tab title="Predictive Campaigns">
+    ```
+    🤖 AI-Powered Dialing:
+    - Intelligent call timing optimization
+    - Automatic answering machine detection
+    - Dynamic call rate adjustment
+    - Maximum agent utilization
+    
+    Best For:
+    ✅ High-volume outreach
+    ✅ Lead generation campaigns
+    ✅ Sales prospecting
+    ✅ Customer re-engagement
+    ```
+  </Tab>
+  
+  <Tab title="Progressive Campaigns">
+    ```
+    📋 Sequential Dialing:
+    - One call per contact at a time
+    - Systematic contact progression
+    - Detailed call outcome tracking
+    - Quality-focused approach
+    
+    Best For:
+    ✅ High-value prospects
+    ✅ Personalized outreach
+    ✅ Complex sales processes
+    ✅ Relationship building
+    ```
+  </Tab>
+  
+  <Tab title="Manual Campaigns">
+    ```
+    👤 Human-Controlled Dialing:
+    - Agent-initiated calls
+    - Complete call control
+    - Custom conversation flows
+    - Immediate response handling
+    
+    Best For:
+    ✅ VIP customers
+    ✅ Complex negotiations
+    ✅ Sensitive communications
+    ✅ Custom requirements
+    ```
+  </Tab>
+</Tabs>
 
-### Reporting Features
-- **Real-time Reports**: Live campaign performance reports
-- **Historical Analysis**: Compare campaign performance over time
-- **Custom Reports**: Create tailored reporting views
-- **Export Options**: Export data for external analysis
+ 
 
-## Optimization Tools
+### 📅 Time Management
 
-### A/B Testing
-- **Script Testing**: Test different voice scripts and approaches
-- **Timing Optimization**: Find optimal calling times
-- **Audience Testing**: Test different target segments
-- **Offer Testing**: Compare different promotional offers
+<Tabs>
+  <Tab title="Daily Schedule">
+    ```
+    🕐 Operating Hours:
+    - Start Time: 08:00 AM
+    - End Time: 06:00 PM
+    - Lunch Break: 12:00-1:00 PM
+    - Time Zone: Automatic detection
+    
+    📞 Call Frequency:
+    - Calls Per Hour: 50-200 (adjustable)
+    - Retry Attempts: 3 maximum
+    - Retry Delay: 4 hours minimum
+    ```
+  </Tab>
+  
+  <Tab title="Weekly Pattern">
+    ```
+    📋 Weekly Schedule:
+    - Monday-Friday: Full operation
+    - Saturday: Reduced hours (optional)
+    - Sunday: No calling (compliance)
+    
+    🎯 Peak Performance Times:
+    - Morning: 10:00 AM - 12:00 PM
+    - Afternoon: 2:00 PM - 4:00 PM
+    - Evening: 6:00 PM - 8:00 PM
+    ```
+  </Tab>
+  
+  <Tab title="Holiday Management">
+    ```
+    🎉 Holiday Handling:
+    - Federal Holidays: Automatic suspension
+    - Custom Blackouts: User-defined dates
+    - Regional Holidays: Location-aware pausing
+    
+    ⚙️ Automatic Adjustments:
+    - Schedule resumption post-holiday
+    - Make-up call redistribution
+    - Campaign duration extension
+    ```
+  </Tab>
+</Tabs>
 
-### Performance Optimization
-- **Call Quality Analysis**: Analyze call quality and effectiveness
-- **Script Refinement**: Improve scripts based on performance data
-- **Targeting Optimization**: Refine audience targeting strategies
-- **Conversion Optimization**: Optimize for better conversion rates
-
-## Compliance & Regulations
-
-### Legal Compliance
-- **TCPA Compliance**: Telephone Consumer Protection Act adherence
-- **DNC Registry**: Do Not Call registry compliance
-- **Consent Management**: Manage customer consent and preferences
-- **Recording Compliance**: Call recording legal requirements
-
-### Data Protection
-- **Privacy Policies**: Customer data privacy protection
-- **Secure Storage**: Secure campaign and customer data storage
-- **Access Controls**: Manage data access and permissions
-- **Audit Trails**: Maintain compliance audit records
-
-## Integration Features
-
-### CRM Integration
-- **Contact Sync**: Synchronize contacts with CRM systems
-- **Lead Management**: Manage generated leads in CRM
-- **Activity Logging**: Log campaign activities and outcomes
-- **Pipeline Integration**: Connect campaigns to sales pipelines
-
-### Marketing Automation
-- **Multi-channel Campaigns**: Coordinate with email and SMS campaigns
-- **Follow-up Automation**: Automated follow-up sequences
-- **Lead Scoring**: Score leads based on campaign interactions
-- **Workflow Integration**: Connect to marketing workflow systems
-
-## Campaign Management
-
-### Schedule Management
-- **Campaign Scheduling**: Plan and schedule campaign execution
-- **Time Zone Handling**: Manage campaigns across time zones
-- **Frequency Capping**: Control call frequency per contact
-- **Blackout Periods**: Respect customer preferences and holidays
-
-### Quality Assurance
-- **Call Monitoring**: Monitor call quality and compliance
-- **Script Adherence**: Ensure AI follows approved scripts
-- **Quality Scoring**: Score call quality and effectiveness
-- **Continuous Improvement**: Regular campaign optimization
-
-## Best Practices
-
-### Campaign Design
-- Define clear, measurable campaign objectives
-- Segment audiences for targeted messaging
-- Test scripts and approaches before full deployment
-- Respect customer preferences and calling hours
-
-### Compliance Best Practices
-- Maintain updated Do Not Call lists
-- Obtain proper consent before calling
-- Include clear opt-out instructions
-- Regular compliance training and updates
-
-### Performance Optimization
-- Monitor campaigns closely during execution
-- Make data-driven optimization decisions
-- Continuously test and improve approaches
-- Maintain detailed performance records 

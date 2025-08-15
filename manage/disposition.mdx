@@ -1,101 +1,240 @@
 ---
 title: "Disposition"
-description: "Manage call dispositions, outcomes, and categorization for comprehensive call tracking and analysis"
+description: "Complete guide to call disposition workflow, fields, and practical usage for effective call outcome tracking"
 icon: "list-check"
 ---
 
-# Disposition
+<img
+  className="block dark:hidden"
+  src="/images/manage/disposition/overview.png"
+  alt="Disposition Overview Interface"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/manage/disposition/overview.png"
+  alt="Disposition Overview Interface"
+/>
 
-Manage call dispositions, outcomes, and categorization systems for comprehensive call tracking, analysis, and reporting.
+Call dispositions are the backbone of effective call tracking and outcome analysis. This guide covers everything you need to know about disposition workflow, field management, and practical applications.
 
-## Overview
+## 🔄 Disposition Workflow
 
-Disposition management allows you to define and categorize call outcomes, enabling detailed tracking of call results, agent performance, and customer interaction patterns.
+Understanding the disposition workflow is crucial for maximizing call tracking effectiveness:
 
-## Disposition Categories
+```mermaid
+flowchart TD
+    A[📞 Call Initiated] --> B{Call Connected?}
+    B -->|Yes| C[💬 Conversation Starts]
+    B -->|No| D[📋 Auto-Disposition]
+    
+    C --> E{Call Outcome}
+    E -->|Positive| F[✅ Success Disposition]
+    E -->|Negative| G[❌ Unsuccessful Disposition]
+    E -->|Follow-up Needed| H[📅 Callback Disposition]
+    
+    D --> I[📊 System Analysis]
+    F --> J[📈 Performance Tracking]
+    G --> J
+    H --> K[⏰ Schedule Follow-up]
+    
+    I --> L{Auto-Classification}
+    L -->|No Answer| M[📵 No Answer]
+    L -->|Busy Signal| N[📞 Busy]
+    L -->|Voicemail| O[📧 Voicemail]
+    
+    J --> P[📊 Analytics & Reporting]
+    K --> P
+    M --> P
+    N --> P
+    O --> P
+```
 
-### Standard Dispositions
-- **Sale**: Successful sales conversions
-- **No Sale**: Unsuccessful sales attempts
-- **Callback**: Scheduled callback requests
-- **Not Interested**: Customer declined offer
-- **Wrong Number**: Incorrect contact information
-- **Voicemail**: Call went to voicemail
-- **Busy**: Line was busy
-- **No Answer**: No response to call
+### 🎯 Workflow Stages
 
-### Custom Dispositions
-- **Create Custom**: Define business-specific dispositions
-- **Outcome Mapping**: Map dispositions to business outcomes
-- **Priority Levels**: Assign priority levels to dispositions
-- **Follow-up Actions**: Define automatic follow-up actions
+<Card title="Pre-Call Setup" icon="gear">
+Configure disposition options and auto-assignment rules before initiating calls
+</Card>
 
-## Disposition Management
+<Card title="During Call" icon="phone">
+Monitor call progress and prepare for outcome classification
+</Card>
 
-### Create Dispositions
-- **Disposition Name**: Clear, descriptive disposition names
-- **Description**: Detailed description of disposition criteria
-- **Category Assignment**: Group dispositions by category
-- **Color Coding**: Visual identification through color schemes
+<Card title="Post-Call Action" icon="clipboard-check">
+Assign appropriate disposition and trigger follow-up actions
+</Card>
 
-### Edit Dispositions
-- **Modify Details**: Update disposition information
-- **Status Management**: Enable/disable specific dispositions
-- **Usage Tracking**: Monitor disposition usage patterns
-- **Performance Analysis**: Analyze disposition effectiveness
+<Card title="Analytics Review" icon="chart-bar">
+Analyze disposition data for performance insights and optimization
+</Card>
 
-## Auto-Disposition Rules
+## 📋 Disposition Fields
 
-### Rule Configuration
-- **Criteria Setup**: Define auto-disposition criteria
-- **Condition Matching**: Set conditions for automatic assignment
-- **Priority Rules**: Establish rule priority and conflicts
-- **Exception Handling**: Handle rule exceptions and edge cases
+### Core Fields Overview
 
-### AI-Powered Disposition
-- **Sentiment Analysis**: Auto-disposition based on conversation sentiment
-- **Intent Recognition**: Disposition assignment based on customer intent
-- **Outcome Prediction**: Predict likely outcomes during calls
-- **Smart Categorization**: Intelligent disposition suggestions
+<img
+  src="/images/manage/disposition/actions.png"
+  alt="Disposition Status Configuration"
+  className="rounded-lg border"
+/>
 
-## Reporting & Analytics
+| Field | Type | Description | Example |
+|-------|------|-------------|---------|
+| **ID** | `Number` | Unique identifier for each disposition | `1`, `2`, `3` |
+| **Disposition Name** | `String` | Clear, descriptive outcome label | `"Interested"`, `"Not Available"` |
+| **Setup Didn't Answer** | `Toggle` | **Auto-assign when call goes unanswered** | `Enabled` / `Disabled` |
+| **Call Status** | `Enum` | Current status of the disposition | `Completed`, `Answered`, `No`,`Ringing` ,`Busy`,`Cancelled`,`In Progress`,`Failed`,`AMD` |
+| **Created At** | `DateTime` | Timestamp of disposition creation | `09-13-2024 01:19 PM` |
+| **Actions** | `Buttons` | Available operations | `Edit`, `Delete` |
 
-### Disposition Reports
-- **Usage Statistics**: Track disposition usage frequency
-- **Outcome Analysis**: Analyze disposition effectiveness
-- **Agent Performance**: Agent-specific disposition patterns
-- **Trend Analysis**: Disposition trends over time
+### 🔧 Field Configuration Details
 
-### Performance Metrics
-- **Conversion Rates**: Track conversion by disposition type
-- **Follow-up Success**: Success rates of follow-up actions
-- **Call Quality**: Quality metrics by disposition
-- **ROI Analysis**: Return on investment per disposition
+#### Disposition Name
+- **Purpose**: Primary identifier for call outcomes
 
-## Integration Features
 
-### CRM Integration
-- **Sync Dispositions**: Synchronize with CRM systems
-- **Lead Updates**: Update lead status based on disposition
-- **Pipeline Management**: Manage sales pipeline with dispositions
-- **Activity Logging**: Log disposition activities in CRM
+#### Setup Didn't Answer Button
+- **Function**: Automatically applies disposition when calls go unanswered
+- **Use Cases**:
+  - ✅ **Enable** for: No Answer, Busy, Voicemail
+  - ❌ **Disable** for: Sale, Interested, Appointment Set
+- **Impact**: Reduces manual disposition assignment by 60-80%
 
-### Workflow Automation
-- **Trigger Actions**: Trigger actions based on dispositions
-- **Email Automation**: Send automated emails per disposition
-- **Task Creation**: Create follow-up tasks automatically
-- **Notification Systems**: Send notifications based on outcomes
+#### Call Status Options
+- **Completed**: ✅ Call finished with clear outcome
+- **Answered**: 📞 Call was answered but ongoing
+- **No**: ❌ Call attempt unsuccessful
+ 
+ 
+ 
 
-## Best Practices
+## 🎛️ Managing Dispositions
 
-### Disposition Design
-- Use clear, unambiguous disposition names
-- Maintain consistent categorization across teams
-- Regular review and optimization of disposition sets
-- Train agents on proper disposition usage
+### ➕ Adding New Dispositions
 
-### Quality Assurance
-- Monitor disposition accuracy and consistency
-- Implement disposition validation rules
-- Regular audits of disposition assignments
-- Feedback loops for disposition improvement 
+<img
+  src="/images/manage/disposition/add-disposition.png"
+  alt="Add New Disposition Interface"
+  className="rounded-lg border"
+/>
+
+Creating new dispositions allows you to customize call outcome tracking to match your business needs. The interface provides a streamlined approach to disposition management.
+
+#### Required Fields
+<Card title="Name" icon="tag">
+**Purpose**: Enter a clear, descriptive name for the disposition outcome
+<br />**Example**: "Interested", "Not Available", "Decision Maker Not Present"
+<br />**Best Practice**: Use consistent naming conventions across your team
+</Card>
+<Card title="Agent Role" icon="users">
+**Function**: Assign specific agent role or permission level for this disposition
+<br />**Options**: Select from available user roles (Admin, Manager, Agent, etc.)
+<br />**Note**: Controls which team members can apply this disposition to calls
+</Card>
+<Card title="GHL Location" icon="map-pin">
+**Purpose**: Specify the CRM system name for integration and tracking
+<br />**Use Case**: Useful for multi-CRM environments or system-specific campaigns
+<br />**Impact**: Enables CRM-based disposition analytics and integration
+</Card>
+  
+
+### ✏️ Edit Disposition
+
+Modify existing dispositions to reflect changing business needs or improve tracking accuracy.
+
+<Warning>
+Editing disposition names will affect historical reporting. Consider creating new dispositions instead of modifying existing ones for data consistency.
+</Warning>
+
+### 🗑️ Delete Disposition
+
+Remove unused or outdated dispositions from your system.
+
+<Note>
+Deleted dispositions cannot be recovered. Ensure all historical data using this disposition is properly archived before deletion.
+</Note>
+
+ 
+
+## 📊 Analytics & Performance
+
+### 📈 Disposition Usage Statistics
+
+```mermaid
+pie title Disposition Distribution (Last 30 Days)
+    "Completed" : 35
+    "Answered" : 25
+    "No Answer" : 20
+    "Busy" : 12
+    "Voicemail" : 8
+```
+
+### 🎯 Key Performance Indicators
+
+<CardGroup cols={3}>
+  <Card title="Conversion Rate" icon="percent">
+**24.5%**
+    <br />↗️ +3.2% from last month
+</Card>
+
+  <Card title="Contact Rate" icon="phone">
+    **68.3%**
+    <br />↗️ +5.1% from last month
+</Card>
+  <Card title="Follow-up Success" icon="repeat">
+    **41.7%**
+    <br />↘️ -1.8% from last month
+</Card>
+</CardGroup>
+ 
+
+#### Configuration Options
+
+| Setting | Description | Recommended Use |
+|---------|-------------|-----------------|
+| **Auto-Assignment** | Automatically apply this disposition for specific call outcomes | Enable for "No Answer", "Busy", "Voicemail" |
+| **Follow-up Required** | Mark if this disposition requires scheduled follow-up | Enable for "Callback Requested", "Follow-up Needed" |
+| **Success Indicator** | Classify as positive outcome | Enable for "Sale", "Appointment Set", "Interested" |
+| **Final Disposition** | Mark as call completion (no further attempts) | Enable for "Do Not Call", "Sale Completed" |
+
+## 🚀 Advanced Features
+
+### 🤖 AI-Powered Auto-Disposition
+
+<Note>
+Enable intelligent disposition assignment based on conversation analysis and customer sentiment detection.
+</Note>
+
+- **Sentiment Analysis**: Automatically detect positive/negative outcomes
+- **Intent Recognition**: Classify customer intent during conversations  
+- **Pattern Learning**: Improve accuracy through machine learning
+- **Confidence Scoring**: Provide reliability metrics for auto-assignments
+
+### 🔗 Integration Capabilities
+
+<CardGroup cols={2}>
+  <Card title="CRM Sync" icon="database">
+    Automatically update lead status in connected CRM systems based on disposition
+</Card>
+
+  <Card title="Workflow Triggers" icon="bolt">
+    Launch automated follow-up sequences, emails, and task creation
+</Card>
+</CardGroup>
+
+### 📅 Follow-up Automation
+
+```mermaid
+flowchart LR
+    A[Disposition Assigned] --> B{Follow-up Required?}
+    B -->|Yes| C[Schedule Task]
+    B -->|No| D[Update Records]
+    
+    C --> E[Send Email]
+    C --> F[Create Calendar Event]
+    C --> G[Assign to Agent]
+    
+    E --> H[Track Engagement]
+    F --> H
+    G --> H
+```
+ 

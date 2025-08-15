@@ -1,177 +1,255 @@
 ---
-title: "Rizz Numbers"
-description: "Manage and configure Rizz phone numbers for AI calling campaigns and customer interactions"
+title: "Phone Numbers"
+description: "Manage and configure phone numbers for AI calling campaigns and customer interactions"
 icon: "phone"
 ---
 
-# Rizz Numbers
+# 📞 Phone Numbers
 
-Manage and configure Rizz phone numbers for AI calling campaigns, customer interactions, and business communications.
+Manage your phone number inventory with comprehensive provider integration, verification tracking, and advanced calling features for AI campaigns and business communications.
 
-## Overview
+## 📋 Phone Numbers Overview
 
-Rizz Numbers are specialized phone numbers optimized for AI-powered calling campaigns, providing enhanced features for automated outreach, customer engagement, and campaign management.
+<img
+  src="/images/manage/rizz-number/overview.png"
+  alt="Phone Numbers Interface"
+  className="rounded-lg border"
+/>
 
-## Number Management
+Centrally manage all your phone numbers across multiple providers with detailed tracking, verification status, and comprehensive action controls.
 
-### Number Acquisition
-- **Purchase Numbers**: Acquire new Rizz numbers for campaigns
-- **Number Selection**: Choose from available local and toll-free numbers
-- **Geographic Targeting**: Select numbers from specific area codes
-- **Bulk Acquisition**: Purchase multiple numbers simultaneously
+### 📊 Phone Number Fields
 
-### Number Configuration
-- **Number Assignment**: Assign numbers to specific campaigns or agents
-- **Caller ID Setup**: Configure caller ID display information
-- **Number Routing**: Set up call routing and forwarding rules
-- **Status Management**: Activate, deactivate, or suspend numbers
+| Field | Description | Example |
+|-------|-------------|---------|
+| **#** | Number ID | `1`, `2`, `3`, `4`, `5`, `6`, `7` |
+| **Title** | Number identifier | Custom name or label |
+| **Phone No.** | Full phone number | `+13154942679`, `+12058823206` |
+| **AreaCode** | Geographic area code | `315`, `205` |
+| **Provider** | Service provider | `Plivo`, `Twilio` |
+| **10DLC** | 10DLC registration status | `No`, `Yes` |
+| **Renwal At** | Next renewal date | `09-14-2025 12:40 PM` |
+| **Status** | Verification status | `Verified`, `Unverified` |
+| **Purchased At** | Purchase timestamp | `08-14-2025 12:40 PM` |
+| **Action** | Available operations | `Settings` `More Options` |
 
-### Number Pool Management
-- **Pool Organization**: Group numbers by campaign or purpose
-- **Rotation Strategy**: Implement number rotation for campaigns
-- **Load Balancing**: Distribute calls across number pools
-- **Performance Tracking**: Monitor individual number performance
+## ➕ Acquiring Phone Numbers
+<div style={{display: 'flex', gap: '20px', marginBottom: '20px'}}>
+  <div style={{flex: 1}}>
+    ![Purchase](/images/manage/rizz-number/purchase.png)
+  </div>
+  <div style={{flex: 1}}>
+    ![Package Price Slider](/images/manage/rizz-number/new-purchase.png)
+  </div>
+</div>
+### 🛒 Purchase Process
 
-## Campaign Integration
+<CardGroup cols={2}>
+  <Card title="Purchase New Numbers" icon="cart-shopping">
+    Buy new phone numbers for your campaigns
+    <br />**Button**: "Purchase" - Navigate to number marketplace
+    <br />**Options**: Local, toll-free, and international numbers
+  </Card>
+  
+  <Card title="Provider Selection" icon="network-wired">
+    Choose from multiple carrier providers
+    <br />**Plivo**: Cost-effective international coverage
+    <br />**Twilio**: Premium reliability and features
+  </Card>
+  
+  <Card title="Area Code Targeting" icon="map-location-dot">
+    Select specific geographic regions
+    <br />**315**: New York (Syracuse area)
+    <br />**205**: Alabama (Birmingham area)
+  </Card>
+  
+  <Card title="Bulk Acquisition" icon="layer-group">
+    Purchase multiple numbers simultaneously
+    <br />**Efficiency**: Save time with bulk operations
+    <br />**Campaigns**: Get numbers for large campaigns
+  </Card>
+</CardGroup>
 
-### Campaign Assignment
-- **Number Allocation**: Assign specific numbers to campaigns
-- **Dynamic Assignment**: Automatically assign numbers based on criteria
-- **Campaign Isolation**: Isolate campaigns with dedicated numbers
-- **Cross-campaign Sharing**: Share numbers across multiple campaigns
+## 🔄 Phone Number Workflow
 
-### Call Routing
-- **Intelligent Routing**: Route calls based on campaign requirements
-- **Geographic Routing**: Route calls based on recipient location
-- **Time-based Routing**: Route calls based on time zones and schedules
-- **Capacity Management**: Manage call capacity across numbers
+### 📈 Number Lifecycle
 
-## Compliance & Regulations
+The diagram above shows the complete phone number lifecycle from purchase to ongoing management.
 
-### Regulatory Compliance
-- **TCPA Compliance**: Ensure compliance with calling regulations
-- **Local Regulations**: Comply with local and regional calling laws
-- **Number Registration**: Register numbers as required by regulations
-- **Compliance Monitoring**: Monitor compliance across all numbers
+### 🏢 Provider Integration
 
-### Reputation Management
-- **Number Reputation**: Monitor and maintain number reputation
-- **Spam Protection**: Protect numbers from spam classification
-- **Carrier Relations**: Maintain good relationships with carriers
-- **Reputation Recovery**: Recover numbers with damaged reputation
+<Tabs>
+  <Tab title="Plivo Numbers">
+    ```
+    🌍 Plivo Integration:
+    - Global Coverage: 190+ countries
+    - Cost Effective: Competitive pricing
+    - API Access: Full programmatic control
+    - SMS Support: Voice and SMS capabilities
+    
+    Features:
+    ✅ International numbers
+    ✅ Local presence worldwide
+    ✅ Flexible pricing
+    ✅ Developer-friendly APIs
+    ```
+  </Tab>
+  
+  <Tab title="Twilio Numbers">
+    ```
+    🚀 Twilio Integration:
+    - Premium Quality: Industry-leading reliability
+    - Advanced Features: Rich communication features
+    - Enterprise Grade: Scalable infrastructure
+    - Compliance Ready: Built-in compliance tools
+    
+    Features:
+    ✅ High deliverability rates
+    ✅ Advanced analytics
+    ✅ Enterprise support
+    ✅ Regulatory compliance
+    ```
+  </Tab>
+  
+  <Tab title="Multi-Provider">
+    ```
+    🔄 Multi-Provider Strategy:
+    - Provider Redundancy: Backup options
+    - Cost Optimization: Best rates per region
+    - Feature Coverage: Access all features
+    - Risk Mitigation: Reduce single-point failures
+    
+    Benefits:
+    ✅ Improved reliability
+    ✅ Cost savings
+    ✅ Global coverage
+    ✅ Feature diversity
+    ```
+  </Tab>
+</Tabs>
 
-## Performance Analytics
+## ✅ Verification Status Management
 
-### Number Performance
-- **Call Volume**: Track calls made from each number
-- **Connection Rates**: Monitor successful connection percentages
-- **Delivery Rates**: Track call delivery success rates
-- **Quality Metrics**: Measure call quality and clarity
+### 🔍 Verification Process
 
-### Campaign Analytics
-- **Campaign Performance**: Analyze performance by number
-- **Conversion Tracking**: Track conversions by number
-- **Response Rates**: Monitor customer response rates
-- **ROI Analysis**: Calculate return on investment per number
+<CardGroup cols={2}>
+  <Card title="Verified Numbers" icon="circle-check">
+    **Status**: Ready for campaigns
+    <br />**Indicator**: Green "Verified" badge
+    <br />**Capabilities**: Full calling features enabled
+    <br />**Trust Level**: High deliverability and success rates
+  </Card>
+  
+  <Card title="Unverified Numbers" icon="circle-exclamation">
+    **Status**: Pending verification
+    <br />**Indicator**: Orange "Unverified" badge
+    <br />**Limitations**: Restricted calling capabilities
+    <br />**Action Required**: Complete verification process
+  </Card>
+  
+  <Card title="10DLC Registration" icon="certificate">
+    **Purpose**: A2P 10DLC compliance
+    <br />**Status**: "Yes" or "No" indicator
+    <br />**Benefits**: Higher throughput and deliverability
+    <br />**Requirement**: Mandatory for US business messaging
+  </Card>
+  
+  <Card title="Verification Benefits" icon="star">
+    **Higher Success Rates**: Better call connection
+    <br />**Reduced Filtering**: Avoid spam filters
+    <br />**Carrier Trust**: Improved carrier relationships
+    <br />**Compliance**: Meet regulatory requirements
+  </Card>
+</CardGroup>
 
-### Reporting Features
-- **Real-time Monitoring**: Live number performance monitoring
-- **Historical Reports**: Number performance over time
-- **Comparative Analysis**: Compare number performance
-- **Custom Dashboards**: Create personalized monitoring dashboards
+## ⚡ Number Actions & Controls
 
-## Advanced Features
+### 🎛️ Available Actions
 
-### Smart Routing
-- **AI-powered Routing**: Intelligent call routing decisions
-- **Dynamic Load Balancing**: Automatic load distribution
-- **Failover Protection**: Automatic failover to backup numbers
-- **Geographic Optimization**: Optimize routing for local presence
+<CardGroup cols={3}>
+  <Card title="Number Settings" icon="gear">
+    Configure individual number settings
+    <br />**Access**: Click settings icon (⚙️)
+    <br />**Options**: Routing, forwarding, features
+  </Card>
+  
+  <Card title="More Options" icon="ellipsis-vertical">
+    Additional number management actions
+    <br />**Access**: Click more options (⋯)
+    <br />**Actions**: Edit, delete, 10DLC, Endpoints
+  </Card>
+  
+  <Card title="Bulk Operations" icon="list-check">
+    Manage multiple numbers simultaneously
+    <br />**Selection**: Check multiple numbers
+    <br />**Actions**: Bulk edit, export, assign
+  </Card>
+</CardGroup>
+ 
 
-### Number Optimization
-- **Performance Optimization**: Optimize numbers for better performance
-- **Carrier Optimization**: Optimize for specific carrier networks
-- **Time Optimization**: Optimize calling times for better results
-- **Audience Optimization**: Match numbers to target audiences
+## 📊 Performance Analytics & Tracking
 
-## Integration Features
+### 🎯 Key Performance Indicators
 
-### CRM Integration
-- **Contact Sync**: Synchronize contacts with number assignments
-- **Activity Logging**: Log number usage and call activities
-- **Lead Tracking**: Track leads by originating number
-- **Pipeline Management**: Connect numbers to sales pipelines
+<CardGroup cols={2}>
+  <Card title="Connection Success Rate" icon="phone-check">
+    **92%** average connection rate
+    <br />Measures successful call connections vs attempts
+    <br />**Goal**: Maintain above 85% for optimal performance
+  </Card>
+  
+  <Card title="Number Utilization" icon="chart-pie">
+    **78%** active number usage
+    <br />Percentage of numbers actively used in campaigns
+    <br />**Optimization**: Identify underutilized numbers
+  </Card>
+  
+  <Card title="Verification Rate" icon="shield-check">
+    **94%** numbers verified
+    <br />Percentage of verified vs unverified numbers
+    <br />**Target**: Achieve 100% verification rate
+  </Card>
+  
+  <Card title="Cost Efficiency" icon="dollar-sign">
+    **$0.045** average cost per call
+    <br />Average calling cost across all providers
+    <br />**Savings**: Track cost optimization opportunities
+  </Card>
+</CardGroup>
 
-### Telephony Integration
-- **SIP Integration**: Connect with SIP-based systems
-- **PBX Integration**: Integrate with existing PBX systems
-- **API Integration**: Programmatic number management
-- **Webhook Support**: Real-time event notifications
 
-## Number Types & Features
 
-### Local Numbers
-- **Geographic Presence**: Establish local presence in target markets
-- **Area Code Selection**: Choose specific area codes
-- **Local Rates**: Benefit from local calling rates
-- **Customer Trust**: Increase customer trust with local numbers
+## 🔄 Renewal & Billing Management
 
-### Toll-Free Numbers
-- **Professional Image**: Project professional business image
-- **National Reach**: Serve customers nationwide
-- **Easy Recall**: Memorable number formats
-- **Cost Absorption**: Absorb calling costs for customers
+### 📅 Renewal Tracking
 
-### Virtual Numbers
-- **Flexible Routing**: Route to any destination
-- **Multi-device Support**: Ring multiple devices
-- **Geographic Independence**: Location-independent calling
-- **Advanced Features**: Access to premium features
-
-## Security & Privacy
-
-### Number Security
-- **Access Control**: Secure access to number management
-- **Usage Monitoring**: Monitor for unauthorized usage
-- **Fraud Protection**: Protect against fraudulent use
-- **Encryption**: Secure communication channels
-
-### Privacy Protection
-- **Caller Privacy**: Protect caller privacy and information
-- **Data Protection**: Secure storage of call data
-- **Anonymization**: Anonymize sensitive call information
-- **Compliance**: Meet privacy regulation requirements
-
-## Cost Management
-
-### Usage Tracking
-- **Cost Monitoring**: Track costs per number and campaign
-- **Budget Management**: Set and monitor usage budgets
-- **Cost Allocation**: Allocate costs to departments or campaigns
-- **Billing Analytics**: Detailed billing and usage reports
-
-### Optimization Strategies
-- **Cost Optimization**: Optimize usage for cost efficiency
-- **Usage Patterns**: Analyze usage patterns for savings
-- **Number Efficiency**: Maximize efficiency of number usage
-- **Budget Planning**: Plan budgets based on usage trends
-
-## Best Practices
-
-### Number Management
-- Maintain an appropriate number pool size
-- Regularly monitor number performance and reputation
-- Implement proper number rotation strategies
-- Keep detailed records of number usage and performance
-
-### Compliance Best Practices
-- Stay updated on regulatory changes
-- Maintain proper documentation for compliance
-- Implement regular compliance audits
-- Train staff on compliance requirements
-
-### Performance Optimization
-- Monitor and optimize number performance regularly
-- Test different routing strategies
-- Analyze and act on performance data
-- Maintain good carrier relationships 
+<CardGroup cols={2}>
+  <Card title="Automatic Renewals" icon="calendar-check">
+    **Next Renewal**: Track upcoming renewal dates
+    <br />**Example**: `09-14-2025 12:40 PM`
+    <br />**Notifications**: Automatic renewal reminders
+    <br />**Billing**: Seamless payment processing
+  </Card>
+  
+  <Card title="Renewal Management" icon="credit-card">
+    **Payment Methods**: Manage billing preferences
+    <br />**Notifications**: Email alerts before renewal
+    <br />**History**: View renewal and payment history
+    <br />**Controls**: Enable/disable auto-renewal
+  </Card>
+  
+  <Card title="Cost Optimization" icon="chart-mixed">
+    **Usage Analysis**: Review number utilization
+    <br />**Right-sizing**: Optimize number inventory
+    <br />**Provider Comparison**: Compare costs across providers
+    <br />**Bulk Discounts**: Leverage volume pricing
+  </Card>
+  
+  <Card title="Billing Analytics" icon="receipt">
+    **Cost Tracking**: Monitor spending per number
+    <br />**ROI Analysis**: Calculate return on investment
+    <br />**Budget Planning**: Forecast future costs
+    <br />**Reports**: Detailed billing reports
+  </Card>
+</CardGroup>
+ 

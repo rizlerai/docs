@@ -1,163 +1,218 @@
 ---
-title: "Voice Template"
+title: "Voice Templates"
 description: "Create and manage voice templates for AI agents, call scripts, and automated voice interactions"
 icon: "microphone"
 ---
 
-# Voice Template
+# 🎤 Voice Templates
 
-Create and manage voice templates for AI agents, call scripts, and automated voice interactions to ensure consistent, professional communication.
+Create reusable voice templates for AI agents, automated voice calls, and professional audio scripts with customizable audio recordings.
 
-## Overview
+## 📋 Template Overview
+<img
+  src="/images/manage/voice-template/overview.png"
+  alt="SMS Templates Interface"
+  className="rounded-lg border"
+/>
+View all your voice templates in one organized interface with audio previews, text-to-speech content, and easy management tools.
 
-Voice templates provide structured scripts and conversation flows for AI agents and automated voice systems, ensuring consistent messaging and professional customer interactions across all voice communications.
+### 📊 Template Fields
 
-## Template Types
+| Field | Description | Example |
+|-------|-------------|---------|
+| **#** | Template ID | `1`, `2`, `3`, `4` |
+| **Title** | Template name | `dev`, `textvoice`, `b35` |
+| **Audio** | Voice recording player | Audio player with play/pause controls |
+| **Text-To-Speech** | Script content | `hello this is a test call.` |
+| **Status** | Template status | `active` |
+| **Updated At** | Last modification | `04-14-2025 06:48 PM` |
+| **Action** | Available operations | `Edit` `Delete` |
 
-### AI Agent Scripts
-- **Greeting Templates**: Professional call opening scripts
-- **Product Presentations**: Structured product information delivery
-- **Objection Handling**: Responses to common customer objections
-- **Closing Scripts**: Effective call conclusion templates
+## ➕ Creating Templates
+<img
+  src="/images/manage/voice-template/add.png"
+  alt="SMS Templates Interface"
+  className="rounded-lg border"
+/>
 
-### Automated Messages
-- **IVR Scripts**: Interactive Voice Response system messages
-- **Hold Messages**: Professional on-hold communications
-- **Voicemail Greetings**: Personalized voicemail templates
-- **System Announcements**: Automated system notifications
 
-### Call Flow Templates
-- **Sales Scripts**: Complete sales conversation flows
-- **Support Scripts**: Customer service interaction templates
-- **Survey Scripts**: Voice survey and feedback collection
-- **Appointment Scripts**: Scheduling and confirmation calls
+### 🎯 Quick Setup
 
-## Voice Template Management
+<CardGroup cols={2}>
+  <Card title="Template Name" icon="tag">
+    Give your template a clear, descriptive name
+    <br />**Example**: "Welcome Call", "Sales Pitch"
+  </Card>
+  
+  <Card title="Audio Content" icon="microphone">
+    Upload audio files or create text-to-speech scripts
+    <br />**Tip**: Use high-quality audio for best results
+  </Card>
+  
+  <Card title="File Type" icon="file-audio">
+    Choose your preferred type
+    <br />**Supported**: Audio ,Text-to-speach ,Record voice
+  </Card>
+</CardGroup>
 
-### Template Creation
-- **Script Content**: Conversational script development
-- **Voice Instructions**: Tone and delivery guidelines
-- **Pause Markers**: Strategic pause placement
-- **Emphasis Points**: Key message highlighting
+### 🎵 Audio Options
 
-### Script Editor
-- **Rich Text Editor**: Enhanced script formatting
-- **Voice Annotations**: Delivery notes and instructions
-- **Variable Placeholders**: Dynamic content insertion
-- **Phonetic Guidelines**: Pronunciation instructions
+<Tabs>
+  <Tab title="Audio Upload">
+    ```
+    Upload your pre-recorded audio files:
+    - Supported formats: MP3, WAV, M4A
+    - Maximum duration: 5 minutes
+    - Recommended quality: 44.1kHz, 16-bit
+    ```
+  </Tab>
+  
+  <Tab title="Text-to-Speech">
+    ```
+    Create voice content from text:
+    - Natural voice synthesis
+    - Multiple voice options available
+    - Adjustable speed and tone
+    - Dynamic variable support
+    ```
+  </Tab>
+  
+  <Tab title="Hybrid Approach">
+    ```
+    Combine both methods:
+    - Use audio for complex pronunciations
+    - Use TTS for dynamic content
+    - Seamless transitions between formats
+    ```
+  </Tab>
+</Tabs>
 
-### Template Organization
-- **Category Management**: Organize by use case or department
-- **Version Control**: Track script modifications and updates
-- **Template Library**: Centralized template repository
-- **Access Controls**: Manage template access permissions
+## 🔧 Voice Script Examples
 
-## Dynamic Variables & Personalization
+Create professional scripts for different use cases:
 
-### Customer Variables
-- **{{customer_name}}**: Personalized customer addressing
-- **{{company_name}}**: Customer company information
-- **{{previous_interaction}}**: Reference to past conversations
-- **{{account_status}}**: Customer account information
+### 📞 Call Opening
+```
+Hello {{customer_name}}, this is {{agent_name}} from {{company_name}}. 
+I hope you're having a great day. I'm calling because you expressed 
+interest in our {{product_name}}. Do you have a few minutes to chat?
+```
 
-### Business Variables
-- **{{agent_name}}**: AI agent identification
-- **{{company_name}}**: Your business name
-- **{{product_name}}**: Specific product references
-- **{{service_details}}**: Service-specific information
+### 🏢 Business Introduction
+```
+Hi there! Thank you for your interest in {{company_name}}. 
+We specialize in {{service_type}} and have been helping businesses 
+like yours for over {{years_experience}} years.
+```
 
-### Contextual Variables
-- **{{call_reason}}**: Purpose of the call
-- **{{time_of_day}}**: Appropriate time-based greetings
-- **{{weather}}**: Location-based weather information
-- **{{current_offers}}**: Real-time promotional offers
+### ⏰ Appointment Reminder
+```
+This is a friendly reminder that you have an appointment with 
+{{company_name}} tomorrow, {{appointment_date}} at {{appointment_time}}. 
+Please call {{business_phone}} if you need to reschedule.
+```
 
-## Voice Quality & Delivery
+## 🔧 Dynamic Variables
 
-### Voice Characteristics
-- **Tone Settings**: Configure voice tone and style
-- **Speed Control**: Adjust speaking pace and rhythm
-- **Emotion Modeling**: Add emotional context to delivery
-- **Language Variants**: Support for different language styles
+Add personalization to your voice templates:
 
-### Pronunciation Management
-- **Custom Pronunciations**: Define specific word pronunciations
-- **Phonetic Spelling**: Phonetic representations for complex terms
-- **Accent Adjustments**: Regional accent considerations
-- **Technical Terms**: Industry-specific terminology handling
+### 👤 Customer Info
+- `{{customer_name}}` - Customer's full name
+- `{{first_name}}` - Customer's first name
+- `{{company}}` - Customer's company
+- `{{phone_number}}` - Customer's phone
 
-## Script Testing & Optimization
+### 🏢 Business Info
+- `{{company_name}}` - Your business name
+- `{{agent_name}}` - AI agent name
+- `{{business_phone}}` - Your phone number
+- `{{website}}` - Your website
 
-### Voice Testing
-- **Preview Playback**: Listen to template audio previews
-- **Quality Assessment**: Evaluate voice quality and clarity
-- **A/B Testing**: Test different script variations
-- **Performance Metrics**: Track script effectiveness
+### 📅 Date & Time
+- `{{current_date}}` - Today's date
+- `{{current_time}}` - Current time
+- `{{appointment_date}}` - Scheduled date
+- `{{appointment_time}}` - Scheduled time
 
-### Optimization Tools
-- **Script Analysis**: Analyze script performance data
-- **Conversation Flow**: Optimize conversation pathways
-- **Response Handling**: Improve customer response management
-- **Conversion Tracking**: Monitor script conversion rates
+## ⚡ Audio Controls
 
-## Integration Features
+### 🎛️ Audio Player Features
+- **Play/Pause**: Control audio playback
+- **Time Display**: Shows current position and total duration
+- **Progress Bar**: Visual playback progress
+- **Volume Control**: Adjust audio volume
+- **Download**: Save audio files locally
 
-### AI Agent Integration
-- **Agent Training**: Train AI agents with voice templates
-- **Real-time Adaptation**: Dynamic script adjustment during calls
-- **Context Awareness**: Contextual script selection
-- **Learning Integration**: Continuous improvement from interactions
+### 🎚️ Audio Settings
+- **Playback Speed**: Adjust from 0.5x to 2.0x speed
+- **Audio Quality**: Choose quality settings
+- **Format Options**: Select output audio format
+- **Loop Options**: Enable/disable audio looping
 
-### CRM Integration
-- **Customer Data**: Integrate customer information into scripts
-- **Call Logging**: Log voice template usage and outcomes
-- **Lead Management**: Connect scripts to lead management workflows
-- **Activity Tracking**: Track template performance metrics
+## ⚡ Template Actions
 
-## Compliance & Quality Assurance
+### ✏️ Edit Template
+Click the **Edit** button to modify:
+<img
+  src="/images/manage/voice-template/edit.png"
+  alt="SMS Templates Interface"
+  className="rounded-lg border"
+/>
+- Template name and description
+- Audio files and recordings
+- Text-to-speech content
+- Variable assignments
+- Voice settings and parameters
 
-### Regulatory Compliance
-- **TCPA Compliance**: Ensure call compliance standards
-- **Recording Disclosures**: Include required recording notices
-- **Opt-out Procedures**: Clear unsubscribe instructions
-- **Industry Standards**: Meet industry-specific requirements
+### 🗑️ Delete Template
+<Warning>
+Deleted voice templates cannot be recovered. Ensure you have backups of important audio content before deleting.
+</Warning>
 
-### Quality Control
-- **Script Approval**: Template approval workflows
-- **Consistency Checks**: Ensure brand voice consistency
-- **Legal Review**: Legal compliance verification
-- **Performance Monitoring**: Ongoing quality assessment
+## 🎤 Voice Quality Settings
 
-## Analytics & Reporting
+<CardGroup cols={2}>
+  <Card title="Audio Quality" icon="volume-high">
+    Optimize audio quality for clear communication
+    <br />**Tip**: Use noise reduction for better clarity
+  </Card>
+  
+  <Card title="Voice Characteristics" icon="microphone-lines">
+    Customize voice tone, speed, and emotion
+    <br />**Options**: Professional, friendly, energetic
+  </Card>
+  
+  <Card title="Language Support" icon="globe">
+    Multiple languages and accents available
+    <br />**Features**: Regional dialects and pronunciations
+  </Card>
+  
+  <Card title="Audio Testing" icon="flask">
+    Test your templates before deployment
+    <br />**Preview**: Listen to full audio before saving
+  </Card>
+</CardGroup>
 
-### Template Performance
-- **Usage Statistics**: Track template utilization rates
-- **Conversion Metrics**: Measure script effectiveness
-- **Customer Response**: Analyze customer interaction patterns
-- **Engagement Tracking**: Monitor customer engagement levels
+## 📊 Usage Tips
 
-### Voice Analytics
-- **Sentiment Analysis**: Customer sentiment during calls
-- **Conversation Flow**: Analyze conversation pathways
-- **Drop-off Points**: Identify where customers disengage
-- **Success Metrics**: Track successful outcomes
-
-## Best Practices
-
-### Script Development
-- Use natural, conversational language
-- Keep scripts concise and focused
-- Include clear value propositions
-- Plan for common customer responses
-
-### Voice Delivery
-- Maintain consistent brand voice
-- Use appropriate pacing and pauses
-- Emphasize key information effectively
-- Ensure clear pronunciation
-
-### Template Management
-- Regular script updates and optimization
-- Consistent testing and quality assurance
-- Team training on script usage
-- Performance monitoring and improvement 
+<CardGroup cols={2}>
+  <Card title="Script Length" icon="clock">
+    Keep voice messages concise and engaging
+    <br />Ideal length: 30-90 seconds for most calls
+  </Card>
+  
+  <Card title="Clear Pronunciation" icon="microphone">
+    Ensure all words are clearly pronounced
+    <br />Use phonetic spelling for difficult terms
+  </Card>
+  
+  <Card title="Natural Pauses" icon="pause">
+    Include strategic pauses for better flow
+    <br />Allow time for customer responses
+  </Card>
+  
+  <Card title="Call Compliance" icon="shield-check">
+    Include required disclosures and opt-out options
+    <br />Follow TCPA and industry regulations
+  </Card>
+</CardGroup> 
