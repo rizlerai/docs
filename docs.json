@@ -109,7 +109,7 @@
           },
           {
             "group": "Manage",
-            "icon": "cog",
+            "icon": "gear",
             "pages": [
               "manage/disposition",
               "manage/sms-template",
