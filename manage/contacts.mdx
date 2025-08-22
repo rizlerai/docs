@@ -1,197 +1,198 @@
 ---
 title: "Contacts"
-description: "Comprehensive contact management system for organizing, tracking, and managing customer relationships and interactions"
+description: "Interactive contact management with real-time communication, PowerList integration, and comprehensive contact interaction workflows"
 icon: "address-book"
 ---
 
-# Contacts
+# 👤 Contacts
 
-Comprehensive contact management system for organizing, tracking, and managing customer relationships and interactions across all your campaigns and business activities.
+Interactive contact management system enabling seamless communication, real-time interaction tracking, PowerList integration, and comprehensive contact workflow management for enhanced customer engagement and relationship building.
 
-## Overview
+<img
+  src="/images/manage/contact/overview.png"
+  alt="Contacts Management Dashboard"
+  className="rounded-lg border shadow-lg"
+/>
 
-The Contacts system provides a centralized database for managing all customer and prospect information, enabling efficient relationship management, detailed tracking, and personalized customer interactions.
+The Contacts management dashboard provides a comprehensive view of your contact database with advanced filtering, search capabilities, and real-time interaction tracking. The interface displays contacts in a structured table format with essential information, communication tools, and interactive controls for seamless contact management.
 
-## Contact Management
+## 📊 Contact Interface Elements
 
-### Contact Creation
-- **Manual Entry**: Add contacts individually with complete information
-- **Bulk Import**: Import contacts from CSV, Excel, or other data sources
-- **Form Integration**: Capture contacts from web forms and landing pages
-- **API Integration**: Add contacts programmatically through APIs
+| Element | Description | Functionality |
+|---------|-------------|---------------|
+| **PowerList Filter** | Contact list selection dropdown | Filter contacts by specific PowerLists for targeted viewing |
+| **Show Entries** | Display control dropdown | Show 10/25/50/100 entries per page for pagination |
+| **Search Contact** | Real-time search field | Search across all contact fields with instant filtering |
+| **Contact Number** | Sequential numbering | Auto-generated contact sequence numbers (1, 2, 3, etc.) |
+| **Action Column** | Status indicators | 🟢 Active (green dot), 🔴 Inactive (red dot) status controls |
+| **Phone Number** | Primary contact number | Main communication number with click-to-call functionality |
+| **Email** | Email address field | Contact email for direct communication |
+| **First Name** | Personal identification | Contact's given name |
+| **Last Name** | Family identification | Contact's surname |
+| **Additional Fields** | Extended information | Address, City, Email Address, and custom data fields |
+ 
 
-### Contact Information
-- **Basic Details**: Name, email, phone, and address information
-- **Custom Fields**: Business-specific and custom data fields
-- **Contact Preferences**: Communication preferences and settings
-- **Relationship Data**: Company affiliations and relationships
 
-### Contact Organization
-- **Contact Grouping**: Organize contacts by categories or segments
-- **Folder Structure**: Hierarchical organization of contact groups
-- **Search & Filter**: Advanced search and filtering capabilities
-- **Duplicate Management**: Identify and merge duplicate contacts
 
-## Data Management
 
-### Data Quality
-- **Validation Rules**: Ensure data accuracy and completeness
-- **Duplicate Detection**: Automatic duplicate contact identification
-- **Data Standardization**: Standardize contact information formats
-- **Data Enrichment**: Enhance contact data with additional information
 
-### Import/Export
-- **Bulk Operations**: Import and export large contact datasets
-- **Format Support**: Support for CSV, Excel, and other formats
-- **Field Mapping**: Map imported data to contact fields
-- **Data Verification**: Verify imported contact information
+## ⚡ Contact Status Management
 
-### Data Cleanup
-- **Automated Cleanup**: Remove invalid or outdated contact information
-- **Merge Duplicates**: Intelligently merge duplicate contact records
-- **Data Validation**: Ongoing validation of contact information
-- **Archive Management**: Archive inactive or outdated contacts
+### 🟢 Active vs Inactive Status
 
-## Contact Profiles
+<CardGroup cols={2}>
+  <Card title="Active Contacts" icon="circle-check">
+    Green dot indicator for active contacts
+    <br />**Status**: 🟢 Available for all communication channels
+    <br />**Features**: Full campaign inclusion, unrestricted access
+    <br />**Usage**: Active outreach, marketing campaigns, sales activities
+  </Card>
+  
+  <Card title="Inactive Contacts" icon="circle-xmark">
+    Red dot indicator for inactive contacts
+    <br />**Status**: 🔴 Restricted or suspended communication
+    <br />**Features**: Campaign exclusion, limited functionality
+    <br />**Usage**: Do-not-contact lists, suspended accounts, archived records
+  </Card>
+  
+  <Card title="Status Toggle" icon="arrows-rotate">
+    One-click status management
+    <br />**Quick Toggle**: Instant active/inactive switching
+    <br />**Bulk Actions**: Multiple contact status updates
+    <br />**Audit Trail**: Status change history tracking
+  </Card>
+  
+  <Card title="Contact Details View" icon="eye">
+    Click view icon to access detailed contact information
+    <br />**Conversation History**: Complete communication timeline with timestamps
+    <br />**Contact Profile**: Comprehensive contact details and custom fields
+    <br />**Activity Tracking**: Real-time interaction logs and engagement metrics
+    <br />**Communication Tools**: Direct access to call, SMS, and email functions
+  </Card>
+</CardGroup>
 
-### Detailed Profiles
-- **Complete Information**: Comprehensive contact information view
-- **Interaction History**: Complete history of all interactions
-- **Activity Timeline**: Chronological activity and engagement timeline
-- **Custom Notes**: Detailed notes and observations about contacts
+## 👁️ Contact Details View
 
-### Relationship Mapping
-- **Company Connections**: Map contacts to company relationships
-- **Family Relationships**: Track family and personal relationships
-- **Professional Networks**: Map professional connections and networks
-- **Influence Mapping**: Identify key influencers and decision makers
+### 🔍 View Icon Functionality
 
-## Communication Tracking
+The view icon (👁️) in the Action column opens a detailed contact profile page, providing comprehensive access to contact information, communication history, and management tools for complete customer relationship oversight.
 
-### Interaction History
-- **Call Logs**: Complete call history and outcomes
-- **Email Tracking**: Email opens, clicks, and responses
-- **SMS History**: SMS message history and responses
-- **Meeting Records**: Meeting history and outcomes
+<img
+  src="/images/manage/contact/view-page.png"
+  alt="Contact Details View Interface"
+  className="rounded-lg border shadow-lg"
+/>
 
-### Engagement Scoring
-- **Activity Scoring**: Score contacts based on engagement levels
-- **Behavioral Scoring**: Score based on specific behaviors
-- **Predictive Scoring**: Predict future engagement and behavior
-- **Custom Scoring**: Create custom scoring models
+#### 🚀 What the View Icon Does
+<CardGroup cols={2}>
+  <Card title="Contact Profile Information" icon="user">
+    View complete contact details and personal information
+    <br />**Display**: Name, phone numbers, email addresses
+    <br />**Custom Fields**: All configured contact field data
+    <br />**Status**: Active/inactive status and contact preferences
+  </Card>
+  
+  <Card title="Contact Timeline & History" icon="clock">
+    Comprehensive interaction and activity timeline
+    <br />**Call History**: Complete call logs with duration and outcomes
+    <br />**Messages**: SMS conversation threads and responses
+    <br />**Activities**: All contact touchpoints and engagement records
+  </Card>
+  
+  <Card title="Communication Tools" icon="phone">
+    Direct access to contact communication options
+    <br />**Phone**: Click-to-call functionality
+    <br />**SMS**: Send text messages directly
+    <br />**Email**: Compose and send emails
+    <br />**Notes**: Add interaction notes and follow-up reminders
+  </Card>
+  
+  <Card title="Contact Management" icon="gear">
+    Comprehensive contact editing and organization tools
+    <br />**Edit Contact**: Update contact information and custom fields
+    <br />**Tags & Lists**: Organize contacts with tags and PowerLists
+    <br />**Status Control**: Manage active/inactive status and preferences
+    <br />**Bulk Actions**: Apply changes to multiple contacts simultaneously
+  </Card>
+</CardGroup>
 
-## Segmentation & Filtering
 
-### Advanced Segmentation
-- **Multi-criteria Filters**: Complex filtering with multiple conditions
-- **Behavioral Segmentation**: Segment based on interaction patterns
-- **Geographic Segmentation**: Location-based contact grouping
-- **Demographic Segmentation**: Age, gender, and demographic grouping
 
-### Dynamic Segments
-- **Real-time Updates**: Automatically updating contact segments
-- **Conditional Logic**: Complex logical conditions for segmentation
-- **Predictive Segments**: AI-powered predictive segmentation
-- **Custom Rules**: Create custom segmentation rules
+## 📊 Contact Data Structure
 
-## Campaign Integration
+### 📝 Contact Information Fields
 
-### Contact Selection
-- **Campaign Targeting**: Select contacts for specific campaigns
-- **Exclusion Lists**: Exclude specific contacts from campaigns
-- **A/B Testing**: Segment contacts for testing purposes
-- **Personalization**: Use contact data for campaign personalization
+The interface displays comprehensive contact information in an organized table format:
 
-### Response Tracking
-- **Campaign Responses**: Track contact responses to campaigns
-- **Conversion Tracking**: Monitor contact conversions and outcomes
-- **Engagement Metrics**: Measure contact engagement with campaigns
-- **Attribution Analysis**: Attribute outcomes to specific campaigns
+<CardGroup cols={2}>
+  <Card title="Primary Contact Data" icon="user">
+    Essential identification information
+    <br />**Phone Number**: Primary communication number
+    <br />**Email**: Contact email address
+    <br />**First Name**: Personal identification
+    <br />**Last Name**: Family name
+  </Card>
+  
+  <Card title="Extended Information" icon="address-card">
+    Additional contact details
+    <br />**Email Address**: Secondary email field
+    <br />**Address**: Physical location information
+    <br />**City**: Geographic location
+    <br />**Custom Fields**: Business-specific data
+  </Card>
+  
+  <Card title="System Generated" icon="database">
+    Platform-managed information
+    <br />**Contact Number**: Sequential identifier (1, 2, 3...)
+    <br />**Status**: Active/Inactive indicator
+    <br />**List Membership**: PowerList associations
+    <br />**Last Updated**: Recent modification timestamp
+  </Card>
+  
+  <Card title="Interactive Elements" icon="cursor-pointer">
+    Clickable interface components
+    <br />**Phone Numbers**: Click-to-call functionality
+    <br />**Email Addresses**: Direct email composition
+    <br />**Status Dots**: Toggle active/inactive state
+    <br />**Column Headers**: Sort by field content
+  </Card>
+</CardGroup>
+ 
 
-## Analytics & Reporting
+## 📈 Contact Performance Tracking
 
-### Contact Analytics
-- **Contact Growth**: Track contact database growth over time
-- **Engagement Analysis**: Analyze contact engagement patterns
-- **Segmentation Analysis**: Analyze effectiveness of contact segments
-- **Quality Metrics**: Monitor contact data quality metrics
+### 📊 Analytics & Metrics
 
-### Performance Reports
-- **Contact Reports**: Comprehensive contact performance reports
-- **Activity Reports**: Contact activity and interaction reports
-- **Campaign Performance**: Contact performance in campaigns
-- **Custom Reports**: Create custom contact reports
+<CardGroup cols={2}>
+  <Card title="Contact Engagement" icon="chart-line">
+    Track interaction performance
+    <br />**Response Rates**: Communication response percentages
+    <br />**Engagement Scores**: Overall interaction quality metrics
+    <br />**Touch Point Analysis**: Communication attempt tracking
+  </Card>
+  
+  <Card title="Status Analytics" icon="pie-chart">
+    Monitor contact status distribution
+    <br />**Active vs Inactive**: Contact status ratios
+    <br />**Status Changes**: Activation/deactivation trends
+    <br />**List Performance**: PowerList effectiveness metrics
+  </Card>
+  
+  <Card title="Communication Metrics" icon="phone-volume">
+    Analyze communication effectiveness
+    <br />**Call Success Rates**: Phone connection percentages
+    <br />**Email Response**: Email engagement tracking
+    <br />**Channel Performance**: Best performing communication methods
+  </Card>
+  
+  <Card title="Data Quality" icon="star">
+    Assess contact database health
+    <br />**Completeness**: Percentage of complete records
+    <br />**Accuracy**: Data validation scores
+    <br />**Freshness**: Recent update tracking
+  </Card>
+</CardGroup>
 
-## Privacy & Compliance
+ 
 
-### Privacy Management
-- **Consent Management**: Manage contact consent and preferences
-- **Opt-out Handling**: Process and manage opt-out requests
-- **Data Rights**: Handle data access and deletion requests
-- **Privacy Compliance**: GDPR and privacy regulation compliance
-
-### Security Features
-- **Access Controls**: Control access to contact information
-- **Data Encryption**: Encrypt sensitive contact data
-- **Audit Trails**: Track access and modifications to contact data
-- **Secure Storage**: Secure storage of contact information
-
-## Integration Features
-
-### CRM Integration
-- **Bi-directional Sync**: Two-way synchronization with CRM systems
-- **Contact Mapping**: Map contacts between systems
-- **Activity Sync**: Sync contact activities and interactions
-- **Data Consistency**: Maintain data consistency across platforms
-
-### Marketing Automation
-- **Platform Integration**: Connect with marketing automation tools
-- **Journey Mapping**: Map contacts to customer journey stages
-- **Trigger Integration**: Use contact data for automation triggers
-- **Personalization**: Personalize automation based on contact data
-
-### Third-party Integrations
-- **Social Media**: Connect with social media profiles
-- **Email Platforms**: Integrate with email marketing platforms
-- **Communication Tools**: Connect with communication platforms
-- **Analytics Tools**: Integrate with analytics and reporting tools
-
-## Automation Features
-
-### Contact Automation
-- **Auto-updates**: Automatically update contact information
-- **Scoring Automation**: Automated contact scoring and ranking
-- **Lifecycle Automation**: Automatically manage contact lifecycle stages
-- **Notification Automation**: Automated notifications for contact changes
-
-### Workflow Integration
-- **Contact Triggers**: Trigger workflows based on contact actions
-- **Status Updates**: Automatically update contact status
-- **Assignment Rules**: Automatically assign contacts to team members
-- **Follow-up Automation**: Automated follow-up scheduling
-
-## Best Practices
-
-### Data Management
-- Maintain consistent data entry standards
-- Regular data cleanup and validation
-- Implement proper duplicate management
-- Use standardized field formats
-
-### Privacy & Compliance
-- Obtain proper consent before collecting data
-- Maintain accurate consent records
-- Provide easy opt-out mechanisms
-- Regular privacy compliance audits
-
-### Contact Organization
-- Use meaningful contact categorization
-- Implement logical folder structures
-- Regular review and optimization of segments
-- Maintain detailed contact profiles
-
-### Engagement Optimization
-- Track and analyze contact engagement patterns
-- Personalize interactions based on contact data
-- Use data-driven insights for better targeting
-- Regular testing and optimization of approaches 
+ 

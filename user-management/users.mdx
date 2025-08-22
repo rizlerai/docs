@@ -1,190 +1,214 @@
 ---
-title: "User Management"
-description: "Manage users and their access permissions"
+title: " Users Management"
+description: "Comprehensive guide to managing users in your system - understand workflows, features, and capabilities"
 icon: "users"
 ---
 
-# User Management
+# 👥 Users Management
 
-The User Management section allows administrators to create, edit, and manage user accounts within the system. This includes setting up different user roles, configuring access permissions, and managing user statuses.
+<Info>
+The Users section is your central hub for managing all user accounts in your system. Monitor user activity, manage permissions, and maintain complete control over your user base.
+</Info>
 
-## Overview
+## 🔍 Overview
 
-The User Management interface provides a comprehensive dashboard for managing all user accounts. The main screen displays a table listing all users with their key information and provides tools for adding new users, searching, and performing actions on existing accounts.
+The Users management interface provides a comprehensive view of all users in your system, allowing you to:
 
-### Key Features
+- 📊 **Monitor** user accounts and their status
+- ✏️ **Edit** user information and settings
+- 🔐 **Control** user access and permissions
+- 📈 **Track** user creation and activity
+- 🔄 **Manage** user sessions and login access
 
-- **User Listing**: View all users in a sortable table format
-- **Add Users**: Create new user accounts with specific configurations
-- **Edit Users**: Modify existing user settings and permissions
-- **Search & Filter**: Quickly find specific users
-- **Bulk Actions**: Perform actions on multiple users
-- **Role Management**: Assign different roles and permissions
+<img src="/images/user-management/users-overview.png" alt="Users Management Overview" />
 
-## User Listing
+## 📋 User Fields & Information
 
-The main user listing page displays all users in a table format with the following information:
+### Core User Data
 
-### Table Columns
+| Field | Description | Purpose | Format |
+|-------|-------------|---------|---------|
+| **👤 Name** | User's display name | Identification and personalization | Text (up to 50 characters) |
+| **📧 Email** | Primary email address | Authentication and communication | Valid email format |
+| **📞 Phone #** | Contact phone number | Communication and verification | Numeric format |
+| **📞 Phone EXT** | Phone extension | Direct contact routing | Numeric extension |
+| **🟢 Status** | Account status | Access control | Active/Inactive |
+| **📅 Created At** | Account creation date | Audit trail and tracking | MM-DD-YYYY HH:MM format |
 
-| Column | Description |
-|--------|-------------|
-| **#** | Row number/User ID |
-| **Name** | User's full name |
-| **Email** | User's email address |
-| **Phone #** | User's primary phone number |
-| **Phone EXT** | User's phone extension (if applicable) |
-| **Status** | Account status (Active, Pending, Inactive) |
-| **Created At** | Date and time when the account was created |
-| **Action** | Available actions (Login, Edit, Delete) |
+### Field Details
 
-### Table Controls
+<CardGroup cols={2}>
+<Card title="👤 Name Field" icon="user">
+- **Purpose**: Primary identification
+- **Validation**: Required, 2-50 characters
+- **Use Case**: Display in interface, reports, communications
+</Card>
 
-- **Add Button**: Blue button to create new users
-- **Show Entries**: Dropdown to control number of entries displayed per page (default: 10)
-- **Search Bar**: Search users by name, email, or other criteria
-- **Sortable Headers**: Click column headers to sort data
+<Card title="📧 Email Field" icon="envelope">
+- **Purpose**: Login credential and communication
+- **Validation**: Must be valid email format
+- **Use Case**: Authentication, notifications, password reset
+</Card>
 
-### Action Buttons
+<Card title="📞 Phone Fields" icon="phone">
+- **Purpose**: Alternative contact method
+- **Validation**: Numeric format for phone, optional extension
+- **Use Case**: Voice communications, 2FA verification
+</Card>
 
-Each user row includes three action buttons:
+<Card title="🟢 Status Field" icon="toggle-on">
+- **Purpose**: Account access control
+- **Values**: Active (green) / Inactive (red)
+- **Use Case**: Enable/disable user access to system
+</Card>
+</CardGroup>
 
-- **Login** : Allows administrators to log in as that user
-- **Edit** : Opens the edit form for that user
-- **Delete**: Removes the user account (with confirmation)
+## ⚡ User Actions & Controls
 
-## Adding New Users
+### Available Actions
 
-To add a new user, click the **Add** button in the top-left corner of the user listing page.
+<img src="/images/user-management/users-actions.png" alt="User Actions" />
 
-### Add User Form Fields
+<Steps>
+<Step title="🔐 Login Action">
+**Purpose**: Directly access user's account
 
-#### Basic Information
-- **Name**: User's full name
-- **Email**: User's email address (used for login)
-- **Phone Number**: User's primary contact number
-- **Password**: User's login password
+- **Use Case**: Technical support, troubleshooting
+- **Access**: Admin-level permissions required
+- **Security**: Maintains audit log of admin logins
+- **Result**: Opens user session in new tab/window
+</Step>
 
-#### Account Settings
-- **Status**: Account status (Pending, Active, Inactive)
-- **Role**: User role (Agent, Admin, etc.)
-- **Dialer**: Whether user can access dialer features (Yes/No)
-- **Use Balance**: Balance allocation (User/Company)
-- **EXT Phone**: Phone extension or area code
-- **Local Presence**: Local presence settings (Yes/No)
+<Step title="✏️ Edit Action">
+**Purpose**: Modify user information and settings
 
-#### Billing Configuration
-- **Pay for seat**: Who pays for the user seat
-  - "No (Company Pay for seat)"
-  - "Rizzler (Direct to Rizzler)"
-- **Use Package Seats Limits**: Package seat limit configuration
-  - "No (Subscription with company card)"
-  - "Yes" (if company has user limits from package)
+- **Editable Fields**: Name, email, phone, status, permissions
+- **Use Case**: Update contact info, change access levels
+- **Validation**: Real-time field validation
+- **Result**: Updated user profile with change history
+</Step>
 
-### Configuration Guidelines
+<Step title="🗑️ Delete Action">
+**Purpose**: Remove user from system
 
-The form includes helpful guidelines for different account setups:
+- **Confirmation**: Requires confirmation dialog
+- **Use Case**: Deactivate terminated employees, cleanup
+- **Data Handling**: Soft delete with data retention options
+- **Result**: User marked as deleted, data archived
+</Step>
+</Steps>
 
-#### Admin Account Setup
-- **Dialer**: No (If dialer Yes then admin also need to pay for use.)
-- **Pay for seat**: No (Company Pay for seat)
-- **Use Package Seats Limits**: Yes
+## 🔄 User Management Workflow
 
-#### Agent Directly Pay To Rizler
-- **Dialer**: Yes
-- **Pay for Seat**: Rizzler (Direct to Rizzler)
+<img src="/images/user-management/workflow-user.png" alt="User Management Workflow" />
 
-#### Company Paying for Agents
-- **Dialer**: Yes
-- **Pay for seat**: No (Company Pay for seat)
-- **Use Package Seats Limits**: If company have user limits from package then select Yes, if no limit remaining then select No (Subscription with company card)
+### Complete Workflow Process
 
-## Editing Users
+```mermaid
+graph TD
+    A[👥 Access Users Page] --> B[🔍 Search/Filter Users]
+    B --> C{Select Action}
+    C -->|Login| D[🔐 Admin Login to User Account]
+    C -->|Edit| E[✏️ Modify User Information]
+    C -->|Delete| F[🗑️ Remove User Account]
+    C -->|Add New| G[➕ Create New User]
+    
+    D --> H[📊 Monitor User Activity]
+    E --> I[💾 Save Changes]
+    F --> J[📋 Confirm Deletion]
+    G --> K[📝 Fill User Details]
+    
+    I --> L[✅ Update Complete]
+    J --> M[🗂️ Archive User Data]
+    K --> N[📧 Send Welcome Email]
+    
+    L --> O[🔄 Return to Users List]
+    M --> O
+    N --> O
+```
 
-To edit an existing user, click the **Edit** button in the user's action column.
+## 🎯 Use Cases & Applications
 
-### Edit User Form
+### Primary Use Cases
 
-The edit form displays the same fields as the add form, but with current values pre-filled. You can modify any field and save changes by clicking the **Submit** button.
+<CardGroup cols={2}>
+<Card title="👔 Employee Management" icon="building">
+**Scenario**: Managing company staff accounts
 
-### Common Edits
+- **Add new employees** when they join
+- **Update information** during role changes  
+- **Deactivate accounts** when employees leave
+- **Monitor access** and activity levels
+</Card>
 
-- **Status Changes**: Activate/deactivate user accounts
-- **Role Updates**: Change user permissions and access levels
-- **Contact Information**: Update phone numbers and extensions
-- **Billing Settings**: Modify payment and seat allocation settings
+<Card title="🤝 Client Account Management" icon="handshake">
+**Scenario**: Managing customer/client users
 
-## User Status Management
+- **Create client accounts** for new customers
+- **Update contact details** as needed
+- **Control access levels** based on subscription
+- **Track usage** and engagement metrics
+</Card>
 
-### Available Statuses
+<Card title="🛠️ Technical Support" icon="wrench">
+**Scenario**: Providing user assistance
 
-- **Active**: User can access the system normally
-- **Pending**: User account created but not yet activated
-- **Inactive**: User account temporarily disabled
+- **Login to user accounts** to troubleshoot issues
+- **Update settings** to resolve problems
+- **Monitor user activity** to identify patterns
+- **Manage permissions** for access control
+</Card>
 
-### Status Change Workflow
+<Card title="📊 User Analytics" icon="chart-line">
+**Scenario**: Analyzing user data and trends
 
-1. Select the user from the listing
-2. Click the **Edit** button
-3. Change the status in the dropdown
-4. Click **Submit** to save changes
+- **Track user growth** over time periods
+- **Monitor active vs inactive** users
+- **Analyze creation dates** for trend insights
+- **Generate reports** on user demographics
+</Card>
+</CardGroup>
 
-## Search and Filtering
 
-### Search Functionality
+## 📈 User Statistics & Insights
 
-Use the search bar to find specific users by:
-- Name
-- Email address
-- Phone number
+<CardGroup cols={3}>
+<Card title="📊 Total Users" icon="users">
+**Current Count**: 3 active users
+**Growth Rate**: Track monthly additions
+**Engagement**: Monitor login frequency
+</Card>
 
-### Pagination
+<Card title="🟢 Active Users" icon="user-check">
+**Status Tracking**: Real-time status monitoring
+**Last Activity**: Track recent user activity
+**Session Data**: Monitor current sessions
+</Card>
 
-The system supports pagination for large user lists:
-- Navigate between pages using Previous/Next buttons
-- View current page number
-- See total number of entries displayed
+<Card title="📅 Recent Additions" icon="user-plus">
+**New Signups**: Track recent registrations
+**Onboarding**: Monitor user activation rates
+**Trends**: Identify growth patterns
+</Card>
+</CardGroup>
 
-## Best Practices
 
-### User Creation
-- Always verify email addresses before creating accounts
-- Set appropriate roles based on user responsibilities
-- Configure billing settings according to company policies
-- Use strong passwords for initial accounts
 
-### User Management
-- Regularly review user statuses and permissions
-- Update contact information when users change roles
-- Monitor seat usage and billing allocations
-- Archive inactive users instead of deleting them
+## 🔗 Integration Points
 
-### Security Considerations
-- Limit admin access to authorized personnel only
-- Regularly audit user permissions
-- Use the login-as-user feature sparingly and for troubleshooting only
-- Implement password policies and regular updates
+### Related Features
 
-## Troubleshooting
+<CardGroup cols={2}>
+<Card title="👥 Teams Management" icon="users">
+**Connection**: Users can be assigned to teams
+**Navigation**: `User Management > Teams`
+**Purpose**: Organize users into functional groups
+</Card>
 
-### Common Issues
-
-**User Cannot Login**
-- Check if account status is set to "Active"
-- Verify email address is correct
-- Ensure password meets complexity requirements
-
-**Billing Issues**
-- Confirm "Pay for seat" settings match company policy
-- Check "Use Package Seats Limits" configuration
-- Verify dialer permissions are set correctly
-
-**Missing Permissions**
-- Review user role assignments
-- Check dialer access settings
-- Verify balance allocation settings
-
-### Support
-
-For additional assistance with user management, contact your system administrator or refer to the support documentation.
-
+<Card title="🎭 Roles & Permissions" icon="shield">
+**Connection**: Users are assigned specific roles
+**Navigation**: `User Management > Roles`
+**Purpose**: Control feature access and capabilities
+</Card>
+</CardGroup>
+ 
