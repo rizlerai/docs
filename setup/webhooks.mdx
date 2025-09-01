@@ -6,12 +6,12 @@ icon: "webhook"
 
 # Webhooks
 
-Configure webhooks to automatically send data from your Rizler system to external endpoints, enabling seamless integration with CRM systems, marketing tools, and custom applications.
+Configure webhooks to automatically send data from your AI Sync system to external endpoints, enabling seamless integration with CRM systems, marketing tools, and custom applications.
 ![Dashboard Analytics Overview](/images/setup/webhooks/overview.png)
 
 ## Overview
 
-Webhooks are HTTP callbacks that send real-time data from Rizler to external systems when specific events occur. They enable automated data synchronization, lead management, and integration with your existing business tools.
+Webhooks are HTTP callbacks that send real-time data from AI Sync to external systems when specific events occur. They enable automated data synchronization, lead management, and integration with your existing business tools.
 
 ## Webhook Management Interface
 
@@ -271,7 +271,7 @@ The "Endpoints" button provides detailed configuration options:
 
 <Image
   src="/images/webhook-integration-crm.png"
-  alt="CRM Integration Flow - Diagram showing data flow from Rizler webhook to CRM system"
+  alt="CRM Integration Flow - Diagram showing data flow from AI Sync webhook to CRM system"
   width={700}
   height={300}
   caption="CRM Integration - Seamlessly sync contact data with your CRM"
@@ -289,7 +289,7 @@ app.post('/webhook/rizler', (req, res) => {
       LastName: data.last_name,
       Email: data.email,
       Phone: data.phone_number,
-      LeadSource: 'Rizler Webhook'
+      LeadSource: 'AI Sync Webhook'
     });
   }
   
@@ -474,7 +474,7 @@ Access detailed webhook logs for troubleshooting:
 
 1. **Check Webhook Logs**: Review delivery logs for error details
 2. **Test Endpoint Manually**: Use tools like Postman to test your endpoint
-3. **Verify Network Access**: Ensure your endpoint is accessible from Rizler's servers
+3. **Verify Network Access**: Ensure your endpoint is accessible from AI Sync's servers
 4. **Check Response Codes**: Verify your endpoint returns 200 status codes
 5. **Review Payload Format**: Ensure the webhook payload matches your expectations
 
@@ -488,7 +488,7 @@ Add custom headers to webhook requests for authentication or identification:
 X-API-Key: your-api-key
 X-Webhook-ID: wh_12345
 X-Event-Type: contact.created
-User-Agent: Rizler-Webhook/1.0
+User-Agent: AI-Sync-Webhook/1.0
 ```
 
 ### Conditional Webhooks

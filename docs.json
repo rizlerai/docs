@@ -1,7 +1,7 @@
 {
   "$schema": "https://rizzdial.com/docs.json",
   "theme": "mint",
-  "name": "Docs Rizler",
+  "name": "Docs AI Sync",
   "colors": {
     "primary": "#3971dd",
     "light": "#07C983",
@@ -94,8 +94,7 @@
             "group": "Spam Protected Numbers",
             "icon": "shield",
             "pages": [
-              "spam-protection/numbers",
-              "spam-protection/settings"
+              "spam-protection/numbers"
             ]
           },
           {
@@ -245,7 +244,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://rizzdial.com/blog",
+          "href": "https://rizzdial.com/blog/blog.html",
           "icon": "newspaper"
         }
       ]
