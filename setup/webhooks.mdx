@@ -1,166 +1,547 @@
 ---
 title: "Webhooks"
-description: "Configure and manage webhook endpoints for real-time event notifications"
+description: "Configure webhooks to send data to external systems and integrate with third-party applications"
 icon: "webhook"
 ---
 
 # Webhooks
 
-Configure webhook endpoints to receive real-time notifications when events occur in your Rizler system.
+Configure webhooks to automatically send data from your Rizler system to external endpoints, enabling seamless integration with CRM systems, marketing tools, and custom applications.
+![Dashboard Analytics Overview](/images/setup/webhooks/overview.png)
 
 ## Overview
 
-Webhooks allow your application to receive instant notifications when specific events happen in Rizler. This enables you to build integrations and automate workflows based on call events, agent status changes, and other system activities.
+Webhooks are HTTP callbacks that send real-time data from Rizler to external systems when specific events occur. They enable automated data synchronization, lead management, and integration with your existing business tools.
 
-## Setting Up Webhooks
+## Webhook Management Interface
 
-### Create a New Webhook
+### Main Dashboard
+
+The webhooks dashboard provides a comprehensive view of all configured webhooks:
+
+<CardGroup cols={2}>
+  <Card title="Webhook List" icon="list">
+    View all active webhooks with their status, hit counts, and last activity
+  </Card>
+  <Card title="Quick Actions" icon="plus">
+    Add new webhooks, edit existing configurations, and manage endpoints
+  </Card>
+  <Card title="Performance Tracking" icon="chart-line">
+    Monitor webhook delivery success rates and response times
+  </Card>
+  <Card title="Endpoint Management" icon="link">
+    Configure and test webhook endpoints for different data types
+  </Card>
+</CardGroup>
+
+### Table Features
+
+The webhooks table displays key information for each webhook:
+
+<Image
+  src="/images/webhooks-table.png"
+  alt="Webhooks Table - Shows columns for #, title, hits, last hits, created at, and action buttons (Endpoints, Edit, Delete)"
+  width={900}
+  height={200}
+  caption="Webhooks Table - Track performance and manage webhook configurations"
+/>
+
+- **#**: Unique identifier for each webhook
+- **Title**: Descriptive name for the webhook
+- **Hits**: Number of successful webhook deliveries
+- **Last Hits**: Timestamp of the most recent webhook delivery
+- **Created At**: When the webhook was initially configured
+- **Action**: Management options (Endpoints, Edit, Delete)
+
+## Creating Webhooks
+
+### Basic Configuration
 
 1. **Navigate to Setup > Webhooks**
-2. **Click "Add Webhook"**
-3. **Configure the following settings:**
-   - **Endpoint URL**: The URL where notifications will be sent
-   - **Events**: Select which events to monitor
-   - **Secret Key**: Optional security key for payload verification
-   - **Status**: Enable or disable the webhook
+2. **Click the "Add" button**
+3. **Configure the webhook settings:**
+   - **Title**: Descriptive name for the webhook
+   - **PowerList**: Select which contact lists to monitor
+   - **Endpoint**: Choose the type of data to send
 
-### Webhook Events
+### Advanced Configuration
 
-Available webhook events include:
+<Steps>
+  <Step title="Define Webhook Title">
+    Choose a clear, descriptive name that identifies the webhook's purpose
+  </Step>
+  <Step title="Select PowerList">
+    Choose which contact lists or data sources to monitor for events
+  </Step>
+  <Step title="Configure Endpoint">
+    Select the type of data to send (Contact, Lead, Call, etc.)
+  </Step>
+  <Step title="Set Delivery Options">
+    Configure retry logic, timeout settings, and error handling
+  </Step>
+  <Step title="Test Configuration">
+    Send a test webhook to verify the endpoint is working correctly
+  </Step>
+</Steps>
 
-<AccordionGroup>
-  <Accordion title="Call Events">
-    - `call.started` - When a call begins
-    - `call.ended` - When a call ends
-    - `call.answered` - When a call is answered
-    - `call.failed` - When a call fails
-  </Accordion>
+## Webhook Details
 
-  <Accordion title="Agent Events">
-    - `agent.created` - When a new agent is created
-    - `agent.updated` - When an agent is modified
-    - `agent.deleted` - When an agent is removed
-  </Accordion>
+### Contact Webhook Example
 
-  <Accordion title="System Events">
-    - `system.error` - When system errors occur
-    - `system.maintenance` - During maintenance windows
-  </Accordion>
-</AccordionGroup>
+When configured for contact data, webhooks send comprehensive contact information:
 
-## Webhook Payload Structure
-
-### Standard Payload Format
+<Image
+  src="/images/webhook-details.png"
+  alt="Webhook Details View - Shows webhook configuration with title, URL, method, and form data fields"
+  width={800}
+  height={500}
+  caption="Webhook Details - View complete configuration and data fields"
+/>
 
 ```json
 {
-  "event": "call.ended",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "webhook_id": "wh_12345",
+  "event_type": "contact.created",
+  "timestamp": "2025-01-06T22:40:00Z",
   "data": {
-    "call_id": "call_123456",
-    "agent_id": "agent_789",
-    "duration": 180,
-    "status": "completed"
-  },
-  "signature": "sha256=abc123..."
-}
-```
-
-### Event-Specific Data
-
-<CodeGroup>
-```json Call Events
-{
-  "event": "call.ended",
-  "data": {
-    "call_id": "call_123456",
-    "agent_id": "agent_789",
-    "caller_number": "+1234567890",
-    "duration": 180,
-    "status": "completed",
-    "transcript": "...",
-    "recording_url": "https://..."
+    "contact_id": "cont_67890",
+    "phone_number": "+1234567890",
+    "email": "contact@example.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email_Address": "contact@example.com",
+    "address": "123 Main St",
+    "city": "New York",
+    "zip_code": "10001",
+    "country": "USA",
+    "custom_fields": {
+      "hello_how_are_you_i_am_check_text_field_for_testing_layout_dist": "test value",
+      "phone_number1": "+1987654321"
+    }
   }
 }
 ```
 
-```json Agent Events
+### Supported Data Fields
+
+<AccordionGroup>
+  <Accordion title="Contact Information">
+    - **phone_number**: Primary contact phone number
+    - **email**: Contact email address
+    - **first_name**: Contact's first name
+    - **last_name**: Contact's last name
+    - **email_Address**: Alternative email field
+    - **address**: Street address
+    - **city**: City name
+    - **zip_code**: Postal/ZIP code
+    - **country**: Country name
+  </Accordion>
+
+  <Accordion title="Custom Fields">
+    - **Dynamic Fields**: Any custom fields added to your contact forms
+    - **Validation**: Automatic validation of field formats
+    - **Mapping**: Flexible field mapping to external systems
+  </Accordion>
+
+  <Accordion title="System Fields">
+    - **contact_id**: Unique identifier for the contact
+    - **created_at**: When the contact was created
+    - **updated_at**: Last modification timestamp
+    - **source**: How the contact was acquired
+  </Accordion>
+</AccordionGroup>
+
+## Endpoint Configuration
+
+### HTTP Method
+
+Webhooks use **POST** method to send data to external endpoints:
+
+```http
+POST https://your-endpoint.com/webhook
+Content-Type: application/json
+X-Webhook-Signature: sha256=abc123...
+
 {
-  "event": "agent.updated",
-  "data": {
-    "agent_id": "agent_789",
-    "name": "Sales Agent",
-    "status": "active",
-    "updated_fields": ["voice", "prompt"]
-  }
+  "event": "contact.created",
+  "data": { ... }
 }
 ```
-</CodeGroup>
 
-## Security
+### URL Structure
 
-### Signature Verification
+Webhook URLs follow a secure pattern with encoded parameters:
 
-Verify webhook authenticity using the signature header:
-
-```python
-import hmac
-import hashlib
-
-def verify_signature(payload, signature, secret):
-    expected = hmac.new(
-        secret.encode(),
-        payload.encode(),
-        hashlib.sha256
-    ).hexdigest()
-    return hmac.compare_digest(f"sha256={expected}", signature)
+```
+https://app.aisync.link.com/webhooks/contact/eyJpdil6lkM3QnhCS3F1eHp5Mk1XcGhZZEErc1E9PSIsInZhbHVlljoiaTJJZ09YSi9Nd103SFJla0pmcU1Udz09liwibWFjIjoiZWVjZWViM2E4NDdjYzAzYTBkYjViMzAyY2M5NjczMmYzZmUyOTI5MTg1NDNjZjE1MDQyMDQ1YjYxYzIkNTBINilsInRhZyl6liJ9
 ```
 
-### Best Practices
+### Security Features
 
-- **Use HTTPS endpoints** for secure communication
-- **Verify signatures** to ensure authenticity
-- **Implement idempotency** to handle duplicate deliveries
-- **Return appropriate status codes** (200-299 for success)
-- **Handle retries** gracefully
+- **Encoded Parameters**: All sensitive data is encrypted in the URL
+- **Signature Verification**: HMAC signatures ensure data integrity
+- **Rate Limiting**: Built-in protection against abuse
+- **IP Whitelisting**: Optional IP address restrictions
 
-## Testing Webhooks
+## Managing Webhooks
 
-### Test Endpoint
+### Editing Webhooks
 
-Use the built-in test feature to verify your webhook endpoint:
+<Image
+  src="/images/webhook-edit.png"
+  alt="Edit Webhook Interface - Form with title field, PowerList dropdown, and endpoint dropdown with submit button"
+  width={800}
+  height={400}
+  caption="Edit Webhook - Modify webhook configuration settings"
+/>
 
-1. **Enter your webhook URL**
-2. **Select test event type**
-3. **Click "Send Test"**
-4. **Verify response in logs**
+1. **Click the "Edit" button** for the webhook you want to modify
+2. **Update configuration settings:**
+   - **Title**: Modify the webhook name
+   - **PowerList**: Change which data sources to monitor
+   - **Endpoint**: Update the endpoint type
+3. **Click "Submit"** to save changes
+
+### Endpoint Management
+
+The "Endpoints" button provides detailed configuration options:
+
+<CardGroup cols={2}>
+  <Card title="Endpoint Details" icon="info">
+    View complete webhook configuration including URL, method, and headers
+  </Card>
+  <Card title="Test Endpoint" icon="play">
+    Send test webhooks to verify endpoint functionality
+  </Card>
+  <Card title="Delivery History" icon="history">
+    View detailed logs of webhook deliveries and responses
+  </Card>
+  <Card title="Error Handling" icon="alert-triangle">
+    Configure retry logic and error notifications
+  </Card>
+</CardGroup>
+
+### Deleting Webhooks
+
+1. **Click the trash icon** next to the webhook you want to remove
+2. **Confirm deletion** in the confirmation dialog
+3. **Verify removal** from the webhooks list
+
+<Warning>
+  **Data Loss**: Deleting a webhook will stop all future data deliveries to that endpoint
+</Warning>
+
+## Webhook Events
+
+### Available Event Types
+
+<AccordionGroup>
+  <Accordion title="Contact Events">
+    - **contact.created**: New contact added to the system
+    - **contact.updated**: Contact information modified
+    - **contact.deleted**: Contact removed from the system
+    - **contact.verified**: Contact phone/email verified
+  </Accordion>
+
+  <Accordion title="Call Events">
+    - **call.started**: Call initiated
+    - **call.answered**: Call answered by contact
+    - **call.ended**: Call completed
+    - **call.transferred**: Call transferred to different agent
+  </Accordion>
+
+  <Accordion title="Lead Events">
+    - **lead.created**: New lead generated
+    - **lead.qualified**: Lead meets qualification criteria
+    - **lead.converted**: Lead converted to customer
+    - **lead.lost**: Lead marked as lost
+  </Accordion>
+
+  <Accordion title="System Events">
+    - **agent.created**: New AI agent created
+    - **campaign.started**: Campaign launched
+    - **campaign.completed**: Campaign finished
+    - **error.occurred**: System error or failure
+  </Accordion>
+</AccordionGroup>
+
+## Integration Examples
+
+### CRM Integration
+
+<Image
+  src="/images/webhook-integration-crm.png"
+  alt="CRM Integration Flow - Diagram showing data flow from Rizler webhook to CRM system"
+  width={700}
+  height={300}
+  caption="CRM Integration - Seamlessly sync contact data with your CRM"
+/>
+
+```javascript
+// Example: Salesforce webhook handler
+app.post('/webhook/rizler', (req, res) => {
+  const { event, data } = req.body;
+  
+  if (event === 'contact.created') {
+    // Create new lead in Salesforce
+    salesforce.createLead({
+      FirstName: data.first_name,
+      LastName: data.last_name,
+      Email: data.email,
+      Phone: data.phone_number,
+      LeadSource: 'Rizler Webhook'
+    });
+  }
+  
+  res.status(200).json({ success: true });
+});
+```
+
+### Marketing Automation
+
+```javascript
+// Example: Mailchimp integration
+app.post('/webhook/marketing', (req, res) => {
+  const { data } = req.body;
+  
+  // Add contact to email list
+  mailchimp.lists.addListMember('audience-id', {
+    email_address: data.email,
+    status: 'subscribed',
+    merge_fields: {
+      FNAME: data.first_name,
+      LNAME: data.last_name,
+      PHONE: data.phone_number
+    }
+  });
+  
+  res.status(200).json({ success: true });
+});
+```
+
+### Custom Application
+
+```javascript
+// Example: Custom dashboard integration
+app.post('/webhook/dashboard', (req, res) => {
+  const { event, data } = req.body;
+  
+  // Update real-time dashboard
+  io.emit('newContact', {
+    event: event,
+    contact: data,
+    timestamp: new Date()
+  });
+  
+  // Store in database
+  db.contacts.insert(data);
+  
+  res.status(200).json({ success: true });
+});
+```
+
+## Testing and Validation
+
+### Test Mode
+
+Use the built-in testing feature to verify webhook functionality:
+
+<Image
+  src="/images/webhook-testing.png"
+  alt="Webhook Testing Interface - Shows test endpoint button and response validation"
+  width={600}
+  height={300}
+  caption="Webhook Testing - Verify your endpoint configuration before going live"
+/>
+
+1. **Click "Endpoints"** for the webhook you want to test
+2. **Click "Test Endpoint"** button
+3. **Review the test payload** and response
+4. **Verify data format** matches your expectations
+
+### Validation Checklist
+
+<Tip>
+  Before going live, verify these aspects of your webhook configuration
+</Tip>
+
+- [ ] **Endpoint URL** is accessible and correctly formatted
+- [ ] **HTTP Method** is set to POST
+- [ ] **Content-Type** is application/json
+- [ ] **Authentication** is properly configured (if required)
+- [ ] **Data Fields** match your external system requirements
+- [ ] **Error Handling** is implemented on your endpoint
+- [ ] **Rate Limiting** is considered for high-volume scenarios
+
+## Monitoring and Analytics
+
+### Performance Metrics
+
+Track webhook performance through the dashboard:
+
+<Image
+  src="/images/webhook-analytics.png"
+  alt="Webhook Analytics Dashboard - Charts showing delivery rates, response times, and error rates"
+  width={800}
+  height={400}
+  caption="Webhook Analytics - Monitor performance and identify optimization opportunities"
+/>
+
+- **Delivery Rate**: Percentage of successful webhook deliveries
+- **Response Time**: Average time for endpoint to respond
+- **Error Rate**: Frequency of failed deliveries
+- **Retry Count**: Number of retry attempts for failed webhooks
+
+### Logs and Debugging
+
+Access detailed webhook logs for troubleshooting:
+
+<CardGroup cols={2}>
+  <Card title="Delivery Logs" icon="file-text">
+    View complete history of webhook attempts and responses
+  </Card>
+  <Card title="Error Reports" icon="alert-circle">
+    Detailed error messages and failure reasons
+  </Card>
+  <Card title="Response Codes" icon="code">
+    HTTP status codes and response headers
+  </Card>
+  <Card title="Payload Data" icon="database">
+    Complete webhook payloads for verification
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+### Security
+
+<Image
+  src="/images/webhook-security.png"
+  alt="Webhook Security Features - Diagram showing HTTPS, signatures, rate limiting, and IP whitelisting"
+  width={700}
+  height={300}
+  caption="Webhook Security - Protect your data with multiple security layers"
+/>
+
+- **Use HTTPS**: Always use secure connections for webhook endpoints
+- **Verify Signatures**: Implement signature verification on your endpoints
+- **Rate Limiting**: Implement rate limiting to prevent abuse
+- **IP Whitelisting**: Restrict webhook sources to known IP addresses
+
+### Reliability
+
+- **Idempotency**: Design endpoints to handle duplicate webhooks safely
+- **Error Handling**: Implement proper error handling and logging
+- **Retry Logic**: Configure appropriate retry intervals and limits
+- **Monitoring**: Set up alerts for webhook failures
+
+### Performance
+
+- **Async Processing**: Process webhooks asynchronously when possible
+- **Response Time**: Respond quickly to webhook requests (under 5 seconds)
+- **Data Validation**: Validate incoming data before processing
+- **Resource Management**: Monitor endpoint resource usage
+
+## Troubleshooting
 
 ### Common Issues
 
 <Warning>
-  **Endpoint Timeout**: Ensure your endpoint responds within 10 seconds
+  **Endpoint Unreachable**: Ensure your endpoint URL is accessible from the internet
 </Warning>
 
 <Warning>
-  **Invalid Response**: Return HTTP 200-299 status codes for successful processing
+  **Authentication Failures**: Verify API keys and authentication headers
 </Warning>
 
-<Tip>
-  Use webhook logs to troubleshoot delivery issues and monitor performance
-</Tip>
+<Warning>
+  **Data Format Errors**: Check that your endpoint accepts JSON data
+</Warning>
 
-## Webhook Management
+<Warning>
+  **Timeout Issues**: Ensure your endpoint responds within the timeout limit
+</Warning>
 
-### Monitoring
+### Debugging Steps
 
-- **Delivery Status**: Track successful and failed deliveries
-- **Response Times**: Monitor endpoint performance
-- **Error Logs**: Review failed delivery details
-- **Retry History**: See automatic retry attempts
+<Image
+  src="/images/webhook-troubleshooting.png"
+  alt="Webhook Troubleshooting Flow - Step-by-step debugging process with decision points"
+  width={600}
+  height={400}
+  caption="Troubleshooting Guide - Systematic approach to resolving webhook issues"
+/>
 
-### Limits and Quotas
+1. **Check Webhook Logs**: Review delivery logs for error details
+2. **Test Endpoint Manually**: Use tools like Postman to test your endpoint
+3. **Verify Network Access**: Ensure your endpoint is accessible from Rizler's servers
+4. **Check Response Codes**: Verify your endpoint returns 200 status codes
+5. **Review Payload Format**: Ensure the webhook payload matches your expectations
 
-- **Maximum Endpoints**: 10 per account
-- **Rate Limit**: 1000 requests per minute
-- **Retry Attempts**: Up to 5 automatic retries
-- **Timeout**: 10 seconds per request 
+## Advanced Configuration
+
+### Custom Headers
+
+Add custom headers to webhook requests for authentication or identification:
+
+```http
+X-API-Key: your-api-key
+X-Webhook-ID: wh_12345
+X-Event-Type: contact.created
+User-Agent: Rizler-Webhook/1.0
+```
+
+### Conditional Webhooks
+
+Configure webhooks to trigger only under specific conditions:
+
+- **Field Values**: Trigger based on specific field values
+- **Time Windows**: Only send webhooks during business hours
+- **Data Volume**: Limit webhooks based on data volume thresholds
+- **User Permissions**: Restrict webhooks based on user roles
+
+### Webhook Chaining
+
+Create sequences of webhooks that trigger in order:
+
+<Image
+  src="/images/webhook-chaining.png"
+  alt="Webhook Chaining Flow - Diagram showing primary, secondary, and notification webhooks in sequence"
+  width={700}
+  height={250}
+  caption="Webhook Chaining - Create sophisticated integration workflows"
+/>
+
+1. **Primary Webhook**: Sends data to main system
+2. **Secondary Webhook**: Triggered by primary webhook response
+3. **Notification Webhook**: Sends alerts or confirmations
+
+## API Reference
+
+### Webhook Object Structure
+
+```json
+{
+  "id": "wh_12345",
+  "title": "Contact Sync",
+  "url": "https://api.example.com/webhook",
+  "method": "POST",
+  "powerlist_id": "pl_67890",
+  "endpoint_type": "contact",
+  "is_active": true,
+  "created_at": "2025-01-06T22:40:00Z",
+  "updated_at": "2025-01-06T22:40:00Z",
+  "hits": 8,
+  "last_hit": "2025-08-22T19:44:00Z"
+}
+```
+
+### Response Codes
+
+- **200**: Webhook delivered successfully
+- **400**: Bad request (invalid payload)
+- **401**: Unauthorized (authentication failed)
+- **403**: Forbidden (access denied)
+- **404**: Endpoint not found
+- **500**: Server error (endpoint error)
+- **Timeout**: Endpoint didn't respond within time limit
