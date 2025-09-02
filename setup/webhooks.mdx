@@ -1,547 +1,497 @@
 ---
 title: "Webhooks"
-description: "Configure webhooks to send data to external systems and integrate with third-party applications"
+description: "Real-time event notifications and system integrations through HTTP callbacks"
 icon: "webhook"
 ---
 
-# Webhooks
+# 🔗 Webhooks
 
-Configure webhooks to automatically send data from your AI Sync system to external endpoints, enabling seamless integration with CRM systems, marketing tools, and custom applications.
-![Dashboard Analytics Overview](/images/setup/webhooks/overview.png)
+Webhooks enable real-time communication between AI Sync and external systems by sending HTTP POST requests when specific events occur in your system.
 
-## Overview
+## 🎯 Overview
 
-Webhooks are HTTP callbacks that send real-time data from AI Sync to external systems when specific events occur. They enable automated data synchronization, lead management, and integration with your existing business tools.
+Webhooks provide instant notifications about important events in your AI Sync system, allowing you to build powerful integrations and automated workflows.
 
-## Webhook Management Interface
-
-### Main Dashboard
-
-The webhooks dashboard provides a comprehensive view of all configured webhooks:
+![Webhook Overview](/images/setup/webhooks/overview.png)
 
 <CardGroup cols={2}>
-  <Card title="Webhook List" icon="list">
-    View all active webhooks with their status, hit counts, and last activity
+  <Card title="Real-time Notifications" icon="bell">
+    Receive instant updates when events occur in your system
   </Card>
-  <Card title="Quick Actions" icon="plus">
-    Add new webhooks, edit existing configurations, and manage endpoints
+  <Card title="External Integrations" icon="link">
+    Connect with CRMs, databases, and third-party applications
   </Card>
-  <Card title="Performance Tracking" icon="chart-line">
-    Monitor webhook delivery success rates and response times
+  <Card title="Automated Workflows" icon="bolt">
+    Trigger actions in external systems based on AI Sync events
   </Card>
-  <Card title="Endpoint Management" icon="link">
-    Configure and test webhook endpoints for different data types
+  <Card title="Data Synchronization" icon="sync">
+    Keep external systems in sync with your AI Sync data
   </Card>
 </CardGroup>
 
-### Table Features
-
-The webhooks table displays key information for each webhook:
-
-<Image
-  src="/images/webhooks-table.png"
-  alt="Webhooks Table - Shows columns for #, title, hits, last hits, created at, and action buttons (Endpoints, Edit, Delete)"
-  width={900}
-  height={200}
-  caption="Webhooks Table - Track performance and manage webhook configurations"
-/>
-
-- **#**: Unique identifier for each webhook
-- **Title**: Descriptive name for the webhook
-- **Hits**: Number of successful webhook deliveries
-- **Last Hits**: Timestamp of the most recent webhook delivery
-- **Created At**: When the webhook was initially configured
-- **Action**: Management options (Endpoints, Edit, Delete)
-
-## Creating Webhooks
-
-### Basic Configuration
-
-1. **Navigate to Setup > Webhooks**
-2. **Click the "Add" button**
-3. **Configure the webhook settings:**
-   - **Title**: Descriptive name for the webhook
-   - **PowerList**: Select which contact lists to monitor
-   - **Endpoint**: Choose the type of data to send
-
-### Advanced Configuration
+## 🔄 Webhook Workflow
 
 <Steps>
-  <Step title="Define Webhook Title">
-    Choose a clear, descriptive name that identifies the webhook's purpose
+  <Step title="Event Occurs">
+    An action happens in AI Sync (call ends, agent responds, etc.)
   </Step>
-  <Step title="Select PowerList">
-    Choose which contact lists or data sources to monitor for events
+  <Step title="Webhook Triggered">
+    System identifies configured webhooks for the event type
   </Step>
-  <Step title="Configure Endpoint">
-    Select the type of data to send (Contact, Lead, Call, etc.)
+  <Step title="HTTP Request Sent">
+    POST request with event data sent to your endpoint URL
   </Step>
-  <Step title="Set Delivery Options">
-    Configure retry logic, timeout settings, and error handling
+  <Step title="Response Processed">
+    Your system processes the data and sends acknowledgment
   </Step>
-  <Step title="Test Configuration">
-    Send a test webhook to verify the endpoint is working correctly
+  <Step title="Retry Logic">
+    Failed requests are retried with exponential backoff
   </Step>
 </Steps>
 
-## Webhook Details
+## 📋 Webhook Management
 
-### Contact Webhook Example
+Navigate to **Setup > Webhooks** to manage your webhook configurations.
 
-When configured for contact data, webhooks send comprehensive contact information:
+![Webhook Management](/images/setup/webhooks/endpoints.png)
 
-<Image
-  src="/images/webhook-details.png"
-  alt="Webhook Details View - Shows webhook configuration with title, URL, method, and form data fields"
-  width={800}
-  height={500}
-  caption="Webhook Details - View complete configuration and data fields"
-/>
+### Webhook Table Overview
+
+| Column | Description | Example |
+|--------|-------------|---------|
+| **#** | Sequential webhook ID | `1`, `2`, `3` |
+| **Title** | Webhook name/identifier | `CRM Integration`, `Analytics Sync` |
+| **Hits** | Total number of webhook calls | `1,247` |
+| **Last Hit** | Most recent webhook execution | `2025-01-15 14:30:25` |
+| **Created At** | Webhook creation timestamp | `2025-01-10 10:40 PM` |
+| **Action** | Management options | Edit, Delete, View Endpoints |
+
+### Quick Actions
+
+<CardGroup cols={3}>
+  <Card title="Add New Webhook" icon="plus">
+    Create new webhook endpoints for your integrations
+  </Card>
+  <Card title="Edit Configuration" icon="pencil">
+    Modify existing webhook settings and URLs
+  </Card>
+  <Card title="View Endpoints" icon="eye">
+    Monitor webhook performance and delivery status
+  </Card>
+</CardGroup>
+
+## 🎛️ Webhook Configuration
+
+### Creating a New Webhook
+
+<Steps>
+  <Step title="Click Add Webhook">
+    Navigate to Setup > Webhooks and click the "Add" button
+  </Step>
+  <Step title="Configure Basic Settings">
+    - **Title**: Descriptive name for the webhook
+    - **URL**: Your endpoint URL to receive webhook data
+    - **Method**: HTTP method (typically POST)
+  </Step>
+  <Step title="Select Event Types">
+    Choose which events should trigger this webhook
+  </Step>
+  <Step title="Configure Authentication">
+    Set up security headers and authentication tokens
+  </Step>
+  <Step title="Test and Activate">
+    Test the webhook and activate it for live events
+  </Step>
+</Steps>
+
+![Webhook Configuration](/images/setup/webhooks/edits.png)
+
+### Authentication & Security
+
+<AccordionGroup>
+  <Accordion title="API Key Authentication">
+    ```http
+    Authorization: Bearer your-api-key-here
+    X-API-Key: your-secret-key
+    ```
+  </Accordion>
+  
+  <Accordion title="Signature Verification">
+    ```javascript
+    // Verify webhook signature
+    const signature = req.headers['x-webhook-signature'];
+    const payload = JSON.stringify(req.body);
+    const expectedSignature = crypto
+      .createHmac('sha256', webhookSecret)
+      .update(payload)
+      .digest('hex');
+    ```
+  </Accordion>
+  
+  <Accordion title="IP Whitelisting">
+    **AI Sync Webhook IPs:**
+    - `192.168.1.100`
+    - `192.168.1.101`
+    - `192.168.1.102`
+  </Accordion>
+</AccordionGroup>
+
+## 🎪 Available Webhook Events
+
+### 📞 Call Events
+
+<CardGroup cols={2}>
+  <Card title="Call Started" icon="phone">
+    **Event**: `call.started`
+    
+    **Triggered**: When a call begins
+    
+    **Use Cases**: Call logging, real-time monitoring
+  </Card>
+  <Card title="Call Ended" icon="phone-slash">
+    **Event**: `call.ended`
+    
+    **Triggered**: When a call completes
+    
+    **Use Cases**: Call analytics, CRM updates
+  </Card>
+  <Card title="Call Answered" icon="phone-volume">
+    **Event**: `call.answered`
+    
+    **Triggered**: When a call is answered
+    
+    **Use Cases**: Connection tracking, response rates
+  </Card>
+  <Card title="Call Transferred" icon="phone-arrow-right">
+    **Event**: `call.transferred`
+    
+    **Triggered**: When a call is transferred
+    
+    **Use Cases**: Transfer logging, agent routing
+  </Card>
+</CardGroup>
+
+### 🤖 Agent Events
+
+<CardGroup cols={2}>
+  <Card title="Agent Created" icon="robot">
+    **Event**: `agent.created`
+    
+    **Triggered**: When a new AI agent is created
+    
+    **Use Cases**: Inventory management, provisioning
+  </Card>
+  <Card title="Agent Updated" icon="gear">
+    **Event**: `agent.updated`
+    
+    **Triggered**: When agent configuration changes
+    
+    **Use Cases**: Configuration sync, audit trails
+  </Card>
+  <Card title="Agent Status Changed" icon="toggle-on">
+    **Event**: `agent.status_changed`
+    
+    **Triggered**: When agent goes online/offline
+    
+    **Use Cases**: Availability tracking, monitoring
+  </Card>
+  <Card title="Agent Performance" icon="chart-line">
+    **Event**: `agent.performance`
+    
+    **Triggered**: Performance threshold events
+    
+    **Use Cases**: Quality monitoring, alerts
+  </Card>
+</CardGroup>
+
+### 📊 Campaign Events
+
+<CardGroup cols={2}>
+  <Card title="Campaign Started" icon="play">
+    **Event**: `campaign.started`
+    
+    **Triggered**: When a campaign begins
+    
+    **Use Cases**: Campaign tracking, notifications
+  </Card>
+  <Card title="Campaign Completed" icon="circle-check">
+    **Event**: `campaign.completed`
+    
+    **Triggered**: When a campaign finishes
+    
+    **Use Cases**: Results processing, reporting
+  </Card>
+  <Card title="Lead Generated" icon="user-plus">
+    **Event**: `lead.generated`
+    
+    **Triggered**: When a new lead is created
+    
+    **Use Cases**: CRM integration, lead routing
+  </Card>
+  <Card title="Appointment Scheduled" icon="calendar-plus">
+    **Event**: `appointment.scheduled`
+    
+    **Triggered**: When an appointment is booked
+    
+    **Use Cases**: Calendar sync, confirmations
+  </Card>
+</CardGroup>
+
+### 💬 SMS Events
+<CardGroup cols={2}>
+  <Card title="SMS Sent" icon="paper-plane">
+    **Event**: `sms.sent`
+    
+    **Triggered**: When an SMS is delivered
+    
+    **Use Cases**: Delivery tracking, billing
+  </Card>
+  <Card title="SMS Received" icon="inbox">
+    **Event**: `sms.received`
+    
+    **Triggered**: When an SMS is received
+    
+    **Use Cases**: Response handling, conversations
+  </Card>
+  <Card title="SMS Failed" icon="circle-x">
+    **Event**: `sms.failed`
+    
+    **Triggered**: When SMS delivery fails
+    
+    **Use Cases**: Error handling, retry logic
+  </Card>
+  <Card title="SMS Replied" icon="reply">
+    **Event**: `sms.replied`
+    
+    **Triggered**: When recipient replies to SMS
+    
+    **Use Cases**: Conversation tracking, engagement
+  </Card>
+</CardGroup>
+
+## 📦 Webhook Payload Structure
+
+### Standard Payload Format
+
+All webhooks follow a consistent JSON structure:
 
 ```json
 {
-  "webhook_id": "wh_12345",
-  "event_type": "contact.created",
-  "timestamp": "2025-01-06T22:40:00Z",
+  "event": "call.ended",
+  "timestamp": "2025-01-15T14:30:25.123Z",
+  "webhook_id": "wh_123456789",
   "data": {
-    "contact_id": "cont_67890",
-    "phone_number": "+1234567890",
-    "email": "contact@example.com",
-    "first_name": "John",
-    "last_name": "Doe",
-    "email_Address": "contact@example.com",
-    "address": "123 Main St",
-    "city": "New York",
-    "zip_code": "10001",
-    "country": "USA",
-    "custom_fields": {
-      "hello_how_are_you_i_am_check_text_field_for_testing_layout_dist": "test value",
-      "phone_number1": "+1987654321"
-    }
+    // Event-specific data
+  },
+  "metadata": {
+    "version": "1.0",
+    "signature": "sha256=abc123..."
   }
 }
 ```
 
-### Supported Data Fields
-
-<AccordionGroup>
-  <Accordion title="Contact Information">
-    - **phone_number**: Primary contact phone number
-    - **email**: Contact email address
-    - **first_name**: Contact's first name
-    - **last_name**: Contact's last name
-    - **email_Address**: Alternative email field
-    - **address**: Street address
-    - **city**: City name
-    - **zip_code**: Postal/ZIP code
-    - **country**: Country name
-  </Accordion>
-
-  <Accordion title="Custom Fields">
-    - **Dynamic Fields**: Any custom fields added to your contact forms
-    - **Validation**: Automatic validation of field formats
-    - **Mapping**: Flexible field mapping to external systems
-  </Accordion>
-
-  <Accordion title="System Fields">
-    - **contact_id**: Unique identifier for the contact
-    - **created_at**: When the contact was created
-    - **updated_at**: Last modification timestamp
-    - **source**: How the contact was acquired
-  </Accordion>
-</AccordionGroup>
-
-## Endpoint Configuration
-
-### HTTP Method
-
-Webhooks use **POST** method to send data to external endpoints:
-
-```http
-POST https://your-endpoint.com/webhook
-Content-Type: application/json
-X-Webhook-Signature: sha256=abc123...
-
-{
-  "event": "contact.created",
-  "data": { ... }
-}
-```
-
-### URL Structure
-
-Webhook URLs follow a secure pattern with encoded parameters:
-
-```
-https://app.aisync.link.com/webhooks/contact/eyJpdil6lkM3QnhCS3F1eHp5Mk1XcGhZZEErc1E9PSIsInZhbHVlljoiaTJJZ09YSi9Nd103SFJla0pmcU1Udz09liwibWFjIjoiZWVjZWViM2E4NDdjYzAzYTBkYjViMzAyY2M5NjczMmYzZmUyOTI5MTg1NDNjZjE1MDQyMDQ1YjYxYzIkNTBINilsInRhZyl6liJ9
-```
-
-### Security Features
-
-- **Encoded Parameters**: All sensitive data is encrypted in the URL
-- **Signature Verification**: HMAC signatures ensure data integrity
-- **Rate Limiting**: Built-in protection against abuse
-- **IP Whitelisting**: Optional IP address restrictions
-
-## Managing Webhooks
-
-### Editing Webhooks
-
-<Image
-  src="/images/webhook-edit.png"
-  alt="Edit Webhook Interface - Form with title field, PowerList dropdown, and endpoint dropdown with submit button"
-  width={800}
-  height={400}
-  caption="Edit Webhook - Modify webhook configuration settings"
-/>
-
-1. **Click the "Edit" button** for the webhook you want to modify
-2. **Update configuration settings:**
-   - **Title**: Modify the webhook name
-   - **PowerList**: Change which data sources to monitor
-   - **Endpoint**: Update the endpoint type
-3. **Click "Submit"** to save changes
-
-### Endpoint Management
-
-The "Endpoints" button provides detailed configuration options:
-
-<CardGroup cols={2}>
-  <Card title="Endpoint Details" icon="info">
-    View complete webhook configuration including URL, method, and headers
-  </Card>
-  <Card title="Test Endpoint" icon="play">
-    Send test webhooks to verify endpoint functionality
-  </Card>
-  <Card title="Delivery History" icon="history">
-    View detailed logs of webhook deliveries and responses
-  </Card>
-  <Card title="Error Handling" icon="alert-triangle">
-    Configure retry logic and error notifications
-  </Card>
-</CardGroup>
-
-### Deleting Webhooks
-
-1. **Click the trash icon** next to the webhook you want to remove
-2. **Confirm deletion** in the confirmation dialog
-3. **Verify removal** from the webhooks list
-
-<Warning>
-  **Data Loss**: Deleting a webhook will stop all future data deliveries to that endpoint
-</Warning>
-
-## Webhook Events
-
-### Available Event Types
-
-<AccordionGroup>
-  <Accordion title="Contact Events">
-    - **contact.created**: New contact added to the system
-    - **contact.updated**: Contact information modified
-    - **contact.deleted**: Contact removed from the system
-    - **contact.verified**: Contact phone/email verified
-  </Accordion>
-
-  <Accordion title="Call Events">
-    - **call.started**: Call initiated
-    - **call.answered**: Call answered by contact
-    - **call.ended**: Call completed
-    - **call.transferred**: Call transferred to different agent
-  </Accordion>
-
-  <Accordion title="Lead Events">
-    - **lead.created**: New lead generated
-    - **lead.qualified**: Lead meets qualification criteria
-    - **lead.converted**: Lead converted to customer
-    - **lead.lost**: Lead marked as lost
-  </Accordion>
-
-  <Accordion title="System Events">
-    - **agent.created**: New AI agent created
-    - **campaign.started**: Campaign launched
-    - **campaign.completed**: Campaign finished
-    - **error.occurred**: System error or failure
-  </Accordion>
-</AccordionGroup>
-
-## Integration Examples
-
-### CRM Integration
-
-<Image
-  src="/images/webhook-integration-crm.png"
-  alt="CRM Integration Flow - Diagram showing data flow from AI Sync webhook to CRM system"
-  width={700}
-  height={300}
-  caption="CRM Integration - Seamlessly sync contact data with your CRM"
-/>
-
-```javascript
-// Example: Salesforce webhook handler
-app.post('/webhook/rizler', (req, res) => {
-  const { event, data } = req.body;
-  
-  if (event === 'contact.created') {
-    // Create new lead in Salesforce
-    salesforce.createLead({
-      FirstName: data.first_name,
-      LastName: data.last_name,
-      Email: data.email,
-      Phone: data.phone_number,
-      LeadSource: 'AI Sync Webhook'
-    });
-  }
-  
-  res.status(200).json({ success: true });
-});
-```
-
-### Marketing Automation
-
-```javascript
-// Example: Mailchimp integration
-app.post('/webhook/marketing', (req, res) => {
-  const { data } = req.body;
-  
-  // Add contact to email list
-  mailchimp.lists.addListMember('audience-id', {
-    email_address: data.email,
-    status: 'subscribed',
-    merge_fields: {
-      FNAME: data.first_name,
-      LNAME: data.last_name,
-      PHONE: data.phone_number
-    }
-  });
-  
-  res.status(200).json({ success: true });
-});
-```
-
-### Custom Application
-
-```javascript
-// Example: Custom dashboard integration
-app.post('/webhook/dashboard', (req, res) => {
-  const { event, data } = req.body;
-  
-  // Update real-time dashboard
-  io.emit('newContact', {
-    event: event,
-    contact: data,
-    timestamp: new Date()
-  });
-  
-  // Store in database
-  db.contacts.insert(data);
-  
-  res.status(200).json({ success: true });
-});
-```
-
-## Testing and Validation
-
-### Test Mode
-
-Use the built-in testing feature to verify webhook functionality:
-
-<Image
-  src="/images/webhook-testing.png"
-  alt="Webhook Testing Interface - Shows test endpoint button and response validation"
-  width={600}
-  height={300}
-  caption="Webhook Testing - Verify your endpoint configuration before going live"
-/>
-
-1. **Click "Endpoints"** for the webhook you want to test
-2. **Click "Test Endpoint"** button
-3. **Review the test payload** and response
-4. **Verify data format** matches your expectations
-
-### Validation Checklist
-
-<Tip>
-  Before going live, verify these aspects of your webhook configuration
-</Tip>
-
-- [ ] **Endpoint URL** is accessible and correctly formatted
-- [ ] **HTTP Method** is set to POST
-- [ ] **Content-Type** is application/json
-- [ ] **Authentication** is properly configured (if required)
-- [ ] **Data Fields** match your external system requirements
-- [ ] **Error Handling** is implemented on your endpoint
-- [ ] **Rate Limiting** is considered for high-volume scenarios
-
-## Monitoring and Analytics
-
-### Performance Metrics
-
-Track webhook performance through the dashboard:
-
-<Image
-  src="/images/webhook-analytics.png"
-  alt="Webhook Analytics Dashboard - Charts showing delivery rates, response times, and error rates"
-  width={800}
-  height={400}
-  caption="Webhook Analytics - Monitor performance and identify optimization opportunities"
-/>
-
-- **Delivery Rate**: Percentage of successful webhook deliveries
-- **Response Time**: Average time for endpoint to respond
-- **Error Rate**: Frequency of failed deliveries
-- **Retry Count**: Number of retry attempts for failed webhooks
-
-### Logs and Debugging
-
-Access detailed webhook logs for troubleshooting:
-
-<CardGroup cols={2}>
-  <Card title="Delivery Logs" icon="file-text">
-    View complete history of webhook attempts and responses
-  </Card>
-  <Card title="Error Reports" icon="alert-circle">
-    Detailed error messages and failure reasons
-  </Card>
-  <Card title="Response Codes" icon="code">
-    HTTP status codes and response headers
-  </Card>
-  <Card title="Payload Data" icon="database">
-    Complete webhook payloads for verification
-  </Card>
-</CardGroup>
-
-## Best Practices
-
-### Security
-
-<Image
-  src="/images/webhook-security.png"
-  alt="Webhook Security Features - Diagram showing HTTPS, signatures, rate limiting, and IP whitelisting"
-  width={700}
-  height={300}
-  caption="Webhook Security - Protect your data with multiple security layers"
-/>
-
-- **Use HTTPS**: Always use secure connections for webhook endpoints
-- **Verify Signatures**: Implement signature verification on your endpoints
-- **Rate Limiting**: Implement rate limiting to prevent abuse
-- **IP Whitelisting**: Restrict webhook sources to known IP addresses
-
-### Reliability
-
-- **Idempotency**: Design endpoints to handle duplicate webhooks safely
-- **Error Handling**: Implement proper error handling and logging
-- **Retry Logic**: Configure appropriate retry intervals and limits
-- **Monitoring**: Set up alerts for webhook failures
-
-### Performance
-
-- **Async Processing**: Process webhooks asynchronously when possible
-- **Response Time**: Respond quickly to webhook requests (under 5 seconds)
-- **Data Validation**: Validate incoming data before processing
-- **Resource Management**: Monitor endpoint resource usage
-
-## Troubleshooting
-
-### Common Issues
-
-<Warning>
-  **Endpoint Unreachable**: Ensure your endpoint URL is accessible from the internet
-</Warning>
-
-<Warning>
-  **Authentication Failures**: Verify API keys and authentication headers
-</Warning>
-
-<Warning>
-  **Data Format Errors**: Check that your endpoint accepts JSON data
-</Warning>
-
-<Warning>
-  **Timeout Issues**: Ensure your endpoint responds within the timeout limit
-</Warning>
-
-### Debugging Steps
-
-<Image
-  src="/images/webhook-troubleshooting.png"
-  alt="Webhook Troubleshooting Flow - Step-by-step debugging process with decision points"
-  width={600}
-  height={400}
-  caption="Troubleshooting Guide - Systematic approach to resolving webhook issues"
-/>
-
-1. **Check Webhook Logs**: Review delivery logs for error details
-2. **Test Endpoint Manually**: Use tools like Postman to test your endpoint
-3. **Verify Network Access**: Ensure your endpoint is accessible from AI Sync's servers
-4. **Check Response Codes**: Verify your endpoint returns 200 status codes
-5. **Review Payload Format**: Ensure the webhook payload matches your expectations
-
-## Advanced Configuration
-
-### Custom Headers
-
-Add custom headers to webhook requests for authentication or identification:
-
-```http
-X-API-Key: your-api-key
-X-Webhook-ID: wh_12345
-X-Event-Type: contact.created
-User-Agent: AI-Sync-Webhook/1.0
-```
-
-### Conditional Webhooks
-
-Configure webhooks to trigger only under specific conditions:
-
-- **Field Values**: Trigger based on specific field values
-- **Time Windows**: Only send webhooks during business hours
-- **Data Volume**: Limit webhooks based on data volume thresholds
-- **User Permissions**: Restrict webhooks based on user roles
-
-### Webhook Chaining
-
-Create sequences of webhooks that trigger in order:
-
-<Image
-  src="/images/webhook-chaining.png"
-  alt="Webhook Chaining Flow - Diagram showing primary, secondary, and notification webhooks in sequence"
-  width={700}
-  height={250}
-  caption="Webhook Chaining - Create sophisticated integration workflows"
-/>
-
-1. **Primary Webhook**: Sends data to main system
-2. **Secondary Webhook**: Triggered by primary webhook response
-3. **Notification Webhook**: Sends alerts or confirmations
-
-## API Reference
-
-### Webhook Object Structure
+### Call Event Payload Example
 
 ```json
 {
-  "id": "wh_12345",
-  "title": "Contact Sync",
-  "url": "https://api.example.com/webhook",
-  "method": "POST",
-  "powerlist_id": "pl_67890",
-  "endpoint_type": "contact",
-  "is_active": true,
-  "created_at": "2025-01-06T22:40:00Z",
-  "updated_at": "2025-01-06T22:40:00Z",
-  "hits": 8,
-  "last_hit": "2025-08-22T19:44:00Z"
+  "event": "call.ended",
+  "timestamp": "2025-01-15T14:30:25.123Z",
+  "webhook_id": "wh_123456789",
+  "data": {
+    "call_id": "call_987654321",
+    "agent_id": "agent_abc123",
+    "caller_number": "+1234567890",
+    "called_number": "+0987654321",
+    "call_duration": 180,
+    "call_status": "completed",
+    "call_direction": "outbound",
+    "recording_url": "https://recordings.ai-sync.com/call_987654321.mp3",
+    "transcription": "Hello, this is John calling about...",
+    "sentiment": "positive",
+    "disposition": "interested",
+    "tags": ["qualified", "follow-up"],
+    "custom_fields": {
+      "lead_score": 85,
+      "next_action": "schedule_demo"
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "signature": "sha256=abc123def456..."
+  }
 }
 ```
 
-### Response Codes
+ 
 
-- **200**: Webhook delivered successfully
-- **400**: Bad request (invalid payload)
-- **401**: Unauthorized (authentication failed)
-- **403**: Forbidden (access denied)
-- **404**: Endpoint not found
-- **500**: Server error (endpoint error)
-- **Timeout**: Endpoint didn't respond within time limit
+## 🔒 Security Best Practices
+
+### Webhook Verification
+
+<AccordionGroup>
+  <Accordion title="Signature Verification">
+    Always verify webhook signatures to ensure authenticity:
+    
+    ```javascript
+    const crypto = require('crypto');
+    
+    function verifyWebhookSignature(payload, signature, secret) {
+      const expectedSignature = crypto
+        .createHmac('sha256', secret)
+        .update(payload)
+        .digest('hex');
+      
+      return crypto.timingSafeEqual(
+        Buffer.from(signature, 'hex'),
+        Buffer.from(expectedSignature, 'hex')
+      );
+    }
+    
+    // Middleware to verify webhooks
+    app.use('/webhook/*', (req, res, next) => {
+      const signature = req.headers['x-webhook-signature'];
+      const payload = JSON.stringify(req.body);
+      
+      if (!verifyWebhookSignature(payload, signature, WEBHOOK_SECRET)) {
+        return res.status(401).json({ error: 'Invalid signature' });
+      }
+      
+      next();
+    });
+    ```
+  </Accordion>
+  
+  <Accordion title="Rate Limiting">
+    Implement rate limiting to prevent abuse:
+    
+    ```javascript
+    const rateLimit = require('express-rate-limit');
+    
+    const webhookLimiter = rateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 1000, // Limit each IP to 1000 requests per windowMs
+      message: 'Too many webhook requests'
+    });
+    
+    app.use('/webhook', webhookLimiter);
+    ```
+  </Accordion>
+  
+  <Accordion title="HTTPS Only">
+    Always use HTTPS endpoints for webhook URLs:
+    
+    ```javascript
+    // ✅ Correct - HTTPS endpoint
+    const webhookUrl = 'https://api.yoursite.com/webhook/ai-sync';
+    
+    // ❌ Incorrect - HTTP endpoint (insecure)
+    const webhookUrl = 'http://api.yoursite.com/webhook/ai-sync';
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Error Handling
+
+<AccordionGroup>
+  <Accordion title="Retry Logic">
+    AI Sync implements exponential backoff for failed webhooks:
+    
+    - **Attempt 1**: Immediate
+    - **Attempt 2**: 30 seconds delay
+    - **Attempt 3**: 2 minutes delay
+    - **Attempt 4**: 8 minutes delay
+    - **Attempt 5**: 32 minutes delay
+    - **Final**: Webhook marked as failed after 5 attempts
+  </Accordion>
+  
+  <Accordion title="Response Codes">
+    Return appropriate HTTP status codes:
+    
+    ```javascript
+    app.post('/webhook', (req, res) => {
+      try {
+        // Process webhook data
+        processWebhookData(req.body);
+        
+        // Success response
+        res.status(200).json({ 
+          received: true,
+          timestamp: new Date().toISOString()
+        });
+      } catch (error) {
+        // Log error for debugging
+        console.error('Webhook processing error:', error);
+        
+        // Return error status
+        res.status(500).json({ 
+          error: 'Internal processing error',
+          message: error.message
+        });
+      }
+    });
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## 📊 Monitoring & Debugging
+
+### Webhook Logs
+
+Monitor webhook delivery and performance:
+
+<CardGroup cols={2}>
+  <Card title="Delivery Status" icon="circle-check">
+    - Success/failure rates
+    - Response times
+    - Error codes and messages
+    - Retry attempts
+  </Card>
+  <Card title="Performance Metrics" icon="chart-bar">
+    - Average response time
+    - Peak load handling
+    - Throughput statistics
+    - Error rate trends
+  </Card>
+</CardGroup>
+
+### Testing Webhooks
+
+<AccordionGroup>
+  <Accordion title="Test Endpoint">
+    Use tools like ngrok for local testing:
+    
+    ```bash
+    # Install ngrok
+    npm install -g ngrok
+    
+    # Start your local server
+    node webhook-server.js
+    
+    # Expose local server
+    ngrok http 3000
+    
+    # Use the HTTPS URL for webhook configuration
+    # https://abc123.ngrok.io/webhook
+    ```
+  </Accordion>
+  
+  <Accordion title="Mock Payloads">
+    Test with sample webhook payloads:
+    
+    ```bash
+    curl -X POST https://your-webhook-url.com/webhook \
+      -H "Content-Type: application/json" \
+      -H "X-Webhook-Signature: sha256=test-signature" \
+      -d '{
+        "event": "call.ended",
+        "timestamp": "2025-01-15T14:30:25.123Z",
+        "data": {
+          "call_id": "test_call_123",
+          "call_duration": 120,
+          "sentiment": "positive"
+        }
+      }'
+    ```
+  </Accordion>
+</AccordionGroup>
+
