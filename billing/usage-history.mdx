@@ -3,9 +3,20 @@ title: 'Usage History'
 description: 'Complete guide to tracking and managing your usage history, charges, and consumption analytics'
 icon: 'chart-line'
 --- 
-## Overview 
+
+
+<img
+  src="/images/billing/usage-history/overview.png"
+  alt="Usage History Dashboard - Dark Mode"
+/>
+
+## 📊 Overview 
 
 The Usage History feature provides a comprehensive dashboard for monitoring your platform consumption, tracking charges, and analyzing usage patterns. This powerful tool helps you understand your spending, optimize usage, and make informed decisions about your service plans.
+
+<Note>
+**Real-time Tracking**: All usage is tracked and updated in real-time, giving you instant visibility into your consumption patterns and costs.
+</Note>
 
 <CardGroup cols={3}>
   <Card title="📊 Track Usage" icon="chart-line">
@@ -23,8 +34,8 @@ The Usage History feature provides a comprehensive dashboard for monitoring your
 **Current Balance**: $4.43166 | **Total Usage Count**: 17 entries
 </Info>
 
-## Key Features
-
+## 🚀 Key Features
+ 
 <AccordionGroup>
   <Accordion title="💳 Charge Balance Tracking" icon="credit-card">
     Monitor your account balance and track all charge deductions in real-time
@@ -47,7 +58,9 @@ The Usage History feature provides a comprehensive dashboard for monitoring your
   </Accordion>
 </AccordionGroup>
 
-## Usage Tracking Workflow
+## ⚡ Usage Tracking Workflow
+
+ 
 
 ```mermaid
 graph TD
@@ -73,7 +86,9 @@ graph TD
 7. **🔔 Usage Alerts**: Notifications sent for significant usage or low balance
 8. **📈 Analytics Update**: Usage patterns and trends are updated for insights
 
-## Usage History Fields
+## 📋 Usage History Fields
+
+ 
 
 <Note>
 Each field in the usage history provides specific insights into your platform consumption and charges.
@@ -81,7 +96,7 @@ Each field in the usage history provides specific insights into your platform co
 
  
 
-### Service Classification Fields
+### 🏷️ Service Classification Fields
 
 <CardGroup cols={2}>
   <Card title="Charge Type" icon="tag">
@@ -117,7 +132,7 @@ Each field in the usage history provides specific insights into your platform co
   </Card>
 </CardGroup>
 
-### Timestamp Fields
+### ⏰ Timestamp Fields
 
 <CardGroup cols={2}>
   <Card title="Created At" icon="clock">
@@ -137,7 +152,9 @@ Each field in the usage history provides specific insights into your platform co
   </Card>
 </CardGroup>
 
-## Complete Field Reference
+## 📊 Complete Field Reference
+
+ 
 
 | Field | Description | Example Value | Data Type | Purpose |
 |-------|-------------|---------------|-----------|---------|
@@ -151,111 +168,12 @@ Each field in the usage history provides specific insights into your platform co
 | **Created At** | Usage timestamp | `08-30-2025 02:38 AM` | DateTime | Time tracking |
 | **Updated At** | Last modified time | `08-30-2025 02:38 AM` | DateTime | Change tracking |
 
-## Sample Usage Data
+ 
+ 
 
-<Tabs>
-  <Tab title="Recent Usage Records">
-    ```json
-    {
-      "usage_history": [
-        {
-          "sr_no": 1,
-          "charge_balance": "$0.300",
-          "use_limit": 0,
-          "use_count": 1,
-          "charge_type": "Charge Balance",
-          "bill_type": "Dialer",
-          "usage_type": "Minute",
-          "created_at": "08-30-2025 02:38 AM",
-          "updated_at": "08-30-2025 02:38 AM"
-        },
-        {
-          "sr_no": 2,
-          "charge_balance": "$0.013",
-          "use_limit": 0,
-          "use_count": 1,
-          "charge_type": "Charge Balance",
-          "bill_type": "AI",
-          "usage_type": "Minute",
-          "created_at": "08-28-2025 11:06 PM",
-          "updated_at": "08-28-2025 11:06 PM"
-        },
-        {
-          "sr_no": 3,
-          "charge_balance": "$0.008",
-          "use_limit": 0,
-          "use_count": 1,
-          "charge_type": "Charge Balance",
-          "bill_type": "AI",
-          "usage_type": "Minute",
-          "created_at": "08-28-2025 11:05 PM",
-          "updated_at": "08-28-2025 11:05 PM"
-        }
-      ]
-    }
-    ```
-  </Tab>
-  
-  <Tab title="AI Service Usage">
-    ```json
-    {
-      "ai_usage": [
-        {
-          "sr_no": 2,
-          "charge_balance": "$0.013",
-          "service_type": "AI Chat",
-          "tokens_used": 150,
-          "model": "GPT-4",
-          "bill_type": "AI",
-          "usage_type": "Minute",
-          "created_at": "08-28-2025 11:06 PM"
-        },
-        {
-          "sr_no": 3,
-          "charge_balance": "$0.008",
-          "service_type": "AI Voice",
-          "duration_seconds": 45,
-          "model": "Voice Synthesis",
-          "bill_type": "AI",
-          "usage_type": "Minute",
-          "created_at": "08-28-2025 11:05 PM"
-        }
-      ]
-    }
-    ```
-  </Tab>
-  
-  <Tab title="Dialer Usage">
-    ```json
-    {
-      "dialer_usage": [
-        {
-          "sr_no": 1,
-          "charge_balance": "$0.300",
-          "call_duration": "00:02:30",
-          "destination": "+1-555-0123",
-          "call_type": "Outbound",
-          "bill_type": "Dialer",
-          "usage_type": "Minute",
-          "created_at": "08-30-2025 02:38 AM"
-        },
-        {
-          "sr_no": 5,
-          "charge_balance": "$0.300",
-          "call_duration": "00:01:45",
-          "destination": "+1-555-0456",
-          "call_type": "Outbound",
-          "bill_type": "Dialer",
-          "usage_type": "Minute",
-          "created_at": "08-28-2025 08:27 PM"
-        }
-      ]
-    }
-    ```
-  </Tab>
-</Tabs>
+## 🎛️ Dashboard Features & Controls
 
-## Dashboard Features & Controls
+ 
 
 ### 📊 Usage Summary Cards
 
@@ -307,248 +225,125 @@ Each field in the usage history provides specific insights into your platform co
   </Accordion>
 </AccordionGroup>
  
+ 
+ 
+ 
+## 💡 Usage Optimization Tips
 
-## Use Cases & Applications
-
-### 💰 Cost Management
-
-<Steps>
-  <Step title="Monitor Spending">
-    Track your usage charges in real-time to stay within budget limits
-  </Step>
-  <Step title="Identify High-Cost Services">
-    Analyze which services consume the most of your account balance
-  </Step>
-  <Step title="Optimize Usage Patterns">
-    Adjust your usage based on cost analysis to maximize efficiency
-  </Step>
-  <Step title="Set Budget Alerts">
-    Configure notifications when usage approaches predefined thresholds
-  </Step>
-</Steps>
-
-### 📊 Usage Analytics
-
-<CardGroup cols={2}>
-  <Card title="Service Performance" icon="chart-line">
-    **Metrics**:
-    - AI vs Dialer usage ratio
-    - Peak usage times
-    - Service efficiency analysis
-    
-    **Benefits**: Optimize service allocation
-  </Card>
   
-  <Card title="Trend Analysis" icon="chart-area">
-    **Metrics**:
-    - Daily/weekly usage patterns
-    - Cost per usage trends
-    - Service adoption rates
-    
-    **Benefits**: Predict future usage needs
-  </Card>
-  
-  <Card title="Agent Performance" icon="users">
-    **Metrics**:
-    - Usage per agent
-    - Cost efficiency by agent
-    - Service utilization rates
-    
-    **Benefits**: Optimize agent assignments
-  </Card>
-  
-  <Card title="ROI Analysis" icon="calculator">
-    **Metrics**:
-    - Cost per conversion
-    - Usage efficiency ratios
-    - Service value analysis
-    
-    **Benefits**: Maximize return on investment
-  </Card>
-</CardGroup>
-
-### 🔍 Compliance & Auditing
-
-<AccordionGroup>
-  <Accordion title="📋 Usage Reporting" icon="chart-line">
-    Generate detailed reports for accounting and compliance purposes
-    
-    **Features**:
-    - Export usage data
-    - Custom date ranges
-    - Service-specific reports
-  </Accordion>
-  
-  <Accordion title="💰 Cost Reconciliation" icon="calculator">
-    Match usage charges with billing statements and invoices
-    
-    **Features**:
-    - Charge verification
-    - Balance reconciliation
-    - Discrepancy identification
-  </Accordion>
-  
-  <Accordion title="📊 Performance Metrics" icon="chart-bar">
-    Track key performance indicators for usage efficiency
-    
-    **Features**:
-    - Usage KPIs
-    - Cost efficiency metrics
-    - Service performance indicators
-  </Accordion>
-</AccordionGroup>
-
-## Service Types & Pricing
-
-### 🤖 AI Services
-
-<CardGroup cols={2}>
-  <Card title="AI Chat" icon="comments">
-    **Pricing**: $0.01 per minute
-    
-    **Usage Type**: Minute-based
-    
-    Conversational AI interactions and responses
-  </Card>
-  
-  <Card title="AI Voice" icon="microphone">
-    **Pricing**: $0.008 per minute
-    
-    **Usage Type**: Minute-based
-    
-    Voice synthesis and speech processing
-  </Card>
-</CardGroup>
-
-### 📞 Dialer Services
-
-<CardGroup cols={2}>
-  <Card title="Outbound Calls" icon="phone">
-    **Pricing**: $0.30 per minute
-    **Usage Type**: Minute-based
-    Outbound calling and voice communications
-  </Card>
-  <Card title="Inbound Calls" icon="phone-flip">
-    **Pricing**: $0.25 per minute
-    **Usage Type**: Minute-based
-    Receiving and handling incoming calls
-  </Card>
-</CardGroup>
-
-## Usage Optimization Tips
 
 <Tip>
 **Pro Tip**: Monitor your usage patterns regularly to identify opportunities for cost savings and efficiency improvements.
 </Tip>
-
-### 💡 Cost Optimization Strategies
+ 
+### 🎛️ Advanced Controls
 
 <AccordionGroup>
-  <Accordion title="📊 Usage Pattern Analysis" icon="chart-line">
-    **Strategy**: Analyze peak usage times and adjust schedules
+  <Accordion title="📈 Data Visualization" icon="chart-bar">
+    **Chart Types**:
+    - Line charts for trends
+    - Bar charts for comparisons
+    - Pie charts for distributions
+    - Heatmaps for patterns
+    - Custom dashboard widgets
     
-    **Benefits**:
-    - Reduce costs during high-rate periods
-    - Optimize resource allocation
-    - Improve service efficiency
+    **Interactive Features**:
+    - Zoom and pan functionality
+    - Hover tooltips
+    - Click-through details
+    - Real-time updates
   </Accordion>
   
-  <Accordion title="🎯 Service Prioritization" icon="bullseye">
-    **Strategy**: Focus on high-value, low-cost services
+  <Accordion title="🔔 Alert Configuration" icon="bell">
+    **Alert Types**:
+    - Usage threshold alerts
+    - Cost limit notifications
+    - Unusual pattern detection
+    - Service availability alerts
     
-    **Benefits**:
-    - Maximize ROI
-    - Reduce unnecessary expenses
-    - Improve budget allocation
+    **Delivery Methods**:
+    - Email notifications
+    - SMS alerts
+    - In-app notifications
+    - Webhook integrations
   </Accordion>
   
-  <Accordion title="🔄 Usage Automation" icon="robot">
-    **Strategy**: Automate repetitive tasks to reduce manual usage
+  <Accordion title="⚙️ Automation Settings" icon="robot">
+    **Automated Actions**:
+    - Auto-pause services at limits
+    - Scheduled usage reports
+    - Automatic balance top-ups
+    - Smart usage optimization
     
-    **Benefits**:
-    - Consistent usage patterns
-    - Reduced human error
-    - Improved efficiency
+    **Configuration**:
+    - Rule-based automation
+    - Custom trigger conditions
+    - Action workflows
+    - Approval processes
   </Accordion>
 </AccordionGroup>
-
-### 📈 Performance Monitoring
-
-<Warning>
-**Important**: Set up usage alerts to prevent unexpected charges and ensure optimal platform utilization.
-</Warning>
-
-**Key Metrics to Monitor**:
-- 📊 **Daily Usage Trends**: Track day-over-day usage changes
-- 💰 **Cost Per Service**: Monitor the cost efficiency of each service
-- ⏱️ **Usage Duration**: Analyze how long services are used
-- 🎯 **Service Utilization**: Track which services provide the best value
-
-## Alerts & Notifications
-
-### 🔔 Usage Alerts
-
-<CardGroup cols={2}>
-  <Card title="Low Balance Alert" icon="triangle-exclamation">
-    **Trigger**: Balance below $1.00
-    
-    **Action**: Add funds to continue service
-  </Card>
-  
-  <Card title="High Usage Alert" icon="arrow-trend-up">
-    **Trigger**: 50% above average daily usage
-    
-    **Action**: Review usage patterns
-  </Card>
-  
-  <Card title="Service Limit Alert" icon="gauge">
-    **Trigger**: Approaching usage limits
-    
-    **Action**: Upgrade plan or optimize usage
-  </Card>
-  
-  <Card title="Unusual Activity Alert" icon="shield">
-    **Trigger**: Unexpected usage patterns
-    
-    **Action**: Security review recommended
-  </Card>
-</CardGroup>
+ 
+## 🛡️ Troubleshooting & Best Practices
 
  
+
+### 🔧 Common Issues & Solutions
+
+<AccordionGroup>
+  <Accordion title="❌ Missing Usage Records" icon="exclamation-triangle">
+    **Possible Causes**:
+    - Delayed processing (up to 5 minutes)
+    - Network connectivity issues
+    - Service maintenance periods
+    
+    **Solutions**:
+    - Wait 5-10 minutes and refresh the page
+    - Check system status page
+    - Verify date range filters
+    - Contact support if records are missing after 1 hour
+  </Accordion>
+  
+  <Accordion title="💰 Incorrect Charge Amounts" icon="dollar-sign">
+    **Possible Causes**:
+    - Rate changes during usage period
+    - Promotional pricing applied
+    - Bulk usage discounts
+    
+    **Solutions**:
+    - Check current pricing in settings
+    - Review promotional offers
+    - Verify usage duration calculations
+    - Submit billing inquiry if discrepancies persist
+  </Accordion>
+  
+  <Accordion title="📊 Slow Dashboard Loading" icon="clock">
+    **Possible Causes**:
+    - Large date range selected
+    - High volume of usage records
+    - Browser cache issues
+    
+    **Solutions**:
+    - Reduce date range to last 30 days
+    - Clear browser cache and cookies
+    - Use pagination instead of loading all records
+    - Try a different browser
+  </Accordion>
+  
+  <Accordion title="🔍 Search Not Working" icon="magnifying-glass">
+    **Possible Causes**:
+    - Special characters in search query
+    - Case sensitivity issues
+    - Index update delays
+    
+    **Solutions**:
+    - Use simple search terms
+    - Try case-insensitive search
+    - Wait a few minutes for index updates
+    - Use advanced filters instead
+  </Accordion>
+</AccordionGroup>
  
 
-### 🛠️ Technical Support
-
-<CardGroup cols={2}>
-  <Card title="📞 Phone Support" icon="phone">
-    **Available**: 24/7
-    
-    **Number**: 1-800-RIZLER-1
-    
-    For urgent usage and billing issues
-  </Card>
-  
-  <Card title="💬 Live Chat" icon="comments">
-    **Available**: Business hours
-    
-    **Access**: Dashboard help widget
-    
-    For general usage questions
-  </Card>
-  
-  <Card title="📧 Email Support" icon="envelope">
-    **Response**: Within 24 hours
-    
-    **Email**: support@rizler.com
-    
-    For detailed usage analysis requests
-  </Card>
-  
-  <Card title="📚 Documentation" icon="book">
-    **Available**: Always
-    
-    **Access**: Help center
-    
-    For self-service troubleshooting
-  </Card>
-</CardGroup>
+<Note>
+**Last Updated**: This documentation reflects the latest features as of the current platform version. For the most up-to-date information, please refer to the in-app help system.
+</Note>

@@ -1,295 +1,188 @@
 ---
 title: 'Transaction History'
-description: 'Comprehensive guide to managing and understanding your transaction history'
+description: 'Complete guide to managing and tracking your transaction history with detailed workflows and field explanations'
 icon: 'receipt'
 ---
  
- 
+## 📊 Overview
 
-## Overview
-
-The Transaction History feature provides a comprehensive view of all financial transactions within your account. This powerful tool allows you to track payments, monitor billing activities, and maintain detailed records of all monetary interactions with the platform.
-
+The Transaction History feature provides a comprehensive dashboard for monitoring all financial transactions in your account. Track payments, view detailed invoice information, and manage your billing records with powerful filtering and search capabilities.
+<img
+  src="/images/billing/transaction-history/overview.png"
+  alt="Payment Methods"
+/>
 <CardGroup cols={3}>
-  <Card title="📊 Track Payments" icon="chart-line">
-    Monitor all payment transactions in real-time
+  <Card title="💳 Payment Tracking" icon="credit-card">
+    Monitor all payment transactions with real-time status updates
   </Card>
-  <Card title="🔍 Search & Filter" icon="magnifying-glass">
-    Find specific transactions using advanced filters
+  <Card title="🔍 Advanced Filtering" icon="magnifying-glass">
+    Search by date range, amount, status, and user information
   </Card>
-  <Card title="📋 Export Records" icon="download">
-    Download transaction data for accounting purposes
+  <Card title="📄 Invoice Management" icon="file-invoice">
+    View detailed invoice information and download receipts
   </Card>
 </CardGroup>
 
-## Key Features
+## 🚀 Key Features
 
 <AccordionGroup>
-  <Accordion title="💳 Payment Tracking" icon="credit-card">
-    Track all payment methods including credit cards, bank transfers, and digital wallets
+  <Accordion title="📋 Transaction Table" icon="table">
+    Comprehensive table view showing all transaction details with sortable columns
   </Accordion>
   
   <Accordion title="📅 Date Range Filtering" icon="calendar">
-    Filter transactions by custom date ranges or predefined periods
+    Filter transactions by custom date ranges with quick preset options (Last 14 Days, etc.)
   </Accordion>
   
-  <Accordion title="💰 Amount Filtering" icon="dollar-sign">
-    Search transactions by amount ranges and currency types
+  <Accordion title="💰 Payment Status Tracking" icon="circle-check">
+    Real-time status updates: Paid, Pending, Failed, Refunded
   </Accordion>
   
-  <Accordion title="📱 Mobile Responsive" icon="mobile">
-    Access your transaction history from any device
+  <Accordion title="📱 Action Controls" icon="gear">
+    View details, download invoices, and manage transactions directly from the table
   </Accordion>
 </AccordionGroup>
 
-## Transaction Workflow
+## 🔄 Transaction Workflow
+
+The transaction workflow follows a systematic process from initiation to completion:
 
 ```mermaid
 graph TD
-    A[🛒 Purchase/Service] --> B[💳 Payment Processing]
+    A[🛒 Service Purchase] --> B[💳 Payment Processing]
     B --> C[✅ Payment Verification]
-    C --> D[📝 Transaction Created]
+    C --> D[📝 Invoice Generation]
     D --> E[📧 Email Notification]
-    D --> F[📊 Added to History]
-    F --> G[🔍 Available for Search]
-    G --> H[📊 Analytics Update]
- 
+    D --> F[📊 Transaction Record]
+    F --> G[🔍 Available in History]
+    G --> H[📄 Receipt Download]
 ```
 
-### Workflow Steps
+### 📝 Workflow Steps
 
-1. **🛒 Purchase Initiated**: User makes a purchase or subscribes to a service
-2. **💳 Payment Processing**: Payment gateway processes the transaction
-3. **✅ Verification**: System verifies payment success/failure
-4. **📝 Record Creation**: Transaction record is created in the database
-5. **📧 Notification**: User receives email confirmation
-6. **📊 History Update**: Transaction appears in transaction history
-7. **🔍 Search Available**: Transaction becomes searchable and filterable
+<Steps>
+  <Step title="🛒 Purchase Initiation">
+    User selects a service package (Dev Package, Pro Plan, etc.) and proceeds to checkout
+  </Step>
+  <Step title="💳 Payment Processing">
+    Payment gateway (Stripe) processes the payment using the selected payment method
+  </Step>
+  <Step title="✅ Payment Verification">
+    System verifies payment success and validates transaction details
+  </Step>
+  <Step title="📝 Invoice Generation">
+    Unique invoice number is generated (e.g., BD949C2A-0018) and invoice details are recorded
+  </Step>
+  <Step title="📧 Notification Sent">
+    Payment confirmation email is sent to the user with invoice details
+  </Step>
+  <Step title="📊 History Update">
+    Transaction appears in the Transaction History table with all relevant details
+  </Step>
+  <Step title="🔍 Search & Filter">
+    Transaction becomes searchable and filterable in the dashboard
+  </Step>
+</Steps>
 
-## Transaction Fields
+## 📋 Transaction Fields
 
-<Note>
-Understanding each field helps you better track and manage your financial records.
-</Note>
+Understanding each field in your transaction history helps you track and manage your financial records effectively.
 
-### Core Fields
+### 🔢 Core Fields
 
 <CardGroup cols={2}>
-  <Card title="Invoice Number" icon="hashtag">
-    **Format**: INV-YYYY-XXXXXX
+  <Card title="#" icon="hashtag">
+    **Sequential Number**
     
-    **Example**: `INV-2025-000123`
+    Auto-incremented transaction ID for easy reference
     
-    Unique identifier for each transaction
+    **Example**: `1`
   </Card>
   
   <Card title="User" icon="user">
-    **Format**: User Email/Name
+    **Account Identifier**
     
-    **Example**: `john.doe@company.com`
+    Username or email of the account holder
     
-    Account holder who initiated the transaction
+    **Example**: `Dev2`
+  </Card>
+  
+  <Card title="Invoice Number" icon="file-invoice">
+    **Unique Transaction ID**
+    
+    System-generated unique identifier for each transaction
+    
+    **Example**: `BD949C2A-0018`
   </Card>
   
   <Card title="Amount" icon="dollar-sign">
-    **Format**: $XXX.XX
+    **Transaction Value**
     
-    **Example**: `$99.99`
+    Total amount charged including taxes and fees
     
-    Transaction amount including taxes and fees
-  </Card>
-  
-  <Card title="Status" icon="circle-info">
-    **Values**: Success, Failed, Pending, Refunded
-    
-    **Example**: `Success`
-    
-    Current state of the transaction
+    **Example**: `$1.00`
   </Card>
 </CardGroup>
 
-### Detailed Field Descriptions
+### 📊 Status & Tracking Fields
+
+<CardGroup cols={2}>
+  <Card title="Status" icon="circle-info">
+    **Payment State**
+    
+    Current status of the transaction
+    
+    **Values**: `paid`, `pending`, `failed`, `refunded`
+  </Card>
+  
+  <Card title="Created At" icon="clock">
+    **Transaction Timestamp**
+    
+    Date and time when the transaction was created
+    
+    **Example**: `09-01-2025 10:25 PM`
+  </Card>
+  
+  <Card title="Action" icon="gear">
+    **Available Operations**
+    
+    Actions you can perform on the transaction
+    
+    **Options**: View Details, Download Receipt
+  </Card>
+</CardGroup>
+
+### 📊 Detailed Field Reference
 
 | Field | Description | Example Value | Data Type |
 |-------|-------------|---------------|-----------|
-| **#** | Sequential transaction number | `1247` | Integer |
-| **User** | Account email or username | `sarah.wilson@techcorp.com` | String |
-| **Invoice Number** | Unique transaction identifier | `INV-2025-000456` | String |
-| **Amount** | Transaction value with currency | `$249.99` | Currency |
-| **Status** | Transaction completion state | `Success` | Enum |
-| **Created At** | Transaction timestamp | `2025-01-15 14:30:25` | DateTime |
-| **Payment Method** | How payment was processed | `Visa **** 1234` | String |
-| **Description** | Transaction details | `Monthly Pro Subscription` | String |
+| **#** | Sequential transaction number | `1` | Integer |
+| **User** | Account username/identifier | `Dev2` | String |
+| **Invoice Number** | Unique transaction identifier | `BD949C2A-0018` | String |
+| **Amount** | Transaction value with currency | `$1.00` | Currency |
+| **Status** | Payment completion state | `paid` | Enum |
+| **Created At** | Transaction timestamp | `09-01-2025 10:25 PM` | DateTime |
+| **Action** | Available operations | View/Download buttons | Actions |
 
-## Sample Transaction Data
-
-<Tabs>
-  <Tab title="Recent Transactions">
-    ```json
-    {
-      "transactions": [
-        {
-          "id": 1247,
-          "user": "john.doe@company.com",
-          "invoice_number": "INV-2025-000123",
-          "amount": "$99.99",
-          "status": "Success",
-          "created_at": "2025-01-15 09:30:00",
-          "payment_method": "Visa **** 4242",
-          "description": "Pro Plan Monthly Subscription"
-        },
-        {
-          "id": 1246,
-          "user": "sarah.wilson@techcorp.com",
-          "invoice_number": "INV-2025-000122",
-          "amount": "$249.99",
-          "status": "Success",
-          "created_at": "2025-01-14 16:45:30",
-          "payment_method": "Mastercard **** 5555",
-          "description": "Enterprise Plan Quarterly"
-        },
-        {
-          "id": 1245,
-          "user": "mike.brown@startup.io",
-          "invoice_number": "INV-2025-000121",
-          "amount": "$49.99",
-          "status": "Failed",
-          "created_at": "2025-01-14 11:20:15",
-          "payment_method": "Amex **** 3782",
-          "description": "Basic Plan Monthly"
-        }
-      ]
-    }
-    ```
-  </Tab>
-  
-  <Tab title="Failed Transactions">
-    ```json
-    {
-      "failed_transactions": [
-        {
-          "id": 1245,
-          "user": "mike.brown@startup.io",
-          "invoice_number": "INV-2025-000121",
-          "amount": "$49.99",
-          "status": "Failed",
-          "error_code": "insufficient_funds",
-          "retry_count": 2,
-          "created_at": "2025-01-14 11:20:15"
-        },
-        {
-          "id": 1243,
-          "user": "temp.user@example.com",
-          "invoice_number": "INV-2025-000119",
-          "amount": "$19.99",
-          "status": "Failed",
-          "error_code": "card_declined",
-          "retry_count": 1,
-          "created_at": "2025-01-13 14:15:45"
-        }
-      ]
-    }
-    ```
-  </Tab>
-  
-  <Tab title="Refunded Transactions">
-    ```json
-    {
-      "refunded_transactions": [
-        {
-          "id": 1240,
-          "user": "refund.customer@email.com",
-          "invoice_number": "INV-2025-000116",
-          "amount": "$99.99",
-          "status": "Refunded",
-          "refund_amount": "$99.99",
-          "refund_reason": "Customer cancellation within 30 days",
-          "refunded_at": "2025-01-12 10:30:00",
-          "created_at": "2025-01-10 09:15:30"
-        }
-      ]
-    }
-    ```
-  </Tab>
-</Tabs>
-
-## Use Cases & Applications
-
-### 📊 Business Analytics
-
-Track revenue patterns and identify trends in your transaction data:
-
-<CardGroup cols={2}>
-  <Card title="Revenue Tracking" icon="chart-line">
-    Monitor monthly and quarterly revenue growth
-  </Card>
-  <Card title="Customer Insights" icon="users">
-    Analyze customer payment behaviors and preferences
-  </Card>
-  <Card title="Payment Method Analysis" icon="credit-card">
-    Understand which payment methods are most popular
-  </Card>
-  <Card title="Failure Rate Monitoring" icon="chart-line-down">
-    Track and reduce payment failure rates
-  </Card>
-</CardGroup>
-
-### 🔍 Financial Auditing
-
-<Steps>
-  <Step title="Generate Reports">
-    Export transaction data for specific date ranges for accounting review
-  </Step>
-  <Step title="Reconcile Payments">
-    Match transactions with bank statements and payment processor records
-  </Step>
-  <Step title="Identify Discrepancies">
-    Find and resolve any inconsistencies in payment records
-  </Step>
-  <Step title="Compliance Documentation">
-    Maintain detailed records for regulatory compliance requirements
-  </Step>
-</Steps>
- 
- 
- 
-
- 
-
-### Status Definitions
+## 🎯 Transaction Status Definitions
 
 <Tabs>
-  <Tab title="Success ✅">
+  <Tab title="✅ Paid">
     **Meaning**: Payment completed successfully
     
     **Characteristics**:
     - ✅ Payment processed without issues
     - ✅ Funds transferred successfully
-    - ✅ Service/product delivered
+    - ✅ Service/product activated
     - ✅ Invoice marked as paid
     
-    **Next Steps**:
-    - No action required
-    - Service remains active
-    - Receipt sent to customer
+    **Actions Available**:
+    - View invoice details
+    - Download receipt
+    - Access purchased services
   </Tab>
   
-  <Tab title="Failed ❌">
-    **Meaning**: Payment could not be processed
-    
-    **Common Reasons**:
-    - 💳 Insufficient funds
-    - 🚫 Card declined
-    - 🔒 Security restrictions
-    - ⏰ Expired payment method
-    
-    **Next Steps**:
-    - Contact customer for payment update
-    - Retry payment with updated method
-    - Review failure reason
-  </Tab>
-  
-  <Tab title="Pending ⏳">
+  <Tab title="⏳ Pending">
     **Meaning**: Payment is being processed
     
     **Characteristics**:
@@ -298,65 +191,224 @@ Track revenue patterns and identify trends in your transaction data:
     - 🏦 ACH transfer pending
     - 🔍 Fraud check in progress
     
-    **Next Steps**:
-    - Wait for processing completion
+    **Actions Available**:
     - Monitor for status updates
     - Contact support if delayed
+    - Wait for processing completion
   </Tab>
   
-  <Tab title="Refunded 💸">
+  <Tab title="❌ Failed">
+    **Meaning**: Payment could not be processed
+    
+    **Common Reasons**:
+    - 💳 Insufficient funds
+    - 🚫 Card declined
+    - 🔒 Security restrictions
+    - ⏰ Expired payment method
+    
+    **Actions Available**:
+    - Update payment method
+    - Retry payment
+    - Contact support
+  </Tab>
+  
+  <Tab title="💸 Refunded">
     **Meaning**: Payment was returned to customer
     
     **Characteristics**:
     - 💰 Funds returned to original payment method
     - 📋 Refund reason documented
     - 📧 Customer notified
-    - 📊 Analytics updated
+    - 🚫 Service access revoked
     
-    **Next Steps**:
-    - Service access may be revoked
-    - Customer satisfaction follow-up
-    - Review refund policies
+    **Actions Available**:
+    - View refund details
+    - Download refund receipt
+    - Contact support for questions
   </Tab>
 </Tabs>
 
- 
+## 🔍 Filtering & Search Features
 
-### 💳 Payment Method Distribution
+### 📅 Date Range Filtering
 
-<CardGroup cols={3}>
-  <Card title="Credit Cards" icon="credit-card">
-    **65%** of all transactions
+<CardGroup cols={2}>
+  <Card title="Quick Presets" icon="calendar-days">
+    **Last 14 Days** - Most commonly used filter
     
-    Most popular payment method
+    **Last 30 Days** - Monthly overview
+    
+    **Last 90 Days** - Quarterly review
   </Card>
   
-  <Card title="Bank Transfers" icon="building-columns">
-    **25%** of all transactions
+  <Card title="Custom Range" icon="calendar">
+    **Start Date**: Select beginning date
     
-    Preferred for large amounts
-  </Card>
-  
-  <Card title="Digital Wallets" icon="wallet">
-    **10%** of all transactions
+    **End Date**: Select ending date
     
-    Growing payment method
+    **Filter Button**: Apply custom date range
   </Card>
 </CardGroup>
 
-### 📊 Transaction Success Rate
+### 🔍 Search & Display Options
+
+<CardGroup cols={2}>
+  <Card title="Results Display" icon="list">
+    **Show Entries**: Configure number of results per page
+    
+    **Options**: 10, 25, 50, 100 entries
+    
+    **Default**: 10 entries per page
+  </Card>
+  
+  <Card title="Search Function" icon="magnifying-glass">
+    **Global Search**: Search across all fields
+    
+    **Real-time**: Results update as you type
+    
+    **Fields**: User, Invoice Number, Amount, Status
+  </Card>
+</CardGroup>
+
+## 📄 Invoice Details & Actions
+
+### 💳 Payment Information
+
+Based on your transaction screenshots, here's what you'll see in invoice details:
+<img
+  src="/images/billing/transaction-history/invoice.png"
+  alt="Payment Methods"
+/>
+  <img
+  src="/images/billing/transaction-history/invoice-details.png"
+  alt="Payment Methods"
+/>
+<CardGroup cols={2}>
+  <Card title="Transaction Summary" icon="file-invoice">
+    **To**: Company receiving payment
+    
+    **From**: Payment processor (Meta Tech LLC)
+    
+    **Invoice**: Unique identifier
+    
+    **Amount**: Total paid
+  </Card>
+
+  <Card title="Payment Details" icon="credit-card">
+    **Payment Date**: When payment was processed
+    
+    **Payment Method**: Card type and last 4 digits
+    
+    **Status**: Current payment state
+    
+    **Receipt**: Download options available
+  </Card>
+</CardGroup>
+
+### 🎯 Available Actions
+
+<Steps>
+  <Step title="👁️ View Details">
+    Click the eye icon to view complete invoice information including payment breakdown and billing details
+  </Step>
+  <Step title="📥 Download Invoice">
+    Use the "Download invoice" button to get a PDF copy of the complete invoice
+  </Step>
+  <Step title="📄 Download Receipt">
+    Use the "Download receipt" button to get a payment confirmation receipt
+  </Step>
+  <Step title="🔍 Transaction Lookup">
+    Use the search function to quickly find specific transactions by any field
+  </Step>
+</Steps>
+ 
+## 📈 Transaction Analytics
+
+### 💰 Payment Statistics
 
 <Info>
-Our platform maintains a **97.8%** transaction success rate, exceeding industry standards.
+Based on your transaction data, you can track important payment metrics and trends.
 </Info>
 
-**Success Metrics**:
-- ✅ **97.8%** - Overall success rate
-- ⚡ **2.3 seconds** - Average processing time
-- 🔄 **1.2%** - Retry success rate
-- 💰 **$125** - Average transaction value
+**Key Metrics to Monitor**:
+- ✅ **Success Rate**: Percentage of successful payments
+- 💳 **Payment Methods**: Distribution of payment types
+- 📊 **Transaction Volume**: Number of transactions per period
+- 💰 **Revenue Tracking**: Total income and trends
+- 🔄 **Retry Success**: Failed payments that succeeded on retry
 
- 
- 
+### 📊 Data Insights
 
- 
+<CardGroup cols={2}>
+  <Card title="Payment Patterns" icon="chart-bar">
+    **Peak Times**: When most payments occur
+    
+    **Seasonal Trends**: Monthly/quarterly patterns
+    
+    **User Behavior**: Payment frequency analysis
+  </Card>
+  
+  <Card title="Performance Metrics" icon="gauge">
+    **Processing Speed**: Average transaction time
+    
+    **Success Rates**: Payment completion statistics
+    
+    **Error Analysis**: Common failure reasons
+  </Card>
+</CardGroup>
+
+## 🛠️ Troubleshooting & Support
+
+### ❓ Common Issues
+
+<AccordionGroup>
+  <Accordion title="🔍 Can't Find Transaction" icon="magnifying-glass">
+    **Solution**: Use the search function or adjust date range filters
+    
+    **Check**: Verify the correct date range and search terms
+    
+    **Alternative**: Browse through different pages using pagination
+  </Accordion>
+  
+  <Accordion title="📄 Download Not Working" icon="download">
+    **Solution**: Check browser settings and popup blockers
+    
+    **Retry**: Try downloading again after a few moments
+    
+    **Support**: Contact support if downloads consistently fail
+  </Accordion>
+  
+  <Accordion title="💳 Payment Status Questions" icon="circle-question">
+    **Check Status**: Look for real-time status updates in the table
+    
+    **Wait Time**: Allow up to 24 hours for status changes
+    
+    **Contact**: Reach out to support for payment discrepancies
+  </Accordion>
+</AccordionGroup>
+
+### 📞 Getting Help
+
+<CardGroup cols={2}>
+  <Card title="Documentation" icon="book">
+    **User Guides**: Comprehensive help documentation
+    
+    **FAQs**: Frequently asked questions
+    
+    **Video Tutorials**: Step-by-step visual guides
+  </Card>
+  
+  <Card title="Support Channels" icon="headset">
+    **Email Support**: Direct email assistance
+    
+    **Live Chat**: Real-time support chat
+    
+    **Help Desk**: Ticket-based support system
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+This documentation covers all aspects of the Transaction History feature based on your actual interface. For additional support or questions about specific transactions, please contact your support team.
+</Note>
