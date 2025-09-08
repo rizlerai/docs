@@ -55,17 +55,30 @@ Monitor essential AI performance indicators with real-time updates:
 
 | Metric | Description | Impact |
 |--------|-------------|---------|
-| **Total Agents** | Number of active AI agents | Scale your operations |
+| **Total Agents** | Number of active/inactive AI agents | Scale your operations |
 | **Total Numbers** | Available phone numbers | Resource availability |
 |![AI Analytics Dashboard](/images/dashboard/analytics/kpi.png)|
 | **Total Calls** | Total call volume | Activity level |
 | **Avg Duration** | Average call length | Efficiency indicator |
-|![AI Analytics Dashboard](/images/dashboard/analytics/call-rate.png)|
- ![AI Analytics Dashboard](/images/dashboard/analytics/call-counts.png)
-| **Call Direction** | Inbound vs outbound call distribution | Traffic analysis |
+|![AI Analytics Dashboard](/images/dashboard/analytics/filters.png) |
+| **Appointments** | Total appointments generated within selected date range | Click to view detailed modal |
+| **Select Agent** | Filter data by specific AI agent for appointment tracking | Select "All" to view appointments from all agents, or choose a specific agent to see only their appointments |
+|![AI Analytics Dashboard](/images/dashboard/analytics/appointment-details.png)|
+| **Appointment Details Modal** | Interactive table showing all appointments with call details, agent info, contact numbers, duration, scheduling status, sentiment analysis, and recordings. Includes filtering, search, and pagination for easy navigation. | Comprehensive appointment tracking |
+|![AI Analytics Dashboard](/images/dashboard/analytics/call-counts.png)|
+| **Call Counts** | Daily call volume trends | Activity monitoring |
 |![AI Analytics Dashboard](/images/dashboard/analytics/call-direction.png)|
-| **Disconnection Reason** | Analysis of call termination causes | Quality insights |
+| **Call Direction** | Distribution of inbound, outbound, and web calls | Channel performance analysis |
 |![AI Analytics Dashboard](/images/dashboard/analytics/disconnection-reason.png)|
+| **Disconnection Reason** | Analysis of call termination causes | Quality insights |
+|![AI Analytics Dashboard](/images/dashboard/analytics/call-rate.png)|
+| **Call Rate** | Success rate of calls over time | Performance tracking |
+| **Pickup Rate** | Percentage of calls answered by recipients | Connection success tracking |  
+|![AI Analytics Dashboard](/images/dashboard/analytics/transfer-voicemail.png)|
+| **Transfer & Voicemail** | Analysis of call transfers and voicemail drops | Call handling insights |
+|![AI Analytics Dashboard](/images/dashboard/analytics/average-call.png)|
+| **Average Call Duration** | Mean duration of all calls within selected timeframe | Call efficiency and engagement tracking |
+| **Appointments** | Total appointments scheduled within selected timeframe | Conversion and booking success tracking |
 ### 🔍 Filtering Options
 
 Refine your analytics view with powerful filtering capabilities:
@@ -75,7 +88,22 @@ Refine your analytics view with powerful filtering capabilities:
 - **Start Date**: Custom start date selection
 - **End Date**: Custom end date selection
 
-### 📊 Analytics Charts
+ ## 📞 Dialer Analytics
+
+The Dialer Analytics section focuses on traditional dialer performance and call ratios.
+
+![Dialer Analytics Dashboard](/images/dashboard/analytics/call-analytics.png)
+
+### 📊 Call Ratio Overview
+
+Monitor call direction distribution with visual indicators:
+
+**📥 Incoming Calls** - Success Indicators  
+**📤 Outgoing Calls** - Completion Status
+
+- **Total Calls**: Overall call volume
+- **Incoming**: Inbound call count with success indicators
+- **Outgoing**: Outbound call count with completion status
 
 #### Call Performance Metrics
 
@@ -104,22 +132,7 @@ Refine your analytics view with powerful filtering capabilities:
 
 ---
 
-## 📞 Dialer Analytics
 
-The Dialer Analytics section focuses on traditional dialer performance and call ratios.
-
-![Dialer Analytics Dashboard](/images/dashboard/analytics/call-analytics.png)
-
-### 📊 Call Ratio Overview
-
-Monitor call direction distribution with visual indicators:
-
-**📥 Incoming Calls** - Success Indicators  
-**📤 Outgoing Calls** - Completion Status
-
-- **Total Calls**: Overall call volume
-- **Incoming**: Inbound call count with success indicators
-- **Outgoing**: Outbound call count with completion status
 
 ### 📋 Call Overview Metrics
 
