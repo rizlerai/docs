@@ -1,254 +1,280 @@
 ---
 title: "Trigger Hooks"
-description: "Configure automated triggers and hooks for advanced workflow automation"
-icon: "bolt"
+description: "Advanced automation system for triggering custom actions based on AI Sync events and conditions"
+icon: "webhook"
 ---
 
-# Trigger Hooks
+Trigger Hooks provide a powerful automation framework that executes custom actions when specific events occur in your AI Sync system. Unlike webhooks that send data to external endpoints, trigger hooks perform internal actions and workflows within your AI Sync environment.
+ 
 
-Set up automated triggers and hooks to create sophisticated workflows and integrations within your AI Sync system.
-
-## Overview
-
-Trigger hooks allow you to automate actions based on specific events or conditions in your system. Unlike webhooks that send data to external endpoints, trigger hooks execute predefined actions within AI Sync or connected systems.
-
-## Types of Trigger Hooks
-
-### Event-Based Triggers
-
-Automatically execute actions when specific events occur:
-
-<CardGroup cols={2}>
-  <Card title="Call Triggers" icon="phone">
-    Execute actions based on call events like start, end, transfer, or specific call outcomes
-  </Card>
-  <Card title="Agent Triggers" icon="robot">
-    Trigger actions when agents are created, modified, or when their status changes
-  </Card>
-  <Card title="System Triggers" icon="gear">
-    Respond to system events like errors, maintenance, or performance thresholds
-  </Card>
-  <Card title="Custom Triggers" icon="code">
-    Create custom triggers based on specific business logic or external data
-  </Card>
-</CardGroup>
-
-### Condition-Based Triggers
-
-Execute actions when certain conditions are met:
-
-- **Time-based**: Schedule actions at specific times or intervals
-- **Data-based**: Trigger when data values reach certain thresholds
-- **Performance-based**: Execute when performance metrics meet criteria
-- **User-based**: Trigger actions based on user behavior or attributes
-
-## Setting Up Trigger Hooks
-
-### Creating a New Trigger Hook
-
-1. **Navigate to Setup > Trigger Hooks**
-2. **Click "Create Trigger Hook"**
-3. **Configure the trigger:**
-   - **Name**: Descriptive name for the trigger
-   - **Event/Condition**: What activates the trigger
-   - **Actions**: What happens when triggered
-   - **Filters**: Optional conditions to refine trigger activation
-
-### Trigger Configuration
+## 🔄 Trigger Hook Workflow
 
 <Steps>
-  <Step title="Define the Trigger Event">
-    Select the event or condition that will activate the hook
+  <Step title="Event Detection">
+    System monitors for specified events (calls, agent actions, campaigns)
   </Step>
-  <Step title="Set Conditions">
-    Add filters and conditions to refine when the trigger activates
+  <Step title="Condition Evaluation">
+    Trigger conditions are evaluated against event data and context
   </Step>
-  <Step title="Configure Actions">
-    Define what actions should be executed when triggered
+  <Step title="Hook Execution">
+    Qualifying events trigger the configured hook actions
   </Step>
-  <Step title="Test and Activate">
-    Test the trigger and activate it for live use
+  <Step title="Action Processing">
+    Multiple actions can be executed sequentially or in parallel
+  </Step>
+  <Step title="Result Logging">
+    Execution results and outcomes are logged for monitoring
   </Step>
 </Steps>
 
-## Available Actions
-
-### Internal Actions
-
-Actions that execute within the AI Sync system:
+## 📊 Trigger Hook vs Webhooks Comparison
 
 <AccordionGroup>
-  <Accordion title="Agent Management">
-    - Update agent configurations
-    - Change agent status or availability
-    - Modify agent prompts or responses
-    - Assign agents to different campaigns
-  </Accordion>
-
-  <Accordion title="Call Management">
-    - Transfer calls to specific agents
-    - End calls automatically
-    - Schedule callback appointments
-    - Update call dispositions
-  </Accordion>
-
-  <Accordion title="Data Management">
-    - Update contact information
-    - Add tags or notes to records
-    - Create or update PowerLists
-    - Log custom events
-  </Accordion>
-
-  <Accordion title="Notifications">
-    - Send email notifications
-    - Create system alerts
-    - Generate reports
-    - Update dashboards
+  <Accordion title="🔗 Webhooks vs ⚡ Trigger Hooks">
+    | Feature | Webhooks | Trigger Hooks |
+    |---------|----------|---------------|
+    | **Purpose** | Send data to external systems | Execute internal actions |
+    | **Direction** | Outbound HTTP requests | Internal processing |
+    | **Response** | Depends on external endpoint | Immediate internal execution |
+    | **Actions** | Limited to HTTP calls | Multiple action types available |
+    | **Latency** | Network dependent | Minimal internal latency |
+    | **Reliability** | External system dependent | Internal system controlled |
+    | **Use Cases** | CRM integration, notifications | Automation, data processing, workflows |
   </Accordion>
 </AccordionGroup>
 
-### External Actions
+## 📋 Trigger Hook Management
 
-Actions that interact with external systems:
+Navigate to **Setup > Trigger Hooks** to manage your automation configurations.
 
-- **API Calls**: Send data to external APIs
-- **Database Updates**: Update external databases
-- **File Operations**: Create or modify files
-- **Third-party Integrations**: Trigger actions in CRM, marketing tools, etc.
+![Trigger Hook Management](/images/setup/trigger-webhook/overview.png)
 
-## Trigger Examples
+### Trigger Hook Table Overview
 
-### Example 1: Call Quality Monitoring
+| Column | Description | Example |
+|--------|-------------|---------|
+| **#** | Sequential hook ID | `1`, `2`, `3` |
+| **Title** | Hook name/identifier | `Lead Qualification`, `Follow-up Scheduler` |
+| **Updated At** | Last modification timestamp | `09-09-2025 10:27 AM` |
+| **Created At** | Hook creation timestamp | `09-09-2025 10:23 AM` |
+| **Action** | Management options | Edit, Delete, Duplicate, Test |
 
-```yaml
-Trigger: Call Ended
-Conditions: 
-  - Call duration < 30 seconds
-  - Call status = "disconnected"
-Actions:
-  - Tag contact as "short_call"
-  - Send alert to supervisor
-  - Schedule follow-up call
-```
+### Quick Actions
 
-### Example 2: Lead Qualification
+<CardGroup cols={3}>
+  <Card title="Add New Hook" icon="plus">
+    Create new trigger hooks for your automation needs
+  </Card>
+  <Card title="Edit Configuration" icon="pencil">
+    Modify existing hook settings and conditions
+  </Card>
+</CardGroup>
 
-```yaml
-Trigger: Information Collected
-Conditions:
-  - Budget > $10,000
-  - Timeline = "immediate"
-Actions:
-  - Transfer to senior sales agent
-  - Update lead score
-  - Send notification to sales manager
-```
+## 🎛️ Trigger Hook Configuration
 
-### Example 3: Performance Monitoring
+### Creating a New Trigger Hook
 
-```yaml
-Trigger: Agent Performance
-Conditions:
-  - Call success rate < 20%
-  - Time period = last 2 hours
-Actions:
-  - Pause agent campaigns
-  - Send training reminder
-  - Notify team lead
-```
+<Steps>
+  <Step title="Access Trigger Hooks">
+    Navigate to Setup > Trigger Hooks and click "Add"
+  </Step>
+  <Step title="Basic Information">
+    - **Title**: Descriptive name for the trigger hook
+    - **Description**: Optional detailed description of the hook's purpose
+    - **Status**: Enable/disable the hook
+  </Step>
+  <Step title="Trigger Configuration">
+    - **Trigger When**: Select the event type that activates the hook
+    - **Conditions**: Set up conditional logic for when the hook should execute
+    - **Filters**: Apply additional filters based on data attributes
+  </Step>
+  <Step title="Action Configuration">
+    - **Hook URL**: Internal or external endpoint to call
+    - **Hook Method**: HTTP method (GET, POST, PUT, DELETE)
+    - **Type**: Define the hook type and processing method
+    - **Role**: Specify user role requirements for execution
+  </Step>
+  <Step title="Test and Activate">
+    Test the trigger hook with sample data and activate for live events
+  </Step>
+</Steps>
 
-## Advanced Features
+![Add Trigger Hook](/images/setup/trigger-webhook/add-new.png)
 
-### Conditional Logic
+### Field Definitions
 
-Use advanced conditional logic in your triggers:
+<AccordionGroup>
+  <Accordion title="📝 Basic Fields">
+    **Title**
+    - Purpose: Human-readable identifier for the trigger hook
+    - Format: Text string (max 255 characters)
+    - Example: "Lead Qualification Hook", "Follow-up Scheduler"
+    
+    **Description**
+    - Purpose: Detailed explanation of hook functionality
+    - Format: Text area (optional)
+    - Example: "Automatically qualifies leads based on call sentiment and duration"
+  </Accordion>
+  
+  <Accordion title="⚡ Trigger Configuration">
+    **Trigger When**
+    - Purpose: Defines the event that activates the hook
+    - Options: 
+      - `Power List Dial 1 Time` - After first dial attempt
+      - `Power List Dial 2 Times` - After second dial attempt  
+      - `Power List Dial 3 Times` - After third dial attempt
+      - `Call Ended` - When any call completes
+      - `Call Answered` - When call is answered
+      - `Agent Response` - When AI agent responds
+      - `Lead Generated` - When new lead is created
+      - `Appointment Scheduled` - When appointment is booked
+      - `SMS Sent/Received` - SMS events
+      - `Campaign Started/Ended` - Campaign lifecycle events
+    
+    **Conditions**
+    - Purpose: Additional logic to filter when hook executes
+    - Format: Conditional expressions
+    - Examples:
+      - `call_duration > 60` (calls longer than 1 minute)
+      - `sentiment == "positive"` (positive sentiment only)
+      - `lead_score >= 80` (high-quality leads only)
+  </Accordion>
+  
+  <Accordion title="🔗 Hook Configuration">
+    **Hook URL**
+    - Purpose: Endpoint URL to send hook data
+    - Format: Valid HTTP/HTTPS URL
+    - Examples:
+      - `https://api.yourcrm.com/webhook/leads`
+      - `https://app.hookk.com/webhook`
+      - `https://internal.ai-sync.com/process-lead`
+    
+    **Hook Method**
+    - Purpose: HTTP method for the hook request
+    - Options: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`
+    - Default: `POST`
+    - Usage: POST for creating data, PUT for updates, GET for queries
+    
+    **Type**
+    - Purpose: Categorizes the hook for processing and organization
+    - Options:
+      - `Lead Processing` - Lead qualification and routing
+      - `CRM Integration` - Customer relationship management
+      - `Analytics` - Data analysis and reporting  
+      - `Notification` - Alerts and notifications
+      - `Workflow` - Business process automation
+      - `Other` - Custom or miscellaneous hooks
+  </Accordion>
+  
+  <Accordion title="👤 Role & Security">
+    **Role**
+    - Purpose: Defines which user roles can trigger this hook
+    - Options:
+      - `Agent` - AI agents can trigger the hook
+      - `Admin` - Administrator users only
+      - `Manager` - Manager level and above
+      - `User` - Any authenticated user
+      - `System` - System-level automated triggers
+    - Security: Ensures proper access control for sensitive operations
+  </Accordion>
+</AccordionGroup>
 
-```javascript
-// Example: Complex condition evaluation
-if (call.duration > 60 && call.sentiment === "positive") {
-  // High-value lead actions
-  actions.updateLeadScore(contact.id, "+50");
-  actions.scheduleFollowUp(contact.id, "2 days");
-} else if (call.sentiment === "negative") {
-  // Recovery actions
-  actions.sendApologyEmail(contact.id);
-  actions.scheduleManagerCall(contact.id);
-}
-```
+### Edit Trigger Hook
 
-### Chained Triggers
+![Edit Trigger Hook](/images/setup/trigger-webhook/edit.png)
 
-Create sequences of triggers that execute in order:
+When editing existing trigger hooks, you can modify all configuration parameters while maintaining execution history and performance metrics.
 
-1. **Primary Trigger**: Initial event occurs
-2. **Secondary Trigger**: Activated by primary trigger action
-3. **Tertiary Trigger**: Activated by secondary trigger action
+## 🎪 Available Trigger Events
 
-### Scheduled Triggers
+ 
 
-Set up time-based triggers for regular maintenance or updates:
+<CardGroup cols={2}>
+  <Card title="Call Events" icon="phone">
+    **Triggers**: 
+    - `Call Started/Ended/Answered`
+    - `Power List Dial Attempts`
+    - `Call Transferred`
+    
+    **Use Cases**: 
+    - Real-time monitoring
+    - Progressive lead nurturing
+    - CRM updates
+    
+    **Data**: Call status, duration, participant info, recordings
+  </Card>
+  
+  <Card title="Agent Events" icon="robot">
+    **Triggers**:
+    - `Agent Response Generated`
+    - `Escalation Required`
+    - `Performance Threshold`
+    
+    **Use Cases**:
+    - Quality monitoring
+    - Performance optimization
+    - Training triggers
+    
+    **Data**: Agent metrics, response content, conversation context
+  </Card>
+  
+  <Card title="Lead Events" icon="user-plus">
+    **Triggers**:
+    - `Lead Generated/Qualified`
+    - `Status/Score Changed`
+    
+    **Use Cases**:
+    - CRM synchronization
+    - Lead routing
+    - Sales notifications
+    
+    **Data**: Demographics, qualification scores, interaction history
+  </Card>
+  
+  <Card title="Campaign Events" icon="bullhorn">
+    **Triggers**:
+    - `Campaign Started/Completed`
+    - `Milestone Reached`
+    - `Performance Alert`
+    
+    **Use Cases**:
+    - Performance monitoring
+    - Budget management
+    - Result processing
+    
+    **Data**: Campaign metrics, progress, ROI statistics
+  </Card>
+  
+  <Card title="Appointment Events" icon="calendar">
+    **Triggers**:
+    - `Scheduled/Confirmed/Cancelled`
+    - `Rescheduled`
+    
+    **Use Cases**:
+    - Calendar integration
+    - Reminder automation
+    - No-show prevention
+    
+    **Data**: Appointment details, participant info, availability
+  </Card>
+  
+  <Card title="Follow-up Events" icon="clock-rotate-left">
+    **Triggers**:
+    - `Follow-up Due`
+    - `Task Created`
+    - `Deadline Approaching`
+    
+    **Use Cases**:
+    - Task automation
+    - Deadline management
+    - Customer retention
+    
+    **Data**: Task details, assigned members, due dates
+  </Card>
+</CardGroup>
 
-- **Daily**: Performance reports, data cleanup
-- **Weekly**: Agent performance reviews, campaign optimization
-- **Monthly**: Billing updates, system maintenance
-- **Custom**: Specific business schedules
+## 📦 Hook Payload Structure
 
-## Testing and Debugging
+### Standard Payload Format
 
-### Test Mode
-
-Use test mode to verify trigger behavior without affecting live data:
-
-<Tip>
-  Enable test mode to simulate trigger events and verify actions without executing them
-</Tip>
-
-### Debugging Tools
-
-- **Execution Logs**: View detailed logs of trigger executions
-- **Error Tracking**: Monitor and resolve trigger failures
-- **Performance Metrics**: Analyze trigger performance and optimization opportunities
-
-### Common Issues
-
-<Warning>
-  **Infinite Loops**: Ensure triggers don't create circular execution patterns
-</Warning>
-
-<Warning>
-  **Performance Impact**: Monitor resource usage of complex triggers
-</Warning>
-
-## Best Practices
-
-### Design Principles
-
-- **Keep it Simple**: Start with basic triggers and add complexity gradually
-- **Test Thoroughly**: Always test triggers before deploying to production
-- **Monitor Performance**: Regular review trigger performance and efficiency
-- **Document Changes**: Maintain clear documentation of trigger logic
-
-### Optimization Tips
-
-- **Use Filters Effectively**: Minimize unnecessary trigger executions
-- **Batch Operations**: Group similar actions for better performance
-- **Error Handling**: Implement proper error handling and fallback actions
-- **Regular Maintenance**: Review and update triggers regularly
-
-## Management and Monitoring
-
-### Trigger Dashboard
-
-Monitor all your trigger hooks from a central dashboard:
-
-- **Active Triggers**: View all currently active triggers
-- **Execution History**: Track trigger execution frequency and success rates
-- **Performance Metrics**: Monitor trigger performance and resource usage
-- **Error Reports**: Identify and resolve trigger issues
-
-### Maintenance
-
-- **Regular Reviews**: Periodically review trigger relevance and performance
-- **Updates**: Keep triggers updated with changing business requirements
-- **Cleanup**: Remove obsolete or unused triggers
-- **Optimization**: Continuously optimize trigger performance 
+All trigger hooks receive a consistent JSON payload structure:

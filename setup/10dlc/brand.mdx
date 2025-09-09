@@ -52,19 +52,7 @@ A 10DLC Brand is your business's verified digital identity within the messaging 
 </Info>
 
 ## Complete Registration Workflow
-
-### Brand Registration Process
-
-The brand registration follows a systematic approach designed by wireless carriers to ensure only legitimate businesses can send high-volume messages:
-
-1. **Business Type Selection** - Choose your entity type (Corporation, Partnership, Sole Proprietorship, Non-Profit)
-2. **Company Information** - Provide legal business details and contact information
-3. **Address Details** - Submit physical and mailing addresses (verified against postal databases)
-4. **Business Details** - Add website, industry, and online presence information
-5. **Documentation Upload** - Submit required verification documents (processed within 24 hours)
-6. **Review & Approval** - Carrier review and verification process (automated + manual review)
-7. **Brand Activation** - Begin creating campaigns with your verified brand and assigned trust score
-
+ 
 ### Step-by-Step Registration Guide
 
 <AccordionGroup>
@@ -132,9 +120,9 @@ The brand registration follows a systematic approach designed by wireless carrie
 
   <Accordion title="Step 3: Contact Information" icon="phone">
     **Primary Contact Details:**
-        <img
+    <img
       src="/images/setup/brand/contact.png"
-      alt="Company Information Form"
+      alt="Contact Information Form"
       className="rounded-lg border shadow-sm"
     />
     | Field | Purpose | Requirements | Tips |
@@ -154,9 +142,9 @@ The brand registration follows a systematic approach designed by wireless carrie
 
   <Accordion title="Step 4: Address Information" icon="map-pin">
     **Business Address Requirements:**
-          <img
+    <img
       src="/images/setup/brand/address.png"
-      alt="Company Information Form"
+      alt="Address Information Form"
       className="rounded-lg border shadow-sm"
     />
     <CardGroup cols={2}>
@@ -185,11 +173,23 @@ The brand registration follows a systematic approach designed by wireless carrie
     </Info>
   </Accordion>
 
-  <Accordion title="Step 5: Business Details" icon="globe">
+  <Accordion title="Step 5: Website's configuration" icon="briefcase">
+    <img
+      src="/images/setup/brand/need-website.png"
+      alt="Website Requirements Form"
+      className="rounded-lg border shadow-sm"
+    />
+    <img
+      src="/images/setup/brand/available-websites.png"
+      alt="Available Websites Form"
+      className="rounded-lg border shadow-sm"
+    />
+
     **Online Presence & Industry Information:**
-              <img
+
+    <img
       src="/images/setup/brand/business-detail.png"
-      alt="Company Information Form"
+      alt="Business Details Form"
       className="rounded-lg border shadow-sm"
     />
     | Field | Description | Impact on Approval | Best Practices |
@@ -199,45 +199,62 @@ The brand registration follows a systematic approach designed by wireless carrie
     | **Terms of Service** | Terms and conditions URL | Required for legal compliance | Include opt-out procedures and data usage |
     | **Industry Vertical** | NAICS business category | Affects approval speed and trust score | Choose most specific applicable category |
     | **Opt-in/Opt-out URLs** | Consent management links | Critical for compliance scoring | Must be functional and easily accessible |
-    
-    **Industry Categories with Approval Times:**
-    <CardGroup cols={3}>
-      <Card title="Professional Services" icon="briefcase">
-        Legal, accounting, consulting, real estate
-        **Approval Time:** 2-3 days
-      </Card>
-      <Card title="E-commerce" icon="shopping-cart">
-        Online retail, marketplace, subscription services
-        **Approval Time:** 3-5 days
-      </Card>
-      <Card title="Healthcare" icon="heart-pulse">
-        Medical practices, telehealth, pharmaceutical
-        **Approval Time:** 5-7 days (additional compliance review)
-      </Card>
-      <Card title="Financial" icon="dollar-sign">
-        Banking, fintech, insurance, investment
-        **Approval Time:** 7-10 days (enhanced verification)
-      </Card>
-      <Card title="Education" icon="graduation-cap">
-        Schools, training, e-learning platforms
-        **Approval Time:** 3-5 days
-      </Card>
-      <Card title="Hospitality" icon="bed">
-        Hotels, restaurants, entertainment venues
-        **Approval Time:** 2-4 days
-      </Card>
-    </CardGroup>
-    
-    <Note>
-      **Regulated Industries:** Healthcare, financial services, and legal industries require enhanced documentation and may have longer approval times due to additional compliance requirements.
-    </Note>
   </Accordion>
+  <Accordion title="Step 6: Create new Website" icon="globe">
+    **Website Creation Module:**
+    <img
+      src="/images/setup/brand/create-website.png"
+      alt="Create Website Form"
+      className="rounded-lg border shadow-sm"
+    />
 
-  <Accordion title="Step 6: Additional Information" icon="bullseye">
+    **Website Creation Fields:**
+
+    When creating a new website, the system automatically generates a default link that will appear in the available websites list. The form includes the following fields:
+
+    | Field | Description | Required | Purpose |
+    |-------|-------------|----------|---------|
+    | **Description** | Website purpose/content description |Yes | Required context for compliance review and brand verification |
+    | **Logo** | Brand logo/image upload | Yes | Visual brand identity for carrier verification |
+    | **Color Scheme** | Primary brand colors (hex codes) |  Yes | Brand consistency and visual identity |
+    | **Category** | Website type/industry |  Yes | Helps with proper categorization |
+    | **Webhook URL** | Callback endpoint for notifications | Optional | Receive real-time updates on brand status |
+    | **Permissions** | Data usage and compliance consent |  Yes | Checkbox for terms acceptance and data processing |
+
+    <Info>
+      **Default Link Generation:** The system automatically creates a default website URL that becomes available in your website selection list. This generated link serves as a placeholder until you configure your actual domain settings.
+    </Info>
+ 
+   </Accordion>
+  <Accordion title="Step 7: Business's Industry" icon="briefcase">
+          **Industry Selection & Classification:**
+          
+          <img
+      src="/images/setup/brand/industry-selection.png"
+      alt="Industry Selection Form"
+      className="rounded-lg border shadow-sm"
+    />
+
+    **Industry Classification Details:**
+
+    Selecting the correct industry vertical is crucial for your brand registration approval and compliance scoring. The system uses NAICS (North American Industry Classification System) codes to categorize your business.
+
+    | Industry Category | Trust Score Impact | Approval Speed | Special Requirements |
+    |-------------------|-------------------|----------------|---------------------|
+    | **Technology/Software** | High (+10-15 points) | Fast (2-3 days) | Website functionality verification |
+    | **Healthcare** | Medium (+5-10 points) | Moderate (3-5 days) | HIPAA compliance documentation |
+    | **Financial Services** | High (+10-20 points) | Slow (5-7 days) | Additional regulatory verification |
+    | **E-commerce/Retail** | Medium (+5-10 points) | Fast (2-4 days) | Product catalog verification |
+
+    <Info>
+      **Multiple Industries:** If your business operates in multiple verticals, select the one that generates the majority of your revenue or represents your primary messaging use case.
+    </Info>
+        </Accordion>
+  <Accordion title="Step 8: Additional Information" icon="bullseye">
     **Optional Identifiers & Compliance Enhancers:**
-                  <img
+    <img
       src="/images/setup/brand/additional-information.png"
-      alt="Company Information Form"
+      alt="Additional Information Form"
       className="rounded-lg border shadow-sm"
     />
     | Field | Purpose | When Required | Trust Score Impact |
@@ -253,7 +270,7 @@ The brand registration follows a systematic approach designed by wireless carrie
   </Accordion>
 </AccordionGroup>
 
-## Brand Registration  
+## Brand Registration
 
 ### Preparation Checklist
 
@@ -340,7 +357,6 @@ Different industries have unique requirements and approval processes:
   </Accordion>
 </AccordionGroup>
 
-
 ## Verification Tiers & Capabilities
 
 <img
@@ -413,6 +429,7 @@ Your brand is automatically assigned to a tier based on your business verificati
 </Info>
 
 ### Advanced Management Features
+
 <AccordionGroup>
   <Accordion title="Real-Time Status Monitoring" icon="chart-bar">
     **Comprehensive Status Tracking:**
