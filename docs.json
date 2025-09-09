@@ -54,7 +54,7 @@
                     "icon": "gear",
                     "pages": [
                       "ai/manage-agent/general",
-                      "ai/manage-agent/voice-language",
+                      "ai/manage-agent/voice-languages",
                       "ai/manage-agent/call-handling",
                       "ai/manage-agent/intelligence",
                       "ai/manage-agent/integration",
