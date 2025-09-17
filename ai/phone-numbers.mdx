@@ -4,8 +4,13 @@ description: "Manage your AI phone numbers with comprehensive controls for SIP t
 icon: "phone"
 ---
 
+import { Callout } from 'nextra/components'
 
-## Management Tabs
+## 📞 Phone Number Management Overview
+
+Manage your AI phone numbers with comprehensive controls for SIP trunks, Ai sync Numbers, and Twilio integrations. This system provides complete phone number lifecycle management from purchase to monitoring.
+
+## 🎛️ Management Tabs
 
 ### Available Platforms
 - **SIP trunks** - Currently active tab for SIP trunk phone number management
@@ -14,7 +19,44 @@ icon: "phone"
 
 ![Phone Numbers](/images/ai/phone-number/platform.png)
 
-## SIP Trunk Configuration
+## 🛒 Purchase Phone Number
+
+### Buy Phone Number Modal
+
+The purchase interface allows you to acquire new phone numbers with AI agent configuration:
+
+![Buy Phone Number Modal](/images/ai/phone-number/purchase.png)
+
+#### Configuration Fields:
+
+**Enter Area Code (217)**
+- **Purpose**: Specifies the geographic area for the phone number
+- **Function**: Determines the local area code (217 = Illinois area)
+- **Usage**: Helps customers recognize local numbers for better answer rates
+- **Help**: Click the question mark icon for area code information
+
+**Inbound Agent (Search...)**
+- **Purpose**: Selects which AI agent handles incoming calls
+- **Function**: Routes incoming calls to the specified AI agent
+- **Configuration**: Dropdown with searchable agent list
+- **Help**: Click the question mark icon for agent selection guidance
+
+**Outbound Agent (QA1)**
+- **Purpose**: Selects which AI agent makes outgoing calls
+- **Function**: Uses this agent for outbound campaigns and calls
+- **Current Setting**: "QA1" agent is pre-selected
+- **Management**: Use 'X' to clear selection, dropdown arrow to change
+
+**Nickname (QA1)**
+- **Purpose**: Custom identifier for easy management
+- **Function**: Internal reference name for the phone number
+- **Usage**: Helps organize multiple numbers in your dashboard
+
+#### Actions:
+- **Close** - Cancel purchase without saving
+- **Save Changes** - Complete purchase and configure number
+
+## 🔧 SIP Trunk Configuration
 
 Click **Edit** to open the SIP trunking configuration dialog:
 
@@ -35,7 +77,7 @@ Click **Edit** to open the SIP trunking configuration dialog:
 
 ![Phone Numbers](/images/ai/phone-number/SIP-trunk.png)
 
-## Ai sync Number Configuration
+## 🤖 Ai sync Number Configuration
 
 Click **Ai sync Numbers** tab to access native platform number configuration:
 
@@ -53,19 +95,164 @@ Click **Ai sync Numbers** tab to access native platform number configuration:
 
 ![Phone Numbers](/images/ai/phone-number/ai-sync-number.png)
 
+## ⚡ Available Actions
 
-
-### Available Actions
-- **Spam Protect**  - Configure spam protection settings and monitoring
-- **Edit** - Modify phone number configuration and settings
-- **Token**  - Manage API tokens and authentication credentials
-- **Delete** - Remove phone number from system (permanent action)
-
-
+### Phone Number Management Actions
 
 ![Phone Numbers](/images/ai/phone-number/table.png)
 
-## Quick Actions
+#### Primary Actions:
+
+**🛡️ Spam Protect**
+- **Purpose**: Configure spam protection settings and monitoring
+- **Function**: Enable 24/7 reputation monitoring
+- **Features**: Carrier compliance tracking, automatic alerts
+
+**✏️ Edit**
+- **Purpose**: Modify phone number configuration and settings
+- **Function**: Update agent assignments, routing, and preferences
+- **Access**: Opens configuration dialog for changes
+
+**🔑 Token**
+- **Purpose**: Manage API tokens and authentication credentials
+- **Function**: Configure secure access to phone services
+- **Security**: Generate, view, and revoke authentication tokens
+
+**🗑️ Delete**
+- **Purpose**: Remove phone number from system
+- **Warning**: Permanent action that cannot be undone
+- **Confirmation**: Requires explicit confirmation before deletion
+
+## 🛡️ Spam Protection - Detailed Guide
+
+### What is Spam Protection?
+
+Spam protection is a comprehensive monitoring system that tracks your phone numbers' reputation with carriers and prevents them from being flagged as spam.
+
+<Callout type="info" emoji="ℹ️">
+  **Spam Protected Numbers** are phone numbers that are continuously monitored for spam reputation, carrier compliance, and deliverability status. The system helps prevent your numbers from being flagged or blocked by carriers.
+</Callout>
+
+### 🔄 How Spam Protection Works:
+
+#### 1. **24/7 Monitoring**
+- Continuous scanning of carrier databases
+- Real-time reputation tracking
+- Automatic status updates
+
+#### 2. **Status Types**:
+- **🟢 Clean**: Number is in good standing with no spam flags
+- **🔴 Flagged**: Number has been reported for spam (shows carrier details like T-Mobile, Verizon)
+- **🟡 Pending**: Number is under review or verification
+- **⚫ Blocked**: Number is blocked by carriers
+
+#### 3. **Carrier Integration**:
+- Monitors T-Mobile, Verizon, AT&T, and other carriers
+- Tracks compliance across all major networks
+- Provides carrier-specific reporting
+
+#### 4. **Automatic Actions**:
+- **Renewal Management**: Auto-renews protection services
+- **Alert System**: Immediate notifications for issues
+- **Remediation**: Automated and manual fix processes
+
+### 💡 Why Spam Protection is Useful:
+
+- **📈 Deliverability**: Ensures your calls/messages reach recipients
+- **✅ Compliance**: Maintains carrier compliance standards
+- **🏆 Reputation Management**: Protects your business reputation
+- **💰 Cost Savings**: Prevents expensive number replacement
+- **📊 Analytics**: Provides detailed performance metrics
+
+## 🔑 Token Management - Detailed Guide
+
+### What are Tokens?
+
+Tokens are **API authentication credentials** that allow secure access to your phone number services and integrations.
+
+![Token Management](/images/ai/phone-number/token.png)
+
+
+### GoHighLevel (GHL) Field Mapping
+
+Configure how incoming call data is mapped to your CRM fields:
+
+#### Key Mappings:
+
+**GHL Location**
+- **Purpose**: Select the GoHighLevel location for data storage
+- **Configuration**: Large text input field for location selection
+
+**Phone Number**
+- **Source Field**: `phone_number` placeholder
+- **GHL Field**: "Phone Number" (with clear option)
+- **Function**: Stores caller's phone number in CRM
+
+**Email**
+- **Source Field**: `email` placeholder  
+- **GHL Field**: "Email Address" (with clear option)
+- **Function**: Captures and stores email addresses
+
+**First Name**
+- **Source Field**: `first_name` placeholder
+- **GHL Field**: "First Name" (with clear option)
+- **Function**: Stores caller's first name
+
+**Last Name**
+- **Source Field**: `last_name` placeholder
+- **GHL Field**: "Last Name" (with clear option)
+- **Function**: Stores caller's last name
+
+**Address Fields**
+- **City**: Maps to searchable GHL city field
+- **Zip Code**: Maps to searchable GHL zip code field
+- **Country**: Maps to searchable GHL country field
+- **Address**: Maps to searchable GHL address field
+
+**Custom Text Field**
+- **Source Field**: `hello_how_are_you_i_am_c` placeholder
+- **GHL Field**: Searchable custom field mapping
+- **Function**: Captures custom information during calls
+
+### 🔐 How Tokens Work:
+
+#### 1. **Authentication Purpose**:
+- Secure API access to phone services
+- Authenticate webhook calls
+- Enable third-party integrations
+
+#### 2. **Token Types**:
+- **Twilio Auth Token**: For Twilio carrier services
+- **Plivo Auth Token**: For Plivo carrier services  
+- **API Keys**: For custom integrations
+- **Webhook Tokens**: For secure webhook authentication
+
+#### 3. **Security Features**:
+- Encrypted storage
+- Rotation capabilities
+- Access logging
+- Permission-based access
+
+### 🎯 Token Use Cases:
+
+1. **Carrier Integration**: Connect to Twilio/Plivo services
+2. **Webhook Security**: Secure incoming data from external systems
+3. **API Access**: Enable programmatic phone number management
+4. **Third-party Apps**: Integrate with CRM systems and tools
+ ck token usage and API calls
+
+## 🔄 Complete Workflow
+
+### Phone Number Lifecycle:
+
+1. **🛒 Purchase** → Configure area code and agents
+2. **⚙️ Setup** → Map GHL fields for data collection  
+3. **🛡️ Protect** → Enable spam protection monitoring
+4. **🔑 Authenticate** → Configure tokens for secure access
+5. **📊 Monitor** → Track performance and reputation
+6. **🔧 Maintain** → Renew services and update configurations
+
+## 🚀 Quick Actions
 
 <CardGroup cols={2}>
   <Card title="Configure Numbers" icon="phone">
@@ -81,3 +268,7 @@ Click **Ai sync Numbers** tab to access native platform number configuration:
     Configure tokens and authentication for phone access
   </Card>
 </CardGroup>
+
+<Callout type="tip" emoji="💡">
+  **Best Practice**: Always enable spam protection for new numbers and regularly monitor token usage for security compliance.
+</Callout>
