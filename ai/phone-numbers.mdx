@@ -104,9 +104,9 @@ Click **Ai sync Numbers** tab to access native platform number configuration:
 #### Primary Actions:
 
 **🛡️ Spam Protect**
-- **Purpose**: Configure spam protection settings and monitoring
-- **Function**: Enable 24/7 reputation monitoring
-- **Features**: Carrier compliance tracking, automatic alerts
+- **Purpose**: Prevent your phone numbers from being flagged as spam by carriers
+- **Function**: Monitors your number's reputation and alerts you if any issues are detected
+- **Features**: Real-time spam status checks, compliance monitoring, and proactive notifications to help maintain high call deliverability
 
 **✏️ Edit**
 - **Purpose**: Modify phone number configuration and settings
@@ -114,14 +114,10 @@ Click **Ai sync Numbers** tab to access native platform number configuration:
 - **Access**: Opens configuration dialog for changes
 
 **🔑 Token**
-- **Purpose**: Manage API tokens and authentication credentials
-- **Function**: Configure secure access to phone services
-- **Security**: Generate, view, and revoke authentication tokens
+- **Purpose**: Map GoHighLevel (GHL) fields to data used in AI-powered calls
+- **Function**: User assigns which GHL fields the AI should use during calls by mapping them as tokens. Multiple fields can be selected if required.
+- **Note**: Tokens here are not authentication credentials—they are simply field mappings for data access during calls
 
-**🗑️ Delete**
-- **Purpose**: Remove phone number from system
-- **Warning**: Permanent action that cannot be undone
-- **Confirmation**: Requires explicit confirmation before deletion
 
 ## 🛡️ Spam Protection - Detailed Guide
 
@@ -146,13 +142,8 @@ Spam protection is a comprehensive monitoring system that tracks your phone numb
 - **🟡 Pending**: Number is under review or verification
 - **⚫ Blocked**: Number is blocked by carriers
 
-#### 3. **Carrier Integration**:
-- Monitors T-Mobile, Verizon, AT&T, and other carriers
-- Tracks compliance across all major networks
-- Provides carrier-specific reporting
-
-#### 4. **Automatic Actions**:
-- **Renewal Management**: Auto-renews protection services
+ 
+#### 3. **Automatic Actions**:
 - **Alert System**: Immediate notifications for issues
 - **Remediation**: Automated and manual fix processes
 
@@ -168,90 +159,49 @@ Spam protection is a comprehensive monitoring system that tracks your phone numb
 
 ### What are Tokens?
 
-Tokens are **API authentication credentials** that allow secure access to your phone number services and integrations.
+**Tokens** are mappings between GoHighLevel (GHL) fields and the data used by the AI during incoming calls only. They allow you to specify which GHL fields the AI can access and use when handling inbound calls. Only the fields you map will be available to the AI for incoming call workflows.
 
 ![Token Management](/images/ai/phone-number/token.png)
 
+### GoHighLevel (GHL) Field Mapping (Incoming Calls Only)
 
-### GoHighLevel (GHL) Field Mapping
+Map the data fields from your GHL account to the fields used by the AI during incoming calls. This ensures the AI has access to the right information for each inbound call.
 
-Configure how incoming call data is mapped to your CRM fields:
-
-#### Key Mappings:
+#### Example Field Mappings (Incoming):
 
 **GHL Location**
-- **Purpose**: Select the GoHighLevel location for data storage
-- **Configuration**: Large text input field for location selection
+- Maps to: The GHL location where data is stored
 
 **Phone Number**
-- **Source Field**: `phone_number` placeholder
-- **GHL Field**: "Phone Number" (with clear option)
-- **Function**: Stores caller's phone number in CRM
+- Maps to: The contact's phone number
 
 **Email**
-- **Source Field**: `email` placeholder  
-- **GHL Field**: "Email Address" (with clear option)
-- **Function**: Captures and stores email addresses
+- Maps to: The contact's email address
 
 **First Name**
-- **Source Field**: `first_name` placeholder
-- **GHL Field**: "First Name" (with clear option)
-- **Function**: Stores caller's first name
+- Maps to: The contact's first name
 
 **Last Name**
-- **Source Field**: `last_name` placeholder
-- **GHL Field**: "Last Name" (with clear option)
-- **Function**: Stores caller's last name
+- Maps to: The contact's last name
 
 **Address Fields**
-- **City**: Maps to searchable GHL city field
-- **Zip Code**: Maps to searchable GHL zip code field
-- **Country**: Maps to searchable GHL country field
-- **Address**: Maps to searchable GHL address field
+- **City**: Maps to the city field in GHL
+- **Zip Code**: Maps to the zip code field in GHL
+- **Country**: Maps to the country field in GHL
+- **Address**: Maps to the address field in GHL
 
 **Custom Text Field**
-- **Source Field**: `hello_how_are_you_i_am_c` placeholder
-- **GHL Field**: Searchable custom field mapping
-- **Function**: Captures custom information during calls
+- Maps to: Any custom field you want to use during the incoming call
 
-### 🔐 How Tokens Work:
+> Only the mapped fields are used by the AI during incoming calls. 
 
-#### 1. **Authentication Purpose**:
-- Secure API access to phone services
-- Authenticate webhook calls
-- Enable third-party integrations
+### 🔐 How Tokens Work (Simple Explanation):
 
-#### 2. **Token Types**:
-- **Twilio Auth Token**: For Twilio carrier services
-- **Plivo Auth Token**: For Plivo carrier services  
-- **API Keys**: For custom integrations
-- **Webhook Tokens**: For secure webhook authentication
+Think of tokens as labels that tell the AI which piece of your contact info to use during a call. For example, you connect "First Name" in your system to "First Name" for the AI, so it knows what to say. You just match up the fields you want the AI to use—nothing complicated.
 
-#### 3. **Security Features**:
-- Encrypted storage
-- Rotation capabilities
-- Access logging
-- Permission-based access
+ 
 
-### 🎯 Token Use Cases:
-
-1. **Carrier Integration**: Connect to Twilio/Plivo services
-2. **Webhook Security**: Secure incoming data from external systems
-3. **API Access**: Enable programmatic phone number management
-4. **Third-party Apps**: Integrate with CRM systems and tools
- ck token usage and API calls
-
-## 🔄 Complete Workflow
-
-### Phone Number Lifecycle:
-
-1. **🛒 Purchase** → Configure area code and agents
-2. **⚙️ Setup** → Map GHL fields for data collection  
-3. **🛡️ Protect** → Enable spam protection monitoring
-4. **🔑 Authenticate** → Configure tokens for secure access
-5. **📊 Monitor** → Track performance and reputation
-6. **🔧 Maintain** → Renew services and update configurations
-
+ 
 ## 🚀 Quick Actions
 
 <CardGroup cols={2}>
