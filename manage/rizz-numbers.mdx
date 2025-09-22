@@ -32,7 +32,51 @@ Centrally manage all your phone numbers across multiple providers with detailed 
 | **Status** | Verification status | `Verified`, `Unverified` |
 | **Purchased At** | Purchase timestamp | `08-14-2025 12:40 PM` |
 | **Action** | Available operations | `Settings` `More Options` |
+## 🌍 Local Preference API Configuration
 
+The Local Preference API provides advanced configuration options for managing phone number preferences, routing, and geographic targeting to optimize call delivery and compliance.
+
+ 📊 **API Configuration Interface**
+
+<div style={{flex: 1}}>
+  ![Local Preference API Configuration](/images/manage/ai-sync-number/local-preference-api.png)
+</div>
+
+This interface allows you to configure:
+
+- **API Endpoints**: Set up connection points for local preference management
+- **Authentication**: Configure API keys and security credentials
+- **Rate Limits**: Set call frequency and volume restrictions
+- **Geographic Rules**: Define area code and region-specific preferences
+
+ 🎛️ **Local Preference Settings**
+
+<div style={{flex: 1}}>
+  ![Local Preference Settings](/images/manage/ai-sync-number/local-preference.png)
+</div>
+
+### ✅ Pre-check Functionality
+
+Before purchasing a phone number, I use the Local Preference API's pre-check system to ensure the number and its configuration are valid and ready for use.
+
+**Pre-check for Number Purchase**
+- **Number Availability**: Confirms the number is available for purchase from the selected provider.
+- **Carrier Compatibility**: Checks if the number meets carrier and campaign requirements.
+- **Configuration Validation**: Verifies that all required parameters and settings are correct before proceeding.
+- **Error Detection**: Identifies any issues that could prevent successful acquisition or use.
+
+**Testing and Validation**
+- **Dry Run**: Simulates the purchase and configuration process without making changes, so I can see if everything will work as expected.
+- **Simulation**: Previews how the number will behave in routing and campaign scenarios.
+- **Validation Reports**: Provides detailed feedback on any issues or confirms readiness for purchase.
+
+**Why Use Pre-check?**
+- **Avoid Failed Purchases**: Prevents buying numbers that won't work for your needs.
+- **Saves Time and Money**: Reduces troubleshooting and unnecessary costs.
+- **Ensures Compliance**: Makes sure all regulatory and carrier requirements are met before you buy.
+- **Confidence in Deployment**: Lets you proceed with number acquisition knowing everything is set up correctly.
+
+ 
 ## ➕ Acquiring Phone Numbers
 <div style={{display: 'flex', gap: '20px', marginBottom: '20px'}}>
   <div style={{flex: 1}}>
