@@ -6,60 +6,258 @@ icon: "gears"
 
 Enable your agent with advanced capabilities for enhanced call management and integration features.
 
-## End Call 🔴
+# 🔴 End Call 
 - **Purpose**: Configure when and how the agent should end calls
 - **Settings**: Define call termination rules and conditions
 - **Usage**: Automated call completion based on conversation flow
 
 ![Advanced](/images/ai/AI-agent/edit/advance/end-call.png)
 
-### Configuration Options
+### ⚙️ Configuration Options
 - **Auto End**: Set call termination triggers and timeout limits
 - **Farewell Message**: Customize closing message before ending calls
 
 ![Advanced](/images/ai/AI-agent/edit/advance/end-call2.png)
+# 🔄 Call Transfer 
 
-##  Call Transfer 🔄
-- **Purpose**: Set up call transfer rules and destinations
-- **Configuration**: Define transfer conditions and target numbers
-- **Usage**: Route calls to human agents or specific departments
+<Info>
+Transform your customer experience with intelligent call routing that seamlessly connects customers to the right human agents at the perfect moment.
+</Info>
 
-![Advanced](/images/ai/AI-agent/edit/advance/call-transfer.png)
+The Call Transfer feature enables seamless handoff of customer calls from AI agents to human representatives, ensuring optimal customer service in retail environments.
+
+---
+## 🎯 Transfer Configuration Dialog
+
+<Card title="Transfer Call Setup" icon="phone">
+Configure how your AI agent transfers calls to human representatives with advanced routing and messaging options.
+</Card>
+
+![Call Transfer Dialog](/images/ai/AI-agent/edit/advance/call-transfer.png)
+
+### 📝 Basic Transfer Settings
+
+<AccordionGroup>
+  <Accordion title="Description Field">
+    **Purpose**: Brief description of the transfer scenario  
+    **Example**: "hello transfer" - Simple identifier for this transfer configuration  
+    **Usage**: Helps team members understand when this transfer is used
+  </Accordion>
+
+  <Accordion title="Transfer Destination">
+    **Purpose**: Defines where the call should be routed  
+    **Options**: 
+    - **Dynamic Routing** (`transfer_destination.type: "inferred"`)  
+      - The AI model infers the correct transfer destination based on context.
+      - **Prompt** (`transfer_destination.prompt`): Provide a specific instruction or context for the transfer, which will be combined with the global prompt and call transcript to deduce the right number. You can use dynamic variables here (e.g., `{{customer_issue}}`).
+    - **Static Routing**: Route calls to a specific, pre-set phone number or extension.  
+      - **How it works**: You can specify a fixed E.164 number (e.g., `+1234567890`), a department extension, or use a dynamic variable such as `{{transfer_number}}` to determine the destination at runtime.  
+    - **Specific phone numbers**
+    - **Department extensions**
+    
+    **Retail Application**: Route customers to appropriate departments (sales, support, billing)
+  </Accordion>
+
+  <Accordion title="Dynamic Routing Logic">
+    **Purpose**: Configure AI-driven transfer destination using the `transfer_destination.type` and `transfer_destination.prompt` fields.
+![Call Transfer Dialog](/images/ai/AI-agent/edit/advance/call-transfer-dynamic.png)
+    **transfer_destination.type**:  
+    - **Required**  
+    - **Options**: `"inferred"`  
+    - Set to `"inferred"` to enable the AI to deduce the correct transfer destination.
+
+    **transfer_destination.prompt**:  
+    - **Required**  
+    - Provide a prompt that guides the AI in selecting the right number or department.  
+    - The model combines this prompt with the global prompt and the call transcript to infer the best transfer destination.  
+    - You can use dynamic variables (e.g., `{{customer_issue}}`, `{{customer_priority}}`) to tailor the routing.
+
+    **Example Prompt**:  
+    - "Transfer this call to the most appropriate sales agent based on the customer's inquiry and priority."
+    - "Route to the senior support agent if the customer is VIP, otherwise to the general support queue."
+
+    **Retell AI Use**:  
+    - With Retell AI, you can intelligently route high-value customers to senior sales agents by crafting a prompt such as:  
+      `"If the customer is identified as VIP, transfer to the senior sales line; otherwise, route to the general sales team."`
+  </Accordion>
+
+  <Accordion title="Static Routing">
+    **Purpose**: Route calls to a fixed, pre-defined destination using explicit transfer fields.
+
+    **transfer_destination.type**  
+    - **Type**: `enum<string>` (**required**)  
+    - **Description**: The type of transfer destination.  
+    - **Available options**:  
+      - `predefined` (Use this for static routing to a specific number or extension.)
+
+    **transfer_destination.number**  
+    - **Type**: `string` (**required**)  
+    - **Description**: The number to transfer to, in E.164 format (e.g., `+1234567890`) or a dynamic variable (e.g., `{{transfer_number}}`).  
+    - **Example**:  
+      - `+18005551234`  
+      - `{{preferred_agent_number}}`
+
+    **transfer_destination.extension**  
+    - **Type**: `string` (optional)  
+    - **Description**: Extension digits to dial after the main number connects. Sent via DTMF. Allow digits, `*`, `#`.  
+    - **Example**:  
+      - `"123*456#"`
+
+    **How it works**:  
+    - The transfer always goes to the same phone number or department, regardless of customer or context.
+    - You can specify a fixed E.164 number, a department extension, or use a dynamic variable for runtime selection.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### 🌟 Warm Transfer
+
+<div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px'}}>
+  <img src="/images/ai/AI-agent/edit/advance/call-transfer-warm.png" alt="Warm Transfer"  />
+</div>
+
+When you choose **Warm Transfer**, your experience is seamless and personal. Here’s what happens from your perspective:
+
+- The AI agent will greet you and ask about your needs.
+- Before connecting you to a human agent, the AI summarizes your situation so you don’t have to repeat yourself.
+- You’ll hear a friendly introduction as you’re transferred, and the human agent will already know why you’re calling.
+- This means you get a smooth, high-touch handoff—no awkward silences or confusion.
+
+<CardGroup cols={2}>
+  <Card title="✨ What You Can Expect" icon="wand-magic-sparkles">
+    <ul>
+      <li><b>Personalized Introduction:</b> The AI introduces you and your needs to the agent.</li>
+      <li><b>On-hold Music:</b> Enjoy relaxing or branded music while you wait.</li>
+      <li><b>Custom Greetings:</b> Both you and the agent can hear a tailored handoff message.</li>
+      <li><b>Quick Connection:</b> The agent is ready to help as soon as you’re connected.</li>
+      <li><b>Options for Privacy:</b> The AI can greet just the agent if needed.</li>
+    </ul>
+  </Card>
+  <Card title="🚀 Your Experience" icon="handshake">
+    <ol>
+      <li>The AI listens and understands your request.</li>
+      <li>You’re introduced to the right person, with your context already shared.</li>
+      <li>The agent is prepared to help you right away—no need to repeat yourself.</li>
+    </ol>
+    <div style={{marginTop: '8px', color: '#4caf50', fontWeight: 500}}>
+      <span>Result: You get fast, informed, and personal support every time!</span>
+    </div>
+  </Card>
+</CardGroup>
+
+---
+
+### 💬 Warm Transfer Configuration
+<img src="/images/ai/AI-agent/edit/advance/call-transfer-warm-options.png" alt="Warm Transfer" />
+
+Warm Transfer offers a highly customizable and seamless handoff experience. Here are the key configuration options and advanced features you can enable:
+#### 🧑‍💼 Human Detection
+The AI can automatically detect when a human agent joins the call, ensuring that context and introductions are delivered at the right moment. This helps avoid confusion and guarantees a smooth transition for both the customer and the agent.
+
+#### 🎵 On-hold Music
+During the warm transfer process, customers can listen to relaxing or branded on-hold music while waiting for the agent to join. This feature enhances the customer experience and can be customized to match your brand.
+
+#### ☎️ Navigate IVR (Interactive Voice Response)
+If your transfer destination uses an IVR system, the AI can automatically navigate menu prompts by sending DTMF tones (keypad inputs). This allows the AI to reach the correct department or extension before connecting the customer, making the transfer process faster and more accurate.
+
+<CardGroup cols={3}>
+  <Card title="Whisper Message" icon="eye">
+    **Purpose**: Private message spoken only to the transfer agent  
+    **Content**: Customer context, inquiry details, urgency level  
+    **Retail Examples**: 
+    - "Customer calling about order #12345, high priority"
+    - "Customer needs help with product return"
+    - "VIP customer, transfer to senior sales"
+  </Card>
+
+  <Card title="Handoff Message" icon="arrow-right-arrow-left">
+    **Purpose**: AI-generated message based on conversation context  
+    **Functionality**: Dynamically creates relevant transfer information  
+    **Retail Benefits**: Provides real-time context to human agents
+  </Card>
+
+  <Card title="Three-way Message" icon="users">
+    **Purpose**: Message heard by both customer and agent after transfer  
+    **Content**: Introduction and context for all parties  
+    **Retail Examples**: 
+    - "I'm transferring you to Sarah, our product specialist"
+    - "John will help you with your billing inquiry"
+    - "You're now connected with our sales team"
+  </Card>
+</CardGroup>
 
 
-### Transfer Configuration
-- **Transfer Type**: Choose warm (with intro) or cold (direct) transfer
-- **Destinations**: Configure target numbers and fallback options
+---
+ 
 
-![Advanced](/images/ai/AI-agent/edit/advance/call-transfer2.png)
+<Warning>
+Always test your transfer configurations with sample calls to ensure smooth customer experience and proper routing.
+</Warning>
 
-## Calendar Appointments 📅
+### ❄️ Cold Transfer
+  <img src="/images/ai/AI-agent/edit/advance/call-transfer2.png" alt="Warm Transfer"   />
+
+
+
+If you want to be connected to a human agent as quickly as possible, **Cold Transfer** is the fastest option. With Cold Transfer, you’re sent straight to a person—there’s no AI greeting, no summary, and no waiting for an introduction. You just get immediate help.
+
+<CardGroup cols={2}>
+  <Card title="⚡ What Happens" icon="bolt">
+    <ul>
+      <li>You call in and are transferred directly to a human agent.</li>
+      <li>Your call is not delayed by any AI messages or explanations.</li>
+      <li>If enabled, your phone number can be shown to the agent (requires special setup).</li>
+    </ul>
+  </Card>
+  <Card title="💡 When to Use Cold Transfer" icon="circle-exclamation">
+    <ul>
+      <li>🚨 For emergencies when every second matters</li>
+      <li>📞 When you have a quick question and want to skip the AI</li>
+      <li>⚡ Any time you want the fastest possible connection to a real person</li>
+    </ul>
+    <div style={{marginTop: '8px', color: '#2196f3', fontWeight: 500}}>
+      <span>You’re connected instantly—no explanations, just direct action.</span>
+    </div>
+  </Card>
+</CardGroup>
+
+---
+  
+
+
+ 
+
+
+ 
+
+# 📅 Calendar Appointments 
 - **Purpose**: Manage appointment scheduling settings
 - **Integration**: GoHighLevel calendar synchronization
 - **Features**: Automated booking and confirmation workflows
 
 ![Advanced](/images/ai/AI-agent/edit/advance/calender.png)
 
-### Appointment Settings
+ **Appointment Settings**
 - **Calendar & Platform**: Select GHL calendar and booking platform
 - **Booking Rules**: Set advance booking days and required information fields
 
 ![Advanced](/images/ai/AI-agent/edit/advance/calender-2.png)
 
-## Post-Call Information 📋
+# 📋 Post-Call Information 
 - **Purpose**: Collect information after call completion
 - **Configuration**: Define data collection parameters
 - **Usage**: Gather feedback and call outcome details
 
 ![Advanced](/images/ai/AI-agent/edit/advance/post-calll.png)
 
-### Data Collection Setup
+ **Data Collection Setup**
 - **Fields**: Configure required user information (name, email, phone)
 - **Integration**: Connect to CRM systems for automatic data entry
 
 ![Advanced](/images/ai/AI-agent/edit/advance/post-call.png)
 
-## Live Call Updates 📝
+# 📝Live Call Updates 
 - **Purpose**: AI agent will update information during active calls.
 
 ![Advanced](/images/ai/AI-agent/edit/advance/live-call.png)
@@ -70,20 +268,20 @@ Enable your agent with advanced capabilities for enhanced call management and in
 
 ![Advanced](/images/ai/AI-agent/edit/advance/update-info-3.png)
 
-## Join Meeting 🎥
+# 🎥 Join Meeting 
 - **Purpose**: Configure video meeting integration
 - **Settings**: Meeting platform connections and settings
 - **Usage**: Seamless video call transitions
 
 ![Advanced](/images/ai/AI-agent/edit/advance/join-meeting.png)
 
-### Meeting Integration Setup
+**Meeting Integration Setup**
 - **Platform Support**: Google Calendar, Zoom, Teams integration
 - **Auto-Join**: Enable automatic meeting participation
 
 ![Advanced](/images/ai/AI-agent/edit/advance/join-2.png)
 
-## API Configuration
+# 🔗 API Configuration
 
 **API Configuration for the agent** ⚙️
 - **Purpose**: Set up custom API endpoints and webhooks
@@ -99,28 +297,28 @@ Enable your agent with advanced capabilities for enhanced call management and in
 
 ![Advanced](/images/ai/AI-agent/edit/advance/api-configration2.png)
 
-## Phone Number Configuration
+# 📞 Phone Number Configuration
 
-### Inbound Numbers
+**Inbound Numbers**
 - **Purpose**: Configure numbers for incoming calls
 - **Settings**: Assign specific numbers to agent
 - **Management**: Add, edit, or remove inbound routing
 
 
-### Outbound Numbers  
+**Outbound Numbers**  
 - **Purpose**: Set up numbers for outgoing calls
 - **Settings**: Configure caller ID and routing preferences
 - **Management**: Manage outbound calling capabilities
 
 ![Advanced](/images/ai/AI-agent/edit/advance/phone-number.png)
 
-### Number Management Features
+**Number Management Features**
 - **Assignment**: Assign numbers to agents with routing rules
 - **Analytics**: Track call volume and performance per number
 
-## Tools & Testing
+# 🛠️ Tools & Testing
 
-### Available Tools
+**Available Tools**
 
 **Test Call** 📞
 - **Purpose**: Test agent functionality with live calls
@@ -142,13 +340,13 @@ Enable your agent with advanced capabilities for enhanced call management and in
 
 ![Advanced](/images/ai/AI-agent/edit/advance/tools-testing.png)
 
-### Testing and Configuration Tools
+### 🧪 Testing and Configuration Tools
 - **Live Testing**: Real-time call testing and performance monitoring
 - **Widget & Endpoints**: Customize web widgets and manage API integrations
 
-## Sender Management
+### Sender Management
 
-### Email/SMS Sender Configuration
+ **Email/SMS Sender Configuration**
 - **Table Structure**: ID, Send To, Send Type, Action columns
 - **Purpose**: Manage automated message sending capabilities
 - **Controls**: 
