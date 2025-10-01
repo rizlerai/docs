@@ -7,41 +7,51 @@ icon: "link"
 
 # 🔗 Integration
 
-## 🎙️ Recording & Transcription
+To adjust theRecording, Transcription, User Sentiment, call summary that’s sent to Go High Level (GHL) or your CRM, you’ll want to configure this directly through our integration. Since we are fully integrated with GHL, the process works through custom fields:
 
-### 📼 Send Recording to GHL
-- **Purpose**: Automatically upload call recordings to GoHighLevel CRM
-- **Configuration**: Select GHL field/location for recording storage
-- **Benefit**: Centralized call record management and compliance
+Create Custom Fields in GHL – Within your GHL account, set up the custom fields you’d like to capture (e.g., summary, transcription, sentiment, recording).
 
-### 📝 Send Transcription To GHL
-- **Purpose**: Transfer AI-generated call transcripts to GHL
-- **Configuration**: Choose destination field for transcript data
-- **Benefit**: Searchable conversation records and analysis
+Map Custom Fields – Once created, these fields automatically appear in your dropdowns, so you can map them to the correct data from our platform.
 
-### 😊 Send User Sentiment to GHL
-- **Purpose**: Log AI-detected user sentiment (positive, neutral, negative) in GoHighLevel
-- **Configuration**: Map sentiment data to a GHL field
-- **Benefit**: Enables advanced customer experience analytics and follow-up prioritization
+### 📼 Map Recording to GHL Custom Field
+- **Purpose**: Automatically upload call recordings to a designated custom field in GoHighLevel CRM
+- **Custom Field Setup**: In GHL, create a custom field (e.g., "Call Recording URL") to store the recording link
+- **Mapping**: In the integration settings, select this custom field to receive the recording data
+- **Benefit**: Ensures all call recordings are centrally managed and easily accessible within your CRM
 
-### 🗒️ Send Call Summary to GHL
-- **Purpose**: Store AI-generated call summaries in GHL
-- **Configuration**: Choose summary destination field
-- **Benefit**: Quick review of call outcomes and context for future interactions
+### 📝 Map Transcription to GHL Custom Field
+- **Purpose**: Transfer AI-generated call transcripts into a specific GHL custom field
+- **Custom Field Setup**: Create a custom field in GHL (e.g., "Call Transcription") for storing transcript text
+- **Mapping**: Assign this field in the integration to receive transcription data
+- **Benefit**: Makes conversation records searchable and available for future analysis
+
+### 😊 Map User Sentiment to GHL Custom Field
+- **Purpose**: Log AI-detected user sentiment (positive, neutral, negative) in a GHL custom field
+- **Custom Field Setup**: Add a custom field in GHL (e.g., "User Sentiment") to capture sentiment values
+- **Mapping**: Map this field in the integration to receive sentiment data
+- **Benefit**: Enables advanced analytics and prioritization based on customer sentiment
+
+### 🗒️ Map Call Summary to GHL Custom Field
+- **Purpose**: Store AI-generated call summaries in a designated GHL custom field
+- **Custom Field Setup**: Create a custom field in GHL (e.g., "Call Summary") for summary text
+- **Mapping**: Select this field in the integration to receive call summary data
+- **Benefit**: Provides quick context for future interactions and follow-ups
 
 ![Integration](/images/ai/AI-agent/edit/integration/image1.png)
-
+By setting this up, your call summaries (and any other call insights) will automatically populate into the correct fields inside your CRM, giving you a clean and structured workflow.
 ## ⏱️ Call Data Management
 
-### ⏳ Send Call Duration to GHL
-- **Purpose**: Log call length metrics in GoHighLevel
-- **Configuration**: Map to specific GHL duration field
-- **Usage**: Performance tracking and billing analysis
+### ⏳ Map Call Duration to GHL Custom Field
+- **Purpose**: Store the duration of each call in a designated custom field within GoHighLevel
+- **Custom Field Setup**: In GHL, create a custom field (e.g., "Call Duration") to capture call length
+- **Mapping**: Assign this custom field in the integration settings to receive call duration data
+- **Benefit**: Enables performance tracking and supports billing analysis directly from your CRM
 
-### 🔄 GHL Tag Call Direction
-- **Purpose**: Categorize calls as inbound/outbound in GHL
-- **Configuration**: Select tag field for call direction
-- **Benefit**: Directional call analytics and reporting
+### 🔄 Map Call Direction to GHL Custom Field
+- **Purpose**: Record whether a call was inbound or outbound in a specific GHL custom field
+- **Custom Field Setup**: Create a custom field in GHL (e.g., "Call Direction") for this purpose
+- **Mapping**: Map this field in the integration to automatically log the direction of each call
+- **Benefit**: Facilitates directional call analytics and reporting within your CRM
 
 ![Integration](/images/ai/AI-agent/edit/integration/image2.png)
 
@@ -49,44 +59,38 @@ icon: "link"
 
 Automatically tag calls in GHL based on call outcomes:
 
-### ✅ GHL Tag on Answered
-- **Trigger**: When calls are successfully answered
-- **Configuration**: Select tag for answered calls
-- **Purpose**: Track successful connection rates
+> **Note:** Tags are automatically assigned to each call based on its outcome—such as answered, no answer, or busy. This ensures that every call in GoHighLevel is labeled with the status most relevant to that specific call, making it easy to track, filter, and analyze call results directly within your CRM.
 
-### ❌ GHL Tag on No-Answered
-- **Trigger**: When calls go unanswered
-- **Configuration**: Choose tag for missed calls
-- **Purpose**: Identify follow-up opportunities
+### ✅ Answered Status Tag in GHL
+- **Purpose**: This does not store or record the call in a custom field. Instead, when a call is answered, a tag (e.g., "Answered") is automatically assigned to the lead or contact in GoHighLevel (GHL).
+- **Benefit**: Lets you easily filter and track leads or contacts who answered calls, using tags in your CRM—no custom field setup required.
 
-### 📵 GHL Tag on Busy
-- **Trigger**: When calls encounter busy signals
-- **Configuration**: Set tag for busy call status
-- **Purpose**: Schedule optimal callback times
+### ❌ No-Answered Status Tag in GHL
+- **Purpose**: This does not store or record the call in a custom field. When a call is not answered, a tag (e.g., "No Answer") is automatically assigned to the lead or contact in GHL.
+- **Benefit**: Makes it simple to identify and follow up with leads or contacts who missed calls, by filtering with the "No Answer" tag.
 
-### 📬 GHL Tag On Voicemail
-- **Trigger**: When calls reach voicemail systems
-- **Configuration**: Select voicemail detection tag
-- **Purpose**: Track voicemail delivery rates
+### 📵 Busy Status Tag in GHL
+- **Purpose**: This does not store or record the call in a custom field. If a call receives a busy signal, a tag (e.g., "Busy") is automatically assigned to the lead or contact in GHL.
+- **Benefit**: Enables you to track and analyze which leads or contacts had busy call outcomes, using tags instead of custom fields.
 
-### 📅 GHL Tag On Appointment
-- **Purpose**: Automatically tag contacts when appointments are scheduled
-- **Configuration**: Choose appointment confirmation tag
-- **Benefit**: Streamlined appointment management workflow
+### 📬 Voicemail Status Tag in GHL
+- **Purpose**: When a call reaches voicemail, a tag (e.g., "Voicemail") is automatically assigned to the lead or contact in GoHighLevel (GHL).
+- **Benefit**: Easily track and filter leads or contacts who received a voicemail by using tags in your CRM—no custom field setup required.
 
-### 🔀 GHL Tag On Call Transfer
-- **Trigger**: When calls are transferred to another agent or department
-- **Configuration**: Select tag for transferred calls
-- **Purpose**: Track and analyze call transfer frequency and reasons
+### 📅 Appointment Status Tag in GHL
+- **Purpose**: When an appointment is scheduled, a tag (e.g., "Appointment Set") is automatically assigned to the lead or contact in GoHighLevel (GHL).
+- **Benefit**: Easily filter and track leads or contacts with scheduled appointments using tags in your CRM.
 
-### 🙋‍♂️ GHL Tag On User Hang Up
-- **Trigger**: When the user disconnects the call
-- **Configuration**: Choose tag for user-initiated hang ups
-- **Purpose**: Identify and address potential drop-off points in call flows
+### 🔀 Call Transfer Status Tag in GHL
+- **Purpose**: When a call is transferred, a tag (e.g., "Call Transferred") is automatically assigned to the lead or contact in GHL.
+- **Benefit**: Enables tracking and analysis of call transfers by filtering leads or contacts with the "Call Transferred" tag.
 
-### 🚫 GHL Tag On Failed Outbound call
-- **Trigger**: Applied when an outbound call fails due to reasons such as agent inactivity, zero account balance, missing client or outbound number, concurrent limit exceeded, or telephony/system errors (e.g., SIP, internal, or platform errors).
-- **Configuration**: Set tag for failed outbound attempts
-- **Purpose**: Monitor and improve outbound call success rates
+### 🙋‍♂️ User Hang Up Status Tag in GHL
+- **Purpose**: When a user hangs up, a tag (e.g., "User Hang Up") is automatically assigned to the lead or contact in GHL.
+- **Benefit**: Helps identify leads or contacts where the user ended the call, making it easy to follow up or analyze drop-off points.
+
+### 🚫 Failed Outbound Call Tag in GHL
+- **Purpose**: If an outbound call fails (due to agent inactivity, zero account balance, missing client/outbound number, concurrent limit exceeded, or telephony/system errors), a tag (e.g., "Failed Outbound Call") is automatically assigned to the lead or contact in GHL.
+- **Benefit**: Allows you to monitor and improve outbound call success rates by filtering leads or contacts with failed call tags.
 
 ![Integration](/images/ai/AI-agent/edit/integration/image3.png)
