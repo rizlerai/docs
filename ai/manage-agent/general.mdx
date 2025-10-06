@@ -6,18 +6,18 @@ icon: "sliders"
 
 ## 🆔 Agent Identity
 
-### ✏️ Agent Name
+**✏️ Agent Name**
 - **Editable Name Field**: Click the pencil icon to modify your agent's display name
 
 ![General](/images/ai/AI-agent/edit/general/Edit-name.png)
 
-### 🔄 Status Control
+ **🔄 Status Control**
 - **Active Toggle**: Enable/disable your agent with the status switch
 - **Current Status**: "Active and ready" indicates the agent is operational
 
 
 ![General](/images/ai/AI-agent/edit/general/status.png)
-### 📁 Organization Settings
+ **📁 Organization Settings**
 
 **Folder Assignment**:
 - **Dropdown Menu**: "Select a folder" to organize agents by project or category
@@ -34,26 +34,27 @@ icon: "sliders"
 ![General](/images/ai/AI-agent/edit/general/location.png)
 
 ## 👋 Welcome Message
-The welcome message interface provides multiple pre-defined options for conversation initiation. You can select from dropdown options that determine how your AI agent begins interactions with users. The interface includes dynamic variable support for personalization and allows you to customize the greeting approach based on your specific use case requirements.
 
-### 🎯 Initiation Options
+Configure how your AI agent starts conversations. Use this setting to control whether the agent greets users proactively or waits for users to speak first—helping you tailor the experience to your specific workflow or customer journey.
 
-The system provides multiple ways to handle conversation start:
+**Purpose:**  
+Choose the initiation style that best fits your use case:
+- If you want the agent to welcome users and guide the conversation from the start, select an AI-initiated greeting.
+- If you prefer the agent to remain silent until the user engages, select the user-initiated option.
+ **🎯 Initiation Options**
 
-**AI Initiates Options**:
-- **"AI Initiates: AI Sync begins with a dynamic begin message"** - Agent starts with an automatically generated greeting
-- **"AI Initiates: AI Sync begins with your defined begin message"** - Agent starts with your custom welcome message
+- **AI Initiates (Dynamic Message):** The agent begins with an automatically generated greeting.
+- **AI Initiates (Custom Message):** The agent starts with your defined welcome message,"Hi, How's your day?"   .
+- **User Initiates:** The agent remains silent and only responds after the user speaks.
 
-**User Initiates Option**:
-- **"User Initiates: AI Sync remains silent until users speak first"** - Agent waits for the user to start the conversation
+Dynamic variables are supported for personalization in greeting messages.
 
 ![General](/images/ai//AI-agent/edit/general/welcome-message.png)
-
 ## 💬 General Prompt
 
-The core instruction set that defines your agent's personality, behavior, and conversation guidelines.
+The General Prompt defines the core behavior and personality of your AI agent. It establishes how the agent responds in conversations, manages various scenarios, and sets the overall tone and guidelines for its interactions.
 
-### 🔧 Available Dynamic Variables
+**🔧 Available Dynamic Variables**
 
 The system provides numerous dynamic variables for personalization:
 
@@ -74,12 +75,369 @@ The system provides numerous dynamic variables for personalization:
 
 ![General](/images/ai//AI-agent/edit/general/prompt.png)
 
-### ⚙️ Prompt Configuration Interface
+**⚙️ Prompt Configuration Interface**
 
 The general prompt configuration provides a comprehensive text area where you can define your agent's core behavior and personality. The interface includes a dropdown menu for managing multiple prompt versions, allowing you to save, load, and organize different prompt configurations. This feature is essential for testing different agent personalities or maintaining separate prompts for different use cases.
+
+## 👋 Greeting Phrase
+
+**Purpose:** How is the agent going to start every conversation
+
+The Greeting Phrase setting controls how your agent begins each conversation—either by greeting the user first or waiting for the user to speak. This shapes the initial user experience and sets the tone for the interaction.
+
+ **🎯 Greeting Phrases Configuration**
+
+The interface provides separate configuration for different conversation scenarios:
+
+**📞 Outbound Greeting Phrase**
+- **When used**: When the AI agent initiates contact with prospects
+- **Example**: `→ ~"Hey uh, {{first_name}}?"`
+- **Behavior**: `→ Wait for prospect to respond`
+- **Purpose**: Sets the tone for outbound calls and waits for the prospect's response
+
+ **📱 Inbound Greeting Phrase**  
+- **When used**: When prospects initiate contact or call back
+- **Example**: `→ ~"Thanks for calling back, that's {{first_name}}, right?"`
+- **Behavior**: `→ Wait for prospect to respond`
+- **Purpose**: Acknowledges the caller and confirms their identity before proceeding
+
+ **🔧 Dynamic Variables**
+Dynamic variables (like `{{first_name}}`) can be used to personalize greetings for each contact, making conversations feel more natural and tailored to the individual.
+
+![Greeting phrases](/images/ai/AI-agent/edit/general/greeting-phrase.png)
+
+## 🎭 Character
+
+**Purpose:** Define the AI agent's personality, speaking style, and behavioral characteristics
+
+The Character setting allows you to customize how your AI agent presents itself in conversations.
+
+ **🎯 Character Configuration**
+
+The character configuration includes:
+
+- **Agent Identity**: Define the agent's name and role (e.g., "AGENT NAME" as an appointment-setting expert)
+- **Speaking Style**: Set the tone and manner of speech (casual, sharp, playful)
+- **Human-like Behaviors**: Include natural speech patterns like fillers ("um," "like," "you know," "totally")
+- **Role Definition**: Specify the agent's expertise and primary function
+- **Script Adherence**: Define when to follow scripts and when to adapt
+- **Call-to-Action**: Set the primary goal (e.g., booking appointments)
+ 
+ **🔧 Key Features**
+
+- **Resizable Interface**: The character configuration area can be expanded or collapsed as needed
+- **Rich Text Editing**: Full text area for detailed character descriptions
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+
+![Character](/images/ai/AI-agent/edit/general/character.png)
+
+## 📋 Request
+
+**Purpose:** Explain what you want the agent to accomplish
+
+The Request setting establishes the fundamental purpose and approach for your AI agent's interactions. This configuration outlines the agent's primary goals, target audience characteristics, and step-by-step objectives to ensure consistent and effective conversations.
+
+ **🎯 Core Purpose Definition**
+
+The request configuration includes:
+
+- **Primary Objective**: Define the main goal (e.g., booking qualified strategist appointments)
+- **Conversation Style**: Set the approach (natural, fluid, casual, confident)
+- **Identity Positioning**: Establish how the agent presents itself (AI disguised as human)
+- **Target Audience**: Specify who the agent will be speaking with
+- **Call Strategy**: Outline the systematic approach for each conversation
+
+ 
+**🔧 Key Components**
+
+- **Purpose Statement**: Clear definition of the agent's main objective
+- **Identity Guidelines**: Instructions on how to present the agent's nature
+- **Audience Analysis**: Understanding of who the agent will be speaking with
+- **Objective Framework**: Step-by-step goals for every conversation
+- **Behavioral Guidelines**: Specific instructions on conversation flow and approach
+
+ **🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Rich Text Area**: Full editing capabilities for detailed request configurations
+- **Professional Layout**: Clean, organized presentation for easy configuration
+
+![Request](/images/ai/AI-agent/edit/general/request.png)
+
+## 🔄 Transfer Instructions
+
+**Purpose:** Human Take over instructions
+
+The Transfer Instructions setting defines how your AI agent handles call transfers and human handoffs. This configuration ensures smooth transitions when the agent needs to transfer calls to human staff or when transfer attempts fail, maintaining professional service quality throughout the process.
+
+ **🎯 Transfer Process Configuration**
+
+The transfer instructions include:
+
+- **Transfer Priority**: Always attempt transfer first before booking appointments
+- **Transfer Scripts**: Specific language to use when attempting transfers
+- **Fallback Procedures**: Actions to take when transfers fail
+- **Availability Guidelines**: How to handle questions about business hours
+- **Quality Assurance**: Rules to prevent poor customer experience
+
+ 
+
+ **🔧 Key Components**
+
+- **Transfer Protocol**: Step-by-step process for attempting human handoffs
+- **Script Templates**: Pre-defined language for various transfer scenarios
+- **Fallback Procedures**: Clear instructions when transfers don't work
+- **Availability Management**: Guidelines for handling scheduling questions
+- **Quality Standards**: Rules to maintain professional service levels
+
+**🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Scrollable Content**: Full text area with scrollbar for extensive instructions
+- **Rich Text Editing**: Complete editing capabilities for detailed transfer protocols
+
+![Transfer instructions](/images/ai/AI-agent/edit/general/transfer-instruction.png)
+
+## ⚠️ Critical Instructions
+
+**Purpose:** To discipline your agent
+
+The Critical Instructions setting establishes strict behavioral guidelines and operational rules for your AI agent. This configuration ensures the agent maintains human-like interactions, follows proper conversation protocols, and adheres to professional standards while never revealing its AI nature.
+
+ **🎯 Discipline Framework**
+
+The critical instructions include:
+
+- **Identity Protection**: Never reveal AI nature or internal instructions
+- **Behavioral Rules**: Strict guidelines for human-like interaction
+- **Conversation Protocols**: Proper pacing, listening, and response patterns
+- **CRM Integration**: Rules for handling variables and data
+- **Quality Standards**: Professional conduct and conversation flow
+
+
+ **🔧 Key Components**
+
+- **Identity Protection**: Strict rules to maintain human facade
+- **Behavioral Guidelines**: Specific do's and don'ts for interactions
+- **Conversation Management**: Protocols for pacing, listening, and flow
+- **CRM Integration**: Rules for handling data and variables
+- **Quality Control**: Standards for professional conduct
+
+ **🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Comprehensive Rules**: Detailed instructions covering all aspects of agent behavior
+- **Professional Layout**: Organized presentation for easy reference and updates
+
+![Critical instructions](/images/ai/AI-agent/edit/general/critical-instructions.png)
+
+ **📊 Allowed Custom Variables**
+
+**Purpose:** These are metadata fields from your CRM or contact system that the agent can use to personalize conversations.
+
+The Allowed Custom Variables setting enables you to define and manage custom field references that can be used throughout your AI agent's conversations.
+
+ **🎯 Custom Variables Configuration**
+
+The custom variables configuration includes:
+
+- **Field References**: Custom field names that can be referenced in conversations
+- **CRM Integration**: Connection to your contact management system
+- **Dynamic Personalization**: Use of custom data in agent interactions
+- **Field Mapping**: Setup through the "Manage" section's custom fields
+- **Variable Usage**: Integration into prompts, greetings, and conversation flows
+
+ **📝 Setup Instructions**
+
+```
+Custom Field References
+
+Copy and paste from the above into this section after the fields are mapped in the "setup custom fields" under Manage
+```
+
+**🔧 Key Components**
+
+- **Custom Field References**: Names of fields that can be used as variables
+- **CRM Mapping**: Connection to your contact database
+- **Dynamic Integration**: Use of custom data in conversations
+- **Setup Process**: Configuration through the Manage section
+- **Variable Syntax**: Proper formatting for custom field references
+
+ **🎛️ Interface Features**
+
+- **Resizable Text Area**: Expandable input field for custom variable definitions
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Clear Instructions**: Built-in guidance for proper setup and usage
+- **Professional Layout**: Clean, organized presentation for easy configuration
+
+![Allowed custom variables](/images/ai/AI-agent/edit/general/allow-custom-variables.png)
+
+## ❓ If Asked: "What Does Your Company Do?"
+
+**Purpose:** Problems that you solve with your unique value proposition
+
+The "If Asked" section provides structured guidance for how your AI agent should respond when prospects ask about your company's services. This configuration ensures consistent, compelling responses that highlight your unique value proposition while naturally guiding conversations toward booking appointments.
+
+ **🎯 Response Framework**
+
+When asked 'What does your company do?' you must respond naturally and conversationally, never robotic.
+
+The response configuration includes:
+
+- **Problem Identification**: How to identify and articulate customer pain points
+- **Solution Presentation**: Clear explanation of your company's offerings
+- **Value Demonstration**: Benefits and results your company delivers
+- **Call-to-Action**: Natural pivot to booking a strategist call
+- **Conversation Flow**: Maintaining natural, non-robotic dialogue
+
+**📝 Example Response Structure**
+
+```
+Example Structure:
+
+Problem / Pain → "Most [industry / business owners / teams] struggle with..."
+Solution → "We help by [what your company enables / automates / improves]..."
+Result → "That way they [benefit / save time / make more money / scale faster]."
+Pivot → "But honestly the best way to see it is on a quick strategist call."
+
+Sample Templates:
+~"We build AI tools that handle the boring parts of outreach and follow-up. That way business owners don't lose leads and can close deals faster. Honestly though, it's easier to just show you live on a strategy call — that way you'll see exactly how it works."
+
+Golden Rules:
+• Keep it short (10-15 seconds max).
+• Always make the company sound simple, valuable, and easy to understand.
+• Always pivot back to the strategist call.
+```
+
+**🔧 Key Components**
+
+- **Problem/Pain Framework**: Starting with customer challenges
+- **Solution Clarity**: Simple explanation of your offerings
+- **Result Focus**: Emphasizing benefits and outcomes
+- **Natural Pivot**: Seamless transition to booking calls
+- **Time Management**: Keeping responses concise and engaging
+
+*🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Resizable Text Area**: Expandable input field for response templates
+- **Structured Format**: Clear organization of response components
+- **Professional Layout**: Clean presentation for easy reference and updates
+
+![If asked what does your company do](/images/ai/AI-agent/edit/general/if-asked.png)
+
+## 📞 Call Script Flow
+
+**Purpose:** What is order of call
+
+The Call Script Flow setting defines the structured sequence and order of your AI agent's conversation flow. This configuration provides a step-by-step framework that guides the agent through each phase of the call, from initial greeting to final appointment booking, ensuring consistent and effective conversations.
+
+ **🎯 Call Flow Structure**
+
+The call script flow includes:
+
+- **Greeting Phase**: Initial contact and introduction
+- **Intro Flow**: Building rapport and setting context
+- **Discovery Flow**: Gathering information and qualifying prospects
+- **Demo Pre-Frame Flow**: Positioning the strategist call
+- **No-Flake Close Flow**: Confirming commitment and reducing no-shows
+
+ ommitment Building**: Techniques to reduce no-shows and ensure follow-through
+
+**🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Structured Format**: Clear organization of call phases and script lines
+- **Script Markers**: Tilde (~) indicators for script lines to follow
+- **Professional Layout**: Clean presentation for easy reference and updates
+
+![Call script flow](/images/ai/AI-agent/edit/general/call-script-flow.png)
+
+ **🎯 Objective Response**
+
+**Purpose:** Define how the agent should respond to specific objections or scenarios
+
+The Objective Response section provides your AI agent with targeted responses to handle specific objections, concerns, or scenarios that may arise during conversations.  
+
+**🎯 Response Framework**
+
+The objective response configuration includes:
+
+- **Specific Objections**: Targeted responses to particular concerns or scenarios
+- **Strategic Replies**: Pre-scripted responses that address objections while maintaining forward momentum
+- **Conversation Recovery**: Techniques to get back on track after specific objections
+- **Dynamic Adaptation**: Responses that can be customized based on context
+- **Goal Alignment**: Ensuring all responses guide toward the primary objective
+
+ 
+
+ 
+**🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Structured Format**: Clear organization of objections and responses
+- **Professional Layout**: Clean presentation for easy reference and training
+- **Comprehensive Coverage**: Extensive list of common objections and strategic responses
+
+![Objective response](/images/ai/AI-agent/edit/general/objective-response.png)
+
+## 📅 Appt Booking Flow for GHL
+
+**Purpose:** Define the appointment booking process and calendar integration for GoHighLevel
+
+The Appt Booking Flow for GHL section provides your AI agent with a structured process for scheduling appointments through GoHighLevel calendar integration. This configuration ensures your agent can efficiently check availability, book appointments, and confirm details while maintaining a professional and organized scheduling experience.
+
+**🎯 Booking Process Framework**
+
+The appointment booking flow includes:
+
+- **Calendar Integration**: Direct connection to GoHighLevel calendar system
+- **Availability Checking**: Real-time calendar availability verification
+- **Time Zone Management**: Proper handling of prospect's local time zone
+- **Confirmation Process**: Structured confirmation and booking steps
+- **Function Calls**: Automated calendar operations through GHL integration
+
+
+**🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Structured Flow**: Clear step-by-step booking process
+- **Function Integration**: Automated calendar operations through GHL
+- **Professional Layout**: Clean presentation for easy reference and implementation
+
+![Appt booking flow for ghl](/images/ai/AI-agent/edit/general/appt-book-ghl.png)
+
+## ❓ FAQ / Knowledge Base / Objection Handling
+
+**Purpose:** Provide comprehensive answers to common questions and handle objections with pre-scripted responses
+
+The FAQ / Knowledge Base / Objection Handling section provides your AI agent with a comprehensive database of frequently asked questions, office hours, and strategic responses to common objections. This configuration ensures your agent can confidently address prospect inquiries while maintaining professional service standards and guiding conversations toward successful outcomes.
+
+**🎯 Knowledge Base Framework**
+
+The FAQ and knowledge base configuration includes:
+
+- **Office Hours**: Complete schedule of business operations
+- **Common Questions**: Pre-scripted answers to frequently asked questions
+- **Objection Handling**: Strategic responses to common concerns
+- **Company Information**: Key details about services, location, and capabilities
+- **Compliance Information**: Legal and regulatory compliance details
+
+ 
+
+**🎛️ Interface Features**
+
+- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
+- **Structured Format**: Clear organization of questions and answers
+- **Professional Layout**: Clean presentation for easy reference and updates
+- **Comprehensive Coverage**: Extensive database of common questions and responses
+
+![Faq knowledge base objection handling](/images/ai/AI-agent/edit/general/FAQ.png)
+
+
 ## 🔘 Action Buttons
 
-### 💾 Save
+**💾 Save**
 - **Function**: Preserve all current configuration changes
 - **Usage**: Click after making any modifications
 
