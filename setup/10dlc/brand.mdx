@@ -1,12 +1,12 @@
 ---
-title: "10DLC Brand Registration"
+title: "Brand Registration"
 description: "Complete guide to establishing your business identity for compliant A2P messaging with comprehensive brand registration, verification, and management"
 icon: "badge-check"
 ---
 
 <img
   src="/images/setup/brand/overview.png"
-  alt="10DLC Brand Dashboard - Complete brand management interface"
+  alt="10DLC Brand Dashboard - Complete brand management interface with table view"
   className="rounded-lg border shadow-sm"
 />
 
@@ -14,7 +14,22 @@ icon: "badge-check"
 
 Establish your business identity for compliant Application-to-Person (A2P) messaging by registering and managing your 10DLC brand with wireless carriers. Your brand serves as the foundation for all messaging campaigns, ensuring trust, deliverability, and regulatory compliance.
 
-The 10DLC (10-Digit Long Code) system was implemented by US wireless carriers in 2021 to combat spam and improve message delivery rates. Unlike shortcodes that cost thousands monthly, 10DLC provides enterprise-grade messaging capabilities using standard phone numbers while maintaining carrier-grade deliverability and compliance.
+
+
+### Brand Listing Table
+
+Your brand management interface displays all registered brands in a sortable table format with the following information:
+
+| Column | Description | Status Values |
+|--------|-------------|---------------|
+| **Brand Alias** | Your chosen brand name for identification | Custom name |
+| **Profile** | Associated 10DLC profile details | Profile name |
+| **Brand Type** | Classification of your brand | STANDARD, PREMIUM |
+| **Registration Status** | Current approval status | PENDING, Processing, Verified, Rejected |
+| **Vetting Status** | Carrier vetting process status | Pending, Approved, Failed |
+| **Vetting Score** | Trust score from carrier evaluation | 0-100 scale |
+
+
 
 <CardGroup cols={2}>
   <Card title="Quick Registration" icon="rocket">
@@ -51,459 +66,115 @@ A 10DLC Brand is your business's verified digital identity within the messaging 
 **Why Brand Registration Matters:** Unregistered messaging can result in 70%+ delivery failures, automatic spam filtering, and potential number blocking. Registered brands see 95%+ delivery rates and can send up to 100,000+ messages daily.
 </Info>
 
-## Complete Registration Workflow
- 
-### Step-by-Step Registration Guide
+## Brand Registration Process
 
-<AccordionGroup>
-  <Accordion title="Step 1: Choose Business Entity Type" icon="building">
-    **Select your business structure to ensure proper verification:**
-    
-    <CardGroup cols={2}>
-      <Card title="Corporation" icon="building">
-        - C-Corp, S-Corp, LLC structures
-        - Requires Articles of Incorporation or Certificate of Formation
-        - Best for established businesses with formal structure
-        - **Processing Time:** 3-5 business days
-      </Card>
-      <Card title="Partnership" icon="handshake">
-        - General or Limited Partnerships
-        - Partnership agreement and state registration required
-        - Multiple owner verification needed
-        - **Processing Time:** 5-7 business days
-      </Card>
-      <Card title="Sole Proprietorship" icon="user">
-        - Individual business ownership
-        - Business license, DBA, or Schedule C required
-        - Fastest verification process available
-        - **Processing Time:** 1-3 business days
-      </Card>
-      <Card title="Non-Profit" icon="heart">
-        - 501(c)(3) and other exempt organizations
-        - Tax-exempt determination letter required
-        - Special compliance considerations for fundraising
-        - **Processing Time:** 7-10 business days
-      </Card>
-    </CardGroup>
-    
-    <Tip>Choose the entity type that exactly matches your legal business structure. Mismatched entity types are the #1 cause of registration delays.</Tip>
-  </Accordion>
+### Quick Registration Form
 
-  <Accordion title="Step 2: Company Information" icon="clipboard">
-    <img
-      src="/images/setup/brand/company-information.png"
-      alt="Company Information Form"
-      className="rounded-lg border shadow-sm"
-    />
-    
-    **Required Fields & Validation Rules:**
-    
-    | Field | Description | Validation | Example |
-    |-------|-------------|------------|---------|
-    | **Company Name** | Legal business name exactly as registered | Must match official documents | Volt Tech Solutions LLC |
-    | **Display Name** | Customer-facing brand name | Max 255 characters, customer-recognizable | VoltTech |
-    | **EIN** | Federal Tax ID Number | 9 digits (XX-XXXXXXX), verified with IRS | 12-3456789 |
-    | **Entity Type** | Business structure | Must match documentation | Private Profit Corporation |
-    | **Stock Symbol** | Public companies only | NASDAQ/NYSE verification | VOLT |
-    
-    <Tip>
-      **Validation Tips:**
-      - Company name must exactly match your Articles of Incorporation (not trade names)
-      - Display name should be what customers recognize on their phone bills
-      - EIN is automatically verified with IRS databases for legitimacy
-    </Tip>
-    
-    <Warning>
-      **Common Mistakes:** Using DBA names instead of legal names, incorrect EIN formatting, or mismatched entity types cause 60% of initial rejections.
-    </Warning>
-  </Accordion>
-
-  <Accordion title="Step 3: Contact Information" icon="phone">
-    **Primary Contact Details:**
-    <img
-      src="/images/setup/brand/contact.png"
-      alt="Contact Information Form"
-      className="rounded-lg border shadow-sm"
-    />
-    | Field | Purpose | Requirements | Tips |
-    |-------|---------|-------------|------|
-    | **Phone Number** | Primary business line | Valid 10-digit US number, must be live | Use main business number (carriers may call) |
-    | **Support Email** | Customer service contact | Business domain preferred, monitored 24/7 | support@yourcompany.com |
-    | **Contact Person** | Authorized representative | Must have signing authority for agreements | CEO, COO, or legally authorized agent |
-    
-    <Warning>
-      The contact person must be legally authorized to enter into agreements on behalf of the business. This person may be contacted directly by carriers for verification.
-    </Warning>
-    
-    <Info>
-      **Verification Process:** Carriers may call the provided phone number and email the contact person during business hours to verify legitimacy.
-    </Info>
-  </Accordion>
-
-  <Accordion title="Step 4: Address Information" icon="map-pin">
-    **Business Address Requirements:**
-    <img
-      src="/images/setup/brand/address.png"
-      alt="Address Information Form"
-      className="rounded-lg border shadow-sm"
-    />
-    <CardGroup cols={2}>
-      <Card title="Physical Address" icon="building">
-        **Required Information:**
-        - Street address (no PO boxes accepted)
-        - City, State, ZIP code (USPS verified)
-        - Must match business registration address
-        
-        **Example:**
-        4489 Greenwillow Ln
-        Idaho Falls, ID 83401
-        United States
-      </Card>
-      <Card title="Mailing Address" icon="envelope">
-        **Optional but Recommended:**
-        - Can be different from physical address
-        - PO boxes acceptable for mailing only
-        - Used for official carrier correspondence
-        - Important for compliance notifications
-      </Card>
-    </CardGroup>
-    
-    <Info>
-      **Address Verification:** Addresses are cross-verified with USPS databases, Google Maps, and state business registries. Virtual offices may require additional documentation.
-    </Info>
-  </Accordion>
-
-  <Accordion title="Step 5: Website's configuration" icon="briefcase">
-    <img
-      src="/images/setup/brand/need-website.png"
-      alt="Website Requirements Form"
-      className="rounded-lg border shadow-sm"
-    />
-    <img
-      src="/images/setup/brand/available-websites.png"
-      alt="Available Websites Form"
-      className="rounded-lg border shadow-sm"
-    />
-
-    **Online Presence & Industry Information:**
-
-    <img
-      src="/images/setup/brand/business-detail.png"
-      alt="Business Details Form"
-      className="rounded-lg border shadow-sm"
-    />
-    | Field | Description | Impact on Approval | Best Practices |
-    |-------|-------------|-------------------|----------------|
-    | **Website URL** | Primary business website | High - validates legitimacy and business activity | Ensure site is live, professional, and matches brand |
-    | **Privacy Policy** | Link to privacy policy | Required for TCPA compliance | Must include SMS/messaging consent terms |
-    | **Terms of Service** | Terms and conditions URL | Required for legal compliance | Include opt-out procedures and data usage |
-    | **Industry Vertical** | NAICS business category | Affects approval speed and trust score | Choose most specific applicable category |
-    | **Opt-in/Opt-out URLs** | Consent management links | Critical for compliance scoring | Must be functional and easily accessible |
-  </Accordion>
-  <Accordion title="Step 6: Create new Website" icon="globe">
-    **Website Creation Module:**
-    <img
-      src="/images/setup/brand/create-website.png"
-      alt="Create Website Form"
-      className="rounded-lg border shadow-sm"
-    />
-
-    **Website Creation Fields:**
-
-    When creating a new website, the system automatically generates a default link that will appear in the available websites list. The form includes the following fields:
-
-    | Field | Description | Required | Purpose |
-    |-------|-------------|----------|---------|
-    | **Description** | Website purpose/content description |Yes | Required context for compliance review and brand verification |
-    | **Logo** | Brand logo/image upload | Yes | Visual brand identity for carrier verification |
-    | **Color Scheme** | Primary brand colors (hex codes) |  Yes | Brand consistency and visual identity |
-    | **Category** | Website type/industry |  Yes | Helps with proper categorization |
-    | **Webhook URL** | Callback endpoint for notifications | Optional | Receive real-time updates on brand status |
-    | **Permissions** | Data usage and compliance consent |  Yes | Checkbox for terms acceptance and data processing |
-
-    <Info>
-      **Default Link Generation:** The system automatically creates a default website URL that becomes available in your website selection list. This generated link serves as a placeholder until you configure your actual domain settings.
-    </Info>
- 
-   </Accordion>
-  <Accordion title="Step 7: Business's Industry" icon="briefcase">
-          **Industry Selection & Classification:**
-          
-          <img
-      src="/images/setup/brand/industry-selection.png"
-      alt="Industry Selection Form"
-      className="rounded-lg border shadow-sm"
-    />
-
-    **Industry Classification Details:**
-
-    Selecting the correct industry vertical is crucial for your brand registration approval and compliance scoring. The system uses NAICS (North American Industry Classification System) codes to categorize your business.
-
-    | Industry Category | Trust Score Impact | Approval Speed | Special Requirements |
-    |-------------------|-------------------|----------------|---------------------|
-    | **Technology/Software** | High (+10-15 points) | Fast (2-3 days) | Website functionality verification |
-    | **Healthcare** | Medium (+5-10 points) | Moderate (3-5 days) | HIPAA compliance documentation |
-    | **Financial Services** | High (+10-20 points) | Slow (5-7 days) | Additional regulatory verification |
-    | **E-commerce/Retail** | Medium (+5-10 points) | Fast (2-4 days) | Product catalog verification |
-
-    <Info>
-      **Multiple Industries:** If your business operates in multiple verticals, select the one that generates the majority of your revenue or represents your primary messaging use case.
-    </Info>
-        </Accordion>
-  <Accordion title="Step 8: Additional Information" icon="bullseye">
-    **Optional Identifiers & Compliance Enhancers:**
-    <img
-      src="/images/setup/brand/additional-information.png"
-      alt="Additional Information Form"
-      className="rounded-lg border shadow-sm"
-    />
-    | Field | Purpose | When Required | Trust Score Impact |
-    |-------|---------|---------------|-------------------|
-    | **DUNS Number** | Business credit identifier | Large enterprises, government contracts | +5-10 points |
-    | **LEI Number** | Legal Entity Identifier | Financial institutions, public companies | +10-15 points |
-    | **Tags** | Internal categorization | Organizational purposes | No impact |
-    | **Social Media Profiles** | Additional verification | Recommended for brand consistency | +2-5 points |
-    
-    <Note>
-      Additional identifiers significantly speed up verification for established businesses and can improve your initial trust score by up to 15 points.
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-## Brand Registration
-
-### Preparation Checklist
-
-Before starting your brand registration, ensure you have all required information and documents ready. This preparation significantly reduces approval time and rejection risk:
-
-<CardGroup cols={2}>
-  <Card title="Required Documents" icon="file-check">
-    **Have These Ready:**
-    - Business license or incorporation documents
-    - EIN/Tax ID documentation
-    - Recent utility bill or lease agreement
-    - Government-issued ID for authorized representative
-    - Website terms of service and privacy policy
-    
-    **Document Requirements:**
-    - Clear, legible scans (minimum 300 DPI)
-    - All text must be readable
-    - Documents must be current (within 90 days)
-  </Card>
-  
-  <Card title="Information Accuracy" icon="bullseye">
-    **Critical Details:**
-    - Exact legal business name (as registered)
-    - Current business address (no P.O. boxes)
-    - Active phone number and email
-    - Functional website with complete contact info
-    - Consistent information across all platforms
-    
-    **Validation Tips:**
-    - Cross-check with state business registry
-    - Verify website accessibility from multiple locations
-    - Test all contact methods before submission
-  </Card>
-</CardGroup>
-
-### Common Registration Mistakes to Avoid
-
-<Warning>
-**Top Rejection Reasons (Account for 78% of Denials):**
-
-1. **Mismatched Business Names** - Using DBA instead of legal entity name
-2. **Invalid Addresses** - P.O. boxes, virtual offices, or non-existent locations
-3. **Incomplete Websites** - Missing privacy policy, terms of service, or contact information
-4. **Inactive Contact Methods** - Non-working phone numbers or unmonitored email addresses
-5. **Inconsistent Information** - Details don't match across website, documents, and application
-</Warning>
-
-### Industry-Specific Considerations
-
-Different industries have unique requirements and approval processes:
-
-<AccordionGroup>
-  <Accordion title="Healthcare & Medical Practices" icon="stethoscope">
-    **Additional Requirements:**
-    - Medical practice license
-    - HIPAA compliance documentation
-    - Provider credentialing information
-    - DEA number (if applicable)
-    
-    **Approval Timeline:** 7-14 days due to enhanced verification
-    **Trust Score Range:** 60-85 (higher due to regulatory oversight)
-  </Accordion>
-  
-  <Accordion title="Financial Services" icon="chart-line">
-    **Enhanced Documentation:**
-    - Financial services license
-    - FINRA/SEC registration
-    - Compliance officer contact
-    - Anti-money laundering policies
-    
-    **Approval Timeline:** 10-21 days for comprehensive review
-    **Trust Score Range:** 70-95 (highest tier due to strict regulation)
-  </Accordion>
-  
-  <Accordion title="E-commerce & Retail" icon="store">
-    **Standard Requirements:**
-    - Business license
-    - Sales tax permit
-    - Return/refund policy
-    - Customer service contact
-    
-    **Approval Timeline:** 3-7 days
-    **Trust Score Range:** 40-75 (varies by business age and reviews)
-  </Accordion>
-</AccordionGroup>
-
-## Verification Tiers & Capabilities
+The brand registration process has been streamlined to focus on essential information required for carrier approval. The simplified form reduces registration time while maintaining compliance requirements.
 
 <img
-  src="/images/setup/brand/status.png"
-  alt="Brand Verification Status Dashboard"
+  src="/images/setup/brand/add-brand.png"
+  alt="10DLC Brand Registration Form - Simplified registration interface"
   className="rounded-lg border shadow-sm"
 />
 
-Your brand is automatically assigned to a tier based on your business verification, trust score, and industry. Each tier provides different messaging capabilities and approval timelines:
+### Registration Form Fields
 
-<CardGroup cols={3}>
-  <Card title="Foundation Tier" icon="seedling">
-    **Perfect for Startups**
-    - **Volume**: 3,000 messages/day
-    - **Timeline**: 24-48 hours
-    - **Requirements**: Basic verification (Score: 10-40)
-    - **Use Cases**: Notifications, alerts, small campaigns
-    
-    **Ideal For:**
-    - New businesses (less than 2 years)
-    - Pilot programs and testing
-    - Low-volume transactional messaging
-    - **Cost**: Lowest per-message rates
-  </Card>
-  
-  <Card title="Professional Tier" icon="briefcase">
-    **Optimized for Growth**
-    - **Volume**: 100,000 messages/day
-    - **Timeline**: 3-5 business days
-    - **Requirements**: Enhanced documentation (Score: 41-75)
-    - **Use Cases**: Marketing, customer service, automation
-    
-    **Ideal For:**
-    - Established businesses (2+ years)
-    - Regular customer communication
-    - Marketing campaigns and promotions
-    - **Features**: Link shortening, rich media support
-  </Card>
-  
-  <Card title="Enterprise Tier" icon="building-columns">
-    **Maximum Performance**
-    - **Volume**: Unlimited (carrier-approved)
-    - **Timeline**: 7-10 business days
-    - **Requirements**: Comprehensive audit (Score: 76-100)
-    - **Use Cases**: High-volume operations, critical communications
-    
-    **Ideal For:**
-    - Large enterprises (Fortune 1000)
-    - Financial services and healthcare
-    - Government agencies
-    - **Features**: Dedicated IP pools, custom sender IDs
-  </Card>
-</CardGroup>
+The registration form contains three essential fields that determine your brand's approval and capabilities:
 
-### Tier Comparison Matrix
-
-| Feature | Foundation | Professional | Enterprise |
-|---------|------------|--------------|------------|
-| **Daily Volume** | 3,000 | 100,000 | Unlimited |
-| **Approval Time** | 1-2 days | 3-5 days | 7-10 days |
-| **Trust Score** | 10-40 | 41-75 | 76-100 |
-| **Deliverability** | 95%+ | 98%+ | 99%+ |
-| **Support Level** | Standard | Priority | White-glove |
-| **Custom Integration** | No | Yes | Yes |
-| **Dedicated Manager** | No | No | Yes |
-| **Message Cost** | Standard | 10% discount | 25% discount |
+| Field | Description | Requirements | Impact |
+|-------|-------------|--------------|---------|
+| **Brand Alias*** | Your chosen brand identifier | Required, unique, 2-50 characters | Used for identification and reporting |
+| **Profile*** | Associated 10DLC profile | Must select from existing profiles | Determines business verification level |
+| **Brand Type** | Brand classification | Auto-populated based on profile | Affects messaging volume and features |
 
 <Info>
-**Tier Upgrades:** Your tier can be upgraded automatically as your trust score improves through consistent compliance and positive engagement metrics. Most businesses see tier upgrades within 90 days of active messaging.
+**Required Fields:** Fields marked with (*) are mandatory and must be completed before submission. The form includes real-time validation to prevent submission errors.
 </Info>
 
-### Advanced Management Features
+<Warning>
+**Profile Dependency:** Brand Type options are dynamically populated based on your selected profile. Ensure you have created a 10DLC profile before registering a brand.
+</Warning>
+
+### Registration Workflow
 
 <AccordionGroup>
-  <Accordion title="Real-Time Status Monitoring" icon="chart-bar">
-    **Comprehensive Status Tracking:**
+  <Accordion title="Step 1: Select Profile" icon="user-circle">
+    **Choose Your 10DLC Profile:**
     
-    | Status | Description | Expected Duration | Next Steps |
-    |--------|-------------|------------------|------------|
-    | **Queued** | Registration submitted to carriers | 2-4 hours | Wait for initial automated review |
-    | **Under Review** | Carrier evaluation in progress | 1-5 business days | Monitor dashboard for updates |
-    | **Verified** | Brand approved and active | N/A | Create campaigns and start messaging |
-    | **Action Required** | Additional information needed | 24-48 hours to respond | Submit requested documents promptly |
-    | **Rejected** | Registration denied | Immediate | Review feedback and resubmit with corrections |
-    | **Suspended** | Compliance violation detected | Until resolved | Contact support team immediately |
+    Before registering a brand, you must have an approved 10DLC profile. The profile contains your business verification information and determines available brand types.
     
-    <Info>
-      **Automatic Updates**: Status changes trigger instant notifications via email, SMS, and dashboard alerts. Set up webhook notifications for real-time integration with your systems.
-    </Info>
+    <CardGroup cols={2}>
+      <Card title="Profile Requirements" icon="check-circle">
+        - Business information verified
+        - Contact details confirmed
+        - Address validation completed
+        - Industry classification set
+      </Card>
+      <Card title="Profile Benefits" icon="star">
+        - Faster brand approval
+        - Higher trust scores
+        - Increased messaging volumes
+        - Better deliverability rates
+      </Card>
+    </CardGroup>
     
-    <Warning>
-      **Action Required Status:** You have 72 hours to respond to action required requests before your application is automatically rejected. Set up mobile notifications to avoid delays.
-    </Warning>
+    <Tip>If you don't have a profile yet, create one first at [Setup → 10DLC → Profile](/setup/10dlc/profile) before proceeding with brand registration.</Tip>
   </Accordion>
-  
-  <Accordion title="Performance Analytics" icon="chart-line">
-    **Key Performance Indicators:**
+
+  <Accordion title="Step 2: Enter Brand Alias" icon="tag">
+    **Brand Alias Requirements:**
     
-    | Metric | Description | Target Range | Impact |
-    |--------|-------------|--------------|--------|
-    | **Delivery Rate** | Successfully delivered messages | 95-99% | Direct revenue impact |
-    | **Opt-out Rate** | Recipients unsubscribing | Less than 2% | Brand reputation and trust score |
-    | **Spam Reports** | User-reported spam complaints | Less than 0.1% | Carrier trust and filtering |
-    | **Response Rate** | Customer engagement and replies | 15-25% | Campaign effectiveness |
-    | **Compliance Score** | Adherence to regulations | 95-100% | Approval maintenance |
-    | **Trust Score Trend** | Monthly trust score changes | Upward trajectory | Tier advancement eligibility |
+    Your brand alias is the identifier that will be associated with your messaging campaigns and appear in carrier systems.
     
-    **Analytics Dashboard Features:**
-    - Real-time metric updates every 15 minutes
-    - Historical trend analysis up to 2 years
-    - Comparative benchmarking against industry averages
-    - Automated alert system for threshold breaches
-    - Exportable reports in CSV, PDF, and Excel formats
-    - API access for custom integrations
+    | Requirement | Description | Example |
+    |-------------|-------------|---------|
+    | **Length** | 2-50 characters | "MyCompany" |
+    | **Uniqueness** | Must be unique across your account | Cannot duplicate existing brands |
+    | **Characters** | Letters, numbers, spaces, hyphens | "Tech-Solutions-2024" |
+    | **Recognition** | Should be recognizable to customers | "Acme Corp" |
     
     <Tip>
-      **Trust Score Optimization:** Maintain opt-out rates below 2% and spam reports below 0.1% to see trust score improvements within 30 days.
+      **Best Practices:**
+      - Use your company name or a recognizable abbreviation
+      - Avoid special characters that might cause display issues
+      - Keep it professional and brand-appropriate
+      - Consider how it will appear in customer phone bills
+    </Tip>
+    
+    <Warning>
+      **Important:** Brand aliases cannot be changed after registration. Choose carefully as this will be your permanent brand identifier.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Step 3: Submit Registration" icon="check-circle">
+    **Final Submission:**
+    
+    Once you've selected your profile and entered your brand alias, the system will automatically determine the appropriate brand type based on your profile's verification level and business information.
+    
+    <CardGroup cols={2}>
+      <Card title="Pre-Submission Validation" icon="shield-check">
+        **Automatic Checks:**
+        - Profile verification status
+        - Brand alias uniqueness
+        - Required field completion
+        - Business information consistency
+      </Card>
+      <Card title="Submission Process" icon="rocket">
+        **What Happens Next:**
+        - Instant validation feedback
+        - Carrier submission queue
+        - Real-time status updates
+        - Email notifications
+      </Card>
+    </CardGroup>
+    
+    <Info>
+      **Validation Error:** If you see "Please fill required fields!" error, ensure both Brand Alias and Profile fields are completed before clicking Submit.
+    </Info>
+    
+    <Tip>
+      **Success Indicators:** A successful submission will show your brand in the listing table with "Processing" status, indicating it's been queued for carrier review.
     </Tip>
   </Accordion>
 </AccordionGroup>
-
-## Next Steps After Verification
-
-<CardGroup cols={2}>
-  <Card title="Create Your First Campaign" icon="megaphone">
-    **Campaign Setup:**
-    - Define messaging use cases and templates
-    - Configure compliance settings and opt-out workflows
-    - Set up audience targeting and segmentation
-    - Launch with real-time monitoring and analytics
-    
-    [Learn More →](/setup/10dlc/campaign)
-  </Card>
-  
-  <Card title="Monitor Performance" icon="chart-line">
-    **Analytics & Optimization:**
-    - Track delivery rates and engagement metrics
-    - Monitor trust scores and compliance standings
-    - Analyze campaign performance and ROI
-    - Optimize messaging based on carrier feedback
-    
-    [View Analytics →](/dashboard/analytics)
-  </Card>
-</CardGroup>
-
----
-
-<Note>
-**Need Help?** Our verification specialists are available 24/7 to guide you through any challenges. With a 98% first-time approval rate, contact support for personalized assistance with your brand registration. Average response time: under 30 minutes.
-</Note>

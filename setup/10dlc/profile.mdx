@@ -1,0 +1,257 @@
+---
+title: " Profile "
+description: "Complete guide to creating and managing 10DLC profiles for compliant A2P messaging with dual provider support"
+icon: "user-circle"
+---
+
+<img
+  src="/images/setup/profile/overview.png"
+  alt="10DLC Profile Dashboard - Complete profile management interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+# 🛠️ 10DLC Profile Management
+
+Create and manage your business profiles for compliant Application-to-Person (A2P) messaging across both Plivo and Twilio providers. Your 10DLC profile serves as the foundation for all messaging operations, ensuring regulatory compliance and optimal deliverability.
+
+The 10DLC (10-Digit Long Code) Profile system enables businesses to establish verified identities for professional SMS messaging. Unlike traditional messaging solutions, 10DLC profiles provide enterprise-grade capabilities with automatic dual-provider registration, ensuring maximum reach and reliability.
+
+<CardGroup cols={2}>
+  <Card title="Dual Provider Support" icon="network-wired">
+    Automatically creates profiles for both Plivo and Twilio providers with a single submission
+  </Card>
+  <Card title="Real-Time Validation" icon="shield-check">
+    Intelligent form validation ensures compliance before submission, reducing rejection rates by 90%
+  </Card>
+  <Card title="Instant Status Tracking" icon="chart-line">
+    Real-time monitoring of profile approval status across both providers
+  </Card>
+  <Card title="Expert Support" icon="headset">
+    Dedicated support team with 99% first-time approval rate for profile registrations
+  </Card>
+</CardGroup>
+
+## What is a 10DLC Profile?
+
+A 10DLC Profile is your business's verified digital identity within the messaging ecosystem, automatically registered with both Plivo and Twilio providers. It represents your complete business information and serves as the foundation for all messaging campaigns.
+
+<CardGroup cols={3}>
+  <Card title="Business Identity" icon="building">
+    Complete company information including legal name, address, and contact details verified across multiple databases
+  </Card>
+  <Card title="Provider Integration" icon="network-wired">
+    Automatic registration with both Plivo and Twilio ensures maximum messaging reach and redundancy
+  </Card>
+  <Card title="Compliance Foundation" icon="shield">
+    Regulatory compliance framework ensuring adherence to TCPA, CAN-SPAM, and carrier-specific guidelines
+  </Card>
+</CardGroup>
+
+
+
+
+### 📊 Dashboard Overview
+
+The 10DLC Profile dashboard provides comprehensive management capabilities for all your business profiles:
+
+**Key Features:**
+- **Profile Listing**: View all profiles with status indicators
+- **Quick Actions**: Add, edit, and delete profiles with one-click operations
+- **Status Monitoring**: Real-time tracking of approval status across providers
+- **Search & Filter**: Advanced filtering by status, company, or creation date
+- **Bulk Operations**: Manage multiple profiles simultaneously
+
+**Profile Status Indicators:**  
+
+- 🟢 **Approved**: Profile approved and messaging enabled across providers  
+- 🟡 **Pending**: Awaiting initial review by the carrier  
+- 🟠 **In Review**: Carrier is actively reviewing your submission  
+- 🔴 **Rejected**: Carrier denied the profile—review carrier feedback and resubmit  
+- ⚫ **Disabled**: Profile deactivated by carrier; messaging is blocked  
+
+## ➕ Creating a New 10DLC Profile
+
+### 🚪 Step 1: Access Profile Creation
+
+1. Navigate to **Setup > 10DLC > Profile**
+2. Click the **"Add Profile"** button
+3. The system will display the profile creation form
+
+<img
+  src="/images/setup/profile/add-profile1.png"
+  alt="Add 10DLC Profile Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 📝 Step 2: Complete Profile Information
+
+<AccordionGroup>
+  <Accordion title="Basic Profile Information" icon="clipboard">
+    **Core Profile Details:**
+    
+    <img
+      src="/images/setup/profile/add-profile6.png"
+      alt="Basic Profile Information Form"
+      className="rounded-lg border shadow-sm"
+    />
+    
+    | Field | Description | Requirements | Example |
+    |-------|-------------|--------------|---------|
+    | **Profile Alias*** | Internal reference name | 3-50 characters, unique | "Main Business Profile" |
+    | **Company Name*** | Legal business name | Exact match to registration | "Volt Tech Solutions LLC" |
+    | **EIN*** | Federal Tax ID | 9 digits (XX-XXXXXXX) | "12-3456789" |
+    | **Customer Type*** | Business classification | Select from dropdown | "DIRECT" or "RESELLER" |
+    | **Entity Type*** | Legal structure | Must match documentation | "PRIVATE", "PUBLIC", "GOVERNMENT" |
+    
+    <Tip>
+      **EIN Format Validation:** The system automatically validates EIN format and checks against IRS databases. Use format XX-XXXXXXX or XXXXXXXXX (9 digits total).
+    </Tip>
+    
+    <Warning>
+      **Critical Accuracy:** Company name and EIN must exactly match your business registration documents. Mismatched information is the #1 cause of profile rejections.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Business Details & Industry" icon="briefcase">
+    **Industry Classification & Business Information:**
+    
+    <img
+      src="/images/setup/profile/add-profile7.png"
+      alt="Business Details and Industry Form"
+      className="rounded-lg border shadow-sm"
+    />
+    
+    | Field | Description | Impact on Approval | Best Practices |
+    |-------|-------------|-------------------|----------------|
+    | **Plivo Industry*** | Primary business vertical | Affects approval speed | Choose most specific category |
+    | **Twilio Industry*** | Secondary classification | Provider-specific optimization | Can differ from Plivo industry |
+    | **Website*** | Company website URL | High - validates legitimacy | Ensure site is live and professional |
+    | **Business Registration ID*** | Official business identifier | Required for verification | Use primary registration number |
+    | **Business Type*** | Detailed business structure | Affects compliance requirements | Match legal documentation exactly |
+    
+    **Industry Selection Guidelines:**
+    
+    <CardGroup cols={2}>
+      <Card title="High Trust Industries" icon="star">
+        - Technology/Software
+        - Healthcare
+        - Financial Services
+        - Education
+        - **Approval Time:** 2-3 days
+      </Card>
+      <Card title="Standard Industries" icon="building">
+        - Retail/E-commerce
+        - Professional Services
+        - Real Estate
+        - Manufacturing
+        - **Approval Time:** 3-5 days
+      </Card>
+    </CardGroup>
+    
+    <Info>
+      **Website Requirements:** Your website must be live, professional, and include complete contact information. The system will automatically verify website accessibility during submission.
+    </Info>
+  </Accordion>
+
+
+</AccordionGroup>
+
+## 📍 Profile Address & Contact Details
+
+### 🏠 Address Information Section
+
+<img
+  src="/images/setup/profile/add-profile3.png"
+  alt="Address Details Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Required Address Fields:**
+
+| Field | Description | Validation Rules | Example |
+|-------|-------------|------------------|---------|
+| **Customer Name*** | Business name for address | Must match company name | "Volt Tech Solutions LLC" |
+| **Street*** | Primary street address | No PO boxes, must be physical | "123 Business Ave" |
+| **Street Secondary** | Additional address info | Optional | "Suite 100, Floor 2" |
+| **City*** | Business city | USPS verified | "San Francisco" |
+| **State*** | Business state | Valid US state | "California" |
+| **Postal Code*** | ZIP code | 5 or 9 digit format | "94105" or "94105-1234" |
+| **Country*** | Business country | Default: "US" | "United States" |
+
+
+
+### 👤 Authorized Contact Details
+
+<img
+  src="/images/setup/profile/add-profile4.png"
+  alt="Authorized Contact Details Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Contact Information Requirements:**
+
+| Field | Purpose | Requirements | Tips |
+|-------|---------|--------------|------|
+| **First Name*** | Primary contact person | Legal name, must be authorized | Use CEO, COO, or authorized agent |
+| **Last Name*** | Contact surname | Must match government ID | Ensure spelling accuracy |
+| **Email*** | Business email address | Business domain preferred | Use monitored email address |
+| **Title*** | Contact's position | Business-appropriate title | "CEO", "Operations Manager" |
+| **Job Title*** | Specific role | Select from dropdown | Choose most appropriate option |
+| **Phone*** | Business phone number | Valid 10-digit US number | Use main business line |
+
+    
+
+### ℹ️ Additional Business Details
+
+<img
+  src="/images/setup/profile/add-profile5.png"
+  alt="Additional Business Details Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Supplementary Information:**
+
+| Field | Description | Impact | Requirements |
+|-------|-------------|--------|--------------|
+| **Call Type*** | Primary messaging use case | Affects approval category | Select from approved list |
+| **Call Per Month*** | Expected message volume | Determines tier assignment | Realistic estimate required |
+| **Employee Count*** | Company size indicator | Trust score calculation | Current employee count |
+| **Stock Symbol** | Public company identifier | Optional for public companies | NASDAQ/NYSE symbol |
+| **Stock Exchange** | Trading exchange | Required if stock symbol provided | Select appropriate exchange |
+| **Alt Business ID** | Additional identifier | Optional verification | DUNS, LEI, or other ID |
+| **Alt Business ID Type** | ID classification | Required if Alt ID provided | Select appropriate type |
+| **EIN Issuing Country** | Tax authority country | Default: "US" | Country of tax registration |
+
+
+## ✏️ Editing Existing Profiles
+
+### ⚙️ Profile Edit Interface
+
+<img
+  src="/images/setup/profile/edit-profile1.png"
+  alt="Edit 10DLC Profile Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Edit Capabilities:**
+- **Basic Information**: Update company details and contact info
+- **Business Details**: Modify industry classifications and website
+- **Address Updates**: Change business address and contact details
+- **Additional Information**: Update volume estimates and identifiers
+
+**Edit Restrictions:**
+- **EIN Changes**: Requires new profile creation
+- **Company Name**: Major changes need re-verification
+- **Entity Type**: Cannot be changed after approval
+- **Provider Settings**: Read-only after initial setup
+
+<img
+  src="/images/setup/profile/edit-profile2.png"
+  alt="Edit 10DLC Profile Additional Fields"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Additional Editing Options:**
+- **Contact Details**: Modify business phone numbers and email addresses.
+- **Brand Information**: Change profile display name and public-facing details.
+- **Industry Classification**: Update NAICS or SIC codes for your business.
