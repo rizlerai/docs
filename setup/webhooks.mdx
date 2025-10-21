@@ -136,6 +136,20 @@ Navigate to **Setup > Webhooks** to manage your webhook configurations.
   </Accordion>
 </AccordionGroup>
 
+### 🎯 Audience Lab Events
+![Webhook Configuration](/images/setup/webhooks/audience-lab.png)
+<Accordion title="What does Audience Lab do?">
+  Audience Lab helps you automatically sort your contacts into useful groups, analyzes your audience for actionable insights, and keeps your data in sync across platforms.
+
+  **How it works:**
+  - Analyzes new or updated contacts to build smart segments.
+  - Updates audience groups as your data changes.
+  - Runs audience analysis for insights and reports.
+  - Syncs audience data with your other tools automatically.
+
+  > Audience Lab streamlines audience management, so you always have up-to-date segments and insights without manual effort.
+</Accordion>
+
 ## 🎪 Available Webhook Events
 
 ### 📞 Call Events
@@ -269,6 +283,7 @@ Navigate to **Setup > Webhooks** to manage your webhook configurations.
   </Card>
 </CardGroup>
 
+
 ## 📦 Webhook Payload Structure
 
 ### Standard Payload Format
@@ -322,7 +337,151 @@ All webhooks follow a consistent JSON structure:
 }
 ```
 
+### Audience Lab Event Payload Example
+
+```json
+{
+  "event": "audiencelab.contact",
+  "timestamp": "2025-01-15T14:30:25.123Z",
+  "webhook_id": "wh_audience_789",
+  "data": {
+    "contact_id": "contact_abc123",
+    "audience_segment": "high_value_prospects",
+    "contact_data": {
+      "name": "John Smith",
+      "email": "john@example.com",
+      "phone": "+1234567890",
+      "company": "Tech Corp",
+      "industry": "Technology",
+      "location": "New York, NY"
+    },
+    "audience_insights": {
+      "engagement_score": 85,
+      "buying_intent": "high",
+      "preferred_communication": "phone",
+      "best_time_to_contact": "morning",
+      "interests": ["AI solutions", "automation", "CRM"]
+    },
+    "segmentation": {
+      "primary_segment": "enterprise_decision_makers",
+      "secondary_segments": ["tech_enthusiasts", "early_adopters"],
+      "behavioral_tags": ["price_sensitive", "feature_focused"]
+    },
+    "campaign_recommendations": {
+      "suggested_approach": "technical_demo",
+      "content_type": "case_studies",
+      "follow_up_timing": "1_week"
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "signature": "sha256=audience123def456...",
+    "audience_lab_version": "2.1"
+  }
+}
+```
+
  
+
+## 🎯 Audience Lab Integration
+
+### What is Audience Lab?
+
+Audience Lab is AI Sync's advanced audience analysis and segmentation platform that helps you understand your contacts better and optimize your marketing efforts through intelligent data processing and behavioral insights.
+
+### Key Features
+
+<CardGroup cols={2}>
+  <Card title="Intelligent Segmentation" icon="chart-pie">
+    Automatically categorize contacts based on behavior, demographics, and engagement patterns
+  </Card>
+  <Card title="Behavioral Analysis" icon="brain">
+    Analyze contact interactions to predict preferences and buying intent
+  </Card>
+  <Card title="Campaign Optimization" icon="target">
+    Get recommendations for the best approach, timing, and content for each contact
+  </Card>
+  <Card title="Real-time Insights" icon="bolt">
+    Receive instant updates when audience segments change or new insights are available
+  </Card>
+</CardGroup>
+
+### Audience Lab Webhook Use Cases
+
+<AccordionGroup>
+  <Accordion title="CRM Integration">
+    **Sync audience insights with your CRM:**
+    
+    ```javascript
+    // Example: Update Salesforce with audience insights
+    app.post('/webhook/audiencelab', async (req, res) => {
+      const { data } = req.body;
+      
+      if (data.audience_insights.buying_intent === 'high') {
+        await salesforce.updateContact(data.contact_id, {
+          leadScore: data.audience_insights.engagement_score,
+          buyingIntent: data.audience_insights.buying_intent,
+          recommendedApproach: data.campaign_recommendations.suggested_approach
+        });
+      }
+      
+      res.status(200).json({ received: true });
+    });
+    ```
+  </Accordion>
+  
+  <Accordion title="Marketing Automation">
+    **Trigger personalized campaigns:**
+    
+    ```javascript
+    // Example: Trigger email campaigns based on audience segments
+    app.post('/webhook/audiencelab', async (req, res) => {
+      const { data } = req.body;
+      
+      if (data.segmentation.primary_segment === 'enterprise_decision_makers') {
+        await marketingPlatform.triggerCampaign({
+          contactId: data.contact_id,
+          campaignType: 'enterprise_demo',
+          content: data.campaign_recommendations.content_type,
+          timing: data.campaign_recommendations.follow_up_timing
+        });
+      }
+      
+      res.status(200).json({ received: true });
+    });
+    ```
+  </Accordion>
+  
+  <Accordion title="Lead Scoring">
+    **Update lead scores automatically:**
+    
+    ```javascript
+    // Example: Update lead scores based on audience analysis
+    app.post('/webhook/audiencelab', async (req, res) => {
+      const { data } = req.body;
+      
+      const leadScore = calculateLeadScore({
+        engagementScore: data.audience_insights.engagement_score,
+        buyingIntent: data.audience_insights.buying_intent,
+        segment: data.segmentation.primary_segment
+      });
+      
+      await database.updateLeadScore(data.contact_id, leadScore);
+      
+      res.status(200).json({ received: true });
+    });
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Audience Lab Event Types
+
+| Event | Description | When Triggered | Use Cases |
+|-------|-------------|----------------|-----------|
+| `audiencelab.contact` | Contact processed for audience analysis | When contact data is analyzed | Lead scoring, CRM updates |
+| `audiencelab.segment` | Audience segment created/updated | When segments are modified | Campaign targeting, reporting |
+| `audiencelab.analysis` | Analysis completed | When audience analysis finishes | Insights delivery, alerts |
+| `audiencelab.sync` | Data synchronized | When syncing with external platforms | Multi-platform management |
 
 ## 🔒 Security Best Practices
 
