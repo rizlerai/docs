@@ -81,10 +81,11 @@ Analyze disposition data for performance insights and optimization
 |-------|------|-------------|---------|
 | **ID** | `Number` | Unique identifier for each disposition | `1`, `2`, `3` |
 | **Disposition Name** | `String` | Clear, descriptive outcome label | `"Interested"`, `"Not Available"` |
-| **Setup Didn't Answer** | `Toggle` | **Auto-assign when call goes unanswered** | `Enabled` / `Disabled` |
-| **Call Status** | `Enum` | Current status of the disposition | `Completed`, `Answered`, `No`,`Ringing` ,`Busy`,`Cancelled`,`In Progress`,`Failed`,`AMD` |
+| **Setup Didn't Answer Button** | `Toggle` | **Auto-assign when call goes unanswered** | Enabled  / Disabled  |
+| **Call Status** | `Enum` | Current status of the disposition | `Completed`, `Answered`, `No`, `Ringing`, `Busy`, `Cancelled`, `In Progress`, `Failed`, `AMD` |
+| **Color Preview** | `Swatch` | Visual color indicator for the disposition<br/>Useful for quick recognition and workflow mapping | |
 | **Created At** | `DateTime` | Timestamp of disposition creation | `09-13-2024 01:19 PM` |
-| **Actions** | `Buttons` | Available operations | `Edit`, `Delete` |
+| **Action** | `Buttons` | Available operations for each disposition | `Edit`, `Delete` |
 
 ### 🔧 Field Configuration Details
 
@@ -120,21 +121,28 @@ Analyze disposition data for performance insights and optimization
 Creating new dispositions allows you to customize call outcome tracking to match your business needs. The interface provides a streamlined approach to disposition management.
 
 #### Required Fields
-<Card title="Name" icon="tag">
-**Purpose**: Enter a clear, descriptive name for the disposition outcome
-<br />**Example**: "Interested", "Not Available", "Decision Maker Not Present"
-<br />**Best Practice**: Use consistent naming conventions across your team
-</Card>
-<Card title="Agent Role" icon="users">
-**Function**: Assign specific agent role or permission level for this disposition
-<br />**Options**: Select from available user roles (Admin, Manager, Agent, etc.)
-<br />**Note**: Controls which team members can apply this disposition to calls
-</Card>
-<Card title="GHL Location" icon="map-pin">
-**Purpose**: Specify the CRM system name for integration and tracking
-<br />**Use Case**: Useful for multi-CRM environments or system-specific campaigns
-<br />**Impact**: Enables CRM-based disposition analytics and integration
-</Card>
+<img
+  src="/images/manage/disposition/add-disposition.png"
+  alt="Add Disposition Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Add Disposition Form Fields Overview**
+
+| Field             | Description                                                                                             | Example / Notes                                                  |
+|-------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| **Disposition**   | Enter a clear, descriptive name for the call outcome.                                                  | "Interested", "Not Available", "Decision Maker Not Present"      |
+| **Assign role to view** | Assign which user roles can see/apply this disposition.<br/>Select one or more from the available roles. | (e.g. Admin, Agent)                                              |
+| **GHL Location**  | Select the CRM (GoHighLevel) account location relevant to this disposition.                            | Allows CRM-specific tracking and analytics.                      |
+| **Fields For Notes** | Optional. Select additional note fields, typically available after setting a location.                  | Unique to each CRM location                                      |
+| **Text Color**    | Choose the text color for this disposition label in the interface.                                     | Example: White (`#FFFFFF`)                                       |
+| **Background Color** | Select a background color for the disposition button.<br/>Aids in quick visual identification in call logs and workflow mapping. | Example: Blue (`#0000FF`)                                        |
+
+> The form includes all the above fields. "Assign role to view" allows you to select multiple roles. "Fields For Notes" dynamically appears once a GHL Location is selected. Use text and background color pickers to customize appearance for clarity in dashboards and call screens.
+
+**Tip:**  
+Use consistent naming and color-coding conventions to make disposition outcomes intuitive and actionable for agents and managers.
+
   
 
 ### ✏️ Edit Disposition

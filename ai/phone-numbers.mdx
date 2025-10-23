@@ -153,28 +153,35 @@ Map the data fields from your GHL account to the fields used by the AI during in
  Example Field Mappings (Incoming):
 
 **GHL Location**
-- Maps to: The GHL location where data is stored
+- The primary GoHighLevel account location associated with this data mapping.
 
-**Phone Number**
-- Maps to: The contact's phone number
+**Phone Number (`phone_number` or `phone_number1`)**
+- Maps to the contact’s main phone number field in GHL.
 
-**Email**
-- Maps to: The contact's email address
+**Email (`email` or `emailAddress`)**
+- Maps to the contact's primary email address field in GHL.
 
-**First Name**
-- Maps to: The contact's first name
+**First Name (`first_name`)**
+- Maps to the contact's first name as stored in GHL.
 
-**Last Name**
-- Maps to: The contact's last name
+**Last Name (`last_name`)**
+- Maps to the contact's last name in GHL.
+
+**Email Address (`emailAddress`)**
+- For accounts with a separate email field, this maps to "Email Address" in GHL (useful if both Email and Email Address exist).
 
 **Address Fields**
-- **City**: Maps to the city field in GHL
-- **Zip Code**: Maps to the zip code field in GHL
-- **Country**: Maps to the country field in GHL
-- **Address**: Maps to the address field in GHL
+- **Address (`address`)**: Street or full address field in GHL.
+- **City (`city`)**: City name from the GHL contact record.
+- **Zip Code (`zip_code`)**: Postal/zip code field in GHL.
+- **Country (`country`)**: Country field as defined in GHL.
 
-**Custom Text Field**
-- Maps to: Any custom field you want to use during the incoming call
+**AudienceLabelId (`audiencelabelid`)**
+- Maps to a custom field used for audience segmentation or tagging.
+
+> _All mappings should be linked to the actual GHL data fields used for each contact, as shown in the configuration interface below:_
+
+
 
 > Only the mapped fields are used by the AI during incoming calls. 
 
