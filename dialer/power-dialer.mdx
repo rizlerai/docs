@@ -1,10 +1,7 @@
 ---
-title: "Power Dialer"
-description: "Complete guide to using the Power Dialer feature for efficient outbound calling campaigns"
+title: "Power Dialer" 
 icon: 'phone'
----
-
-# Power Dialer
+--- 
 
 The Power Dialer is your comprehensive outbound calling solution designed to maximize efficiency and productivity. This powerful tool automates your calling campaigns, manages contact lists intelligently, and provides real-time insights to help you connect with more prospects in less time.
 
@@ -13,18 +10,13 @@ The Power Dialer automatically dials through your contact lists, eliminating man
 </Note>
 
 ## Getting Started
+### Accessing the Power Dialer -> Navigate to **Dialer** 
 
 <img src="/images/dialer/power-dialer/navigation.png" alt="Power Dialer Navigation" className="rounded-lg border shadow-sm" />
 
-### Accessing the Power Dialer
-
-1. Navigate to **Dialer** in the main menu
-2. Select **Power Dialer** from the dialer options
-3. The interface will load with your default PowerList
-
-<img src="/images/dialer/power-dialer/overview.png" alt="Power Dialer Overview" className="rounded-lg border shadow-sm" />
-
 ### Interface Overview
+
+<img src="/images/dialer/power-dialer/dialer.png" alt="Power Dialer Overview" className="rounded-lg border shadow-sm" />
 
 Your Power Dialer workspace includes these essential components:
 
@@ -34,44 +26,6 @@ Your Power Dialer workspace includes these essential components:
 - **📞 Integrated Dialpad**: Manual dialing capability
 - **📜 Call History**: Access previous call records
 - **🎧 Audio Controls**: Configure microphone, speakers, and ringtones
-    
-## Key Features
-
-### Smart Dialing System
-
-The Power Dialer intelligently manages your calling campaigns:
-
-- **Automated Sequential Dialing**: Automatically moves through your PowerList contacts
-- **Configurable Timing**: Set specific dial times and intervals
-- **Attempt Management**: Control daily and total attempt limits per contact
-- **Smart Skip Logic**: Automatically skips invalid numbers and completed contacts
-- **Real-time Monitoring**: Live status updates and progress tracking
-
-### Live Analytics Dashboard
-
-Monitor your calling performance in real-time:
-
-- **Call Statistics**: Instant visibility into remaining, dialed, and connected calls
-- **Talk Time Tracking**: Cumulative conversation time (e.g., 00:39:06)
-- **Connection Rates**: Success percentages and call outcomes
-- **Progress Indicators**: Visual progress bars and status updates
-- **Performance Metrics**: Daily, weekly, and campaign-level insights
-
-### Advanced Audio Management
-
-Professional audio setup for optimal call quality:
-
-- **Multi-Device Support**: Configure separate devices for microphone, ringtone, and speakers
-- **Audio Testing**: Built-in test functionality for all devices
-- **Tone Customization**: Configure hangup tones and ringback settings
-- **Noise Reduction**: USB headset optimization for clearer calls
-- **Real-time Adjustment**: Change audio settings during active campaigns
-
-## Interface Components
-
-### Main Control Panel
-
-<img src="/images/dialer/power-dialer/pad-sidebar.png" alt="Power Dialer Main Control Panel" className="rounded-lg border shadow-sm" />
 
 The main control panel serves as your campaign command center, providing real-time insights and configuration options.
 
@@ -92,17 +46,54 @@ Your available "From Numbers" are the phone numbers you've purchased and configu
 These statistics update in real-time as your campaign progresses, helping you track performance and adjust strategy as needed.
 </Tip>
 
-#### PowerList Management
+#### PowerList Selection
 
-Easily organize and control your calling campaigns by managing contact lists within the Power Dialer interface:
+The PowerList dropdown is your primary tool for selecting which contact list to dial. This feature allows agents and users to easily switch between different calling campaigns and contact segments.
 
-- **PowerList Dropdown**: Effortlessly switch between your saved contact lists to target different groups or campaigns.
-  - **"One Dial"**: Your main list for primary outreach efforts.
-  - **"devVS"**: A secondary or test list, ideal for trial runs or segmented campaigns.
-- **List Status Overview**: Instantly see how many contacts have been uploaded to or removed from the currently selected list, helping you track list health and campaign readiness.
-- **Seamless List Switching**: Change lists on the fly to adapt your calling strategy without leaving the main dashboard.
+### How to Select a PowerList
 
-This streamlined management ensures you always know which contacts are being dialed and allows for quick adjustments to maximize campaign effectiveness.
+1. **Access the Dropdown**: Click on the "Select PowerList" dropdown in the left panel
+2. **Confirm Selection**: The dropdown will show your selected powerlist name
+3. **Start Dialing**: Click "Start Dialing" to begin calling from the selected list
+
+### PowerList Status Overview
+
+Once you select a powerlist, the system displays real-time statistics about your chosen list:
+
+| Metric | Description | Example |
+|--------|-------------|---------|
+| **UPLOADED** | Total contacts in the selected powerlist | 3 contacts |
+| **REMOVED** | Contacts removed or filtered from the list | 0 removed |
+| **Dial At Time** | Time interval between dial attempts (seconds) | 1 second |
+| **Max Attempts Daily** | Maximum calls per contact per day | 1 attempt |
+| **Max Attempts Total** | Lifetime maximum attempts per contact | 1 attempt |
+
+### PowerList Management Features
+
+- **Real-time Updates**: Statistics update automatically as you dial
+- **Quick Switching**: Change powerlists without interrupting your workflow
+- **Campaign Segmentation**: Use different lists for different target audiences
+- **Test Campaigns**: Use smaller lists like "devVS" for testing before full deployment
+- **Progress Tracking**: Monitor how many contacts remain in your current list
+
+### Best Practices for PowerList Selection
+
+<CardGroup cols={2}>
+  <Card title="Segment Your Lists" icon="users">
+    Create separate powerlists for different customer segments, time zones, or campaign types
+  </Card>
+  <Card title="Test Before Scaling" icon="flask">
+    Use smaller test lists to verify your approach before dialing larger contact lists
+  </Card>
+  <Card title="Monitor Progress" icon="chart-line">
+    Keep track of remaining contacts and adjust your strategy based on performance
+  </Card>
+  <Card title="Compliance Ready" icon="shield">
+    Ensure your powerlists comply with calling regulations and include opt-out mechanisms
+  </Card>
+</CardGroup>
+
+This streamlined powerlist management ensures you always know which contacts are being dialed and allows for quick strategic adjustments to maximize campaign effectiveness.
 
 #### Campaign Configuration
 
