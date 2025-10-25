@@ -164,11 +164,11 @@
             ]
           },
           {
-            "group": "knowledge-base",
+            "group": "knowledge-hub",
             "icon": "books",
             "pages": [
-              "knowledge-base/courses",
-              "knowledge-base/available-courses"
+              "knowledge-hub/courses",
+              "knowledge-hub/available-courses"
             ]
           },
           {
