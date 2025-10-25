@@ -6,39 +6,33 @@ icon: "badge-check"
 
 <img
   src="/images/setup/brand/overview.png"
-  alt="10DLC Brand Dashboard - Complete brand management interface with table view"
+  alt="10DLC Brand Dashboard showing registered brands with Provider, Profile, Brand Type, and Status columns, plus action buttons"
   className="rounded-lg border shadow-sm"
 />
 
 # 🏷️ 10DLC Brand Registration & Management
 
-Establish your business identity for compliant Application-to-Person (A2P) messaging by registering and managing your 10DLC brand with wireless carriers. Your brand serves as the foundation for all messaging campaigns, ensuring trust, deliverability, and regulatory compliance.
+Establish your business identity for compliant Application-to-Person (A2P) messaging by registering and managing your 10DLC brand with wireless carriers. The brand dashboard gives you a centralized interface to review and manage all your brands, as illustrated below.
 
 ### 📋 Brand Listing Table
 
-Your brand management interface displays all registered brands in a sortable table format with the following information:
+The table lets you view, sort, and manage all registered brands. The columns you will find are:
 
-| Column | Description | Status Values |
-|--------|-------------|---------------|
-| **Brand Alias** | Your chosen brand name for identification | Custom name |
-| **Profile** | Associated 10DLC profile details | Profile name |
-| **Brand Type** | Classification of your brand | STANDARD, PREMIUM |
-| **Registration Status** | Current approval status | PENDING, Processing, Verified, Rejected |
-| **Vetting Status** | Carrier vetting process status | Pending, Approved, Failed |
-| **Vetting Score** | Trust score from carrier evaluation | 0-100 scale |
+| Column           | Description                                         | Example/Values                |
+|------------------|-----------------------------------------------------|-------------------------------|
+| **Brand Alias**  | Custom name you assign to your brand                | GROWBRAND                     |
+| **Provider**     | Messaging provider associated with the brand        | TWILIO                        |
+| **Profile**      | Linked 10DLC Profile or company registration        | Company-Dawn459A              |
+| **Brand Type**   | Brand level determined by profile/provider          | STANDARD, PREMIUM, etc.       |
+| **Registration Status** | Current approval status                     | PENDING, PROCESSED, APPROVED  |
+| **Action**       | Manage brands (e.g., Delete button)                 | Delete                        |
 
 <CardGroup cols={2}>
   <Card title="Quick Registration" icon="rocket">
-    Start your brand registration in under 10 minutes with our intelligent form that pre-validates data in real-time
+    Register a new brand quickly via the “Register Brand” button — guided process ensures speed and accuracy.
   </Card>
-  <Card title="Instant Validation" icon="shield-check">
-    Real-time validation ensures your application meets carrier requirements before submission, reducing rejection rates by 85%
-  </Card>
-  <Card title="24/7 Monitoring" icon="chart-line">
-    Continuous brand health monitoring with automated alerts for trust score changes and compliance issues
-  </Card>
-  <Card title="Expert Support" icon="headset">
-    Dedicated verification specialists with 98% first-time approval rate to guide you through any challenges
+  <Card title="One-Click Actions" icon="trash">
+    Instantly delete brands or update their status using the action buttons.
   </Card>
 </CardGroup>
 
@@ -74,103 +68,89 @@ The brand registration process has been streamlined to focus on essential inform
   className="rounded-lg border shadow-sm"
 />
 
-**🧾 Registration Form Fields**
 
-The registration form contains three essential fields that determine your brand's approval and capabilities:
-
-| Field | Description | Requirements | Impact |
-|-------|-------------|--------------|---------|
-| **Brand Alias*** | Your chosen brand identifier | Required, unique, 2-50 characters | Used for identification and reporting |
-| **Profile*** | Associated 10DLC profile | Must select from existing profiles | Determines business verification level |
-| **Brand Type** | Brand classification | Auto-populated based on profile | Affects messaging volume and features |
+| Field           | Description                          | Requirements                          | Impact                                    |
+|-----------------|--------------------------------------|---------------------------------------|--------------------------------------------|
+| **Provider***   | Select your messaging provider       | Required, choose from supported list  | Determines routing and approval workflow   |
+| **Profile***    | Link to approved 10DLC Profile       | Required, select from available       | Sets business verification and eligibility |
+| **Brand Alias***| Unique brand identifier              | Required, unique, 2–50 characters     | Used for identification and reporting      |
+| **Brand Type**  | Brand classification (read-only)     | Auto-populated from profile/provider  | Affects messaging features and throughput  |
 
 <Info>
-**Required Fields:** Fields marked with (*) are mandatory and must be completed before submission. The form includes real-time validation to prevent submission errors.
+**All fields marked with (*) are mandatory and must be completed to enable form submission. Real-time validation prevents errors before you submit.**
 </Info>
 
 <Warning>
-**Profile Dependency:** Brand Type options are dynamically populated based on your selected profile. Ensure you have created a 10DLC profile before registering a brand.
+**Important:** "Brand Type" is automatically determined by your selected profile and provider. If no profiles are available, first create one at [Setup → 10DLC → Profile](/setup/10dlc/profile).
 </Warning>
 
-### ▶️ Registration Workflow
+### ▶️ Registration Steps
 
 <AccordionGroup>
-  <Accordion title="Step 1: Select Profile" icon="user-circle">
-    **Choose Your 10DLC Profile:**
-    
-    Before registering a brand, you must have an approved 10DLC profile. The profile contains your business verification information and determines available brand types.
-    
+  <Accordion title="Step 1: Choose Provider & Profile" icon="user-circle">
+    Select your messaging provider and an approved 10DLC profile. These choices determine how your brand is routed and which brand types are available.
+
     <CardGroup cols={2}>
-      <Card title="Profile Requirements" icon="check-circle">
-        - Business information verified
-        - Contact details confirmed
-        - Address validation completed
-        - Industry classification set
+      <Card title="Provider Selection" icon="building">
+        - Choose from supported SMS providers<br/>
+        - Ensures correct carrier routing<br/>
+        - Required for approval by downstream networks
       </Card>
-      <Card title="Profile Benefits" icon="star">
-        - Faster brand approval
-        - Higher trust scores
-        - Increased messaging volumes
-        - Better deliverability rates
+      <Card title="Profile Requirements" icon="check-circle">
+        - Business and contact info fully verified<br/>
+        - Address confirmed and compliant<br/>
+        - Profile must be in "Approved" status
       </Card>
     </CardGroup>
-    
-    <Tip>If you don't have a profile yet, create one first at [Setup → 10DLC → Profile](/setup/10dlc/profile) before proceeding with brand registration.</Tip>
+
+    <Tip>
+      If you do not see your desired profile, create one under [Setup → 10DLC → Profile](/setup/10dlc/profile).
+    </Tip>
   </Accordion>
 
   <Accordion title="Step 2: Enter Brand Alias" icon="tag">
-    **Brand Alias Requirements:**
-    
-    Your brand alias is the identifier that will be associated with your messaging campaigns and appear in carrier systems.
-    
-    | Requirement | Description | Example |
-    |-------------|-------------|---------|
-    | **Length** | 2-50 characters | "MyCompany" |
-    | **Uniqueness** | Must be unique across your account | Cannot duplicate existing brands |
-    | **Characters** | Letters, numbers, spaces, hyphens | "Tech-Solutions-2024" |
-    | **Recognition** | Should be recognizable to customers | "Acme Corp" |
-    
+    Choose your Brand Alias (public brand identifier):
+
+    | Requirement    | Description                               | Example            |
+    |----------------|-------------------------------------------|--------------------|
+    | **Length**     | 2-50 characters                           | `MyCompany`        |
+    | **Uniqueness** | Cannot duplicate an existing brand         | `Acme2024`         |
+    | **Characters** | Letters, numbers, spaces, hyphens allowed | `Acme-Tech LLC`    |
+    | **Permanent**  | Cannot change after registration           |                    |
+
     <Tip>
-      **Best Practices:**
-      - Use your company name or a recognizable abbreviation
-      - Avoid special characters that might cause display issues
-      - Keep it professional and brand-appropriate
-      - Consider how it will appear in customer phone bills
+      - Use your full company name or common abbreviation<br/>
+      - Avoid unsupported characters or emoji<br/>
+      - Be clear, professional, and recognizable for end users
     </Tip>
-    
     <Warning>
-      **Important:** Brand aliases cannot be changed after registration. Choose carefully as this will be your permanent brand identifier.
+      Brand Alias is permanent after submission and cannot be edited later.
     </Warning>
   </Accordion>
 
-  <Accordion title="Step 3: Submit Registration" icon="check-circle">
-    **Final Submission:**
-    
-    Once you've selected your profile and entered your brand alias, the system will automatically determine the appropriate brand type based on your profile's verification level and business information.
-    
+  <Accordion title="Step 3: Review & Submit" icon="check-circle">
+    Review your selections. "Brand Type" is read-only and set automatically.
+
     <CardGroup cols={2}>
-      <Card title="Pre-Submission Validation" icon="shield-check">
-        **Automatic Checks:**
-        - Profile verification status
-        - Brand alias uniqueness
-        - Required field completion
-        - Business information consistency
+      <Card title="Pre-Submission Checks" icon="shield-check">
+        **Before submitting, the system will verify:**
+        - All required fields are filled
+        - Brand alias is unique to your account
+        - Profile is in "Approved" status
+        - Necessary business info is complete
       </Card>
-      <Card title="Submission Process" icon="rocket">
-        **What Happens Next:**
-        - Instant validation feedback
-        - Carrier submission queue
-        - Real-time status updates
-        - Email notifications
+      <Card title="Submission & Validation" icon="rocket">
+        - Form cannot be submitted until all validations pass<br/>
+        - After clicking Submit, your application enters the carrier queue<br/>
+        - Status updates and notifications are sent in real time
       </Card>
     </CardGroup>
-    
+
     <Info>
-      **Validation Error:** If you see "Please fill required fields!" error, ensure both Brand Alias and Profile fields are completed before clicking Submit.
+      If you see "Please fill required fields!" double-check the Brand Alias, Provider, and Profile selections before submitting.
     </Info>
-    
     <Tip>
-      **Success Indicators:** A successful submission will show your brand in the listing table with "Processing" status, indicating it's been queued for carrier review.
+      A successful registration appears instantly in your brand list, with status "Processing" until carrier review is complete.
     </Tip>
   </Accordion>
 </AccordionGroup>

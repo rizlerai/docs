@@ -164,11 +164,11 @@
             ]
           },
           {
-            "group": "Calendar",
-            "icon": "calendar",
+            "group": "knowledge-base",
+            "icon": "books",
             "pages": [
-              "calendar/calendar",
-              "calendar/google-calendar"
+              "knowledge-base/courses",
+              "knowledge-base/available-courses"
             ]
           },
           {

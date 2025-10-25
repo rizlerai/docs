@@ -1,5 +1,5 @@
 ---
-title: " Users"
+title: "Users"
 description: "Comprehensive guide to managing users in your system - understand workflows, features, and capabilities"
 icon: "users"
 ---
@@ -10,7 +10,7 @@ icon: "users"
 The Users section is your central hub for managing all user accounts in your system. Monitor user activity, manage permissions, and maintain complete control over your user base.
 </Info>
 
-## 🔍 Overview
+## 👀 Overview
 
 The Users management interface provides a comprehensive view of all users in your system, allowing you to:
 
@@ -22,9 +22,9 @@ The Users management interface provides a comprehensive view of all users in you
 
 <img src="/images/user-management/users/users-overview.png" alt="Users Management Overview" className="rounded-lg border shadow-sm" />
 
-## 📋 User Fields & Information
+## 🗂️ User Fields & Information
 
-### Core User Data
+### 📄 Core User Data
 
 | Field | Description | Purpose | Format |
 |-------|-------------|---------|---------|
@@ -35,7 +35,7 @@ The Users management interface provides a comprehensive view of all users in you
 | **🟢 Status** | Account status | Access control | Active/Inactive |
 | **📅 Created At** | Account creation date | Audit trail and tracking | MM-DD-YYYY HH:MM format |
 
-### Field Details
+### 📝 Field Details
 
 <CardGroup cols={2}>
 <Card title="👤 Name Field" icon="user">
@@ -63,11 +63,93 @@ The Users management interface provides a comprehensive view of all users in you
 </Card>
 </CardGroup>
 
+
+## ➕ Adding New Users
+
+The **Add User** button provides quick access to create new user accounts with comprehensive configuration options.
+
+<img src="/images/user-management/users/add-button.png" alt="Add User Button" className="rounded-lg border shadow-sm" />
+**🧑‍💻 Add User Interface**
+
+The Add User form provides comprehensive fields for creating new user accounts with proper configuration and permissions.
+
+<img src="/images/user-management/users/add-users.png" alt="Add User Interface" className="rounded-lg border shadow-sm" />
+
+
+
+### 🛠️ Add User Workflow
+
+<Steps>
+<Step title="📝 Fill User Details">
+**Complete the Add User Form:**
+
+- **Basic Information**: Enter name, email, password, and phone details
+- **Account Settings**: Configure status, role, and feature access
+- **Billing Options**: Set payment responsibility and seat limits
+- **Validation**: Ensure all required fields are properly filled
+</Step>
+
+<Step title="⚙️ Configure Account Settings">
+**Set User Permissions and Features:**
+
+- **Role Assignment**: Choose between Agent or Dev role
+- **Dialer Access**: Enable/disable dialer functionality
+- **Local Presence**: Configure local presence features
+- **Balance Usage**: Set who pays for usage (Company/User)
+</Step>
+
+<Step title="💰 Configure Billing Options">
+**Set Payment and Seat Management:**
+
+- **Pay for Seat**: Determine payment responsibility
+- **Package Limits**: Configure subscription seat limits
+- **Balance Control**: Set balance usage preferences
+</Step>
+
+<Step title="✅ Submit and Create">
+**Complete User Creation:**
+
+- **Review**: Double-check all entered information
+- **Submit**: Click the Submit button to create the user
+- **Confirmation**: User account is created and welcome email sent
+- **Access**: New user can login with provided credentials
+</Step>
+</Steps>
+
+### 🧩 Account Setup Scenarios
+
+<CardGroup cols={3}>
+<Card title="👔 Admin Account Setup" icon="user-shield">
+**Configuration:**
+- **Dialer**: No (admin doesn't need dialer access)
+- **Pay for Seat**: No (Company pays for seat)
+- **Use Package Seats Limits**: Yes
+- **Use Case**: Internal admin accounts
+</Card>
+
+<Card title="💳 Direct Payment Setup" icon="credit-card">
+**Configuration:**
+- **Dialer**: Yes (user needs dialer access)
+- **Pay for Seat**: Rizler (Direct to Rizler)
+- **Use Case**: Independent agents paying directly
+</Card>
+
+<Card title="🏢 Company Payment Setup" icon="building">
+**Configuration:**
+- **Dialer**: Yes (agent needs dialer access)
+- **Pay for Seat**: No (Company pays for seat)
+- **Use Package Seats Limits**: Based on company limits
+- **Use Case**: Company employees with company payment
+</Card>
+</CardGroup>
+
 ## ⚡ User Actions & Controls
 
-### Available Actions
+### 🧰 Available Actions
 
 <img src="/images/user-management/users/users-actions.png" alt="User Actions" className="rounded-lg border shadow-sm" />
+
+
 
 <Steps>
 <Step title="🔐 Login Action">
@@ -80,12 +162,29 @@ The Users management interface provides a comprehensive view of all users in you
 </Step>
 
 <Step title="✏️ Edit Action">
-**Purpose**: Modify user information and settings
+**Purpose**: Edit comprehensive user account details, permissions, product limits, and company options.
 
-- **Editable Fields**: Name, email, phone, status, permissions
-- **Use Case**: Update contact info, change access levels
-- **Validation**: Real-time field validation
-- **Result**: Updated user profile with change history
+<img src="/images/user-management/users/user-edit.png" alt="Edit User Interface" className="rounded-lg border shadow-sm mb-4" />
+
+
+- **Editable Fields**:
+  - **Name** (required)
+  - **Email** (required, must be a valid email format)
+  - **Phone number**
+  - **Password** (optional reset; leave blank to retain current password)
+  - **Status** (active / inactive)
+  - **Dialer** (Yes / No)
+  - **Use Balance** (Company / User)
+  - **Local Presence** (Yes / No toggle)
+  - **Role** (Agent / Dev)
+  - **Ext Phone** (external phone or extension field for desk phones or call forwarding)
+  - **Pay for Seat** (toggle user/company seat billing responsibility)
+  - **Packages/Seat Limit** (No (with company card)/yes)
+  
+  
+
+- **Save Action**:  
+  Submit changes with the **Save** button. All updates require appropriate validation and permissions to take effect.
 </Step>
 
 <Step title="🗑️ Delete Action">
@@ -102,7 +201,7 @@ The Users management interface provides a comprehensive view of all users in you
 
 <img src="/images/user-management/users/workflow-user.png" alt="User Management Workflow" className="rounded-lg border shadow-sm" />
 
-### Complete Workflow Process
+### 🔁 Complete Workflow Process
 
 ```mermaid
 graph TD
@@ -117,10 +216,13 @@ graph TD
     E --> I[💾 Save Changes]
     F --> J[📋 Confirm Deletion]
     G --> K[📝 Fill User Details]
+    K --> K1[⚙️ Configure Settings]
+    K1 --> K2[💰 Set Billing Options]
+    K2 --> K3[✅ Submit Form]
     
     I --> L[✅ Update Complete]
     J --> M[🗂️ Archive User Data]
-    K --> N[📧 Send Welcome Email]
+    K3 --> N[📧 Send Welcome Email]
     
     L --> O[🔄 Return to Users List]
     M --> O
@@ -129,7 +231,7 @@ graph TD
 
 ## 🎯 Use Cases & Applications
 
-### Primary Use Cases
+### 🔑 Primary Use Cases
 
 <CardGroup cols={2}>
 <Card title="👔 Employee Management" icon="building">
@@ -196,7 +298,7 @@ graph TD
 
 ## 🔗 Integration Points
 
-### Related Features
+### 🔗 Related Features
 
 <CardGroup cols={2}>
 <Card title="👥 Teams Management" icon="users">
@@ -211,4 +313,3 @@ graph TD
 **Purpose**: Control feature access and capabilities
 </Card>
 </CardGroup>
- 
