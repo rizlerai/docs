@@ -290,12 +290,30 @@ If you want to be connected to a human agent as quickly as possible, **Cold Tran
 
 ![Advanced](/images/ai/AI-agent/edit/advance/api-configration.png)
 
-### API Setup Details
-- **Endpoint & Auth**: Configure URL, HTTP methods, and authentication
-- **Templates**: Use placeholders (caller_number, entered_code, action_taken, flow_name)
-- **Testing**: Built-in API testing and timeout configuration
+### 🔌 API Setup Details
+**API Configuration Fields**  
+- **Function Name**: Enter a unique name for the API function (e.g., send_data, update_crm) to identify it in your AI agent's workflow.
+- **Function Prompt**: Define an internal prompt that instructs the agent on when or how to use this API configuration (example: *When user provides email address, send lead data to CRM system*).
+- **API URL & HTTP Method**: Specify the target API URL (e.g., `https://api.example.com/webhook`) and select the HTTP Method (POST, GET, PUT, etc.) to match the endpoint's requirements.
+- **Headers**: Add custom headers (e.g., Authorization, Content-Type) as needed. Format is `[Header Name]: [Value]`, such as `Authorization: Bearer token_here`.
+- **Content Type**: Choose the payload format for your request (e.g., `application/json`).
+- **Request Body Template**: Define the JSON body template with placeholders for AI to insert values dynamically (example placeholders: `{caller_number}`, `{entered_code}`, `{action_taken}`, `{flow_name}`, `{custom_field1}`, `{custom_field2}`).
+    - Example:
+      ```
+      {
+        "caller_number": "{caller_number}",
+        "entered_code": "{entered_code}",
+        "action_taken": "{action_taken}",
+        "flow_name": "{flow_name}",
+        "custom_field1": "{custom_field1}"
+      }
+      ```
+- **Available Placeholders**: Use variables like `{caller_number}`, `{entered_code}`, `{action_taken}`, `{flow_name}`, and any custom fields defined in your workflow.
+- **Request Timeout**: Specify the timeout for API requests (in seconds), e.g., `10`.
+- **Testing Tools**: Use the built-in "Test API Configuration" button to validate your setup with sample data before saving.
 
-![Advanced](/images/ai/AI-agent/edit/advance/api-configration2.png)
+![Add API Configuration](/images/ai/AI-agent/edit/advance/api-configration2.png)
+
 
 # 📞 Phone Number Configuration
 
