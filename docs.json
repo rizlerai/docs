@@ -141,7 +141,8 @@
                 "pages": [
                   "setup/10dlc/profile",
                   "setup/10dlc/brand",
-                  "setup/10dlc/campaign"
+                  "setup/10dlc/campaign",
+                  "setup/10dlc/twilio-brand-registration"
                 ]
               }
             ]
