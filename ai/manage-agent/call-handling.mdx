@@ -1,36 +1,86 @@
 ---
 title: "Call Handling"
-description: "Define how your agent manages phone interactions, call routing, and conversation flow"
+description: "Configure rules for redial attempts, call timing, voicemail scenarios, and call transfers."
 icon: "phone-volume"
 ---
+
+<img
+  src="/images/ai/AI-agent/edit/call-handling/overview.png"
+  alt="Call Handling Overview"
+  className="rounded-lg border shadow-sm"
+/>
+
+---
+
 ## 🔄 Redial Settings
 
-Control automatic redial behavior for failed calls.
+Fine-tune how your AI agent handles call re-attempts to maximize connection rates.
 
-- **Number of Attempts**: Set how many times the system will retry connecting if a call fails.
-- **Redial After**: Specify the wait time (e.g., 1 min) between redial attempts.
-- **Redial After Voicemail Detection**: Choose whether to retry the call when a voicemail is detected (*Yes* or *No*).
-- **Change Redial Agent**: Enable switching to a different agent when redialing. This helps improve answer rates by automatically assigning follow-up calls to another available agent if the initial attempt was unsuccessful.
+<img
+  src="/images/ai/AI-agent/edit/call-handling/voice-settings.png"
+  alt="Call Handling Overview"
+  className="rounded-lg border shadow-sm"
+/>
 
-![call handling](/images/ai/AI-agent/edit/call-handling/voice-settings.png)
+- **Number of Re-Attempts:** Choose how many times (0–5) to retry a call if not answered.
+- **Redial Delay:** Set the pause (e.g., 1–20 minutes) between redial attempts.
+- **Redial Conditions:** Define scenarios that trigger a retry—e.g., no answer, busy signal, or only after specific failures.
+- **Redial After Voicemail:** Control whether the agent retries after detecting a voicemail (*Yes* or *No*).
+- **Change Redial Agent:** Optionally assign follow-up calls to a different agent for better answer rates.
+
+---
+
+## ⏱️ Call Duration
+
+Set parameters for how long calls should last and how silence is managed.
+
+- **Max Call Duration:** Limit the maximum length of a call (e.g., 5–30 minutes).
+- **Silence Detection:** Automatically end the call if no speech is detected for a set period (e.g., 10 seconds).
+- **Pause Before Speaking:** Adjust how long the agent waits before speaking after the call is picked up, ensuring a natural start.
+
+<img
+  src="/images/ai/AI-agent/edit/call-handling/call-duration.png"
+  alt="Call Duration Settings"
+  className="rounded-lg border shadow-sm"
+/>
+
+---
 
 ## 📞 Voicemail Detection
 
-Configure agent response when voicemail systems are detected.
-![call handling](/images/ai/AI-agent/edit/call-handling/voice-detection.png)
-**Toggle**: "Hang up or leave a voicemail if a voicemail is detected" - *Enabled*
+Decide how your agent responds when a voicemail is reached.
 
-**Options**:
-- **Hang up if reaching voicemail** - *Selected* - End call to focus on live conversations
-- **Leave a message if reaching voicemail** - Deliver voicemail message
-![call handling](/images/ai/AI-agent/edit/call-handling/voice-toggle.png)
+- **Voicemail Detection Toggle:** Enable detection to let the system recognize voicemail greetings.
+- **Actions:**
+  - **Hang up if reaching voicemail:** End call to prioritize live connections.
+  - **Leave a message if reaching voicemail:** Deliver a pre-set voicemail message to the recipient.
+- **Redial after voicemail:** Choose whether or not to retry calling after leaving or reaching a voicemail.
 
-## ⏱️ Call Duration & Silence Settings
+<img
+  src="/images/ai/AI-agent/edit/call-handling/voice-detection.png"
+  alt="Voicemail Detection"
+  className="rounded-lg border shadow-sm"
+/>
+<img
+  src="/images/ai/AI-agent/edit/call-handling/voice-toggle.png"
+  alt="Voicemail Options"
+  className="rounded-lg border shadow-sm"
+/>
 
-Manage call timing and silence detection.
+---
+## ⏳ Call Duration & Silence Settings
 
-- **End Call on Silence**: 10 seconds (slider) - Auto-end calls after silence period
-- **Max Call Duration**: 15 minutes (slider) - Maximum call length limit
-- **Pause Before Speaking**: Adjustable timing - Initial delay before agent speaks
+Visually configure key parameters that define how long your AI agent's calls last and how silence is managed. Use sliders to set thresholds for end-of-call silence, max call length, and how long your agent pauses before speaking.
 
-![call handling](/images/ai/AI-agent/edit/call-handling/call-duration.png)
+<img
+  src="/images/ai/AI-agent/edit/call-handling/call-duration.png"
+  alt="Call Duration & Silence Settings (UI Sliders)"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Features:**
+- **End Call on Silence:** Specify the duration of continuous silence (in seconds) that ends a call (e.g., 10s).
+- **Max Call Duration:** Set a maximum allowed time for any call handled by the agent (e.g., 15 minutes).
+- **Pause Before Speaking:** Adjust how long the agent waits before saying the first word after the call is answered (e.g., 0–5 seconds).
+  
+_Use these settings to ensure natural timing, prevent accidental hang-ups, and provide a seamless experience._

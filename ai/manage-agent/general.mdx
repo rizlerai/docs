@@ -1,271 +1,108 @@
 ---
-title: " General"
-description: "The General tab is the primary configuration area for your AI agent's basic settings, identity, and core behavior. This is where you define the fundamental characteristics and personality of your agenty"
+title: "General"
 icon: "sliders"
 ---
 
-## 🆔 Agent Identity
+The AI Agent Module allows you to create intelligent voice assistants that make and receive phone calls automatically. Your agents can conduct natural conversations, book appointments, transfer calls, and connect with your CRM.
 
-**✏️ Agent Name**
-- **Editable Name Field**: Click the pencil icon to modify your agent's display name
+## ✨ Main Features
 
-![General](/images/ai/AI-agent/edit/general/Edit-name.png)
+- **Create AI Agents** – Design voice assistants with custom personalities and flows
+- **Handle Phone Calls** – Manage both inbound and outbound calls
+- **AI Conversations** – Automate dialogue using smart prompt configurations
+- **CRM Integration** – Tie directly into GoHighLevel for data sync
+- **Phone Number Management** – Assign & control numbers for each agent
+- **Import/Export** – Share agent setups easily
 
- **🔄 Status Control**
-- **Active Toggle**: Enable/disable your agent with the status switch
-- **Current Status**: "Active and ready" indicates the agent is operational
+---
 
+## 🛠️ How to Use
 
-![General](/images/ai/AI-agent/edit/general/status.png)
- **📁 Organization Settings**
+### 1️⃣  Access AI Agents
 
-**Folder Assignment**:
-- **Dropdown Menu**: "Select a folder" to organize agents by project or category
-- **Purpose**: Group related agents for better management
-- **Options**: Choose from existing folders or create new ones
+1. Open the dashboard.
+2. Click **AI Agents** in the sidebar.
+3. Click **Add Agent**.
 
-![General](/images/ai/AI-agent/edit/general/folder.png)
+---
 
-**GHL Location**:
-- **Integration Setting**: Connect to specific GoHighLevel locations
-- **Current Example**: "AI Sync Dev" 
-- **Function**: Links agent to your CRM and location-specific data
+### 2️⃣  Configure Your Agent
 
-![General](/images/ai/AI-agent/edit/general/location.png)
+Agent setup is organized into several tabs, starting with "General". This guide walks you through the key components found in the General tab.
 
-## 👋 Welcome Message
+---
 
-Configure how your AI agent starts conversations. Use this setting to control whether the agent greets users proactively or waits for users to speak first—helping you tailor the experience to your specific workflow or customer journey.
+## ⚙️  General Settings
 
-**Purpose:**  
-Choose the initiation style that best fits your use case:
-- If you want the agent to welcome users and guide the conversation from the start, select an AI-initiated greeting.
-- If you prefer the agent to remain silent until the user engages, select the user-initiated option.
- **🎯 Initiation Options**
+### 🆔 Agent Information
 
-- **AI Initiates (Dynamic Message):** The agent begins with an automatically generated greeting.
-- **AI Initiates (Custom Message):** The agent starts with your defined welcome message,"Hi, How's your day?"   .
-- **User Initiates:** The agent remains silent and only responds after the user speaks.
+- **Agent Name:** Set a unique display name for your agent  
+  ![Edit Name](/images/ai/AI-agent/edit/general/Edit-name.png)
+- **Status:** Toggle agent active/inactive  
+  ![Status Toggle](/images/ai/AI-agent/edit/general/status.png)
+- **Folder:** Organize agents into folders for easy management  
+  ![Folder Assignment](/images/ai/AI-agent/edit/general/folder.png)
+- **GHL Location:** Link the agent to a GoHighLevel account/location  
+  ![GHL Location](/images/ai/AI-agent/edit/general/location.png)
 
-Dynamic variables are supported for personalization in greeting messages.
+---
 
-![General](/images/ai//AI-agent/edit/general/welcome-message.png)
-## 💬 General Prompt
+### 📝 Prompt Configuration
 
-The General Prompt is where you define the core behavior, instructions, and conversational personality of your AI agent. It governs how your agent handles conversations, responds to various scenarios, and maintains consistency throughout all interactions.
+The heart of your agent’s intelligence—this is where you define instructions, greetings, behaviors, and flows.
 
-**🔧 Available Dynamic Variables**
+#### 🧩 Core Configuration Areas:
 
-A list of available dynamic variables is displayed at the top of the prompt configuration editor interface for easy reference:
+- **Project Instructions/Requests:**  
+  Define the main purpose, goals, and what the agent should do.
 
-```
-{{phone_number}} {{first_name}} {{last_name}} {{email_Address}} {{address}} {{city}} {{zip_code}} {{country}} {{hello_how_are_you_i_am_check_last_field_for_testing_layout_okay}} {{current_dateTime}} {{talk_meeting_opt}}
-```
+- **Welcome Message:**  
+  Configure how the agent starts every conversation.  
+  ![Greeting Message](/images/ai//AI-agent/edit/general/welcome-message.png)  
+  Choose dynamic or custom message greetings for inbound and outbound interactions. Dynamic variables personalize greetings, e.g. `{{first_name}}`.
 
-- Hovering over any variable in the editor may reveal its full text or usage tip.
+- **Prompt Configuration:**  
+  Define your agent’s main instructions, requests, and conversational logic—this shapes how it responds and acts.  
+  ![Project Prompt UI](/images/ai/AI-agent/edit/general/prompt.png)
+  You can copy and paste entire prompt sets if you want to reuse a setup across agents.  
+  Use dynamic variables (like `{{first_name}}`, `{{company}}`, and others) inside your prompts to personalize responses—these auto-fill with each contact’s actual data.
 
-![General](/images/ai//AI-agent/edit/general/prompt.png)
+- **Greeting :**  
+  Customize how your agent greets contacts for both outbound and inbound calls.  
+  ![Greetings UI](/images/ai/AI-agent/edit/general/greeting-phrase.png)
+  In the "Greetings" section, you can set a different greeting phrase for outbound scenarios. For example:  
+  ```
+  ➔ "Hi {{first_name}}, this is Sarah from Orbit, warm hello!"
+  ```
+  The interface supports dynamic variables such as `{{first_name}}` to further personalize greetings.  
+  Use the **Expand** button to view or edit more complex greeting templates and see all available tags.
 
-**⚙️ Prompt Configuration Interface**
 
-The prompt editor features a full-width text area for entering detailed instructions or requests that guide your agent’s personality and workflow.
-- A dropdown at the upper left allows you to select, save, or load multiple prompt versions for quick switching.
-- The top right displays the currently loaded prompt version with a timestamp.
-- After editing, click the “Save Prompt” button below the text area to store changes. 
+- **Call Flow:**  
+  Set up the exact call sequence your agent should follow (Introduction → Discovery → Offer → Close).  
+  ![Call Flow](/images/ai/AI-agent/edit/general/call-flow.png)
 
-This setup makes it easy to manage multiple prompt instruction sets for testing, experimentation, or different scenarios.
+- **Character and Style:**  
+  Give your agent a personality, tone, and behavioral traits.  
+  ![Character](/images/ai/AI-agent/edit/general/character.png)
+  Define how formal, casual, or playful your agent should be, including “human-like” fillers if needed.
 
-## 👋 Greeting Phrase
+- **Transfer Call:**  
+  Set up how and when the agent should transfer to a human, plus fallback instructions if no one answers.  
+  ![Transfer Call](/images/ai/AI-agent/edit/general/transfer-call.png)
 
-**Purpose:** How is the agent going to start every conversation
+- **Critical Instructions:**  
+  Add strict guidelines for agent behavior—keep conversations human-like, never reveal it is AI, safeguard sensitive info, and follow call rules.  
+  ![Critical instructions](/images/ai/AI-agent/edit/general/critical-instructions.png)
 
-The Greeting Phrase setting controls how your agent begins each conversation—either by greeting the user first or waiting for the user to speak. This shapes the initial user experience and sets the tone for the interaction.
+- **Allowed Custom Variables:**  
+  Specify metadata fields (from GoHighLevel or custom fields) the agent can use for personalization in any prompt, greeting, or message.  
+  Sample variables: `{{first_name}}`, `{{last_name}}`, `{{company}}`, `{{phone}}`, `{{email}}`, `{{current_dateTime}}`, `{{join_meeting_pin}}`.
+  ![Allowed custom variables](/images/ai/AI-agent/edit/general/allow-custom-variables.png)
 
- **🎯 Greeting Phrases Configuration**
+---
 
-The interface provides separate configuration for different conversation scenarios:
-
-**📞 Outbound Greeting Phrase**
-- **When used**: When the AI agent initiates contact with prospects
-- **Example**: `→ ~"Hey uh, {{first_name}}?"`
-- **Behavior**: `→ Wait for prospect to respond`
-- **Purpose**: Sets the tone for outbound calls and waits for the prospect's response
-
- **📱 Inbound Greeting Phrase**  
-- **When used**: When prospects initiate contact or call back
-- **Example**: `→ ~"Thanks for calling back, that's {{first_name}}, right?"`
-- **Behavior**: `→ Wait for prospect to respond`
-- **Purpose**: Acknowledges the caller and confirms their identity before proceeding
-
- **🔧 Dynamic Variables**
-Dynamic variables (like `{{first_name}}`) can be used to personalize greetings for each contact, making conversations feel more natural and tailored to the individual.
-
-![Greeting phrases](/images/ai/AI-agent/edit/general/greeting-phrase.png)
-## 🔁 Call Flow
-
-**Purpose:** Define the structured conversation sequence your AI agent should follow on every call
-
-Always follow the order: **Introduction → Discovery → Find out Drivers → Trial Close → Rebuttal & Close → Confirmation**.
-
-<details>
-<summary>See Call Flow Steps</summary>
-
-- **Move step by step—never skip steps.**
-- **Keep tone human, casual, and confident.**
-- Redirect back to the flow if the prospect goes off track.
-- **The goal is not just to “pitch” — but to secure the call safely and certainly.**
-</details>
-
-![Call Flow](/images/ai/AI-agent/edit/general/call-flow.png)
-
-**🎛️ Interface Features**
-
-- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
-- **Structured Format**: Clear, orderly display of call phases and instructions
-- **Professional Layout**: Easy reference for agent configuration
-
-
-## 🎭 Character
-
-**Purpose:** Define the AI agent's personality, speaking style, and behavioral characteristics
-
-The Character setting allows you to customize how your AI agent presents itself in conversations.
-
- **🎯 Character Configuration**
-
-The character configuration includes:
-
-- **Agent Identity**: Define the agent's name and role (e.g., "AGENT NAME" as an appointment-setting expert)
-- **Speaking Style**: Set the tone and manner of speech (casual, sharp, playful)
-- **Human-like Behaviors**: Include natural speech patterns like fillers ("um," "like," "you know," "totally")
-- **Role Definition**: Specify the agent's expertise and primary function
-- **Script Adherence**: Define when to follow scripts and when to adapt
-- **Call-to-Action**: Set the primary goal (e.g., booking appointments)
- 
- **🔧 Key Features**
-
-- **Resizable Interface**: The character configuration area can be expanded or collapsed as needed
-- **Rich Text Editing**: Full text area for detailed character descriptions
-- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
-
-![Character](/images/ai/AI-agent/edit/general/character.png)
-## 🔄 Transfer Call
-
-**Purpose:** Define agent behavior for transferring calls to a human before booking, including fallback and script details.
-
-The Transfer Call configuration ensures your AI agent always prioritizes a warm handoff to a human when a prospect is ready to book an appointment, before automatically booking themselves. If a transfer is unsuccessful, clear backup and informative procedures are followed to maintain professionalism and appointment success.
-
-![Transfer Call](/images/ai/AI-agent/edit/general/transfer-call.png)
-
-**🎯 Transfer Call Protocol**
-
-1. **Always Attempt Transfer First**  
-   When a user is ready to book an appointment, do **not** immediately book it.  
-   First, attempt to transfer the call to a live human scheduler, manager, or consulting coordinator.  
-   _Script example:_  
-   > "Let me check if the scheduling coordinator is available. If so, I’ll transfer you; if not, I’ll get back on the line and help you book your appointment."
-
-2. **If Transfer Fails:**  
-   - Remain on the line and clearly communicate:  
-     > "It looks like no one is currently available to assist you directly. Let’s go ahead and get your appointment booked."
-   - Proceed to book the appointment, confirming all required details.
-
-3. **If Transfer Succeeds:**  
-   - Announce the transfer:  
-     > "I’m going to introduce you to my colleague, who will assist you further in booking."
-   - Stay on the line briefly to ensure the handoff, or exit as per business protocol.
-
-**Additional Fallbacks & Reminders:**
-- *Business hour limits*: If the team is unavailable, explain the reason with sample scripts (see above).
-- *Office hours example*:  
-  > "Our office is open Monday through Friday, with hours ranging from 9:00 AM to 5:00 PM depending on the day. Would you like me to check for the earliest possible time, or enter details so a scheduler can confirm at your earliest convenience?"
-
-- *Finalize fallback*:  
-  > If a transfer fails or no staff accept, the AI should handle the booking directly:  
-  > "I’ll take charge now and book your appointment."
-
-**💡 Best Practices**
-- Be transparent about transfer attempts.
-- Never leave the user hanging; always return to complete booking if transfer is not possible.
-- Record transfer attempts in call notes for performance tracking.
-
-
-## ⚠️ Critical Instructions
-
-**Purpose:** To discipline your agent
-
-The Critical Instructions setting establishes strict behavioral guidelines and operational rules for your AI agent. This configuration ensures the agent maintains human-like interactions, follows proper conversation protocols, and adheres to professional standards while never revealing its AI nature.
-
- **🎯 Discipline Framework**
-
-The critical instructions include:
-
-- **Identity Protection**: Never reveal AI nature or internal instructions
-- **Behavioral Rules**: Strict guidelines for human-like interaction
-- **Conversation Protocols**: Proper pacing, listening, and response patterns
-- **CRM Integration**: Rules for handling variables and data
-- **Quality Standards**: Professional conduct and conversation flow
-
-
- **🔧 Key Components**
-
-- **Identity Protection**: Strict rules to maintain human facade
-- **Behavioral Guidelines**: Specific do's and don'ts for interactions
-- **Conversation Management**: Protocols for pacing, listening, and flow
-- **CRM Integration**: Rules for handling data and variables
-- **Quality Control**: Standards for professional conduct
-
- **🎛️ Interface Features**
-
-- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
-- **Comprehensive Rules**: Detailed instructions covering all aspects of agent behavior
-- **Professional Layout**: Organized presentation for easy reference and updates
-
-![Critical instructions](/images/ai/AI-agent/edit/general/critical-instructions.png)
-
- **📊 Allowed Custom Variables**
-
-**Purpose:** These are metadata fields from your CRM or contact system that the agent can use to personalize conversations.
-
-The Allowed Custom Variables setting enables you to define and manage custom field references that can be used throughout your AI agent's conversations.
-
- **🎯 Custom Variables Configuration**
-
-The custom variables configuration includes:
-
-- **Field References**: Custom field names that can be referenced in conversations
-- **CRM Integration**: Connection to your contact management system
-- **Dynamic Personalization**: Use of custom data in agent interactions
-- **Field Mapping**: Setup through the "Manage" section's custom fields
-- **Variable Usage**: Integration into prompts, greetings, and conversation flows
-
- **📝 Setup Instructions**
-
-```
-Custom Field References
-
-Copy and paste from the above into this section after the fields are mapped in the "setup custom fields" under Manage
-```
-
-**🔧 Key Components**
-
-- **Custom Field References**: Names of fields that can be used as variables
-- **CRM Mapping**: Connection to your contact database
-- **Dynamic Integration**: Use of custom data in conversations
-- **Setup Process**: Configuration through the Manage section
-- **Variable Syntax**: Proper formatting for custom field references
-
- **🎛️ Interface Features**
-
-- **Resizable Text Area**: Expandable input field for custom variable definitions
-- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
-- **Clear Instructions**: Built-in guidance for proper setup and usage
-- **Professional Layout**: Clean, organized presentation for easy configuration
-
-![Allowed custom variables](/images/ai/AI-agent/edit/general/allow-custom-variables.png)
-
-
-## 🏷️ Custom Field References
+### 🏷️ Custom Field References
 
 <img
   src="/images/ai/AI-agent/edit/general/custom-field-references.png"
@@ -273,106 +110,40 @@ Copy and paste from the above into this section after the fields are mapped in t
   className="rounded-lg border shadow-sm"
 />
 
-**Purpose:** Provide easy access for referencing and inserting custom fields into agent scripts, call notes, and automation templates.
+- Easily reference and insert field tags (e.g., `{lead.firstName}`, `{appointment.time}`) into scripts, messages, and notes.
+- Copy-paste variables to personalize any dialog line.
+- Use curly braces `{field}` for all variable tags.
+- Includes one-click copy, context hints, and a collapsible interface.
 
-The **Custom Field References** section allows you to conveniently copy and paste variable tags representing personalized fields—like `{lead.firstName}`, `{appointment.time}`, `{custom.notes}`—directly into your instructions or response templates. This ensures consistent personalization and accurate data population throughout your AI agent's workflow.
+---
 
-**How to Use:**
-- In the "Custom Field References" area, locate the field variable you wish to use (e.g., `{contact.phone}`).
-- Copy the desired reference.
-- Paste it anywhere in the agent instructions or script sections where dynamic data is required.
-- The platform will automatically replace these tags with real data during live calls and automations.
+### 🏢 What Does Your Company Do
 
-> **Tip:** Always use the curly-brace format (e.g., `{field_name}`) for custom fields to ensure proper data mapping.
+Configure how agents answer “What does your company do?” and similar questions about your business’s value proposition.
 
-**Example Workflow:**
-- Use `{lead.firstName}` to greet the user by name in a script.
-- Insert `{appointment.link}` in confirmation messages for direct calendar access.
-- Add `{custom_field}` in internal notes or post-call summaries for additional personalization.
-
-**Interface Features:**
-- Dedicated section labeled **"Custom Field References"** as shown in the screenshot above.
-- Scrollable and collapsible area for easy navigation through available fields.
-- One-click copy button for each field variable.
-- Contextual hints for each reference to describe its source and usage.
-
-_Centralize all custom field references here to streamline instruction setup, script writing, and ensure bulletproof personalization in all agent-driven communications._
-
-
-
-## ❓ What Does Your Company Does
-
-**Purpose:** Problems that you solve with your unique value proposition
-
-The "If Asked" section provides structured guidance for how your AI agent should respond when prospects ask about your company's services. This configuration ensures consistent, compelling responses that highlight your unique value proposition while naturally guiding conversations toward booking appointments.
-
- **🎯 Response Framework**
-
-When asked 'What does your company do?' you must respond naturally and conversationally, never robotic.
-
-The response configuration includes:
-
-- **Problem Identification**: How to identify and articulate customer pain points
-- **Solution Presentation**: Clear explanation of your company's offerings
-- **Value Demonstration**: Benefits and results your company delivers
-- **Call-to-Action**: Natural pivot to booking a strategist call
-- **Conversation Flow**: Maintaining natural, non-robotic dialogue
-
-**📝 Example Response Structure**
-
-```
-Example Structure:
-
-Problem / Pain → "Most [industry / business owners / teams] struggle with..."
-Solution → "We help by [what your company enables / automates / improves]..."
-Result → "That way they [benefit / save time / make more money / scale faster]."
-Pivot → "But honestly the best way to see it is on a quick strategist call."
-
-Sample Templates:
-~"We build AI tools that handle the boring parts of outreach and follow-up. That way business owners don't lose leads and can close deals faster. Honestly though, it's easier to just show you live on a strategy call — that way you'll see exactly how it works."
-
-Golden Rules:
-• Keep it short (10-15 seconds max).
-• Always make the company sound simple, valuable, and easy to understand.
-• Always pivot back to the strategist call.
-```
-
-**🔧 Key Components**
-
-- **Problem/Pain Framework**: Starting with customer challenges
-- **Solution Clarity**: Simple explanation of your offerings
-- **Result Focus**: Emphasizing benefits and outcomes
-- **Natural Pivot**: Seamless transition to booking calls
-- **Time Management**: Keeping responses concise and engaging
-
-*🎛️ Interface Features**
-
-- **Collapsible Section**: Use the "Collapse" button to minimize the interface when not in use
-- **Resizable Text Area**: Expandable input field for response templates
-- **Structured Format**: Clear organization of response components
-- **Professional Layout**: Clean presentation for easy reference and updates
-
+- Use a simple, conversational format:  
+  - **Problem** / Pain → “Most [industry] struggle with…”  
+  - **Solution** → “We help by…”  
+  - **Result** → “So you…”  
+  - **Pivot** → “The best way to see it is on a quick strategy call.”
+- Keep answers short (10–15 sec) and guide conversation naturally toward your desired next step.
+- Example template:  
+  ~ "We build AI tools that handle the boring parts of outreach and follow-up. That way business owners don't lose leads and can close deals faster. Honestly though, it's easier to just show you live on a strategy call — that way you'll see exactly how it works."
+- Collapsible editor, structured format, and room for multiple response templates.
 ![If asked what does your company do](/images/ai/AI-agent/edit/general/if-asked.png)
 
-## 📞 Script
+---
 
-**Purpose:** Define the exact call sequence—what the AI agent says, and when.
+### 📜 Script
 
-The Script section specifies the precise script your AI agent will follow during calls. By setting the line-by-line order, you ensure your agent delivers a natural, consistent, and effective conversation every time.
+Define the step-by-step call flow and script the agent will follow:
 
-**🎯 Script Structure**
+- Start with greeting and introduction
+- Proceed to qualification, discovery, and booking phases
+- Use a tilde `~` to begin each line for clarity
+- Drag-and-drop ordering, color-coded phases, and a collapsible script editor panel
 
-The script flow covers these key phases:
-
-1. **Greeting**: Agent opens the call and introduces themselves and your company.
-2. **Intro**: Agent establishes rapport and sets the intent for the conversation.
-3. **Discovery**: Agent asks questions to understand the prospect’s needs and situation.
-4. **Demo Pre-Frame**: Agent transitions to position the value of a strategy/demo call.
-5. **No-Flake Close**: Agent confirms the prospect’s commitment to attend and reduces the chance of no-shows.
-6. **Commitment Building**: Reinforces prospect buy-in and agreement.
-
-**✍️ Script Example**
-
+Example script:
 ```
 ~ Hi, this is [Agent Name] calling from [Company]. How are you today?
 ~ The reason for my call is to see if you’re open to a quick chat about [value proposition/solution].
@@ -382,131 +153,64 @@ The script flow covers these key phases:
 ~ To make sure you get the most out of it, is there anything specific you’d like us to cover?
 ~ Amazing. I’ve booked you in and will send you a confirmation—looking forward to our chat!
 ```
-
-**🎛️ Interface Features**
-
-- **Collapsible Section**: Minimize the script editor for a cleaner workspace.
-- **Script Lines**: Enter/edit each line with a tild (~) as the line marker in your script.
-- **Drag-and-Drop Ordering**: Change the sequence by dragging script lines up or down.
-- **Clear Visual Phases**: Script grouped and color-coded for each call phase.
-- **Professional Layout**: Designed for easy editing and quick reference.
-
 ![Call script flow](/images/ai/AI-agent/edit/general/call-script-flow.png)
 
-## 🛡️ Objection Handling
+---
 
-**Purpose:** Equip your AI agent with ready-to-use, strategic responses for common objections encountered during calls.
+### 🛡️ Objection Handling
 
-The Objection Handling interface allows you to customize exactly what your agent says when faced with typical pushbacks, questions, or resistance. It helps ensure your AI responds smoothly and keeps conversations on track—no matter the objection.
+Train your AI agent with strong, ready-to-use responses for the most common objections.  
+- Editable objection-response pairs
+- Copy to clipboard and search/filter features
+- Structure by topic (e.g., “Not interested”, “What is this?”, “Already work with someone”, etc.)
 
-**🎯 Objection Handling Tactics**
-
-Below is a sample library of objection-response pairs (customize these to fit your scenarios):
-
-| **Objection** | **Response Example** |
-|---|---|
-| “Not interested” | “Totally understand. A lot of business owners said the same before they saw the real impact of a quick strategy session. If a qualified expert could show you exactly how others are getting results, would you be open to a quick call?” |
-| “What is this about?” | “Good question. Based on what I see, your company is similar to others getting [X] value from our solution. I wanted to introduce myself and see if a 10-minute call is worthwhile, just to show you what that looks like—no obligations.” |
-| “Send me something.” | “Absolutely! Is email best? I’ll send you a quick overview, and would it make sense to connect for 10 minutes after you had a chance to review?” |
-| “We already work with someone” / “We’re happy with our current provider” | “That’s great. Many of our clients started out the same way, but found a different perspective refreshing. If what you’re doing is working, that’s awesome—I’d still love to show you another approach that might unlock even more.” |
-| “I don’t have time” | “Of course. That’s why we keep these calls super concise, just 10 minutes, and you’ll be the judge if it’s worth taking further. Should I check next week for a window?” |
-| “Too expensive” | “I get it, cost matters. Most find a quick chat actually saves more than it costs, especially after seeing how [real benefit] can directly impact your [team/revenue/efficiency].” |
-| “Not a priority” | “Understood—a lot going on! I’ll reach out in a few weeks, or would you prefer I send helpful insights about how we help businesses like yours?” |
-| “Need to check with my team/partner” | “Makes perfect sense. Would it help if everyone joined a short call, even just to see if it’s worth a closer look?” |
-| “How did you get my info?” | “Great question—your details came from [public site/referral]. We only reach out to those who’ve shown a need for what we offer. If you’d like to be removed, just let me know.” |
-| “What exactly do you do?” | “In short, we solve [industry pain point] for teams like yours—giving you qualified appointments and live contacts on autopilot, without extra hiring or overhead. Would a brief call make sense to see if this could work for you?” |
-
-> **Tip:** Tailor the response library for your industry and most frequent objections for even more natural, effective handling.
-
-**🎛️ Interface Features**
-
-- **Collapsible Section**: Instantly show/hide all objection handling templates for a cleaner workspace.
-- **Structured Layout**: Each objection clearly paired with its response for fast updates and accurate handling.
-- **Copy to Clipboard**: Quickly grab and paste responses as needed.
-- **Searchable**: Fast filtering to find objection topics instantly.
+| **Objection**        | **Example Response** |
+|----------------------|---------------------|
+| Not interested       | "Totally understand. A lot of business owners said the same..." |
+| What is this about?  | "Good question. Based on what I see, your company..."          |
+| Send me something.   | "Absolutely! Is email best? I'll send you a quick overview..." |
+| …                    | …                                                         |
 
 ![Objection Handling](/images/ai/AI-agent/edit/general/objective-response.png)
 
+---
 
-## 📅  Booking Flow 
+### 📅 Booking Flow
 
-**Purpose:** Define and configure the complete appointment booking sequence and GoHighLevel (GHL) calendar integration for your AI agent.
+Set up the entire appointment booking workflow:
 
-The Appt Booking Flow for GHL interface equips your AI agent with a scripted, step-by-step process for managing bookings via GoHighLevel’s calendar system. It ensures real-time availability checks, correct time zone handling, and automated confirmation—creating a smooth, professional scheduling workflow.
-
-**🎯 Booking Process Flow**
-
-The appointment booking steps include:
-
-- **Calendar Sync**: Direct API-based integration with the GoHighLevel calendar
-- **Availability Querying**: Instantly checks up-to-date open slots
-- **Time Zone Logic**: Ensures all times are accurate for the prospect’s local zone
-- **Slot Selection**: Lets the agent present bookable times and capture the customer’s preferred time
-- **Booking Execution**: Automatically secures the chosen slot
-- **Confirmation & Reminders**: Sends confirmation message and optional calendar reminders, updating both agent and prospect
-
-**🎛️ Interface Features**
-
-- **Collapsible Details Panel**: Use the "Collapse" button to show/hide detailed script and configuration controls
-- **Scripted Booking Steps**: Editable scripts for each phase—qualification, slot presentation, confirmation, and follow-up
-- **Drag-and-Drop Steps**: Reorder booking phases for maximum flow optimization
-- **Booking Logic Editor**: Configure fallback, error-handling, and alternate slot prompts for no-availability cases
-- **Quick Reference Layout**: Each booking script phase outlined for rapid updates and review
+- Syncs with GoHighLevel calendars
+- Automates qualification, slot presentation, confirmation, and reminders
+- Handles time zone logic and no-availability scenarios
+- Drag-and-drop reorderable steps, script editor, collapsible panel
 
 ![Appt booking flow for ghl](/images/ai/AI-agent/edit/general/appt-book-ghl.png)
 
-## ❓ FAQ / Knowledge Base
+---
 
-**Purpose:** Provide comprehensive answers to common questions, sharing office hours, and handle objections with pre-scripted, easy-to-access responses.
+### 📚 FAQ / Knowledge Base
 
-The FAQ / Knowledge Base / Objection Handling area is where you configure your agent’s full repository of common questions, business hours, and strategic objection-response scripts. These settings ensure your AI agent can address typical inquiries, clarify doubts, and professionally guide prospects throughout the conversation.
+Centralize common questions, business info, and responses for compliance, business hours, objections, etc.
 
-**🎯 Knowledge Base Structure**
-
-The FAQ/Knowledge Base setup enables you to define:
-
-- **Office Hours**: List standard business hours, holidays, and any custom schedules the agent should reference.
-- **Common Questions**: Store scripted responses to the most frequent user questions—editable and expandable.
-- **Objection Handling**: Add targeted responses to typical objections encountered on calls.
-- **Company Details**: Provide service descriptions, location, staff, specialties, or any info relevant to your brand.
-- **Compliance/Legal Statements**: Include regulatory, privacy, or legal policies to be referenced as needed.
-
-**How it Works:**
-- The main interface (see screenshot below) enables direct entry or editing of all Knowledge Base content in a rich text area.
-- Input office hours at the top, followed by questions and answers, and label objections with clear headers.
-- Questions can be formatted in markdown or plain text for organization and clarity.
-- All data is saved and referenced live by your agent—updates take effect instantly after saving.
-
-**🎛️ Interface Features**
-
-- **Collapsible Section**: Collapse/expand for a cleaner view at any time
-- **Single Panel Editing**: All FAQ, office hours, and objection scripts are accessible in one unified panel
-- **Markdown/Plain Text Support**: Allows organized headers, bullet points, and code-style formatting for precision
-- **Comprehensive Coverage**: Enter as many questions, answers, and scenarios as you need
-- **Professional Presentation**: Content is formatted for clarity and fast comprehension by both admins and end users
+- Markdown/Plain Text support
+- Edit in a single unified panel
+- Live reference for your AI agent
+- Collapsible for a clean workspace
 
 ![Faq knowledge base objection handling](/images/ai/AI-agent/edit/general/FAQ.png)
 
+---
 
-## 🔘 Action Buttons
 
-**💾 Save**
-- **Function**: Preserve all current configuration changes
-- **Usage**: Click after making any modifications
+- **💾 Save:** Save current prompt configuration  
+  ![Save](/images/ai/AI-agent/edit/general/save.png)
+- **Override:** Update the current version immediately    
+  ![General](/images/ai//AI-agent/edit/general/save-functions.png)
+- **New Version:** Create a backup before applying changes  
+  ![General](/images/ai/AI-agent/edit/general/new-version.png)
+- **Load Prompt:** Select from saved prompts  
+- **Delete Prompt:** Remove old or unwanted prompts
 
-![General](/images/ai/AI-agent/edit/general/save.png)
+   - Use Save to apply changes, or create a new version as a backup (supports rollback capability and experimentation).
 
-The Save button interface allows you to preserve all configuration changes made to your agent settings. The interface typically includes both "Save" and "New Version" options, enabling you to either update current settings or create versioned backups before making significant changes.
-![General](/images/ai//AI-agent/edit/general/save-functions.png)
-
-**Save Functions** - Multiple options to protect your work:
-
-- **Override** - Update your current agent settings immediately
-- **New Version** - Create a backup copy before making changes
- 
- ![General](/images/ai/AI-agent/edit/general/new-version.png)
-
-**New Version Creation** - The "New Version" option creates a backup copy of your current agent configuration before applying changes. This allows you to:
-
-- **Preserve Working Configurations** - Keep a stable version while experimenting with new settings
-- **Rollback Capability** - Easily revert to previous versions if needed
+---

@@ -1,10 +1,11 @@
 ---
 title: "Voice & Language"
-description: "Configure your AI agent's voice, language, and audio settings"
 icon: "microphone"
 ---
 
-Configure your AI agent's voice, language, and audio settings for optimal customer interactions.
+
+
+Configure your AI agent’s voice, language, AI model, and audio background for precise, natural-sounding conversations.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/overview.png"
@@ -12,9 +13,11 @@ Configure your AI agent's voice, language, and audio settings for optimal custom
   className="rounded-lg border shadow-sm"
 />
 
+---
+
 ## 🤖 AI Model Selection
 
-Choose the AI model that powers your agent's responses.
+Select the AI model to power your agent’s speech and conversations.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/available-models.png"
@@ -23,22 +26,27 @@ Choose the AI model that powers your agent's responses.
 />
 
 **Available Models:**
-
 - **GPT 5** ($0.04/min)
-- **GPT 5 mini** ($0.012/min)
-- **GPT 5 nano** ($0.003/min)
+- **GPT 5 Mini** ($0.012/min)
+- **GPT 5 Nano** ($0.004/min)
 - **GPT 4.1** ($0.045/min)
-- **GPT 4 mini** ($0.016/min)
+- **GPT 4.1 Mini** ($0.016/min)
 - **GPT 4.1 Nano** ($0.004/min)
 - **Claude 4.5 Sonnet** ($0.06/min)
 - **Claude 4.0 Sonnet** ($0.06/min)
-- **Claude 3.5 Sonnet** ($0.02/min)
+- **Claude 3.5 Haiku** ($0.02/min)
 - **Gemini 2.5 Flash** ($0.035/min)
 - **Gemini 2.5 Flash Lite** ($0.006/min)
 
-## 🎙️ Voice Configuration
+*Tip: Model quality/price varies — higher-tier models sound more natural and understand context better.*
 
-Select and customize your AI agent's voice characteristics.
+---
+
+## 🎙️ Voice Settings
+
+Personalize how your agent sounds and speaks.
+
+### 1️⃣ Voice Selection
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-selection.png"
@@ -46,8 +54,9 @@ Select and customize your AI agent's voice characteristics.
   className="rounded-lg border shadow-sm"
 />
 
-### Voice Selection
-Filter by gender (Male/Female), accent (American/British), and provider (Eleven Labs/Deepgram/OpenAI).
+- Choose from a library of voices.
+- Filter by gender (Male/Female), accent (American/British/Other), or provider (Eleven Labs, Deepgram, OpenAI).
+- Preview voice samples before saving.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-lists.png"
@@ -55,13 +64,18 @@ Filter by gender (Male/Female), accent (American/British), and provider (Eleven 
   className="rounded-lg border shadow-sm"
 />
 
-**Popular Voices:**
-- **Adam** (British, Male) - Professional, authoritative
-- **Dorothy** (British, Female) - Clear, friendly
-- **Nova** (American, Female) - Warm, experienced
-- **Billy** (American, Male) - Energetic, casual
+**Examples:**
 
-### Voice Settings
+| **Voice**   | **Accent**    | **Gender** | **Description**            |
+|-------------|---------------|------------|----------------------------|
+| Adam        | British       | Male       | Professional, authoritative|
+| Dorothy     | British       | Female     | Clear, friendly            |
+| Nova        | American      | Female     | Warm, experienced          |
+| Billy       | American      | Male       | Energetic, casual          |
+
+---
+
+### 2️⃣ Voice Configuration
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-setting.png"
@@ -69,40 +83,34 @@ Filter by gender (Male/Female), accent (American/British), and provider (Eleven 
   className="rounded-lg border shadow-sm"
 />
 
-Adjust voice parameters:
-- **Speed** (0.00-2.00): Control speaking pace
-- **Temperature** (0.00-2.00): Adjust expressiveness
-- **Volume** (0.00-2.00): Set audio level
+- **Speed:** 0.00–2.00 — Controls how quickly the agent speaks.
+- **Temperature:** 0.00–2.00 — Adjusts expressiveness and tone.
+- **Volume:** 0.00–2.00 — Sets audio loudness.
 
-## 🌍 Language Settings
+Fine-tune each to match your brand and scenario. 
 
+---
 
+### 3️⃣ Language
 
-You can configure your AI agent to speak in virtually any language, making it easy to customize for your audience and region.
-
-> *Select from a wide array of languages including English, Japanese, Portuguese, French, Chinese, Russian, Italian, and more. You may also choose "Multiple Languages" to enable real-time multilingual support.*
+Set your agent’s speaking language.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/languages.png"
-  alt="Language Selection Interface, showing many available languages including Japanese, Portuguese, French, Chinese, Russian, Italian"
+  alt="Language Selection Interface"
   className="rounded-lg border shadow-sm"
 />
 
-**Examples of Available Languages:**
-- **English (United States)** – Default, American conventions
-- **Japanese (Japan)**
-- **Portuguese (Portugal / Brazil)**
-- **French (France)**
-- **Chinese (China)**
-- **Russian (Russia)**
-- **Italian (Italy)**
-- **Spanish (Spain)**
-- *(and many more)*
+- **Primary language:** Choose from English, Spanish, French, German, Japanese, Portuguese, Chinese, Russian, Italian, and more.
+- **Multiple languages:** Enable real-time multilingual support.
 
+> *For example: “English (US)”, “Spanish (ES)”, “French (FR)” etc.*
 
-## 🎵 Background Sound
+---
 
-Add ambient audio to enhance the conversation experience.
+### 4️⃣ Background Sound
+
+Add ambient audio for a professional, human-like feel.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/background-sound.png"
@@ -110,12 +118,12 @@ Add ambient audio to enhance the conversation experience.
   className="rounded-lg border shadow-sm"
 />
 
-**Sound Options:**
-- **Clean White Noise** - Professional, subtle masking
-- **Office Chatter** - Business environment ambiance
-- **Cafe Ambience** - Warm, casual atmosphere
-- **Event Hall** - Spacious venue feeling
-- **Open Air** - Natural outdoor sounds
+**Options include:**
+- **Clean White Noise** — subtle, professional
+- **Office Chatter** — business environment
+- **Cafe Ambience** — casual, friendly
+- **Event Hall** — wide, open atmosphere
+- **Open Air** — natural outdoor sounds
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/background-sound-volume.png"
@@ -123,15 +131,20 @@ Add ambient audio to enhance the conversation experience.
   className="rounded-lg border shadow-sm"
 />
 
-**Volume Control:** Adjust from 0.0-2.0 (recommended: 0.2-0.6)
+**Volume:** 0.0–2.0 (recommended: 0.2–0.6)  
+Control the sound background level for clarity without distraction.
 
-## 🎯 Quick Setup Examples
+---
 
-**Professional Services:**
-- Model: GPT 4o, Voice: Adam (British), Language: English (UK), Background: Office Chatter (0.3)
+## ⚡ Quick Setup Checklist
 
-**Customer Support:**
-- Model: GPT 4o Mini, Voice: Dorothy (British), Language: English (US), Background: Clean White Noise (0.2)
+| **Use Case**            | **Model**           | **Voice**        | **Language**     | **Background**           |
+|-------------------------|---------------------|------------------|------------------|--------------------------|
+| Professional Services   | GPT 4.1             | Adam (British)   | English (UK)     | Office Chatter (0.3)     |
+| Customer Support        | GPT 4.1 Mini        | Dorothy (British)| English (US)     | Clean White Noise (0.2)  |
+| Creative Services       | Claude 4.5 Sonnet   | Lily (American)  | English (US)     | Cafe Ambience (0.4)      |
 
-**Creative Services:**
-- Model: Claude 3.7 Sonnet, Voice: Lily (American), Language: English (US), Background: Cafe Ambience (0.4)
+---
+
+- Use **Voice & Language** settings to make your agent sound on-brand and natural for any demographic or context.
+- Adjust background and voice parameters for the best customer experience.

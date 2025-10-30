@@ -1,91 +1,86 @@
 ---
 title: "AI Knowledge Base"
-description: "Manage your AI knowledge base with status tracking and renewal management for optimal AI performance"
 icon: "database"
 ---
 
-## 📚 Knowledge Entry Management
+The Knowledge Base Module enables you to create and manage organized knowledge repositories for your AI agents. By adding web pages, text documents, and uploaded files, you can provide your AI agents with the context and information they need to answer questions and deliver accurate responses.
 
-### ➕ Add Knowledge Base
+<img src="/images/ai/knowledge-base/overview.png" alt="Knowledge Base Actions" className="rounded-lg border shadow-sm" />
 
-Create new knowledge bases using the "Add" button for expanding your AI training data.
+## 📋 Knowledge Base List View
 
-![Knowledge Base Creation Interface](/images/ai/knowledge-base/add-btn.png)
+The knowledge base management page displays a table with these columns:
+- **Name**: Custom name you’ve assigned to the knowledge base
+- **Status**: Current processing status (in progress, completed, etc.)
+- **Renewal At**: Renewal or billing date (shows if usage is chargeable)
+- **Created At**: Date when the knowledge base was originally created
+- **Actions**: Edit and delete controls
 
-The knowledge base creation form includes:
+### 📝  Access Knowledge Base
 
-- **Name Field** - Enter a descriptive name for your knowledge base
-- **Document Section** - Upload training documents using the "+ Add" button
-  - Click "+ Add" to browse and select documents
-  - Multiple documents can be added to a single knowledge base
-- **Form Controls**:
-  - **Submit** - Save and create the knowledge base
-  - **Back** - Return to the previous screen without saving
+- Open the main dashboard.
+- Click **Knowledge** in the sidebar navigation.
+- Your existing knowledge bases will appear in a table.
 
-![Knowledge Base Form Interface](/images/ai/knowledge-base/overview.png)
+### ➕   Create New Knowledge Base
 
-### 🖥️ Knowledge Base interface
+1. Click the **Add** button.
+2. Fill in the form:
+    - **Name**: Enter a unique, descriptive name.
+    - **Document**: Choose how to add content:
+        - **Add Web Pages**: Extract content directly from a website URL.
+        - **Add Text**: Create a custom text document in-app.
+        - **Upload Files**: Add PDFs, Word documents, TXT, etc.
+        <img src="/images/ai/knowledge-base/add-knowledge-base.png" alt="Knowledge Base Actions" className="rounded-lg border shadow-sm" />
+3. Click **Submit** to create the new knowledge base.
 
-- **#** - Sequential entry identifier
-- **Name** - Knowledge entry name (e.g., "QAtest", "QA test2")
-- **Status** - Current progress status (in_progress, completed, etc.)
-- **Renewal At** - Renewal date behavior:
-  - **Date displayed**: System will automatically renew for the next month and charge your account
-  - **Empty/Not displayed**: Free usage within your package limits
-- **Created At** - Entry creation timestamp
-- **Action** - Delete option for entry removal
+### 📄   Add Content to Knowledge Base
 
-![Knowledge Base Management Interface](/images/ai/knowledge-base/add-knowledge-base.png)
+#### 🌐 Option 1: Add Web Pages
+1. Select **Add Web Pages** from the dropdown.
+2. Enter the complete web URL (e.g., https://www.example.com/).
+3. Click **Submit** to extract and import the content.
+<img src="/images/ai/knowledge-base/add-doc-web-page.png" alt="Knowledge Base Actions" className="rounded-lg border shadow-sm" />
+#### 📝 Option 2: Add Text Documents
+1. Select **Add Text** from the dropdown.
+2. Enter a **File Name** as a descriptive title.
+3. Enter **Text Content**—the information to store.
+4. Click **Submit** to save.
+<img src="/images/ai/knowledge-base/add-text.png" alt="Knowledge Base Actions" className="rounded-lg border shadow-sm" />
 
-### 🏷️ Knowledge Base Naming
 
-**Knowledge Base Name:**
-- **Descriptive** - Use clear, specific names (e.g., "Customer Support FAQ", "Product Training")
-- **Consistent** - Follow naming conventions across your organization
-- **Searchable** - Include relevant keywords for easy identification
-![Add Web Pages to Knowledge Base](/images/ai/knowledge-base/add-doc-web-page.png)
-![Add Web Pages to Knowledge Base](/images/ai/knowledge-base/add-text.png)
 
-Adding new knowledge is easy and user-friendly! When creating a knowledge base, you can bring in both documents and web page content:
 
-- **To add web pages:** Click **Add Web Pages** in the Document section. Paste any web URLs into the **URL Address** field. Our system will automatically fetch and process the content from each page for you. This means you can quickly expand your knowledge base with helpful online articles, documentation, or any web resources—always keeping your AI up-to-date.
+## ✏️ Edit Knowledge Base
+1. Click the **Edit** (✏️) button next to any existing knowledge base.
+2. View the list of current documents, web pages, and uploaded files.
+3. Add new content using the methods above.
+<img src="/images/ai/knowledge-base/edit-knowledge-base.png" alt="Knowledge Base Actions" className="rounded-lg border shadow-sm" />
+4. Click **Submit** to save changes.
 
-- **To add text documents:** Click **+ Add** to upload files from your computer. You can select PDFs, Word docs, text files, and more. Multiple files can be uploaded at once, so it’s fast to import all your important knowledge.
+### ⚙️ Document Actions
 
-**Why you'll love it:**
-- **Multi-format support:** Upload a wide range of file types.
-- **Batch upload:** Add several files or URLs at the same time.
-- **Persistent storage:** Everything you upload will always be accessible in your knowledge base for future use and organization.
+#### ⬇️ Download Documents
+- Click the **Download** button beside a document to export it as a file. Useful for backup or review.
 
-### ✏️ Edit Knowledge Base
+#### 🗑️ Delete Documents
+- Click the **Delete** button beside a document and confirm. The document will be removed from the knowledge base.
 
-Modify existing knowledge bases through the edit interface to update training data and configurations.
 
-![Knowledge Base Edit Interface](/images/ai/knowledge-base/edit-knowledge-base.png)
+## 📚 Content Types
 
- 
+### 🌐 Web Pages
+- **Purpose**: Pull in up-to-date content directly from specific web pages.
+- **Use Case**: Add product documentation, support pages, FAQs, or company info from your website.
+- **Auto Refresh**: The extracted content can update automatically when source web pages change.
+- **Format**: Extracted text from HTML content.
 
-**Name Field** - Update the knowledge base name with descriptive, searchable titles
+### 📝 Text Documents
+- **Purpose**: Write and store your own knowledge entries.
+- **Use Case**: Internal policies, procedures, scripts, and FAQs.
+- **Format**: Custom plain text with a filename for searchability.
 
-**Document Section** - Manage training documents and web content through multiple input methods:
-
-**Text Document Upload:**
-- **Multi-format Support** - Upload files directly from your computer
-  - Supports PDF, DOC, DOCX, TXT, RTF, and other text formats
-  - Maximum file size limits apply based on your plan
-- **Batch Upload** - Add multiple documents simultaneously for efficient processing
-- **Document Management** - Save, download, or remove documents as needed
-  - Download documents to your device for backup or sharing
-  - Remove outdated or irrelevant training materials
-
-**Web Page Integration:**
-- **URL Processing** - Add web content by entering URLs
-  - Automatically extracts and processes web page content
-  - Ideal for incorporating online documentation, articles, or knowledge resources
-  - Real-time content updates when web pages change
-- **Content Validation** - System verifies URL accessibility and content quality
-
-**Retell AI Integration:**
-- **Direct Management** - Add, delete, and download documents directly from Retell AI platform
-- **Synchronization** - Changes sync automatically across all connected systems
-- **Version Control** - Track document updates and maintain content history
+### 📎 Uploaded Files
+- **Purpose**: Add existing documents and knowledge files.
+- **Use Case**: Upload guides, presentations, manuals (PDF, DOCX, TXT, etc.).
+- **Format**: File is uploaded and its contents become searchable and usable by AI.

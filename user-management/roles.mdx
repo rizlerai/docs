@@ -24,7 +24,7 @@ The Roles management interface provides comprehensive control over user access a
 
 ## 📋 Role Information & Fields
 
-### Core Role Data
+### 🗂️ Core Role Data
 
 | Field | Description | Purpose | Format |
 |-------|-------------|---------|---------|
@@ -34,8 +34,7 @@ The Roles management interface provides comprehensive control over user access a
 | **👥 Assigned Users** | Number of users with this role | Usage monitoring | Numeric count |
 | **⚙️ Actions** | Available role operations | Role management controls | Edit/Delete/Permissions |
 
-### Role Management Actions
-
+### ⚙️ Role Management Actions
 
 <CardGroup cols={3}>
 <Card title="➕ Add Role" icon="plus">
@@ -65,7 +64,7 @@ The Roles management interface provides comprehensive control over user access a
 
 ## 🔐 Permissions Management
 
-### Comprehensive Permission Categories
+### 🗝️ Comprehensive Permission Categories
 
 The permissions interface provides granular control across 20+ system modules:
 <img src="/images/user-management/roles/permissions-1.png" alt="Permissions Management Interface" className="rounded-lg border shadow-sm" />
@@ -315,9 +314,52 @@ The permissions interface provides granular control across 20+ system modules:
 </Card>
 </CardGroup>
 
+<img src="/images/user-management/roles/permissions-4.png" alt="Permissions Management Interface" className="rounded-lg border shadow-sm" />
+<CardGroup cols={2}>
+  <Card title="🔄 Pipeline" icon="timeline">
+    **Permissions Available:**
+    - View Pipeline
+
+    **Use Case**: Control viewing access to sales or workflow pipelines
+  </Card>
+
+  <Card title="💼 Marketing" icon="megaphone">
+    **Permissions Available:**
+    - View Marketing
+
+    **Use Case**: View or analyze marketing data and campaigns
+  </Card>
+</CardGroup>
+
+<CardGroup cols={1}>
+  <Card title="📚 Knowledge Hub" icon="book">
+    **Permissions Available:**
+    - View Knowledge Hub
+    - Create Knowledge File
+    - Edit Knowledge File
+    - Delete Knowledge File
+    - Build Knowledge Hub
+    - Manage Knowledge File Assignments
+    - Manage Knowledge Hub Categories
+    - Admin Knowledge Hub
+    - Manage Knowledge Hub Column
+
+    **Use Case**: Control all operations and management within the Knowledge Hub, including file CRUD (Create, Read, Update, Delete), assignments, categorization, building, and admin tasks.
+  </Card>
+</CardGroup>
+
+<CardGroup cols={1}>
+  <Card title="🔎 Universal Search" icon="search">
+    **Permissions Available:**
+    - View Universal Search
+
+    **Use Case**: Access and use global platform-wide search capabilities
+  </Card>
+</CardGroup>
+
 ## 🔄 Role Management Workflow
 
-### Complete Workflow Process
+### 🧭 Complete Workflow Process
 
 ```mermaid
 graph TD
@@ -353,7 +395,7 @@ graph TD
     U --> V
 ```
 
-### Step-by-Step Role Creation
+### 📝 Step-by-Step Role Creation
 
 <Steps>
 <Step title="🎭 Access Roles Management">
@@ -413,9 +455,9 @@ graph TD
 </Card>
 </CardGroup>
 
-## 🔗 Integration Points
 
-### Related Features
+
+## 🔗 Related Features ##
 
 <CardGroup cols={2}>
 <Card title="👥 Users Management" icon="users">
@@ -442,4 +484,3 @@ graph TD
 **Purpose**: Analyze access patterns and security
 </Card>
 </CardGroup>
- 

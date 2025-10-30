@@ -1,12 +1,12 @@
 ---
 title: "Listing"
-description: "Configure and manage your intelligent AI agents for automated customer interactions"
 icon: "list"
 ---
-![Listing](/images/ai/AI-agent/listing/overview.png)
 
-## 🤖 What is AI Agent Listing Page?
+
 The AI Agent Listing page is your main dashboard for managing all your AI agents. It provides a comprehensive view of all agents, allows you to organize them into folders, and perform actions like testing calls, managing phone numbers, importing/exporting agents, and editing configurations.
+
+![Listing](/images/ai/AI-agent/listing/overview.png)
 
 ## 🗂️ Page Layout
 
@@ -18,6 +18,35 @@ The AI Agent Listing page is your main dashboard for managing all your AI agents
 
 ![Folders](/images/ai/AI-agent/listing/folder.png)
 
+#### ✨ Creating Folders
+1. Click **"+ Add"** in the Folders section
+2. Enter a descriptive folder name
+3. Click **"Save"** to create the folder
+4. The folder appears in the left sidebar
+
+![Create Folder](/images/ai/AI-agent/listing/adds.png)
+
+#### 🛠️ Managing Folders
+- **Edit Folder**: Click the three-dot menu (⋮) next to any folder
+- **Delete Folder**: Remove folder and its organization
+- **Reorder Folders**: Drag and drop folders to change order
+- **Select Folder**: Click a folder to view agents within it
+
+**🏷️ Folder Features**
+- **Drag & Drop**: Reorder folders by dragging the handle (⋮⋮)
+- **Active Selection**: Currently selected folder is highlighted
+- **Auto-Save**: Last selected folder is remembered
+- **Scroll Support**: Long lists scroll automatically
+
+**🗂️ Folder Filtering**
+- **📋 All Agents**: By default, see the entire agent catalog regardless of organizational folder.
+- **📁 Specific Folder**: Click a folder from the sidebar to display only the agents within that group.
+- **🔄 Auto-refresh**: Whenever you switch folders, the agents table refreshes automatically to show the most relevant data.
+
+![Number Management](/images/ai/AI-agent/listing/folder-actions.png)
+
+
+
 ### 🧑‍💻 Main Content Area - Agents Table
 - **Agents List**: Table showing all your AI agents
 - **Search Function**: Find specific agents quickly
@@ -25,7 +54,7 @@ The AI Agent Listing page is your main dashboard for managing all your AI agents
 - **Agent Details**: View agent information and perform actions
 
 ![Table Header](/images/ai/AI-agent/listing/headers.png)
-### 📋 AI Agents Table Columns
+#### 📋 AI Agents Table Columns
 
 The Agents Table provides a detailed overview of every AI agent's status and attributes. Here are the main columns you’ll find:
 
@@ -38,38 +67,14 @@ The Agents Table provides a detailed overview of every AI agent's status and att
 
 These columns help you quickly scan and manage your growing fleet of AI agents with ease.
 
-## 📚 Folder Management
-
-### ✨ Creating Folders
-1. Click **"+ Add"** in the Folders section
-2. Enter a descriptive folder name
-3. Click **"Save"** to create the folder
-4. The folder appears in the left sidebar
-
-![Create Folder](/images/ai/AI-agent/listing/adds.png)
-
-### 🛠️ Managing Folders
-- **Edit Folder**: Click the three-dot menu (⋮) next to any folder
-- **Delete Folder**: Remove folder and its organization
-- **Reorder Folders**: Drag and drop folders to change order
-- **Select Folder**: Click a folder to view agents within it
-
-**🏷️ Folder Features**
-- **Drag & Drop**: Reorder folders by dragging the handle (⋮⋮)
-- **Active Selection**: Currently selected folder is highlighted
-- **Auto-Save**: Last selected folder is remembered
-- **Scroll Support**: Long lists scroll automatically
-
-![Number Management](/images/ai/AI-agent/listing/folder-actions.png)
-
-### ➕ Add New Agent
+#### ➕ Add New Agent
 1. Click **"+ Add Agent"**  
 2. A new agent is instantly created with default settings  
 3. You are immediately redirected to the agent editing page to customize details and configuration  
 
 ![Number Management](/images/ai/AI-agent/listing/add-agent.png)
 
-### 📥 Import Agent
+#### 📥 Import Agent
 1. Click **"Import Agent"**
 2. Select a **JSON** file containing the agent configuration
 3. Preview details before importing
@@ -139,7 +144,7 @@ Easily set up your AI agent widget for your website or CRM:
 **❓ What are Endpoints?**
 Endpoints are webhook URLs that allow external systems to trigger calls through your AI agents. Each agent has a unique endpoint URL used to initiate phone calls programmatically.
 
-### 📝 Endpoint Information Display
+**📝 Endpoint Information Display**
 
 **🆔 Agent Title**
 - **Purpose**: Shows which agent the endpoint belongs to
@@ -222,9 +227,39 @@ Endpoints are webhook URLs that allow external systems to trigger calls through 
 
 ## 📶 Status Management
 
-### 🚦 Agent Status
+**🚦 Agent Status**
 - **Active**: Running and available for calls
 - **Inactive**: Disabled and won’t handle calls
 - **Toggle**: Click to switch states
 
 ![Status](/images/ai/AI-agent/listing/statuss.png)
+
+## 🔍 Search and Filtering
+
+**🔍 Search Function**
+- **🔎 Search Bar**: Instantly search and locate specific agents using the search bar above the agents table.
+- **⚡ Real-time Search**: Results update dynamically as you type—no extra button pressing needed.
+- **📑 Search Fields**: The search checks agent names as well as key details, helping you quickly narrow down your results.
+
+
+## 🛠️ Troubleshooting
+
+**😕 Agent Not Showing**
+- **Check Folder Selection**: Make sure you’ve selected the correct folder in the sidebar (e.g., "All Agents" or a specific folder).
+- **Verify Agent Status**: Ensure the agent isn’t set to "Inactive", as filters may hide them.
+- **Refresh the Page**: Sometimes a quick refresh loads recent changes.
+- **Check Search Filters**: Make sure your search term isn’t hiding the agent by accident.
+
+**📞 Numbers Not Working**
+- **Verify Assignments**: Confirm the number is properly assigned to the agent.
+- **Check Number Status**: Ensure the number is not flagged or out of service.
+- **Test Alternatives**: Try assigning and using a different inbound/outbound number.
+- **Contact Support**: If issues persist, reach out to the support team for assistance.
+
+**📤 Import/Export Issues**
+- **Check File Format**: Only JSON files are supported for import and export.
+- **Check File Size Limits**: Files that are too large may not be accepted—try a smaller file.
+- **Permissions**: Make sure you have the correct permissions for these operations.
+- **Try Another File**: If one file fails, test with a known good example to isolate the issue.
+
+

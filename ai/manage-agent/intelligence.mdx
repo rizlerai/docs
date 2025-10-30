@@ -3,82 +3,79 @@ title: "Intelligence"
 description: "Configure AI model settings, processing capabilities, and cognitive behaviors"
 icon: "lightbulb"
 ---
+
 ## 📚 Knowledge Base
-- **Select knowledge base**: Choose available knowledge bases
-- **Update**: Apply knowledge base changes
+
+- **Attach Knowledge Base**: Link relevant information, company FAQs, or documentation to the agent.
+- **Context Awareness**: Enable the agent to use knowledge base content in live conversations.
+- **Information Retrieval**: Allow the agent to answer user questions by referencing attached materials.
 
 ![Intelligence](/images/ai/AI-agent/edit/intelligence/knowledge-base.png)
 
+---
+
 ## 💬 Conversation Settings
 
-### ⚡ Responsiveness
-Control how fast the agent responds after users finish speaking.
-- **Current Setting**: 1.00 (slider control)
-- **Function**: Adjusts delay before agent starts responding
-- **Range**: Lower values = faster response, Higher values = longer pause
-![Intelligence](/images/ai/AI-agent/edit/intelligence/responsiveness.png)
+- **Responsiveness**: Adjust how quickly the agent responds after the user stops speaking.  
+  Range: 0 (fastest) – 1 (longest pause)
+- **Interruption Sensitivity**: Set how easily the agent can be interrupted by the user during speech.  
+  Range: 0 (hard to interrupt) – 1 (easy to interrupt)
 
-### 🎯 Interruption Sensitivity
-Control how sensitively AI can be interrupted by human speech.
-- **Current Setting**: 0.60 (slider control)
-- **Function**: Determines how easily users can interrupt the agent
-- **Range**: 0.00 (hard to interrupt) to 1.00 (easy to interrupt)
-![Intelligence](/images/ai/AI-agent/edit/intelligence/intruption.png)
+<img src="/images/ai/AI-agent/edit/intelligence/responsiveness.png" alt="Responsiveness Setting" className="rounded-lg border shadow-sm" />
+<img src="/images/ai/AI-agent/edit/intelligence/intruption.png" alt="Interruption Sensitivity" className="rounded-lg border shadow-sm" />
 
+---
 
 ## 🗣️ Pronunciation Dictionary
-Guide pronunciation of specific words or phrases.
 
-**Add Pronunciation Modal**:
-- **Words**: Enter the word(s)
-- **Pronunciation**: Select pronunciation type (dropdown)
-- **Phoneme**: Enter phoneme
-- **Actions**: Cancel/Save buttons
+- **Custom Pronunciation**: Define how specific words and names are pronounced by the agent.
+- **Company Names**: Ensure your organization’s or clients' names are spoken correctly.
+- **Technical Terms**: Add specialized jargon or industry vocabulary for accurate pronunciation.
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/pronunciation-dictionary.png)
+<img src="/images/ai/AI-agent/edit/intelligence/pronunciation-dictionary.png" alt="Pronunciation Dictionary" className="rounded-lg border shadow-sm" />
+
+---
+
 ## ⏰ Reminder Settings
-- **Configuration**: Enter/Second/Enter/Time fields
-- **Purpose**: Automated reminder scheduling
+
+- **Configuration**: Set up reminders using specific time fields.
+- **Purpose**: Automate the scheduling of follow-ups and notifications for tasks.
 
 ![Intelligence](/images/ai/AI-agent/edit/intelligence/reminder-settings.png)
 
-## 👍 Auto Ai sync
+---
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/auto-sync.png)
-Enables the agent to use affirmations like 'yeah' or 'uh-huh' during conversations.
-- **Toggle**: Enabled
-- **Frequency**: 0.8 (slider control)
-- **Function**: Controls how often the agent uses affirmations
-- **Purpose**: Creates natural conversation flow and shows active listening
+## 👍 Auto AI Sync
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/auto-sync-toggle.png)
+<img src="/images/ai/AI-agent/edit/intelligence/auto-sync.png" alt="Auto AI Sync" className="rounded-lg border shadow-sm" />
 
-## When Auto AI Sync is Enabled:
-#### 🎚️ Frequency Control : 
-Slider setting (0.8) that determines how often the agent uses affirmations like 'yeah' or 'uh-huh' during conversations to maintain natural back-and-forth dialogue flow
-#### 📝 Words List
-A customizable list of words that the agent uses for backchanneling during conversations.
-- **Current Words**: [Hmm] [ok]
-- **Text Area**: Editable list of backchanneling words and phrases
-- **Function**: Customizable vocabulary for natural conversational responses
-- **Purpose**: Agent uses these words to acknowledge and respond to user speech naturally
+- **Toggle**: Enable or disable automatic backchanneling (affirmative cues like 'yeah', 'uh-huh').
+- **Frequency**: Control how often the agent uses affirmations (0–1).
+- **Purpose**: Maintains natural, engaging conversation by showing the agent is actively listening.
 
+<img src="/images/ai/AI-agent/edit/intelligence/auto-sync-toggle.png" alt="Auto AI Sync Toggle" className="rounded-lg border shadow-sm" />
+
+**When Auto AI Sync is Enabled:**
+- **Frequency Control**: Use the slider to set affirmation usage frequency.
+- **Words List**: Customize which words or sounds the agent uses for natural backchanneling (e.g., [Hmm], [ok]).
+- **Purpose**: Helps the conversation feel active and lively.
+
+---
 
 ## 🗣️ Smooth Talk
-Converts text elements like numbers, currency, and dates into human-like spoken forms.
 
-- **Toggle**: Enabled
-- **Function**: Natural pronunciation of text elements
-- **Examples**: "15" becomes "fifteen", "$20" becomes "twenty dollars"
-- **Purpose**: More natural and conversational speech patterns
+- **Toggle**: Automatically convert numbers, currency, and dates into natural speech.
+- **Purpose**: Makes the agent sound more like a human by pronouncing figures conversationally.
+- **Examples**: "15" → "fifteen", "$20" → "twenty dollars"
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/smooth-talk.png)
+<img src="/images/ai/AI-agent/edit/intelligence/smooth-talk.png" alt="Smooth Talk" className="rounded-lg border shadow-sm" />
+
+---
+
 ## 🔤 Boosted Keywords
-Provide a customized list of keywords to expand our models' vocabulary.
 
-- **Text Area**: "Enter boosted keywords, one per line"
-- **Function**: Enhances model understanding of specific terms
-- **Use Cases**: Industry jargon, product names, company-specific terms
-- **Purpose**: Improves recognition and usage of specialized vocabulary 
+- **Custom Keywords List**: Expand the AI model’s vocabulary with specific terms.
+- **Use Cases**: Add product names, technical terminology, industry-specific language, or company phrases.
+- **Purpose**: Improves the agent’s recognition and accurate usage of specialized or branded words.
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/boosted-keywords.png)
+<img src="/images/ai/AI-agent/edit/intelligence/boosted-keywords.png" alt="Boosted Keywords" className="rounded-lg border shadow-sm" />
