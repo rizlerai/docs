@@ -45,10 +45,70 @@ Agent setup is organized into several tabs, starting with "General". This guide 
 - **GHL Location:** Link the agent to a GoHighLevel account/location  
   ![GHL Location](/images/ai/AI-agent/edit/general/location.png)
 
+
+
+
 ---
 
-### 📝 Prompt Configuration
 
+### 🧠 Prompt Editing Modes & Management Actions
+> ![General Prompt UI](/images/ai/AI-agent/edit/general/prompt-select.png)
+
+<CardGroup cols={2}>
+  <Card title="Sectioned Prompt" icon="layer-group">
+    <b>Best for most users</b>  
+    <br />
+    Break your agent’s logic into 12 sections—like Instructions, Greetings, Call Flow, Character, Booking, FAQ, and more.<br />
+    <b>Why use it?</b>
+    <ul>
+      <li>Easy to organize and edit</li>
+      <li>Each area is separate—so changes are safe</li>
+      <li>Great for teams or beginners</li>
+    </ul>
+    <b>How?</b>
+    <ol>
+      <li>Select <b>Sectioned Prompt</b> at the top</li>
+      <li>Fill out or skip any section you want</li>
+    </ol>
+  </Card>
+  <Card title="Single Prompt" icon="file-lines">
+    <b>For prompt experts</b>
+    <br />
+    Use one big box for all instructions if you want full control and advanced formatting.
+    <b>Why use it?</b>
+    <ul>
+      <li>Edit and paste everything at once</li>
+      <li>Great for importing/exporting</li>
+    </ul>
+    <b>How?</b>
+    <ol>
+      <li>Select <b>Single Prompt</b> at the top</li>
+      <li>Edit or paste your full prompt</li>
+    </ol>
+  </Card>
+</CardGroup>
+
+---
+
+<CardGroup cols={3}>
+  <Card title="Copy" icon="copy">
+    Copy your entire prompt or all sections.<br />
+    <b>How?</b> Click <span style={{color:"green", fontWeight:"bold"}}>COPY PROMPT</span>.<br />
+    <small>Useful for backups and sharing.</small>
+  </Card>
+  <Card title="Paste" icon="paste">
+    Paste copied prompt text in one click.<br />
+    <b>How?</b> Click <span style={{color:"blue", fontWeight:"bold"}}>PASTE PROMPT</span>.<br />
+    <small>Sections fill automatically if formatted.</small>
+  </Card>
+  <Card title="Clear" icon="trash-can">
+    Remove all prompt text instantly.<br />
+    <b>How?</b> Click <span style={{color:"red", fontWeight:"bold"}}>CLEAR PROMPT</span>.<br />
+    <small><b style={{color:"red"}}>Warning:</b> This cannot be undone.</small>
+  </Card>
+</CardGroup>
+
+### 📝 Prompt Configuration
 The heart of your agent’s intelligence—this is where you define instructions, greetings, behaviors, and flows.
 
 #### 🧩 Core Configuration Areas:
@@ -60,12 +120,8 @@ The heart of your agent’s intelligence—this is where you define instructions
   Configure how the agent starts every conversation.  
   ![Greeting Message](/images/ai//AI-agent/edit/general/welcome-message.png)  
   Choose dynamic or custom message greetings for inbound and outbound interactions. Dynamic variables personalize greetings, e.g. `{{first_name}}`.
+---
 
-- **Prompt Configuration:**  
-  Define your agent’s main instructions, requests, and conversational logic—this shapes how it responds and acts.  
-  ![Project Prompt UI](/images/ai/AI-agent/edit/general/prompt.png)
-  You can copy and paste entire prompt sets if you want to reuse a setup across agents.  
-  Use dynamic variables (like `{{first_name}}`, `{{company}}`, and others) inside your prompts to personalize responses—these auto-fill with each contact’s actual data.
 
 - **Greeting :**  
   Customize how your agent greets contacts for both outbound and inbound calls.  
