@@ -130,6 +130,13 @@
             ]
           },
           {
+            "group": "Pipeline",
+            "icon": "diagram-project",
+            "pages": [
+              "pipeline/pipeline"
+            ]
+          },
+          {
             "group": "Setup",
             "icon": "wrench",
             "pages": [

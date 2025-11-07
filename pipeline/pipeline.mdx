@@ -1,0 +1,290 @@
+---
+title: "Pipeline"
+icon: "diagram-project"
+---
+
+The Pipeline module helps you organize your business processes by creating pipelines with multiple stages. Each pipeline represents a workflow, and each stage represents a step in that workflow. Stages appear as columns on your board, allowing you to visualize and manage your processes. This system makes it easier to track progress through different stages of your business operations.
+
+## 🗂️ Overview
+
+<img
+  src="/images/pipeline/overview.png"
+  alt="Pipeline Board View"
+  className="rounded-lg border shadow-sm"
+/>
+
+The Pipeline board view displays your selected pipeline's stages as columns, with contact cards that can be moved between stages to track progress through your business workflow.
+
+## ✨ Main Features
+
+### 🗃️ Pipeline Board View
+
+When you open the Pipeline page and select a pipeline, you see a visual board that displays the stages of your selected pipeline as columns.
+
+**What you see:**
+
+- Multiple columns displayed horizontally across your screen
+- Each column represents one stage from your pipeline
+- Each column shows a header with:
+  - The stage name at the top
+  - A number badge showing the count of contacts in that stage
+  - A dollar amount showing the total opportunity value for that stage
+- Contact cards displayed within each column representing contacts at that stage
+
+**How it works:**
+
+- When you select a pipeline from the dropdown, the board shows only the stages belonging to that pipeline
+- Each column is a separate stage
+- You can scroll up and down within each column
+- Each column is scrollable independently
+- The columns appear in the order you set when creating or editing the pipeline
+- Contact cards can be dragged and dropped between columns to move contacts through stages
+
+### 🧾 Contact Cards
+
+Contact cards appear within pipeline stage columns and display essential contact information:
+
+<CardGroup cols={2}>
+  <Card title="Contact Information" icon="user">
+    Each card displays:
+    <br />**Name**: Contact's first name
+    <br />**Phone Number**: Primary contact number
+    <br />**Email Address**: Contact email
+    <br />**Opportunity Value**: Dollar amount associated with the contact
+  </Card>
+  
+  <Card title="Quick Actions" icon="phone">
+    Direct communication options:
+    <br />**Call**: Click-to-call functionality
+    <br />**Message**: Send SMS or messages
+    <br />**View Details**: Access full contact information
+  </Card>
+  
+  <Card title="Card Management" icon="arrows-up-down">
+    Move contacts between stages:
+    <br />**Drag & Drop**: Click and drag cards between columns
+    <br />**Stage Updates**: Automatically updates when moved
+    <br />**Progress Tracking**: Visual representation of workflow progress
+  </Card>
+  
+  <Card title="Stage Statistics" icon="chart-bar">
+    Column headers show:
+    <br />**Contact Count**: Number of contacts in each stage
+    <br />**Total Value**: Sum of opportunity values
+    <br />**Real-time Updates**: Automatically recalculates as contacts move
+  </Card>
+</CardGroup>
+
+### 🔎 Contact Details
+
+Clicking on a contact card opens the Contact Details modal, providing comprehensive contact management:
+
+<img
+  src="/images/pipeline/contact-detials.png"
+  alt="Contact Details - Contact Info"
+  className="rounded-lg border shadow-sm"
+/>
+
+The Contact Details interface includes three main sections accessible via the left sidebar:
+
+#### 📝 Contact Info
+
+View and edit comprehensive contact information:
+
+- **Phone Numbers**: Primary and secondary phone numbers
+- **Email Addresses**: Multiple email fields
+- **Name Fields**: First name and last name
+- **Address Information**: Address, city, zip code, country
+- **Custom Fields**: Additional configured contact fields
+
+#### 🗒️ Notes
+
+<img
+  src="/images/pipeline/notes.png"
+  alt="Contact Details - Notes"
+  className="rounded-lg border shadow-sm"
+/>
+
+Manage contact notes and interactions:
+
+- **Add Notes**: Click "+ Add Note" to create new notes
+- **View History**: See all notes with timestamps
+- **Edit Notes**: Click "Edit" button on any note to modify
+- **User Attribution**: Each note shows who created it and when
+- **Note Content**: Full text of all notes and interactions
+
+#### 📅 Appointments
+
+<img
+  src="/images/pipeline/appointment.png"
+  alt="Contact Details - Appointments"
+  className="rounded-lg border shadow-sm"
+/>
+
+View and manage contact appointments:
+
+- **Appointment List**: Table showing all scheduled appointments
+- **Appointment Details**: Date, time, duration, calendar, status, location
+- **Search & Filter**: Use search to find specific appointments
+- **Pagination**: Navigate through multiple appointments
+- **Status Tracking**: View appointment status (e.g., Confirmed, Cancelled)
+- **Calendar Integration**: See which calendar each appointment belongs to
+
+### 🔽 Pipeline Selection
+
+At the top of the page, you will find a dropdown menu that lets you choose which pipeline you want to view.
+
+**How it works:**
+
+- Click on the dropdown menu
+- Select the pipeline you want to see
+- The board will automatically update to show only the stages belonging to that pipeline
+- Each stage appears as a column on the board
+- The most recently created pipeline is automatically selected when you first open the page
+- When you switch pipelines, the board changes to show the stages of the newly selected pipeline
+
+### 🛠️ Pipeline Management
+
+You can create, edit, and delete pipelines through the Pipeline Management feature.
+
+<img
+  src="/images/pipeline/pipeline-management.png"
+  alt="Pipeline Management Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+**How to access Pipeline Management:**
+
+1. Click the "Pipeline Management" button at the top of the page
+2. A popup window opens showing a list of all your pipelines
+
+**Viewing Pipelines:**
+
+The list shows:
+
+- **#**: Pipeline number
+- **Pipeline Name**: Name of the pipeline
+- **Description**: Pipeline description
+- **Dispositions**: Associated dispositions (comma-separated)
+- **Status**: Active/Inactive status badge
+- **Created At**: Date when the pipeline was created
+- **Actions**: Edit and Delete buttons
+
+**Creating a New Pipeline:**
+
+<img
+  src="/images/pipeline/add-pipeline.png"
+  alt="Add Pipeline Form"
+  className="rounded-lg border shadow-sm"
+/>
+
+1. Click the "+ Add Pipeline" button in the Pipeline Management window
+2. A new popup opens for creating a pipeline
+3. Enter a name for your pipeline in the "Pipeline Name" field (required)
+4. Add a description in the "Description" field (optional)
+5. Select dispositions from the "Dispositions" dropdown (required)
+6. Review the status (defaults to "Active")
+7. Add stages to your pipeline:
+   - Click the "Add Stage" button to add a new stage
+   - Enter a name for each stage
+   - You can add as many stages as you need
+   - You can rearrange stages by dragging them up or down
+   - You can delete stages by clicking the delete button (at least one stage must remain)
+8. Click "Save Pipeline" to create it
+9. The page will refresh and your new pipeline will appear in the dropdown menu
+
+**Editing a Pipeline:**
+
+1. Click the Edit button (pencil icon) next to the pipeline you want to modify
+2. The pipeline details open in a popup
+3. You can:
+   - Change the pipeline name
+   - Update the description
+   - Modify dispositions
+   - Change status
+   - Add new stages
+   - Edit existing stage names
+   - Delete stages (except the last one)
+   - Reorder stages by dragging them
+4. Click "Save Pipeline" to save your changes
+5. The page will refresh to show your updated pipeline
+
+**Deleting a Pipeline:**
+
+1. Click the Delete button (trash icon) next to the pipeline you want to remove
+2. A confirmation message appears asking if you're sure
+3. Click OK to confirm deletion
+4. The pipeline is permanently removed
+5. The page refreshes and the pipeline is no longer available
+
+**Managing Pipeline Stages:**
+
+<CardGroup cols={2}>
+  <Card title="Stage Organization" icon="columns">
+    Stages are the columns you see on your board
+    <br />**Visual Representation**: Each stage = one column
+    <br />**Unique Names**: Each stage must have a unique name within the pipeline
+    <br />**Order Matters**: Stages appear in the order you set them
+  </Card>
+  
+  <Card title="Stage Reordering" icon="arrows-up-down">
+    Drag and drop to reorder stages
+    <br />**Drag Handle**: Click and hold the icon with lines
+    <br />**Move Up/Down**: Drag to new position
+    <br />**Auto-save**: Changes saved automatically
+  </Card>
+  
+  <Card title="Stage Management" icon="gear">
+    Full control over your stages
+    <br />**Add Stages**: Create new workflow steps
+    <br />**Edit Names**: Update stage labels
+    <br />**Delete Stages**: Remove unnecessary stages (keep at least one)
+  </Card>
+  
+  <Card title="Board Layout" icon="table">
+    Column order matches stage order
+    <br />**Left-to-Right**: Board columns match top-to-bottom stage list
+    <br />**Visual Flow**: Stages flow from left to right on board
+    <br />**Consistent Display**: Order maintained across sessions
+  </Card>
+</CardGroup>
+
+### 🆕 Empty State
+
+If you haven't created any pipelines yet, you'll see a message in the center of the page.
+
+**What you see:**
+
+- An icon representing pipelines
+- A message saying "No Pipeline Created"
+- Instructions to create a pipeline to get started
+- A "Create Pipeline" button
+
+**What to do:**
+
+- Click the "Create Pipeline" button to start creating your first pipeline
+
+### 🔎 Filtering and Display
+
+When you select a pipeline from the dropdown, the board automatically shows only the stages belonging to that pipeline.
+
+**How it works:**
+
+- Only stages that belong to the selected pipeline are displayed as columns
+- Stages from other pipelines are not shown
+- Each stage appears as a separate column on the board
+- The stages appear in the order you set when creating or editing the pipeline
+- This keeps your view clean and focused on the pipeline you're working with
+
+### 🔄 Data Updates
+
+The system automatically updates information in real-time as you make changes.
+
+**Automatic Updates:**
+
+- When you modify pipeline stages, the board updates after page refresh
+- When you reorder stages, the changes are automatically saved
+- When you edit stage names, the changes are saved when you click "Save Pipeline"
+- When you create or delete pipelines, the dropdown menu updates automatically
+- Contact counts and opportunity values update when contacts move between stages
+- Stage statistics recalculate in real-time as cards are moved
