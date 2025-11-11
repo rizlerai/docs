@@ -214,8 +214,12 @@ The **Course Details** section is where you define the key information for your 
 
 - **Course Visibility**  
   Decide who can access your course:  
-  - **Private**: Only assigned users can view and enroll. (Shown with a lock icon and selected by default in the screenshot.)
-  - **Public**: Anyone with the link can view details and enroll.
+  - **Private**: Only assigned users can view and enroll. (Shown with a lock icon and selected by default in the screenshot.)  
+    - When **Private** is selected and the course is saved, an **Assign** button appears in the **Analytics** tab, positioned to the right of the **Enrollments** section.
+    - Clicking **Assign** opens a modal listing all users in your company. You can select users and assign them to the course; they will then appear in the "Enrollment" modal.
+
+  - **Public**: Anyone with the link can view details and enroll.  
+    - If the course is Public, the **Assign** functionality and button do **not** appear.
 
 - **Course Thumbnail**  
   Upload an image to represent your course visually.  
@@ -270,13 +274,36 @@ The **Analytics** tab in the Course Builder offers a comprehensive overview of l
   - Visibility indicator for Public or Private access.
   - Displays creation and published dates.
 
-- **Enrollee Table**
-  - List of enrolled users with:
-    - **Name**
-    - **Progress** (visual progress bar and percentage)
-    - **Status** (e.g., "Complete")
-    - **Enrolled Date**
-    - **Last Activity**
-  - Icons indicate the user's avatar and progress at a glance.
+
+### 👥 Enrollments & Learner List
+
+The **Analytics** tab also provides a detailed overview of user enrollments within each course. You will see a table displaying all users currently enrolled, their progress, status, enrollment dates, and recent activity.
+
+![Enrollments Table Example](/images/knowledge-hub/courses/assign-button.png)
+
+**Enrollment Table Columns:**
+- **User**: The learner's name and email address, along with their avatar.
+- **Progress**: A visual progress bar and percentage for how much of the course they've completed.
+- **Status**: Indicates whether the learner has completed, is in progress, or not started. (e.g., "Completed")
+- **Enrolled Date**: The date the learner was added to the course.
+- **Last Activity**: The most recent date the learner interacted with the course.
+
+> **Assign Button:**  
+> The blue **Assign** button (top right) is only visible when the course is set as **Private**. This allows you to manually assign the course to specific users or companies.  
+> If the course is **Public**, the Assign button will not appear, as anyone with access can enroll themselves.
+
+When you click the **Assign** button for a Private course, an **"Assign Course"** dialog appears, as shown below:
+
+![Assign Course Dialog](/images/knowledge-hub/courses/assign-course.png)
+
+This dialog allows you to assign the course to specific users or companies. The table includes:
+
+- **Company Name**: The company or user display name.
+- **Email**: The email address of the user.
+- **Action**: An **Assign** button for each user/company. Clicking this assigns the course to them.
+
+> **Tip:** The Assign dialog is only available for Private courses. For Public courses, users can self-enroll, and the assignment dialog is not shown.
+
+
 
 This dashboard equips course administrators and instructors with the real-time data needed to track learner progress, celebrate completions, and support those needing help—ensuring a successful learning experience for everyone involved.

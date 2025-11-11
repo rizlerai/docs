@@ -3,174 +3,72 @@ title: "Pipeline"
 icon: "diagram-project"
 ---
 
-The Pipeline module helps you organize your business processes by creating pipelines with multiple stages. Each pipeline represents a workflow, and each stage represents a step in that workflow. Stages appear as columns on your board, allowing you to visualize and manage your processes. This system makes it easier to track progress through different stages of your business operations.
-
-## 🗂️ Overview
-
 <img
   src="/images/pipeline/overview.png"
   alt="Pipeline Board View"
   className="rounded-lg border shadow-sm"
 />
 
-The Pipeline board view displays your selected pipeline's stages as columns, with contact cards that can be moved between stages to track progress through your business workflow.
+## 🎯 What Is the Pipeline Module?
 
-## ✨ Main Features
+The Pipeline Module allows you to design, monitor, and adjust your business processes with ease.
 
-### 🗃️ Pipeline Board View
+### 🔗 The Concept of a Pipeline
 
-When you open the Pipeline page and select a pipeline, you see a visual board that displays the stages of your selected pipeline as columns.
+A pipeline is a full sequence of steps or phases representing a business process. For example:
 
-**What you see:**
+- A sales pipeline: "Sales Process"
+- A project pipeline: "Project Delivery"
+- An onboarding pipeline: "Customer Onboarding"
 
-- Multiple columns displayed horizontally across your screen
-- Each column represents one stage from your pipeline
-- Each column shows a header with:
-  - The stage name at the top
-  - A number badge showing the count of contacts in that stage
-  - A dollar amount showing the total opportunity value for that stage
-- Contact cards displayed within each column representing contacts at that stage
+Each pipeline offers a visual representation of all steps required to take an item from beginning to completion.
 
-**How it works:**
+### 🏷️ Defining Stages
 
-- When you select a pipeline from the dropdown, the board shows only the stages belonging to that pipeline
-- Each column is a separate stage
-- You can scroll up and down within each column
-- Each column is scrollable independently
-- The columns appear in the order you set when creating or editing the pipeline
-- Contact cards can be dragged and dropped between columns to move contacts through stages
+Stages are the key phases within your pipeline. Think of them as columns, each reflecting a stage in your workflow. Typical stage examples in a sales pipeline:
 
-### 🧾 Contact Cards
+- New Lead
+- Contacted
+- Proposal Sent
+- Closed
 
-Contact cards appear within pipeline stage columns and display essential contact information:
+Each stage helps you categorize and track items according to their current status.
 
-<CardGroup cols={2}>
-  <Card title="Contact Information" icon="user">
-    Each card displays:
-    <br />**Name**: Contact's first name
-    <br />**Phone Number**: Primary contact number
-    <br />**Email Address**: Contact email
-    <br />**Opportunity Value**: Dollar amount associated with the contact
-  </Card>
-  
-  <Card title="Quick Actions" icon="phone">
-    Direct communication options:
-    <br />**Call**: Click-to-call functionality
-    <br />**Message**: Send SMS or messages
-    <br />**View Details**: Access full contact information
-  </Card>
-  
-  <Card title="Card Management" icon="arrows-up-down">
-    Move contacts between stages:
-    <br />**Drag & Drop**: Click and drag cards between columns
-    <br />**Stage Updates**: Automatically updates when moved
-    <br />**Progress Tracking**: Visual representation of workflow progress
-  </Card>
-  
-  <Card title="Stage Statistics" icon="chart-bar">
-    Column headers show:
-    <br />**Contact Count**: Number of contacts in each stage
-    <br />**Total Value**: Sum of opportunity values
-    <br />**Real-time Updates**: Automatically recalculates as contacts move
-  </Card>
-</CardGroup>
+### 🛠️ How the Pipeline Module Functions
 
-### 🔎 Contact Details
+1. **Create a pipeline** – Give your workflow a descriptive name.
+2. **Add stages** – Name each stage clearly to represent its function within your process.
+3. **Visual Board** – Your pipeline and its stages are displayed in a Kanban-style board, making it simple to visualize progression and spot bottlenecks.
 
-Clicking on a contact card opens the Contact Details modal, providing comprehensive contact management:
+## 🚦 Getting Started
 
-<img
-  src="/images/pipeline/contact-detials.png"
-  alt="Contact Details - Contact Info"
-  className="rounded-lg border shadow-sm"
-/>
+### 🔓 Accessing the Module
 
-The Contact Details interface includes three main sections accessible via the left sidebar:
+1. Go to the Pipeline section from your main navigation menu.
+2. The page opens with the core Pipeline interface, showing several key controls at the top.
 
-#### 📝 Contact Info
+### 👁️ What You’ll See
 
-View and edit comprehensive contact information:
+The Pipeline page layout features:
 
-- **Phone Numbers**: Primary and secondary phone numbers
-- **Email Addresses**: Multiple email fields
-- **Name Fields**: First name and last name
-- **Address Information**: Address, city, zip code, country
-- **Custom Fields**: Additional configured contact fields
+- **Pipeline Management** – manage, create, and edit your pipelines.
+- **Pipeline Selector Dropdown** – switch between different pipelines.
+- **SOPs Button** – read standards and best practices.
+- **Visual Board or Message** – Displays your active pipelines, or “No Pipeline Created” if none exist.
 
-#### 🗒️ Notes
+## ➕ How to Create a Pipeline
 
-<img
-  src="/images/pipeline/notes.png"
-  alt="Contact Details - Notes"
-  className="rounded-lg border shadow-sm"
-/>
+Follow these steps to add a new pipeline to your system:
 
-Manage contact notes and interactions:
+#### 1️⃣ Open Pipeline Management
 
-- **Add Notes**: Click "+ Add Note" to create new notes
-- **View History**: See all notes with timestamps
-- **Edit Notes**: Click "Edit" button on any note to modify
-- **User Attribution**: Each note shows who created it and when
-- **Note Content**: Full text of all notes and interactions
+- Click **Pipeline Management** (top left).
+- A list of all current pipelines will appear.
 
-#### 📅 Appointments
+#### 2️⃣ Start a New Pipeline
 
-<img
-  src="/images/pipeline/appointment.png"
-  alt="Contact Details - Appointments"
-  className="rounded-lg border shadow-sm"
-/>
-
-View and manage contact appointments:
-
-- **Appointment List**: Table showing all scheduled appointments
-- **Appointment Details**: Date, time, duration, calendar, status, location
-- **Search & Filter**: Use search to find specific appointments
-- **Pagination**: Navigate through multiple appointments
-- **Status Tracking**: View appointment status (e.g., Confirmed, Cancelled)
-- **Calendar Integration**: See which calendar each appointment belongs to
-
-### 🔽 Pipeline Selection
-
-At the top of the page, you will find a dropdown menu that lets you choose which pipeline you want to view.
-
-**How it works:**
-
-- Click on the dropdown menu
-- Select the pipeline you want to see
-- The board will automatically update to show only the stages belonging to that pipeline
-- Each stage appears as a column on the board
-- The most recently created pipeline is automatically selected when you first open the page
-- When you switch pipelines, the board changes to show the stages of the newly selected pipeline
-
-### 🛠️ Pipeline Management
-
-You can create, edit, and delete pipelines through the Pipeline Management feature.
-
-<img
-  src="/images/pipeline/pipeline-management.png"
-  alt="Pipeline Management Interface"
-  className="rounded-lg border shadow-sm"
-/>
-
-**How to access Pipeline Management:**
-
-1. Click the "Pipeline Management" button at the top of the page
-2. A popup window opens showing a list of all your pipelines
-
-**Viewing Pipelines:**
-
-The list shows:
-
-- **#**: Pipeline number
-- **Pipeline Name**: Name of the pipeline
-- **Description**: Pipeline description
-- **Dispositions**: Associated dispositions (comma-separated)
-- **Status**: Active/Inactive status badge
-- **Created At**: Date when the pipeline was created
-- **Actions**: Edit and Delete buttons
-
-**Creating a New Pipeline:**
+- In the Pipeline Management window, click **+ Add Pipeline** (top right).
+- This opens the pipeline creation form.
 
 <img
   src="/images/pipeline/add-pipeline.png"
@@ -178,113 +76,224 @@ The list shows:
   className="rounded-lg border shadow-sm"
 />
 
-1. Click the "+ Add Pipeline" button in the Pipeline Management window
-2. A new popup opens for creating a pipeline
-3. Enter a name for your pipeline in the "Pipeline Name" field (required)
-4. Add a description in the "Description" field (optional)
-5. Select dispositions from the "Dispositions" dropdown (required)
-6. Review the status (defaults to "Active")
-7. Add stages to your pipeline:
-   - Click the "Add Stage" button to add a new stage
-   - Enter a name for each stage
-   - You can add as many stages as you need
-   - You can rearrange stages by dragging them up or down
-   - You can delete stages by clicking the delete button (at least one stage must remain)
-8. Click "Save Pipeline" to create it
-9. The page will refresh and your new pipeline will appear in the dropdown menu
+#### 3️⃣ Specify Pipeline Name
 
-**Editing a Pipeline:**
+- Fill in the **Pipeline Name** with a clear, descriptive title.
+- Required field (indicated by *).
+- Examples: “Sales Funnel”, “Product Development”, “Onboarding”.
 
-1. Click the Edit button (pencil icon) next to the pipeline you want to modify
-2. The pipeline details open in a popup
-3. You can:
-   - Change the pipeline name
-   - Update the description
-   - Modify dispositions
-   - Change status
-   - Add new stages
-   - Edit existing stage names
-   - Delete stages (except the last one)
-   - Reorder stages by dragging them
-4. Click "Save Pipeline" to save your changes
-5. The page will refresh to show your updated pipeline
+#### 4️⃣ Add, Remove, or Edit Stages
 
-**Deleting a Pipeline:**
+- The form starts with four default stages:
+  - New Lead
+  - Contacted
+  - Proposal Sent
+  - Closed
+- You may keep, rename, remove, or add custom stages to fit your process.
 
-1. Click the Delete button (trash icon) next to the pipeline you want to remove
-2. A confirmation message appears asking if you're sure
-3. Click OK to confirm deletion
-4. The pipeline is permanently removed
-5. The page refreshes and the pipeline is no longer available
+#### 5️⃣ Manage Stages
 
-**Managing Pipeline Stages:**
+- **Rename:** Type directly in the stage name field.
+- **Delete:** Click the red trash icon next to the stage.
+- **Add:** Click **Add Stage** at the top of the stages section.
 
-<CardGroup cols={2}>
-  <Card title="Stage Organization" icon="columns">
-    Stages are the columns you see on your board
-    <br />**Visual Representation**: Each stage = one column
-    <br />**Unique Names**: Each stage must have a unique name within the pipeline
-    <br />**Order Matters**: Stages appear in the order you set them
-  </Card>
-  
-  <Card title="Stage Reordering" icon="arrows-up-down">
-    Drag and drop to reorder stages
-    <br />**Drag Handle**: Click and hold the icon with lines
-    <br />**Move Up/Down**: Drag to new position
-    <br />**Auto-save**: Changes saved automatically
-  </Card>
-  
-  <Card title="Stage Management" icon="gear">
-    Full control over your stages
-    <br />**Add Stages**: Create new workflow steps
-    <br />**Edit Names**: Update stage labels
-    <br />**Delete Stages**: Remove unnecessary stages (keep at least one)
-  </Card>
-  
-  <Card title="Board Layout" icon="table">
-    Column order matches stage order
-    <br />**Left-to-Right**: Board columns match top-to-bottom stage list
-    <br />**Visual Flow**: Stages flow from left to right on board
-    <br />**Consistent Display**: Order maintained across sessions
-  </Card>
-</CardGroup>
+#### 6️⃣ Reorder Stages
 
-### 🆕 Empty State
+- Drag stages by the handle (horizontal lines left of the name).
+- Drop them in your preferred order; this defines their display left-to-right.
 
-If you haven't created any pipelines yet, you'll see a message in the center of the page.
+#### 7️⃣ Finalize and Save
 
-**What you see:**
+- Double-check your stage names and order.
+- Click **Save Pipeline** (bottom right).
+- You’ll get a confirmation and your pipeline will display on the board.
 
-- An icon representing pipelines
-- A message saying "No Pipeline Created"
-- Instructions to create a pipeline to get started
-- A "Create Pipeline" button
+## 🔧 Managing Pipeline Stages (For New and Existing Pipelines)
 
-**What to do:**
+### ➕ Add a Stage
 
-- Click the "Create Pipeline" button to start creating your first pipeline
+1. Find the **Pipeline Stages** section while editing or creating a pipeline.
+2. Click **Add Stage**.
+3. A new editable row appears at the end of the list.
+4. Enter a name for the new stage.
+5. **Note:** Stages are not saved to your pipeline until you click **Save Pipeline**.
 
-### 🔎 Filtering and Display
+### 🗑️ Remove a Stage
 
-When you select a pipeline from the dropdown, the board automatically shows only the stages belonging to that pipeline.
+1. Click the trash icon next to the unwanted stage.
+2. The row is deleted instantly.
+3. At least one stage is always required; you’ll get a warning if you attempt to remove the last stage.
+4. Remember to hit **Save Pipeline** to apply deletions.
 
-**How it works:**
+### ✏️ Rename a Stage
 
-- Only stages that belong to the selected pipeline are displayed as columns
-- Stages from other pipelines are not shown
-- Each stage appears as a separate column on the board
-- The stages appear in the order you set when creating or editing the pipeline
-- This keeps your view clean and focused on the pipeline you're working with
+1. Edit the text directly in the stage’s name.
+2. Click **Save Pipeline** to make your changes permanent.
 
-### 🔄 Data Updates
+### 🔄 Reorder Stages
 
-The system automatically updates information in real-time as you make changes.
+1. Hold and drag the handle left of a stage name.
+2. Move it up or down in the list.
+3. Visual cues indicate possible drop targets.
+4. Release to set the new position.
+5. For existing pipelines, changes save instantly; for new pipelines, click **Save Pipeline**.
 
-**Automatic Updates:**
+**Tip:** Board columns rearrange in real time to match your stage order.
 
-- When you modify pipeline stages, the board updates after page refresh
-- When you reorder stages, the changes are automatically saved
-- When you edit stage names, the changes are saved when you click "Save Pipeline"
-- When you create or delete pipelines, the dropdown menu updates automatically
-- Contact counts and opportunity values update when contacts move between stages
-- Stage statistics recalculate in real-time as cards are moved
+## 📝 Editing a Pipeline
+
+### Open the Edit Pipeline Window
+
+1. Click **Pipeline Management**.
+2. Find the pipeline to edit; click the blue **Edit** (pencil icon) button.
+3. The pipeline details open in an editable form.
+
+<img
+  src="/images/pipeline/pipeline-management.png"
+  alt="Pipeline Management Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+### What Can Be Edited?
+
+- **Pipeline Name:** Change as needed in the name field.
+- **Stages:** Add, remove, rename, or reorder using the controls above.
+
+### Save Edits
+
+- Click **Save Pipeline**.
+- Changes display immediately on your board.
+
+## 🗑️ Deleting an Entire Pipeline
+
+### Removal Process
+
+1. Open **Pipeline Management**.
+2. Find the pipeline to remove.
+3. Click the red **Delete** (trash icon) button.
+4. Confirm deletion when prompted.
+5. Deleted pipelines and their stages are **permanently removed**—this action cannot be reversed.
+6. After deletion, a refreshed board will reflect the change.
+
+## 👓 Viewing and Selecting Pipelines
+
+### Using the Pipeline Dropdown
+
+1. Use the **pipeline selector dropdown** at the top of the Pipeline page.
+2. Select any of your pipelines to change the board view.
+3. The board updates instantly to show the corresponding stages.
+
+### Display Details
+
+- The newest pipeline is pre-selected when you enter the page.
+- All pipelines are listed by name.
+- Selected pipeline’s stages appear as interactive columns.
+
+## 📚 SOPs: Standard Operating Procedures
+
+<img
+  src="/images/pipeline/SOPS.png"
+  alt="Pipeline Module - SOPs Window Screenshot"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+The **SOPs** (Standard Operating Procedures) button provides instant access to a detailed step-by-step reference covering every core aspect of the Pipeline Module.
+
+
+1. **Purpose & Scope**  
+   _This Standard Operating Procedure (SOP) defines the systematic approach for creating, managing, and utilizing pipeline structures within the system to organize and track workflow processes through a visual Kanban board interface._  
+   
+   _This procedure applies to all authorized users who require access to the Pipeline Management Module for organizing business processes, sales workflows, or project management activities._
+
+2. **Definitions & Terminology**  
+   - **Pipeline:** A structured workflow container that organizes processes into sequential stages  
+   - **Stage:** A distinct phase within a pipeline representing a specific step in the workflow process  
+   - **Kanban Board:** A visual representation displaying pipeline stages as columns with associated items  
+   - **Sorting Order:** The sequential arrangement of stages determining workflow progression
+
+3. **Prerequisites & Access Requirements**  
+   - Valid user account with appropriate system permissions  
+   - Access to the Pipeline Management Module  
+   - Understanding of workflow processes to be implemented  
+
+4. **Procedure: Pipeline Creation**
+
+   **4.1 Initial Setup**
+
+   **4.2 Stage Configuration**
+
+   **4.3 Finalization**
+
+
+5. **Procedure: Pipeline Modification**  
+   **5.1 Accessing Edit Mode**
+
+   **5.2 Modification Operations**
+
+   **5.3 Saving Modifications**
+
+6. **Procedure: Pipeline Deletion**  
+   1. Access the Pipeline Management interface.  
+   2. Identify the pipeline you wish to remove.  
+   3. Click the "Delete" icon associated with the desired pipeline.  
+   4. Review the system-generated confirmation dialog carefully.  
+   5. Confirm deletion by selecting "OK", or cancel the operation if you do not intend to delete.  
+
+   > **Important:** Pipeline deletion is irreversible. Ensure no active workflows depend on the pipeline before proceeding.
+
+7. **Procedure: Pipeline Selection & Navigation**  
+   1. Locate the pipeline selection dropdown menu in the header section.  
+   2. Click the dropdown and select the desired pipeline from the available options.  
+   3. Upon selection, the system will automatically display the Kanban board for the chosen pipeline, rendering all associated stages.  
+   4. Each stage will appear as an independent column within the Kanban interface.  
+   5. To switch views, simply repeat the selection process to navigate between different pipelines.
+
+8. **Procedure: Stage Management**
+
+   **8.1 Adding Stages**  
+
+   **8.2 Removing Stages**  
+
+   **8.3 Reordering Stages**  
+
+
+9. **Kanban Board Interface & Navigation**
+
+   **9.1 Kanban Board Interface**
+
+   **9.2 Navigation & Interaction**
+
+10. **Critical Requirements & Constraints**
+
+- **Minimum Stage Requirement:** Every pipeline must always contain at least one active stage; deletion of the last remaining stage is not permitted.
+- **Stage Sequence:** The order in which stages are arranged determines the workflow's progression. Ensure stages are sorted logically to accurately reflect your process.
+- **Pipeline Independence:** The system supports multiple pipelines, each operating independently—changes to one pipeline will not impact others.
+- **Data Integrity:** Deleting a pipeline will permanently erase all its configuration and stage data. This action is irreversible.
+- **Access Control:** Only users with the appropriate permissions, as set by system administrators, can modify pipeline structures or settings.
+
+11. **Best Practices**
+
+- **Use Clear, Standardized Naming**  
+
+- **Regularly Review Configurations**  
+
+- **Maintain Consistent Stage Names**  
+
+
+- **Document Pipeline Purpose & Stages**  
+
+- **Test Before Production**  
+
+
+Each section is collapsible—click its header to expand or collapse details, making it easy to focus on the topic you need.
+
+
+### When to Use SOPs
+
+- When you need **step-by-step instructions** for any Pipeline Module operation.
+- For **quick lookups** of terms, requirements, or best practices.
+- If you're **troubleshooting** a procedure or want to confirm the correct workflow.
+- Whenever you want a detailed reference on-demand—**keep the window open for ongoing help.**
+
+> _Refer to the SOPs window as your central knowledgebase for using, managing, and optimizing pipelines in the module._

@@ -136,99 +136,100 @@ Refine your analytics view with powerful filtering capabilities:
 - **Start Date**: Custom start date selection
 - **End Date**: Custom end date selection
 
- ## 📞 Dialer Analytics
+## 📞 Dialer Analytics
 
-The Dialer Analytics section focuses on traditional dialer performance and call ratios.
-
-![Dialer Analytics Dashboard](/images/dashboard/analytics/disposition-summary.png)
-
-### 📊 Call Ratio Overview
-
-Monitor call direction distribution with visual indicators:
-
-**📥 Incoming Calls** - Success Indicators  
-**📤 Outgoing Calls** - Completion Status
-
-- **Total Calls**: Overall call volume
-- **Incoming**: Inbound call count with success indicators
-- **Outgoing**: Outbound call count with completion status
-
-#### Call Performance Metrics
-
-![Call Performance Statistics](/images/dashboard/analytics/stats.png)
-
-**Key Performance Indicators:**
-
-- **Call Counts**: Daily call volume trends
-- **Call Success Rate**: Successful vs unsuccessful calls breakdown
-- **Call Directions**: Inbound, outbound, and web call distribution
-- **Disconnection Reasons**: Analysis of call termination causes
-
-    
-![Dialer Analytics Disposition Graph](/images/dashboard/analytics/disposition-summary1.png)
-
-#### 📈 Call Disposition Summary
-
-![Dialer Analytics Disposition Graph](/images/dashboard/analytics/all-disposition.jpg)
-
-Get an immediate, colorful breakdown of all dialer call outcomes with the Disposition Graph! Each segment is visually distinct and interactive, making insights easy to spot at a glance.
-
-**Key Outcome Categories:**
-
-- 🟢 **Didn't Answer / Call Again**: The recipient didn't answer; a follow-up call is needed.
-- 🟡 **No Interest**: The recipient was not interested in the offer or call purpose.
-- 🟠 **Not Qualified**: The recipient does not meet qualification criteria.
-- 🟣 **Follow Up**: A follow-up action is required; may include future contact or additional steps.
-- 🟧 **Send Email**: Follow-up was completed via email after the call attempt.
-- 🟤 **App Set**: An appointment was successfully scheduled during the call.
-- 🔴 **Interested / Didn't Book**: The recipient expressed interest but did not book an appointment.
-
-
-Let your team make smarter choices with the comprehensive, visually engaging Disposition Graph!
-
-
-
-#### User Experience Metrics
-
-![Time-based Analytics](/images/dashboard/analytics/time.png)
-
-**Experience Insights:**
-
-- **User Sentiment Distribution**: Positive, neutral, negative, and unknown sentiment analysis
-- **Call Picked Up Rate**: Percentage of answered calls over time
-- **Call Successful Rate**: Success rate trends
-- **Call Transfer Rate**: Transfer frequency analysis
-- **Voicemail Rate**: Voicemail drop-off patterns
-- **Average Call Duration**: Call length trends
-- **Appointments**: Appointment scheduling trends
+The Dialer module is your go-to dashboard for uncovering everything about your team’s call activity—both incoming and outgoing. See powerful graphs, dive into detailed metrics, and gain actionable insights to boost your team’s performance and make every conversation count.
 
 ---
 
+### 🎛️ Powerful Filtering Made Simple
+
+Personalize your insights and drill down to exactly what matters to you using these filters at the top of the Dialer module:
+**Date Range**
+
+- **Pick from shortcuts:** Today, Yesterday, This Week, Last 7/14/30 Days, This Month, Last Month, and more.
+- **Custom Dates:** Choose your own Start and End Dates—perfect for custom reporting!
+  - When "Custom dates" is active, date pickers are unlocked for manual selection.
+  - For other options, range fields fill in automatically.
+
+ **Agent Filter**
+
+- If you’re part of a team:** Choose **All** to see everyone's data, or pick a specific team member to focus in.
+- **Solo users:** The dropdown hides itself (you’ll always see your own data).
+- **No team yet?** The dropdown will show "Team Not Setup."
+
+**Filter Button**
+
+After setting your filters, click **Filter**. While your data loads, you'll see a friendly "Please wait. Action in process..." message—then, you’re ready to go!
+
+![Dialer Analytics Dashboard](/images/dashboard/analytics/disposition-summary.png)
+---
+
+### 📊 Explore Dashboard Insights
+
+Each time you filter, you’ll see updated, easy-to-read sections:
+
+#### 🥧 Call Ratio at a Glance
+
+- **See the balance!** A colorful circle chart instantly shows your team's ratio of incoming vs. outgoing calls—complete with percentages and total call counts.
+- Quick stats highlight all calls received (answered, missed, voicemail) vs. all calls made (connected/unanswered).
+
+_Example:_
+![Dialer Analytics Dashboard](/images/dashboard/analytics/stats.png)
 
 
-### 📋 Call Overview Metrics
+---
 
-Track detailed call performance with comprehensive metrics:
+#### 📋 Call Overview: Key Metrics
 
-| Metric | Description | Optimization Focus |
-|--------|-------------|-------------------|
-| **No Answer** | Calls that weren't answered | Timing optimization |
-| **Connected** | Successfully connected calls | Success rate |
-| **PickUp Rate** | Percentage of answered calls | Call quality |
-| **Missed Calls** | Unanswered call attempts | Follow-up strategy |
-| **Voicemails** | Voicemail messages left | Message optimization |
-| **Answered** | Successfully answered calls | Performance tracking |
-| **Talk Time** | Total conversation duration | Efficiency metrics |
+On the main dashboard, clear charts and figures show:
 
-![Talk Time Analytics](/images/dashboard/analytics/talktime.png)
+- **Talk Time:** Total conversation time (hours:minutes:seconds) for your selected dates.
+- **Metrics Row at the Top:**
+    1. **No Answer**: Outgoing calls without a connection.
+    2. **Connected**: Outgoing calls where someone answered.
+    3. **PickUp Rate**: Percentage of outgoings that reached someone (Connected ➗ Outgoing × 100).
+    4. **Missed Calls**: Incoming calls your team didn’t pick up.
+    5. **Voicemails:** Messages customers left when they reached voicemail.
+    6. **Answered:** Incoming calls your team successfully handled.
 
-### ⚙️ Filtering and Date Range
 
-**Quick Filter Options:**
-- **Date Range**: Quick date selection (Today, Yesterday, etc.)
-- **Start/End Date**: Custom date range selection
-- **Agents**: Filter by specific agents or view all
-- **Filter Button**: Apply selected filters
+---
+
+#### 🎯 Disposition Summary
+
+Wondering what happened after calls ended? This section is your answer:
+
+- **Disposition Chart:** Instantly see main outcomes like "Interested", "No Interest", or "Follow Up".
+- **Legend:** Two top outcomes are listed with colors matching the chart. Click **"+X more"** to see the rest in a pop-up—all color-coded and easy to scan.
+
+_Examples:_
+
+![Dialer Analytics Disposition Graph](/images/dashboard/analytics/disposition-summary1.png)
+![Dialer Analytics Disposition Graph](/images/dashboard/analytics/all-disposition.jpg)
+
+---
+
+### 🧮 How Are These Numbers Calculated?
+
+So you know exactly what’s being tracked:
+
+- **Incoming Calls:** All calls flagged as "Inbound" (including completed, missed, and voicemails).
+- **Outgoing Calls:** Every call set as "Outbound" (both successful and missed).
+- **No Answer:** Outbound calls not marked as "Completed."
+- **Connected:** Outbound calls marked as "Completed."
+- **PickUp Rate:** Connected ÷ Outgoing × 100%.
+- **Missed Calls:** Inbound calls not completed.
+- **Voicemails:** Calls where voicemail was left.
+- **Answered:** Inbound calls completed by your team.
+- **Talk Time:** Combined duration of all completed calls (shown as hh:mm:ss).
+- **Disposition Data:** How many times each call outcome was selected in the time frame.
+
+---
+
+### 🔄 Real-Time Automatic Updates
+
+Get fresh data the moment you switch any filter or select another agent/date range. No need to reload—everything updates instantly with a helpful progress message while it’s working.
 
 ---
 
@@ -268,5 +269,4 @@ Monitor SMS campaign effectiveness with real-time metrics:
 - Historical data may take up to 24 hours to appear
 - Contact support if data appears inconsistent
 
----
- 
+--- 
