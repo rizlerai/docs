@@ -1,0 +1,451 @@
+---
+title: "All Workflows"
+description: "
+The **Workflow Module** is a powerful automation system that allows you to create automated workflows triggered by specific events. Design complex automation flows with visual workflow builder to streamline your business processes."
+icon: "split"
+---
+
+
+<img
+  src="/images/workflow/overview.png"
+  alt="Workflow Module Overview"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+## 🚀 Getting Started
+
+**Accessing the Module**
+
+1. Navigate to **Workflow** in the main menu
+2. You'll see the Workflow dashboard with folders on left and workflows on right
+3. Click **"Create Workflow"** to build a new automation
+
+<img
+  src="/images/workflow/all-workflows.png"
+  alt="Workflow Dashboard"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 🆕 First-Time Setup
+
+1. **Create Folders** (Optional): Organize workflows by creating folders
+2. **Create Workflow**: Click "Create Workflow" button
+3. **Build Automation**: Use the visual builder to design your workflow
+4. **Activate**: Set status to "Active" to start automation
+
+### 🗺️ Interface Layout
+
+- **Left Panel**: Folder list for organizing workflows
+- **Right Panel**: Workflow list with search and filters
+- **Action Menu**: 3-dot menu for quick actions (Edit, View, Preview, etc.)
+
+---
+
+## 🗂️ Workflow Folders
+
+### 📂 Creating Folders
+
+1. Click **"+ Add"** button in Folders section
+2. Enter **Folder Name**
+3. Click **"Save"** to create folder
+
+<img
+  src="/images/workflow/add-folder.png"
+  alt="Add Folder Dialog"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 🛠️ Managing Folders
+
+- **Edit Folder**: Click 3-dot menu → Edit
+- **Delete Folder**: Click 3-dot menu → Delete
+- **Reorder Folders**: Drag folders using the drag handle icon
+- **Select Folder**: Click folder name to filter workflows
+
+<img
+  src="/images/workflow/folders.png"
+  alt="Workflow Folders"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 🌟 Folder Features
+
+- **All Workflows**: Default view showing all workflows
+- **Drag & Drop**: Reorder folders by dragging
+- **Persistent Selection**: Last selected folder is remembered
+- **Auto-scroll**: Automatically scrolls to selected folder
+
+### 🔄 Moving Workflows to Folders
+
+1. Click **3-dot menu** on workflow
+2. Select **"Change Folder"**
+3. Choose destination folder
+4. Click **"Save"**
+
+---
+
+## ✨ Creating Workflows
+
+### ⚡ Quick Create
+
+<img
+  src="/images/workflow/create-button.png"
+  alt="Create Workflow Button"
+  className="rounded-lg border shadow-sm"
+/>
+
+1. Click **"Create Workflow"** button
+2. System auto-generates a workflow with default name
+3. Redirects to Workflow Builder automatically
+4. Start designing your automation flow
+
+<img
+  src="/images/workflow/view-workflow.png"
+  alt="Create Workflow Button"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 📝 Workflow Properties
+
+- **Name**: Descriptive workflow name (e.g., "New Lead Notification")
+- **Description**: Optional description of workflow purpose
+- **Status**: Draft, Active, or Inactive
+- **Folder**: Optional folder assignment
+- **Created By**: Auto-tracked creator information
+- **Created At**: Auto-tracked creation date
+
+### 🗃️ Workflow List Features
+
+- **Clickable Names**: Click workflow name to open builder
+- **Search**: Search workflows by name
+- **Sort**: Sort by any column
+- **Status Badge**: Visual status indicator (Active/Draft/Inactive)
+- **Actions Menu**: Quick access to all workflow actions
+
+---
+
+<img
+  src="/images/workflow/edit-workflows.png"
+  alt="Workflow Builder Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+### 📋 Workflow List Actions
+
+Access actions via **3-dot menu** on each workflow:
+
+| Action | Description | Use Case |
+|--------|-------------|----------|
+| **View Details** | Shows workflow information | Review status, creator, dates, description |
+| **Edit** | Opens workflow builder | Modify triggers and actions, update configuration |
+| **Preview Workflow** | Visual workflow preview | See complete flow without execution |
+| **Change Folder** | Move workflow to different folder | Organize workflows, update folder structure |
+| **Activate/Deactivate** | Toggle workflow status | Start or pause automation |
+| **Duplicate** | Creates workflow copy | Quick setup from existing workflows |
+| **Delete** | Permanently removes workflow | Remove unwanted workflows (confirmation required) |
+
+
+
+### 📦 Bulk Operations
+
+- **Search**: Find workflows quickly by name
+- **Filter by Folder**: View folder-specific workflows
+- **Sort**: Order by any column (name, status, created date, etc.)
+
+---
+
+
+## 🏗️ Workflow Builder
+
+<img
+  src="/images/workflow/edit-button-workflow.png"
+  alt="Workflow Builder Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+### 🎨 Builder Interface
+
+The visual builder provides a canvas-based interface for creating automation flows:
+
+1. **Canvas Area**: Main workspace for designing workflows
+2. **Trigger Section**: Select workflow trigger event
+3. **Action Sections**: Add multiple actions to execute
+4. **Configuration Panel**: Configure trigger and action settings
+5. **Save Button**: Save workflow changes
+
+<img
+  src="/images/workflow/edit-workflows-details.png"
+  alt="Workflow Builder Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+### 🛠️ Building a Workflow
+
+#### 🟢 Step 1: Configure Trigger
+
+1. **Select Trigger**: Choose from 40+ available triggers
+2. **Configure Settings**: Set trigger-specific parameters
+3. **Preview**: See trigger configuration summary
+
+#### 🔵 Step 2: Add Actions
+
+1. **Click "+ Action"**: Add new action to workflow
+2. **Select Action Type**: Choose from available actions
+3. **Configure Action**: Set action parameters (tags, notes, webhooks, etc.)
+4. **Add Multiple Actions**: Create multi-step automation
+
+#### 🟣 Step 3: Configure Actions
+
+Each action has specific configuration options:
+
+**Add Contact Tag**
+
+- Select tags to add to contact
+- Multiple tags supported
+- Tag selection via dropdown
+
+**Remove Contact Tag**
+
+- Select tags to remove from contact
+- Multiple tags supported
+
+**Add Notes**
+
+- Enter note text
+- Supports dynamic variables
+- Auto-saves to contact timeline
+
+**Webhooks**
+
+- Enter webhook URL
+- POST method with contact data
+- Receives full contact information
+
+**Delete Contact**
+
+- Permanent deletion (use with caution)
+- No configuration required
+- Irreversible action
+
+#### 🟠 Step 4: Save & Activate
+
+1. **Save Workflow**: Click save button
+2. **Set Status**: Choose Active/Draft/Inactive
+3. **Test**: Verify workflow execution
+
+### 🧩 Builder Features
+
+- **Auto-save**: Changes save automatically
+- **Visual Feedback**: Real-time updates
+- **Validation**: Prevents invalid configurations
+- **Undo Support**: Revert changes if needed
+
+---
+
+## 🎯 Available Triggers
+
+### 👥 Contacts Category (7 Triggers)
+
+<CardGroup cols={2}>
+  <Card title="Contact Created" icon="user-plus">
+    Triggers when new contact is created
+    <br />**Use for**: Welcome sequences, initial tagging
+    <br />**Configuration**: No additional settings required
+  </Card>
+  
+  <Card title="Contact Changed" icon="user-pen">
+    Triggers when contact information updates
+    <br />**Use for**: Data sync, update notifications
+    <br />**Configuration**: Monitor specific field changes
+  </Card>
+  
+  <Card title="Add Contact Tag" icon="tags">
+    Triggers when tag is added to contact
+    <br />**Use for**: Segmentation workflows
+    <br />**Configuration**: Select specific tags to monitor
+  </Card>
+  
+  <Card title="Remove Contact Tag" icon="tag">
+    Triggers when tag is removed from contact
+    <br />**Use for**: Unsegmentation workflows
+    <br />**Configuration**: Select specific tags to monitor
+  </Card>
+  
+  <Card title="Disposition Change" icon="arrows-rotate">
+    Triggers when contact disposition changes
+    <br />**Use for**: Status-based automation
+    <br />**Configuration**: Select disposition types to monitor
+  </Card>
+  
+  <Card title="Note Added" icon="note-sticky">
+    Triggers when note is added to contact
+    <br />**Use for**: Activity tracking
+    <br />**Configuration**: Filter by note content or type
+  </Card>
+  
+  <Card title="Note Changed" icon="file-pen">
+    Triggers when note is modified
+    <br />**Use for**: Update tracking
+    <br />**Configuration**: Monitor specific note fields
+  </Card>
+</CardGroup>
+
+### 📅 Appointments Category (2 Triggers)
+
+<CardGroup cols={2}>
+  <Card title="Appointment Status" icon="calendar-check">
+    Triggers on appointment status change
+    <br />**Use for**: Booking confirmations, reminders
+    <br />**Configuration**: Select status types (confirmed, cancelled, etc.)
+  </Card>
+  
+  <Card title="Customer Booked Appointment" icon="calendar-plus">
+    Triggers when customer books appointment
+    <br />**Use for**: Confirmation emails, calendar sync
+    <br />**Configuration**: Filter by calendar or appointment type
+  </Card>
+</CardGroup>
+
+### 📈 Opportunities Category (1 Trigger)
+
+<CardGroup cols={1}>
+  <Card title="Pipeline Stage Change" icon="diagram-project">
+    Triggers when opportunity moves stages
+    <br />**Use for**: Sales process automation
+    <br />**Configuration**: Select pipeline and stages to monitor
+  </Card>
+</CardGroup>
+
+### 🤖 AI Category (30 Triggers)
+
+The AI category includes 30+ specialized triggers for AI agent interactions, call events, and AI-specific workflows. These triggers enable automation based on:
+
+- AI call events (started, ended, transferred)
+- AI agent responses and interactions
+- AI booking confirmations
+- AI call outcomes and dispositions
+- AI conversation milestones
+
+> **Note**: AI triggers are automatically available when AI agents are configured in your system.
+
+---
+
+## 🛠️ Available Actions
+
+### 👤 Contact Actions
+
+<CardGroup cols={2}>
+  <Card title="Add Contact Tag" icon="tags">
+    Add tags to contact in GoHighLevel
+    <br />**Configuration**: Select tags from dropdown
+    <br />**Use Case**: Segmentation, workflow progression
+    <br />**Multiple Tags**: Supported
+  </Card>
+  
+  <Card title="Remove Contact Tag" icon="tag">
+    Remove tags from contact
+    <br />**Configuration**: Select tags to remove
+    <br />**Use Case**: Un-segmentation, cleanup
+    <br />**Multiple Tags**: Supported
+  </Card>
+  
+  <Card title="Add Notes" icon="note-sticky">
+    Add note to contact timeline
+    <br />**Configuration**: Enter note text
+    <br />**Use Case**: Activity logging, documentation
+    <br />**Variables**: Supports dynamic content
+  </Card>
+  
+  <Card title="Remove Assigned User" icon="user-xmark">
+    Unassign user from contact
+    <br />**Configuration**: No configuration required
+    <br />**Use Case**: Contact reassignment, cleanup
+  </Card>
+  
+  <Card title="Delete Contact" icon="trash">
+    Permanently delete contact
+    <br />**Configuration**: No configuration required
+    <br />**Use Case**: Data cleanup, GDPR compliance
+    <br />**Warning**: ⚠️ IRREVERSIBLE ACTION - Use with caution
+  </Card>
+</CardGroup>
+
+### 🔌 Integration Actions
+
+<CardGroup cols={1}>
+  <Card title="Webhooks" icon="plug">
+    Send contact data to external URL
+    <br />**Configuration**: Enter webhook URL
+    <br />**Method**: POST request
+    <br />**Payload**: Full contact details in JSON format
+    <br />**Use Case**: External system integration, data sync
+    <br />**Headers**: Standard JSON content-type
+  </Card>
+</CardGroup>
+
+---
+
+## 🔄 Workflow Status
+
+### 🟢 Status Types
+
+<CardGroup cols={3}>
+  <Card title="Active" icon="toggle-on">
+    Workflow is running
+    <br />**Triggers**: Being monitored
+    <br />**Actions**: Execute automatically
+    <br />**Badge Color**: Green
+  </Card>
+  
+  <Card title="Inactive" icon="toggle-off">
+    Workflow is paused
+    <br />**Triggers**: Not monitored
+    <br />**Actions**: Do not execute
+    <br />**Badge Color**: Gray
+  </Card>
+  
+  <Card title="Draft" icon="file-lines">
+    Workflow under development
+    <br />**Triggers**: Not monitoring
+    <br />**Testing**: Phase
+    <br />**Badge Color**: Yellow
+  </Card>
+</CardGroup>
+
+### 🔄 Changing Status
+
+1. Click **3-dot menu** on workflow
+2. Select **"Activate"** or **"Deactivate"**
+3. Confirm action
+4. Status updates immediately
+
+### 💡 Status Best Practices
+
+- **Draft**: Use while building/testing workflows
+- **Active**: Deploy after thorough testing
+- **Inactive**: Temporarily disable without deleting
+
+---
+
+
+### 🧑‍🔬 Testing Workflows
+
+**Test Mode**
+
+1. Set workflow to **Draft** status
+2. Trigger event manually
+3. Monitor execution
+4. Verify actions execute correctly
+
+**Debugging**
+
+- Check trigger configuration
+- Verify action settings
+- Test with sample data
+- Review execution logs
+
+---

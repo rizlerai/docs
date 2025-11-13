@@ -10,58 +10,38 @@ icon: "user-circle"
   className="rounded-lg border shadow-sm"
 />
 
-# 🛠️ 10DLC Profile Management
+
 
 Create and manage your business profiles for compliant Application-to-Person (A2P) messaging across both Plivo and Twilio providers. Your 10DLC profile serves as the foundation for all messaging operations, ensuring regulatory compliance and optimal deliverability.
-
-The 10DLC (10-Digit Long Code) Profile system enables businesses to establish verified identities for professional SMS messaging. Unlike traditional messaging solutions, 10DLC profiles provide enterprise-grade capabilities with automatic dual-provider registration, ensuring maximum reach and reliability.
-
-<CardGroup cols={2}>
-  <Card title="Dual Provider Support" icon="network-wired">
-    Automatically creates profiles for both Plivo and Twilio providers with a single submission
-  </Card>
-  <Card title="Real-Time Validation" icon="shield-check">
-    Intelligent form validation ensures compliance before submission, reducing rejection rates by 90%
-  </Card>
-  <Card title="Instant Status Tracking" icon="chart-line">
-    Real-time monitoring of profile approval status across both providers
-  </Card>
-  <Card title="Expert Support" icon="headset">
-    Dedicated support team with 99% first-time approval rate for profile registrations
-  </Card>
-</CardGroup>
-
-## What is a 10DLC Profile?
-
-A 10DLC Profile is your business's verified digital identity within the messaging ecosystem, automatically registered with both Plivo and Twilio providers. It represents your complete business information and serves as the foundation for all messaging campaigns.
-
-<CardGroup cols={3}>
-  <Card title="Business Identity" icon="building">
-    Complete company information including legal name, address, and contact details verified across multiple databases
-  </Card>
-  <Card title="Provider Integration" icon="network-wired">
-    Automatic registration with both Plivo and Twilio ensures maximum messaging reach and redundancy
-  </Card>
-  <Card title="Compliance Foundation" icon="shield">
-    Regulatory compliance framework ensuring adherence to TCPA, CAN-SPAM, and carrier-specific guidelines
-  </Card>
-</CardGroup>
-
-
 
 
 ### 📊 Dashboard Overview
 
-The 10DLC Profile dashboard provides comprehensive management capabilities for all your business profiles:
+The 10DLC Profile dashboard gives you a clear, tabular view of all your business profiles and their compliance status. Below is a representative screenshot of the dashboard interface:
 
 
-**Profile Status Indicators:**  
+ **Profile Table Columns:**
+- **Profile Alias**: Internal friendly name for your profile (e.g., "Company MainProfile", "Demo Test")
+- **Company Name**: Your business's legal name (must match registration)
+- **Customer Type**: Select between "DIRECT" (registered business) or "RESELLER"
+- **Entity Type**: Legal structure, such as "PRIVATE", "GOVERNMENT", etc.
+- **Industry**: Select the industry classification for your business (e.g., "PROFESSIONAL")
+- **Rizz CMS Status**: Shows CMS (Campaign Management System) integration or link status for Rizz (toggle/indicator)
+- **Created At**: Date and time the profile was created
+- **Action**: Options to edit or delete a profile (with confirmation)
 
-- 🟢 **Approved**: Profile approved and messaging enabled across providers  
-- 🟡 **Pending**: Awaiting initial review by the carrier  
-- 🟠 **In Review**: Carrier is actively reviewing your submission  
-- 🔴 **Rejected**: Carrier denied the profile—review carrier feedback and resubmit  
-- ⚫ **Disabled**: Profile deactivated by carrier; messaging is blocked  
+ **Twilio Status Indicators:**
+- 🟢 **Active**/**Approved**: Profile active and messaging enabled
+- 🟡 **Pending**: Awaiting review by carrier
+- 🟠 **In Review**: Profile is under carrier examination
+- 🔴 **Twilio Rejected**: Carrier denied the profile—review the provided feedback before resubmitting
+- ⚫ **Disabled**: Profile deactivated; messaging blocked
+
+_Note: Use the "Add Profile" button to create a new 10DLC profile. Use the red "Cancel" button in Actions to remove the draft profile before completion._
+
+For complete transparency, the dashboard also lists the total number of profiles and supports sorting by any field.
+
+
 
 ## ➕ Creating a New 10DLC Profile
 

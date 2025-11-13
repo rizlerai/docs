@@ -172,6 +172,13 @@
             ]
           },
           {
+            "group": "Workflows",
+            "icon": "arrows-split-up-and-left",
+            "pages": [
+              "workflow/all-workflows"
+            ]
+          },
+          {
             "group": "knowledge-hub",
             "icon": "books",
             "pages": [
