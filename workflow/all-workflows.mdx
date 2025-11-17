@@ -101,7 +101,7 @@ icon: "split"
 4. Start designing your automation flow
 
 <img
-  src="/images/workflow/view-workflow.png"
+  src="/images/workflow/workflow-builder.png"
   alt="Create Workflow Button"
   className="rounded-lg border shadow-sm"
 />
@@ -111,9 +111,15 @@ icon: "split"
 - **Name**: Descriptive workflow name (e.g., "New Lead Notification")
 - **Description**: Optional description of workflow purpose
 - **Status**: Draft, Active, or Inactive
-- **Folder**: Optional folder assignment
 - **Created By**: Auto-tracked creator information
 - **Created At**: Auto-tracked creation date
+- **Updated At**: Auto-tracked last modification date
+
+<img
+  src="/images/workflow/view-workflow.png"
+  alt="Create Workflow Button"
+  className="rounded-lg border shadow-sm"
+/>
 
 ### 🗃️ Workflow List Features
 
@@ -148,22 +154,10 @@ Access actions via **3-dot menu** on each workflow:
 
 
 
-### 📦 Bulk Operations
 
-- **Search**: Find workflows quickly by name
-- **Filter by Folder**: View folder-specific workflows
-- **Sort**: Order by any column (name, status, created date, etc.)
-
----
 
 
 ## 🏗️ Workflow Builder
-
-<img
-  src="/images/workflow/edit-button-workflow.png"
-  alt="Workflow Builder Interface"
-  className="rounded-lg border shadow-sm"
-/>
 
 
 ### 🎨 Builder Interface
@@ -185,18 +179,35 @@ The visual builder provides a canvas-based interface for creating automation flo
 
 ### 🛠️ Building a Workflow
 
+
 #### 🟢 Step 1: Configure Trigger
 
-1. **Select Trigger**: Choose from 40+ available triggers
-2. **Configure Settings**: Set trigger-specific parameters
-3. **Preview**: See trigger configuration summary
+Triggers are displayed horizontally at the top of the canvas, making it easy to visually identify which event will start the workflow.
+
+1. **Select Trigger**: Pick a trigger from a horizontal list of 40+ available options shown at the top.
+2. **Configure Settings**: Adjust trigger-specific parameters using the configuration panel.
+3. **Preview**: Get a quick summary of your trigger settings shown inline with the horizontal trigger layout.
+
+<img
+  src="/images/workflow/add-triggers.png"
+  alt="Workflow Trigger Selection Horizontal"
+  className="rounded-lg border shadow-sm"
+/>
 
 #### 🔵 Step 2: Add Actions
 
-1. **Click "+ Action"**: Add new action to workflow
-2. **Select Action Type**: Choose from available actions
-3. **Configure Action**: Set action parameters (tags, notes, webhooks, etc.)
-4. **Add Multiple Actions**: Create multi-step automation
+Actions are displayed vertically, stacking below the selected trigger. Each new action is added as a step below the previous one, creating a clear vertical sequence.
+
+1. **Click "+ Action"**: Add a new action, which will appear as the next vertical step.
+2. **Select Action Type**: Choose the action from a list of available types.
+3. **Configure Action**: Set action details (such as tags, notes, webhooks, etc.).
+4. **Add Multiple Actions**: Continue adding actions in a vertical sequence to build multi-step automation flows.
+
+<img
+  src="/images/workflow/add-actions.png"
+  alt="Workflow Actions Vertical"
+  className="rounded-lg border shadow-sm"
+/>
 
 #### 🟣 Step 3: Configure Actions
 
@@ -245,6 +256,27 @@ Each action has specific configuration options:
 - **Undo Support**: Revert changes if needed
 
 ---
+
+## 🟪 Workflow SOPs
+
+> ![Workflow SOP Visual Guide](/images/workflow/SOPs.png)
+
+A standard operating procedures (SOPs) for setting up and managing workflows .
+
+**Key Steps:**
+1. **Define Trigger**: Choose the event that will start the workflow (e.g., new contact, tag added, note updated).
+2. **Configure Actions**: Select and customize actions (e.g., add tag, send webhook, delete contact).
+3. **Workflow Setting**: Define logic to execute workflow actions only when certain criteria or rules are satisfied.
+4. **Save & Test**: Save your workflow, set its status (Active, Draft, or Inactive), and run test executions before activating.
+
+**Best Practices:**
+- Use clear naming conventions for workflows.
+- Test each workflow before making it active.
+- Use tagging to organize and segment contacts efficiently.
+- Review workflow logs for troubleshooting.
+
+
+
 
 ## 🎯 Available Triggers
 
