@@ -10,7 +10,7 @@ The Knowledge Hub Courses feature is a comprehensive learning management system 
 
 ## 🚀 Getting Started
 
-### Accessing the Courses Dashboard
+**Accessing the Courses Dashboard**
 
 To access the Courses management system:
 
@@ -48,13 +48,12 @@ After creating the basic course information, you'll be taken to the Course Build
 
 ## 🗂️ Course Structure Management
 
-The **Outline** tab enables you to visually build your course using a hierarchical structure. You can create and manage categories, lessons, assessments, and even subcategories within a drag-and-drop interface.
+The **Outline** tab enables you to visually build your course using a hierarchical structure. You can create and manage categories, lessons, and assessments within a drag-and-drop interface.
 
 - **Course Structure**: Drag-and-drop to reorder all elements at the top level
 - **Categories**: Group lessons and assessments into folders (folder icons)
 - **Lessons**: Add individual learning modules (document icons)
 - **Assessments**: Insert quizzes and tests (question mark icons)
-- **Subcategories**: Nest further sections inside categories
 
 ![Course Builder Outline Example](/images/knowledge-hub/courses/course-builder.png)
 
@@ -62,7 +61,7 @@ The **Outline** tab enables you to visually build your course using a hierarchic
 
 - **Lessons**: Add individual learning modules (document icons)
 - **Assessments**: Insert quizzes and tests (question mark icons)
-- **Subcategories**: Nest further sections inside categories
+
 
 ![Course Builder Outline Example](/images/knowledge-hub/courses/add-button-course.png)
 <Alert className="my-6">
@@ -104,53 +103,75 @@ Give your course a clear, engaging structure by creating **Categories**—the bu
 - Drag and reorder categories in your outline with an intuitive interface.
 - Instantly see which categories are Published or Draft, thanks to clear status badges.
 - Toggle comment options anytime to fit your learning environment.
-### ➕ Add Subcategory
 
-Subcategories help you organize content even further by nesting sections within a main category. This is perfect for breaking complex topics into smaller, focused units within your course!
+####  🟦 Reordering Feature
 
-**How to Add a Subcategory:**
+Quickly arrange course structure using drag-and-drop in the Course Builder!
 
-1. **Click "Add Subcategory"**  
-   In the Course Builder or category view, look for the option to add a subcategory.
+**🔹 What Can Be Reordered?**
 
-2. **Enter a Subcategory Title**  
-   - *Required* (up to 255 characters). Make it clear and specific to its section!
+- **Categories**: Change their order in the overall course.
+- **Content Items** *(inside a category)*: Reorder **Lessons**, **Quizzes**, and **Assignments**—mixing types in any sequence you like.
 
-3. **Add a Short Description** *(Optional)*  
-   - Give a brief summary of the content in this subcategory.
+**🔹 How to Reorder Categories**
 
-4. **Select the Parent Category**  
-   - Use the dropdown menu to choose where this subcategory will be placed. All your top-level categories are listed.
+1. **Open Course Builder** and go to the **Outline** tab.
+2. **Find the Category**, then grab the menu icon (☰) at its left.
+3. **Drag and Drop** the category to your new spot. A highlight shows where it’ll go.
+4. **Release**—the order updates instantly and auto-saves. A confirmation appears.
 
-5. **Choose Subcategory Visibility**  
-   - 📢 **Published**: Instantly available to all assigned learners.  
-   - 📝 **Draft**: Hidden from learners until you’re ready to publish.
+![Add Category Interface](/images/knowledge-hub/courses/drag-and-drop-category.png)
 
-6. **Customize Comment Settings**  
-   - 💬 **Enabled**: Allow discussion and feedback  
-   - 🙈 **Hidden**: Hide comments from learners  
-   - 🔒 **Locked**: Prevent all new comments
+**Example:**
+```
+Before:                       After:
+┌─────────────┐               ┌─────────────┐
+│ Category A  │ ← (☰)         │ Category B  │
+└─────────────┘               └─────────────┘
+┌─────────────┐               ┌─────────────┐
+│ Category B  │               │ Category A  │
+└─────────────┘               └─────────────┘
+```
 
-7. **Upload a Subcategory Image** *(Optional)*  
-   - Recommended size: **1280x720px**. An image helps visually distinguish subcategories in your course outline.
+---
 
-![Add Subcategory Interface](/images/knowledge-hub/courses/add-subcategory.png)
+![Add Category Interface](/images/knowledge-hub/courses/drag-and-drop.png)
 
-**Tips for Subcategories:**  
-- You can nest as many levels as you need for structured, easy navigation.
-- Subcategories support lessons, assessments, and more—just like top-level categories.
-- Use visibility and comments settings to manage learner experience at a granular level.
+**🔹 How to Reorder Content Items**
 
-By using subcategories, you keep your course content organized and accessible for all learners!
+1. **Expand a Category** to see its items.
+2. **Find an Item** and grab its menu icon (☰).
+3. **Drag and Drop** anywhere in the list—even between Lessons, Quizzes, Assignments.
+4. **Release**. The item instantly updates its spot and a success message confirms.
+
+**Example:**
+```
+Before:                          After drag: (Quiz moved up)
+├── Lesson 1: Getting Started    ├── Quiz 1: Test Your Knowledge
+├── Lesson 2: Basics            ├── Lesson 1: Getting Started
+├── Assessment 1: Test Your Knowledge ├── Lesson 2: Basics
+└── Quiz 1: First Project └── Assignment 1: First Project
+
+Now Assignment moved: 
+├── Quiz 1: Test Your Knowledge
+├── Lesson 1: Getting Started
+├── Assignment 1: First Project   ← just drag & drop!
+└── Lesson 2: Basics
+```
+
+> **Tip:** Use the menu (☰) handle to drag. Changes save right away—no button needed!
+
+
+
 
 ### 📝 Add Assessment
 
-Assessments help measure learner understanding, reinforce material, and provide feedback within your course. You can add quizzes, tests, or other evaluation types to any category or subcategory.
+Assessments help measure learner understanding, reinforce material, and provide feedback within your course. You can add quizzes, tests, or other evaluation types to any category .
 
 **How to Add an Assessment:**
 
 1. **Click "Add Assessment"**  
-   In the Course Builder, look for the "Add Assessment" button within a category or subcategory.
+   In the Course Builder, look for the "Add Assessment" button within a category .
 
 2. **Enter Assessment Title**  
    - *Required.*  
@@ -169,6 +190,51 @@ Assessments help measure learner understanding, reinforce material, and provide 
 **Assessment Setup Tips:**  
 - After continuing, you'll be able to add questions, configure options, set time limits, and more.
 - Learner results and attempts are tracked in analytics.
+
+### ➕ Add Lesson
+
+Lessons are the core building blocks of your course. Each lesson typically contains content such as text, images, videos, files, and more.
+
+**How to Add a Lesson:**
+
+1. **Click "Add Lesson"**  
+   In the Course Builder, navigate into a category where you want to add your lesson, and click the **Add Lesson** button.
+
+2. **Complete Lesson Details**  
+   You’ll see the Lesson Editor interface (see screenshot below), where you can:
+   - **Enter the Lesson Title** (required)
+   - **Select the Category** the lesson belongs to
+   - **Write your lesson content** using the rich-text editor provided
+   - **Upload videos** or audio using the dedicated buttons at the top
+
+3. **Configure Lesson Options**  
+   On the right panel, you can:
+   - Set **Lesson Visibility**  
+     - 🟢 *Published*: Live for all assigned learners  
+     - 📝 *Draft*: Only visible to you, not learners  
+   - Configure **Comments** options  
+     - 💬 Enabled: Allow comments  
+     - 🙈 Hidden: Hide comments  
+     - 🔒 Locked: No new comments allowed  
+   - *Attach files* (optional): Upload PDFs or other resources  
+   - *(Optional)* Set a **Lesson Thumbnail** to represent your lesson visually
+
+4. **Save**  
+   When you have finished editing, click **Save** in the top-right corner to publish or draft the lesson.
+
+![Add Lesson Interface](/images/knowledge-hub/courses/add-lessons.png)
+
+**Quick Tips for Lessons:**
+- Use the rich text editor to format content, embed images, or add code blocks.
+- The **Upload Video** and **Upload Audio** buttons make it easy to add multimedia.
+- Attach supporting resources such as handouts, slides, or reference docs as files.
+- Published lessons become visible immediately to assigned learners if the course visibility permits.
+
+**What You See in the Lesson Editor:**  
+- **Main Panel:** Enter title, category selection, and write rich lesson content  
+- **Sidebar:** Configure visibility, comments, upload thumbnail, attach files, and manage lesson-specific settings
+
+
 
 
 ## 🎮 Action Buttons & Functionality
