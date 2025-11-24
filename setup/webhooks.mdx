@@ -1,31 +1,34 @@
 ---
 title: "Webhooks"
-description: "Real-time event notifications and system integrations through HTTP callbacks"
 icon: "webhook"
 ---
-
-# 🔗 Webhooks
+  
 
 Webhooks enable real-time communication between AI Sync and external systems by sending HTTP POST requests when specific events occur in your system.
 
-## 🎯 Overview
-
-Webhooks provide instant notifications about important events in your AI Sync system, allowing you to build powerful integrations and automated workflows.
-
 ![Webhook Overview](/images/setup/webhooks/overview.png)
 
+Navigate to **Setup > Webhooks** to manage your webhook configurations.
+
+### 📊 Webhook Table Overview
+
+| Column | Description | Example |
+|--------|-------------|---------|
+| **#** | Sequential webhook ID | `1`, `2`, `3` |
+| **Title** | Webhook name/identifier | `CRM Integration`, `Analytics Sync` |
+| **Hits** | Total number of webhook calls | `1,247` |
+| **Last Hit** | Most recent webhook execution | `2025-01-15 14:30:25` |
+| **Created At** | Webhook creation timestamp | `2025-01-10 10:40 PM` |
+| **Action** | Management options | Edit, Delete, View Endpoints |
+
+### ⚡ Quick Actions
+
 <CardGroup cols={2}>
-  <Card title="Real-time Notifications" icon="bell">
-    Receive instant updates when events occur in your system
+  <Card title="Add New Webhook" icon="plus">
+    Create new webhook endpoints for your integrations
   </Card>
-  <Card title="External Integrations" icon="link">
-    Connect with CRMs, databases, and third-party applications
-  </Card>
-  <Card title="Automated Workflows" icon="bolt">
-    Trigger actions in external systems based on AI Sync events
-  </Card>
-  <Card title="Data Synchronization" icon="sync">
-    Keep external systems in sync with your AI Sync data
+  <Card title="View Endpoints" icon="eye">
+    Monitor webhook performance and delivery status
   </Card>
 </CardGroup>
 
@@ -49,106 +52,44 @@ Webhooks provide instant notifications about important events in your AI Sync sy
   </Step>
 </Steps>
 
-## 📋 Webhook Management
 
-Navigate to **Setup > Webhooks** to manage your webhook configurations.
 
-![Webhook Management](/images/setup/webhooks/endpoints.png)
-
-### Webhook Table Overview
-
-| Column | Description | Example |
-|--------|-------------|---------|
-| **#** | Sequential webhook ID | `1`, `2`, `3` |
-| **Title** | Webhook name/identifier | `CRM Integration`, `Analytics Sync` |
-| **Hits** | Total number of webhook calls | `1,247` |
-| **Last Hit** | Most recent webhook execution | `2025-01-15 14:30:25` |
-| **Created At** | Webhook creation timestamp | `2025-01-10 10:40 PM` |
-| **Action** | Management options | Edit, Delete, View Endpoints |
-
-### Quick Actions
-
-<CardGroup cols={3}>
-  <Card title="Add New Webhook" icon="plus">
-    Create new webhook endpoints for your integrations
-  </Card>
-  <Card title="Edit Configuration" icon="pencil">
-    Modify existing webhook settings and URLs
-  </Card>
-  <Card title="View Endpoints" icon="eye">
-    Monitor webhook performance and delivery status
-  </Card>
-</CardGroup>
 
 ## 🎛️ Webhook Configuration
 
-### Creating a New Webhook
+**Creating a New Webhook**
 
-<Steps>
-  <Step title="Click Add Webhook">
-    Navigate to Setup > Webhooks and click the "Add" button
-  </Step>
-  <Step title="Configure Basic Settings">
-    - **Title**: Descriptive name for the webhook
-    - **URL**: Your endpoint URL to receive webhook data
-    - **Method**: HTTP method (typically POST)
-  </Step>
-  <Step title="Select Event Types">
-    Choose which events should trigger this webhook
-  </Step>
-  <Step title="Configure Authentication">
-    Set up security headers and authentication tokens
-  </Step>
-  <Step title="Test and Activate">
-    Test the webhook and activate it for live events
-  </Step>
-</Steps>
+<img
+  src="/images/setup/webhooks/add.png"
+  alt="Add Webhook Interface"
+  className="rounded-lg border shadow-sm mb-4"
+/>
 
-![Webhook Configuration](/images/setup/webhooks/edits.png)
+**How to Add a Webhook:**
 
-### Authentication & Security
+1. **Go to Setup > Webhooks**  
+   Click the yellow **Add** button to open the Add Webhook form.
 
-<AccordionGroup>
-  <Accordion title="API Key Authentication">
-    ```http
-    Authorization: Bearer your-api-key-here
-    X-API-Key: your-secret-key
-    ```
-  </Accordion>
-  
-  <Accordion title="Signature Verification">
-    ```javascript
-    // Verify webhook signature
-    const signature = req.headers['x-webhook-signature'];
-    const payload = JSON.stringify(req.body);
-    const expectedSignature = crypto
-      .createHmac('sha256', webhookSecret)
-      .update(payload)
-      .digest('hex');
-    ```
-  </Accordion>
-  
-  <Accordion title="IP Whitelisting">
-    **AI Sync Webhook IPs:**
-    - `192.168.1.100`
-    - `192.168.1.101`
-    - `192.168.1.102`
-  </Accordion>
-</AccordionGroup>
+2. **Fill out Webhook Details:**
+   - **Title:**  
+     Enter a clear, descriptive name for your webhook.<br/>
+     *Example:* `Home`
 
-### 🎯 Audience Lab Events
-![Webhook Configuration](/images/setup/webhooks/audience-lab.png)
-<Accordion title="What does Audience Lab do?">
-  Audience Lab helps you automatically sort your contacts into useful groups, analyzes your audience for actionable insights, and keeps your data in sync across platforms.
+   - **Powelist:**  
+     Select the appropriate option from the Powelist dropdown. This field lets you choose a predefined set or type related to your webhook logic.
 
-  **How it works:**
-  - Analyzes new or updated contacts to build smart segments.
-  - Updates audience groups as your data changes.
-  - Runs audience analysis for insights and reports.
-  - Syncs audience data with your other tools automatically.
+   - **Endpoint:**  
+     Use the dropdown menu to select the desired endpoint or event trigger for your webhook.  
+     *Example:* `Contact`  , `Contact Delete`
+     <br/>
+     <span style={{color:'#888', fontSize:'90%'}}>*Tip: You can select a single or multiple event types as needed for your integration.*</span>
 
-  > Audience Lab streamlines audience management, so you always have up-to-date segments and insights without manual effort.
-</Accordion>
+   After filling in all fields, click the purple **Submit** button to complete adding the webhook.
+
+> **Tip:** Hover over the event field to see additional info for each webhook trigger.
+
+
+
 
 ## 🎪 Available Webhook Events
 
@@ -286,7 +227,7 @@ Navigate to **Setup > Webhooks** to manage your webhook configurations.
 
 ## 📦 Webhook Payload Structure
 
-### Standard Payload Format
+**Standard Payload Format**
 
 All webhooks follow a consistent JSON structure:
 
@@ -305,7 +246,7 @@ All webhooks follow a consistent JSON structure:
 }
 ```
 
-### Call Event Payload Example
+**Call Event Payload Example**
 
 ```json
 {
@@ -337,155 +278,10 @@ All webhooks follow a consistent JSON structure:
 }
 ```
 
-### Audience Lab Event Payload Example
-
-```json
-{
-  "event": "audiencelab.contact",
-  "timestamp": "2025-01-15T14:30:25.123Z",
-  "webhook_id": "wh_audience_789",
-  "data": {
-    "contact_id": "contact_abc123",
-    "audience_segment": "high_value_prospects",
-    "contact_data": {
-      "name": "John Smith",
-      "email": "john@example.com",
-      "phone": "+1234567890",
-      "company": "Tech Corp",
-      "industry": "Technology",
-      "location": "New York, NY"
-    },
-    "audience_insights": {
-      "engagement_score": 85,
-      "buying_intent": "high",
-      "preferred_communication": "phone",
-      "best_time_to_contact": "morning",
-      "interests": ["AI solutions", "automation", "CRM"]
-    },
-    "segmentation": {
-      "primary_segment": "enterprise_decision_makers",
-      "secondary_segments": ["tech_enthusiasts", "early_adopters"],
-      "behavioral_tags": ["price_sensitive", "feature_focused"]
-    },
-    "campaign_recommendations": {
-      "suggested_approach": "technical_demo",
-      "content_type": "case_studies",
-      "follow_up_timing": "1_week"
-    }
-  },
-  "metadata": {
-    "version": "1.0",
-    "signature": "sha256=audience123def456...",
-    "audience_lab_version": "2.1"
-  }
-}
-```
-
- 
-
-## 🎯 Audience Lab Integration
-
-### What is Audience Lab?
-
-Audience Lab is AI Sync's advanced audience analysis and segmentation platform that helps you understand your contacts better and optimize your marketing efforts through intelligent data processing and behavioral insights.
-
-### Key Features
-
-<CardGroup cols={2}>
-  <Card title="Intelligent Segmentation" icon="chart-pie">
-    Automatically categorize contacts based on behavior, demographics, and engagement patterns
-  </Card>
-  <Card title="Behavioral Analysis" icon="brain">
-    Analyze contact interactions to predict preferences and buying intent
-  </Card>
-  <Card title="Campaign Optimization" icon="target">
-    Get recommendations for the best approach, timing, and content for each contact
-  </Card>
-  <Card title="Real-time Insights" icon="bolt">
-    Receive instant updates when audience segments change or new insights are available
-  </Card>
-</CardGroup>
-
-### Audience Lab Webhook Use Cases
-
-<AccordionGroup>
-  <Accordion title="CRM Integration">
-    **Sync audience insights with your CRM:**
-    
-    ```javascript
-    // Example: Update Salesforce with audience insights
-    app.post('/webhook/audiencelab', async (req, res) => {
-      const { data } = req.body;
-      
-      if (data.audience_insights.buying_intent === 'high') {
-        await salesforce.updateContact(data.contact_id, {
-          leadScore: data.audience_insights.engagement_score,
-          buyingIntent: data.audience_insights.buying_intent,
-          recommendedApproach: data.campaign_recommendations.suggested_approach
-        });
-      }
-      
-      res.status(200).json({ received: true });
-    });
-    ```
-  </Accordion>
-  
-  <Accordion title="Marketing Automation">
-    **Trigger personalized campaigns:**
-    
-    ```javascript
-    // Example: Trigger email campaigns based on audience segments
-    app.post('/webhook/audiencelab', async (req, res) => {
-      const { data } = req.body;
-      
-      if (data.segmentation.primary_segment === 'enterprise_decision_makers') {
-        await marketingPlatform.triggerCampaign({
-          contactId: data.contact_id,
-          campaignType: 'enterprise_demo',
-          content: data.campaign_recommendations.content_type,
-          timing: data.campaign_recommendations.follow_up_timing
-        });
-      }
-      
-      res.status(200).json({ received: true });
-    });
-    ```
-  </Accordion>
-  
-  <Accordion title="Lead Scoring">
-    **Update lead scores automatically:**
-    
-    ```javascript
-    // Example: Update lead scores based on audience analysis
-    app.post('/webhook/audiencelab', async (req, res) => {
-      const { data } = req.body;
-      
-      const leadScore = calculateLeadScore({
-        engagementScore: data.audience_insights.engagement_score,
-        buyingIntent: data.audience_insights.buying_intent,
-        segment: data.segmentation.primary_segment
-      });
-      
-      await database.updateLeadScore(data.contact_id, leadScore);
-      
-      res.status(200).json({ received: true });
-    });
-    ```
-  </Accordion>
-</AccordionGroup>
-
-### Audience Lab Event Types
-
-| Event | Description | When Triggered | Use Cases |
-|-------|-------------|----------------|-----------|
-| `audiencelab.contact` | Contact processed for audience analysis | When contact data is analyzed | Lead scoring, CRM updates |
-| `audiencelab.segment` | Audience segment created/updated | When segments are modified | Campaign targeting, reporting |
-| `audiencelab.analysis` | Analysis completed | When audience analysis finishes | Insights delivery, alerts |
-| `audiencelab.sync` | Data synchronized | When syncing with external platforms | Multi-platform management |
 
 ## 🔒 Security Best Practices
 
-### Webhook Verification
+**Webhook Verification**
 
 <AccordionGroup>
   <Accordion title="Signature Verification">
@@ -549,7 +345,7 @@ Audience Lab is AI Sync's advanced audience analysis and segmentation platform t
   </Accordion>
 </AccordionGroup>
 
-### Error Handling
+**Error Handling**
 
 <AccordionGroup>
   <Accordion title="Retry Logic">
@@ -594,7 +390,7 @@ Audience Lab is AI Sync's advanced audience analysis and segmentation platform t
 
 ## 📊 Monitoring & Debugging
 
-### Webhook Logs
+**Webhook Logs**
 
 Monitor webhook delivery and performance:
 
@@ -613,7 +409,7 @@ Monitor webhook delivery and performance:
   </Card>
 </CardGroup>
 
-### Testing Webhooks
+**Testing Webhooks**
 
 <AccordionGroup>
   <Accordion title="Test Endpoint">

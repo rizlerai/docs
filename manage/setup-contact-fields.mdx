@@ -61,6 +61,58 @@ Design and manage your contact data structure with flexible field types, custom 
   </Card>
 </CardGroup>
 
+## 🔗 Fields Mapping
+
+You can map your contact fields to external platforms such as GoHighLevel (GHL) for seamless integration and data synchronization. This is especially useful when your CRM or dialer platform requires the AI or campaign tools to know exactly which contact properties to use during calls, automation, or reporting.
+
+<img
+  src="/images/manage/setup-contact/fields-mapping.png"
+  alt="Field Mapping Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 🗺️ Field Mapping Interface Overview
+
+The Field Mapping interface allows you to match your internal contact fields with their counterparts in external systems such as GoHighLevel (GHL). Accurate mapping provides seamless data flow, supports automation, enables token mapping for AI, and boosts personalization.
+
+| Internal Field        | Example Name        | Maps to GHL Field Example      | Description                                   |
+|----------------------|--------------------|-------------------------------|-----------------------------------------------|
+| GHL Location         | `ghl_location`     | Location                      | GoHighLevel primary account/location for the contact |
+| Phone Number         | `phone_number`     | Phone Number                  | Main contact number                           |
+| Email                | `email`            | Email Address                 | Primary email address                         |
+| First Name           | `first_name`       | First Name                    | Contact's first name                          |
+| Last Name            | `last_name`        | Last Name                     | Contact's family/surname                      |
+| Email Address        | `emailAddress`     | CF 1 (Custom)                 | Alternative or secondary email field          |
+| Address              | `address`          | CF 2 (Custom)                 | Street address or full location               |
+| City                 | `city`             | City                          | Contact's city                                |
+| Zip Code             | `zip_code`         | Postal Code / Zip Code        | Mailing/postal code                           |
+| Country              | `country`          | Country                       | Country of residence                          |
+| Phone Number1        | `phone_number1`    | (Custom/Search)               | Optional/secondary phone                      |
+| AudienceLabelId      | `audiencelabelid`  | (Custom/Search)               | Custom field for segmentation/tagging         |
+
+> **Tip:** Use the "Map to GHL Field" dropdown next to each internal field to select the most appropriate external property. If the target field does not exist in GHL, create a new custom field in your CRM first and then map it.
+
+**Mapping Options:**
+- **Dropdown Select:** Choose the right external field for each of your internal data fields from a dropdown menu.
+- **Search/Filter:** Instantly find your external fields using a search or filter bar.
+- **Remove Mapping:** Remove unnecessary mapping by clicking the "X" button next to a field.
+- **Multi-Field Support:** Map multiple or custom internal fields to suitable external fields as needed, including GHL Location.
+
+**Required Fields:**
+- Some fields, like `GHL Location`, `Phone Number`, and `First Name`, are often mandatory for both inbound and outbound calling or syncing workflows. Ensure these are mapped to guarantee smooth operation.
+
+**Actions:**
+- **Cancel:** Exit the mapping modal without saving any changes.
+- **Save:** Save, apply, and sync all your field mappings with the external system.
+
+<Tip icon="link">
+  **Why Use Field Mapping?**  
+  Field mapping guarantees that the right data is always available for campaigns, contact syncing, automation, and personalization. Only mapped fields are accessible to AI and workflows such as inbound calls, campaign tokens, and integration reporting. Including GHL Location mapping ensures your contacts connect with the right account context across platforms.
+</Tip>
+
+
+
+
 ## 🏗️ Field Types & Configuration
 
 ### 📝 Standard Field Types

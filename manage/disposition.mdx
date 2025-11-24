@@ -69,7 +69,7 @@ Analyze disposition data for performance insights and optimization
 
 ## 📋 Disposition Fields
 
-### Core Fields Overview
+**🧩 Core Fields Overview**
 
 <img
   src="/images/manage/disposition/actions.png"
@@ -87,20 +87,20 @@ Analyze disposition data for performance insights and optimization
 | **Created At** | `DateTime` | Timestamp of disposition creation | `09-13-2024 01:19 PM` |
 | **Action** | `Buttons` | Available operations for each disposition | `Edit`, `Delete` |
 
-### 🔧 Field Configuration Details
+### 🛠️ Field Configuration Details
 
-#### Disposition Name
+#### 🏷️ Disposition Name
 - **Purpose**: Primary identifier for call outcomes
 
 
-#### Setup Didn't Answer Button
+#### 🚫 Setup Didn't Answer Button
 - **Function**: Automatically applies disposition when calls go unanswered
 - **Use Cases**:
   - ✅ **Enable** for: No Answer, Busy, Voicemail
   - ❌ **Disable** for: Sale, Interested, Appointment Set
 - **Impact**: Reduces manual disposition assignment by 60-80%
 
-#### Call Status Options
+#### 📞 Call Status Options
 - **Completed**: ✅ Call finished with clear outcome
 - **Answered**: 📞 Call was answered but ongoing
 - **No**: ❌ Call attempt unsuccessful
@@ -120,14 +120,8 @@ Analyze disposition data for performance insights and optimization
 
 Creating new dispositions allows you to customize call outcome tracking to match your business needs. The interface provides a streamlined approach to disposition management.
 
-#### Required Fields
-<img
-  src="/images/manage/disposition/add-disposition.png"
-  alt="Add Disposition Interface"
-  className="rounded-lg border shadow-sm"
-/>
+**📝 Required Fields**
 
-**Add Disposition Form Fields Overview**
 
 | Field             | Description                                                                                             | Example / Notes                                                  |
 |-------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
@@ -140,17 +134,34 @@ Creating new dispositions allows you to customize call outcome tracking to match
 
 > The form includes all the above fields. "Assign role to view" allows you to select multiple roles. "Fields For Notes" dynamically appears once a GHL Location is selected. Use text and background color pickers to customize appearance for clarity in dashboards and call screens.
 
-**Tip:**  
+**💡 Tip:**  
 Use consistent naming and color-coding conventions to make disposition outcomes intuitive and actionable for agents and managers.
 
   
 
 ### ✏️ Edit Disposition
 
+<img
+  src="/images/manage/disposition/edit.png"
+  alt="Edit Disposition Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+> **✏️ Edit Disposition Example:**  
+> The form lets you modify all disposition properties, including:
+> - **Disposition:** Name (e.g., "dev")
+> - **Assign role to View:** Multi-role selection (e.g., Agent, dev)
+> - **GHL Location:** Select relevant CRM/account
+> - **Fields For Notes:** Appears after location is selected
+> - **Text Color & Background Color:** Color pickers for customizing the label/button
+> - **Submit:** Save changes after editing
+> 
+> Use the **Back** button to return to the disposition list without saving changes.
+
 Modify existing dispositions to reflect changing business needs or improve tracking accuracy.
 
 <Warning>
-Editing disposition names will affect historical reporting. Consider creating new dispositions instead of modifying existing ones for data consistency.
+⚠️ Editing disposition names will affect historical reporting. Consider creating new dispositions instead of modifying existing ones for data consistency.
 </Warning>
 
 ### 🗑️ Delete Disposition
@@ -158,7 +169,7 @@ Editing disposition names will affect historical reporting. Consider creating ne
 Remove unused or outdated dispositions from your system.
 
 <Note>
-Deleted dispositions cannot be recovered. Ensure all historical data using this disposition is properly archived before deletion.
+🗒️ Deleted dispositions cannot be recovered. Ensure all historical data using this disposition is properly archived before deletion.
 </Note>
 
  
@@ -195,7 +206,7 @@ pie title Disposition Distribution (Last 30 Days)
 </CardGroup>
  
 
-#### Configuration Options
+#### ⚙️ Configuration Options
 
 | Setting | Description | Recommended Use |
 |---------|-------------|-----------------|
@@ -209,7 +220,7 @@ pie title Disposition Distribution (Last 30 Days)
 ### 🤖 AI-Powered Auto-Disposition
 
 <Note>
-Enable intelligent disposition assignment based on conversation analysis and customer sentiment detection.
+🧠 Enable intelligent disposition assignment based on conversation analysis and customer sentiment detection.
 </Note>
 
 - **Sentiment Analysis**: Automatically detect positive/negative outcomes
@@ -221,11 +232,11 @@ Enable intelligent disposition assignment based on conversation analysis and cus
 
 <CardGroup cols={2}>
   <Card title="CRM Sync" icon="database">
-    Automatically update lead status in connected CRM systems based on disposition
+    🔄 Automatically update lead status in connected CRM systems based on disposition
 </Card>
 
   <Card title="Workflow Triggers" icon="bolt">
-    Launch automated follow-up sequences, emails, and task creation
+    ⚡ Launch automated follow-up sequences, emails, and task creation
 </Card>
 </CardGroup>
 
@@ -245,4 +256,3 @@ flowchart LR
     F --> H
     G --> H
 ```
- 
