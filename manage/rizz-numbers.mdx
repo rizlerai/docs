@@ -1,10 +1,7 @@
 ---
 title: "Phone Numbers"
-description: "Manage and configure phone numbers for AI calling campaigns and customer interactions"
 icon: "phone"
 ---
-
-# 📞 Phone Numbers
 
 Manage your phone number inventory with comprehensive provider integration, verification tracking, and advanced calling features for AI campaigns and business communications.
 
@@ -16,22 +13,67 @@ Manage your phone number inventory with comprehensive provider integration, veri
   className="rounded-lg border shadow-sm"
 />
 
-Centrally manage all your phone numbers across multiple providers with detailed tracking, verification status, and comprehensive action controls.
+
+> **Filter Bar Details:**  
+> Use the filter bar to quickly narrow or customize your phone numbers list.
+>
+> - **Filter By:**  
+>   - **All:** (Default) View every phone number record.
+>   - **AI:** Only AI phone numbers.
+>   - **Dialer:** Only dialer phone numbers.
+>   - **Both:** Both AI and dialer phone numbers shown together.
+> - **Provider:** Pick a specific provider (e.g., RizzDial, Twilio) to focus the results on their numbers.
+> - **Status:** Instantly filter numbers by status (Verified, Unverified, All).
+> - **Download:** Instantly export all currently displayed numbers as CSV or Excel for easy offline review or reporting.
+
 
 ### 📊 Phone Number Fields
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Number ID | `1`, `2`, `3`, `4`, `5`, `6`, `7` |
-| **Title** | Number identifier | Custom name or label |
-| **Phone No.** | Full phone number | `+13154942679`, `+12058823206` |
-| **AreaCode** | Geographic area code | `315`, `205` |
-| **Provider** | Service provider | `Plivo`, `Twilio` |
-| **10DLC** | 10DLC registration status | `No`, `Yes` |
-| **Renwal At** | Next renewal date | `09-14-2025 12:40 PM` |
-| **Status** | Verification status | `Verified`, `Unverified` |
-| **Purchased At** | Purchase timestamp | `08-14-2025 12:40 PM` |
-| **Action** | Available operations | `Settings` `More Options` |
+| Field           | Description                          | Example                                              |
+|-----------------|--------------------------------------|------------------------------------------------------|
+| **#**           | Sequential row number                | `1`, `2`, `3`, ...                                   |
+| **Title**       | Number label or custom name          | `BackLine-Caller`, *(blank)*                         |
+| **Phone No.**   | Full phone number                    | `+13154942679`, `+12058823206`                       |
+| **AreaCode**    | Area code extracted from phone       | `315`, `205`                                         |
+| **Provider**    | Current service provider             | `RizzDial`, `Twilio`                        |
+| **10DLC**       | 10DLC registration (A2P compliance)  | `No`, `Yes`                                          |
+| **Renewal At**  | Next renewal/billing date            | `09-14-2025 12:40 PM`, `10-02-2024 1:00 PM`          |
+| **Status**      | Verification state                   | `Verified`, `Unverified`                             |
+| **Purchased At**| Date & time purchased                | `08-14-2024 12:40 PM`, `07-23-2024 2:42 PM`          |
+| **Action**      | Actions menu (settings/more options) | <br/><img src="/images/manage/ai-sync-number/actions1.png" alt="Actions Menu" width="150" style={{verticalAlign: 'middle'}} /> |        |
+
+> **Field Notes:**  
+> - The **Title** is optional and may be blank.  
+> - **10DLC** compliance is shown for eligible providers only.  
+> - **Action** column uses icon buttons for settings & more actions.
+
+
+
+
+### 🎛️ Available Actions
+
+
+![Phone Number Table UI](/images/manage/ai-sync-number/actions.png)
+
+<CardGroup cols={3}>
+  <Card title="More Options" icon="ellipsis-vertical">
+    Additional number management actions
+    <br />**Access**: Click more options (⋯)
+    <br />**Actions**: Edit, Activate for AI ,  Delete, 10DLC, Endpoints
+  </Card>
+  <Card title="Download Numbers" icon="download">
+    Export your phone number list
+    <br />**Access**: Click the download button
+    <br />**Format**: Exports as CSV or Excel file
+    <br />
+
+  </Card>
+  
+</CardGroup>
+ 
+ 
+
+
 ## 🌍 Local Preference API Configuration
 
 The Local Preference API provides advanced configuration options for managing phone number preferences, routing, and geographic targeting to optimize call delivery and compliance.
@@ -205,32 +247,6 @@ The diagram above shows the complete phone number lifecycle from purchase to ong
     <br />**Compliance**: Meet regulatory requirements
   </Card>
 </CardGroup>
-
-## ⚡ Number Actions & Controls
-
-### 🎛️ Available Actions
-
-<CardGroup cols={3}>
-  <Card title="Number Settings" icon="gear">
-    Configure individual number settings
-    <br />**Access**: Click settings icon (⚙️)
-    <br />**Options**: Routing, forwarding, features
-  </Card>
-  
-  <Card title="More Options" icon="ellipsis-vertical">
-    Additional number management actions
-    <br />**Access**: Click more options (⋯)
-    <br />**Actions**: Edit, delete, 10DLC, Endpoints
-  </Card>
-  
-  <Card title="Bulk Operations" icon="list-check">
-    Manage multiple numbers simultaneously
-    <br />**Selection**: Check multiple numbers
-    <br />**Actions**: Bulk edit, export, assign
-  </Card>
-</CardGroup>
- 
- 
 
 
 
