@@ -387,9 +387,38 @@ Examples: Phone Number, Email, First Name, Last Name, Address, or any custom tex
 
 ![Advanced](/images/ai/AI-agent/edit/advance/tools-testing.png)
 
-**🧪 Testing and Configuration Tools**
-- **Live Testing**: Real-time call testing and performance monitoring
-- **Widget & Endpoints**: Customize web widgets and manage API integrations
+
+### 🔗 Configuration Webhook Endpoints
+
+Each AI agent can have its own webhook endpoint, allowing you to send different events to different systems depending on which agent handles a call.
+
+<div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
+  <img src="/images/ai/AI-agent/edit/advance/configure-webhook-endpoints.png" alt="Configure Webhook Endpoint" style={{maxWidth: 400, borderRadius: 8}} />
+</div>
+
+
+**Webhook Endpoint URL**
+
+- Enter the full URL where you want to receive webhook notifications.
+- This can be any endpoint capable of handling HTTP requests from Rizz Dial.
+- **Example:**  
+  `https://your-domain.com/webhook-receiver`
+
+**HTTP Method**
+
+Select the HTTP method your endpoint expects:
+
+- **GET** — Sends webhook data in URL parameters.
+- **POST** (recommended) — Sends webhook data in the request body.
+
+**Save Configuration**
+
+1. Click the **Save** button to apply your webhook settings.
+2. A success message will confirm your webhook is configured.
+
+> Make sure your endpoint is ready to receive test requests before saving the configuration!
+
+
 
 ## ✉️ Sender Management 
 
