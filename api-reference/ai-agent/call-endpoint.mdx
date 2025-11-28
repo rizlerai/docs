@@ -30,19 +30,35 @@ curl --location 'https://app.aisync.link/api/ai/agent/call-endpoint?agent_id=age
 
 </CodeGroup>
 
-<ResponseField name="endpoint_url" type="string">
+<ResponseField name="status" type="string">
+  Response status (e.g., "success")
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Response data object containing endpoint information
+</ResponseField>
+
+<ResponseField name="data.endpoint" type="string">
   The unique endpoint URL for initiating calls with this agent
 </ResponseField>
 
-<ResponseField name="agent_id" type="string">
-  The agent identifier associated with this endpoint
+<ResponseField name="data.Method" type="string">
+  The HTTP method to use when calling the endpoint (typically "POST")
 </ResponseField>
 
-<ResponseField name="status" type="string">
-  Status of the agent endpoint (typically "active" or "inactive")
+<ResponseField name="data.form_data" type="array">
+  Array of form field names that must be included when making a POST request to the endpoint:
+  
+  - `phone_number`: The phone number to call
+  - `email`: Contact email address
+  - `first_name`: Contact's first name
+  - `last_name`: Contact's last name
+  - `ghl_contact_id`: GoHighLevel contact ID
+  - `override_agent_id`: Agent ID override (optional)
+  - `local_presence_number`: Set to "Yes" to make the call from AI local presence number, or "No" otherwise
 </ResponseField>
 
 <Note>
-Use this endpoint URL to configure your telephony system or make direct API calls to initiate conversations with your AI agent. The endpoint is unique to each agent.
+Use the returned endpoint URL with POST method and include the required form_data fields to initiate conversations with your AI agent. The endpoint is unique to each agent. When `local_presence_number` is set to "Yes", the call will be made from the AI local presence number.
 </Note>
 

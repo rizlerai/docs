@@ -188,12 +188,19 @@ The Add User form provides comprehensive fields for creating new user accounts w
 </Step>
 
 <Step title="🗑️ Delete Action">
-**Purpose**: Remove user from system
+**Purpose**: Delete a user from the system
 
-- **Confirmation**: Requires confirmation dialog
-- **Use Case**: Deactivate terminated employees, cleanup
-- **Data Handling**: Soft delete with data retention options
-- **Result**: User marked as deleted, data archived
+<img src="/images/user-management/users/delete-user.png" alt="Delete User Confirmation Dialog" className="rounded-lg border shadow-sm" />
+
+
+- When you click **Delete**, a confirmation popup will appear with the message: “Are you sure you want to delete user(s)?”
+- The popup will clearly display the users selected for deletion and warn:  
+  **"This action cannot be undone!"**
+- You have two options:
+  - **Yes, Delete User:** The user and their associated module records will be removed from the system .
+  - **Cancel:** The deletion process will be canceled and no changes will be made.
+
+Use this to remove ex-employees or clean up users you no longer need.
 </Step>
 </Steps>
 

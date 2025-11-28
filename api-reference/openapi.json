@@ -418,6 +418,22 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CallEndpointResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "endpoint": "",
+                    "Method": "POST",
+                    "form_data": [
+                      "phone_number",
+                      "email",
+                      "first_name",
+                      "last_name",
+                      "ghl_contact_id",
+                      "override_agent_id",
+                      "local_presence_number=No (Yes/No)<br> [If Yes, then the call will be made from AI local presence number]"
+                    ]
+                  }
                 }
               }
             }
@@ -691,21 +707,45 @@
       "CallEndpointResponse": {
         "type": "object",
         "properties": {
-          "endpoint_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "The unique endpoint URL for initiating calls with this agent"
-          },
-          "agent_id": {
-            "type": "string",
-            "description": "The agent identifier associated with this endpoint"
-          },
           "status": {
             "type": "string",
-            "description": "Status of the agent endpoint (typically 'active' or 'inactive')"
+            "description": "Response status (e.g., 'success')",
+            "example": "success"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string",
+                "description": "The unique endpoint URL for initiating calls with this agent",
+                "example": ""
+              },
+              "Method": {
+                "type": "string",
+                "description": "The HTTP method to use when calling the endpoint",
+                "example": "POST"
+              },
+              "form_data": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Array of form field names that must be included when making a POST request to the endpoint",
+                "example": [
+                  "phone_number",
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "ghl_contact_id",
+                  "override_agent_id",
+                  "local_presence_number=No (Yes/No)<br> [If Yes, then the call will be made from AI local presence number]"
+                ]
+              }
+            },
+            "required": ["endpoint", "Method", "form_data"]
           }
         },
-        "required": ["endpoint_url", "agent_id", "status"]
+        "required": ["status", "data"]
       },
       "Number": {
         "type": "object",
