@@ -1,0 +1,56 @@
+---
+title: 'List Numbers'
+openapi: 'GET /api/ai/number/list'
+icon: 'phone'
+---
+
+## List Numbers
+
+Retrieve a paginated list of all AI phone numbers associated with your account. Use this endpoint to get an overview of all your AI numbers and their details.
+
+<ParamField body="query" path="page" type="integer" required>
+  The page number to retrieve (starts from 1)
+</ParamField>
+
+<ParamField body="query" path="per_page" type="integer" required>
+  Number of numbers to return per page (maximum 100)
+</ParamField>
+
+<ParamField body="header" path="Authorization" type="string" required>
+  Bearer token in the format: `Bearer {access_token}`
+</ParamField>
+
+<ParamField body="header" path="Content-Type" type="string" required>
+  Must be set to `application/json`
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/api/ai/number/list?page=1&per_page=25' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer {{bearer_token}}'
+```
+
+</CodeGroup>
+
+<ResponseField name="data" type="array">
+  Array of phone number objects containing number details
+</ResponseField>
+
+<ResponseField name="current_page" type="integer">
+  The current page number
+</ResponseField>
+
+<ResponseField name="per_page" type="integer">
+  Number of items per page
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  Total number of phone numbers available
+</ResponseField>
+
+<Note>
+Use pagination parameters to efficiently retrieve large lists of phone numbers. The maximum number of numbers per page is 100.
+</Note>
+

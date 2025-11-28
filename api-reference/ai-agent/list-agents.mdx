@@ -1,0 +1,51 @@
+---
+title: 'List Agents'
+openapi: 'GET /api/ai/agent/list'
+icon: 'list'
+---
+
+## List Agents
+
+Retrieve a paginated list of all AI agents associated with your account. Use this endpoint to get an overview of all your agents and their details.
+
+<ParamField body="query" path="page" type="integer" required>
+  The page number to retrieve (starts from 1)
+</ParamField>
+
+<ParamField body="query" path="per_page" type="integer" required>
+  Number of agents to return per page (maximum 100)
+</ParamField>
+
+<ParamField body="header" path="Authorization" type="string" required>
+  Bearer token in the format: `Bearer {access_token}`
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/api/ai/agent/list?page=1&per_page=100' \
+  --header 'Authorization: Bearer {{bearer_token}}'
+```
+
+</CodeGroup>
+
+<ResponseField name="data" type="array">
+  Array of agent objects containing agent details
+</ResponseField>
+
+<ResponseField name="current_page" type="integer">
+  The current page number
+</ResponseField>
+
+<ResponseField name="per_page" type="integer">
+  Number of items per page
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  Total number of agents available
+</ResponseField>
+
+<Note>
+Use pagination parameters to efficiently retrieve large lists of agents. The maximum number of agents per page is 100.
+</Note>
+

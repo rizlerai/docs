@@ -1,0 +1,66 @@
+---
+title: 'Create Agent'
+openapi: 'POST /api/ai/agent/create'
+icon: 'plus-circle'
+---
+
+## Create Agent
+
+Create a new AI agent with custom configuration. Define the agent's name, general prompt, and optional webhook settings for call completion callbacks.
+
+<ParamField body="header" path="Authorization" type="string" required>
+  Bearer token in the format: `Bearer {access_token}`
+</ParamField>
+
+<ParamField body="header" path="Content-Type" type="string" required>
+  Must be set to `application/json`
+</ParamField>
+
+<ParamField body="body" path="agent_name" type="string" required>
+  A descriptive name for your AI agent
+</ParamField>
+
+<ParamField body="body" path="general_prompt" type="string" required>
+  The main system prompt that defines the agent's behavior and purpose. This guides how the agent interacts during calls.
+</ParamField>
+
+<ParamField body="body" path="weebhook_endpoint" type="string">
+  Optional callback URL that will be called when the agent completes a call. Leave empty if not needed.
+</ParamField>
+
+<ParamField body="body" path="weebhook_endpoint_method" type="string">
+  HTTP method for the webhook callback. Must be either `GET` or `POST`. Defaults to `POST` if not specified.
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/api/ai/agent/create' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer {{bearer_token}}' \
+  --data '{
+    "agent_name": "My Agent 3",
+    "general_prompt": "Your purpose is simple: book qualified strategist appointments with business owners by running the cleanest, most natural conversations possible.\n\nYou are an AI disguised as a human. You must sound fluid, casual, and confident at all times.",
+    "weebhook_endpoint": "",
+    "weebhook_endpoint_method": "POST"
+  }'
+```
+
+</CodeGroup>
+
+<ResponseField name="agent_id" type="string">
+  Unique identifier for the newly created agent
+</ResponseField>
+
+<ResponseField name="agent_name" type="string">
+  The name of the created agent
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  Status of the agent creation (typically "active" or "pending")
+</ResponseField>
+
+<Warning>
+The general_prompt is crucial for defining your agent's behavior. Make sure it clearly describes the agent's purpose, tone, and objectives for best results.
+</Warning>
+

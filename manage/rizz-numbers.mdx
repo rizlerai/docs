@@ -14,17 +14,30 @@ Manage your phone number inventory with comprehensive provider integration, veri
 />
 
 
-> **Filter Bar Details:**  
-> Use the filter bar to quickly narrow or customize your phone numbers list.
+> **Filter Bar & Bulk Actions:**  
+> Use the filter bar to precisely narrow your phone numbers list, and leverage bulk actions for efficient management.
 >
 > - **Filter By:**  
->   - **All:** (Default) View every phone number record.
->   - **AI:** Only AI phone numbers.
->   - **Dialer:** Only dialer phone numbers.
->   - **Both:** Both AI and dialer phone numbers shown together.
-> - **Provider:** Pick a specific provider (e.g., RizzDial, Twilio) to focus the results on their numbers.
-> - **Status:** Instantly filter numbers by status (Verified, Unverified, All).
-> - **Download:** Instantly export all currently displayed numbers as CSV or Excel for easy offline review or reporting.
+>   - **All:** (Default) Shows every phone number record.
+>   - **AI:** Only show AI phone numbers.
+>   - **Dialer:** Only show dialer numbers.
+>   - **Both:** Show both AI and dialer numbers together.
+> - **Provider:** Choose a provider (e.g., RizzDial, Twilio) to focus results.
+> - **Status:** Instantly filter by Verified, Unverified, or All.
+> - **Download:** Export the filtered numbers as CSV or Excel for offline access.
+>
+> **Bulk Actions:**  
+> - ✅ Use row checkboxes to select individual numbers
+> - ✅ Use the main "Select All" checkbox at the top for large-scale management
+> - 📊 The UI displays a live count (e.g., "2 selected") showing how many numbers you've chosen
+> 
+> **Available Actions:**  
+> *(These options appear only after you select at least one checkbox)*
+> - 🛡️ **Spam Protect**: Enable spam protection for selected phone numbers to prevent unwanted calls and improve deliverability
+> - 🤖 **Activate for AI**: Instantly activate selected numbers for AI campaign use
+> - 🗑️ **Delete**: Remove one or multiple selected numbers (requires confirmation)
+
+
 
 
 ### 📊 Phone Number Fields
@@ -40,38 +53,10 @@ Manage your phone number inventory with comprehensive provider integration, veri
 | **Renewal At**  | Next renewal/billing date            | `09-14-2025 12:40 PM`, `10-02-2024 1:00 PM`          |
 | **Status**      | Verification state                   | `Verified`, `Unverified`                             |
 | **Purchased At**| Date & time purchased                | `08-14-2024 12:40 PM`, `07-23-2024 2:42 PM`          |
-| **Action**      | Actions menu (settings/more options) | <br/><img src="/images/manage/ai-sync-number/actions1.png" alt="Actions Menu" width="150" style={{verticalAlign: 'middle'}} /> |        |
-
 > **Field Notes:**  
 > - The **Title** is optional and may be blank.  
 > - **10DLC** compliance is shown for eligible providers only.  
-> - **Action** column uses icon buttons for settings & more actions.
 
-
-
-
-### 🎛️ Available Actions
-
-
-![Phone Number Table UI](/images/manage/ai-sync-number/actions.png)
-
-<CardGroup cols={3}>
-  <Card title="More Options" icon="ellipsis-vertical">
-    Additional number management actions
-    <br />**Access**: Click more options (⋯)
-    <br />**Actions**: Edit, Activate for AI ,  Delete, 10DLC, Endpoints
-  </Card>
-  <Card title="Download Numbers" icon="download">
-    Export your phone number list
-    <br />**Access**: Click the download button
-    <br />**Format**: Exports as CSV or Excel file
-    <br />
-
-  </Card>
-  
-</CardGroup>
- 
- 
 
 
 ## 🌍 Local Preference API Configuration

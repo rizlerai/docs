@@ -220,10 +220,26 @@
             "group": "Authorization",
             "icon": "plug",
             "pages": [
-              "api-reference/endpoint/authorize",
-              "api-reference/endpoint/generate-token",
-              "api-reference/endpoint/refresh-token",
-              "api-reference/endpoint/access-validation"
+              "api-reference/authorize/authorize",
+              "api-reference/authorize/generate-token",
+              "api-reference/authorize/refresh-token",
+              "api-reference/authorize/access-validation"
+            ]
+          },
+          {
+            "group": "AI Agents",
+            "icon": "robot",
+            "pages": [
+              "api-reference/ai-agent/list-agents",
+              "api-reference/ai-agent/create-agent",
+              "api-reference/ai-agent/call-endpoint"
+            ]
+          },
+          {
+            "group": "AI Numbers",
+            "icon": "phone",
+            "pages": [
+              "api-reference/ai-number/list-numbers"
             ]
           }
         ]

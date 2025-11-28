@@ -1,0 +1,48 @@
+---
+title: 'AI Call Endpoint'
+openapi: 'GET /api/ai/agent/call-endpoint'
+icon: 'phone'
+---
+
+## AI Call Endpoint
+
+Retrieve the call endpoint URL for a specific AI agent. This endpoint provides the unique URL that can be used to initiate calls with the specified agent.
+
+<ParamField body="query" path="agent_id" type="string" required>
+  The unique identifier of the agent (e.g., `agent_07a9005357b35d0943f7359ad9`)
+</ParamField>
+
+<ParamField body="header" path="Authorization" type="string" required>
+  Bearer token in the format: `Bearer {access_token}`
+</ParamField>
+
+<ParamField body="header" path="Content-Type" type="string" required>
+  Must be set to `application/json`
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/api/ai/agent/call-endpoint?agent_id=agent_07a9005357b35d0943f7359ad9' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer {{bearer_token}}'
+```
+
+</CodeGroup>
+
+<ResponseField name="endpoint_url" type="string">
+  The unique endpoint URL for initiating calls with this agent
+</ResponseField>
+
+<ResponseField name="agent_id" type="string">
+  The agent identifier associated with this endpoint
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  Status of the agent endpoint (typically "active" or "inactive")
+</ResponseField>
+
+<Note>
+Use this endpoint URL to configure your telephony system or make direct API calls to initiate conversations with your AI agent. The endpoint is unique to each agent.
+</Note>
+
