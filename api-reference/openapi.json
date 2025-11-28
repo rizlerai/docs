@@ -1,90 +1,79 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
-    "license": {
-      "name": "MIT"
-    },
+    "title": "AI Sync OAuth API",
+    "description": "OAuth 2.0 API for authenticating and authorizing third-party applications",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
-    }
-  ],
-  "security": [
-    {
-      "bearerAuth": []
+      "url": "https://app.aisync.link",
+      "description": "Production server"
     }
   ],
   "paths": {
-    "/plants": {
+    "/oauth/authorize": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "summary": "Authorize",
+        "description": "Start the OAuth authorization flow by redirecting users to the authorization endpoint. Users will grant permission to your application and be redirected back with an authorization code.",
+        "operationId": "authorize",
+        "tags": ["OAuth"],
         "parameters": [
           {
-            "name": "limit",
+            "name": "client_id",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "Your OAuth client ID obtained from the dashboard",
+            "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "in": "query",
+            "description": "The redirect URI registered with your OAuth client. Must exactly match the registered URI.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          {
+            "name": "response_type",
+            "in": "query",
+            "description": "Must be set to 'code' for authorization code flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["code"],
+              "default": "code"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "description": "The scope of access requested. Use '*' for full access.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "*"
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Plant response",
-            "content": {
-              "application/json": {
+          "302": {
+            "description": "Redirect to redirect_uri with authorization code",
+            "headers": {
+              "Location": {
+                "description": "Redirect URI with code parameter",
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
-                  }
+                  "type": "string"
                 }
               }
             }
           },
           "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "Creates a new plant in the store",
-        "requestBody": {
-          "description": "Plant to add to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
+            "description": "Invalid request parameters",
             "content": {
               "application/json": {
                 "schema": {
@@ -96,28 +85,72 @@
         }
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
+    "/oauth/token": {
+      "post": {
+        "summary": "Generate Token",
+        "description": "Exchange authorization code for access token and refresh token. This endpoint is used after receiving the authorization code from the authorize endpoint.",
+        "operationId": "generateToken",
+        "tags": ["OAuth"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": ["code", "client_id", "client_secret", "grant_type", "redirect_uri"],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "The authorization code received from the authorize endpoint"
+                  },
+                  "client_id": {
+                    "type": "string",
+                    "description": "Your OAuth client ID"
+                  },
+                  "client_secret": {
+                    "type": "string",
+                    "description": "Your OAuth client secret",
+                    "format": "password"
+                  },
+                  "grant_type": {
+                    "type": "string",
+                    "enum": ["authorization_code"],
+                    "description": "Must be set to 'authorization_code' for this flow",
+                    "default": "authorization_code"
+                  },
+                  "redirect_uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The same redirect URI used in the authorization request"
+                  }
+                }
+              }
             }
           }
-        ],
+        },
         "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
+          "200": {
+            "description": "Token response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
           },
           "400": {
-            "description": "unexpected error",
+            "description": "Invalid request or expired code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid client credentials",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,25 +161,115 @@
           }
         }
       }
-    }
-  },
-  "webhooks": {
-    "/plant/webhook": {
+    },
+    "/oauth/token/refresh": {
       "post": {
-        "description": "Information about a new plant added to the store",
+        "summary": "Refresh Token",
+        "description": "Obtain a new access token using your refresh token. Use this endpoint when your access token expires to continue making API calls without requiring user re-authorization.",
+        "operationId": "refreshToken",
+        "tags": ["OAuth"],
         "requestBody": {
-          "description": "Plant added to the store",
+          "required": true,
           "content": {
-            "application/json": {
+            "application/x-www-form-urlencoded": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "type": "object",
+                "required": ["client_id", "client_secret", "grant_type", "redirect_uri", "refresh_token"],
+                "properties": {
+                  "client_id": {
+                    "type": "string",
+                    "description": "Your OAuth client ID"
+                  },
+                  "client_secret": {
+                    "type": "string",
+                    "description": "Your OAuth client secret",
+                    "format": "password"
+                  },
+                  "grant_type": {
+                    "type": "string",
+                    "enum": ["refresh_token"],
+                    "description": "Must be set to 'refresh_token' for this flow",
+                    "default": "refresh_token"
+                  },
+                  "redirect_uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The redirect URI registered with your OAuth client"
+                  },
+                  "refresh_token": {
+                    "type": "string",
+                    "description": "The refresh token obtained from the Generate Token endpoint"
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
+            "description": "Token response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or expired refresh token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid client credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/access_validation": {
+      "get": {
+        "summary": "Access Validation",
+        "description": "Validate that your access token is still valid and active. Use this endpoint to check token status before making API calls.",
+        "operationId": "accessValidation",
+        "tags": ["OAuth"],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Token validation response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or expired token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -154,63 +277,73 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
+      "TokenResponse": {
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
+          "access_token": {
+            "type": "string",
+            "description": "The access token to use for API requests"
           },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
+          "refresh_token": {
+            "type": "string",
+            "description": "Token used to obtain a new access token when it expires"
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token, typically 'Bearer'",
+            "default": "Bearer"
+          },
+          "expires_in": {
+            "type": "integer",
+            "description": "The number of seconds until the access token expires"
           }
-        }
+        },
+        "required": ["access_token", "token_type", "expires_in"]
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
+      "ValidationResponse": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean",
+            "description": "Indicates whether the access token is valid"
           },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp of when the token expires"
+          },
+          "scope": {
+            "type": "string",
+            "description": "The scope of access granted to this token"
           }
-        ]
+        },
+        "required": ["valid"]
       },
       "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
         "type": "object",
         "properties": {
           "error": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "description": "Error code"
+          },
+          "error_description": {
+            "type": "string",
+            "description": "Human-readable error description"
           },
           "message": {
-            "type": "string"
+            "type": "string",
+            "description": "Error message"
           }
-        }
+        },
+        "required": ["error"]
       }
     },
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
-        "scheme": "bearer"
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Bearer token authentication. Include the access token in the Authorization header as 'Bearer {access_token}'"
       }
     }
   }

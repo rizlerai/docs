@@ -1,0 +1,43 @@
+---
+title: 'Authorize'
+openapi: 'GET /oauth/authorize'
+icon: 'key'
+---
+
+## Authorize
+
+Start the OAuth authorization flow by redirecting users to the authorization endpoint. Users will grant permission to your application and be redirected back with an authorization code.
+
+<ParamField body="query" path="client_id" type="string" required>
+  Your OAuth client ID obtained from the dashboard
+</ParamField>
+
+<ParamField body="query" path="redirect_uri" type="string" required>
+  The redirect URI registered with your OAuth client. Must exactly match the registered URI.
+</ParamField>
+
+<ParamField body="query" path="response_type" type="string" required>
+  Must be set to `code` for authorization code flow
+</ParamField>
+
+<ParamField body="query" path="scope" type="string" required>
+  The scope of access requested. Use `*` for full access.
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location --globoff 'https://app.aisync.link/oauth/authorize?client_id={{client_id}}&redirect_uri={{redirect_uri}}&response_type=code&scope=*'
+```
+
+</CodeGroup>
+
+After the user authorizes your application, they will be redirected to your `redirect_uri` with an authorization code:
+
+```
+{{redirect_uri}}?code={{authorization_code}}
+```
+
+<Note>
+The authorization code is single-use and expires quickly. Exchange it for an access token immediately.
+</Note>

@@ -1,0 +1,62 @@
+---
+title: 'Generate Token'
+openapi: 'POST /oauth/token'
+icon: 'lock'
+---
+
+## Generate Token
+
+Exchange the authorization code for an access token and refresh token. This endpoint is used after receiving the authorization code from the authorize endpoint.
+
+<ParamField body="form" path="code" type="string" required>
+  The authorization code received from the authorize endpoint
+</ParamField>
+
+<ParamField body="form" path="client_id" type="string" required>
+  Your OAuth client ID
+</ParamField>
+
+<ParamField body="form" path="client_secret" type="string" required>
+  Your OAuth client secret (keep this secure!)
+</ParamField>
+
+<ParamField body="form" path="grant_type" type="string" required>
+  Must be set to `authorization_code` for this flow
+</ParamField>
+
+<ParamField body="form" path="redirect_uri" type="string" required>
+  The same redirect URI used in the authorization request
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/oauth/token' \
+  --form 'code="{{code}}"' \
+  --form 'client_id="{{client_id}}"' \
+  --form 'client_secret="{{client_secret}}"' \
+  --form 'grant_type="authorization_code"' \
+  --form 'redirect_uri="{{redirect_uri}}"'
+```
+
+</CodeGroup>
+
+<ResponseField name="access_token" type="string">
+  The access token to use for API requests. Include this in the Authorization header as `Bearer {access_token}`.
+</ResponseField>
+
+<ResponseField name="refresh_token" type="string">
+  Token used to obtain a new access token when it expires. Store this securely.
+</ResponseField>
+
+<ResponseField name="token_type" type="string">
+  The type of token, typically `Bearer`
+</ResponseField>
+
+<ResponseField name="expires_in" type="integer">
+  The number of seconds until the access token expires
+</ResponseField>
+
+<Warning>
+Store your refresh token securely. You'll need it to get new access tokens without requiring user re-authorization.
+</Warning>

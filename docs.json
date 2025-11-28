@@ -215,14 +215,15 @@
               "api-reference/introduction"
             ]
           },
+
           {
-            "group": "Endpoint Examples",
+            "group": "OAuth API Reference",
             "icon": "plug",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/authorize",
+              "api-reference/endpoint/generate-token",
+              "api-reference/endpoint/refresh-token",
+              "api-reference/endpoint/access-validation"
             ]
           }
         ]
@@ -245,7 +246,7 @@
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
               "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/access-validation"
             ]
           }
         ]
@@ -257,11 +258,6 @@
           "anchor": "Community",
           "href": "https://www.skool.com/evolving-ai-hub/about?ref=e1c2ca4f514546b38823baafdd6e6566",
           "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://rizzdial.com/blog/blog.html",
-          "icon": "newspaper"
         }
       ]
     }

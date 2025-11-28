@@ -1,0 +1,39 @@
+---
+title: 'Access Validation'
+openapi: 'GET /api/access_validation'
+icon: 'shield-check'
+---
+
+## Access Validation
+
+Validate that your access token is still valid and active. Use this endpoint to check token status before making API calls.
+
+<ParamField body="header" path="Authorization" type="string" required>
+  Bearer token in the format: `Bearer {access_token}`
+</ParamField>
+
+<CodeGroup>
+
+```bash cURL
+curl --location 'https://app.aisync.link/api/access_validation' \
+  --header 'Authorization: Bearer {{bearer_token}}'
+```
+
+</CodeGroup>
+
+<ResponseField name="valid" type="boolean">
+  Indicates whether the access token is valid
+</ResponseField>
+
+<ResponseField name="expires_at" type="string">
+  ISO 8601 timestamp of when the token expires
+</ResponseField>
+
+<ResponseField name="scope" type="string">
+  The scope of access granted to this token
+</ResponseField>
+
+<Note>
+If the token is invalid or expired, you'll receive an error response. Use the Refresh Token endpoint to obtain a new access token.
+</Note>
+

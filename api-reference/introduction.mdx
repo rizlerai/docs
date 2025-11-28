@@ -1,34 +1,125 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'OAuth API Introduction'
 icon: 'rocket'
 ---
 
+## 🚀 What is OAuth?
+
+OAuth is a secure way to let your application access user data without asking for their password. Think of it like giving a hotel key card - you get access to specific rooms (permissions) without sharing your master key (password).
+
+### 🏗️ Step 1: Create Your OAuth Client
+
+Before you can use OAuth, you need to create an OAuth client in your dashboard. This gives you the credentials needed to authenticate.
+
+1. Go to **OAuth Client Management (Advanced)** in your dashboard
+2. Click the **"Create New OAuth Client"** button
+3. Fill in the required information:
+   - **Client Name**: Give your application a descriptive name (e.g., "My Application")
+   - **Redirect URI**: Where users will be sent after they authorize your app (e.g., `https://app.aisync.link/test/callback`)
+   - **Confidential Client**: Check this box if your app can securely store secrets (recommended for server-side apps)
+4. Click **"Create Client"**
+
+![](/images/api-reference/create-new-client.png)
+
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+The Redirect URI must exactly match what you use in your authorization requests. Make sure it's the full URL including the protocol (http:// or https://).
 </Note>
 
-## Welcome
+### 🔑 Step 2: Get Your Credentials
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+After creating your OAuth client, you'll see it in the client management table with:
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+- **Client Name**: The name you gave your application
+- **Client ID**: Your unique client identifier (you'll need this)
+- **Client Secret**: Your secret key (keep this secure!)
+- **Redirect URI**: The callback URL you registered
 
-## Authentication
+![](/images/api-reference/oauth-client-management.png)
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+<Warning>
+Never share your Client Secret publicly! It's like a password - keep it secure and never commit it to version control.
+</Warning>
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+### 🔄 Step 3: The OAuth Flow
+
+Once you have your Client ID and Client Secret, follow this flow:
+
+#### 1️⃣ Authorize (Get Permission)
+Send users to the authorization endpoint with your Client ID. They'll grant permission to your app.
+
+```bash
+https://app.aisync.link/login/oauth/authorize?client_id={{client_id}}&redirect_uri={{redirect_uri}}&response_type=code&scope=*' 
 ```
+
+#### 2️⃣ Get Authorization Code
+After the user authorizes, they'll be redirected back to your Redirect URI with a code:
+```
+YOUR_REDIRECT_URI?code=AUTHORIZATION_CODE
+```
+
+#### 3️⃣ Exchange Code for Token
+Use the authorization code to get an access token:
+
+```bash
+POST /oauth/token
+```
+
+#### 4️⃣ Use Your Access Token
+Now you can make API calls using the access token:
+
+```bash
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+## 🧩 Understanding Your Credentials
+
+### 🆔 Client ID
+- **What it is**: A public identifier for your application
+- **Where to find it**: In the OAuth Client Management table
+- **Is it secret?**: No, it's safe to include in your frontend code
+
+### 🤫 Client Secret
+- **What it is**: A private key that proves your app's identity
+- **Where to find it**: In the OAuth Client Management table
+- **Is it secret?**: Yes! Never expose this publicly
+
+### 🔁 Redirect URI
+- **What it is**: The URL where users are sent after authorization
+- **Important**: Must exactly match what you registered
+- **Example**: `http://127.0.0.1:8000/callback` or `https://yourapp.com/callback`
+
+## 📝 Complete Example Flow
+
+Here's a complete example of how OAuth works:
+
+1. **Create Client** → Get Client ID: `abc123` and Client Secret: `secret456`
+2. **User Authorization** → Redirect user to:
+   ```
+   https://app.aisync.link/login/oauth/authorize?client_id={{client_id}}&redirect_uri={{redirect_uri}}&response_type=code&scope=*
+   ```
+3. **User Approves** → User is redirected to:
+   ```
+   https://app.aisync.link/callback?code=xyz789
+   ```
+4. **Get Token** → Exchange code for token using `/oauth/token`
+5. **Make API Calls** → Use the access token in your requests
+
+## ⏭️ Next Steps
+
+Now that you understand the basics, check out these endpoints:
+
+<CardGroup cols={4}>
+  <Card title="OAuth Authorize" icon="key" href="/api-reference/endpoint/authorize">
+    Start the authorization flow
+  </Card>
+  <Card title="Get OAuth Token" icon="lock" href="/api-reference/endpoint/generate-token">
+    Exchange code for access token
+  </Card>
+  <Card title="Refresh Token" icon="refresh" href="/api-reference/endpoint/refresh-token">
+    Get new access token
+  </Card>
+    <Card title="Access Validation" icon="shield-check" href="/api-reference/endpoint/access-validation">
+    Validate your access token
+  </Card>
+</CardGroup>
+
