@@ -1,5 +1,5 @@
 ---
-title: 'OAuth API Introduction'
+title: 'Introduction'
 icon: 'rocket'
 ---
 
@@ -88,21 +88,64 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 - **Important**: Must exactly match what you registered
 - **Example**: `http://127.0.0.1:8000/callback` or `https://yourapp.com/callback`
 
-## 📝 Complete Example Flow
 
-Here's a complete example of how OAuth works:
 
-1. **Create Client** → Get Client ID: `abc123` and Client Secret: `secret456`
-2. **User Authorization** → Redirect user to:
-   ```
-   https://app.aisync.link/login/oauth/authorize?client_id={{client_id}}&redirect_uri={{redirect_uri}}&response_type=code&scope=*
-   ```
-3. **User Approves** → User is redirected to:
-   ```
-   https://app.aisync.link/callback?code=xyz789
-   ```
-4. **Get Token** → Exchange code for token using `/oauth/token`
-5. **Make API Calls** → Use the access token in your requests
+## 🔐 Personal Access Tokens
+
+Personal Access Tokens provide a simpler alternative to the OAuth flow. They're like passwords for your API - you can use them immediately without going through the OAuth authorization process.
+
+
+
+### 🆕 Creating a personal token
+
+1. Click the **"Create New Personal Token"** button
+
+![](/images/api-reference/personal-access-token-button.png)
+
+2. Fill in the token details:
+   - **Token Name**: Give your token a descriptive name (e.g., "Test Package")
+   - **Token Expiration**: Choose between:
+     - **Never Expire**: Token works indefinitely
+     - **Custom Expiration Date**: Set a specific expiration date
+   - **Scopes (Permissions)**: Select the permissions you need:
+     - **Full Access (*)**: All permissions
+     - Or uncheck and select specific scopes
+3. Click **"Create Token"**
+
+![](/images/api-reference/create-personal-token.png)
+
+<Warning>
+**Important**: The token will be shown only once. Make sure to copy it immediately! For security reasons, it won't be shown again.
+</Warning>
+
+After creating the token, you'll see a confirmation dialog with your new token. Copy it immediately:
+
+![](/images/api-reference/created-token.png)
+
+**🔧 Using Your Personal Access Token
+
+Once you have your personal access token, use it in the Authorization header of your API requests:
+
+```bash
+Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN
+```
+
+### 🗂️ Managing Personal Access Tokens
+
+In the Personal Access Tokens table, you can see:
+- **Token Name**: The name you gave your token
+- **Scopes**: The permissions associated with the token
+- **Created**: When the token was generated
+- **Expires**: Expiration status (or "Never" if it doesn't expire)
+- **Actions**: Revoke the token if needed
+
+![](/images/api-reference/personal-access-token.png)
+
+<Note>
+Personal Access Tokens are ideal for personal use, testing, or server-to-server communication where OAuth flow isn't necessary. For production applications with multiple users, use the OAuth flow instead.
+</Note>
+
+
 
 ## ⏭️ Next Steps
 

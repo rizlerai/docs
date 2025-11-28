@@ -217,7 +217,7 @@
           },
 
           {
-            "group": "OAuth API Reference",
+            "group": "Authorization",
             "icon": "plug",
             "pages": [
               "api-reference/endpoint/authorize",
