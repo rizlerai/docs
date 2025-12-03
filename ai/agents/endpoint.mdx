@@ -1,47 +1,57 @@
 ---
 title: "Endpoint"
 
-
 description: "Configure and manage detailed endpoint settings for AI agent integrations and webhook communications."
 icon: "globe"
 ---
-## Endpoint Details Configuration
 
-### Basic Endpoint Information
+## 📝 Basic Endpoint Information
 - **Title** - Agent identifier associated with the endpoint (e.g., n60hIfrJ8r)
 - **URL** - Complete webhook URL for API communications
   
 - **Method** - HTTP POST method for API calls
 - **Back Button** - Return to agent listing without saving changes
 
-
 ![](/images/ai/AI-agent/endpoint/image1.png)
 
-## Dynamic Field Management
+## 🛠️ Dynamic Field Management
 
-### Overview
+**📖 Overview**
 Dynamic Field Management allows companies to customize and configure data fields according to their specific business requirements. This flexible system enables organizations to collect relevant customer information that aligns with their CRM structure and business processes.
 
+### 📋 Form Data
 
-
-### Form Data
 - **phone_number** – Customer phone number
 - **email** – Customer email address
 - **first_name** – Customer's first name
 - **last_name** – Customer's last name
-- **email_Address** – Alternate/secondary email address
+- **email_Address** – Alternate email address
 - **address** – Street address
 - **city** – City name
 - **zip_code** – Postal/ZIP code
 - **country** – Country information
 - **phone_number1** – Additional/alternative phone number
 - **audiencecalbid** – Audience Calendar ID
+- **new_user_field** – Custom user-provided field
+- **wayan_cf** – Wayan custom field (purpose defined by workflow)
 - **ghl_contact_id** – GoHighLevel contact ID
 - **override_agent_id** – Override default agent ID
+- **local_presence_number** – Yes/No.
+
+>
+> **How local presence number selection works:**
+> When **local_presence_number** is enabled (Yes):
+> - The system tries to auto-pick a number matching the recipient's area code for local presence effect.
+> - The number must belong to the same company as the AI agent.
+> - Only numbers with a **Spam Status** of `Clean` are eligible.
+> - The number must not have reached its daily outbound call limit (**calls_per_number**). By default, this is 50 calls per day, but each company can configure this limit in their AI settings profile.
+> - The system counts today's outbound calls for each number (`ai_call_histories` where `direction = "outbound"` and `created_at` is today) and only considers numbers still below the limit.
+>
+> If a qualifying number is found, it dynamically overrides the default `from_number` for this call. If no such number is available, the agent's default caller ID is used.
 
 ![](/images/ai/AI-agent/endpoint/image2.png)
 
-## Quick Actions
+## ⚡ Quick Actions
 
 <CardGroup cols={2}>
   <Card title="View Endpoint Details" icon="eye">
