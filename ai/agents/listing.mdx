@@ -96,7 +96,7 @@ Below are all available actions you can take for any agent in the listing table.
 - Choose **"Endpoints"** from the action menu.
 - See a complete summary: endpoint names, webhook URLs, HTTP methods, and all form parameters.
 - Review integration details, copy webhook info for your developers, or consult the guide for API setup.
-- **"Back"** returns you to the main agent listing.
+- #### [ 🔗 View Endpoints Details ](/ai/agents/endpoint)
 
 ### 🚀 Test Call
 - Open the action menu (⋮) next to your desired agent.
@@ -139,40 +139,6 @@ Easily set up your AI agent widget for your website or CRM:
 
 ![Agent Actions](/images/ai/AI-agent/listing/actions.png)
 
-#   🔗 Endpoints Details View
-
-**❓ What are Endpoints?**
-Endpoints are webhook URLs that allow external systems to trigger calls through your AI agents. Each agent has a unique endpoint URL used to initiate phone calls programmatically.
-
-**📝 Endpoint Information Display**
-
-**🆔 Agent Title**
-- **Purpose**: Shows which agent the endpoint belongs to
-- **Identification**: Helps identify the correct agent
-
-**🔗 Webhook URL**
-- **Complete URL**: Full endpoint URL
-- **Format**: `https://yourdomain.com/webhooks/ai/create-phone-call/{agent_id}`
-- **Usage**: Copy this URL for API integrations
-
-**🛠️ HTTP Method**
-- **Method**: POST
-- **Purpose**: All calls must use POST
-- **Content-Type**: `application/x-www-form-urlencoded` or `multipart/form-data`
-
-**📄 Form Data Parameters**
-- **Contact Fields**: All CRM contact fields
-- **ghl_contact_id**: GoHighLevel contact ID
-- **override_agent_id**: Optional override for default agent
-
-**🧑‍💻 Using Endpoints for API Integration**
-1. Copy the webhook URL
-2. Use the POST method
-3. Include required parameters
-4. Test the integration
-5. Monitor calls and results
-
-![Number Management](/images/ai/AI-agent/listing/endpoints.png)
 
 ## ☎️ Number Management Modal
 
