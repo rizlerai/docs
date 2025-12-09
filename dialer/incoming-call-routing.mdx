@@ -1,0 +1,120 @@
+---
+title: 'Incoming Call Routing'
+description: 'Configure how incoming calls are handled and understand the user assignment and AI agent selection logic'
+icon: 'phone-arrow-down-left'
+---
+
+The Incoming Call Routing system allows you to configure how incoming calls are handled and automatically determines which user should handle each call based on intelligent priority logic.
+
+## ⚙️ Configuration
+
+Users can configure how incoming calls are handled by visiting their Profile Settings:
+
+👉 **Profile Settings**: [https://app.aisync.link.com/profile](https://docs.aisync.link/settings/personal-settings#%E2%98%8E%EF%B8%8F-incoming-call-settings)
+
+In the profile section, users can select one of four incoming call routing options:
+
+![Incoming Call Routing Profile Settings](/images/dialer/incoming-call-routing/profile-personal.png)
+
+
+### 📞 Incoming Call Routing Options
+
+<CardGroup cols={2}>
+  <Card title="RizzDialer" icon="phone">
+    Call is routed to the RizzDialer interface for manual handling by the user/agent.
+  </Card>
+  <Card title="Phone (User/Agent Phone Number)" icon="mobile-screen">
+    Call is forwarded directly to the user/agent phone number.
+  </Card>
+  <Card title="AI (PowerList AI Agent)" icon="robot">
+    Call is automatically routed to a configured AI agent.
+  </Card>
+  <Card title="Dialer + AI" icon="phone-arrow-up-right">
+    Call first attempts to reach the user/agent. If unavailable, the system transfers the call to an AI agent.
+  </Card>
+</CardGroup>
+
+## 🔍 User Identification Logic
+
+Before routing the call based on the selected option, the system determines which user the call belongs to. The system follows this priority order:
+
+### 1️⃣ Priority 1: Recent Calling History
+
+The system checks if any user has recently called this phone number (the incoming caller).
+
+- If a match is found, the most recent caller is selected as the responsible user.
+- This ensures continuity in customer relationships.
+
+### 2️⃣ Priority 2: Assigned System Number (DID)
+
+If no recent caller is found:
+
+- The system checks whether the "To" number (the system number receiving the call) is assigned to a specific user.
+- If yes, the call is routed under that user.
+
+### 3️⃣ Priority 3: PowerList Assignment
+
+If the system number is not assigned to any user:
+
+- The system checks whether the caller's number exists within any PowerList.
+- If the PowerList is assigned to a user, that user is selected.
+
+### 4️⃣ Priority 4: Default to Company User
+
+If none of the above conditions match:
+
+- The system routes the call using the default company user.
+
+<Note>
+The system processes these checks in order and stops at the first match, ensuring efficient call routing.
+</Note>
+
+## 🤖 AI Agent Selection Logic
+
+After determining the responsible user, the system follows this logic if AI is required (for **AI** or **Dialer + AI** mode):
+
+### 📋 Existing Contact in PowerList
+
+If the incoming caller exists in any PowerList that has an AI agent configured:
+
+➡️ The call is transferred to that specific PowerList's AI agent.
+
+This allows for personalized AI interactions based on the PowerList context.
+
+### ✨ New Contact
+
+If the caller does not exist in any PowerList:
+
+➡️ The system uses the default PowerList's AI agent.
+
+This ensures all calls are handled, even for unknown callers.
+
+<Tip>
+Configure AI agents for your PowerLists to provide specialized handling for different customer segments or campaign types.
+</Tip>
+
+## 📊 Call Flow Summary
+
+### 👥 User Assignment Flow
+
+```
+Incoming Call
+   ↓
+Check recent user → If found, use that user
+   ↓ If not
+Check if system number (To) is assigned to a user
+   ↓ If not
+Check if caller exists in a PowerList with assigned user
+   ↓ If not
+Default company user
+```
+
+### 🤖 AI Routing Flow
+
+```
+Incoming Call → AI Needed?
+     ↓
+Check if contact exists in PowerList
+     ├── Yes → Use that PowerList's AI agent
+     └── No → Use default PowerList AI agent
+```

@@ -233,120 +233,391 @@ This detailed call modal helps supervisors and analysts review agent performance
 
 ## 📞 Dialer Analytics
 
-The Dialer module is your go-to dashboard for uncovering everything about your team’s call activity—both incoming and outgoing. See powerful graphs, dive into detailed metrics, and gain actionable insights to boost your team’s performance and make every conversation count.
+> **Transform your call center insights with powerful analytics that drive performance optimization**
 
----
-
-### 🎛️ Powerful Filtering Made Simple
-
-Personalize your insights and drill down to exactly what matters to you using these filters at the top of the Dialer module:
-**Date Range**
-
-- **Pick from shortcuts:** Today, Yesterday, This Week, Last 7/14/30 Days, This Month, Last Month, and more.
-- **Custom Dates:** Choose your own Start and End Dates—perfect for custom reporting!
-  - When "Custom dates" is active, date pickers are unlocked for manual selection.
-  - For other options, range fields fill in automatically.
-
- **Agent Filter**
-
-- If you’re part of a team:** Choose **All** to see everyone's data, or pick a specific team member to focus in.
-- **Solo users:** The dropdown hides itself (you’ll always see your own data).
-- **No team yet?** The dropdown will show "Team Not Setup."
-
-**Filter Button**
-
-After setting your filters, click **Filter**. While your data loads, you'll see a friendly "Please wait. Action in process..." message—then, you’re ready to go!
+The Dialer Dashboard is your central hub for monitoring and analyzing call performance across your team. It provides real-time insights, historical trends, and detailed analytics to help you make data-driven decisions.
 
 ![Dialer Analytics Dashboard](/images/dashboard/analytics/overview-dialer.png)
----
 
-### 📊 Explore Dashboard Insights
+**How to Access:**
 
-Each time you filter, you’ll see updated, easy-to-read sections:
-
-#### 🥧 Call Ratio at a Glance
-
-- **See the balance!** A colorful circle chart instantly shows your team's ratio of incoming vs. outgoing calls—complete with percentages and total call counts.
-- Quick stats highlight all calls received (answered, missed, voicemail) vs. all calls made (connected/unanswered).
-
-_Example:_
-![Dialer Analytics Dashboard](/images/dashboard/analytics/stats.png)
-
+1. Navigate to **Dashboard** from the sidebar
+2. Click on **"Dialer"** tab at the top
+3. Start exploring your call analytics!
 
 ---
 
-#### 📋 Call Overview: Key Metrics
+### 🔍 Filters & Controls
 
-The main dashboard presents a crystal-clear, data-rich view with intuitive charts and metric blocks:
+Located at the top of the dashboard, these powerful filters control what data you see across **ALL tabs**. Master these controls to unlock deep insights into your team's performance.
 
-- **Talk Time**  
-  Prominently displayed in the upper right, showing the total conversation time across all calls for your selected date range (`hh:mm:ss`).
+![Dialer Filters](/images/dashboard/analytics/filters.png)
 
-- **Call Overview Section**
-  - This area is organized into two main panels: **Outbound Calls** and **Inbound Calls (FOP Inbound)**, plus a **Review of Calls** section.
+### 📅 Date Range Filter
 
-  **Outbound Calls:**
-    - **No Answer**  
-      Total outgoing calls that did not result in a connection.
-    - **Connected**  
-      Outgoing calls successfully answered by recipients.
-    - **PickUp Rate**  
-      The percentage of outbound calls that were connected (`Connected ÷ Total Outbound × 100`).
-    
-    _These stats are visualized in a central "Total Outbound" circular chart, with each metric shown clearly around it._
+Choose from quick shortcuts or create custom date ranges:
 
-  **Inbound Calls (FOP Inbound):**
-    - **Missed Calls**  
-      Inbound calls that were not answered by your team.
-    - **Voicemails**  
-      Counts of inbound calls where a voicemail was left.
-    - **Answered**  
-      Inbound calls picked up by your team.
+| Option | Description |
+|--------|-------------|
+| **Today** | Shows today's activity only |
+| **Yesterday** | Previous day's complete data |
+| **This Week** | Current week (Sunday/Monday to today) |
+| **Last Week** | Complete previous week |
+| **Last 7/14/30 Days** | Rolling date windows |
+| **This Month** | Current month's data |
+| **Last Month** | Previous month's data |
+| **Custom dates** | Choose any date range |
 
-    _Presented in a "Total Inbound" circular chart, each metric—Missed, Answered, and Voicemails—has its own figure, allowing for an immediate understanding of inbound call disposition._
+**How to Use Custom Dates:**
 
-  **Review of Calls:**  
-  See summarized statistics and totals for each call type in dedicated, easy-to-read graph sections—totals are at the center, with key metrics arrayed around for fast overview.
+1. Select **"Custom dates"** from dropdown
+2. Choose your **Start Date** from the calendar
+3. Choose your **End Date** from the calendar
+4. Click **"Filter"** button to apply changes
 
-These visuals and breakdowns match the dashboard, providing a comprehensive glance at both outbound and inbound call performance for your team.
+> 💡 **Pro Tip:** Use custom dates for specific campaign periods, quarterly reviews, or comparing performance across different timeframes.
 
+### 👥 Agents Filter
 
----
+Select which team member's data you want to view:
 
-#### 🎯 Disposition Summary
+- **All** → Combined data for entire team (team overview)
+- **Individual Agent** → Specific person's performance (individual coaching)
 
-Wondering what happened after calls ended? This section is your answer:
+**Special Cases:**
 
-- **Disposition Chart:** Instantly see main outcomes like "Interested", "No Interest", or "Follow Up".
-- **Legend:** Two top outcomes are listed with colors matching the chart. Click **"+X more"** to see the rest in a pop-up—all color-coded and easy to scan.
+- **Solo users:** The dropdown hides itself (you'll always see your own data)
+- **No team yet?** The dropdown will show "Team Not Setup"
 
-_Examples:_
+**🔘 Filter Button**
 
-![Dialer Analytics Disposition Graph](/images/dashboard/analytics/disposition-summary1.png)
-![Dialer Analytics Disposition Graph](/images/dashboard/analytics/all-disposition.jpg)
+After making any changes to filters, click **"Filter"** to update all dashboard data instantly. 
+
+While your data loads, you'll see a friendly **"Please wait. Action in process..."** message—then you're ready to explore!
 
 ---
 
-### 🧮 How Are These Numbers Calculated?
+## 📈 Top Statistics Cards
 
-So you know exactly what’s being tracked:
+Six key metrics displayed at the top provide an instant performance overview at a glance. These cards update automatically based on your selected filters.
 
-- **Incoming Calls:** All calls flagged as "Inbound" (including completed, missed, and voicemails).
-- **Outgoing Calls:** Every call set as "Outbound" (both successful and missed).
-- **No Answer:** Outbound calls not marked as "Completed."
-- **Connected:** Outbound calls marked as "Completed."
-- **PickUp Rate:** Connected ÷ Outgoing × 100%.
-- **Missed Calls:** Inbound calls not completed.
-- **Voicemails:** Calls where voicemail was left.
-- **Answered:** Inbound calls completed by your team.
-- **Talk Time:** Combined duration of all completed calls (shown as hh:mm:ss).
-- **Disposition Data:** How many times each call outcome was selected in the time frame.
+![Top Statistics Cards](/images/dashboard/analytics/header-data.png)
+
+### 📊 Metric Breakdown
+
+| # | Metric | What It Shows | Why It Matters |
+|---|--------|---------------|----------------|
+| **1** | **Total Calls** | Total number of calls in selected date range | Activity level indicator |
+| **2** | **Active Dialers** | Number of active team members | Team engagement status |
+| **3** | **Avg Talk Time** | Average call duration (MM:SS format) | Efficiency measurement |
+| **4** | **Connection Rate** | Percentage of calls that were answered | Success rate indicator |
+| **5** | **Appointments Set** | Number of appointments booked | Conversion tracking |
+| **6** | **Live Transfers** | Number of calls transferred | Support escalation rate |
+
+**📞 1. Total Calls**
+
+- **Label:** Changes dynamically based on filter (e.g., "Today", "This Week", "Last Month")
+- **Use Case:** Track daily, weekly, or monthly call volume trends
+
+**👥 2. Active Dialers**
+
+- **Details:** Shows idle and break counts
+- **Definition:** Active = Made a call in last hour
+- **Use Case:** Monitor team availability and engagement
+
+**⏱️ 3. Avg Talk Time**
+
+- **Format:** MM:SS (minutes:seconds)
+- **Use Case:** Measure conversation quality and efficiency
+
+
+**📈 4. Connection Rate**
+
+- **Details:** Shows total number of connects
+- **Formula:** Connected Calls ÷ Total Calls × 100%
+- **Higher = Better performance**
+- **Use Case:** Track call success rate and campaign effectiveness
+
+**📅 5. Appointments Set**
+
+- **Details:** Shows conversion rate percentage
+- **Based on:** Disposition marked as "Appointment"
+- **Use Case:** Measure booking success and conversion rates
+
+🔄 6. Live Transfers**
+
+- **Details:** Shows transfer rate percentage
+- **Use Case:** Monitor support escalation and team collaboration
 
 ---
 
-### 🔄 Real-Time Automatic Updates
+## ⭐ Call Quality Tab
 
-Get fresh data the moment you switch any filter or select another agent/date range. No need to reload—everything updates instantly with a helpful progress message while it’s working.
+The Call Quality tab provides a detailed breakdown of your call performance with visual charts and comprehensive metrics. This is your go-to view for understanding call distribution and success rates.
+
+![Call Quality Tab](/images/dashboard/analytics/call-quality.png)
+
+### 🥧 Call Ratio at a Glance
+
+A colorful circle chart instantly shows your team's ratio of incoming vs. outgoing calls—complete with percentages and total call counts. 
+
+**What You'll See:**
+
+- **Incoming Calls:** All calls received (answered, missed, voicemail)
+- **Outgoing Calls:** All calls made (connected/unanswered)
+- **Visual Balance:** Instantly see if you're making more calls or receiving more
+
+
+**📤 Outbound Calls Section**
+
+Displays comprehensive statistics for calls you made:
+
+**Three Key Metrics:**
+
+| Metric | Description |
+|--------|-------------|
+| **No Answer** | Calls that weren't picked up by recipients |
+| **Connected** | Successfully answered calls |
+| **Pickup Rate** | Percentage of answered calls (Connected ÷ Total × 100%) |
+
+**Visual Chart:** Interactive breakdown of outbound call distribution with clear visual indicators.
+
+**📥 Inbound Calls Section**
+
+Shows incoming call performance and response rates:
+
+**Three Key Metrics:**
+
+| Metric | Description |
+|--------|-------------|
+| **Missed** | Calls you didn't answer |
+| **Voicemails** | Messages left by callers |
+| **Answered** | Successfully handled calls |
+
+**Visual Chart:** Clear breakdown of inbound call types with percentage distribution.
+
+**📊 Daily Call Volume Chart**
+
+Track call activity patterns over time:
+
+- **What it shows:** Number of calls per day
+- **Timeline:** Intelligently adapts to your date range
+  - **Short ranges:** Daily breakdown (day by day)
+  - **Long ranges:** Monthly breakdown (month by month)
+- **Smart Labels:** Automatically shows years when viewing multiple years
+- **Use Case:** Identify peak calling days and activity patterns
+
+**📈 Connection Rate Trend Chart**
+
+Monitor success rates over time to identify trends:
+
+- **What it shows:** Success rate over time
+- **Metric:** Percentage of answered calls
+- **Trend Analysis:** Helps identify performance patterns
+- **Use Case:** Track improvement or decline in connection rates
+
+---
+
+## 🚀 Performance Tab
+
+The Performance tab shows intelligent charts that adapt based on your selected date range. These adaptive visualizations help you understand trends and patterns across different time periods.
+
+![Performance Tab](/images/dashboard/analytics/performance.png)
+
+**🧠 Smart Adaptive Chart**
+
+This intelligent chart automatically adapts its display based on your selected date range:
+
+**Chart Behavior by Time Range:**
+
+| Time Range | Display Format |
+|------------|----------------|
+| **Today** | Hourly breakdown (8 AM, 9 AM, 10 AM...) |
+| **This Week** | Daily breakdown (Mon, Tue, Wed...) |
+| **This Month** | Weekly breakdown (Week 1, 2, 3, 4) |
+| **Yearly/Long Range** | Monthly breakdown (Jan, Feb, Mar...) |
+
+### 📊 Three Performance Lines
+
+The chart displays three key metrics simultaneously:
+
+1. **🟣 Purple Line (Call Minutes)** 
+   - Total talk time in minutes
+   - Measures conversation duration
+
+2. **🟢 Green Line (Appointments)** 
+   - Number of appointments set
+   - Tracks booking success
+
+3. **🟠 Orange Dashed Line (Connection Rate)** 
+   - Success percentage
+   - Shows call answer rate
+
+**📐 Dual Y-Axes System**
+
+**Left Axis:** Minutes & Appointments (0-100 scale)
+**Right Axis:** Connection Rate (0%-100% scale)
+
+This dual-axis design allows you to compare different metrics on the same chart without losing detail.
+
+**🎯 How to Read the Chart**
+
+- **Hover** over any point to see exact values
+- **Compare** trends across different metrics
+- **Identify** peak performance periods
+- **Spot** correlations between metrics
+
+> 💡 **Pro Tip:** Look for patterns where high call minutes correlate with high appointments—this indicates effective conversations leading to bookings.
+
+---
+
+## 🏆 Leaderboard Tab
+
+Compare performance across your team members to identify top performers, recognize achievements, and find areas for improvement. Perfect for team motivation and performance management.
+
+![Leaderboard Tab](/images/dashboard/analytics/leader-board.png)
+
+**🎛️ Filter Options**
+
+**Filter By:**
+
+- **Disposition** → See who's setting the most appointments
+- **Dialer Activity** → Check who's actively calling
+- **Subscription** → View subscription status
+
+**View Options:**
+
+- **Board View** → Visual cards with agent photos (more engaging)
+- **List View** → Table format for quick scanning (more detailed)
+
+**👤 Agent Cards (Board View)**
+
+Each card displays comprehensive agent information:
+
+- **Agent Name** and professional photo
+- **Status Indicator:** Online 🟢, On Call 📞, Offline ⚫
+- **Total Calls Made** in selected period
+- **Performance Metric** based on selected filter
+- **Ranking** position
+
+**📥 Export Feature**
+
+Click the **"Export"** button to download leaderboard data as an Excel file. Perfect for:
+
+- Creating performance reports
+- Sharing with management
+- Archiving historical data
+- Further analysis in spreadsheets
+
+---
+
+## 📋 Power Lists Tab
+
+Track performance and progress across all your power lists with detailed analytics and completion tracking. Monitor which lists are performing best and how close you are to completing each campaign.
+
+![Power Lists Tab](/images/dashboard/analytics/powerlists.png)
+
+**📊 Power List Performance Section**
+
+Shows all active power lists with activity in your selected date range.
+
+**Each Power List Card Displays:**
+
+- **List Name** and unique ID (e.g., PL-8)
+- **Progress Bar** → Visual indicator showing X / Y contacts reached
+- **Progress Percentage** → How much of the list is completed
+- **Status Badge** → Active/Completed indicator
+
+**Four Key Metrics Per List:**
+
+| Metric | Description |
+|--------|-------------|
+| **Total Calls** | Calls made to this list |
+| **Avg Call Time** | Average duration per call |
+| **Connection Rate** | Success percentage |
+| **Connected** | Number of successful calls |
+
+
+**📈 Power List Analytics Section**
+
+**Eight Summary Cards:**
+
+| # | Metric | Description |
+|---|--------|-------------|
+| 1 | **Total Calls** | Combined calls across all lists |
+| 2 | **Connection Rate** | Overall success rate |
+| 3 | **Appointments** | Total appointments from all lists |
+| 4 | **Avg Call Duration** | Weighted average duration |
+| 5 | **Conversion Rate** | Success percentage |
+| 6 | **Live Transfers** | Total transfers made |
+| 7 | **Total Talk Time** | Combined duration (Xh Ym format) |
+| 8 | **Contacts Remaining** | Un-contacted leads count |
+
+---
+
+## 📊 Dispositions Tab
+
+Visual representation and detailed breakdown of call outcomes to understand what happened after calls ended. This tab helps you analyze call results and identify patterns in customer responses.
+
+![Dispositions Tab](/images/dashboard/analytics/disposition.png)
+
+**🥧 Disposition Breakdown Chart (Pie Chart)**
+
+Beautiful visual representation of call outcomes with color-coded segments.
+
+**What it shows:**
+
+- ✅ Percentage distribution of each disposition
+- ✅ Color-coded segments for easy identification
+- ✅ Total count for each outcome
+- ✅ Interactive hover details
+
+**Common Dispositions:**
+
+- 📅 **Appointment Set** → Successfully booked appointments
+- 🔄 **Live Transfer** → Calls transferred to specialists
+- 📞 **Call Back** → Scheduled follow-up calls
+- ❌ **No Answer** → Unanswered calls
+- 👎 **Not Interested** → Declined offers
+- 📧 **Voicemail** → Messages left
+
+
+## 🧮 How Are These Numbers Calculated?
+
+Understanding the calculations behind your metrics helps you interpret the data accurately and make informed decisions.
+ 
+**📊 Calculation Formulas**
+
+| Metric | Calculation Method |
+|--------|-------------------|
+| **Incoming Calls** | All calls flagged as "Inbound" (including completed, missed, and voicemails) |
+| **Outgoing Calls** | Every call set as "Outbound" (both successful and missed) |
+| **No Answer** | Outbound calls not marked as "Completed" |
+| **Connected** | Outbound calls marked as "Completed" |
+| **PickUp Rate** | Connected ÷ Outgoing × 100% |
+| **Missed Calls** | Inbound calls not completed |
+| **Voicemails** | Calls where voicemail was left |
+| **Answered** | Inbound calls completed by your team |
+| **Talk Time** | Combined duration of all completed calls (shown as hh:mm:ss) |
+| **Disposition Data** | How many times each call outcome was selected in the time frame |
+
+> 💡 **Note:** All calculations are based on your selected date range and agent filter settings.
+
+---
+
+
+## 🔄 Real-Time Automatic Updates
+
+Experience seamless, instant data updates without manual refresh.
+
+**How It Works:**
+
+- ✅ **Automatic Updates:** Get fresh data the moment you switch any filter
+- ✅ **Instant Refresh:** Select another agent or date range for immediate updates
+- ✅ **Progress Indicator:** See a helpful "Please wait. Action in process..." message
+- ✅ **No Reload Needed:** Everything updates instantly in the background
+
+> 💡 **Pro Tip:** The dashboard updates in real-time, so you always see the most current data without clicking refresh.
 
 ---
 
