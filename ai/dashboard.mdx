@@ -4,7 +4,7 @@ description: Track key metrics, analyze call performance, and gain insights into
 icon: "chart-line"
 ---
 
-## Dashboard Overview
+## 📊 Dashboard Overview
 
 The AI Dashboard provides a complete view of your call center operations with advanced filtering options:
 
@@ -15,18 +15,18 @@ The AI Dashboard provides a complete view of your call center operations with ad
 ![AI Dashboard Interface](/images/ai/dashboard/filter.png)
 
 
-
-## Key Performance Metrics
-- **Total Agents** - Number of active AI agents in your system
-- **Total Numbers** - Phone numbers configured for inbound/outbound calls
-- **Total Calls** - Complete call volume for selected period
-- **Average Duration** - Mean call length across all interactions
-- **Appointments** - Scheduled meetings generated from calls
-- **Call Successful** - Successfully completed call interactions
+## 📈 Key Performance Metrics
+- **Total Agents**: Number of active AI agents in your system
+- **Total Numbers**: Phone numbers configured for inbound/outbound calls
+- **Total Calls**: Complete call volume for selected period
+- **Avg Duration**: Mean call length across all interactions (e.g., `0m 34s`)
+- **Appointments**: Scheduled meetings generated from calls
+- **Call Successful**: Successfully completed call interactions
+- **Transfers**: Number of calls transferred to another agent 
 
 ![AI Dashboard Interface](/images/ai/dashboard/kpi.png)
 
-## Appointment Tracking
+## 📅 Appointment Tracking
 
 The Appointment section provides a detailed overview of meetings scheduled as a result of calls handled by your AI agents. This feature helps you monitor appointment generation and follow-up efficiency directly from the dashboard.
 - **Dashboard Card**: The "Appointments" card displays the total number of appointments generated within the selected date range. Clicking this card opens a detailed modal.
@@ -50,9 +50,9 @@ The Appointment section provides a detailed overview of meetings scheduled as a 
 
 This section enables you to track appointment outcomes, review call quality, and optimize agent performance based on real data.
 
-## Analytics & Reporting
+## 📊 Analytics & Reporting
 
-### Call Counts Analysis
+### 📞 Call Counts Analysis
 - **Call Counts Chart** - Visual representation of call volume over time
 - **Trend Analysis** - Identify peak calling periods and patterns
 - **Historical Comparison** - Compare performance across different time periods
@@ -60,41 +60,113 @@ This section enables you to track appointment outcomes, review call quality, and
 ![AI Dashboard Interface](/images/ai/dashboard/call-counts.png)
 
 
-### Call Success Rate Analysis
+### ✅ Call Success Rate Analysis
 - **Successful Calls** - Calls that achieved their intended outcome
 - **Unsuccessful Calls** - Calls that didn't meet success criteria
 - **Unknown Status** - Calls with unclear outcomes requiring follow-up
 
-### Call Direction Distribution
+### 🔄 Call Direction Distribution
 - **Outbound Calls** - Proactive calls to prospects and customers
 - **Web-initiated Calls** - Calls from web interactions or forms
 - **Inbound Calls** - Calls received from customers and prospects
 
 ![AI Dashboard Interface](/images/ai/dashboard/call-direction.png)
 
-### Customer Experience Insights
+### 😊 Customer Experience Insights
 - **Disconnection Reasons** - Analysis of why calls end (user hangup, voicemail reached, etc.)
 - **User Sentiment Distribution** - Customer satisfaction analysis from call interactions
 
 ![AI Dashboard Interface](/images/ai/dashboard/disconnection-reason.png)
 
-### Performance Metrics
+### 📏 Performance Metrics
 - **Call Picked Up Rate** - Answer rate for outbound calls
 - **Call Success Rate** - Percentage breakdown of successful vs. unsuccessful calls
 
 ![AI Dashboard Interface](/images/ai/dashboard/call-rate.png)
 
-
+  
 - **Call Transfer Rate** - Frequency of calls requiring human intervention
-- **Voicemail Rate** - Percentage of calls reaching voicemail systems
 
 
 ![AI Dashboard Interface](/images/ai/dashboard/transfer-voicemail.png)
 
-### Operational Efficiency
+### 🔁 Call Transfers By Agent
+
+Track and analyze when your AI agents transfer calls to human representatives.
+
+A call transfer occurs when your AI agent hands off a call to a human representative or another phone number. This happens when callers request human assistance, complex issues arise, or your transfer criteria are met.
+
+The **Transfers by Agent** chart shows which agents are transferring the most calls using a doughnut chart visualization.
+
+![Transfers by Agent Chart](/images/dashboard/analytics/transfer-by-agent.png)
+
+**Reading the Transfers by Agent chart:**
+
+| Element           | Description                                         |
+|-------------------|-----------------------------------------------------|
+| **Colored Segments** | Each color represents a different AI agent          |
+| **Segment Size**     | Larger segments = more transfers by that agent      |
+| **Center Space**     | Empty center for clean visualization                |
+
+**How to interpret:**
+
+- If "Agent Sarah" has the largest segment, she transferred the most calls.
+- Smaller segments indicate agents with fewer transfers.
+- Hover over any segment to see exact numbers.
+
+**How to view transfer details:**
+
+1. Click directly on a colored segment of the doughnut chart,
+2. Select an agent's name from the legend below the chart,
+3. Or, if there are many agents, click the **"+X more"** link and pick an agent from the expanded list.
+
+#### 📝 Transfer Details
+
+When you click on an agent, the **Transfer Details** modal opens showing all transfer records for that agent.
+
+![Transfer Call Details](/images/dashboard/analytics/transfer-call-details.png)
+
+**Table columns:**
+
+| Column | Description |
+|--------|-------------|
+| **Call Date** | Date and time of the call |
+| **Agent** | AI agent who handled the call |
+| **From** | Caller's phone number |
+| **To** | Destination phone number |
+| **Duration** | Call length |
+| **Status** | Shows "Call Transfer" |
+| **Direction** | Inbound or Outbound |
+| **Sentiment** | Positive, Neutral, or Negative |
+| **Recording** | Audio player to listen to the call |
+| **Actions** | View complete call details |
+
+**Table features:**
+
+- **Search**: Find specific calls using the search box
+- **Sort**: Click column headers to sort
+- **Pagination**: Navigate through pages
+- **Entries**: Choose 10, 25, 50, or 100 rows per page
+
+The Call Details modal provides an in-depth view of a transferred call record:
+
+![Call Details Modal](/images/dashboard/analytics/call-details.png)
+
+**What you'll see in the Call Details modal:**
+
+- **Call info panel:** Displays agent name, call date and time, duration, direction (inbound/outbound), source and destination numbers, and appointment info (if available).
+- **Call Analysis:** Highlights whether the call was successful, sentiment classification (Positive, Neutral, or Negative), and the reason for call hangup (e.g., "Call Transfer").
+- **Recording player:** Listen to a real call audio file right in the modal—press play to review the interaction.
+- **Summary:** A concise text explanation of what happened during the call, such as who the user was transferred to and what actions the agent took.
+- **Transcription:** Read a detailed, line-by-line transcript of the call so you can quickly scan how the conversation unfolded.
+
+This detailed call modal helps supervisors and analysts review agent performance, audit the quality of transfers, and understand both outcome and customer experience—offering transparency and actionable insights for every recorded transfer call.
+
+
+### ⚙️ Operational Efficiency
 - **Average Call Duration Trends** - Track how call lengths change over time
 - **Appointment Tracking** - Monitor scheduled meetings and conversion rates over time
-- **Peak Performance Hours** - Identify optimal calling times
+- **Voicemail Rate** - Percentage of calls reaching voicemail systems
 
 ![AI Dashboard Interface](/images/ai/dashboard/average-call.png)
 

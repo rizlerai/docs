@@ -65,7 +65,6 @@ The Number Status Overview displays the current status of all phone numbers you 
 
 ![Number Status Overview](/images/dashboard/analytics/number-status-overview.png)
 
-
 **📈 Visual Overview** 
 
 The chart displays all phone numbers you have purchased.  
@@ -92,6 +91,25 @@ Numbers that are flagged as spam or identified as problematic are displayed in a
 | **Outbound**     | Outgoing call volume              | Sort by call activity               |
 
 ---
+
+## 🎛️ Filters
+
+The Transfers by Agent chart respects your dashboard filters:
+
+- **Agent Filter**: View all agents or select a specific agent
+- **Date Range**: Choose from Today, Yesterday, This Week, Last 7/30 Days, This Month, Last Month, or Custom dates
+- **Custom Date Range**: Select your own start and end dates, then click **Filter**
+
+---
+
+**🔍 Filtering Options**
+
+Refine your analytics view with powerful filtering capabilities:
+
+- **Select Agent**: Filter by specific AI agent or view all
+- **Date Range**: Choose from predefined periods (Today, Yesterday, This Week, etc.)
+- **Start Date**: Custom start date selection
+- **End Date**: Custom end date selection
 
 
 
@@ -120,21 +138,98 @@ Monitor essential AI performance indicators with real-time updates:
 |![AI Analytics Dashboard](/images/dashboard/analytics/disconnection-reason.png)|
 | **Disconnection Reason** | Analysis of call termination causes | Quality insights |
 |![AI Analytics Dashboard](/images/dashboard/analytics/call-rate.png)|
-| **Call Rate** | Success rate of calls over time | Performance tracking |
-| **Pickup Rate** | Percentage of calls answered by recipients | Connection success tracking |  
-|![AI Analytics Dashboard](/images/dashboard/analytics/transfer-voicemail.png)|
 | **Transfer & Voicemail** | Analysis of call transfers and voicemail drops | Call handling insights |
-|![AI Analytics Dashboard](/images/dashboard/analytics/average-call.png)|
 | **Average Call Duration** | Mean duration of all calls within selected timeframe | Call efficiency and engagement tracking |
 | **Appointments** | Total appointments scheduled within selected timeframe | Conversion and booking success tracking |
-### 🔍 Filtering Options
+|![AI Analytics Dashboard](/images/dashboard/analytics/average-call.png)|
+| **Call Rate** | Success rate of calls over time | Performance tracking |
+| **Transfer by Agent** | Percentage of calls transferred by agents | Agent transfer efficiency tracking | 
 
-Refine your analytics view with powerful filtering capabilities:
+![AI Analytics Dashboard](/images/dashboard/analytics/transfer-voicemail.png)
 
-- **Select Agent**: Filter by specific AI agent or view all
-- **Date Range**: Choose from predefined periods (Today, Yesterday, This Week, etc.)
-- **Start Date**: Custom start date selection
-- **End Date**: Custom end date selection
+
+### 🔄 Call Transfers By Agent
+
+> **Track and analyze when your AI agents transfer calls to human representatives**
+
+A call transfer occurs when your AI agent hands off a call to a human representative or another phone number. This happens when callers request human assistance, complex issues arise, or your transfer criteria are met.
+
+---
+
+The **Transfers by Agent** chart shows which agents are transferring the most calls using a doughnut chart visualization.
+
+![Transfers by Agent Chart](/images/dashboard/analytics/transfer-by-agent.png)
+
+**Reading the Transfers by Agent chart:**
+
+| Element           | Description                                         |
+|-------------------|-----------------------------------------------------|
+| **Colored Segments** | Each color represents a different AI agent          |
+| **Segment Size**     | Larger segments = more transfers by that agent      |
+| **Center Space**     | Empty center for clean visualization                |
+
+**How to interpret:**
+
+- If "Agent Sarah" has the largest segment, she transferred the most calls.
+- Smaller segments indicate agents with fewer transfers.
+- Hover over any segment to see exact numbers.
+
+
+**How to view transfer details:**
+
+1. Click directly on a colored segment of the doughnut chart,
+2. Select an agent’s name from the legend below the chart,
+3. Or, if there are many agents, click the **"+X more"** link and pick an agent from the expanded list.
+
+---
+
+#### 🔍 Transfer Details
+
+When you click on an agent, the **Transfer Details** modal opens showing all transfer records for that agent.
+
+![Transfer Call Details](/images/dashboard/analytics/transfer-call-details.png)
+
+**Table columns:**
+
+| Column | Description |
+|--------|-------------|
+| **Call Date** | Date and time of the call |
+| **Agent** | AI agent who handled the call |
+| **From** | Caller's phone number |
+| **To** | Destination phone number |
+| **Duration** | Call length |
+| **Status** | Shows "Call Transfer" |
+| **Direction** | Inbound or Outbound |
+| **Sentiment** | Positive, Neutral, or Negative |
+| **Recording** | Audio player to listen to the call |
+| **Actions** | View complete call details |
+
+**Table features:**
+
+- **Search**: Find specific calls using the search box
+- **Sort**: Click column headers to sort
+- **Pagination**: Navigate through pages
+- **Entries**: Choose 10, 25, 50, or 100 rows per page
+
+
+The Call Details modal, as shown below, provides an in-depth view of a transferred call record:
+
+![Call Details Modal](/images/dashboard/analytics/call-details.png)
+
+**What you’ll see in the Call Details modal:**
+
+- **Call info panel:** Displays agent name, call date and time, duration, direction (inbound/outbound), source and destination numbers, and appointment info (if available).
+- **Call Analysis:** Highlights whether the call was successful, sentiment classification (Positive, Neutral, or Negative), and the reason for call hangup (e.g., "Call Transfer").
+- **Recording player:** Listen to a real call audio file right in the modal—press play to review the interaction.
+- **Summary:** A concise text explanation of what happened during the call, such as who the user was transferred to and what actions the agent took.
+- **Transcription:** Read a detailed, line-by-line transcript of the call so you can quickly scan how the conversation unfolded.
+
+This detailed call modal helps supervisors and analysts review agent performance, audit the quality of transfers, and understand both outcome and customer experience—offering transparency and actionable insights for every recorded transfer call.
+
+
+---
+
+
 
 ## 📞 Dialer Analytics
 
