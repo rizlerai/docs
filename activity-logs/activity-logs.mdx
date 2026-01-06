@@ -1,0 +1,509 @@
+---
+title: "Activity Log"
+description: "Comprehensive tracking and monitoring system for all user actions across the platform - maintain transparency, accountability, and complete audit trails"
+icon: "clipboard-list"
+---
+
+**📋 Activity Log**
+
+<Info>
+The Activity Log feature allows you to track and monitor all important actions performed within the system. This helps maintain transparency, accountability, and provides a complete audit trail of changes across all modules of the application.
+</Info>
+
+## 🎯 Overview
+
+Activity Log is a comprehensive tracking system that automatically records user actions across all modules of the platform. Whether a user creates, updates, deletes, or performs any special action on any record, the system captures and stores this information for future reference.
+
+<CardGroup cols={3}>
+<Card title="🔍 Accountability" icon="user-shield">
+Know who made what changes and when. Complete user tracking for every action.
+</Card>
+
+<Card title="👁️ Transparency" icon="eye">
+Full visibility into all system activities across every module and feature.
+</Card>
+
+<Card title="📜 Audit Trail" icon="file-invoice">
+Complete history of changes for compliance and regulatory requirements.
+</Card>
+
+<Card title="🔧 Troubleshooting" icon="wrench">
+Easily track down when and how changes were made to resolve issues quickly.
+</Card>
+
+<Card title="👥 Team Management" icon="users">
+Monitor team activities within your organization and track performance.
+</Card>
+
+<Card title="📊 Complete History" icon="clock-rotate-left">
+Every action is logged with before/after values and detailed metadata.
+</Card>
+</CardGroup>
+
+Each log entry captures detailed information including who performed the action, what was changed, when it happened, and the complete before/after values of any modifications.
+
+<img src="/images/activity-log/overview.png" alt="Activity Log Overview" className="rounded-lg border shadow-sm" />
+
+---
+
+## 🚀 Accessing Activity Log
+
+<Steps>
+<Step title="Log In">
+Log in to your account with your credentials.
+</Step>
+
+<Step title="Navigate to Menu">
+Navigate to the main menu from the sidebar.
+</Step>
+
+<Step title="Click Activity Log">
+Click on **Activity Log** in the navigation menu.
+</Step>
+
+<Step title="View Activities">
+The activity log page displays all recorded activities in chronological order with the most recent at the top.
+</Step>
+</Steps>
+
+> 💡 **Pro Tip**: The page automatically loads with the most recent activities at the top, making it easy to see the latest changes first.
+
+---
+
+## 🖥️ Understanding Activity Log Interface
+
+**📊 Activity Log Table**
+
+The main Activity Log interface displays a comprehensive table with all recorded activities. Each row represents a single activity entry with detailed information.
+
+| Column | Description | Visual Indicator |
+|--------|-------------|-------------------|
+| **#** | Sequential row number for easy reference | Numeric identifier |
+| **User** | The name of the person who performed the action | User name display |
+| **Type** | Which module or feature was affected | Colored tag badge |
+| **Event** | The type of action performed (Created, Updated, Deleted, etc.) | Colored tag badge |
+| **Description** | Detailed description of the event that occurred | Text description |
+| **IP Address** | The IP address from which the action originated | IP address format |
+| **Date/Time** | Exact date and time when the action occurred | Timestamp in local timezone |
+| **Details** | Icon button to view complete activity details | Blue circle with target icon |
+
+### ⚡ Table Features
+
+<CardGroup cols={2}>
+<Card title="🔄 Sortable Columns" icon="arrows-up-down">
+Click on column headers (User, Type, Event, IP Address, Date/Time) to sort the data ascending or descending. Visual indicators show the current sort direction.
+</Card>
+
+<Card title="📄 Pagination" icon="file-lines">
+Navigate through multiple pages of activity records. Use the pagination controls at the bottom of the table.
+</Card>
+
+<Card title="📏 Items Per Page" icon="list">
+Select how many records to display: 10, 25, 50, or 100 items per page. Choose based on your preference and screen size.
+</Card>
+
+<Card title="🔍 Search Functionality" icon="magnifying-glass">
+Use the search box to find activities by entering keywords. Search works across all visible columns and updates in real-time.
+</Card>
+</CardGroup>
+
+### 📋 Activity Details Modal
+
+For more detailed information about any activity, click on the **Details** icon (blue circle with target symbol) in any row. This opens a detailed modal showing complete information about the activity.
+
+<img src="/images/activity-log/details.png" alt="Activity Details Modal" className="rounded-lg border shadow-sm" />
+
+**Activity Details Modal Information:**
+
+<CardGroup cols={2}>
+<Card title="📝 Activity Type" icon="tag">
+The type of activity performed (e.g., "Authentication - User logged in")
+</Card>
+
+<Card title="👤 Name" icon="user">
+The name of the record or entity affected (displayed in blue, may be clickable)
+</Card>
+
+<Card title="🔐 By User" icon="user-check">
+The user who performed the action
+</Card>
+
+<Card title="🌐 IP Address" icon="network-wired">
+The IP address from which the action originated (displayed in pink/magenta for visibility)
+</Card>
+
+<Card title="📅 Date/Time" icon="clock">
+The exact timestamp when the action occurred in your local timezone
+</Card>
+
+<Card title="❌ Close Button" icon="xmark">
+Click to return to the main activity log view
+</Card>
+</CardGroup>
+
+---
+
+## 🔍 Filtering and Searching Activities
+
+The Activity Log provides powerful filtering options to help you find specific activities quickly. The filter section is located at the top of the Activity Log page.
+
+** Filter Options**
+
+<CardGroup cols={2}>
+<Card title="👥 User Filter" icon="users">
+**Purpose**: Filter activities by specific user
+
+- Select a specific user from the dropdown
+- Shows only activities performed by that user
+- Helpful for reviewing actions by a specific team member
+- **Default**: "All Users" (shows all activities)
+</Card>
+
+<Card title="📦 Type Filter" icon="boxes">
+**Purpose**: Filter by module or feature
+
+- Narrow down to specific modules or features
+- Focus on changes in particular areas of the system
+- Tracks activities across all available modules
+- **Default**: "All Types" (shows all activity types)
+</Card>
+
+<Card title="⚡ Event Filter" icon="bolt">
+**Purpose**: Filter by action type
+
+Available options:
+- **Created** - New records added to the system
+- **Updated** - Existing records modified
+- **Deleted** - Records removed from the system
+- **Transferred** - Records moved between entities
+
+**Default**: "All Events" (shows all event types)
+</Card>
+
+<Card title="📅 Date Range Filter" icon="calendar">
+**Purpose**: Filter by time period
+
+Predefined options:
+- **Today** - Today's activities only
+- **Yesterday** - Previous day's activities
+- **This Week** - Current week's activities
+- **Last 7 Days** - Past week
+- **Last 30 Days** - Past month
+- **This Month** - Current month
+- **Last Month** - Previous month
+- **Custom dates** - Your own date range
+
+**Default**: "Today"
+</Card>
+</CardGroup>
+
+**📆 Custom Date Range**
+
+When you select "Custom dates" from the Date Range dropdown:
+
+<Steps>
+<Step title="Select Custom Dates">
+Choose "Custom dates" from the Date Range dropdown menu.
+</Step>
+
+<Step title="Set Start Date">
+Select the beginning date of your range using the calendar picker (e.g., 01/05/2026).
+</Step>
+
+<Step title="Set End Date">
+Select the ending date of your range using the calendar picker (e.g., 01/05/2026).
+</Step>
+
+<Step title="Apply Filter">
+Click the **Filter** button to apply your custom date range.
+</Step>
+</Steps>
+
+**🔘 Applying and Resetting Filters**
+
+<CardGroup cols={2}>
+<Card title="✅ Apply Filters" icon="filter">
+**How to Apply:**
+
+1. Set your filter preferences (User, Type, Event, Date Range)
+2. Click the **Filter** button (purple button with filter icon)
+3. The Activity Log table updates to show matching activities
+4. All filters work together - combine multiple filters for specific searches
+
+> 💡 **Tip**: Filters are cumulative - each filter narrows down the results further.
+</Card>
+
+<Card title="🔄 Reset Filters" icon="arrow-rotate-left">
+**How to Reset:**
+
+1. Click the **Reset** button (blue button with refresh icon)
+2. All filters return to their default values
+3. The Activity Log displays all activities again
+
+> 💡 **Tip**: Use Reset when you want to start fresh with your filtering.
+</Card>
+</CardGroup>
+
+### 🔎 Search Functionality
+
+In addition to filters, use the search box located above the Activity Log table:
+
+<CardGroup cols={3}>
+<Card title="🔤 Keyword Search" icon="keyboard">
+Enter keywords to search through activity descriptions and related information
+</Card>
+
+<Card title="📊 Multi-Column" icon="table">
+Search looks through all visible columns to find matching results
+</Card>
+
+<Card title="⚡ Real-Time" icon="bolt">
+Results update as you type for instant feedback
+</Card>
+</CardGroup>
+
+### 🎯 Combining Filters
+
+You can combine multiple filters together to create more specific searches:
+
+**Example Combinations:**
+
+- **User + Event**: Filter by a specific user **AND** a specific event type to see only records that user created
+- **Date Range + Type**: Filter by a date range **AND** a specific type to see all activities in a module during a certain period
+- **Search + Filters**: Use search **AND** filters together to find very specific activities
+
+> 💡 **Pro Tip**: Start with broader filters and narrow down as needed. This helps you find exactly what you're looking for without missing relevant results.
+
+---
+
+## 📝 What Gets Tracked
+
+The Activity Log system monitors and records activities across all modules of the platform. Whenever any significant action is performed on any record in the system, it gets automatically logged.
+
+### 🎬 Types of Actions Tracked
+
+<CardGroup cols={2}>
+<Card title="➕ Record Creation" icon="plus-circle">
+**What's Captured:**
+
+When a new record is created, the activity log captures:
+- All initial values that were set
+- Complete configuration at creation time
+- User who created the record
+- Exact timestamp and IP address
+
+**Use Case**: See exactly how a record was configured when first created.
+</Card>
+
+<Card title="✏️ Record Updates" icon="pencil">
+**What's Captured:**
+
+When a record is modified, the log captures:
+- Previous values (before the change)
+- New values (after the change)
+- Only fields that were actually modified
+- Complete before/after comparison
+
+**Use Case**: Compare states and see exactly what changed.
+</Card>
+
+<Card title="🗑️ Record Deletion" icon="trash">
+**What's Captured:**
+
+When a record is deleted, the log preserves:
+- Snapshot of all values before removal
+- Complete record data for historical reference
+- User who performed the deletion
+- Timestamp and IP address
+
+**Use Case**: Maintain historical records even after data is deleted.
+</Card>
+
+<Card title="⭐ Special Actions" icon="star">
+**What's Captured:**
+
+Beyond basic CRUD operations, tracks:
+- Feature activation/deactivation
+- Item assignments to users/teams
+- Ownership transfers
+- Status changes (active/inactive, etc.)
+- Authentication events (login, logout, password changes)
+- Module-specific operations
+
+**Use Case**: Track all significant actions, not just data changes.
+</Card>
+</CardGroup>
+
+### 🌐 Comprehensive Coverage
+
+The activity tracking covers all major areas of the platform, ensuring complete visibility into system usage. Any module where users can create, modify, or delete records will have its activities logged automatically.
+
+**Common Activity Types Include:**
+
+<CardGroup cols={3}>
+<Card title="🔐 Authentication" icon="key">
+User login, logout, password changes
+</Card>
+
+<Card title="👥 User Management" icon="users">
+User creation, updates, role changes
+</Card>
+
+<Card title="🛡️ Spam Protection" icon="shield">
+Spam Carrier Status creation and management
+</Card>
+
+<Card title="🏢 Company Management" icon="building">
+Company profile updates and changes
+</Card>
+
+<Card title="🤖 AI Agent Management" icon="robot">
+Agent creation, configuration changes
+</Card>
+
+<Card title="📞 Dialer Activities" icon="phone">
+Campaign creation, powerlist management
+</Card>
+
+<Card title="📇 Contact Management" icon="address-book">
+Contact creation, updates, deletions
+</Card>
+
+<Card title="📊 Pipeline Management" icon="diagram-project">
+Stage changes, deal updates
+</Card>
+
+<Card title="➕ And More" icon="ellipsis">
+Many more across all platform modules
+</Card>
+</CardGroup>
+
+---
+
+## 🔬 Understanding Change Details
+
+When you click on an activity to view its details, the information displayed varies based on the type of action:
+
+### ➕ For Created Records
+
+When viewing details of a creation event, you will see:
+
+<CardGroup cols={2}>
+<Card title="📋 All Field Values" icon="list">
+Complete list of all values set during creation
+</Card>
+
+<Card title="👤 Creator Information" icon="user">
+User who created the record
+</Card>
+
+<Card title="⏰ Creation Timestamp" icon="clock">
+Exact time when the record was created
+</Card>
+
+<Card title="🌐 IP Address" icon="network-wired">
+IP address from which creation occurred
+</Card>
+</CardGroup>
+
+This gives you a complete picture of the initial state of the record.
+
+### ✏️ For Updated Records
+
+Update events show a comparison view with detailed change information:
+
+<CardGroup cols={2}>
+<Card title="📊 Previous Value" icon="arrow-left">
+Shows what each field contained before the change was made
+</Card>
+
+<Card title="🆕 New Value" icon="arrow-right">
+Shows what each field was changed to
+</Card>
+</CardGroup>
+
+**Key Features:**
+
+- Only modified fields are displayed (focus on what changed)
+- Complete before/after comparison for all modified fields
+- Side-by-side comparison for easy viewing
+
+**This detailed comparison helps you:**
+
+- Track configuration changes
+- Understand data evolution
+- Identify unintended modifications
+- Audit system changes
+
+### 🗑️ For Deleted Records
+
+Deletion events preserve and display all the values the record contained at the time it was deleted:
+
+<CardGroup cols={2}>
+<Card title="💾 Complete Snapshot" icon="floppy-disk">
+All field values from the deleted record
+</Card>
+
+<Card title="👤 Deletion Details" icon="user-xmark">
+User who performed the deletion, timestamp, and IP address
+</Card>
+</CardGroup>
+
+**This preservation is crucial for:**
+
+- Compliance and audit requirements
+- Data recovery if needed
+- Understanding what was removed
+- Historical reference
+
+### 🔗 Related Information
+
+Some activity logs include additional contextual information:
+
+- Related record names or identifiers
+- Parent items or hierarchical relationships
+- Associated entities or linked records
+- Module-specific metadata
+- Additional helpful details relevant to the activity
+
+---
+
+## 👁️ Visibility and Access Rules
+
+The Activity Log implements visibility rules to ensure users only see activities relevant to them:
+
+<CardGroup cols={3}>
+<Card title="🏢 Company Users" icon="building">
+**Visibility**: All activities by any user within your company
+
+**Capabilities**:
+- Monitor and review team activities
+- Ensure proper usage of the system
+- Maintain oversight of all changes
+- Track team performance and engagement
+- Identify training needs or policy violations
+</Card>
+
+<Card title="👤 Regular Users" icon="user">
+**Visibility**: Your own activities only
+
+**Capabilities**:
+- Keep track of your personal actions
+- Review your own history of changes
+- Understand what actions you've taken
+- Maintain personal accountability
+</Card>
+
+<Card title="🛡️ Administrators" icon="user-shield">
+**Visibility**: Own administrative activities only
+
+**Security Features**:
+- Admin activities kept private
+- Not visible to company or regular users
+- Protects system-level operations
+- Maintains security boundaries
+- Ensures proper access control
+</Card>
+</CardGroup>
+
+---

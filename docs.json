@@ -188,6 +188,13 @@
             ]
           },
           {
+            "group": "Activity Logs",
+            "icon": "clipboard-list",
+            "pages": [
+              "activity-logs/activity-logs"
+            ]
+          },
+          {
             "group": "Settings",
             "icon": "gear",
             "pages": [
@@ -244,6 +251,7 @@
               "api-reference/ai-number/list-numbers"
             ]
           }
+
         ]
       },
       {

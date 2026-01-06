@@ -3,9 +3,9 @@ title: "Phone Numbers"
 icon: "phone"
 ---
 
-Manage your phone number inventory with comprehensive provider integration, verification tracking, and advanced calling features for AI campaigns and business communications.
+## 📞 Phone Numbers Management
 
-## 📋 Phone Numbers Overview
+Easily manage your phone number inventory for AI campaigns and business communications using precise filters and export tools.
 
 <img
   src="/images/manage/ai-sync-number/overview.png"
@@ -13,29 +13,41 @@ Manage your phone number inventory with comprehensive provider integration, veri
   className="rounded-lg border shadow-sm"
 />
 
+### 🔎 Filters
 
-> **Filter Bar & Bulk Actions:**  
-> Use the filter bar to precisely narrow your phone numbers list, and leverage bulk actions for efficient management.
->
-> - **Filter By:**  
->   - **All:** (Default) Shows every phone number record.
->   - **AI:** Only show AI phone numbers.
->   - **Dialer:** Only show dialer numbers.
->   - **Both:** Show both AI and dialer numbers together.
-> - **Provider:** Choose a provider (e.g., RizzDial, Twilio) to focus results.
-> - **Status:** Instantly filter by Verified, Unverified, or All.
-> - **Download:** Export the filtered numbers as CSV or Excel for offline access.
->
-> **Bulk Actions:**  
-> - ✅ Use row checkboxes to select individual numbers
-> - ✅ Use the main "Select All" checkbox at the top for large-scale management
-> - 📊 The UI displays a live count (e.g., "2 selected") showing how many numbers you've chosen
-> 
-> **Available Actions:**  
-> *(These options appear only after you select at least one checkbox)*
-> - 🛡️ **Spam Protect**: Enable spam protection for selected phone numbers to prevent unwanted calls and improve deliverability
-> - 🤖 **Activate for AI**: Instantly activate selected numbers for AI campaign use
-> - 🗑️ **Delete**: Remove one or multiple selected numbers (requires confirmation)
+Filter your purchased phone numbers using:
+
+- **Filter By:**
+  - **All**: Show all phone numbers.
+  - **AI**: Only numbers used for AI.
+  - **Dialer**: Only numbers used for Dialer.
+  - **Both**: Numbers used for both.
+
+- **Provider:**
+  - **All**
+  - **Rizz**
+  - **Twilio**
+  - **Rizz V2**
+
+- **Type:**
+  - **All**
+  - **Local**
+  - **Toll Free**
+  - **Mobile**
+
+- **Status:**
+  - **All**
+  - **Verified**
+  - **Unverified**
+
+All filters work together—update any filter and the table updates instantly.
+
+---
+
+### ⬇️ Download
+
+Click the **Download** button to export your filtered phone numbers as an Excel file. Only the currently filtered records are included in the download.
+
 
 
 
@@ -52,7 +64,6 @@ Manage your phone number inventory with comprehensive provider integration, veri
 | **10DLC**       | 10DLC registration (A2P compliance)  | `No`, `Yes`                                          |
 | **Renewal At**  | Next renewal/billing date            | `09-14-2025 12:40 PM`, `10-02-2024 1:00 PM`          |
 | **Status**      | Verification state                   | `Verified`, `Unverified`                             |
-| **Purchased At**| Date & time purchased                | `08-14-2024 12:40 PM`, `07-23-2024 2:42 PM`          |
 > **Field Notes:**  
 > - The **Title** is optional and may be blank.  
 > - **10DLC** compliance is shown for eligible providers only.  
@@ -105,41 +116,109 @@ Before purchasing a phone number, I use the Local Preference API's pre-check sys
 
  
 ## ➕ Acquiring Phone Numbers
-<div style={{display: 'flex', gap: '20px', marginBottom: '20px'}}>
-  <div style={{flex: 1}}>
-    ![Purchase](/images/manage/ai-sync-number/purchase.png)
-  </div>
-  <div style={{flex: 1}}>
-    ![Package Price Slider](/images/manage/ai-sync-number/new-purchase.png)
-  </div>
-</div>
-### 🛒 Purchase Process
 
-<CardGroup cols={2}>
-  <Card title="Purchase New Numbers" icon="cart-shopping">
-    Buy new phone numbers for your campaigns
-    <br />**Button**: "Purchase" - Navigate to number marketplace
-    <br />**Options**: Local, toll-free, and international numbers
-  </Card>
-  
-  <Card title="Provider Selection" icon="network-wired">
-    Choose from multiple carrier providers
-    <br />**Plivo**: Cost-effective international coverage
-    <br />**Twilio**: Premium reliability and features
-  </Card>
-  
-  <Card title="Area Code Targeting" icon="map-location-dot">
-    Select specific geographic regions
-    <br />**315**: New York (Syracuse area)
-    <br />**205**: Alabama (Birmingham area)
-  </Card>
-  
-  <Card title="Bulk Acquisition" icon="layer-group">
-    Purchase multiple numbers simultaneously
-    <br />**Efficiency**: Save time with bulk operations
-    <br />**Campaigns**: Get numbers for large campaigns
-  </Card>
-</CardGroup>
+Purchase phone numbers instantly and connect them to your business with simple, guided setup.
+
+---
+
+![Phone Numbers Purchase Table](/images/manage/ai-sync-number/purchase.png)
+
+---
+
+## Getting Started
+
+To purchase a new phone number, click the **Purchase** button from the Phone Numbers page.
+
+![Phone Numbers Purchase Table](/images/manage/ai-sync-number/new-purchase.png)
+---
+
+## Purchase Number Form
+
+### 1. Provider
+
+Select your telecommunications provider:
+
+- **Rizz** – Primary carrier option  
+- **Twilio** – Alternative carrier option  
+- **Rizz V2** – Additional carrier option (USA only)  
+
+---
+
+### 2. Countries
+
+Select the country for phone number:
+
+- **USA** (Default)  
+- **Canada**  
+
+*Note: Rizz V2 only supports USA.*
+
+---
+
+### 3. Type
+
+Select the type of phone number:
+
+- **Local** – Standard local phone numbers  
+- **Toll Free** – 800, 833, 844, 855, 866, 877, 888 numbers  
+- **Mobile** – Mobile phone numbers  
+
+**Provider Limitations:**
+- *Rizz V2*: Does not support Mobile numbers  
+- *Twilio*: Mobile not available for USA and Canada (available for UK, Australia)  
+- *Rizz*: All types available for all countries  
+
+---
+
+### 4. Search By
+
+Choose how to search for available numbers:
+
+- **AreaCode** – Search by specific area code (e.g., 212, 415)  
+- **Region** – Search by geographic region (e.g., NY, CA)  
+- **City** – Search by city name (e.g., New York, Los Angeles)  
+
+---
+
+### 5. AreaCode/Region/City
+
+Enter the value based on your **Search By** selection:
+
+- For *AreaCode*: Enter 3-digit area code
+- For *Region*: Enter state code or region name
+- For *City*: Enter city name
+
+---
+
+### 6. Search Results
+
+After clicking **Search**, available numbers display in a table:
+
+| # | Friendly Name | Phone # | Locality | Capabilities |   | Action |
+|---|---------------|---------|----------|--------------|---|--------|
+|   | Example       | 315-238-9306 | Tully, New York, UNITED STATES | MMS, SMS, Voice | [x] | Purchase |
+
+- **Friendly Name** — Display name of the number  
+- **Phone #** — The phone number  
+- **Locality** — Geographic location  
+- **Capabilities** — Supported features (Voice, SMS, MMS)  
+- **Checkbox** — Select for bulk purchase  
+- **Action** — Purchase button  
+
+---
+
+## Purchase Options
+
+**Single Purchase:**
+
+- Click the purchase button next to the desired number.
+
+**Buy Multiple:**
+
+1. Check the numbers you want to purchase  
+2. Click **Buy Multiple** button  
+3. All selected numbers will be purchased at once
+
 
 ## 🔄 Phone Number Workflow
 
