@@ -32,6 +32,35 @@ Navigate to **Setup > Webhooks** to manage your webhook configurations.
   </Card>
 </CardGroup>
 
+
+### 👁️ Viewing Webhook Details
+
+When you click a webhook entry in the table, you'll see a detailed view showing all of its configuration and delivery parameters.
+
+![Webhook Details Screenshot](/images/setup/webhooks/endpoints.png)
+
+This detail page includes:
+
+- **Title:** The name of the webhook for easy identification.
+- **URL:** The full endpoint address where HTTP POST requests are sent.
+- **Method:** The HTTP method used (always `POST`).
+- **Form Data:**  
+  A complete list of fields included in the payload sent to your endpoint.  
+  <br />
+  _Examples:_ `phone_number`, `email`, `first_name`, `last_name`, `address`, `city`, `country`,`new_user_field`, `powelist_id`, `wayan_cf`, and more....
+
+This view allows you to:
+
+- Verify the endpoint URL and method used
+- See exactly which form fields are transmitted to your external system
+- Easily copy field names for integration into your endpoints
+
+Click the yellow **Back** button at the top to return to the main Webhooks overview table.
+
+_Use this page whenever you need to audit, troubleshoot, or integrate with your webhooks more precisely._
+
+
+
 ## 🔄 Webhook Workflow
 
 <Steps>

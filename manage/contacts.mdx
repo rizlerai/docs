@@ -1,155 +1,163 @@
 ---
 title: "Contacts"
-description: "Interactive contact management with real-time communication, PowerList integration, and comprehensive contact interaction workflows"
+description: "Interactive contact management with customizable columns, PowerList integration, and real-time communication workflows"
 icon: "address-book"
 ---
 
 # 👤 Contacts
 
-Interactive contact management system enabling seamless communication, real-time interaction tracking, PowerList integration, and comprehensive contact workflow management for enhanced customer engagement and relationship building.
+The Contacts management dashboard enables interactive contact management, real-time communication, comprehensive workflow oversight, and seamless PowerList integration – now with a dynamic show/hide column feature for full customization.
 
 <img
   src="/images/manage/contact/overview.png"
-  alt="Contacts Management Dashboard"
+  alt="Contacts Management Dashboard with Show/Hide Column Feature"
   className="rounded-lg border shadow-sm"
 />
 
-The Contacts management dashboard provides a comprehensive view of your contact database with advanced filtering, search capabilities, and real-time interaction tracking. The interface displays contacts in a structured table format with essential information, communication tools, and interactive controls for seamless contact management.
+Use the dashboard’s new **Show/Hide Columns** panel, located just above the table, to toggle the visibility of any field. Instantly personalize which columns are displayed, simplifying your workflow and decluttering your data view.
 
-## 📊 Contact Interface Elements
+---
 
-| Element                | Description                       | Functionality |
-|------------------------|-----------------------------------|---------------|
-| **Search Contact**     | Real-time search field            | Search across all contact fields with instant filtering |
-| **Contact Number**     | Sequential numbering              | Auto-generated contact sequence numbers (1, 2, 3, etc.) |
-| **Action Column**      | Quick actions                     | 🟢 Green (view contact messaging), 🔴 Red (delete contact) |
-| **Audience Lab ID**    | Unique AudienceLab identifier     | Reference column for mapping to external systems or AudienceLab integrations |
-| **Phone Number**       | Primary contact number            | Main communication number with click-to-call functionality |
-| **Email**              | Email address field               | Contact email for direct communication |
-| **First Name**         | Personal identification           | Contact's given name |
-| **Last Name**          | Family identification             | Contact's surname |
-| **Additional Fields**  | Extended information              | Address, City, Email Address, Zip Code, Phone numbers |
+## 🖥️ Contacts Table Overview
+
+The interface displays contacts in a structured table with these key controls and features:
+
+- **Search Bar**: Instantly filter contacts across all fields as you type.
+- **Show/Hide Columns**:  
+  Select which data columns to display using the dropdown or checklist above the table. Supported fields:
+    - Phone Number
+    - Email
+    - First Name
+    - Last Name
+    - Address
+    - ...and more custom fields
+- **Pagination**: Navigate contact pages and set records per page.
+- **Action Column**: One-click messaging, view profile, or delete actions.
+- **Bulk Selection**: Use checkboxes to select multiple contacts for group actions (bulk edit, delete, status change, etc.).
+
+<img
+  src="/images/manage/contact/overview.png"
+  alt="Contacts Table with Customizable Columns and Controls"
+  className="rounded-lg border shadow-sm"
+/>
+
+---
+
+## 📋 Contact Table Columns Explained
+
+| Column               | Description                                              | Show/Hide Support |
+|----------------------|---------------------------------------------------------|-------------------|
+| **#** (Contact #)    | Row sequence number                                     | Always shown      |
+| **Actions**          | Quick icons: view 👁️, delete 🗑️, message 💬              | Always shown      |
+| **AudienceLab ID**   | Unique AudienceLab identifier for integration mapping    | Yes               |
+| **Phone Number(s)**  | Primary and alternate contact numbers, click-to-call    | Yes               |
+| **Email**            | Contact's main email address                            | Yes               |
+| **First Name**       | Contact’s given name                                    | Yes               |
+| **Last Name**        | Contact’s surname                                       | Yes               |
+| **Address**          | Street address or location info                         | Yes               |
+| **City**             | City/town                                               | Yes               |
+| **Country**          | Country name/ISO code                                   | Yes               |
+| **Zip Code**         | Postal/zip code                                         | Yes               |
+| **PowerList**        | Associated PowerLists                                   | Yes               |
+| **Custom Fields**    | Any business-specific data fields                       | Yes               |
+
+**Tip:** Hide unused or irrelevant columns for a cleaner, focused view.
+
+---
+
+## 🚦 Column Visibility Controls
+
+- Use the **Show/Hide Columns** dropdown (at top of table) to toggle any column.
+- Uncheck a field to immediately hide it from the grid; re-check to make it visible.
+- Column visibility settings are remembered per session for user convenience.
+- If no columns are selected, a warning prompts you to select at least one field.
+
+---
 
 
-
-
-
-## ⚡ Contact Status Management
-
-### 🟢 Active vs Inactive Status
-
-<CardGroup cols={2}>
-  <Card title="Active Contacts" icon="circle-check">
-    Green dot indicator for active contacts
-    <br />**Status**: 🟢 Available for all communication channels
-    <br />**Features**: Full campaign inclusion, unrestricted access
-    <br />**Usage**: Active outreach, marketing campaigns, sales activities
-  </Card>
-  
-  
-  <Card title="Status Toggle" icon="arrows-rotate">
-    One-click status management
-    <br />**Quick Toggle**: Instant active/inactive switching
-    <br />**Bulk Actions**: Multiple contact status updates
-    <br />**Audit Trail**: Status change history tracking
-  </Card>
-  
-  <Card title="Contact Details View" icon="eye">
-    Click view icon to access detailed contact information
-    <br />**Conversation History**: Complete communication timeline with timestamps
-    <br />**Contact Profile**: Comprehensive contact details and custom fields
-    <br />**Activity Tracking**: Real-time interaction logs and engagement metrics
-    <br />**Communication Tools**: Direct access to call, SMS, and email functions
-  </Card>
-</CardGroup>
+---
 
 ## 👁️ Contact Details View
 
 ### 🔍 View Icon Functionality
 
-The view icon (👁️) in the Action column opens a detailed contact profile page, providing comprehensive access to contact information, communication history, and management tools for complete customer relationship oversight.
+Clicking the **view (👁️) icon** in the Actions column opens a detailed profile page, showing all available contact fields – even those currently hidden in the table view.  
 
 <img
   src="/images/manage/contact/view-page.png"
-  alt="Contact Details View Interface"
+  alt="Contact Details View Interface with Full Field Visibility"
   className="rounded-lg border shadow-sm"
 />
 
-#### 🚀 What the View Icon Does
+#### Detailed View Capabilities
+
 <CardGroup cols={2}>
   <Card title="Contact Profile Information" icon="user">
-    View complete contact details and personal information
-    <br />**Display**: Name, phone numbers, email addresses
-    <br />**Custom Fields**: All configured contact field data
-    <br />**Status**: Active/inactive status and contact preferences
+    All available information regardless of current column selection
+    <br />**Fields Shown**: Name, phone numbers, email, address, PowerLists, custom fields
+    <br />**Status**: Active/inactive state
   </Card>
-  
   <Card title="Contact Timeline & History" icon="clock">
-    Comprehensive interaction and activity timeline
-    <br />**Call History**: Complete call logs with duration and outcomes
-    <br />**Messages**: SMS conversation threads and responses
-    <br />**Activities**: All contact touchpoints and engagement records
+    Complete log of all interactions (calls, SMS, emails)
+    <br />**Activities**: Timestamped communication events
+    <br />**Status Changes**: Full history, even if Status column is hidden
   </Card>
-  
   <Card title="Communication Tools" icon="phone">
-    Direct access to contact communication options
-    <br />**Phone**: Click-to-call functionality
-    <br />**SMS**: Send text messages directly
-    <br />**Email**: Compose and send emails
-    <br />**Notes**: Add interaction notes and follow-up reminders
+    Quick-access phone, SMS, and email options
+    <br />**Notes**: Add call logs, messages, or emails from the profile
   </Card>
-  
   <Card title="Contact Management" icon="gear">
-    Comprehensive contact editing and organization tools
-    <br />**Edit Contact**: Update contact information and custom fields
-    <br />**Tags & Lists**: Organize contacts with tags and PowerLists
-    <br />**Status Control**: Manage active/inactive status and preferences
-    <br />**Bulk Actions**: Apply changes to multiple contacts simultaneously
+    Edit contact info, assign PowerLists, update tags, manage status
+    <br />**List/Tags**: Even hidden PowerList or tag columns are editable here
+    <br />**Bulk Actions**: All compatible batch operations
   </Card>
 </CardGroup>
 
+---
 
+## 📊 Customizing the Contact Data Table
+
+You can tailor your contact grid to your workflow:
+
+- **Add/Remove Columns**: Instantly, without page reload
+- **Drag to Reorder**: (If enabled) Drag columns to preferred sequence
+- **Sort by Any Visible Column**: Click header to sort contacts by that field
+- **Persistent Preferences**: The dashboard remembers your last layout
+
+---
 
 ## 📊 Contact Data Structure
 
 ### 📝 Contact Information Fields
 
-The interface displays comprehensive contact information in an organized table format:
+The table supports the following, all available via show/hide (except Contact # and Actions which are always visible):
 
 <CardGroup cols={2}>
   <Card title="Primary Contact Data" icon="user">
-    Essential identification information
-    <br />**Phone Number**: Primary communication number
-    <br />**Email**: Contact email address
-    <br />**First Name**: Personal identification
-    <br />**Last Name**: Family name
+    <br />**Phone Number**: Main communication number (show/hide)
+    <br />**Email**: Contact email address (show/hide)
+    <br />**First & Last Name**: Name fields (show/hide)
   </Card>
-  
   <Card title="Extended Information" icon="address-card">
-    Additional contact details
-    <br />**Email Address**: Secondary email field
-    <br />**Address**: Physical location information
-    <br />**City**: Geographic location
-    <br />**Custom Fields**: Business-specific data
+    <br />**Address, City, Country, Zip**: Geographic data (show/hide)
+    <br />**Primary Number 2, 3**: Additional numbers (show/hide)
+    <br />**Custom Fields**: Any extra business field (show/hide)
   </Card>
-  
-  <Card title="System Generated" icon="database">
-    Platform-managed information
-    <br />**Contact Number**: Sequential identifier (1, 2, 3...)
-    <br />**Status**: Active/Inactive indicator
-    <br />**List Membership**: PowerList associations
-    <br />**Last Updated**: Recent modification timestamp
+  <Card title="System Columns" icon="database">
+    <br />**Contact #**: Table sequence (always visible)
+    <br />**Status**: Active/inactive indicator (show/hide)
+    <br />**AudienceLab ID**: External mapping (show/hide)
+    <br />**PowerList**: List membership (show/hide)
+    <br />**Last Updated**: Modification time (show/hide)
   </Card>
-  
   <Card title="Interactive Elements" icon="hand-pointer">
-    Clickable interface components
-    <br />**Phone Numbers**: Click-to-call functionality
-    <br />**Email Addresses**: Direct email composition
-    <br />**Status Dots**: Toggle active/inactive state
-    <br />**Column Headers**: Sort by field content
+    <br />**Phone/Email**: One-click to call/email
+    <br />**Status Dot**: Toggle state directly, even if most columns are hidden
+    <br />**Actions**: Always available for view/edit/delete
   </Card>
 </CardGroup>
- 
+
+---
 
 ## 📈 Contact Performance Tracking
 
@@ -159,32 +167,30 @@ The interface displays comprehensive contact information in an organized table f
   <Card title="Contact Engagement" icon="chart-bar">
     Track interaction performance
     <br />**Response Rates**: Communication response percentages
-    <br />**Engagement Scores**: Overall interaction quality metrics
-    <br />**Touch Point Analysis**: Communication attempt tracking
+    <br />**Engagement Scores**: Quality metrics from activity data
+    <br />**Touch Point Analysis**: Attempts and success by channel
   </Card>
-  
   <Card title="Status Analytics" icon="chart-pie">
       Monitor contact status distribution
-    <br />**Active vs Inactive**: Contact status ratios
-    <br />**Status Changes**: Activation/deactivation trends
-    <br />**List Performance**: PowerList effectiveness metrics
+    <br />**Active vs Inactive**: Status ratios (based on visible data)
+    <br />**Status Changes**: Track trends in activation/deactivation
+    <br />**List Performance**: PowerList metrics per contact
   </Card>
-  
   <Card title="Communication Metrics" icon="phone-volume">
-    Analyze communication effectiveness
-    <br />**Call Success Rates**: Phone connection percentages
-    <br />**Email Response**: Email engagement tracking
-    <br />**Channel Performance**: Best performing communication methods
+    Analyze effectiveness by visible channel (phone, email, SMS)
+    <br />**Call Success Rates**: Connection analysis
+    <br />**Email Response**: Inbox engagement stats
+    <br />**Channel Performance**: Compare methods
   </Card>
-  
   <Card title="Data Quality" icon="star">
-    Assess contact database health
-    <br />**Completeness**: Percentage of complete records
-    <br />**Accuracy**: Data validation scores
-    <br />**Freshness**: Recent update tracking
+    Monitor contact records health
+    <br />**Completeness**: % of non-empty fields (affected by shown/hidden columns)
+    <br />**Accuracy**: Data validation
+    <br />**Freshness**: Last update (visible if column toggled on)
   </Card>
 </CardGroup>
 
- 
+---
 
- 
+**Tip:** For optimal efficiency, show only those columns relevant to your task and workflow. You can always access or edit full contact details (including hidden columns) in the contact profile view.
+

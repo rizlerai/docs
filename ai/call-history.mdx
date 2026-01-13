@@ -1,92 +1,172 @@
 ---
 title: "AI Call History"
-description: "Access comprehensive call records, analyze conversation patterns, and track customer interactions across your AI call system with advanced filtering and search capabilities."
+description: "View, filter, search, and analyze all your AI phone call records with detailed information, transcripts, and conversation analysis."
 icon: "clock-rotate-left"
 ---
-## Filter Controls
 
-- **Select Agent** - Choose specific agents using dropdown search
-- **Date Range** - Quick options: "Today", "Yesterday", "Last 7 Days", "Last 30 Days", or custom range
-- **Start/End Date** - Calendar picker with DD/MM/YYYY format
-- **Min/Max Duration** - Filter calls by length from "0 Sec" to "No Limit"
+# 📞 AI Call History
 
-![Call History](/images/ai/call-history/primaryfilter.png)
- 
-- **Call Direction** - "All", "Inbound", or "Outbound"
-- **User Sentiment** - "All", "Positive", "Negative", "Neutral", "Unknown"
-- **Call Successful** - "All", "Successful", or "Unsuccessful"
-- **From/To Number** - Search by specific phone numbers
-- **Hangup Reason** - Filter by termination cause
+View and analyze all your AI phone call records in one place. Filter calls, view detailed transcripts, listen to recordings, and export data for reporting.
 
-![Call History](/images/ai/call-history/advancefilter.png)
+![AI Call History Overview](/images/ai-call-monitoring/call-history/overview.png)
 
-## Column Visibility Management
-Use checkmark toggles to filter which data columns are displayed in the table
+*The AI Call History interface provides comprehensive filtering options and a detailed table view of all call records.*
 
-**How Column Filtering Works:**
-- **Checked (✓)** - Column is visible in the table
-- **Unchecked** - Column is hidden from table view
-- **Instant Filter** - Toggle checkmarks to immediately filter displayed data
-- **Custom View** - Create personalized data views by selecting relevant columns only
+## 🚀 Getting Started
 
-![Call History](/images/ai/call-history/filter-options.png)
+The main page shows a table of all your call records. Each row represents one call with key information like time, agent name, phone numbers, duration, and more. Use the filters at the top to find specific calls, or click the 👁️ eye icon to view complete call details.
 
-## Data Export & Management
-Access powerful export functionality through dedicated action buttons:
+## 🔍 Filters
 
-- **CSV Export** - Download call data in comma-separated values format. Compatible with Excel and Google Sheets for analysis.
-- **Excel Export** - Export to Microsoft Excel format (.xlsx) with formatted headers and data types for immediate use.
-- **PDF Export** - Generate professional PDF reports with proper layout and formatting for documentation.
-- **Filter** - Export only the filtered results based on your current search and column settings.
+All filters work together to help you find exactly what you need. Most update automatically, but click the **Filter** button to apply all changes at once.
 
-![Call History](/images/ai/call-history/cvc-pdf.png)
+### 🏢 Select Company
+
+Choose a company to see only calls associated with that company. Leave it unselected to see all companies.
+
+### 🤖 Select Agent
+
+Filter calls by the AI agent that handled them. Search by typing the agent name in the dropdown.
+
+### 📅 Date Range
+
+Choose from predefined ranges (Today, Yesterday, Last 7 Days, This Month, etc.) or select "Custom dates" to pick your own start and end dates. All times are shown in your account's time zone.
+
+### ⏱️ Min/Max Duration
+
+Set minimum and maximum call duration to find longer conversations or filter out very short calls. Options range from 5 seconds to 2 hours.
+
+### 📲 Call Direction
+
+Filter by call type:
+- **All:** Shows all calls
+- **Inbound:** 📥 Calls you received
+- **Outbound:** 📤 Calls you made
+- **Web:** 🌐 Calls initiated through the web interface
+
+### 😊 User Sentiment
+
+Find calls based on the caller's emotional tone:
+- **Positive:** 😄 Happy, satisfied customers
+- **Neutral:** 😐 Normal interactions
+- **Negative:** 😞 Unhappy or frustrated customers
+- **Unknown:** ❓ Sentiment couldn't be determined
+
+💡 **Tip:** Use "Negative" to find calls where customers were unhappy so you can review and improve your service.
+
+### ✅ Call Successful
+
+Filter to see only successful calls (those that achieved their goal) or unsuccessful ones.
+
+### 📱 From/To Number
+
+Type a phone number to find all calls made from or to that specific number. Works best with complete phone numbers.
+
+### 🔚 Hangup Reason
+
+Filter by why the call ended. Common reasons include:
+- **User Hangup:** Caller hung up
+- **Voicemail Reached:** 📧 Call went to voicemail
+- **Machine Detected:** 🤖 Reached answering machine
+- **Call Transfer:** 🔄 Call was transferred
+- Various error types (connection issues, payment failures, etc.)
+
+## 💾 Exporting Data
+
+Export your filtered call records in three formats:
+
+1. **CSV** 📊 (green button): For importing into spreadsheets or other systems
+2. **Excel** 📈 (blue button): For analysis and calculations in Excel
+3. **PDF** 📄 (red button): For printing or sharing reports
+
+**How to export:**
+
+1. Set your filters to show the calls you want
+2. Click the **Filter** button to apply filters
+3. Click your preferred export format button
+4. The file downloads automatically to your computer
+
+**What's included:** All visible columns and all records matching your current filters. Files are named with timestamps (e.g., `AI_Call_History_2025-01-15_14-30-45.csv`).
+
+⚠️ **Note:** If no records match your filters, you'll see an error message with suggestions.
+
+
+![AI Call History Overview](/images/ai-call-monitoring/call-history/part1.png)
+
+### 👁️ Show/Hide Columns
+
+Customize which columns appear in the table. Check or uncheck columns in the dropdown. Your preferences are saved for 30 days. ID and Action columns are always visible.
+
+## 📊 Table Columns
+
+- **ID:** 🔢 Unique call identifier
+- **Action:**  
+  - 👁️ **Eye Icon (Green):** View call details within the system  
+  - 🟠 **GHL Logo (Yellow):** Open contact in GoHighLevel  
+  Click the **GHL Logo** button to open the contact directly in GoHighLevel.
+- **Time:** 🕐 When the call occurred (your time zone)
+- **Company Name:** 🏢 Associated company
+- **Agent Name:** 🤖 AI agent that handled the call
+- **From/To Number:** 📱 Phone numbers involved
+- **Call Duration:** ⏱️ How long the call lasted (HH:MM:SS format)
+- **Call Type:** 🏷️ Category of call (e.g., Appointment Call, Sales Call)
+- **Direction:** 📲 Inbound, Outbound, or Web
+- **Hangup Reason:** 🔚 Why the call ended
+- **User Sentiment:** 😊 Positive, Neutral, Negative, or Unknown
+- **Call Successful:** ✅ Yes or No
+- **Recording:** 🎵 Audio player (if recording available)
+- **Call Summary:** 📝 Brief overview (first 30 characters shown, click to see full)
+- **Call Transcript:** 📄 Full conversation text (first 30 characters shown, click to see full)
+
+### Step 4: View Contact in GoHighLevel
+
+A new browser tab will open with the contact's profile page in GoHighLevel, where you can:
+
+- View complete contact information
+- Check conversation history
+- Add notes or tags
+- Manage the contact
+
+
+![AI Call History Overview](/images/ai-call-monitoring/call-history/part2.png)
+
+## 👁️ Viewing Call Details
+
+Click the 👁️ eye icon in the Action column to see complete information about any call:
+
+- **Header:** 📅 Date, time, agent, duration, and audio player
+- **Analysis:** 📊 Call success status, call type, disconnection reason, voicemail detection
+- **Summary:** 📝 Complete AI-generated overview of the call
+- **Transcript:** 📄 Full conversation with "Agent:" and "User:" labels
+
+Click "Back" to return to the table view. Your filters remain unchanged.
 
 
 
-## Call Records Table
 
+## 🔎 Searching and Sorting
 
-- **Call Status**: Green check/circle indicates successful/connected calls
-- **ID**: Numeric Call Identifier (e.g., 20230219234021)
-- **Agent Name**: Name shown as "Demo AI Agent"
-- **Time**: Date and time of call (e.g., 7/11/2024 9:47)
-- **Call Type**: "Phone" or "Web"
-- **Direction**: "Inbound" or "Outbound"
-- **From Number / To Number**: Clearly separated into two columns
-- **Call Duration**: Shown as mm:ss or hh:mm:ss
-- **User Sentiment**: Badge indicator (🟢 Neutral, 🟡 Positive, 🔴 Negative, etc.)
-- **Call Successful**: Checkbox/indicator showing call success
-- **Recording Controls**: Play and download buttons for audio playback
-- **Hangup Reason**: (e.g., "User hung up", "Agent hung up")
-- **Call Transcript Summary**: Short snippet/summary of the call
+### 🔍 Search
 
-_You can toggle column visibility, and interact with playback controls or download the call recording directly from the table._
+Use the "Search Log..." box above the table to quickly find calls. It searches all visible columns and works with partial matches (case-insensitive). Type phone numbers, agent names, or any text to filter results instantly.
 
-![Call History](/images/ai/call-history/table.png)
+### ↕️ Sorting
 
-## Detailed Call View
+Click any column header to sort by that column. Click once for ascending (A-Z, earliest to latest), click again for descending (Z-A, latest to earliest). By default, calls are sorted by ID (newest first).
 
-Click "View" action for comprehensive call details:
+## 🌍 Time Zone
 
-### Audio Playback Controls
-- **Audio Timeline** - Visual representation of call duration with playback controls
-- **Play/Pause Controls** - Listen to the actual call recording
-- **Timeline Navigation** - Jump to specific points in the conversation
+All dates and times are automatically converted to your account's time zone. You don't need to do anything - everything displays in your local time.
 
-![Call History](/images/ai/call-history/header.png)
+## 📄 Page Navigation
 
-### Analysis & Transcription
-- **Call Summary** - AI-generated overview and insights
-- **Performance Metrics** - Success indicators and quality scores
-- **Full Transcript** - Complete conversation with speaker identification and timestamps
+When you have many calls, they're split across multiple pages. Use the page numbers or Previous/Next buttons at the bottom to navigate. Change the number of records per page using the dropdown (typically 10, 25, 50, or 100).
 
-![Call History](/images/ai/call-history/conversation-analysis.png)
+## 💡 Quick Tips
 
-### Full Transcription
-- **Complete Transcript** - Word-for-word conversation between user and agent
-- **Speaker Identification** - Clear labeling of "User:" and "Agent:" dialogue
-- **Timestamped Entries** - Each part of conversation with precise timing
-- **Conversation Flow** - Sequential display of the entire interaction
-- **Searchable Content** - Find specific words or phrases within the transcript
-
-![Call History](/images/ai/call-history/transcription.png)
+- 🔍 **Find unhappy customers:** Filter by "Negative" sentiment
+- ✅ **Review successful calls:** Filter by "Call Successful: Yes"
+- 📧 **Check voicemails:** Filter by "Hangup Reason: Voicemail Reached"
+- 💾 **Export regularly:** Use date ranges to export smaller batches for easier management
+- 👁️ **Customize your view:** Hide columns you don't need to focus on what matters
+- 🎵 **Listen to calls:** Click the eye icon, then use the audio player in the call details view

@@ -14,7 +14,7 @@ Monitor and analyze your communication performance with detailed call reports an
 
 The Call Reports system provides comprehensive tracking and analysis of all voice communications, enabling data-driven decisions for improving customer engagement and agent performance.
 
-### Key Benefits
+### 📚 Key Benefits
 - **📊 Real-time Analytics** - Live call monitoring and instant metrics
 - **🔍 Advanced Filtering** - Precise data segmentation and analysis  
 - **📈 Performance Insights** - Identify trends and optimization opportunities
@@ -22,27 +22,43 @@ The Call Reports system provides comprehensive tracking and analysis of all voic
 
 ---
 
-## 🔄 Workflow
+## 🔄 CSV Report Workflow
 
-<img src="/images/reports/call/filters.png" alt="Call Report Filters" className="rounded-lg border shadow-sm mb-4" />
+<img src="/images/reports/call/filters.png" alt="Call CSV Report Filters UI" className="rounded-lg border shadow-sm mb-4" />
 
-### 1. **Data Collection**
-- Automatic capture of all call activities
-- Real-time status updates (Completed, Cancelled, Failed)
-- Integration with AI agents and dialer systems
+This dashboard allows you to filter, view, and download call data in CSV format for in-depth analysis.
 
-### 2. **Filter & Search**
-- **Date Range**: Custom time periods or predefined ranges
-- **Call Direction**: Inbound, outbound, or all calls
-- **Status Filter**: Completed, cancelled, failed calls
-- **Agent Selection**: Individual or team performance
-- **Duration Limits**: Min/max call length filtering
+### 1️⃣ Filter Data
 
-### 3. **Analysis & Export**
-- View detailed call transcriptions
-- Listen to call recordings with playback controls
-- Export filtered data for external analysis
-- Generate performance reports
+<figure>
+  <img src="/images/reports/call/filters.png" alt="Call CSV Filter Options" style={{ border: '1px solid #222', borderRadius: '0.5rem', width: '100%', maxWidth: '510px', margin: '0.5rem 0' }} />
+  <figcaption style={{ fontSize: '0.95em', color: '#888' }}>Example filter controls for generating CSV call reports.</figcaption>
+</figure>
+
+- **Date Range:** Pick standard (Last Month) or custom start/end dates (e.g., `12/1/2023` to `12/31/2023`)
+- **Call Status:** Choose Completed, Cancelled, Failed, or All
+- **Call Direction:** Inbound, Outbound, or All
+- **Agent(s):** Filter by specific agents or view all
+- **Duration:** Set minimum (`0 sec`) and maximum (`No limit`) call lengths
+
+Click the **Filter** button to apply your selections to the call log.
+
+### 2️⃣ Export to CSV
+
+- After filtering, press the **.CSV** button to instantly download the filtered call data as a CSV file.
+- The CSV includes all matching records with columns for each key field (date, time, agent, status, duration, etc.).
+- Use the CSV in Excel, Google Sheets, or other analytics tools for further reporting.
+
+**Tip:** Use filters to limit export size (e.g., by date range or status) for faster processing and easier analysis.
+
+### 3️⃣ Analyze Exported Data
+
+- Open the CSV file in your preferred spreadsheet or BI tool.
+- Create custom pivots, charts, or combine with other datasets for advanced insights.
+- Repeat the process with different filters as needed.
+
+---
+
 
 ---
 
@@ -62,7 +78,7 @@ The Call Reports system provides comprehensive tracking and analysis of all voic
 | **Date/Time**   | Call timestamp                     | Trend analysis and scheduling insights        |
 | **Duration**    | Call length with playback          | Efficiency metrics and engagement measurement |
 
-### Status Types
+### 🏷️ Status Types
 - ✅ **Completed** - Successfully connected and finished
 - ❌ **Cancelled** - Call terminated before connection
 - ⚠️ **Failed** - Technical issues or connectivity problems
@@ -73,13 +89,13 @@ The Call Reports system provides comprehensive tracking and analysis of all voic
 
 <img src="/images/ai/call-history-advancefilter.png" alt="Advanced Filters" className="rounded-lg border shadow-sm mb-4" />
 
-### Primary Filters
+### 🕹️ Primary Filters
 - **📅 Date Range**: Last Week, Month, Custom dates
 - **📞 Call Direction**: All, Inbound, Outbound
 - **👥 Agents**: All agents or specific selections
 - **⏱️ Duration**: Minimum and maximum call lengths
 
-### Advanced Options
+### 🧩 Advanced Options
 - **🔍 Text Search**: Find specific transcription content
 - **📊 Status Filtering**: Focus on specific call outcomes
 - **🔢 Results Limit**: Control data display (10, 25, 50, 100 entries)
@@ -90,7 +106,7 @@ The Call Reports system provides comprehensive tracking and analysis of all voic
 
 <img src="/images/reports/call/audio.png" alt="Call Transcription and Audio" className="rounded-lg border shadow-sm mb-4" />
 
-### Features
+### 🎼 Features
 - **▶️ Play/Pause Controls** - Navigate through recordings
 - **⏭️ Speed Control** - Adjust playback speed (0.5x to 2x)
 - **🔊 Volume Control** - Audio level adjustment
@@ -98,9 +114,7 @@ The Call Reports system provides comprehensive tracking and analysis of all voic
 
 ---
 
- 
-
-## 🔧 Troubleshooting
+## 🛠️ Troubleshooting
 
 | Issue | Solution |
 |-------|----------|

@@ -73,22 +73,28 @@ You can map your contact fields to external platforms such as GoHighLevel (GHL) 
 
 ### 🗺️ Field Mapping Interface Overview
 
-The Field Mapping interface allows you to match your internal contact fields with their counterparts in external systems such as GoHighLevel (GHL). Accurate mapping provides seamless data flow, supports automation, enables token mapping for AI, and boosts personalization.
+The Field Mapping interface allows you to align your internal contact fields with their corresponding fields in external platforms such as GoHighLevel (GHL). This ensures seamless data flow, enables automation, supports AI token mapping, and enriches personalization.
 
-| Internal Field        | Example Name        | Maps to GHL Field Example      | Description                                   |
-|----------------------|--------------------|-------------------------------|-----------------------------------------------|
-| GHL Location         | `ghl_location`     | Location                      | GoHighLevel primary account/location for the contact |
-| Phone Number         | `phone_number`     | Phone Number                  | Main contact number                           |
-| Email                | `email`            | Email Address                 | Primary email address                         |
-| First Name           | `first_name`       | First Name                    | Contact's first name                          |
-| Last Name            | `last_name`        | Last Name                     | Contact's family/surname                      |
-| Email Address        | `emailAddress`     | CF 1 (Custom)                 | Alternative or secondary email field          |
-| Address              | `address`          | CF 2 (Custom)                 | Street address or full location               |
-| City                 | `city`             | City                          | Contact's city                                |
-| Zip Code             | `zip_code`         | Postal Code / Zip Code        | Mailing/postal code                           |
-| Country              | `country`          | Country                       | Country of residence                          |
-| Phone Number1        | `phone_number1`    | (Custom/Search)               | Optional/secondary phone                      |
-| AudienceLabelId      | `audiencelabelid`  | (Custom/Search)               | Custom field for segmentation/tagging         |
+| Internal Field             | Example Name            | Maps to GHL Field Example         | Description                                                |
+|---------------------------|------------------------|-----------------------------------|------------------------------------------------------------|
+| GHL Location              | `ghl_location`         | Location                          | GoHighLevel primary account/location for the contact       |
+| Phone Number              | `phone_number`         | Phone Number                      | Main contact number                                        |
+| Email                     | `email`                | Email Address                     | Primary email address                                      |
+| First Name                | `first_name`           | First Name                        | Contact's first name                                       |
+| Last Name                 | `last_name`            | Last Name                         | Contact's surname/family name                              |
+| Email Address             | `emailAddress`         | Email                             | Alternative or secondary email field                       |
+| Address                   | `address`              | (e.g. CF 1/Custom)                | Street address or full location                            |
+| City                      | `city`                 | City                              | Contact's city                                             |
+| Zip Code                  | `zip_code`             | Postal Code / Zip Code            | Mailing/postal code                                        |
+| Country                   | `country`              | Country                           | Country of residence                                       |
+| Phone Number1             | `phone_number1`        | (Custom/Search)                   | Optional/secondary phone                                   |
+| AudienceLabelId           | `audiencelabelid`      | (Custom/Search)                   | Custom field for segmentation/tagging                      |
+| AudienceLabelId1          | `audiencelabelid1`     | (Custom/Search)                   | Additional label/tag field (custom segmentation)            |
+| New User Field           | `new_user_field`      | (Setup in GHL / Custom)           | Newly added custom field—configure in GHL, then map         |
+| Wayyan CF                | `wayyan_cf`           | (Setup in GHL / Custom)           | Custom field for entry method or channel                   |
+
+This expanded mapping table reflects the increased flexibility for custom and system fields as visible in the updated Field Mapping modal. Use the "Map to GHL Field" dropdown to assign or search for the correct GHL field, and create any missing custom fields in your CRM as needed.
+
 
 > **Tip:** Use the "Map to GHL Field" dropdown next to each internal field to select the most appropriate external property. If the target field does not exist in GHL, create a new custom field in your CRM first and then map it.
 

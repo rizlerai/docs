@@ -36,157 +36,143 @@ icon: "list"
 
 ---
 
-# 📖 Standard Operating Procedures (SOPs) for PowerLists
+# 📝 PowerLists Module – Standard Operating Procedures (SOPs)
 
-This section outlines essential SOPs (Standard Operating Procedures) to ensure consistent, efficient, and compliant use of PowerLists. Follow these best practices to maximize campaign performance and maintain data integrity.
+> This section presents a step-by-step Standard Operating Procedures (SOPs) framework for all aspects of PowerLists usage. Adhering to these SOPs ensures streamlined processes, compliance, and optimal campaign outcomes.
 
+<img
+  src="/images/manage/powerlists/SOP's.png"
+  alt="PowerLists SOPs Modal"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
+## 1️⃣ Purpose & Scope
 
-### 🎯 1. Purpose & Scope
+**🎯 Purpose:**  
+This SOP provides a systematic approach for creating, managing, and utilizing PowerLists within the system to organize contact data, configure dialing parameters, manage call dispositions, and integrate with automation for effective outbound calling campaigns.
 
-**Purpose:** To empower you with a clear, actionable approach for building, optimizing, and automating PowerLists—your ultimate contact management tool for dialing campaigns, CRM sync, and smart analytics.
-
-**Scope:** Designed for all team members with access to the PowerLists Management Module. Whether you’re launching your first campaign or managing a sophisticated dialing workflow, these steps have you covered.
-
----
-
-### 🧠 2. Key Terms & Concepts
-
-| **Term**           | **Definition**                                                                                          |
-|--------------------|--------------------------------------------------------------------------------------------------------|
-| **PowerList**      | Smart container for segmenting contacts, fully tweakable for campaign success & flexible organization   |
-| **Disposition**    | Call outcome label triggering actions (e.g., "Success", "Remove", "Post to CRM")                       |
-| **Priority**       | Determines list order in dial queue — put your hottest leads first!                                    |
-| **Max Contacts**   | Limit of contacts per list (minimum: 50 for max power)                                                 |
-| **Dial at a Time** | Outbound call concurrency — how many calls hit the lines together                                      |
-| **Call Timeout**   | How long the dialer waits before auto-hangup on no answer                                              |
-| **Cool Down Time** | Wait time before retrying a failed contact (keep it legal & people-friendly)                           |
-| **GHL**            | GoHighLevel CRM — sync leads instantly, automate follow-up, and turbocharge campaigns                  |
-| **DNC**            | Do Not Call — stays compliant by never dialing protected numbers                                        |
-| **Contact Fields** | Your custom data points (name, phone, tags, notes, etc.)                                               |
-| **Tags**           | Flexible labels for searching, filtering, & organizing like a pro                                      |
-| **AI Agent**       | Virtual assistant that can handle callbacks & follow-ups                                               |
-| **Default Settings** | One-click re-use of your favorite list "recipes"                                                     |
-| **Walkthrough**    | Interactive, in-app guide to make PowerLists setup effortless                                          |
+**🌐 Scope:**  
+Applies to all authorized users who access the PowerLists Management Module for organizing contact databases, configuring automated dialing campaigns, managing call outcomes, and tracking campaign performance metrics.
 
 ---
 
-### 🛡️ 3. Access Requirements
+## 2️⃣ Definitions & Terminology
 
-### 🚦 Before You Start:
-- ✅ User permissions needed:  
+| **📝 Term**             | **📖 Definition**                                                                              |
+|----------------|----------------------------------------------------------------------------------------|
+| **📋 PowerList**        | A dynamic list for segmenting contacts, customizable for effective campaigns and organization |
+| **📞 Disposition**      | Call outcome/result triggering further action (e.g. "Success", "No Answer", "Remove")         |
+| **🔢 Max Contacts**     | The maximum allowable contacts in a PowerList (minimum: 50 for dialing efficiency)            |
+| **🤙 Dial at a Time**   | Number of concurrent outbound calls in progress                                               |
+| **⏲️ Call Timeout**     | Maximum duration the dialer waits before abandoning an unanswered call                        |
+| **⏳ Cool Down Time**   | Wait period before retrying a failed or unanswered contact                                    |
+| **🔗 GHL**              | Abbreviation for GoHighLevel CRM integration                                                  |
+| **🚫 DNC**              | "Do Not Call"—excludes these contacts for compliance                                          |
+| **🧾 Contact Fields**   | Information points per contact (e.g., phone, name, tags)                                     |
+| **🏷️ Tags**            | Keywords for organization/filtering/searching                                                 |
+| **🤖 AI Agent**         | Virtual assistant handling automation and callbacks                                           |
+| **📑 Default Settings** | Reusable, template-like PowerList configuration                                               |
+| **🧭 Walkthrough**      | In-app stepwise interactive setup guide                                                       |
+
+---
+
+## 3️⃣ Prerequisites & Access Requirements
+
+**🛠️ Before You Begin:**
+- 🔑 User permissions required:
   - `view-powerLists`, `add-powerList`, `edit-powerList`, `delete-powerList`, `download-powerList`
-- ✅ Access to PowerLists Management Module
-- ✅ Understand your campaign’s target audience and goals
-- ✅ Upload-ready contact files (Excel `.xlsx` or CSV)
-- ✅ Optional: GHL CRM logins (for smart integrations)
-- ✅ Optional: AI Agents or advanced disposition routing
+- 🖥️ Access to the PowerLists Management Module UI
+- 🎯 Defined campaign goals and target audience
+- 📂 Upload-ready contact files (`.xlsx` or `.csv`)
+- 🧩 (Optional) GoHighLevel CRM account (for advanced integration)
+- 🤖 (Optional) AI Agent or custom disposition workflows
 
 ---
 
-### 🏗️ 4. Building a PowerList — The Fast Track
+## 4️⃣ Procedure: PowerList Creation
 
-> **Tip:** Don’t get lost! At every PowerList first-run, an interactive walkthrough will pop up to make the process a breeze.
-
-**4.1 Start the Setup Walkthrough**  
-*Guided UI tour launches automatically for first-timers.*
-
-**4.2 Launch a New PowerList (with optional defaults)**
-*Reuse configs from your previous winning campaigns or start fresh.*
-
-**4.3 Complete Basic Configuration**  
-*Add name, select dialer profile, define the essentials.*
-
-**4.4 Configure Dialer Options**  
-*Dial volumes, priorities, timeouts—all in one place.*
-
-**4.5 Explore Advanced Settings**  
-*Tagging, max contacts, AI triggers—unleash the possibilities.*
-
-**4.6 Map Contact Fields & Dispositions**  
-*Custom fields and disposition rules make uploads & results clearer.*
+1. 🧭 **Start Walkthrough:** First-time users receive a stepwise tour on launching the module.
+2. ➕ **Create New PowerList:** Click "New PowerList" (optionally load default configuration).
+3. 📝 **Define Essentials:** Enter PowerList name, select dialer profile, and basic criteria.
+4. ⚙️ **Configure Dialer Options:** Adjust maximum calls, priorities, timeouts, etc.
+5. 🔖 **Advanced Settings:** Add tags, set max contacts, enable automations (AI/trigger-based).
+6. 🗂️ **Customize Fields/Dispositions:** Map file fields and define call outcome actions.
 
 ---
 
-### 📂 5. Data Upload & Preparation
+## 5️⃣ Procedure: Contact Upload & Mapping
 
-**5.1 Prepare Your Files**
-- Clean contacts, remove duplicates, and verify format.
-
-**5.2 Upload Process**  
-- Drag, drop, or select your data file to kick off import.
-
-**5.3 Field Mapping**  
-- Instantly match your spreadsheet columns to PowerList fields in a friendly UI.
-
-**5.4 Monitor Progress**  
-- See real-time status, handle errors, watch your contacts go live!
+1. 🧹 **Prepare Data:** Clean contact lists, de-duplicate entries, verify structure.
+2. ⬆️ **Upload Contacts:** Drag and drop your file, or select file for import.
+3. 🔗 **Map Fields:** Match spreadsheet columns to PowerList fields via the UI.
+4. 👀 **Monitor Status:** Follow real-time upload progress and error notifications.
 
 ---
 
-### 🔁 6. Editing & Managing PowerLists
+## 6️⃣ Procedure: PowerList Modification
 
-- **Access Edit Mode:** Click to update any PowerList.
-- **Make Changes:** Adjust settings, swap tags, reset contacts, or update mappings.
-- **Save:** Lock in your configuration anytime.
-
----
-
-### 🔍 7. Filtering & Viewing
-
-- **By Tags:** Rapidly sort PowerLists by campaign, audience, region, and more.
-- **By Members:** Dive into list contents or search by contact.
-- **Table Navigation:** Search, sort, or scroll—never lose track!
+- ✏️ Enter Edit Mode for any list to modify settings, adjust tags, update upload maps, or reset contacts.
+- 💾 Save changes to update the PowerList immediately.
 
 ---
 
-### ⚡ 8. Actions & Automation
+## 7️⃣ Procedure: PowerList Filtering & Viewing
 
-- **Status:** Instantly turn lists On/Off  
-- **Duplicate:** Clone lists for new campaigns  
-- **View/Download/Export:** Access or migrate contacts with a click  
-- **Reset/Delete:** Refresh or remove lists as needed
-
----
-
-### 🚦 9. Disposition Management
-
-- **Understand Results:** Get instant visibility on call outcomes.
-- **Configure Actions:** Automate post-call workflows or CRM integrations.
+- 🏷️ **By Tags:** Quickly filter lists by campaign, audience, or geography.
+- 👥 **By Members:** View or search contacts within a list.
+- 📊 **Table Navigation:** Utilize search, sorting, and paging for large lists.
 
 ---
 
-### 🔗 10. GoHighLevel (GHL) Integration
+## 8️⃣ Procedure: PowerList Actions
 
-- **Locations:** Choose where new leads flow in CRM.
-- **Tags:** Auto-tag synced contacts for next-level automation.
-- **Workflow:** Streamline campaign-to-CRM to follow-up in one flow.
-
----
-
-### ⚠️ 11. Must-Know Constraints & Requirements
-
-- Map at least one phone number field on every list.
-- All PowerList names must be unique—no duplicates!
-- Minimum list size: 50 contacts (for dialer optimization).
-- File formats: `.csv` and `.xlsx` supported.
-- Monitor large uploads for errors or incomplete processing.
-- Maintain data privacy, accuracy, and follow access rules.
+- 🔛 **Status Toggle:** Enable or pause lists instantly.
+- 🌀 **Duplicate:** Create a new PowerList by cloning existing settings.
+- ⬇️ **View/Download/Export:** Retrieve contact records or export as needed.
+- 🗑️ **Reset/Delete:** Archive or permanently delete lists.
 
 ---
 
-### 🌟 12. Best Practices for Power Users
+## 9️⃣ Procedure: Disposition Configuration
 
-- Use clear, descriptive names & standardized tags.
-- Tune dialer settings for campaign and compliance needs.
-- Regularly clean and backup your data.
-- Review disposition rules before your next campaign launch.
-- Document and share your list strategies with your team.
-- Leverage GHL for automation and always monitor performance metrics.
+- 📈 Review call outcomes in the dashboard.
+- 🤖 Assign automation or follow-up actions to individual disposition types.
+- 🌐 Integrate dispositions with external (e.g., CRM) systems as needed.
 
-<Callout type="success" icon="trophy" title="Pro Tip!">
-Start with default settings for fast, repeatable campaign setups or blaze a new trail with full customization. The PowerList platform is yours—flex it your way!
+---
+
+## 🔟 Procedure: GHL (GoHighLevel) Integration
+
+- 📍 Assign destination GHL Location for new or synced contacts.
+- 🏷️ Auto-tag synced leads for downstream automation in GHL.
+- 🔄 Ensure mapping and workflows align with campaign objectives.
+
+---
+
+## 1️⃣1️⃣ Critical Requirements & Constraints
+
+- ☎️ Every list must map at least one phone field.
+- 🆔 PowerList names must be unique; duplicates are not permitted.
+- 🔢 Each list must have at least 50 contacts for optimal performance.
+- 📄 File types supported: `.csv` and `.xlsx`
+- 🕵️ Monitor bulk uploads for errors; retry or correct as needed.
+- 🔒 Maintain data security, privacy, and adhere to system permissions.
+
+---
+
+## 1️⃣2️⃣ Best Practices
+
+- 🏷️ Name lists and tags descriptively and consistently.
+- 🎚️ Tune dialer and call settings by campaign requirements and compliance needs.
+- 🔍 Regularly audit, clean, and back up your PowerLists.
+- ⚡ Update disposition workflows before campaign launch.
+- 🤝 Share documented list strategies with your team.
+- 🤖 Utilize GHL integration for deeper automation and monitor metrics continually.
+
+<Callout type="info" icon="✅" title="Tip">
+Use default configurations for rapid setup, or customize every aspect of your PowerLists. These SOPs make your setup reliable and repeatable!
 </Callout>
+
 
 
 ## ➕ Creating PowerLists
@@ -354,7 +340,6 @@ To modify an existing PowerList, use the **Edit PowerList** interface as shown b
 | **PowerList Member & Name**       | View/update the PowerList's display name and assigned member                                   |
 | **Max Contacts & Disposition**    | Limit the number of contacts in the list and set max allowed disposition (call) attempts       |
 | **Dialing Controls**              | Set dial-at-a-time, max attempts per contact (daily/total), and customize dial timeout          |
-| **Priority & Automation**         | Adjust priority, set next PowerList logic, choose to ignore DNC (Do-Not-Call) as needed        |
 | **Tags & Agent Controls**         | Assign tags, select callback agents, enable/disable reset for dialed contacts, and set cooldown|
 | **GHL Integration**               | Pick "GHL Location", set "GHL Tag on Disconnected" for tight external platform integrations     |
 | **Custom Fields/Dispositions**    | Create custom fields and dispositions with specified actions/results (e.g., "No Action")        |
