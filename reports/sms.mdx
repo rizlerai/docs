@@ -1,0 +1,278 @@
+---
+title: "SMS Report"
+icon: "message"
+---
+
+
+View, search, and analyze all text messages sent and received through your system. Filter messages by various criteria, search through message content, and export your filtered results to a spreadsheet file.
+
+<img src="/images/reports/sms/overview.png" alt="SMS Report Overview" className="rounded-lg border shadow-sm" />
+
+## 🎯 Overview
+
+The SMS Report module allows you to view, search, and analyze all text messages sent and received through your system. You can filter messages by various criteria, search through message content, and export your filtered results to a spreadsheet file.
+
+### 📚 Key Benefits
+- **🔍 Advanced Filtering** - Filter by date, provider, phone number, status, and direction
+- **📊 Comprehensive View** - See all message details in one organized table
+- **📥 CSV Export** - Download filtered results for external analysis
+- **🔎 Real-time Search** - Quickly find specific messages by content or number
+
+---
+
+## 🚀 Accessing the SMS Report
+
+1. Navigate to the **Reports** section in your main menu
+2. Click on **SMS** from the reports options
+3. The SMS Report page will load showing all your text messages
+
+---
+
+## 🎛️ Filter Options
+
+<img src="/images/reports/sms/filters.png" alt="SMS Report Filters" className="rounded-lg border shadow-sm mb-4" />
+
+### 📅 Date Range Filter
+
+**Purpose:** Select the time period for which you want to view messages.
+
+**How it works:**
+- Choose from predefined time periods or select "Custom dates" for a specific range
+- When you select a predefined option (like "Today" or "Last 7 Days"), the system automatically sets the start and end dates
+- The start and end date fields become locked (disabled) when using predefined options
+- If you select "Custom dates", you can manually pick your own start and end dates
+
+**Available Options:**
+- **Custom dates** - Allows you to manually select any date range
+- **Today** - Shows only messages from today
+- **Yesterday** - Shows only messages from yesterday
+- **This Week (Sun - Today)** - Shows messages from Sunday of current week until today
+- **This Week (Mon - Today)** - Shows messages from Monday of current week until today
+- **Last 7 Days** - Shows messages from the past 7 days including today
+- **Last Week (Sun - Sat)** - Shows messages from the previous Sunday to Saturday
+- **Last Week (Mon - Sun)** - Shows messages from the previous Monday to Sunday
+- **Last Business Week (Mon - Fri)** - Shows messages from the previous Monday to Friday
+- **Last 14 Days** - Shows messages from the past 14 days including today
+- **This Month** - Shows messages from the first day of current month until today
+- **Last 30 Days** - Shows messages from the past 30 days including today
+- **Last Month** - Shows messages from the entire previous month
+
+**Note:** The dates are automatically adjusted based on your account's time zone settings.
+
+### 📆 Start Date Field
+
+**Purpose:** Manually specify the beginning date when using "Custom dates" option.
+
+**How it works:**
+- This field is only active when you select "Custom dates" from the Date Range dropdown
+- Click on the field to open a calendar and select your desired start date
+- The system will show messages from this date onwards
+
+### 📆 End Date Field
+
+**Purpose:** Manually specify the ending date when using "Custom dates" option.
+
+**How it works:**
+- This field is only active when you select "Custom dates" from the Date Range dropdown
+- Click on the field to open a calendar and select your desired end date
+- The system will show messages up to and including this date
+
+### 📱 Provider Filter
+
+**Purpose:** Filter messages based on which SMS service provider was used to send or receive them.
+
+**How it works:**
+- Select a specific provider to see only messages handled by that service
+- When you change the provider, the Phone Number dropdown automatically updates to show only phone numbers associated with that provider
+- If you select "All", you will see messages from all providers
+
+**Available Options:**
+- **All** - Shows messages from all providers (default selection)
+- **Plivo** - Shows only messages sent/received through Plivo service
+- **Twilio** - Shows only messages sent/received through Twilio service
+- **Commio** - Shows only messages sent/received through Commio service (also labeled as your system name V2)
+
+**Important:** When you change the provider, the message table automatically refreshes to show only messages for that provider.
+
+### 📞 Phone Number Filter
+
+**Purpose:** Filter messages to show only those sent from or received by a specific phone number.
+
+**How it works:**
+- The dropdown list shows all phone numbers available in your account
+- The list changes automatically based on the Provider filter you selected
+- If "All" is selected in Provider filter, you'll see all phone numbers from all providers
+- If a specific provider is selected, you'll only see phone numbers associated with that provider
+- Select a phone number to see all messages where that number was either the sender or receiver
+- Leave it as "Select Phone Number" to see messages from all phone numbers
+
+**Note:** The system searches both the "From Number" and "To Number" fields, so you'll see messages where your selected number appears in either position.
+
+### ✅ Status Filter
+
+**Purpose:** Filter messages based on their delivery or processing status.
+
+**How it works:**
+- Select a specific status to see only messages with that status
+- This helps you identify which messages were successfully delivered, which are pending, or which failed
+
+**Available Options:**
+- **All** - Shows messages with all statuses (default selection)
+- **Sent** - Shows messages that have been sent from your system
+- **Delivered** - Shows messages that have been successfully delivered to the recipient
+- **Queued** - Shows messages that are waiting in line to be sent
+- **Undelivered** - Shows messages that could not be delivered to the recipient
+- **Received** - Shows messages that were received by your system
+- **Completed** - Shows messages that have completed their entire process
+- **Failed** - Shows messages that failed to send or process
+
+### 🔄 Direction Filter
+
+**Purpose:** Filter messages based on whether they were incoming or outgoing.
+
+**How it works:**
+- Select the direction to see only messages going in that direction
+- This helps you separate messages you sent from messages you received
+
+**Available Options:**
+- **All** - Shows both incoming and outgoing messages (default selection)
+- **Inbound** - Shows only messages that were received by your system
+- **Outbound** - Shows only messages that were sent from your system
+
+### 🔍 Filter Button
+
+**Purpose:** Apply all your selected filter settings and refresh the message table.
+
+**How it works:**
+- After selecting your desired filters, click the "Filter" button
+- The system will search through all messages and display only those that match all your filter criteria
+- The message table will refresh automatically to show the filtered results
+
+**Note:** The table also refreshes automatically when you change certain filters (Provider, Phone Number, Status, or Direction), but you can use this button to manually refresh after making multiple changes.
+
+### 📥 CSV Export Button
+
+**Purpose:** Download your filtered message data as a spreadsheet file.
+
+**How it works:**
+- Click the "CSV" button to download your current filtered results
+- The system creates a spreadsheet file containing all messages that match your current filter settings
+- The file is automatically named with the current date and time (for example: "sms_report_2024-01-15_143022.csv")
+- The file can be opened in Excel, Google Sheets, or any spreadsheet application
+
+**What's included in the export:**
+- Serial number
+- From Number
+- To Number
+- Message content
+- Status
+- Direction
+- Provider
+- Date and time
+
+**Important:** Only the messages currently visible based on your filters will be exported. Make sure you have applied the correct filters before exporting.
+
+---
+
+## 📋 Message Table
+
+<img src="/images/reports/sms/records.png" alt="SMS Report Records Table" className="rounded-lg border shadow-sm mb-4" />
+
+The message table displays all your text messages in an organized format. Here's what each column means:
+
+| Field | Description | Use Case |
+|-------|-------------|----------|
+| **Sr.No** | Sequential record number | Quick reference and navigation |
+| **From Number** | The phone number that sent the message | Identify message sources and sender tracking |
+| **To Number** | The phone number that received the message | Monitor destination patterns and recipient tracking |
+| **Message** | The actual text content of the SMS message | Content analysis and message review |
+| **Status** | The current status of the message | Track delivery status and identify issues |
+| **Direction** | Indicates whether the message was incoming or outgoing | Separate inbound and outbound communications |
+| **Provider** | The SMS service provider that handled the message | Monitor provider usage and performance |
+| **Dated** | The date and time when the message was created or processed | Trend analysis and scheduling insights |
+
+### 📊 Column Details
+
+**Serial Number (Sr.No)**
+- A sequential number assigned to each message in the current view
+- Helps you keep track of the order of messages
+- Starts from 1 for the first message in your filtered results
+
+**From Number**
+- The phone number that sent the message
+- For outbound messages, this is your phone number
+- For inbound messages, this is the sender's phone number
+- If no number is available, a dash (-) is displayed
+
+**To Number**
+- The phone number that received the message
+- For outbound messages, this is the recipient's phone number
+- For inbound messages, this is your phone number
+- If no number is available, a dash (-) is displayed
+
+**Message**
+- The actual text content of the SMS message
+- Full message text is displayed (may wrap to multiple lines if long)
+- If no message content is available, a dash (-) is displayed
+- You can search within message content using the search box
+
+**Status**
+- The current status of the message
+- Shows whether the message was sent, delivered, queued, failed, etc.
+- Helps you track the delivery status of your messages
+- If no status is available, a dash (-) is displayed
+
+**Direction**
+- Indicates whether the message was incoming or outgoing
+- **Inbound** means the message was received by your system
+- **Outbound** means the message was sent from your system
+- If no direction is available, a dash (-) is displayed
+
+**Provider**
+- The SMS service provider that handled the message
+- Shows which service (Plivo, Twilio, or Commio) was used
+- If no provider information is available, a dash (-) is displayed
+
+**Dated**
+- The date and time when the message was created or processed
+- Displayed in your account's time zone setting
+- Format includes both date and time
+- If no date is available, a dash (-) is displayed
+
+---
+
+## 🔎 Search Feature
+
+**Purpose:** Quickly find specific messages by searching through the table content.
+
+**How it works:**
+- Look for the search box above the message table (usually on the right side)
+- Type any word, number, or phrase you're looking for
+- The system searches through all visible columns including:
+  - From Number
+  - To Number
+  - Message content
+  - Status
+  - Direction
+  - Provider
+  - Date
+- Results update automatically as you type
+- The search works on the currently filtered results
+
+**Tips:**
+- You can search for phone numbers, message text, status names, or dates
+- The search is case-insensitive (doesn't matter if you use capital or small letters)
+- Partial matches work (typing "deliv" will find "Delivered")
+
+---
+
+## 📊 Sorting
+
+**Default Sorting:**
+- Messages are displayed with the newest messages first
+- The most recent message appears at the top of the table
+- Older messages appear further down
+
+**Note:** You can click on column headers to change the sorting order if needed.
+
+---

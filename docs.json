@@ -160,7 +160,7 @@
             "icon": "chart-bar",
             "pages": [
               "reports/calls",
-              "reports/call-statistics"
+              "reports/sms"
             ]
           },
           {
