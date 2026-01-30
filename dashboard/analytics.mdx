@@ -471,45 +471,6 @@ This dual-axis design allows you to compare different metrics on the same chart 
 
 ---
 
-## 🏆 Leaderboard Tab
-
-Compare performance across your team members to identify top performers, recognize achievements, and find areas for improvement. Perfect for team motivation and performance management.
-
-![Leaderboard Tab](/images/dashboard/analytics/leader-board.png)
-
-**🎛️ Filter Options**
-
-**Filter By:**
-
-- **Disposition** → See who's setting the most appointments
-- **Dialer Activity** → Check who's actively calling
-- **Subscription** → View subscription status
-
-**View Options:**
-
-- **Board View** → Visual cards with agent photos (more engaging)
-- **List View** → Table format for quick scanning (more detailed)
-
-**👤 Agent Cards (Board View)**
-
-Each card displays comprehensive agent information:
-
-- **Agent Name** and professional photo
-- **Status Indicator:** Online 🟢, On Call 📞, Offline ⚫
-- **Total Calls Made** in selected period
-- **Performance Metric** based on selected filter
-- **Ranking** position
-
-**📥 Export Feature**
-
-Click the **"Export"** button to download leaderboard data as an Excel file. Perfect for:
-
-- Creating performance reports
-- Sharing with management
-- Archiving historical data
-- Further analysis in spreadsheets
-
----
 
 ## 📋 Power Lists Tab
 
@@ -630,24 +591,127 @@ Experience seamless, instant data updates without manual refresh.
 
 ---
 
+
+# 🏅 Leaderboard Tab
+
+Gain live insight into your team's achievements by reviewing rankings, comparing activity, and celebrating standouts. Use this tab to cultivate a culture of recognition and healthy competition, while identifying strengths and coaching opportunities across your workforce.
+
+![Leaderboard Dashboard Preview](/images/dashboard/analytics/leader-board.png)
+
+---
+
+## 🎚️ Versatile Filtering & Display Controls
+
+**Filter Criteria**
+
+- **By Disposition:** Identify agents most effective at setting appointments or progressing leads.
+- **By Dialer Activity:** Highlight those consistently engaging in call outreach.
+- **By Subscription:** Drill down to monitor performance by subscription tier or plan segment.
+
+**Presentation Modes**
+
+- **Board (Card) View:** Intuitive, engaging agent cards with profile photos and quick stats—great for shoutouts and visual leaderboards.
+- **List (Table) View:** Condensed tabular format for advanced comparison, easy scanning, and quick sorting.
+
+---
+
+## 👤 What’s on Each Agent Card (Board View)?
+
+Agent cards in the Board View surface key information for rapid assessment and motivation:
+
+- **Agent’s Name & Photo:** Foster personal recognition and team spirit.
+- **Status Lights:** Instantly see if someone is Online 🟢, Busy (On Call) 📞, or Offline ⚫.
+- **Total Calls Initiated:** Activity count for the chosen date range.
+- **Primary Metric:** Displays the value most closely linked to your selected leaderboard filter (e.g., appointments, calls, minutes).
+- **Current Rank:** See their live position on the leaderboard.
+- **Achievements & Badges:** Quickly acknowledge top daily/weekly/monthly performers (if available).
+
+---
+
+## 📦 Data Export & Sharing Made Simple
+
+Need to work with the data outside the dashboard? Just click **"Export"** to instantly download all leaderboard stats as a ready-to-use Excel spreadsheet.
+
+**You can use exported data to:**
+- Generate detailed performance reviews and custom reports
+- Distribute insights to managers, stakeholders, or team members
+- Maintain historical archives for tracking progress
+- Dive deep with your own spreadsheets and analysis tools
+
+> **Tip:** Use Excel’s pivot tables or Google Sheets to create custom charts, analyze trends, or merge with other KPIs for broader business intelligence!
+
+---
+
 # 💬 SMS Analytics
 
-The SMS Analytics section provides insights into message delivery and engagement performance.
+See how your SMS is performing: how many you sent, how many were delivered, failed, or replied to, and how that changes over time.
 
-![SMS Analytics Dashboard](/images/dashboard/analytics/sms.png)
+![SMS Analytics Dashboard](/images/dashboard/analytics/sms-overview.png)
 
-### 📊 Key Performance Indicators
+---
 
-Monitor SMS campaign effectiveness with real-time metrics:
+**🎯 What You See Here**
 
-**📤 Sent SMS** - Total messages sent  
-**✅ Delivered** - Successfully delivered  
-**❌ Failed** - Delivery failures  
-**💬 Replies** - Customer responses
+- **Top:** Filters (date, agent, provider, phone number, powerlist) so you can narrow the data.
+- **Middle:** Four numbers — **Sent**, **Delivered**, **Failed**, **Replies** — that update when you change filters.
+- **Bottom:** Charts (pie, donut, line) showing volume, delivery rate, and outbound vs inbound.
 
-### 🚀 SMS Performance Overview
+Open **Dashboard** → **Analytics** → **SMS** tab. It loads with **Today** by default.
 
-> **🚧 Coming Soon**: Detailed SMS analytics dashboard with comprehensive performance metrics and delivery analytics.
+---
+
+### 🎛️ Filters (Top of Page)**
+
+![SMS Dashboard Filters](/images/dashboard/analytics/sms-filters.png)
+
+- **📅 Date Range** — Today, Yesterday, This Week, Last 7/14/30 Days, This Month, Last Month, or **Custom dates** (then use Start/End date).
+- **👥 Agents** — All, Company, or a specific agent (options depend on account type).
+- **📱 Provider** — All, Plivo, Twilio, or Commio. Changing this updates the Phone Number list.
+- **📞 Phone Number** — All numbers or one number; list depends on the provider you chose.
+- **📋 Powerlist** — All lists or one list; then click **Filter** to apply.
+
+Changing any filter refreshes the dashboard automatically.
+
+---
+
+**📊 The Four Numbers (Statistics Cards)**
+
+![SMS Statistics Cards](/images/dashboard/analytics/sms-stats.png)
+
+- **📤 Sent SMS** — Total messages sent in the selected period.
+- **✅ Delivered** — How many reached the recipient.
+- **❌ Failed** — How many did not deliver.
+- **💬 Replies** — How many incoming messages you got.
+
+These four cards always show data for your current filter choices.
+
+---
+
+### 📈 Charts (Performance Overview)
+
+![SMS Performance Charts](/images/dashboard/analytics/sms-performance-overview.png)
+
+- **🥧 Pie chart** — Split of Sent, Delivered, Failed, Replies (with counts).
+- **📤 Outbound** — Donut: messages you sent, by delivered vs failed.
+- **📥 Inbound** — Donut: messages you received, by status.
+- **📉 Daily volume** — Line graph: how many SMS per day (hover for exact count).
+- **📈 Delivery rate trend** — Line graph: % delivered per day; **Average Rate** shown on the right.
+
+Hover on chart points to see exact values.
+
+---
+
+**📖 Quick Definitions**
+
+- **Sent** = Left your system; **Delivered** = Reached the recipient’s phone. A message can be Sent but not yet Delivered.
+- **Outbound** = You sent it; **Inbound** = You received it (replies).
+- **Statuses:** Delivered (reached), Failed/Undelivered (didn’t reach), Pending (in transit), Sent (submitted).
+
+---
+
+**📋 In Short**
+
+Use the SMS tab to see sent vs delivered vs failed vs replies, and how that changes by date, agent, provider, or number. All numbers and charts update when you change filters.
 
 ---
  

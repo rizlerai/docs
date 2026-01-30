@@ -1,0 +1,213 @@
+---
+title: "Execution Logs"
+description: "Track, filter, and analyze every workflow execution with status, duration, and step-by-step details"
+icon: "clipboard-list"
+---
+
+# 📋 Execution Logs Module
+
+> **Your central hub for monitoring and analyzing workflow activity—see every run, filter by date or status, and drill into step-by-step details.**
+
+The Execution Logs module records and displays every time a workflow runs in your system. Use it to see what ran, when it ran, whether it succeeded or failed, and exactly which steps were performed. Perfect for troubleshooting, auditing, and understanding how your automations behave.
+
+![Execution Logs Overview](/images/workflow/execution-logs/overview.png)
+
+---
+
+## 🧾 What is a Workflow Execution?
+
+A **workflow execution** is a single run of a workflow from start to finish. Each time a workflow is triggered (for example, when a contact is created, a tag is added, or an appointment is booked), the system creates one execution record. That record includes:
+
+- **When** it started and finished  
+- **What** triggered it  
+- **Which** steps ran and their status  
+- **Any** errors that occurred  
+
+Think of it as a receipt for each automation run—you can always look back and see what happened.
+
+---
+
+## ✨ Main Features
+
+### 📊 Execution Log Table
+
+The main table lists all workflow executions with the information you need at a glance.
+
+| Column | What it shows |
+|--------|----------------|
+| **#** | Row number so you can quickly reference a specific execution. |
+| **Workflow Name** | The name of the workflow that ran. |
+| **Trigger Type** | The event that started the workflow (e.g., tag added, contact created). |
+| **Status** | Current state: Pending, Running, Completed, Failed, Cancelled, or Paused. |
+| **Duration** | How long the execution took (e.g., 2h 15m 30s, or "-" if not finished). |
+| **Created At** | Date and time the execution was created (e.g., Jan 27, 2026 10:30 AM). |
+| **Action** | **View Details** button to open the full execution details. |
+
+![Execution Log Table](/images/workflow/execution-logs/execution-log-table.png)
+
+#### 📌 Status Badges
+
+| Status | Badge color | Meaning |
+|--------|-------------|--------|
+| **Pending** | Yellow | Waiting to start. |
+| **Running** | Blue | Currently in progress. |
+| **Completed** | Green | Finished successfully. |
+| **Failed** | Red | Stopped due to an error. |
+| **Cancelled** | Gray | Was cancelled before completion. |
+| **Paused** | Gray | Temporarily paused. |
+
+#### 🎯 Common Trigger Types
+
+- **Contact Tag Added** — A tag was assigned to a contact  
+- **Contact Tag Removed** — A tag was removed  
+- **Contact Created** — A new contact was added  
+- **Contact Changed** — Contact information was updated  
+- **Disposition Change** — Contact’s disposition status changed  
+- **Note Added** — A note was added to a contact  
+- **Pipeline Stage Change** — Contact moved to another pipeline stage  
+- **Appointment Status** — An appointment’s status changed  
+- **Customer Booked Appointment** — A customer scheduled an appointment  
+- **AI Call Ended** — An AI call finished  
+- **Dialer Call Details** — A call was made through the dialer  
+- **AI Call Details** — An AI call was processed  
+
+---
+
+### 🔍 Filtering Options
+
+Use the filters to narrow down to the executions you care about.
+
+![Execution Logs Filters](/images/workflow/execution-logs/filters.png)
+
+#### 📅 Date Range Filter
+
+- **Date range dropdown** — Choose a preset or **Custom dates**.
+- **Start date** — For custom range: pick the start date. For presets, this is set automatically and disabled.
+- **End date** — For custom range: pick the end date. For presets, this is set automatically and disabled.
+- **Filter button** — Applies the selected date range (especially for custom dates).
+
+**Preset options:**
+
+| Option | What it includes |
+|--------|-------------------|
+| **Custom dates** | Your own start and end date. |
+| **Today** | Executions from today only. |
+| **Yesterday** | Executions from yesterday. |
+| **This Week (Sun - Today)** | From Sunday of this week to today. |
+| **This Week (Mon - Today)** | From Monday of this week to today. |
+| **Last 7 Days** | Past 7 days. |
+| **Last Week (Sun - Sat)** | Previous Sunday through Saturday. |
+| **Last Week (Mon - Sun)** | Previous Monday through Sunday. |
+| **Last Business Week (Mon - Fri)** | Previous Monday through Friday. |
+| **Last 14 Days** | Past 14 days. |
+| **This Month** | First day of current month to today. |
+| **Last 30 Days** | Past 30 days. |
+| **Last Month** | Entire previous month. |
+
+> 💡 **Tip:** For **Custom dates**, choose start and end, then click **Filter**. Other presets apply as soon as you select them.
+
+#### 📂 Workflow Filter
+
+- **Workflow dropdown** — Searchable list of all workflows.
+- **All** — Shows executions from every workflow (default).
+- **Single workflow** — Pick one to see only that workflow’s executions.  
+The table updates as soon as you change the selection.
+
+#### ⚡ Trigger Type Filter
+
+- **Trigger type dropdown** — Searchable list of trigger types that have been used.
+- **All** — Every trigger type (default).
+- **Single trigger type** — Restrict to one trigger (e.g., only “Contact Tag Added”).  
+The table updates when you change the selection.
+
+#### 🏷️ Status Filter
+
+- **Status dropdown** — Filter by execution status.
+- **All** — Every status (default).
+- **Pending, Running, Completed, Failed, Cancelled, Paused** — Only that status.  
+The table updates when you change the selection.
+
+---
+
+### 🔎 Search
+
+Use the search box to find executions by:
+
+- Workflow name  
+- Trigger type  
+- Status  
+- Creation date  
+
+Search is **case-insensitive** and supports **partial matches**, so you don’t need to type the full text.
+
+---
+
+### 📖 Execution Details Modal
+
+Click **View Details** on any row to open a popup with full information about that execution.
+
+![Execution Details Modal](/images/workflow/execution-logs/execution-details-modal.png)
+
+**What You See in the Modal**
+
+| Field | Description |
+|-------|-------------|
+| **Trigger Type** | The event that started this execution. |
+| **Status** | Current status with a colored badge. |
+| **Contact** | Contact name, or “Contact #” plus ID if name isn’t available. |
+| **Duration** | Total time; “-” if still running or unknown. |
+| **Started At** | When the execution began (e.g., Jan 27, 2026 10:30 AM). |
+| **Completed At** | When it finished; “-” if not completed yet. |
+| **Error Message** | If the execution failed, the error is shown in a red alert box. |
+
+**Execution Steps Table**
+
+A table lists every step that ran:
+
+| Column | Description |
+|--------|-------------|
+| **Step Number** | Order of the step (1, 2, 3, …). |
+| **Action Type** | What the step did (e.g., Send Email, Add Tag, Update Contact). |
+| **Status** | Pending, Running, Completed, Failed, or Skipped. |
+| **Started At** | When the step began. |
+| **Completed At** | When the step finished. |
+| **Error** | Error message for that step, or “-” if none. |
+
+This makes it easy to see exactly where a run succeeded or failed.
+
+---
+
+## ⚙️ How the Module Works
+
+### 📥 Data Loading
+
+1. **First open** — The page loads executions for **today** by default.  
+2. **When you change filters** — The table refreshes automatically.  
+3. **Pagination** — Default is **10** executions per page.  
+4. **Sort order** — Newest first (by creation date).
+
+### 🎛️ Applying Filters
+
+1. **Date range** — For presets, start/end dates are filled automatically and applied right away.  
+2. **Custom dates** — Select start and end, then click **Filter**.  
+3. **Workflow, Trigger Type, Status** — Apply as soon as you change the dropdown.  
+4. **Combined** — All filters work together; use several at once to narrow results.
+
+### 📄 Viewing Execution Details
+
+1. Click **View Details** on any execution.  
+2. The system loads full data for that run: basic info, all steps, and any errors.  
+3. Everything is shown in one organized modal so you can troubleshoot or audit quickly.
+
+---
+
+## 📌 Summary
+
+| What you can do | How |
+|-----------------|-----|
+| **See all runs** | Main Execution Log table with workflow, trigger, status, duration, and date. |
+| **Find specific runs** | Date range, workflow, trigger type, status filters, and search. |
+| **Understand a single run** | **View Details** → modal with trigger, status, contact, timestamps, and step-by-step table. |
+| **Spot failures** | Filter by **Failed** or open details to see error messages and which step failed. |
+
+The Execution Logs module gives you full visibility into workflow activity so you can monitor health, troubleshoot issues, and optimize your automations.

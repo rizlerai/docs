@@ -176,7 +176,8 @@
             "group": "Workflows",
             "icon": "arrows-split-up-and-left",
             "pages": [
-              "workflow/all-workflows"
+              "workflow/all-workflows",
+              "workflow/execution-logs"
             ]
           },
           {
@@ -185,6 +186,13 @@
             "pages": [
               "knowledge-hub/courses",
               "knowledge-hub/available-courses"
+            ]
+          },
+          {
+            "group": "DND Numbers",
+            "icon": "ban",
+            "pages": [
+              "DND-number/dnd-numbers"
             ]
           },
           {
