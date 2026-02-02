@@ -265,20 +265,10 @@
         "icon": "play-circle",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": " Tutorials",
             "icon": "file-video",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "icon": "video",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/access-validation"
+              "video-tutorials/video"
             ]
           }
         ]

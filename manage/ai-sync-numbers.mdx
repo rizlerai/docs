@@ -279,7 +279,42 @@ Assigning  10 DLC (10-Digit Long Code) Numbers to campaigns links your purchased
   </Card>
 </CardGroup>
 
+## 📤 SMS Sending – “From Number" Routing In Workflow
 
+When sending SMS, the system chooses the **"From"** number using a defined order. Below are the options and fallbacks.
+
+**1️⃣ Same as dial**
+
+The system uses the contact’s **last call or conversation** and picks the **last used number** for that contact. That number is used for sending if it’s still valid (see fallbacks below).
+
+**2️⃣ Assigned user**
+
+The system finds the **user assigned to this contact**, then uses that user’s **assigned number** for sending.
+
+**3️⃣ Select any number**
+
+The user picks a **specific number**; the system uses that dedicated number for sending.
+
+**🛡️ Fallback when the chosen number is not 10DLC linked**
+
+If the number from (1), (2), or (3) does **not** have a 10DLC campaign linked (or isn’t valid):
+
+| 🧭 Fallback | Behavior |
+|----------|----------|
+| **Area-code match** | System uses the contact’s area code, finds a company number with that area code that is 10DLC linked, and uses it for SMS sending. |
+| **Final fallback** | If no area-code match is found, the system picks any 10DLC linked number for the company and uses it for SMS sending. |
+
+**📝 Summary**
+
+| Option | Behavior |
+|--------|----------|
+| **Same as dial** | Last call/conversation → last used number |
+| **Assigned user** | User assigned to contact → that user’s number |
+| **Select any number** | User-selected dedicated number |
+| **Fallback 1** | Chosen number not 10DLC linked → use contact area code + 10DLC linked number |
+| **Fallback 2** | No area-code match → use any 10DLC linked number |
+
+---
 
 ## 🔄 Renewal & Billing Management
 
