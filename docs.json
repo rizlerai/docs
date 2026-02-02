@@ -130,6 +130,13 @@
             ]
           },
           {
+            "group": "SMS Routing Flow",
+            "icon": "random",
+            "pages": [
+              "sms-routing-flow/sms-numbers-routings"
+            ]
+          },
+          {
             "group": "Pipeline",
             "icon": "diagram-project",
             "pages": [

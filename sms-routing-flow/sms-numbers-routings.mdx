@@ -1,0 +1,111 @@
+---
+title: "SMS Numbers & Routing"
+icon: "comments"
+---
+
+This page explains how **outgoing** and **incoming** SMS are routed in the system. For **outgoing** messages, it describes how the “from” number is chosen (so replies go to the right place and stay 10DLC compliant). For **incoming** messages, it describes how each SMS is assigned to a user so the right person gets notified and conversations stay in context. Use this as a reference when configuring numbers, workflows, or troubleshooting delivery and assignment.
+
+---
+
+## 📤 **Outgoing SMS Routing Flow**
+
+When you send an SMS, the **from number** (the number the message is sent *from*) is chosen by the system based on your workflow and number configuration. The system follows a defined order: it first tries the number from your chosen sending option, then applies fallbacks if that number is not valid or not 10DLC linked. This keeps outbound messages consistent with your conversations and compliant with 10DLC rules.
+
+**📲 How the “from” number is chosen**
+
+The system supports three ways to determine which number is used for sending. Your account or workflow setting controls which option is used.
+
+**1️⃣ Same as dial**
+
+The system looks at the contact’s **last call or conversation** and uses the **last number that was used** with that contact. That number is used for sending as long as it is still valid. If it is not (for example, not 10DLC linked), the system applies the fallbacks described below.
+
+*Use this when you want outbound SMS to continue from the same number the contact last saw (e.g. after a call or prior SMS thread).*
+
+**2️⃣ Assigned user**
+
+The system finds the **user assigned to the contact**, then uses **that user’s assigned number** for sending. So the “from” number is always the number tied to the person responsible for that contact.
+
+*Use this when each contact has an owner and you want SMS to come from that owner’s number.*
+
+**3️⃣ Select any number**
+
+The user **chooses a specific number** when sending. The system uses that **dedicated number** for the message. If that number is not valid or not 10DLC linked, the fallbacks below apply.
+
+*Use this when you need to send from a particular line (e.g. a campaign or support number) regardless of conversation or assignment.*
+
+**🛡️ Fallback when the chosen number is not 10DLC linked**
+
+If the number from (1), (2), or (3) **does not have a 10DLC campaign linked** (or is otherwise not valid for sending), the system does not fail; it tries these fallbacks in order:
+
+**🗺️ Fallback 1 – Area-code match**  
+The system uses the **contact’s area code**, finds a **company number with that same area code** that is **10DLC linked**, and uses it for sending. This keeps the message local to the contact’s region when possible.
+
+**🎯 Fallback 2 – Final fallback**  
+If no area-code match is found, the system picks **any 10DLC linked number** for the company and uses it for sending. This ensures the message still goes out while staying 10DLC compliant.
+
+<Info>
+10DLC (10-Digit Long Code) registration is required for reliable SMS delivery in the US. Using a 10DLC-linked number reduces filtering and improves deliverability.
+</Info>
+
+**📝 Summary – SMS “from” number behavior**
+
+| Option | Behavior |
+|--------|----------|
+| **Same as dial** | Last call/conversation → last used number for that contact |
+| **Assigned user** | User assigned to contact → that user’s assigned number |
+| **Select any number** | User-selected dedicated number |
+| **Fallback 1** | Chosen number not 10DLC linked → use contact area code + 10DLC linked number with same area code |
+| **Fallback 2** | No area-code match → use any 10DLC linked number for the company |
+
+---
+
+## 📥 **Incoming SMS Routing Flow**
+
+When an SMS arrives, the system must decide **which user** should receive it and see it in their inbox. The routing follows a fixed priority: it first looks at conversation history and contact assignment, then at which number (DID) the message was received on, and finally falls back to the company default user. This section describes each step in order. Messages are routed so the right person gets notified and conversations stay in context.
+
+<Info>
+Incoming SMS routing runs in order: conversation history first, then contact assignment, then the number the message was received on, and finally the company default user.
+</Info>
+
+**1️⃣ Caller in logs (previously dialed or had a conversation)**
+
+The system checks whether the caller’s number appears in logs (e.g. previously dialed or in an existing conversation).
+
+- **If found:** The last dialed or last conversation user is selected.
+- **Action:** The message is attached to that user’s conversation.
+- **Result:** That user receives in-app notifications for the message.
+
+**2️⃣ Not in logs – contact exists**
+
+If the number was not found in logs, the system checks whether it belongs to an existing contact.
+
+- **Check:** Does this contact have an assigned user?
+- **If yes:** The incoming message is assigned to that user.
+
+**3️⃣ No user yet – check “from” number (DID) assignment**
+
+If no user has been assigned so far:
+
+- **Check:** The number the message was **received on** (the “from” number / DID).
+- **Check:** Is that DID assigned to any user?
+- **If yes:** The message is assigned to that user.
+
+**4️⃣ Final fallback**
+
+If none of the above apply:
+
+- **Action:** The message is assigned to the **company user** (company owner or default company user).
+
+---
+
+**Flow summary**
+
+| Step | Condition | Action |
+|------|-----------|--------|
+| 1 | Caller in logs (previously dialed or in conversation) | Attach to last conversation user; that user gets in-app notifications |
+| 2 | Contact exists but not in logs | Assign to the contact’s assigned user (if any) |
+| 3 | Still no user | Check received-on number (DID) → assign to the user that number is assigned to (if any) |
+| 4 | Otherwise | Assign to company user |
+
+---
+
