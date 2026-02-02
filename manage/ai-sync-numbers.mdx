@@ -40,6 +40,12 @@ Filter your purchased phone numbers using:
   - **Verified**
   - **Unverified**
 
+
+![Bulk Actions on Phone Numbers Table](/images/manage/ai-sync-number/bulk-action.png)
+
+You can perform **bulk actions** directly on the table. Select multiple numbers and use bulk options (such as verify, delete , Active for AI) to efficiently manage many records at once.
+
+
 All filters work together—update any filter and the table updates instantly.
 
 ---
@@ -61,12 +67,117 @@ Click the **Download** button to export your filtered phone numbers as an Excel 
 | **Phone No.**   | Full phone number                    | `+13154942679`, `+12058823206`                       |
 | **AreaCode**    | Area code extracted from phone       | `315`, `205`                                         |
 | **Provider**    | Current service provider             | `Ai Sync`, `Twilio`                        |
-| **10DLC**       | 10DLC registration (A2P compliance)  | `No`, `Yes`                                          |
+| **10DLC**       | 10DLC registration (A2P compliance)  | `No`, `Yes` ,`In Progress`                                         |
 | **Renewal At**  | Next renewal/billing date            | `09-14-2025 12:40 PM`, `10-02-2024 1:00 PM`          |
 | **Status**      | Verification state                   | `Verified`, `Unverified`                             |
 > **Field Notes:**  
 > - The **Title** is optional and may be blank.  
 > - **10DLC** compliance is shown for eligible providers only.  
+
+
+## ➕ Acquiring Phone Numbers
+
+Purchase phone numbers instantly and connect them to your business with simple, guided setup.
+
+---
+
+![Phone Numbers Purchase Table](/images/manage/ai-sync-number/purchase.png)
+
+---
+
+**Getting Started**
+
+To purchase a new phone number, click the **Purchase** button from the Phone Numbers page.
+
+![Phone Numbers Purchase Table](/images/manage/ai-sync-number/new-purchase.png)
+---
+
+**Purchase Number Form**
+
+### 📡 1. Provider 
+
+Select your telecommunications provider:
+
+- **Ai Sync** – Primary carrier option  
+- **Twilio** – Alternative carrier option  
+- **Ai Sync V2** – Additional carrier option (USA only)  
+
+---
+
+### 🌎 2. Countries 
+
+Select the country for phone number:
+
+- **USA** (Default)  
+- **Canada**  
+
+*Note: Ai Sync V2 only supports USA.*
+
+---
+
+### ☎️ 3. Type 
+
+Select the type of phone number:
+
+- **Local** – Standard local phone numbers  
+- **Toll Free** – 800, 833, 844, 855, 866, 877, 888 numbers  
+- **Mobile** – Mobile phone numbers  
+
+**Provider Limitations:**
+- *Ai Sync V2*: Does not support Mobile numbers  
+- *Twilio*: Mobile not available for USA and Canada (available for UK, Australia)  
+- *Ai Sync*: All types available for all countries  
+
+---
+
+### 🔍 4. Search By 
+
+Choose how to search for available numbers:
+
+- **AreaCode** – Search by specific area code (e.g., 212, 415)  
+- **Region** – Search by geographic region (e.g., NY, CA)  
+- **City** – Search by city name (e.g., New York, Los Angeles)  
+
+---
+
+### 🏙️ 5. AreaCode/Region/City 
+
+Enter the value based on your **Search By** selection:
+
+- For *AreaCode*: Enter 3-digit area code
+- For *Region*: Enter state code or region name
+- For *City*: Enter city name
+
+---
+
+### 📋 6. Search Results 
+
+After clicking **Search**, available numbers display in a table:
+
+| # | Friendly Name | Phone # | Locality | Capabilities |   | Action |
+|---|---------------|---------|----------|--------------|---|--------|
+|   | Example       | 315-238-9306 | Tully, New York, UNITED STATES | MMS, SMS, Voice | [x] | Purchase |
+
+- **Friendly Name** — Display name of the number  
+- **Phone #** — The phone number  
+- **Locality** — Geographic location  
+- **Capabilities** — Supported features (Voice, SMS, MMS)  
+- **Checkbox** — Select for bulk purchase  
+- **Action** — Purchase button  
+
+---
+
+**Purchase Options 🛒**
+
+**Single Purchase:**
+
+- Click the purchase button next to the desired number.
+
+**Buy Multiple:**
+
+1. Check the numbers you want to purchase  
+2. Click **Buy Multiple** button  
+3. All selected numbers will be purchased at 
 
 
 
@@ -115,109 +226,6 @@ Before purchasing a phone number, I use the Local Preference API's pre-check sys
 - **Confidence in Deployment**: Lets you proceed with number acquisition knowing everything is set up correctly.
 
  
-## ➕ Acquiring Phone Numbers
-
-Purchase phone numbers instantly and connect them to your business with simple, guided setup.
-
----
-
-![Phone Numbers Purchase Table](/images/manage/ai-sync-number/purchase.png)
-
----
-
-## Getting Started
-
-To purchase a new phone number, click the **Purchase** button from the Phone Numbers page.
-
-![Phone Numbers Purchase Table](/images/manage/ai-sync-number/new-purchase.png)
----
-
-## Purchase Number Form
-
-### 1. Provider
-
-Select your telecommunications provider:
-
-- **Ai Sync** – Primary carrier option  
-- **Twilio** – Alternative carrier option  
-- **Ai Sync V2** – Additional carrier option (USA only)  
-
----
-
-### 2. Countries
-
-Select the country for phone number:
-
-- **USA** (Default)  
-- **Canada**  
-
-*Note: Ai Sync V2 only supports USA.*
-
----
-
-### 3. Type
-
-Select the type of phone number:
-
-- **Local** – Standard local phone numbers  
-- **Toll Free** – 800, 833, 844, 855, 866, 877, 888 numbers  
-- **Mobile** – Mobile phone numbers  
-
-**Provider Limitations:**
-- *Ai Sync V2*: Does not support Mobile numbers  
-- *Twilio*: Mobile not available for USA and Canada (available for UK, Australia)  
-- *Ai Sync*: All types available for all countries  
-
----
-
-### 4. Search By
-
-Choose how to search for available numbers:
-
-- **AreaCode** – Search by specific area code (e.g., 212, 415)  
-- **Region** – Search by geographic region (e.g., NY, CA)  
-- **City** – Search by city name (e.g., New York, Los Angeles)  
-
----
-
-### 5. AreaCode/Region/City
-
-Enter the value based on your **Search By** selection:
-
-- For *AreaCode*: Enter 3-digit area code
-- For *Region*: Enter state code or region name
-- For *City*: Enter city name
-
----
-
-### 6. Search Results
-
-After clicking **Search**, available numbers display in a table:
-
-| # | Friendly Name | Phone # | Locality | Capabilities |   | Action |
-|---|---------------|---------|----------|--------------|---|--------|
-|   | Example       | 315-238-9306 | Tully, New York, UNITED STATES | MMS, SMS, Voice | [x] | Purchase |
-
-- **Friendly Name** — Display name of the number  
-- **Phone #** — The phone number  
-- **Locality** — Geographic location  
-- **Capabilities** — Supported features (Voice, SMS, MMS)  
-- **Checkbox** — Select for bulk purchase  
-- **Action** — Purchase button  
-
----
-
-## Purchase Options
-
-**Single Purchase:**
-
-- Click the purchase button next to the desired number.
-
-**Buy Multiple:**
-
-1. Check the numbers you want to purchase  
-2. Click **Buy Multiple** button  
-3. All selected numbers will be purchased at once
 
 # 🔢 Assign 10 DLC Numbers to  Campaigns
 
@@ -241,19 +249,17 @@ Assigning  10 DLC (10-Digit Long Code) Numbers to campaigns links your purchased
 
 ## ✅ Verification Status Management
 
-### 🔍 Verification Process
+**🔍 Verification Process**
 
 <CardGroup cols={2}>
   <Card title="Verified Numbers" icon="circle-check">
     **Status**: Ready for campaigns
-    <br />**Indicator**: Green "Verified" badge
     <br />**Capabilities**: Full calling features enabled
     <br />**Trust Level**: High deliverability and success rates
   </Card>
   
   <Card title="Unverified Numbers" icon="circle-exclamation">
     **Status**: Pending verification
-    <br />**Indicator**: Orange "Unverified" badge
     <br />**Limitations**: Restricted calling capabilities
     <br />**Action Required**: Complete verification process
   </Card>
@@ -277,7 +283,7 @@ Assigning  10 DLC (10-Digit Long Code) Numbers to campaigns links your purchased
 
 ## 🔄 Renewal & Billing Management
 
-### 📅 Renewal Tracking
+**📅 Renewal Tracking**
 
 <CardGroup cols={2}>
   <Card title="Automatic Renewals" icon="calendar-check">

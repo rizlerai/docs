@@ -213,7 +213,6 @@
               "settings/twilio-credentials",
               "settings/ai-settings",
               "settings/api-oath-setting",
-              "settings/plivo-credentials",
               "settings/working-hours",
               "settings/browser-sessions"
             ]
