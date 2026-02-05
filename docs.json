@@ -72,7 +72,13 @@
               "ai/call-history"
             ]
           },
-
+          {
+            "group": "Conversations",
+            "icon": "comment-dots",
+            "pages": [
+              "conversation/conversations"
+            ]
+          },
           {
             "group": "Business Management",
             "icon": "briefcase",

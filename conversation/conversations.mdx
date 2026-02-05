@@ -1,0 +1,130 @@
+---
+title: "Conversations"
+description: "Find contacts, view and send messages, manage call history, and update contact details in one place."
+icon: "comment-dots"
+---
+
+# 💬 Conversations — User Guide
+
+This guide explains how the **Conversations** area works so you can find contacts, view and send messages, manage call history, and update contact details in one place.
+
+<Note>
+Everything in Conversations is organized around **one contact at a time**: choose a contact on the left, see their messages and send replies in the centre, and manage their details on the right.
+</Note>
+
+---
+
+## 📖 What is Conversations?
+
+**Conversations** is where you see your contacts, view and send text messages (SMS), see call history with each contact, and open a contact's full details — info, notes, tags, dispositions, appointments, and Do Not Contact settings. You can search and scroll to load more contacts, messages, or calls.
+
+Everything is shown in **three main areas**: a left panel with tabs, a middle panel for the selected contact and messages, and a right panel for that contact's details.
+
+<img src="/images/conversation/overview.png" alt="Conversations three-panel layout overview" className="rounded-lg border shadow-sm" />
+
+| Panel | Purpose |
+|-------|--------|
+| **Left** | Tabs: Contacts, Chat, or Calls — choose what list to see and pick a contact |
+| **Centre** | Selected contact's messages and timeline; send new messages here |
+| **Right** | That contact's full details: info, notes, tags, dispositions, appointments, SMS setting, DND |
+
+---
+
+## 📑 Left Panel — Three Tabs
+
+At the top of the left panel there are **three tabs**. Only one is active at a time. Use them to switch between contacts, SMS conversations, or call history.
+
+<CardGroup cols={3}>
+  <Card title="Contacts" icon="users">
+    List of contacts (newest first). Search by name or number, click to open. Scroll to load more.
+  </Card>
+  <Card title="Chat" icon="comments">
+    Recent SMS conversations. Search by name or number, click to open thread and send messages.
+  </Card>
+  <Card title="Calls" icon="phone">
+    Recent phone calls (in/out, completed or not). Search and click to open that contact.
+  </Card>
+</CardGroup>
+
+**Contacts** — A list of your contacts, newest first. Each row shows the contact's name and phone number, with the first letter of the name in a small circle. Use **"Search contacts…"** at the top to filter by first name, last name, or phone number; the list updates shortly after you stop typing. Click a contact to load their messages and details in the middle and right panels. Scroll to the bottom to load more contacts. If you open Conversations with a link that includes a specific contact, that contact is shown first and selected automatically.
+
+<img src="/images/conversation/contacts.png" alt="Conversations — Contacts tab" className="rounded-lg border shadow-sm" />
+
+**Chat** — A list of recent text message (SMS) conversations. Each row shows the contact's name, date and time of the last message, whether it was incoming or outgoing, and a short preview. Incoming and outgoing use different icons. Use **"Search SMS…"** to filter by contact name or phone number. Click a row to open that contact's full message history and send new messages. Scroll to the bottom to load more conversations.
+
+<img src="/images/conversation/chats.png" alt="Conversations — Chat (SMS) tab" className="rounded-lg border shadow-sm" />
+
+**Calls** — A list of recent phone calls (incoming and outgoing). Each row shows the contact's name, date and time, direction, whether the call was completed, and call length when available. Icons and colors distinguish incoming/outgoing and completed vs missed or failed. Use **"Search calls…"** to filter by name or number. Click a row to open that contact in the middle and right panels. Scroll to load more call records.
+
+<Tip>
+Use **Contacts** to browse by name, **Chat** to focus on recent SMS threads, and **Calls** to see who called or was called recently.
+</Tip>
+
+---
+
+## 📬 Middle Panel — Selected Contact and Messages
+
+When you select a contact (from Contacts, Chat, or Calls), the **middle panel** shows that contact and all their message and call activity. You can read the timeline and send new messages here.
+
+<img src="/images/conversation/chat-dialog-box.png" alt="Conversations — Middle panel, message area and send options" className="rounded-lg border shadow-sm" />
+
+At the top you see the contact's **avatar** (initial in a circle) and **name**; the name is a link that can open the contact details panel on smaller screens. **Action buttons** let you call, open contact details, open a menu (e.g. Edit), and close the panel on smaller screens.
+
+The **message area** shows all past activity in one timeline: text messages (SMS), and calls, grouped by date. Your messages appear on one side and the contact's on the other, with the time in your time zone. For each call you see direction, whether it was completed, and duration; if a recording exists, an audio player is shown. Incoming and outgoing messages are labeled; outgoing may show a check mark when delivered.
+
+**Sending a message** — Below the timeline you have:
+
+| Control | Description |
+|--------|-------------|
+| **Platform options** | **SMS**, **iMessage** — active one is highlighted. For SMS you must choose a "From" number in the right panel (SMS Setting). |
+| **Assign** | Assign this contact to Unassign, Company, or a team member. Saved for the contact. |
+| **Emoji** | Button to open emoji picker. |
+| **Text box** | Type your message (e.g. "Type Your Text Here"). |
+| **Send** | Send the message. Requires a contact, message text, and (for SMS) a From number. |
+
+If the contact has **Do Not Contact** set for text or all channels, you may see a warning and sending can be blocked. After sending, the new message appears in the timeline and the text box clears. **Personalization:** When sending SMS, you can use placeholders (e.g. contact's first name); your admin can explain the exact placeholders.
+
+<Warning>
+Select a **From** number in the right panel (SMS Setting) before sending an SMS. Otherwise you'll see a message asking you to select one.
+</Warning>
+
+---
+
+## 📋 Right Panel — Contact Details
+
+The **right panel** shows detailed information and settings for the **currently selected contact**, in sections you can expand or collapse.
+
+<img src="/images/conversation/contact-info.png" alt="Conversations — Right panel, contact details" className="rounded-lg border shadow-sm" />
+
+- **Contact Info** — Form with the contact's stored fields (first name, last name, phone, email, etc.). Edit values and click **Save Changes**; a confirmation appears and details update everywhere.
+- **Dispositions** — Dropdown of options (e.g. Not Interested, Callback, Sale). Choose a new disposition; it saves immediately. Changing it can trigger workflows (your admin can explain).
+- **Tags** — Multi-select list (e.g. VIP, Follow-up). Select or clear tags, then click **Save Tags**. Changes can trigger other actions in your system.
+- **Notes** — List of notes with preview and last-updated date. **Add Note** opens a window to type and save; **Edit** on a note opens the same window to change and save. Most recent first.
+- **Appointments** — Upcoming appointments (date, time, calendar, duration, status). Use **View** for details, join meeting links when available, and **Add** to schedule a new appointment (steps depend on your setup).
+- **SMS Setting** — When SMS is selected in the middle panel, this shows **From** (dropdown of numbers you can send from — pick one to send SMS) and **To** (contact's number, usually read-only). You must choose **From** before sending an SMS.
+- **DND (Do Not Contact)** — Block contact on specific channels or all. **DND all channels** blocks everything; or choose **Emails**, **Text Messages**, and/or **Calls & Voicemails**. **DND Inbound Calls and SMS** affects how inbound calls and SMS from this contact are handled (your admin can explain). Choices save automatically; sending SMS may be blocked or show a warning when DND applies.
+
+---
+
+## 🔍 Search & Load More
+
+**Search** — Each tab has its own search box ("Search contacts…", "Search SMS…", "Search calls…"). Typing filters the list by contact name or phone number; results update shortly after you stop typing. Search only filters the active tab; the contact open in the middle and right panels does not change until you click another row.
+
+**Loading more** — In each tab, scroll to the bottom of the list to load more items (contacts, conversations, or call records). Already loaded items are not duplicated. Only the active tab loads more; switch tabs and scroll to load in the others.
+
+---
+
+## 📌 Summary
+
+<CardGroup cols={3}>
+  <Card title="Left" icon="list">
+    Choose one contact from **Contacts**, **Chat**, or **Calls**. Search and scroll to find and load more.
+  </Card>
+  <Card title="Centre" icon="comments">
+    See that contact's messages and calls; send replies (SMS, WhatsApp, etc.). Pick platform, From number (SMS), and type your message.
+  </Card>
+  <Card title="Right" icon="user-pen">
+    Edit that contact's details: info, notes, tags, dispositions, appointments, SMS setting, and Do Not Contact.
+  </Card>
+</CardGroup>
+
