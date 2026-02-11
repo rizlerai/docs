@@ -257,6 +257,78 @@ Each action has specific configuration options:
 
 ---
 
+### ⚙️ Workflow Settings
+
+You can customize key workflow-level options in the **Settings** area. This helps control how and when your workflow operates.
+
+![Workflow Settings UI](/images/workflow/workflow-settings.png)
+
+**Main Settings:**
+
+- **Timezone:**  
+  Choose a timezone for the workflow. This will affect the timestamps for time-based triggers or actions.  
+  *Example: Change to your local time so all schedules run as expected.*
+
+- **Allowed Users:**  
+  Limit access to the workflow by specifying allowed users or teams.  
+  *Example: Only admins or specific agents can view or edit this workflow.*
+
+- **Time Window:**  
+  Restrict workflow actions to a specific part of the day.  
+  *Example: Only send communications during business hours; block weekends/nights.*
+
+- **Sender Details:**  
+  Configure outbound communication options, such as the number or email to send from.  
+  *Example: Pick the default number for sending automated SMS or calls.*
+
+**How to use:**
+
+1. Open the Workflow and click **Settings** at the top.
+2. Adjust relevant fields (see image above for UI reference).
+3. Click **Save Settings**. Your changes will affect the workflow immediately.
+
+<Note>
+Settings apply *only* to the current workflow. Review settings before activating to ensure compliance with business rules.
+</Note>
+
+
+## 📓 Execution Logs
+
+You can track every instance of your workflow running in the **Execution Logs** area.
+
+![Workflow Execution Logs](/images/workflow/workflow-execution-logs.png)
+
+**What you see in Execution Logs:**
+
+- **Trigger:** What event started the workflow
+- **Contact:** Which contact, record, or object was affected
+- **Status:** Real-time progress (e.g., "Completed" in green, "Failed" in red)
+- **Actions:** How many tasks or actions the workflow performed
+- **Started At:** The exact date and time the workflow began
+- **Duration:** Time taken for execution
+- **Details:** Click the "eye" icon to see full run details
+
+**How to use:**
+1. Go to your workflow, open the **Execution Logs** tab.
+2. Review recent workflow runs for troubleshooting or auditing.
+3. **Use the dropdown menus at the top** to filter logs by specific **Trigger** or **Status** (such as Completed, Failed, or Running), making it easy to focus only on relevant workflow runs.
+4. Click a row to see every action (success or failure) for that workflow run.
+5. Export or filter logs by status, trigger, or date if needed.
+
+<Tip>
+Execution Logs help monitor automations—check here to verify that steps completed as expected or to diagnose issues. Use the filters to find executions for a particular trigger or status quickly.
+</Tip>
+
+**Statuses:**
+- <span style={{color:"limegreen"}}>Completed</span>: Workflow executed all actions successfully
+- <span style={{color:"orangered"}}>Failed</span>: At least one action ran into an error
+- <span style={{color:"gold"}}>Running</span>: Workflow currently in progress
+
+
+
+
+
+
 ## 🟪 Workflow SOPs
 
 > ![Workflow SOP Visual Guide](/images/workflow/SOPs.png)
