@@ -201,7 +201,7 @@
             ]
           },
           {
-            "group": "Do Not Disturb (DND) ",
+            "group": "DND   (Do Not Disturb)",
             "icon": "ban",
             "pages": [
               "DND-number/dnd-numbers"
