@@ -12,15 +12,18 @@ The Roles section is your central hub for defining and managing user roles with 
 
 ## 🔍 Overview
 
-The Roles management interface provides comprehensive control over user access across your entire system. It allows you to:
+The Roles management interface gives you full control over user access across your system. With it, you can:
 
 - 🎭 **Define** custom roles with specific permission sets
 - 🔐 **Assign** granular permissions across all system modules
 - 📊 **Monitor** role usage and modification history
 - ⚡ **Streamline** user management with role-based access
-- 🛡️ **Enhance** security through principle of least privilege
+- 🛡️ **Enhance** security by following the principle of least privilege
+
+> **Note:** When you click the **Add** button to create a new role, a default role is immediately created for you. You can then edit its details and permissions afterward to fully customize it for your needs.
 
 <img src="/images/user-management/roles/overview.png" alt="Roles Management Overview" className="rounded-lg border shadow-sm" />
+
 
 ## 📋 Role Information & Fields
 
@@ -31,8 +34,7 @@ The Roles management interface provides comprehensive control over user access a
 | **🎭 Role Name** | Unique identifier for the role | Role identification and display | Text (up to 50 characters) |
 | **📅 Created At** | Role creation timestamp | Audit trail and tracking | MM-DD-YYYY HH:MM format |
 | **🔄 Updated At** | Last modification date | Change tracking and history | MM-DD-YYYY HH:MM format |
-| **👥 Assigned Users** | Number of users with this role | Usage monitoring | Numeric count |
-| **⚙️ Actions** | Available role operations | Role management controls | Edit/Delete/Permissions |
+| **⚙️ Actions** | Available role operations | Role management controls | Edit/Delete |
 
 ### ⚙️ Role Management Actions
 
@@ -47,6 +49,7 @@ The Roles management interface provides comprehensive control over user access a
 - **Purpose**: Configure role capabilities
 - **Use Case**: Define what actions users can perform
 - **Access**: Granular control across all modules
+- **Interface**: Role Name field (editable via pencil icon, deletable via trash icon), "Select All Modules" toggle for bulk permission assignment, "Assign" button to save changes
 </Card>
 
 <Card title="✏️ Edit Role" icon="pen">
@@ -66,13 +69,15 @@ The Roles management interface provides comprehensive control over user access a
 
 ### 🗝️ Comprehensive Permission Categories
 
-The permissions interface provides granular control across 20+ system modules:
-<img src="/images/user-management/roles/permissions-1.png" alt="Permissions Management Interface" className="rounded-lg border shadow-sm" />
+<img src="/images/user-management/roles/roles-main-menu.png" alt="Roles Main Menu - Assign Permission Dashboard" className="rounded-lg border shadow-sm" />
+
+The permissions interface provides granular control across 25+ system modules:
 
 <Info>
 **Smart Permission Selection**: When you select "All Modules", all individual module permissions are automatically enabled. Similarly, when you select any individual module, all sub-permissions within that module are automatically selected, streamlining the permission assignment process.
 </Info>
 
+**Dashboard, Company, Users, Roles, Logs**
 <CardGroup cols={2}>
 <Card title="📊 Dashboard Access" icon="chart-line">
 **Permissions Available:**
@@ -82,6 +87,18 @@ The permissions interface provides granular control across 20+ system modules:
 **Smart Selection**: Selecting the Dashboard module automatically enables all dashboard-related permissions for streamlined access control.
 
 **Use Case**: Control access to analytics and performance data
+</Card>
+
+<Card title="🏢 Company" icon="building">
+**Permissions Available:**
+- View Company
+- Add Company
+- Edit Company
+- Delete Company
+
+**Smart Selection**: Selecting the Company module automatically grants all company management permissions.
+
+**Use Case**: Manage company settings and configuration
 </Card>
 
 <Card title="👥 User Management" icon="users">
@@ -109,6 +126,20 @@ The permissions interface provides granular control across 20+ system modules:
 **Use Case**: Control who can manage roles and permissions
 </Card>
 
+<Card title="📋 Logs" icon="document">
+**Permissions Available:**
+- View Logs
+- Delete Logs
+
+**Smart Selection**: Selecting the Logs module automatically enables all log access and management permissions.
+
+**Use Case**: Control access to system logs and audit trails
+</Card>
+</CardGroup>
+<img src="/images/user-management/roles/permissions-2.png" alt="Permissions - Dashboard, Company, Users, Roles, Logs" className="rounded-lg border shadow-sm" />
+
+**Phone Numbers, Disposition, SMS Template, Contact Fields, PowerLists, Conversations, Contacts**
+<CardGroup cols={3}>
 <Card title="📞 Phone Numbers" icon="phone">
 **Permissions Available:**
 - View Phone Numbers
@@ -119,12 +150,7 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Manage telephony infrastructure and costs
 </Card>
-</CardGroup>
-<img src="/images/user-management/roles/permissions-2.png" alt="Permissions Management Interface" className="rounded-lg border shadow-sm" />
-<Info>
-**Smart Permission Selection**: When you select any individual module, all sub-permissions within that module are automatically selected.
-</Info>
-<CardGroup cols={3}>
+
 <Card title="📋 Disposition Management" icon="list-check">
 **Permissions Available:**
 - View Disposition
@@ -167,6 +193,13 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Manage contact lists and data import/export
 </Card>
+
+
+</CardGroup>
+<img src="/images/user-management/roles/permissions-3.png" alt="Permissions - Phone Numbers, Disposition, SMS Template, Contact Fields, PowerLists, Conversations, Contacts" className="rounded-lg border shadow-sm" />
+
+**Webhooks, Reports, Teams, Billing**
+<CardGroup cols={3}>
 
 <Card title="👤 Contacts" icon="address-book">
 **Permissions Available:**
@@ -218,7 +251,11 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Control financial and billing access
 </Card>
+</CardGroup>
+<img src="/images/user-management/roles/permissions-4.png" alt="Permissions - Webhooks, Reports, Teams, Billing" className="rounded-lg border shadow-sm" />
 
+**Contact Tags, PowerList Tags, Trigger Hooks, AI, Voice Template**
+<CardGroup cols={3}>
 <Card title="🏷️ Contact Tags" icon="tag">
 **Permissions Available:**
 - View Contact Tag
@@ -251,18 +288,21 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Manage automation triggers and workflows
 </Card>
-</CardGroup>
-<img src="/images/user-management/roles/permissions-3.png" alt="Permissions Management Interface" className="rounded-lg border shadow-sm" />
-<Info>
-**Smart Permission Selection**: When you select any individual module, all sub-permissions within that module are automatically selected .
-</Info>
-<CardGroup cols={3}>
 <Card title="🤖 AI Management" icon="brain">
 **Permissions Available:**
-- View/Create/Delete AI Knowledge
-- View/Create/Delete AI Agent
-- View/Create/Delete AI Number
-- View/Create/Delete AI Agent Prompt
+- View AI Knowledge
+- Create AI Knowledge
+- Edit AI Knowledge
+- Delete AI Knowledge
+- View AI Agent
+- Create AI Agent
+- Delete AI Agent
+- View AI Number
+- Create AI Number
+- Delete AI Number
+- View AI Agent Prompt
+- Create AI Agent Prompt
+- Delete AI Agent Prompt
 - View AI Dashboard
 - View All AI Agent
 
@@ -278,12 +318,16 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Manage voice campaign templates
 </Card>
+</CardGroup>
+<img src="/images/user-management/roles/permissions-5.png" alt="Permissions - Contact Tags, PowerList Tags, Trigger Hooks, AI, Voice Template" className="rounded-lg border shadow-sm" />
 
+**10DLC, Voice Campaign, PowerList Notes, Spam Protection**
+<CardGroup cols={3}>
 <Card title="📱 10DLC Management" icon="tower-cell">
 **Permissions Available:**
-- View/View All/Add/Edit/Delete 10DLC Profile
-- View/View All/Add/Edit/Delete 10DLC Brand
-- View/View All/Add/Edit/Delete 10DLC Campaign
+- **10DLC Profile**: View 10DLC Profile, View All 10DLC Profile, Add 10DLC Profile, Edit 10DLC Profile, Delete 10DLC Profile
+- **10DLC Brand**: View 10DLC Brand, View All 10DLC Brand, Add 10DLC Brand, Edit 10DLC Brand, Delete 10DLC Brand
+- **10DLC Campaign**: View 10DLC Campaign, View All 10DLC Campaign, Add 10DLC Campaign, Edit 10DLC Campaign, Delete 10DLC Campaign
 
 **Use Case**: Manage SMS compliance and carrier requirements
 </Card>
@@ -299,11 +343,21 @@ The permissions interface provides granular control across 20+ system modules:
 
 <Card title="📝 PowerList Notes" icon="note-sticky">
 **Permissions Available:**
-- View/Add/Edit/Delete Powerlist Notes
+- View Powerlist Notes
+- Add Powerlist Notes
+- Edit Powerlist Notes
+- Delete Powerlist Notes
 - View All Powerlist Notes
 
 **Use Case**: Manage notes and annotations on contact lists
 </Card>
+
+
+</CardGroup>
+<img src="/images/user-management/roles/permissions-6.png" alt="Permissions - 10DLC, Voice Campaign, PowerList Notes, Spam Protection" className="rounded-lg border shadow-sm" />
+
+**Pipeline, Marketing, Knowledge Hub**
+<CardGroup cols={2}>
 
 <Card title="🛡️ Spam Protection" icon="shield-check">
 **Permissions Available:**
@@ -312,9 +366,7 @@ The permissions interface provides granular control across 20+ system modules:
 
 **Use Case**: Control spam protection settings and number management
 </Card>
-</CardGroup>
 
-<CardGroup cols={2}>
   <Card title="🔄 Pipeline" icon="timeline">
     **Permissions Available:**
     - View Pipeline
@@ -328,33 +380,56 @@ The permissions interface provides granular control across 20+ system modules:
 
     **Use Case**: View or analyze marketing data and campaigns
   </Card>
-</CardGroup>
 
-<CardGroup cols={1}>
   <Card title="📚 Knowledge Hub" icon="book">
     **Permissions Available:**
     - View Knowledge Hub
-    - Create Knowledge File
-    - Edit Knowledge File
-    - Delete Knowledge File
+    - Create Knowledge Hub
+    - Edit Knowledge Hub
+    - Delete Knowledge Hub
     - Build Knowledge Hub
-    - Manage Knowledge File Assignments
+    - Join Knowledge Hub
     - Manage Knowledge Hub Categories
-    - Admin Knowledge Hub
-    - Manage Knowledge Hub Column
+    - Manage Knowledge Hub Lessons
+    - Manage Knowledge Hub Assignments
+    - Manage Knowledge Hub Quizzes
 
-    **Use Case**: Control all operations and management within the Knowledge Hub, including file CRUD (Create, Read, Update, Delete), assignments, categorization, building, and admin tasks.
+    **Use Case**: Control all operations and management within the Knowledge Hub, including CRUD operations, lessons, assignments, quizzes, and categorization.
   </Card>
 </CardGroup>
+<img src="/images/user-management/roles/permissions-7.png" alt="Permissions - Pipeline, Marketing, Knowledge Hub" className="rounded-lg border shadow-sm" />
 
-<CardGroup cols={1}>
+**Universal Search, Workflow, DND Numbers**
+<CardGroup cols={2}>
   <Card title="🔎 Universal Search" icon="search">
     **Permissions Available:**
     - View Universal Search
 
     **Use Case**: Access and use global platform-wide search capabilities
   </Card>
+
+  <Card title="⚙️ Workflow" icon="diagram-project">
+    **Permissions Available:**
+    - View Workflow
+    - Add Workflow
+    - Edit Workflow
+    - Delete Workflow
+    - View Workflow Execution Log
+
+    **Use Case**: Manage workflow automation and execution logs
+  </Card>
+
+  <Card title="🔕 DND Numbers" icon="bell-slash">
+    **Permissions Available:**
+    - View DND
+    - Add DND
+    - Edit DND
+    - Delete DND
+
+    **Use Case**: Manage Do Not Disturb number lists and preferences
+  </Card>
 </CardGroup>
+<img src="/images/user-management/roles/permissions-8.png" alt="Permissions - Universal Search, Workflow, DND Numbers" className="rounded-lg border shadow-sm" />
 
 ## 🔄 Role Management Workflow
 
@@ -375,7 +450,7 @@ graph TD
     
     E --> K[✅ Select Module Permissions]
     K --> L[🔍 Review Permission Set]
-    L --> M[💾 Apply Changes]
+    L --> M[💾 Assign / Apply Changes]
     
     F --> N[📝 Update Role Information]
     N --> O[💾 Save Changes]
@@ -418,7 +493,7 @@ graph TD
 
 - **Method**: Check boxes for allowed actions
 - **Principle**: Grant minimum necessary permissions
-- **Categories**: 20+ module categories available
+- **Categories**: 25+ module categories available
 - **Granularity**: View/Add/Edit/Delete for each module
 </Step>
 
@@ -431,55 +506,3 @@ graph TD
 </Step>
 </Steps>
  
-
-## 📈 Role Statistics & Insights
-
-<CardGroup cols={3}>
-<Card title="🎭 Total Roles" icon="shield">
-**Current Count**: Track active roles
-**Growth Rate**: Monitor role creation trends
-**Utilization**: Measure role assignment rates
-</Card>
-
-<Card title="👥 Role Usage" icon="users">
-**Most Popular**: Identify commonly used roles
-**Underutilized**: Find unused or obsolete roles
-**Assignment Trends**: Track role distribution
-</Card>
-
-<Card title="🔐 Permission Analysis" icon="lock">
-**Permission Distribution**: Analyze permission usage
-**Security Gaps**: Identify overly permissive roles
-**Optimization**: Suggest permission improvements
-</Card>
-</CardGroup>
-
-
-
-## 🔗 Related Features ##
-
-<CardGroup cols={2}>
-<Card title="👥 Users Management" icon="users">
-**Connection**: Users are assigned specific roles
-**Navigation**: `User Management > Users`
-**Purpose**: Apply roles to individual user accounts
-</Card>
-
-<Card title="👥 Teams Management" icon="user-group">
-**Connection**: Teams can have role-based access
-**Navigation**: `User Management > Teams`
-**Purpose**: Organize users with similar roles
-</Card>
-
-<Card title="🔐 Permission Auditing" icon="clipboard-check">
-**Connection**: Track permission changes and usage
-**Navigation**: System logs and audit trails
-**Purpose**: Monitor security and compliance
-</Card>
-
-<Card title="📊 Access Reports" icon="chart-bar">
-**Connection**: Generate role and permission reports
-**Navigation**: Reports section
-**Purpose**: Analyze access patterns and security
-</Card>
-</CardGroup>

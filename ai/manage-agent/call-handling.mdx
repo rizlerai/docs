@@ -18,31 +18,23 @@ Fine-tune how your AI agent handles call re-attempts to maximize connection rate
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/voice-settings.png"
-  alt="Call Handling Overview"
+  alt="Redial Settings UI"
   className="rounded-lg border shadow-sm"
 />
 
-- **Number of Re-Attempts:** Choose how many times (0–5) to retry a call if not answered.
-- **Redial Delay:** Set the pause (e.g., 1–20 minutes) between redial attempts.
-- **Redial Conditions:** Define scenarios that trigger a retry—e.g., no answer, busy signal, or only after specific failures.
-- **Redial After Voicemail:** Control whether the agent retries after detecting a voicemail (*Yes* or *No*).
-- **Change Redial Agent:** Optionally assign follow-up calls to a different agent for better answer rates.
+**Redial Configuration Options:**
 
----
+| Setting                   | Value/Description                              |
+|---------------------------|------------------------------------------------|
+| **Enable Redial**         | Toggle to turn redial attempts on or off       |
+| **Redial After**          | Number of times to retry (e.g., 1–5)           |
+| **Redial on Voicemail**   | Yes/No – Retry if voicemail is reached         |
+| **Redial Agent**          | Yes/No – Assign another agent for retry        |
+| **Local Presence**        | Yes/No – Use local presence when redialing     |
 
-## ⏱️ Call Duration
+_Example: The interface includes a redial toggle, options for redial count, voicemail redial behavior, agent reassignment, and use of local presence, as shown above._
 
-Set parameters for how long calls should last and how silence is managed.
 
-- **Max Call Duration:** Limit the maximum length of a call (e.g., 5–30 minutes).
-- **Silence Detection:** Automatically end the call if no speech is detected for a set period (e.g., 10 seconds).
-- **Pause Before Speaking:** Adjust how long the agent waits before speaking after the call is picked up, ensuring a natural start.
-
-<img
-  src="/images/ai/AI-agent/edit/call-handling/call-duration.png"
-  alt="Call Duration Settings"
-  className="rounded-lg border shadow-sm"
-/>
 
 ---
 

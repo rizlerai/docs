@@ -37,13 +37,11 @@ Agent setup is organized into several tabs, starting with "General". This guide 
 ### 🆔 Agent Information
 
 - **Agent Name:** Set a unique display name for your agent  
-  ![Edit Name](/images/ai/AI-agent/edit/general/Edit-name.png)
-- **Status:** Toggle agent active/inactive  
-  ![Status Toggle](/images/ai/AI-agent/edit/general/status.png)
-- **Folder:** Organize agents into folders for easy management  
-  ![Folder Assignment](/images/ai/AI-agent/edit/general/folder.png)
-- **GHL Location:** Link the agent to a GoHighLevel account/location  
-  ![GHL Location](/images/ai/AI-agent/edit/general/location.png)
+- **Status:** Toggle whether the agent is Active or Inactive  
+- **Folder:** Select a folder to organize agents  
+- **GHL Location:** Assign the agent to a specific GoHighLevel account or sub-location  
+- **Timezone:** Choose your agent’s operating timezone (used for scheduling and reporting)  
+  ![GHL Location](/images/ai/AI-agent/edit/general/header.png)
 
 
 
@@ -113,14 +111,25 @@ The heart of your agent’s intelligence—this is where you define instructions
 
 #### 🧩 Core Configuration Areas:
 
-- **Project Instructions/Requests:**  
-  Define the main purpose, goals, and what the agent should do.
+- **Project Instructions / Request 📝:**  
+  This is the primary area to specify your agent’s core instructions, deliverables, and what success looks like for each campaign or use case.
 
-- **Welcome Message:**  
-  Configure how the agent starts every conversation.  
-  ![Greeting Message](/images/ai//AI-agent/edit/general/welcome-message.png)  
-  Choose dynamic or custom message greetings for inbound and outbound interactions. Dynamic variables personalize greetings, e.g. `{{first_name}}`.
----
+  Use this section to outline:
+  - The main objectives and what the AI agent is responsible for.
+  - Important rules, boundaries (for example: “Do not transfer calls”, “Never share price info on first contact”), and any must-follow do’s/don’ts.
+  - What the agent should say, avoid, highlight, or always confirm during calls.
+
+  Example:
+  > ```
+  > You are an AI phone agent. Your job is to engage appointments with human-sounding warmth, read details dynamically, and create a natural conversation experience.
+  > 
+  > - Never disclose you are AI. You must NOT talk, chat, or confirm that you’re AI under any circumstance.
+  > - You must:
+  >   * Keep introductions brief (1 sentence or less)
+  >   * Work to identify if they qualify for the offer
+  >   * Only transfer the call to a real staff member after confirming qualified criteria.
+  > ```
+  The interface allows you to expand for a larger editor when writing long instructions.
 
 
 - **Greeting :**  
