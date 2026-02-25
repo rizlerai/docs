@@ -82,8 +82,9 @@ Analyze disposition data for performance insights and optimization
 | **ID** | `Number` | Unique identifier for each disposition | `1`, `2`, `3` |
 | **Disposition Name** | `String` | Clear, descriptive outcome label | `"Interested"`, `"Not Available"` |
 | **Setup Didn't Answer Button** | `Toggle` | **Auto-assign when call goes unanswered** | Enabled  / Disabled  |
+| **Setup Default Option** | `Toggle` | **Mark as the default disposition option** for quick selection | Enabled  / Disabled  |
 | **Call Status** | `Enum` | Current status of the disposition | `Completed`, `Answered`, `No`, `Ringing`, `Busy`, `Cancelled`, `In Progress`, `Failed`, `AMD` |
-| **Color Preview** | `Swatch` | Visual color indicator for the disposition<br/>Useful for quick recognition and workflow mapping | |
+| **Color Preview** | `Swatch` | Visual color indicator (text + background) for the disposition<br/>Useful for quick recognition and workflow mapping | |
 | **Created At** | `DateTime` | Timestamp of disposition creation | `09-13-2024 01:19 PM` |
 | **Action** | `Buttons` | Available operations for each disposition | `Edit`, `Delete` |
 
@@ -99,6 +100,11 @@ Analyze disposition data for performance insights and optimization
   - ✅ **Enable** for: No Answer, Busy, Voicemail
   - ❌ **Disable** for: Sale, Interested, Appointment Set
 - **Impact**: Reduces manual disposition assignment by 60-80%
+
+#### ⚙️ Setup Default Option
+- **Function**: Marks this disposition as the default option for quick selection
+- **Use Cases**: Enable for your most frequently used disposition (e.g., "Completed", "No Answer")
+- **Impact**: Speeds up disposition assignment during high-volume calling
 
 #### 📞 Call Status Options
 - **Completed**: ✅ Call finished with clear outcome
@@ -126,13 +132,13 @@ Creating new dispositions allows you to customize call outcome tracking to match
 | Field             | Description                                                                                             | Example / Notes                                                  |
 |-------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | **Disposition**   | Enter a clear, descriptive name for the call outcome.                                                  | "Interested", "Not Available", "Decision Maker Not Present"      |
-| **Assign role to view** | Assign which user roles can see/apply this disposition.<br/>Select one or more from the available roles. | (e.g. Admin, Agent)                                              |
+| **Assign role View** | Assign which user roles can see/apply this disposition.<br/>Select one or more from the available roles. | (e.g. Admin, Agent)                                              |
 | **GHL Location**  | Select the CRM (GoHighLevel) account location relevant to this disposition.                            | Allows CRM-specific tracking and analytics.                      |
-| **Fields For Notes** | Optional. Select additional note fields, typically available after setting a location.                  | Unique to each CRM location                                      |
-| **Text Color**    | Choose the text color for this disposition label in the interface.                                     | Example: White (`#FFFFFF`)                                       |
-| **Background Color** | Select a background color for the disposition button.<br/>Aids in quick visual identification in call logs and workflow mapping. | Example: Blue (`#0000FF`)                                        |
+| **Fields For Notes** | Optional. Select additional note fields, typically available after setting a location.<br/>*Requires GHL Location to be selected first.* | Unique to each CRM location                                      |
+| **Text Color** / **Select Text Color** | Choose the text color for this disposition label in the interface.                                     | Example: White (`#FFFFFF`)                                       |
+| **Background Color** / **Select Background color** | Select a background color for the disposition button.<br/>Aids in quick visual identification in call logs and workflow mapping. | Example: Blue (`#0000FF`), Green (`#00FF00`)                     |
 
-> The form includes all the above fields. "Assign role to view" allows you to select multiple roles. "Fields For Notes" dynamically appears once a GHL Location is selected. Use text and background color pickers to customize appearance for clarity in dashboards and call screens.
+> The form includes all the above fields in a two-column layout. **Assign role View** allows you to select multiple roles. **Fields For Notes** dynamically appears once a GHL Location is selected (shows "Select a location first" until then). Use the text and background color pickers to customize appearance for clarity in dashboards and call screens.
 
 **💡 Tip:**  
 Use consistent naming and color-coding conventions to make disposition outcomes intuitive and actionable for agents and managers.
@@ -150,10 +156,10 @@ Use consistent naming and color-coding conventions to make disposition outcomes 
 > **✏️ Edit Disposition Example:**  
 > The form lets you modify all disposition properties, including:
 > - **Disposition:** Name (e.g., "dev")
-> - **Assign role to View:** Multi-role selection (e.g., Agent, dev)
+> - **Assign role View:** Multi-role selection (e.g., Agent, dev)
 > - **GHL Location:** Select relevant CRM/account
 > - **Fields For Notes:** Appears after location is selected
-> - **Text Color & Background Color:** Color pickers for customizing the label/button
+> - **Text Color & Background Color** / **Select Text Color & Select Background color:** Color pickers for customizing the label/button
 > - **Submit:** Save changes after editing
 > 
 > Use the **Back** button to return to the disposition list without saving changes.

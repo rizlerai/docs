@@ -4,23 +4,41 @@ description: 'Configure social media authentication and third-party integrations
 icon: 'share-nodes'
 ---
 
-Easily integrate your account with popular social platforms like Google for seamless authentication and access management.
+Easily connect your account to leading social platforms such as Google for streamlined sign-in and frictionless access control.
 
-![Social Sign In](/images/settings/social-sign/image1.png)
+![Social Sign In](/images/settings/social-sign/image-1.png)
 
 ## 🔗 LeadConnector Integration
 
-Easily manage and configure your LeadConnector (Go HighLevel) locations and agent assignments.
+Manage your Go HighLevel (LeadConnector) locations and AI agent assignments from a unified interface.
 
-- **Location:** Name or title of the Go HighLevel (LeadConnector) location.
-- **Agent Name Field:** Select or assign the agent name (or "Not Public Available" if restricted).
-- **Default:** Mark as the default location using a switch or toggle.
-- **Sync Contact:** Choose the scope to sync contacts (e.g., All, Answered, No).
-- **Assign User ID:** Toggle to enable or disable user ID assignment.
-- **Action:** Instantly "Re-Connect" or "Disconnect" each location integration.
+### Table Overview
 
-<small>
-*Click "Connect New" to add another Go HighLevel (LeadConnector) integration.*
-</small>
+The LeadConnector Integration panel (see below) displays all your connected Go HighLevel locations with detailed controls for each:
 
-![Social Sign In](/images/settings/social-sign/image2.png)
+| Location                | Agent Name Field           | Default | Sync Contact | Assign User ID | Action                   |
+|-------------------------|---------------------------|---------|--------------|----------------|--------------------------|
+| `ioJeiPR1uloS2FVwmnEb`  | Select Field (dropdown)   | ⬜      | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
+| Rider Dev               |                           |         |              |                |                          |
+| `HIJ4DiCHCHyKPvFP5R`    | No Fields Available       |         | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
+| CHL AIR: Review Trading |                           |         |              |                |                          |
+| `wLnZPr9g4uWFwE92IDS`   | Select Field (dropdown)   | ⬜      | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
+| Rider Dev 2             |                           |         |              |                |                          |
+
+**Interface Details:**
+- **Location:** Displays the internal unique code or name for Go HighLevel (LeadConnector) locations.
+- **Agent Name Field:** Lets you select or assign an agent to handle processes related to this location. If no agent is assignable, shows "No Fields Available".
+- **Default:** Use the switch to mark a location as default.
+- **Sync Contact:** Set contact sync scope (e.g., All, Answered, or No sync).
+- **Assign User ID:** Toggle Yes/No to enable or disable user ID assignment for synced contacts.
+- **Action:** Instantly "Re-Connect" to refresh integration, or "Disconnect" to remove the connection.
+
+<Callout type="info">
+To add a new LeadConnector integration, click <b>Connect New</b>. For embedding this integration table or management panel in another platform, use the <b>Embedding Link</b> provided at the top-right of the interface.
+</Callout>
+
+**Additional Controls:**
+- <b>Showtest View:</b> Preview your current LeadConnector integrations.
+- <b>Embedding Link:</b> Generate a special URL to embed the integration management table into external tools or dashboards.
+
+![LeadConnector Integration Table](/images/settings/social-sign/image-3.png)
