@@ -215,19 +215,25 @@
             ]
           },
           {
+            "group": "Profile Settings",
+            "icon": "user-gear",
+            "pages": [
+              "profile-settings/personal-settings",
+              "profile-settings/password-settings",
+              "profile-settings/browser-sessions"
+            ]
+          },
+          {
             "group": "Settings",
             "icon": "gear",
             "pages": [
+              "settings/social-sign-in-integration",
               "settings/business-detail",
               "settings/whitelabel-settings",
-              "settings/personal-settings",
-              "settings/password-settings",
-              "settings/social-sign-in-integration",
               "settings/twilio-credentials",
               "settings/ai-settings",
               "settings/api-oath-setting",
-              "settings/working-hours",
-              "settings/browser-sessions"
+              "settings/working-hours"
             ]
           }
         ]
