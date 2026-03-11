@@ -35,25 +35,29 @@ The main Companies dashboard provides a comprehensive view of all registered com
 
 ### 📋 Data Columns
 
-| Column         | Purpose             | Description                                                         |
-|----------------|---------------------|---------------------------------------------------------------------|
-| **#️⃣**         | Row Number          | Sequential number for each company entry                            |
-| **🏢 Name**     | Company Identity    | Registered company name                                             |
-| **📧 Email**   | Contact Information | Company’s main email for communication and login                    |
-| **🏷️ Account Type** | Classification    | Designation of the business type (e.g., Company)                    |
-| **📞 VOIP**    | Service Status      | Indicates if VOIP is enabled for the company (asks for confirmation before activation) |
-| **🟢 Status**  | Account State       | Current status: Active, Inactive, or Pending                        |
-| **👤 Added By**| Creator Tracking    | Username of the person who created the company account              |
-| **🗓️ Created At** | Timestamp           | Date and time when the company was added                            |
-| **⚙️ Action**  | Operations          | Actions available: Login, Edit, Delete                              |
+| Column                 | Purpose                        | Description                                                                                  |
+|------------------------|--------------------------------|----------------------------------------------------------------------------------------------|
+| **#**                  | Row Number                     | Sequential ID of each company in the listing             
+| **Action**             | Actions                       | Available actions: Login ,Manage subscription , Edit , Billing / Renewal , Balance / Add Money                                       |                                    |
+| **Name**               | Company Name                   | Official registered name of the company                                                      |
+| **Email**              | Company Email                  | Primary email for the company – used for login and communication                             |
+| **Account Type**       | Type                           | Specifies the category (e.g., Company, Agency)                                               |
+| **VOIP**               | VOIP Code / Identifier         | System-generated unique VOIP code assigned to each company for telephony integration         |
+| **Status**             | Account Status                 | Shows if the account is Active, Inactive, or Pending                                         |
+| **Availability**       | Package Type                   | Displays related company package or subscription status                                      |
+| **Added By**           | Added By                       | User who added or registered the company                                                     |
+| **Created At**         | Registration Date              | Date and time when the company was registered                                                |
+
 
 ### 🎛️ Action Controls
 ![Add Company Form](/images/business-management/companies/actions.png)
 **🛠️ Available Actions**
-- **🔑 Login**: Direct impersonation access to company account
-- **✏️ Edit**: Modify company information and settings
-- **🗑️ Delete**: Remove company account (with confirmation)
-- **➕ Add**: Create new company accounts
+- **🔑 Login**: Access the company dashboard as that company (impersonation mode)
+- **💡 Manage Subscription**: View, modify, or renew the company's subscription plan
+- **✏️ Edit**: Update company information and configuration settings
+- **💰 Balance / Add Money**: Add funds to company balance or review current balance details
+- **📄 Billing / Renewal**: Manage billing details, view invoice history, or renew services
+- **🗑️ Delete**: Remove a company account (action requires confirmation)
 
 
 
