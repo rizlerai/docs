@@ -60,19 +60,49 @@ Decide how your agent responds when a voicemail is reached.
 />
 
 ---
-## ⏳ Call Duration & Silence Settings
+## ⏳ Call Duration, Transfer, Silence, and Pre-Conversation Media
 
-Visually configure key parameters that define how long your AI agent's calls last and how silence is managed. Use sliders to set thresholds for end-of-call silence, max call length, and how long your agent pauses before speaking.
+Easily configure advanced controls to shape each call’s flow and quality, letting you deliver efficient, natural conversations and improved user experience.
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/call-duration.png"
-  alt="Call Duration & Silence Settings (UI Sliders)"
+  alt="Call Duration, Transfer & Silence Management Interface"
   className="rounded-lg border shadow-sm"
 />
 
-**Features:**
-- **End Call on Silence:** Specify the duration of continuous silence (in seconds) that ends a call (e.g., 10s).
-- **Max Call Duration:** Set a maximum allowed time for any call handled by the agent (e.g., 15 minutes).
-- **Pause Before Speaking:** Adjust how long the agent waits before saying the first word after the call is answered (e.g., 0–5 seconds).
-  
-_Use these settings to ensure natural timing, prevent accidental hang-ups, and provide a seamless experience._
+**Key Settings:**
+
+- **Max Call Duration:** Set a maximum time limit for each call (e.g., up to 15 minutes). Once the limit is reached, the call will end automatically—useful for managing system resources and agent availability.
+- **Max Duration in Transfer:** Define a separate maximum duration for agent-to-agent or number transfer scenarios (e.g., if your AI agent transfers a call, you can limit how long the transferred call stays connected).
+
+### 🤫 Silence Management
+
+Silence management lets you define how your AI agent should react if there is no speech detected from the contact or after the agent finishes speaking. You can set a **silence timeout**—for example, if there is no response from the caller for a certain number of seconds, the agent can react by re-prompting, ending the call, or handling the situation in another way. This ensures calls are active, reduces time wasted on abandoned calls, and creates a more lifelike interaction.
+
+<img
+  src="/images/ai/AI-agent/edit/call-handling/silence-management.png"
+  alt="Silence Management Interface"
+  className="rounded-lg border shadow-sm"
+/>
+
+**How silence management works:**
+- Specify the maximum allowed silence duration (e.g., 5–30 seconds).
+- Pick what the agent does after silence—repeat a question, end the call, or take a custom action.
+- Prevents awkward pauses and helps move conversations forward efficiently.
+
+---
+
+### 🎵 Pre-Conversation Media
+
+Pre-conversation media lets you play an audio clip to the recipient before your AI agent starts speaking (for example, a ringtone, introduction, or compliance notice). This feature helps set expectations for the call and meets regulatory or branding needs.
+
+You can upload or select an audio file to play automatically before the main conversation begins.
+
+**Benefits:**
+- Creates a professional first impression and smoother call start.
+- Supports compliance—play a legal disclaimer, greetings, or branding intro automatically.
+
+*Both silence management and pre-conversation media can be tailored in your AI agent’s call handling settings for the ideal experience on every call.*
+
+
+_These customizable options help reduce abandoned calls, ensure compliance, create a more comfortable start to conversations, and allow fine-tuned silence tolerance for more human-like interactions._
