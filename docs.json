@@ -35,7 +35,8 @@
             "pages": [
               "dialer/predictive-dialer",
               "dialer/power-dialer",
-              "dialer/incoming-call-routing"
+              "dialer/incoming-call-routing",
+              "dialer/outbound-call-routing"
             ]
           },
           {

@@ -1,0 +1,71 @@
+---
+title: "Outbound Call Routing"
+description: "Understand how Local Presence affects caller ID matching and outbound batch dialing."
+icon: "phone-arrow-up-right"
+---
+
+![Outbound Call Routing Profile Settings](/images/dialer/outbound-call-routing/overview.png)
+
+
+This guide explains **Local Presence** in the Dialer so you can choose the right setting for your outbound calls.
+
+## 📞 What is Local Presence?
+
+**Local Presence** helps you display a caller ID that matches the contact's area code when you place outbound calls. Many teams use this because people are more likely to answer calls that appear to come from their own region.
+
+## 🔎 Where to Find the Setting
+
+In the Dialer, locate the **Local Presence** dropdown (options: **Yes** / **No**).
+
+Local Presence also works together with your **Calling From** (or **From Number**) selection, which determines what caller ID is used for the outbound leg.
+
+## ⚙️ How It Works
+
+### ✅ When Local Presence is Set to Yes
+
+<Warning>
+To enable area-code matching, you must also set **Calling From** to **Calling From AI Local Presence**.
+</Warning>
+
+When both settings are correct:
+
+- Outbound calls will use a **caller ID matched to the contact's area code** (when that matching is available for your account and numbers).
+- Dialing is performed **region by region for the batch** so the dialed caller ID can line up with the contacts in that region.
+- If a region does not have enough ready contacts to fill a full batch, you may receive a **smaller batch**.
+  - The system **does not pad** that same round with contacts from other regions just to meet the batch size.
+
+### 🚫 When Local Presence is Set to No
+
+When you set Local Presence to **No**:
+
+- You are not asking the dialer to match caller ID to each contact's area code for this dialing session.
+- The dialer uses your normal **Calling From** choice (for example your main company number or another configured outbound line).
+- Dialing order is still based on your power list in a sensible sequence.
+- If the "busiest" region does not have enough ready contacts for a full round, the system **can add more contacts from other regions within the same batch**. This helps you stay closer to your configured **dial at a time** behavior instead of stopping short.
+
+## 🤔 Choosing Between Yes and No
+
+Choose **Yes** when caller-ID region matching is a priority and you can accept that some batches may be smaller.
+
+Choose **No** when you care more about maintaining dial pacing (filling rounds/batches) than strictly tying every call to a local-looking caller ID.
+
+<Tip>
+If you are primarily optimizing answer rate via local-looking caller IDs, start with **Yes** and confirm that your **Calling From AI Local Presence** configuration is available for your account numbers.
+</Tip>
+
+## 🧑‍🔬 Practical Examples
+
+### 🟦 Example 1: Region A Has Few Ready Contacts
+
+- **Local Presence = Yes**: the dialer focuses on Region A for the batch, so the system may send fewer calls than the full batch size.
+- **Local Presence = No**: the dialer can pull additional contacts from other regions to keep the batch/full round closer to the configured pacing.
+
+### 🟧 Example 2: Area-Code Matching Is Not Available
+
+If area-code matching is not available for the contact's area code (based on your account and numbers), Local Presence cannot guarantee the matched caller ID behavior. In that case, the dialer falls back to your configured outbound caller ID behavior for the session.
+
+## 🛠️ Troubleshooting Checklist
+
+- If you set **Local Presence = Yes** but do not see expected local caller IDs, verify that **Calling From** is set to **Calling From AI Local Presence**.
+- If your batches are unexpectedly small, note that **Yes** mode does not pad a region with other regions to reach full batch size.
+
