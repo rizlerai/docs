@@ -1,265 +1,176 @@
 ---
 title: "Voice Campaigns"
-description: "Create, manage, and execute voice marketing campaigns with automated calling and AI-powered interactions"
 icon: "bullhorn"
 ---
 
-# 📢 Voice Campaigns
 
-Launch powerful voice marketing campaigns with automated calling, AI-powered conversations, and comprehensive performance tracking to reach your audience at scale.
-
-## 📋 Campaign Overview
+This guide explains **Voice Campaigns** in simple languages: what the area does, how to set up campaigns, what each action means, and how to read campaign reports.
 
 <img
   src="/images/manage/voice-compaign/overview.png"
-  alt="Voice Campaign Interface"
+  alt="Voice Campaign list screen"
   className="rounded-lg border shadow-sm"
 />
 
-Manage all your voice campaigns from a centralized dashboard with detailed scheduling, performance tracking, and comprehensive campaign controls.
+Voice Campaign is where you set up outbound voice dialing campaigns, choose how they run, and review call results for each campaign.
 
-### 📊 Campaign Fields
+You can run campaigns in two main ways:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Campaign ID | `1`, `2`, `3` |
-| **Title** | Campaign name | `dev`, `Dev Testing 2`, `Testing` |
-| **Start Time** | Daily start time | `08:14:00`, `04:19:00` |
-| **End Time** | Daily end time | `21:18:00`, `10:24:00` |
-| **Start Date** | Campaign start date | `2025-03-07`, `2025-04-21` |
-| **End Date** | Campaign end date | `2025-03-13`, `2025-04-22` |
-| **Status** | Campaign status | `completed`, `active`, `paused` |
-| **Campaign Type** | Calling strategy | `predictive` |
-| **Calls Per Hour** | Call frequency rate | Configurable calling rate |
-| **Created At** | Creation timestamp | `03-25-2025 06:13 PM` |
-| **Action** | Available operations | `Edit` `Delete` `View Details` `Start` `Speed Dial` |
+- **AI mode**: automated assistant profile handles or places calls.
+- **Predictive mode**: dialing is tuned for live agents, usually using a voice template.
 
 
+## 📋 Main list (Voice Campaign)
 
-## ➕ Creating Voice Campaigns
+You land on a table of all voice campaigns for your company. Each row is one campaign.
 
-### 🎯 Campaign Setup
- <img
-  src="/images/manage/voice-compaign/add.png"
-  alt="Voice Campaign Interface"
-  className="rounded-lg border shadow-sm"
-/>
-<CardGroup cols={2}>
-  <Card title="Campaign Title" icon="tag">
-    Give your campaign a clear, descriptive name
-    <br />**Example**: "Holiday Promotion", "Lead Follow-up"
-  </Card>
-  
-  <Card title="AI Agents" icon="robot">
-    Select the AI agent for your voice campaign
-    <br />**Agent**: Choose from available AI agents
-    <br />**Configuration**: Agent-specific settings and behavior
-  </Card>
-  
-  <Card title="Power List" icon="list">
-    Choose your contact list for the campaign
-    <br />**List**: Select from available power lists
-    <br />**Contacts**: Review target audience and contact count
-  </Card>
-  
-  <Card title="Calls Per Hour" icon="gauge">
-    Set the calling rate to control campaign pace
-    <br />**Rate**: Number of calls attempted hourly
-    <br />**Optimization**: Balance volume with quality
-  </Card>
-  
-  <Card title="Call Staggering" icon="clock">
-    Configure delay between consecutive calls in seconds
-    <br />**Delay Setting**: Time interval between each outbound call
-    <br />**Optimal Spacing**: Prevent call clustering and improve answer rates
-  </Card>
+### 🧾 Columns on the list
+
+| What you see | What it means |
+|--------------|----------------|
+| **#** | Row number in the table. |
+| **Title** | The name you gave the campaign. |
+| **Start Time / End Time** | Scheduled window (if your organization uses these values). |
+| **Start Date / End Date** | Date range (if used). |
+| **Status** | Campaign state (for example pending, in progress, pause, completed). |
+| **Campaign Type** | **AI** or **Predictive** mode. |
+| **Calls Per Hour** | For AI campaigns, target call rate (often blank for predictive). |
+| **Created At** | Created date/time in your timezone. |
+| **Action** | Row-level controls (Edit, Delete, View, Start/Pause, Speed Dial). |
+
+### ⚡ Actions on each row
+
+- **Add Voice Campaign** (top button): opens form for a new campaign.
+- **Edit**: updates campaign settings (usually hidden after completion).
+- **Delete**: removes campaign after confirmation.
+- **View** (eye icon): opens **Voice Campaign Report** for that campaign.
+- **Start**: shown when campaign is pending or paused.
+- **Pause**: shown when campaign is in progress.
+- **Speed Dial**: shown for predictive campaigns that are not completed.
 
 
-  
-  <Card title="Actions" icon="gear">
-    Available campaign management operations
-    <br />**Edit**: Modify campaign settings and parameters
-    <br />**Delete**: Remove campaign permanently
-    <br />**View Details**: Monitor performance and analytics
-  </Card>
-</CardGroup>
-## 👁️ Campaign Details View
+
+
+
+## ➕ Add or edit a campaign
+
+Use **Add Voice Campaign** for new entries or **Edit** on an existing row.
+
 <img
-  src="/images/manage/voice-compaign/details.png"
-  alt="Voice Campaign Details Interface"
+  src="/images/manage/voice-compaign/add.png"
+  alt="Add Voice Campaign form"
   className="rounded-lg border shadow-sm"
 />
 
-View comprehensive campaign performance with real-time analytics, call status tracking, and detailed reporting dashboard.
+### 🏷️ Title
 
-### 📊 Campaign Performance Metrics
+- Required field.
+- Should be unique among your company campaigns.
+- Duplicate names fail save with an error.
 
-| Metric | Description | Value |
-|--------|-------------|-------|
-| **Campaign Status** | Current campaign state | `Active`, `Paused`, `Completed` |
-| **Attempted** | Total calls attempted | `0` (Red indicator) |
-| **No Answer** | Calls with no response | `0` (Red indicator) |
-| **Busy** | Busy signals received | `0` (Yellow indicator) |
-| **Voicemail** | Voicemail detections | `0` (Blue indicator) |
-| **Dropped** | Dropped/failed calls | `0` (Gray indicator) |
+### 📇 Powerlist
+
+- Select one or more contact lists.
+- These lists provide the numbers the campaign can call.
+
+### 🎛️ Campaign type
+
+#### 🤖 AI
+
+- **AI Agents**: choose assistant profile.
+- **Calls Per Hour**: optional target call rate.
+
+#### 👥 Predictive
+
+- **Agent**: use **All** or **Specific**.
+- **Voice Templates**: select outbound script/recording template.
+- **Specific Agents**: appears when Agent is set to Specific.
+
+When you switch campaign type, irrelevant fields are hidden or reset so only required fields remain.
+
+### ⏱️ Call staggering
+
+- Delay between call attempts (usually 1 to 10 seconds).
+- Helps reduce overlap and call congestion.
 
 
+### 💾 Saving behavior
 
-
-# ✏️ Edit  Voice Campaign
+- New campaign is usually created as **pending**.
+- You start actual dialing from the list using **Start**.
+- After successful save, list reloads and shows updated row.
 
 <img
   src="/images/manage/voice-compaign/edit.png"
-  alt="Voice Campaign Edit Interface"
+  alt="Edit Voice Campaign form"
   className="rounded-lg border shadow-sm"
 />
 
-Edit your voice campaign settings to refine targeting, pacing, and delivery. Through the edit interface, you can:
 
-- **Modify campaign details:** Update the campaign name, description, and associated power list.
-- **Adjust call parameters:** Set or change calls per hour, call staggering, and calling windows.
-- **Switch templates:** Change the voice template/audio message for the campaign.
-- **Review and update contacts:** Select or remove specific contacts or lists from the campaign.
 
-> **Tip:** Regularly reviewing your campaign settings helps maximize connect rates and ensures compliance with calling best practices.
+## ⚡ Speed Dial
 
-# ⚡ Speed Dial Feature
+Open **Speed Dial** from a predictive campaign row (when not completed).
 
 <img
   src="/images/manage/voice-compaign/speed-dial.png"
-  alt="Speed Dial Interface"
+  alt="Speed Dial configuration panel"
   className="rounded-lg border shadow-sm"
 />
 
-Use **Speed Dial** to instantly initiate rapid outbound calling sequences for select contacts or high-priority campaigns. This feature enables quick engagement without manual call-by-call dialing, ideal for urgent follow-ups or hot leads.
+**Purpose:** tune outbound intensity based on how many agents are available.
 
-- **How it works:**
-  - Select contacts or a power list and activate Speed Dial for immediate calling.
-  - Automated dialing proceeds at the highest allowable rate for your setup.
-  - Monitor live call progress and pause or stop at any time.
+Typical panel behavior:
 
-> **Tip:** Speed Dial is best suited for short-burst campaigns where immediate outreach is critical.
+- One column per agent-count level (for example 1 agent, 2 agents, etc.).
+- Each column shows **Agents**, **CPA**, and derived **Calls**.
+- Drag control to adjust CPA; Calls update automatically.
+- **+** adds an agent level.
+- **x** removes a level (first column usually cannot be removed).
 
-### 📈 Real-Time Analytics
+Depending on your setup, changes save automatically or on explicit save action.
 
-<CardGroup cols={3}>
-  <Card title="Call Progress" icon="chart-line">
-    Monitor live calling activity and completion rates
-    <br />**Updates**: Real-time status changes
-  </Card>
-  
-  <Card title="Success Metrics" icon="bullseye">
-    Track campaign effectiveness and conversion rates
-    <br />**KPIs**: Connect rate, response quality
-  </Card>
-  
-  <Card title="Performance Data" icon="chart-bar">
-    Detailed breakdown of call outcomes and timing
-    <br />**Analysis**: Hourly, daily, and total statistics
-  </Card>
-</CardGroup>
+When a campaign is first created, a default speed-dial setup is usually created in the background and can be edited later.
 
- 
- 
 
-### 📈 Campaign Lifecycle
 
-<Tabs>
-  <Tab title="Predictive Campaigns">
-    ```
-    🤖 AI-Powered Dialing:
-    - Intelligent call timing optimization
-    - Automatic answering machine detection
-    - Dynamic call rate adjustment
-    - Maximum agent utilization
-    
-    Best For:
-    ✅ High-volume outreach
-    ✅ Lead generation campaigns
-    ✅ Sales prospecting
-    ✅ Customer re-engagement
-    ```
-  </Tab>
-  
-  <Tab title="Progressive Campaigns">
-    ```
-    📋 Sequential Dialing:
-    - One call per contact at a time
-    - Systematic contact progression
-    - Detailed call outcome tracking
-    - Quality-focused approach
-    
-    Best For:
-    ✅ High-value prospects
-    ✅ Personalized outreach
-    ✅ Complex sales processes
-    ✅ Relationship building
-    ```
-  </Tab>
-  
-  <Tab title="Manual Campaigns">
-    ```
-    👤 Human-Controlled Dialing:
-    - Agent-initiated calls
-    - Complete call control
-    - Custom conversation flows
-    - Immediate response handling
-    
-    Best For:
-    ✅ VIP customers
-    ✅ Complex negotiations
-    ✅ Sensitive communications
-    ✅ Custom requirements
-    ```
-  </Tab>
-</Tabs>
+## 📊 Voice Campaign Report
 
- 
+Open report with the **eye icon** on a campaign row.
 
-### 📅 Time Management
+The report page is campaign-specific and usually shows breadcrumb:
 
-<Tabs>
-  <Tab title="Daily Schedule">
-    ```
-    🕐 Operating Hours:
-    - Start Time: 08:00 AM
-    - End Time: 06:00 PM
-    - Lunch Break: 12:00-1:00 PM
-    - Time Zone: Automatic detection
-    
-    📞 Call Frequency:
-    - Calls Per Hour: 50-200 (adjustable)
-    - Retry Attempts: 3 maximum
-    - Retry Delay: 4 hours minimum
-    ```
-  </Tab>
-  
-  <Tab title="Weekly Pattern">
-    ```
-    📋 Weekly Schedule:
-    - Monday-Friday: Full operation
-    - Saturday: Reduced hours (optional)
-    - Sunday: No calling (compliance)
-    
-    🎯 Peak Performance Times:
-    - Morning: 10:00 AM - 12:00 PM
-    - Afternoon: 2:00 PM - 4:00 PM
-    - Evening: 6:00 PM - 8:00 PM
-    ```
-  </Tab>
-  
-  <Tab title="Holiday Management">
-    ```
-    🎉 Holiday Handling:
-    - Federal Holidays: Automatic suspension
-    - Custom Blackouts: User-defined dates
-    - Regional Holidays: Location-aware pausing
-    
-    ⚙️ Automatic Adjustments:
-    - Schedule resumption post-holiday
-    - Make-up call redistribution
-    - Campaign duration extension
-    ```
-  </Tab>
-</Tabs>
+`Manage -> Voice Campaign Report -> [Campaign Title]`
+
+<img
+  src="/images/manage/voice-compaign/details.png"
+  alt="Voice Campaign details and monitoring view"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 🔎 Filters at the top
+
+Use filters to control which calls appear in both summary tiles and the log table.
+
+- **Date Range**: presets like today, yesterday, this week, last 7 days, this month, last month, and custom.
+- **Start Date / End Date**: mainly used when custom range is enabled.
+- **Call Status**: All, Answered, Completed, Busy, No-answer, Failed, Missed Call, Cancel (labels can vary by setup).
+- **Min Duration**: lower bound in seconds.
+- **Max Duration**: upper bound or No Limit.
+- **Call Direction**: All / Inbound / Outbound.
+- **Agents**: all or specific agent; may show setup notice if team is unavailable.
+- **Filter** button: applies all selected criteria.
+
+### 📈 Summary cards
+
+Five quick counters typically show:
+
+- **Answered**
+- **No Answer**
+- **Busy**
+- **Voicemail**
+- **Dropped**
+
+These update after filter application and report reload.
+
 
