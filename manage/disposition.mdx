@@ -1,264 +1,197 @@
 ---
 title: "Disposition"
-description: "Complete guide to call disposition workflow, fields, and practical usage for effective call outcome tracking"
+description: "User guide for creating, managing, and using call dispositions with defaults, statuses, colors, and role access."
 icon: "list-check"
 ---
 
 <img
   className="block dark:hidden rounded-lg border shadow-sm"
   src="/images/manage/disposition/overview.png"
-  alt="Disposition Overview Interface"
+  alt="Disposition list view"
 />
 <img
   className="hidden dark:block rounded-lg border shadow-sm"
   src="/images/manage/disposition/overview.png"
-  alt="Disposition Overview Interface"
+  alt="Disposition list view"
 />
 
-Call dispositions are the backbone of effective call tracking and outcome analysis. This guide covers everything you need to know about disposition workflow, field management, and practical applications.
+---
 
-## 🔄 Disposition Workflow
+## 📋 Overview
 
-Understanding the disposition workflow is crucial for maximizing call tracking effectiveness:
+**Disposition** is where you name and organize labels for how call results are recorded in your workspace. Each entry is one label (for example **Interested**, **Callback**, **Not Interested**).
 
-```mermaid
-flowchart TD
-    A[📞 Call Initiated] --> B{Call Connected?}
-    B -->|Yes| C[💬 Conversation Starts]
-    B -->|No| D[📋 Auto-Disposition]
-    
-    C --> E{Call Outcome}
-    E -->|Positive| F[✅ Success Disposition]
-    E -->|Negative| G[❌ Unsuccessful Disposition]
-    E -->|Follow-up Needed| H[📅 Callback Disposition]
-    
-    D --> I[📊 System Analysis]
-    F --> J[📈 Performance Tracking]
-    G --> J
-    H --> K[⏰ Schedule Follow-up]
-    
-    I --> L{Auto-Classification}
-    L -->|No Answer| M[📵 No Answer]
-    L -->|Busy Signal| N[📞 Busy]
-    L -->|Voicemail| O[📧 Voicemail]
-    
-    J --> P[📊 Analytics & Reporting]
-    K --> P
-    M --> P
-    N --> P
-    O --> P
-```
+You can decide:
 
-### 🎯 Workflow Stages
+- The **name** of the outcome label.
+- Which **roles** can use that label.
+- Which **GHL location** and **notes field** it ties to.
+- How it **looks** (text and background colors).
+- Whether it is the **Didn't Answer default**.
+- Whether it is the **general default option**.
+- Which **Call Status** it maps to.
 
-<Card title="Pre-Call Setup" icon="gear">
-Configure disposition options and auto-assignment rules before initiating calls
-</Card>
+Repeated for clarity: one disposition record = one outcome label + visibility + behavior + color + call-status link.
 
-<Card title="During Call" icon="phone">
-Monitor call progress and prepare for outcome classification
-</Card>
+---
 
-<Card title="Post-Call Action" icon="clipboard-check">
-Assign appropriate disposition and trigger follow-up actions
-</Card>
+## 📑 Main list
 
-<Card title="Analytics Review" icon="chart-bar">
-Analyze disposition data for performance insights and optimization
-</Card>
-
-## 📋 Disposition Fields
-
-**🧩 Core Fields Overview**
+The main table shows all dispositions for your organization.
 
 <img
   src="/images/manage/disposition/actions.png"
-  alt="Disposition Status Configuration"
+  alt="Disposition table with toggles, status, color preview, and actions"
   className="rounded-lg border shadow-sm"
 />
 
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| **ID** | `Number` | Unique identifier for each disposition | `1`, `2`, `3` |
-| **Disposition Name** | `String` | Clear, descriptive outcome label | `"Interested"`, `"Not Available"` |
-| **Setup Didn't Answer Button** | `Toggle` | **Auto-assign when call goes unanswered** | Enabled  / Disabled  |
-| **Setup Default Option** | `Toggle` | **Mark as the default disposition option** for quick selection | Enabled  / Disabled  |
-| **Call Status** | `Enum` | Current status of the disposition | `Completed`, `Answered`, `No`, `Ringing`, `Busy`, `Cancelled`, `In Progress`, `Failed`, `AMD` |
-| **Color Preview** | `Swatch` | Visual color indicator (text + background) for the disposition<br/>Useful for quick recognition and workflow mapping | |
-| **Created At** | `DateTime` | Timestamp of disposition creation | `09-13-2024 01:19 PM` |
-| **Action** | `Buttons` | Available operations for each disposition | `Edit`, `Delete` |
+| Column | Meaning |
+|--------|---------|
+| **#** | Row number. |
+| **Disposition** | Label name. This name must be unique in your organization. |
+| **Setup Didn't Answer Button** | Toggle for the auto-choice used when a call is treated as “didn't answer.” Only one disposition can be active at a time. |
+| **Setup Default Option** | Toggle for your organization's general default disposition. Only one can be active at a time. |
+| **Call Status** | Status mapping for this disposition (for example No, Ringing, Answered, Busy, Cancelled, In Progress, Failed, AMD, Completed). |
+| **Color Preview** | Shows saved text and background color styles for quick recognition. |
+| **Created At** | Creation date/time for that disposition. |
+| **Action** | **Edit** opens the form. **Delete** removes the row after confirmation. |
 
-### 🛠️ Field Configuration Details
+You can also **search** and move between pages using the list controls.
 
-#### 🏷️ Disposition Name
-- **Purpose**: Primary identifier for call outcomes
+---
 
+## ➕ Add a disposition
 
-#### 🚫 Setup Didn't Answer Button
-- **Function**: Automatically applies disposition when calls go unanswered
-- **Use Cases**:
-  - ✅ **Enable** for: No Answer, Busy, Voicemail
-  - ❌ **Disable** for: Sale, Interested, Appointment Set
-- **Impact**: Reduces manual disposition assignment by 60-80%
-
-#### ⚙️ Setup Default Option
-- **Function**: Marks this disposition as the default option for quick selection
-- **Use Cases**: Enable for your most frequently used disposition (e.g., "Completed", "No Answer")
-- **Impact**: Speeds up disposition assignment during high-volume calling
-
-#### 📞 Call Status Options
-- **Completed**: ✅ Call finished with clear outcome
-- **Answered**: 📞 Call was answered but ongoing
-- **No**: ❌ Call attempt unsuccessful
- 
- 
- 
-
-## 🎛️ Managing Dispositions
-
-### ➕ Adding New Dispositions
+1. Click **Add**.
+2. The form opens with title **Add Disposition**.
+3. Fill required fields.
+4. Click **Submit**.
 
 <img
   src="/images/manage/disposition/add-disposition.png"
-  alt="Add New Disposition Interface"
+  alt="Add Disposition form"
   className="rounded-lg border shadow-sm"
 />
 
-Creating new dispositions allows you to customize call outcome tracking to match your business needs. The interface provides a streamlined approach to disposition management.
+### 🏷️ Disposition (name)
 
-**📝 Required Fields**
+Enter a short, clear name for the outcome label.
 
+- Must be **unique** for your organization.
+- If the same name already exists, the form shows an error and does not save.
 
-| Field             | Description                                                                                             | Example / Notes                                                  |
-|-------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
-| **Disposition**   | Enter a clear, descriptive name for the call outcome.                                                  | "Interested", "Not Available", "Decision Maker Not Present"      |
-| **Assign role View** | Assign which user roles can see/apply this disposition.<br/>Select one or more from the available roles. | (e.g. Admin, Agent)                                              |
-| **GHL Location**  | Select the CRM (GoHighLevel) account location relevant to this disposition.                            | Allows CRM-specific tracking and analytics.                      |
-| **Fields For Notes** | Optional. Select additional note fields, typically available after setting a location.<br/>*Requires GHL Location to be selected first.* | Unique to each CRM location                                      |
-| **Text Color** / **Select Text Color** | Choose the text color for this disposition label in the interface.                                     | Example: White (`#FFFFFF`)                                       |
-| **Background Color** / **Select Background color** | Select a background color for the disposition button.<br/>Aids in quick visual identification in call logs and workflow mapping. | Example: Blue (`#0000FF`), Green (`#00FF00`)                     |
+### 👥 Assign role view
 
-> The form includes all the above fields in a two-column layout. **Assign role View** allows you to select multiple roles. **Fields For Notes** dynamically appears once a GHL Location is selected (shows "Select a location first" until then). Use the text and background color pickers to customize appearance for clarity in dashboards and call screens.
+Choose one or more **roles** that can see/use this disposition.
 
-**💡 Tip:**  
-Use consistent naming and color-coding conventions to make disposition outcomes intuitive and actionable for agents and managers.
+- Multi-select is supported.
+- If the selector is hidden for your account, your role may be applied in the background.
 
-  
+### 📍 GHL Location
 
-### ✏️ Edit Disposition
+Choose the **GoHighLevel location** this disposition is tied to.
+
+- Pick from locations available in your workspace.
+- Notes-field options depend on the selected location.
+
+**🗒️ Fields for Notes**
+
+After selecting a location, the form loads that location's custom fields.
+
+- Choose where disposition notes should be stored.
+- If you switch location, wait for fields to refresh, then choose again if needed.
+- If no custom fields exist, the form will show that there are none available.
+
+**🎨 Colors**
+
+You can set visual styles for normal and selected states:
+
+- **Text color** and **Background color** = standard appearance.
+- **Select Text color** and **Select Background color** = selected/highlighted appearance.
+
+Defaults usually start as white/blue for normal and white/green for selected, but you can change any color.
+
+**📝 Submit**
+
+Click **Submit** to save.
+
+- On success: short confirmation appears and you return to the list.
+- On failure: message stays on the form so you can fix the issue.
+
+---
+
+## ✏️ Edit a disposition
+
+1. Click **Edit** on the row.
+2. The form opens as **Edit Disposition**.
+3. Existing values load (name, roles, location, notes field, and colors).
+4. Update fields and click **Submit**.
 
 <img
   src="/images/manage/disposition/edit.png"
-  alt="Edit Disposition Interface"
+  alt="Edit Disposition form"
   className="rounded-lg border shadow-sm"
 />
 
-> **✏️ Edit Disposition Example:**  
-> The form lets you modify all disposition properties, including:
-> - **Disposition:** Name (e.g., "dev")
-> - **Assign role View:** Multi-role selection (e.g., Agent, dev)
-> - **GHL Location:** Select relevant CRM/account
-> - **Fields For Notes:** Appears after location is selected
-> - **Text Color & Background Color** / **Select Text Color & Select Background color:** Color pickers for customizing the label/button
-> - **Submit:** Save changes after editing
-> 
-> Use the **Back** button to return to the disposition list without saving changes.
-
-Modify existing dispositions to reflect changing business needs or improve tracking accuracy.
+Editing follows the same validation as adding, including the unique-name rule.
 
 <Warning>
-⚠️ Editing disposition names will affect historical reporting. Consider creating new dispositions instead of modifying existing ones for data consistency.
+Changing disposition names can impact historical reporting consistency. If reporting history matters, consider creating a new disposition instead of renaming an old one.
 </Warning>
 
-### 🗑️ Delete Disposition
+---
 
-Remove unused or outdated dispositions from your system.
+## 🕹️ Switches on the list
 
-<Note>
-🗒️ Deleted dispositions cannot be recovered. Ensure all historical data using this disposition is properly archived before deletion.
-</Note>
+You do not need to open Edit for these two toggles:
 
- 
+<img
+  src="/images/manage/disposition/toggle-buttons.png"
+  alt="Add Disposition form"
+  className="rounded-lg border shadow-sm"
+/>
 
-## 📊 Analytics & Performance
+### ❓ Setup Didn't Answer Button
 
-### 📈 Disposition Usage Statistics
+- Enable this on one row to make that row the automatic "didn't answer" choice.
+- Only **one** row can hold this setting at a time.
+- Turning it on for another row clears the old one.
 
-```mermaid
-pie title Disposition Distribution (Last 30 Days)
-    "Completed" : 35
-    "Answered" : 25
-    "No Answer" : 20
-    "Busy" : 12
-    "Voicemail" : 8
-```
+### ⭐ Setup Default Option
 
-### 🎯 Key Performance Indicators
+- Works the same pattern for your organization's general default disposition.
+- Only **one** row can be the default option at a time.
+- Choosing a new default clears the previous default.
 
-<CardGroup cols={3}>
-  <Card title="Conversion Rate" icon="percent">
-**24.5%**
-    <br />↗️ +3.2% from last month
-</Card>
+If an update fails, you may see an alert and the toggle can return to its previous value.
 
-  <Card title="Contact Rate" icon="phone">
-    **68.3%**
-    <br />↗️ +5.1% from last month
-</Card>
-  <Card title="Follow-up Success" icon="repeat">
-    **41.7%**
-    <br />↘️ -1.8% from last month
-</Card>
-</CardGroup>
- 
+---
 
-#### ⚙️ Configuration Options
+## ☎️ Call Status
 
-| Setting | Description | Recommended Use |
-|---------|-------------|-----------------|
-| **Auto-Assignment** | Automatically apply this disposition for specific call outcomes | Enable for "No Answer", "Busy", "Voicemail" |
-| **Follow-up Required** | Mark if this disposition requires scheduled follow-up | Enable for "Callback Requested", "Follow-up Needed" |
-| **Success Indicator** | Classify as positive outcome | Enable for "Sale", "Appointment Set", "Interested" |
-| **Final Disposition** | Mark as call completion (no further attempts) | Enable for "Do Not Call", "Sale Completed" |
+Use the **Call Status** dropdown on each row to map that disposition to the right call situation.
 
-## 🚀 Advanced Features
+<img
+  src="/images/manage/disposition/call-status.png"
+  alt="Add Disposition form"
+  className="rounded-lg border shadow-sm"
+/>
 
-### 🤖 AI-Powered Auto-Disposition
+- Select the new value.
+- The change saves immediately.
+- Mapping is important because status grouping/reporting depends on it.
+
+---
+
+## 🗑️ Delete a disposition
+
+Click **Delete** on a row and confirm when prompted.
+
+- After confirmation, the record is removed.
+- You return to the list with a success/failure message.
 
 <Note>
-🧠 Enable intelligent disposition assignment based on conversation analysis and customer sentiment detection.
+Deleted dispositions cannot be recovered. Confirm with your team before deleting labels used in reporting or workflows.
 </Note>
 
-- **Sentiment Analysis**: Automatically detect positive/negative outcomes
-- **Intent Recognition**: Classify customer intent during conversations  
-- **Pattern Learning**: Improve accuracy through machine learning
-- **Confidence Scoring**: Provide reliability metrics for auto-assignments
-
-### 🔗 Integration Capabilities
-
-<CardGroup cols={2}>
-  <Card title="CRM Sync" icon="database">
-    🔄 Automatically update lead status in connected CRM systems based on disposition
-</Card>
-
-  <Card title="Workflow Triggers" icon="bolt">
-    ⚡ Launch automated follow-up sequences, emails, and task creation
-</Card>
-</CardGroup>
-
-### 📅 Follow-up Automation
-
-```mermaid
-flowchart LR
-    A[Disposition Assigned] --> B{Follow-up Required?}
-    B -->|Yes| C[Schedule Task]
-    B -->|No| D[Update Records]
-    
-    C --> E[Send Email]
-    C --> F[Create Calendar Event]
-    C --> G[Assign to Agent]
-    
-    E --> H[Track Engagement]
-    F --> H
-    G --> H
-```
+---

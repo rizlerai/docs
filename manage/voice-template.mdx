@@ -1,218 +1,179 @@
 ---
 title: "Voice Templates"
-description: "Create and manage voice templates for AI agents, call scripts, and automated voice interactions"
+description: "User guide for creating, editing, and managing reusable voice templates using TTS, audio upload, or microphone recording."
 icon: "microphone"
 ---
 
-# 🎤 Voice Templates
+## 📝 Overview
 
-Create reusable voice templates for AI agents, automated voice calls, and professional audio scripts with customizable audio recordings.
+**Voice Templates** lets you save reusable voice messages for calling workflows.
 
-## 📋 Template Overview
+You can create a template in three ways:
+
+1. **Text To Speech** (type words, system reads them aloud).
+2. **Audio File** (upload an existing MP3/WAV file).
+3. **Record Voice** (record from your microphone in the browser).
+
+After saving, templates can be selected anywhere your product uses company voice templates (for example campaigns or call-flow steps).
+
 <img
   src="/images/manage/voice-template/overview.png"
-  alt="SMS Templates Interface"
+  alt="Voice Templates list view"
   className="rounded-lg border shadow-sm"
 />
-View all your voice templates in one organized interface with audio previews, text-to-speech content, and easy management tools.
 
-### 📊 Template Fields
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Template ID | `1`, `2`, `3`, `4` |
-| **Title** | Template name | `dev`, `textvoice`, `b35` |
-| **Audio** | Voice recording player | Audio player with play/pause controls |
-| **Text-To-Speech** | Script content | `hello this is a test call.` |
-| **Status** | Template status | `active` |
-| **Updated At** | Last modification | `04-14-2025 06:48 PM` |
-| **Action** | Available operations | `Edit` `Delete` |
+## 📄 Main list
 
-## ➕ Creating Templates
+When you open Voice Templates, you see a table with one row per template.
+
+**➕ Add**
+
+Click **Add** to start a new template. The form opens and the list is hidden until you return.
+
+**🔍 Search**
+
+A search field above the table filters rows as you type. Matching is based on table content.
+
+### 🗂️ Columns
+
+| What you see | What it means |
+| --- | --- |
+| **#** | Row number (1, 2, 3...). |
+| **Title** | Template name used for identifying it later. |
+| **Audio** | Mini player for uploaded/recorded audio templates. |
+| **Text-To-Speech** | Script text for templates saved as TTS. |
+| **Status** | Whether the template is active/inactive. |
+| **Updated At** | Last modified time (your timezone). |
+| **Action** | **Edit** updates the row; **Delete** (trash) removes it after confirmation. |
+
+If a template is file-based, TTS text may be empty. If it is TTS-based, audio may be empty in the list until generated/available by your setup.
+
+
+## ✏️ Create or edit a template
+
+
+- Click **Add** for a new template.
+- Click **Edit** on an existing row to update it.
+
+The heading usually shows **Add Voice Template** or **Edit Voice Template** based on what you chose.
+
+**🔙 Back**
+
+Use **Back** at the top of the form to return to the list without browser navigation.
+
+Important repeat: **Back** closes the form, it does not save changes.
+
 <img
   src="/images/manage/voice-template/add.png"
-  alt="SMS Templates Interface"
+  alt="Add Voice Template form"
   className="rounded-lg border shadow-sm"
 />
 
 
-### 🎯 Quick Setup
 
-<CardGroup cols={2}>
-  <Card title="Template Name" icon="tag">
-    Give your template a clear, descriptive name
-    <br />**Example**: "Welcome Call", "Sales Pitch"
-  </Card>
-  
-  <Card title="Audio Content" icon="microphone">
-    Upload audio files or create text-to-speech scripts
-    <br />**Tip**: Use high-quality audio for best results
-  </Card>
-  
-  <Card title="File Type" icon="file-audio">
-    Choose your preferred type
-    <br />**Supported**: Audio ,Text-to-speach ,Record voice
-  </Card>
-</CardGroup>
 
-### 🎵 Audio Options
 
-<Tabs>
-  <Tab title="Audio Upload">
-    ```
-    Upload your pre-recorded audio files:
-    - Supported formats: MP3, WAV, M4A
-    - Maximum duration: 5 minutes
-    - Recommended quality: 44.1kHz, 16-bit
-    ```
-  </Tab>
-  
-  <Tab title="Text-to-Speech">
-    ```
-    Create voice content from text:
-    - Natural voice synthesis
-    - Multiple voice options available
-    - Adjustable speed and tone
-    - Dynamic variable support
-    ```
-  </Tab>
-  
-  <Tab title="Record Voice">
-    ```
-    Record your own voice directly:
-    - Use your device microphone for instant recording
-    - Review and re-record as needed
-    - Great for authentic, personalized messages
-    ```
-  </Tab>
-</Tabs>
+## 📝 Form fields
 
-## 🔧 Voice Script Examples
+**🏷️ Title**
 
-Create professional scripts for different use cases:
+Give the template a short, clear name (for example "Opening Greeting" or "Voicemail Follow-up").
 
-### 📞 Call Opening
-```
-Hello {{customer_name}}, this is {{agent_name}} from {{company_name}}. 
-I hope you're having a great day. I'm calling because you expressed 
-interest in our {{product_name}}. Do you have a few minutes to chat?
-```
+- Helps your team identify the right template quickly.
+- Should be filled for every template.
+- Should be unique in your workspace (see rules section below).
 
-### 🏢 Business Introduction
-```
-Hi there! Thank you for your interest in {{company_name}}. 
-We specialize in {{service_type}} and have been helping businesses 
-like yours for over {{years_experience}} years.
-```
+## 🎚️ Type
 
-### ⏰ Appointment Reminder
-```
-This is a friendly reminder that you have an appointment with 
-{{company_name}} tomorrow, {{appointment_date}} at {{appointment_time}}. 
-Please call {{business_phone}} if you need to reschedule.
-```
+Choose how this template is produced:
 
-## 🔧 Dynamic Variables
+1. **Text To Speech**
+2. **Audio File**
+3. **Record Voice**
 
-Add personalization to your voice templates:
+Changing **Type** shows only the matching input section, so the form stays focused on the selected method.
 
-### 👤 Customer Info
-- `{{customer_name}}` - Customer's full name
-- `{{first_name}}` - Customer's first name
-- `{{company}}` - Customer's company
-- `{{phone_number}}` - Customer's phone
 
-### 🏢 Business Info
-- `{{company_name}}` - Your business name
-- `{{agent_name}}` - AI agent name
-- `{{business_phone}}` - Your phone number
-- `{{website}}` - Your website
+### 🗣️ Type: Text To Speech
+<img
+  src="/images/manage/voice-template/type-1.png"
+  alt="Add Voice Template form"
+  className="rounded-lg border shadow-sm"
+/>
 
-### 📅 Date & Time
-- `{{current_date}}` - Today's date
-- `{{current_time}}` - Current time
-- `{{appointment_date}}` - Scheduled date
-- `{{appointment_time}}` - Scheduled time
+**💬 Voice Template (script box)**
 
-## ⚡ Audio Controls
+Type the full script that should be spoken.
 
-### 🎛️ Audio Player Features
-- **Play/Pause**: Control audio playback
-- **Time Display**: Shows current position and total duration
-- **Progress Bar**: Visual playback progress
-- **Volume Control**: Adjust audio volume
-- **Download**: Save audio files locally
+You may see variable hints using double curly brackets. Where your setup supports it, these are replaced with real values at runtime (for example contact fields, date, or time). Use variable text exactly as shown, including brackets.
 
-### 🎚️ Audio Settings
-- **Playback Speed**: Adjust from 0.5x to 2.0x speed
-- **Audio Quality**: Choose quality settings
-- **Format Options**: Select output audio format
-- **Loop Options**: Enable/disable audio looping
+Examples of possible variable style:
 
-## ⚡ Template Actions
+- `{{customer_name}}`
+- `{{appointment_date}}`
+- `{{appointment_time}}`
+- `{{current_date}}`
 
-### ✏️ Edit Template
-Click the **Edit** button to modify:
+**✅ Submit**
 
-To edit a voice template, fill out the following form fields as shown in the interface above:
+Click **Submit** to save TTS templates.
 
-- **Title**: Enter the template name (example shown: `dev`). Pick a clear, descriptive name for easy reference.
-- **Type**: Choose the template type (example shown: `Audio File`). Options include **Audio File** (upload an audio file), **TTS (Text-to-Speech)** (generate audio using dynamic variables like `{{customer_name}}` or `{{appointment_date}}` or text for a personalized message), or **Record Voice** (record a new message directly in your browser).
-- **Upload Audio File**: Upload your audio recording. Supported formats: `.MP3`, `.WAV`.
-- **Submit**: When finished, click **Submit** to save your changes.
+- While saving: a short wait message may appear.
+- On success: confirmation appears, then list reloads.
+- On failure: error appears on the form.
 
-> You can always click the yellow **Back** button at the top left to return to the Voice Templates list without saving.
-> ![Voice Template Edit Interface](/images/manage/voice-template/edit.png)
 
-### 🗑️ Delete Template
-<Warning>
-Deleted voice templates cannot be recovered. Ensure you have backups of important audio content before deleting.
-</Warning>
 
-## 🎤 Voice Quality Settings
+### 🎵 Type: Audio File
 
-<CardGroup cols={2}>
-  <Card title="Audio Quality" icon="volume-high">
-    Optimize audio quality for clear communication
-    <br />**Tip**: Use noise reduction for better clarity
-  </Card>
-  
-  <Card title="Voice Characteristics" icon="microphone-lines">
-    Customize voice tone, speed, and emotion
-    <br />**Options**: Professional, friendly, energetic
-  </Card>
-  
-  <Card title="Language Support" icon="globe">
-    Multiple languages and accents available
-    <br />**Features**: Regional dialects and pronunciations
-  </Card>
-  
-  <Card title="Audio Testing" icon="flask">
-    Test your templates before deployment
-    <br />**Preview**: Listen to full audio before saving
-  </Card>
-</CardGroup>
 
-## 📊 Usage Tips
+<img
+  src="/images/manage/voice-template/type-3.png"
+  alt="Add Voice Template form"
+  className="rounded-lg border shadow-sm"
+/>
 
-<CardGroup cols={2}>
-  <Card title="Script Length" icon="clock">
-    Keep voice messages concise and engaging
-    <br />Ideal length: 30-90 seconds for most calls
-  </Card>
-  
-  <Card title="Clear Pronunciation" icon="microphone">
-    Ensure all words are clearly pronounced
-    <br />Use phonetic spelling for difficult terms
-  </Card>
-  
-  <Card title="Natural Pauses" icon="pause">
-    Include strategic pauses for better flow
-    <br />Allow time for customer responses
-  </Card>
-  
-  <Card title="Call Compliance" icon="shield-check">
-    Include required disclosures and opt-out options
-    <br />Follow TCPA and industry regulations
-  </Card>
-</CardGroup> 
+**📤 Upload Audio File**
+Choose one audio file from your device.
+
+- Accepted formats: **MP3** and **WAV**.
+- Unsupported types are rejected with an error message.
+
+**✅ Submit**
+
+Click **Submit** to save, with the same success/error behavior as TTS saving.
+
+### 🎙️ Type: Record Voice
+
+<img
+  src="/images/manage/voice-template/type-2.png"
+  alt="Add Voice Template form"
+  className="rounded-lg border shadow-sm"
+/>
+
+This mode uses recording controls instead of the standard text/file input flow.
+
+1. Click **Start Recording**.
+2. Allow microphone permission when the browser asks.
+3. Click **Stop Recording** to end the take.
+4. Review preview playback.
+5. Choose one of:
+   - **Upload Recording** to save and return to the list.
+   - **Discard & Record Again** to clear and retake.
+
+A timer usually shows recording duration while recording is active.
+
+If microphone access fails, the page shows an error that explains the issue.
+
+
+
+**📋 Rules that affect saving**
+
+- **Title required:** Fill title before saving.
+- **Title uniqueness:** Titles should be unique in your workspace. If duplicated, save fails and you must rename.
+- **Edit replacement:** Uploading a new file while editing replaces the previous stored audio.
+- **Delete cleanup:** Deleting a template removes the row and associated stored audio file.
+
+
+

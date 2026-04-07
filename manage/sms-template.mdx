@@ -1,143 +1,123 @@
 ---
 title: "SMS Templates"
-description: "Create and manage SMS templates for automated messaging"
+description: "User guide for creating, editing, searching, and managing reusable SMS templates."
 icon: "message"
 ---
 
-# 📱 SMS Templates
 
-Create reusable SMS templates for automated messaging, appointment reminders, and customer communications.
 
-## 📋 Template Overview
+**SMS Templates** lets you save reusable text messages that you can use later (for example in campaigns or other SMS flows).
+
+Each template has:
+
+- A **Title** (short name so people can find it quickly).
+- A **Template** body (the message text itself).
+
+Templates belong to the current workspace, so users who can access this screen usually see the same template list for that workspace.
 
 <img
   src="/images/manage/sms-template/overview.png"
-  alt="SMS Templates Interface"
+  alt="SMS Templates list view"
   className="rounded-lg border shadow-sm"
 />
 
-View all your SMS templates in one place with easy access to edit, delete, and manage your messaging content.
+---
 
-### 📊 Template Fields
+## 📄 The template list
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Template ID | `1`, `2`, `3` |
-| **Title** | Template name | `devSMS`, `Reminder` |
-| **Template** | Message content | Full message text with variables |
-| **Updated At** | Last modification | `08-15-2025 03:47 PM` |
-| **Created At** | Creation date | `08-15-2025 03:41 PM` |
-| **Action** | Available operations | `Edit` `Delete` |
+The table shows one row per template.
 
-## ➕ Creating Templates
+| Column | What it shows |
+|--------|----------------|
+| **#** | Row number (1, 2, 3, ...). |
+| **Title** | The name you gave the template. |
+| **Template** | The full message text. |
+| **Updated At** | Last update time (shown in your timezone). |
+| **Created At** | Creation time (shown in your timezone). |
+| **Action** | Controls to edit or delete the row. |
 
-### 🎯 Quick Setup
+At the top of the table:
+
+- **Search** filters templates by title or message content.
+- Results are shown in **pages** (commonly 10 per page).
+- Use bottom paging controls to move through long lists.
+
+
+---
+
+## ➕ Add a new template
+
+1. Click **Add**.
+2. The list view hides and the form opens.
+3. Fill in **Title** and **SMS Template**.
+4. Click **Submit**.
 
 <img
   src="/images/manage/sms-template/add-new.png"
-  alt="SMS Templates Interface"
+  alt="Add SMS Template form"
   className="rounded-lg border shadow-sm"
 />
 
-<CardGroup cols={2}>
-  <Card title="Template Title" icon="tag">
-    Give your template a clear, descriptive name
-    <br />**Example**: "Appointment Reminder", "Welcome Message"
-  </Card>
-  
-  <Card title="SMS Content" icon="pencil">
-    Write your SMS message with dynamic variables
-    <br />**Tip**: Keep messages  160 characters, or you can add more characters if needed
-  </Card>
-</CardGroup>
+What to expect while saving:
 
-### 💬 Message Examples
+- If required fields are empty, the form prompts you to complete them.
+- While saving, a short “please wait” style message may appear.
+- On success, you get confirmation and return to the list shortly after.
 
-<Tabs>
-  <Tab title="Appointment Reminder">
-    ```
-    Hi {{first_name}}! This is a reminder for your appointment 
-    at {{business_name}} on {{appointment_date}} at 
-    {{appointment_time}}. Reply CONFIRM to confirm.
-    ```
-  </Tab>
-  
-  <Tab title="Welcome Message">
-    ```
-    Welcome to {{business_name}}, {{first_name}}! 
-    We're excited to have you. Contact us at {{business_phone}} 
-    if you have any questions.
-    ```
-  </Tab>
-  
-  <Tab title="Follow-up">
-    ```
-    Hi {{first_name}}, thanks for your interest! 
-    Our team will contact you within 24 hours. 
-    Questions? Call {{business_phone}}.
-    ```
-  </Tab>
-</Tabs>
+---
 
-## 🔧 Dynamic Variables
+## ✏️ Edit a template
 
-Add personalization to your messages with these variables:
+1. In the list, click **Edit** on a row.
+2. The form opens with **Edit SMS Template**.
+3. Existing values load into **Title** and **SMS Template**.
+4. Make your changes and click **Submit**.
 
-### 👤 Customer Info
-- `{{first_name}}` - Customer's first name
-- `{{last_name}}` - Customer's last name  
-- `{{phone_number}}` - Customer's phone
-- `{{email}}` - Customer's email
-
-### 🏢 Business Info
-- `{{business_name}}` - Your business name
-- `{{business_phone}}` - Your phone number
-- `{{business_address}}` - Your address
-
-### 📅 Date & Time
-- `{{current_date}}` - Today's date
-- `{{appointment_date}}` - Appointment date
-- `{{appointment_time}}` - Appointment time
-
-## ⚡ Template Actions
-
-### ✏️ Edit Template
-Click the **Edit** button to modify:
 <img
   src="/images/manage/sms-template/edit.png"
-  alt="SMS Templates Interface"
+  alt="Edit SMS Template form"
   className="rounded-lg border shadow-sm"
 />
-- Template name
-- Message content
-- Variable usage
 
-### 🗑️ Delete Template
+Saving behavior is the same as Add: validation -> wait message -> success -> back to list.
+
+---
+
+## 🗑️ Delete a template
+
+Click the **Delete** or trash action on a row and confirm when asked.
+
+- If confirmed, the template is removed.
+- You stay on the list and may see a success notice.
+
 <Warning>
-Deleted templates cannot be recovered. Make sure you don't need the template before deleting.
+Deleted templates cannot be recovered. Confirm before deleting, especially if other users rely on that message.
 </Warning>
 
-## 📊 Usage Tips
+---
 
-<CardGroup cols={2}>
-  <Card title="Keep It Short" icon="clock">
-    SMS messages work best under 160 characters
-    <br />Longer messages may be split or cost more
-  </Card>
-  
-  <Card title="Clear Call-to-Action" icon="hand-pointer">
-    Tell recipients what to do next
-    <br />**Examples**: "Reply YES", "Call us", "Visit our website"
-  </Card>
-  
-  <Card title="Test Your Messages" icon="flask">
-    Send test messages to yourself first
-    <br />Check that variables populate correctly
-  </Card>
-  <Card title="Include Opt-out" icon="circle-x">
-    Always include "Reply STOP to opt-out"
-    <br />Required for compliance and good practice
-  </Card>
-</CardGroup>
+## 📝 Form fields (Add and Edit)
 
- 
+The same fields are used for both adding and editing.
+
+### 🏷️ Title
+
+- **Purpose:** Clear label so users can find and pick the template quickly.
+- **What to enter:** Short descriptive name (for example “Appointment Reminder” or “Welcome SMS”).
+- **Required:** Yes.
+- **Uniqueness:** You cannot save two templates with the exact same title in one workspace.
+
+If a title already exists, the form shows an error and asks for a different title (or edit the existing one instead).
+
+### 💬 SMS Template
+
+- **Purpose:** The actual message text.
+- **What to enter:** Message content, including placeholders when needed.
+- **Placeholder examples:** `{name}`, `{phone}` (plus any others your setup supports).
+
+**Practical notes:**
+
+- Short messages (around 160 characters) are usually one SMS part.
+- Longer messages may split into multiple parts depending on carrier behavior.
+- Keep wording clear and action-oriented.
+---
