@@ -1,237 +1,150 @@
 ---
 title: "Setup Contact Fields"
-description: "Design and manage custom contact fields to capture detailed customer information, enable advanced segmentation, and optimize data-driven marketing campaigns"
 icon: "table-cells"
 ---
 
-# 🗂️  Contact Fields
-
-Configure and customize contact fields to capture comprehensive customer data, enabling powerful segmentation, personalization, and enhanced customer relationship management.
-
-## 📋 Contact Fields Overview
+This guide explains **Setup Contact Fields** in simple language. It focuses on what users do day to day: manage field cards, add new fields, map them to GHL, and understand delete behavior.
 
 <img
   src="/images/manage/setup-contact/overview.png"
-  alt="Contact Fields Interface"
+  alt="Setup Contact Fields main screen"
   className="rounded-lg border shadow-sm"
 />
 
-Design and manage your contact data structure with flexible field types, custom configurations, and intelligent organization for optimal customer data collection.
 
-### 📊 Available Field Types
+**Contact Fields** decide what information can be stored on contacts in your workspace (for example name, email, address, and custom details).
 
-| Field Type | Description | Use Cases |
-|------------|-------------|-----------|
-| **Standard Fields** | Built-in contact fields | Phone Number, Email, First Name, Last Name |
-| **Custom Fields** | User-defined fields | Email Address, Address, City, Zip Code |
-| **System Fields** | Platform-generated fields | Country, Phone Number1 |
-| **Text Fields** | Custom text input | Custom descriptions and notes |
 
-## ➕ Adding Contact Fields
+`Manage -> Setup Contact Fields`
+
+
+## 🗃️ Field cards
+
+All fields appear as cards in a grid.
+
+On each card:
+
+- Field name is shown in readable format.
+- Internal underscores are displayed as spaces.
+- Words are capitalized (for example `zip_code` displays as **Zip Code**).
+- Delete (trash) appears only for fields that can be removed.
+
+### 🔒 Core fields that cannot be deleted
+
+- **Phone Number**
+- **Email**
+- **First Name**
+- **Last Name**
+
+These are treated as required core identity fields and remain fixed.
+
+**🗑️ Deletable fields**
+
+Other custom fields can be deleted. Deletion asks for confirmation before removing.
+
+
+
+## ➕ Creating a new field
+
+Click **Add** to open the create form. Use **Back** to return to card list without saving.
+
 <img
   src="/images/manage/setup-contact/add-new.png"
-  alt="Contact Fields Interface"
+  alt="Add contact field form"
   className="rounded-lg border shadow-sm"
 />
-### 🎯 Field Creation Process
 
-<CardGroup cols={2}>
-  <Card title="Add New Field" icon="plus">
-    Create custom contact fields for your specific needs
-    <br />**Button**: "Add" - Start field creation wizard
-    <br />**Options**: Multiple field types available
-  </Card>
-  
-  <Card title="Dialer GHL Mapped" icon="link">
-    Import fields from external systems
-    <br />**Integration**: GoHighLevel field mapping
-    <br />**Automation**: Sync existing field structures
-  </Card>
-  
-  <Card title="Field Configuration" icon="gear">
-    Configure field properties and validation
-    <br />**Settings**: Field type, validation, requirements
-    <br />**Display**: Labels, placeholders, help text
-  </Card>
-  
-  <Card title="Field Organization" icon="layer-group">
-    Organize fields into logical groups
-    <br />**Layout**: Visual field arrangement
-    <br />**Categories**: Group related information
-  </Card>
-</CardGroup>
+### 🏷️ Contact Field (name)
 
-## 🔗 Fields Mapping
+Use naming rules:
 
-You can map your contact fields to external platforms such as GoHighLevel (GHL) for seamless integration and data synchronization. This is especially useful when your CRM or dialer platform requires the AI or campaign tools to know exactly which contact properties to use during calls, automation, or reporting.
+- Lowercase letters
+- Numbers
+- Underscores for spaces
+
+Examples:
+
+- `company_name`
+- `date_of_birth`
+- `preferred_language`
+
+As you type, a preview label shows how the field will appear in readable UI form.
+
+If a name is numeric-only, system normalizes it to a safe format so processing does not break.
+
+Help icons next to labels show short tooltips when hovered.
+
+### 🔠 Field Type
+
+Choose one:
+
+1. **Small String** (short text)
+2. **Text** (medium text)
+3. **Long Text** (long content, notes)
+
+If **Small String** is selected, a **Length** input appears:
+
+- Sets max character length.
+- If left empty, default length is used.
+
+### 📞 Extra phone numbers
+
+If you need multiple phone numbers, use this naming pattern:
+
+- `phone_number1`
+- `phone_number2`
+- `phone_number3`
+
+For these extra phone fields, the system also creates companion area-code metadata used by dialer logic.
+
+**✅ Submit**
+
+Click **Submit** to create the field.
+
+- On success: confirmation appears, then page reloads with new field.
+- On validation/error: message explains what to fix.
+
+
+## 🔗 GoHighLevel Mapping
+
+Click **Dialer GHL Mapped** to open **Field Mappings** modal.
+
+This is where you map your internal contact fields to **GoHighLevel (GHL)** fields so syncing, dialer flows, and personalization tokens use the right data.
 
 <img
   src="/images/manage/setup-contact/fields-mapping.png"
-  alt="Field Mapping Interface"
+  alt="Field mapping modal for GHL"
   className="rounded-lg border shadow-sm"
 />
 
-### 🗺️ Field Mapping Interface Overview
+### 📍 GHL Location
 
-The Field Mapping interface allows you to align your internal contact fields with their corresponding fields in external platforms such as GoHighLevel (GHL). This ensures seamless data flow, enables automation, supports AI token mapping, and enriches personalization.
+Choose the target GHL location first.
 
-| Internal Field             | Example Name            | Maps to GHL Field Example         | Description                                                |
-|---------------------------|------------------------|-----------------------------------|------------------------------------------------------------|
-| GHL Location              | `ghl_location`         | Location                          | GoHighLevel primary account/location for the contact       |
-| Phone Number              | `phone_number`         | Phone Number                      | Main contact number                                        |
-| Email                     | `email`                | Email Address                     | Primary email address                                      |
-| First Name                | `first_name`           | First Name                        | Contact's first name                                       |
-| Last Name                 | `last_name`            | Last Name                         | Contact's surname/family name                              |
-| Email Address             | `emailAddress`         | Email                             | Alternative or secondary email field                       |
-| Address                   | `address`              | (e.g. CF 1/Custom)                | Street address or full location                            |
-| City                      | `city`                 | City                              | Contact's city                                             |
-| Zip Code                  | `zip_code`             | Postal Code / Zip Code            | Mailing/postal code                                        |
-| Country                   | `country`              | Country                           | Country of residence                                       |
-| Phone Number1             | `phone_number1`        | (Custom/Search)                   | Optional/secondary phone                                   |
-| AudienceLabelId           | `audiencelabelid`      | (Custom/Search)                   | Custom field for segmentation/tagging                      |
-| AudienceLabelId1          | `audiencelabelid1`     | (Custom/Search)                   | Additional label/tag field (custom segmentation)            |
-| New User Field           | `new_user_field`      | (Setup in GHL / Custom)           | Newly added custom field—configure in GHL, then map         |
-| Wayyan CF                | `wayyan_cf`           | (Setup in GHL / Custom)           | Custom field for entry method or channel                   |
+- Field options are location-dependent.
+- Changing location reloads available GHL fields.
+- You may see loading or error messages while options fetch.
 
-This expanded mapping table reflects the increased flexibility for custom and system fields as visible in the updated Field Mapping modal. Use the "Map to GHL Field" dropdown to assign or search for the correct GHL field, and create any missing custom fields in your CRM as needed.
+### 🗂️ Mapping rows
 
+Each internal contact field appears as one row:
 
-> **Tip:** Use the "Map to GHL Field" dropdown next to each internal field to select the most appropriate external property. If the target field does not exist in GHL, create a new custom field in your CRM first and then map it.
+- **Left side:** readable label + internal key (read-only).
+- **Right side:** **Map to GHL Field** selector.
 
-**Mapping Options:**
-- **Dropdown Select:** Choose the right external field for each of your internal data fields from a dropdown menu.
-- **Search/Filter:** Instantly find your external fields using a search or filter bar.
-- **Remove Mapping:** Remove unnecessary mapping by clicking the "X" button next to a field.
-- **Multi-Field Support:** Map multiple or custom internal fields to suitable external fields as needed, including GHL Location.
+Selector includes standard + custom GHL fields for selected location and usually supports search.
 
-**Required Fields:**
-- Some fields, like `GHL Location`, `Phone Number`, and `First Name`, are often mandatory for both inbound and outbound calling or syncing workflows. Ensure these are mapped to guarantee smooth operation.
+Saved mappings can rehydrate when location reloads.
 
-**Actions:**
-- **Cancel:** Exit the mapping modal without saving any changes.
-- **Save:** Save, apply, and sync all your field mappings with the external system.
+**💾 Save / ❌ Cancel**
 
-<Tip icon="link">
-  **Why Use Field Mapping?**  
-  Field mapping guarantees that the right data is always available for campaigns, contact syncing, automation, and personalization. Only mapped fields are accessible to AI and workflows such as inbound calls, campaign tokens, and integration reporting. Including GHL Location mapping ensures your contacts connect with the right account context across platforms.
-</Tip>
+- **Save**: stores mappings and applies changes.
+- **Cancel**: closes modal without saving.
+
+Important behavior:
+
+- Save replaces previous mapping set for your organization.
+- Rows left empty are treated as unlinked.
 
 
 
-
-## 🏗️ Field Types & Configuration
-
-### 📝 Standard Field Types
-
-<Tabs>
-  <Tab title="Contact Information">
-    ```
-    👤 Personal Data Fields:
-    - Phone Number: Primary contact number
-    - Email: Email address with validation
-    - First Name: Contact's first name
-    - Last Name: Contact's surname
-    
-    Features:
-    ✅ Built-in validation
-    ✅ Standard formatting
-    ✅ Required field options
-    ✅ Duplicate detection
-    ```
-  </Tab>
-  
-  <Tab title="Address Fields">
-    ```
-    📍 Location Information:
-    - Address: Full street address
-    - City: City or municipality
-    - Zip Code: Postal/ZIP code
-    - Country: Country selection
-    
-    Features:
-    ✅ Geographic validation
-    ✅ Auto-complete options
-    ✅ International formats
-    ✅ Address verification
-    ```
-  </Tab>
-  
-  <Tab title="Custom Fields">
-    ```
-    🎯 Business-Specific Data:
-    - Custom text fields
-    - Dropdown selections
-    - Number fields
-    - Date/time fields
-    
-    Features:
-    ✅ Flexible data types
-    ✅ Custom validation rules
-    ✅ Conditional visibility
-    ✅ Dynamic content
-    ```
-  </Tab>
-</Tabs>
-
-## ⚡ Field Actions & Management
-
-### 🗑️ Delete Field Options
-
-From the interface, you can see delete buttons (🗑️) next to certain fields, allowing you to:
-
-<CardGroup cols={2}>
-  <Card title="Remove Custom Fields" icon="trash">
-    Delete user-created custom fields
-    <br />**Action**: Click red delete button
-    <br />**Warning**: Permanent deletion of field and data
-  </Card>
-  <Card title="Field Validation" icon="shield-check">
-    Ensure data quality with validation rules
-    <br />**Email**: Automatic email format validation
-    <br />**Phone**: Phone number format checking
-  </Card>
-  <Card title="Field Organization" icon="arrows-up-down">
-    Organize fields for optimal user experience
-    <br />**Drag & Drop**: Reorder field positions
-    <br />**Grouping**: Logical field arrangement
-  </Card>
-  <Card title="Required Fields" icon="asterisk">
-    Set mandatory vs optional field requirements
-    <br />**Core Data**: Phone, Email, Name fields
-    <br />**Optional**: Additional custom information
-  </Card>
-</CardGroup>
- 
- 
-
-## 🔗 Integration Capabilities
-
-### 🎯 System Integrations
-
-<CardGroup cols={2}>
-  <Card title="CRM Sync" icon="arrows-rotate">
-    Synchronize with popular CRM systems
-    <br />**Mapping**: Bi-directional field mapping
-    <br />**Real-time**: Live data synchronization
-  </Card>
-  
-  <Card title="GoHighLevel (GHL)" icon="link">
-    Direct integration with GHL platform
-    <br />**Button**: "Dialer GHL Mapped"
-    <br />**Automation**: Automatic field mapping
-  </Card>
-  
-  <Card title="Marketing Automation" icon="robot">
-    Power marketing campaigns with field data
-    <br />**Personalization**: Dynamic content insertion
-    <br />**Triggers**: Automated campaign actions
-  </Card>
-  
-  <Card title="API Access" icon="code">
-    Programmatic field management
-    <br />**REST API**: Full CRUD operations
-    <br />**Webhooks**: Real-time field updates
-  </Card>
-</CardGroup>
-
- 
