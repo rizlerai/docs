@@ -3,461 +3,190 @@ title: "Phone Numbers"
 icon: "phone"
 ---
 
-## 📞 Phone Numbers Management
-
-Easily manage your phone number inventory for AI campaigns and business communications using precise filters and export tools.
+This guide explains the **Phone Numbers** area in simple language, including list actions, filters, per-number actions, purchasing, editing, and bulk operations.
 
 <img
   src="/images/manage/ai-sync-number/overview.png"
-  alt="Phone Numbers Interface"
+  alt="Phone Numbers main list"
   className="rounded-lg border shadow-sm"
 />
 
-### 🔎 Filters
+The **Phone Numbers** page is where you see every number tied to your workspace, buy new ones, and control how each number is used for AI calls, dialer workflows, and messaging compliance.
 
-Filter your purchased phone numbers using:
+You can also:
 
-- **Filter By:**
-  - **All**: Show all phone numbers.
-  - **AI**: Only numbers used for AI.
-  - **Dialer**: Only numbers used for Dialer.
-  - **Both**: Numbers used for both.
+- import external numbers,
+- link 10DLC campaigns,
+- configure endpoints for inbound messaging,
+- perform bulk updates across rows.
 
-- **Provider:**
-  - **All**
-  - **Ai Sync**
-  - **Twilio**
-  - **Ai Sync v2**
-
-- **Type:**
-  - **All**
-  - **Local**
-  - **Toll Free**
-  - **Mobile**
-
-- **Status:**
-  - **All**
-  - **Verified**
-  - **Unverified**
+Breadcrumb: `Users -> Phone Numbers`
 
 
-![Bulk Actions on Phone Numbers Table](/images/manage/ai-sync-number/bulk-action.png)
+### 🏁 Actions at the Top
 
-You can perform **bulk actions** directly on the table. Select multiple numbers and use bulk options (such as verify, delete , Active for AI) to efficiently manage many records at once.
+- **Purchase:** Opens **Purchase Number** flow to search and buy one or many numbers.
+- **Import Twilio Numbers:** (If enabled) Lets you add your own Twilio numbers.
+- **Local Preference API:** Opens guidance for checking local presence (endpoint details shown).
 
 
-All filters work together—update any filter and the table updates instantly.
+### 🔍 Filters, Search, and Export
+
+Filters can be combined. Editing any filter refreshes the table.
+
+| Control      | What it does                                                                      |
+| ------------ | --------------------------------------------------------------------------------- |
+| **Filter By** | All, Ai, Dialer, Both                                                           |
+| **Provider** | All, first carrier, Twilio, or V2                                                |
+| **Type**     | All, Local, Toll Free, Mobile                                                    |
+| **Status**   | All, Unverified, Verified                                                        |
+
+Other tools:
+
+- **Download:** Export current view to spreadsheet.
+- **Search:** Box for searching by title/number.
+- **Paging & Sort:** Set rows per page, change pages, sort by Purchased At (usually newest first).
+
+
+
+### 📑 Table Columns
+
+| Column      | Meaning                                                           |
+| ----------- | ----------------------------------------------------------------- |
+| **Checkbox**    | Select rows for bulk actions; header selects all on page         |
+| **#**           | Row number in view                                              |
+| **Title**       | Optional number label                                           |
+| **Phone No.**   | Full number with country code                                  |
+| **AreaCode**    | Area or region code                                            |
+| **Provider**    | Carrier source                                                 |
+| **10DLC**       | Messaging registration (for US compliance)                     |
+| **Renwel At**   | Renewal date/time (shown as "Renwel At" in UI)                 |
+| **Status**      | Verified or Unverified                                         |
+| **Purchased At**| When number was added                                          |
+| **Action**      | `...` menu for actions                                         |
+
+<img
+  src="/images/manage/ai-sync-number/actions1.png"
+  alt="Phone number row actions menu"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+### ☝️ Single-Number Actions (`...` menu)
+
+Available actions (some may depend on provider/state):
+
+- **Spam Protect:** Add number to spam protection.
+- **Edit:** Update title/status/10DLC/use-case.
+- **Activate for AI:** Connects number for AI calling/routing (may disappear after activation).
+- **Delete:** Remove number after confirmation (provider cleanup applied if supported).
+- **Endpoints:** Show inbound endpoint details for integrations.
+- **10DLC:** Assign a messaging campaign (if not yet assigned).
+
+
+### ⚡ Quick: Activate for AI
+
+**One number:**
+
+1. Go to **Users -> Phone Numbers**.
+2. Open `...` menu on a row.
+3. Click **Activate for AI**.
+4. Confirm and check for messages.
+
+**Multiple numbers:**
+
+1. Select several rows.
+2. Open **Bulk Action**.
+3. Choose **Activate For AI**.
+4. Confirm.
+
+*After activation*: Number is enabled for AI calls/logic (system checks for required credentials; error if missing).
+
+### 🛒 How to Purchase a Number
+
+<img
+  src="/images/manage/ai-sync-number/purchase.png"
+  alt="Purchase search results table"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+Click **Purchase** to open the buy form.
+
+<img
+  src="/images/manage/ai-sync-number/new-purchase.png"
+  alt="Purchase Number form"
+  className="rounded-lg border shadow-sm"
+/>
+
+Steps:
+
+1. **Provider:** Choose first carrier, Twilio, or V2.
+2. **Countries:** Pick USA/Canada.
+3. **Type:** Local, Toll Free, Mobile.
+4. **Search By:** AreaCode, Region, City.
+5. Enter value, click **Search**.
+
+Table results:
+
+| Column           | Meaning                                    |
+| ---------------- | ------------------------------------------ |
+| **#**            | Result order                               |
+| **Friendly Name**| Label from provider                        |
+| **Phone #**      | The candidate number                       |
+| **Locality**     | Geo details (optional)                     |
+| **Capabilities** | Voice/SMS/MMS supported?                   |
+| **Checkbox**     | Select for bulk buy                        |
+| **Action**       | **Purchase** (single row)                  |
+
+Options:
+
+- **Purchase:** Buys that number.
+- **Buy Multiple:** Buys all selected.
+
+(If required fields are missing, the form will prompt you. Billing/provider setup may also be needed.)
+
+
+### ✏️ Edit a Number
+
+Open `...` → **Edit** on a row to update:
+
+| Field           | Meaning                                  |
+| --------------- | ---------------------------------------- |
+| **Title**       | Internal label                           |
+| **Status**      | Verified / Unverified                    |
+| **10DLC Enable**| Yes/No for 10DLC features                |
+| **Use For**     | Both, Ai, or Dialer                      |
+
+Click **Submit** to save.
+
+### 📦 Bulk Actions
+
+Select rows with checkboxes to see bulk action bar.
+
+<img
+  src="/images/manage/ai-sync-number/bulk-action.png"
+  alt="Bulk actions on phone numbers list"
+  className="rounded-lg border shadow-sm"
+/>
+
+Bulk actions:
+
+- **Verified / Unverified:** Change status.
+- **Spam Protect:** Attempt bulk spam-protection.
+- **Activate For AI:** Activate AI where possible.
+- **Delete:** Remove selected numbers after prompt.
+
+Partial success is possible (system will report failures if some rows can't be processed).
+
+
+
+### 📝 10DLC & Routing Notes
+
+- **10DLC** mainly affects compliant US texting.
+- Voice-only can work without 10DLC.
+- SMS flows may route through other numbers if 10DLC isn't linked.
+
+Assign 10DLC campaigns using the row action in the table.
 
 ---
-
-### ⬇️ Download
-
-Click the **Download** button to export your filtered phone numbers as an Excel file. Only the currently filtered records are included in the download.
-
-
-
-
-
-### 📊 Phone Number Fields
-
-| Field           | Description                          | Example                                              |
-|-----------------|--------------------------------------|------------------------------------------------------|
-| **#**           | Sequential row number                | `1`, `2`, `3`, ...                                   |
-| **Title**       | Number label or custom name          | `BackLine-Caller`, *(blank)*                         |
-| **Phone No.**   | Full phone number                    | `+13154942679`, `+12058823206`                       |
-| **AreaCode**    | Area code extracted from phone       | `315`, `205`                                         |
-| **Provider**    | Current service provider             | `Ai Sync`, `Twilio`                        |
-| **10DLC**       | 10DLC registration (A2P compliance)  | `No`, `Yes` ,`In Progress`                                         |
-| **Renewal At**  | Next renewal/billing date            | `09-14-2025 12:40 PM`, `10-02-2024 1:00 PM`          |
-| **Status**      | Verification state                   | `Verified`, `Unverified`                             |
-> **Field Notes:**  
-> - The **Title** is optional and may be blank.  
-> - **10DLC** compliance is shown for eligible providers only.  
-
-
----
-
-## ⚡ Number Actions Menu
-
-The actions menu for each AI sync number allows you to quickly manage, protect, and configure your numbers. Here’s a breakdown of the typical actions, referencing the menu shown:
-
-| Icon | Action             | Description                                                                 |
-|------|--------------------|-----------------------------------------------------------------------------|
-| 🛡️   | **Spam Protect**   | Enable powerful spam protection features. Monitors and automatically responds to carrier or third-party spam alerts. Helps keep your number's reputation clean and mitigates spam risk. |
-| ✏️    | **Edit**           | Modify the configuration, nickname, or agent assignment for the selected phone number. |
-| 🔒    | **Activate for AI**| Turns on AI routing and features for this number, allowing the AI agent to answer inbound calls and handle automations. |
-| 🗑️    | **Delete**         | Permanently remove the phone number from your inventory. **Warning:** This action cannot be undone. |
-| 📡    | **Endpoints**      | Manage API endpoints for SIP/telephony routing. Configure webhook URLs and routing preferences for external system integration. |
-| 📨    | **10DLC**          | Assign this number to a 10DLC messaging campaign, or view/edit its campaign and carrier compliance settings for A2P SMS/MMS. |
-
-
-
-![Number Actions Menu](/images/manage/ai-sync-number/actions1.png)
-
-
-## 🤖 What Is "Activate for AI"?
-
-**Activate for AI** turns a phone number into one that can be used for AI voice calls. After activation, the number can receive and place calls handled by the AI system instead of a person.
-
----
-
-## 🕒 When Do You See "Activate for AI"?
-
-You see the **Activate for AI** option only when the phone number is **not yet** activated for AI. Once a number is activated, this option is no longer shown for that number.
-
----
-
-## 👉 How to Activate a Single Phone Number
-
-1. Go to **Manage** → **Phone Numbers**.
-2. Find the phone number you want to activate.
-3. Click the **three-dot menu** (⋮) in the **Action** column for that row.
-4. Click **Activate for AI**.
-5. When asked to confirm, click **OK**.
-6. A message will appear:
-   - **Success:** The number is now activated for AI.
-   - **Error:** The message explains what went wrong (for example, credentials not set up or the number is already activated).
-
----
-
-## 📑 How to Activate Multiple Phone Numbers at Once
-
-1. Go to **Manage** → **Phone Numbers**.
-2. Select the phone numbers you want by checking the boxes in the first column.
-3. A **Bulk Action** bar appears showing how many numbers you selected.
-4. Open the **Bulk Action** dropdown.
-5. Choose **Activate for AI**.
-6. When asked to confirm, click **OK**.
-
----
-
-## ⚙️ What Happens When You Activate a Number?
-
-When you activate a number for AI:
-
-- The system connects that number to the AI calling service.
-- The number becomes ready for outbound calls.
-- The number is automatically included in AI call's local presence.
-- Incoming calls to that number can be answered by the AI.
-- Outgoing calls can be placed using the AI from that number.
-
-### ⚠️ Credentials Not Set Up
-
-If your account or provider credentials are not configured, you may see a message asking you to set them up first. Contact your administrator to configure the required credentials.
-
-
-
-
-
-## ➕ Acquiring Phone Numbers
-
-Purchase phone numbers instantly and connect them to your business with simple, guided setup.
-
----
-
-![Phone Numbers Purchase Table](/images/manage/ai-sync-number/purchase.png)
-
----
-
-**Getting Started**
-
-To purchase a new phone number, click the **Purchase** button from the Phone Numbers page.
-
-![Phone Numbers Purchase Table](/images/manage/ai-sync-number/new-purchase.png)
----
-
-**Purchase Number Form**
-
-### 📡 1. Provider 
-
-Select your telecommunications provider:
-
-- **Ai Sync** – Primary carrier option  
-- **Twilio** – Alternative carrier option  
-- **Ai Sync V2** – Additional carrier option (USA only)  
-
----
-
-### 🌎 2. Countries 
-
-Select the country for phone number:
-
-- **USA** (Default)  
-- **Canada**  
-
-*Note: Ai Sync V2 only supports USA.*
-
----
-
-### ☎️ 3. Type 
-
-Select the type of phone number:
-
-- **Local** – Standard local phone numbers  
-- **Toll Free** – 800, 833, 844, 855, 866, 877, 888 numbers  
-- **Mobile** – Mobile phone numbers  
-
-**Provider Limitations:**
-- *Ai Sync V2*: Does not support Mobile numbers  
-- *Twilio*: Mobile not available for USA and Canada (available for UK, Australia)  
-- *Ai Sync*: All types available for all countries  
-
----
-
-### 🔍 4. Search By 
-
-Choose how to search for available numbers:
-
-- **AreaCode** – Search by specific area code (e.g., 212, 415)  
-- **Region** – Search by geographic region (e.g., NY, CA)  
-- **City** – Search by city name (e.g., New York, Los Angeles)  
-
----
-
-### 🏙️ 5. AreaCode/Region/City 
-
-Enter the value based on your **Search By** selection:
-
-- For *AreaCode*: Enter 3-digit area code
-- For *Region*: Enter state code or region name
-- For *City*: Enter city name
-
----
-
-### 📋 6. Search Results 
-
-After clicking **Search**, available numbers display in a table:
-
-| # | Friendly Name | Phone # | Locality | Capabilities |   | Action |
-|---|---------------|---------|----------|--------------|---|--------|
-|   | Example       | 315-238-9306 | Tully, New York, UNITED STATES | MMS, SMS, Voice | [x] | Purchase |
-
-- **Friendly Name** — Display name of the number  
-- **Phone #** — The phone number  
-- **Locality** — Geographic location  
-- **Capabilities** — Supported features (Voice, SMS, MMS)  
-- **Checkbox** — Select for bulk purchase  
-- **Action** — Purchase button  
-
----
-
-**Purchase Options 🛒**
-
-**Single Purchase:**
-
-- Click the purchase button next to the desired number.
-
-**Buy Multiple:**
-
-1. Check the numbers you want to purchase  
-2. Click **Buy Multiple** button  
-3. All selected numbers will be purchased at 
-
-
-
-## 🌍 Local Preference API Configuration
-
-The Local Preference API provides advanced configuration options for managing phone number preferences, routing, and geographic targeting to optimize call delivery and compliance.
-
- 📊 **API Configuration Interface**
-
-<div style={{flex: 1}}>
-  ![Local Preference API Configuration](/images/manage/ai-sync-number/local-preference-api.png)
-</div>
-
-This interface allows you to configure:
-
-- **API Endpoints**: Set up connection points for local preference management
-- **Authentication**: Configure API keys and security credentials
-- **Rate Limits**: Set call frequency and volume restrictions
-- **Geographic Rules**: Define area code and region-specific preferences
-
- 🎛️ **Local Preference Settings**
-
-<div style={{flex: 1}}>
-  ![Local Preference Settings](/images/manage/ai-sync-number/local-preference.png)
-</div>
-
-### ✅ Pre-check Functionality
-
-Before purchasing a phone number, I use the Local Preference API's pre-check system to ensure the number and its configuration are valid and ready for use.
-
-**Pre-check for Number Purchase**
-- **Number Availability**: Confirms the number is available for purchase from the selected provider.
-- **Carrier Compatibility**: Checks if the number meets carrier and campaign requirements.
-- **Configuration Validation**: Verifies that all required parameters and settings are correct before proceeding.
-- **Error Detection**: Identifies any issues that could prevent successful acquisition or use.
-
-**Testing and Validation**
-- **Dry Run**: Simulates the purchase and configuration process without making changes, so I can see if everything will work as expected.
-- **Simulation**: Previews how the number will behave in routing and campaign scenarios.
-- **Validation Reports**: Provides detailed feedback on any issues or confirms readiness for purchase.
-
-**Why Use Pre-check?**
-- **Avoid Failed Purchases**: Prevents buying numbers that won't work for your needs.
-- **Saves Time and Money**: Reduces troubleshooting and unnecessary costs.
-- **Ensures Compliance**: Makes sure all regulatory and carrier requirements are met before you buy.
-- **Confidence in Deployment**: Lets you proceed with number acquisition knowing everything is set up correctly.
-
- 
-
-# 🔢 Assign 10 DLC Numbers to  Campaigns
-
-Assigning  10 DLC (10-Digit Long Code) Numbers to campaigns links your purchased phone numbers to a specific campaign for A2P (Application-to-Person) messaging. This keeps your traffic compliant with carrier requirements and improves deliverability. Use the steps below to assign numbers to your 10 DLC campaign in Aisync.
-
-<iframe src="https://embed.app.guidde.com/playbooks/mk6pc8Mm1VdW8ErruYuCNG?mode=videoOnly" 
-        title="Assign  10DLC Num to Campaigns in Aisync" 
-        allow="autoplay; fullscreen" 
-        allowtransparency="true" 
-        frameborder="0" 
-        scrolling="no" 
-        class="wistia_embed" 
-        name="wistia_embed" 
-        width="640" 
-        height="360">
-</iframe>
-
-
-> **Note:**  
-> To assign 10DLC numbers to your campaign in Aisync, follow the steps above. The assignment process may take up to 24 hours to complete. You can assign a maximum of 49 numbers to a single campaign.
-
-## ✅ Verification Status Management
-
-**🔍 Verification Process**
-
-<CardGroup cols={2}>
-  <Card title="Verified Numbers" icon="circle-check">
-    **Status**: Ready for campaigns
-    <br />**Capabilities**: Full calling features enabled
-    <br />**Trust Level**: High deliverability and success rates
-  </Card>
-  
-  <Card title="Unverified Numbers" icon="circle-exclamation">
-    **Status**: Pending verification
-    <br />**Limitations**: Restricted calling capabilities
-    <br />**Action Required**: Complete verification process
-  </Card>
-  
-  <Card title="10DLC Registration" icon="certificate">
-    **Purpose**: A2P 10DLC compliance
-    <br />**Status**: "Yes" or "No" indicator
-    <br />**Benefits**: Higher throughput and deliverability
-    <br />**Requirement**: Mandatory for US business messaging
-  </Card>
-  
-  <Card title="Verification Benefits" icon="star">
-    **Higher Success Rates**: Better call connection
-    <br />**Reduced Filtering**: Avoid spam filters
-    <br />**Carrier Trust**: Improved carrier relationships
-    <br />**Compliance**: Meet regulatory requirements
-  </Card>
-</CardGroup>
-
-## 📤 SMS Sending – “From Number" Routing In Workflow
-
-When sending SMS, the system chooses the **"From"** number using a defined order. Below are the options and fallbacks.
-
-**1️⃣ Same as dial**
-
-The system uses the contact’s **last call or conversation** and picks the **last used number** for that contact. That number is used for sending if it’s still valid (see fallbacks below).
-
-**2️⃣ Assigned user**
-
-The system finds the **user assigned to this contact**, then uses that user’s **assigned number** for sending.
-
-**3️⃣ Select any number**
-
-The user picks a **specific number**; the system uses that dedicated number for sending.
-
-**🛡️ Fallback when the chosen number is not 10DLC linked**
-
-If the number from (1), (2), or (3) does **not** have a 10DLC campaign linked (or isn’t valid):
-
-| 🧭 Fallback | Behavior |
-|----------|----------|
-| **Area-code match** | System uses the contact’s area code, finds a company number with that area code that is 10DLC linked, and uses it for SMS sending. |
-| **Final fallback** | If no area-code match is found, the system picks any 10DLC linked number for the company and uses it for SMS sending. |
-
-**📝 Summary**
-
-| Option | Behavior |
-|--------|----------|
-| **Same as dial** | Last call/conversation → last used number |
-| **Assigned user** | User assigned to contact → that user’s number |
-| **Select any number** | User-selected dedicated number |
-| **Fallback 1** | Chosen number not 10DLC linked → use contact area code + 10DLC linked number |
-| **Fallback 2** | No area-code match → use any 10DLC linked number |
-
----
-
-# 📥 Incoming SMS Routing Flow
-
-When an incoming SMS is received, the system determines which user should be notified and assigned to the message using this prioritized process:
-
-1. **Check caller in logs (previously dialed?)**
-   - The system checks if the sender’s number appears in recent call or conversation logs.
-   - **If found**: 
-     - The last user who communicated with this number is attached to the message.
-     - That user receives an in-app notification for the new SMS.
-
-2. **Not dialed, but contact exists**
-   - If the number was not found in logs, but a contact profile exists with that phone number:
-     - The system checks if the contact has an assigned user.
-     - **If assigned**: The message is attached to that user.
-
-3. **Nothing found yet – check “from” number assignment**
-   - Still no user assigned after prior steps:
-     - The system checks the number (DID — the number the SMS was received on).
-     - If that company number is assigned to a user, the message is assigned to that user.
-
-4. **Final fallback**
-   - If no user is found through any prior logic:
-     - The message is assigned to the company’s default user (such as the company owner or admin).
-
-**📊 Flow Summary**
-
-| Step | Condition                                  | Action                                                                 |
-|------|--------------------------------------------|------------------------------------------------------------------------|
-| 1    | Caller in logs (previously dialed)         | Attach to last conversation user; that user gets in-app notifications  |
-| 2    | Contact exists, not in logs                | Assign to contact’s assigned user (if any)                             |
-| 3    | Still no user                              | Check received-on number → assign to user that number is assigned to   |
-| 4    | Else                                       | Assign to company user (owner/default)                                 |
-
-> **Note:**  
-> This routing process ensures that incoming messages are assigned to the most contextually relevant user, helping maintain continuity and quick response for each conversation.
-
-
-## 🔄 Renewal & Billing Management
-
-**📅 Renewal Tracking**
-
-<CardGroup cols={2}>
-  <Card title="Automatic Renewals" icon="calendar-check">
-    **Next Renewal**: Track upcoming renewal dates
-    <br />**Example**: `09-14-2025 12:40 PM`
-    <br />**Notifications**: Automatic renewal reminders
-    <br />**Billing**: Seamless payment processing
-  </Card>
-  
-  <Card title="Renewal Management" icon="credit-card">
-    **Payment Methods**: Manage billing preferences
-    <br />**Notifications**: Email alerts before renewal
-    <br />**History**: View renewal and payment history
-    <br />**Controls**: Enable/disable auto-renewal
-  </Card>
-  
-  <Card title="Cost Optimization" icon="chart-mixed">
-    **Usage Analysis**: Review number utilization
-    <br />**Right-sizing**: Optimize number inventory
-    <br />**Provider Comparison**: Compare costs across providers
-    <br />**Bulk Discounts**: Leverage volume pricing
-  </Card>
-  
-  <Card title="Billing Analytics" icon="receipt">
-    **Cost Tracking**: Monitor spending per number
-    <br />**ROI Analysis**: Calculate return on investment
-    <br />**Budget Planning**: Forecast future costs
-    <br />**Reports**: Detailed billing reports
-  </Card>
-</CardGroup>
- 
