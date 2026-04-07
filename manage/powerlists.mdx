@@ -1,438 +1,185 @@
 ---
 title: "PowerLists"
-description: "Create and manage dynamic contact lists for targeted campaigns and automated customer segmentation"
+description: "User guide for creating, configuring, uploading, and managing PowerLists."
 icon: "list"
 ---
 
-# 📋 PowerLists: Interface Guide
-
-![PowerLists UI Overview](/images/manage/powerlists/overview.png)
-
-**PowerList Table Fields (UI Reference)**
-| Field             | Description                              | Example                  |
-|-------------------|------------------------------------------|--------------------------|
-| **#**             | Row number                               | 1, 2, 3...               |
-| **Active**        | Toggle list status (Active/Inactive) & actions: Edit, View, Delete, Download, Import/Export , Reset| [Switch] + [Actions]    |
-| **ID**            | Unique list identifier                   | `MjcxNT14`, ...          |
-| **Power List**    | List name                                | `Excel File Upload Test` |
-| **# Uploaded**    | Contacts uploaded                        | 784                      |
-| **# Dialed**      | Contacts called                          | 0                        |
-| **# Daily Dialed**| Calls made today                         | 0                        |
-| **# Removed**     | Contacts removed                         | 0                        |
-| **Created At** | Creation timestamp | `08-04-2025 10:57 AM` |
-
-
-- **Tags** let you flexibly group and search contacts.
-- **Dropdown filters** (by tag or other fields) help you quickly segment PowerList members for efficient actions and precise targeting.
-
-
-
-
-
-
-<Callout type="info" icon="bolt" title="Welcome to PowerLists!">
-  PowerLists are your secret weapon for dynamic, automated, and highly-targeted campaigns and customer segmentation. This guide walks you step-by-step through everything you need to become a PowerLists pro!
-</Callout>
-
----
-
-# 📝 PowerLists Module – Standard Operating Procedures (SOPs)
-
-> This section presents a step-by-step Standard Operating Procedures (SOPs) framework for all aspects of PowerLists usage. Adhering to these SOPs ensures streamlined processes, compliance, and optimal campaign outcomes.
+This guide explains **PowerLists** in simple language: purpose, main list, actions, setup form, and upload flow.
 
 <img
-  src="/images/manage/powerlists/SOP's.png"
-  alt="PowerLists SOPs Modal"
-  className="rounded-lg border shadow-sm my-4"
-/>
-
-## 1️⃣ Purpose & Scope
-
-**🎯 Purpose:**  
-This SOP provides a systematic approach for creating, managing, and utilizing PowerLists within the system to organize contact data, configure dialing parameters, manage call dispositions, and integrate with automation for effective outbound calling campaigns.
-
-**🌐 Scope:**  
-Applies to all authorized users who access the PowerLists Management Module for organizing contact databases, configuring automated dialing campaigns, managing call outcomes, and tracking campaign performance metrics.
-
----
-
-## 2️⃣ Definitions & Terminology
-
-| **📝 Term**             | **📖 Definition**                                                                              |
-|----------------|----------------------------------------------------------------------------------------|
-| **📋 PowerList**        | A dynamic list for segmenting contacts, customizable for effective campaigns and organization |
-| **📞 Disposition**      | Call outcome/result triggering further action (e.g. "Success", "No Answer", "Remove")         |
-| **🔢 Max Contacts**     | The maximum allowable contacts in a PowerList (minimum: 50 for dialing efficiency)            |
-| **🤙 Dial at a Time**   | Number of concurrent outbound calls in progress                                               |
-| **⏲️ Call Timeout**     | Maximum duration the dialer waits before abandoning an unanswered call                        |
-| **⏳ Cool Down Time**   | Wait period before retrying a failed or unanswered contact                                    |
-| **🔗 GHL**              | Abbreviation for GoHighLevel CRM integration                                                  |
-| **🚫 DNC**              | "Do Not Call"—excludes these contacts for compliance                                          |
-| **🧾 Contact Fields**   | Information points per contact (e.g., phone, name, tags)                                     |
-| **🏷️ Tags**            | Keywords for organization/filtering/searching                                                 |
-| **🤖 AI Agent**         | Virtual assistant handling automation and callbacks                                           |
-| **📑 Default Settings** | Reusable, template-like PowerList configuration                                               |
-| **🧭 Walkthrough**      | In-app stepwise interactive setup guide                                                       |
-
----
-
-## 3️⃣ Prerequisites & Access Requirements
-
-**🛠️ Before You Begin:**
-- 🔑 User permissions required:
-  - `view-powerLists`, `add-powerList`, `edit-powerList`, `delete-powerList`, `download-powerList`
-- 🖥️ Access to the PowerLists Management Module UI
-- 🎯 Defined campaign goals and target audience
-- 📂 Upload-ready contact files (`.xlsx` or `.csv`)
-- 🧩 (Optional) GoHighLevel CRM account (for advanced integration)
-- 🤖 (Optional) AI Agent or custom disposition workflows
-
----
-
-## 4️⃣ Procedure: PowerList Creation
-
-1. 🧭 **Start Walkthrough:** First-time users receive a stepwise tour on launching the module.
-2. ➕ **Create New PowerList:** Click "New PowerList" (optionally load default configuration).
-3. 📝 **Define Essentials:** Enter PowerList name, select dialer profile, and basic criteria.
-4. ⚙️ **Configure Dialer Options:** Adjust maximum calls, priorities, timeouts, etc.
-5. 🔖 **Advanced Settings:** Add tags, set max contacts, enable automations (AI/trigger-based).
-6. 🗂️ **Customize Fields/Dispositions:** Map file fields and define call outcome actions.
-
----
-
-## 5️⃣ Procedure: Contact Upload & Mapping
-
-1. 🧹 **Prepare Data:** Clean contact lists, de-duplicate entries, verify structure.
-2. ⬆️ **Upload Contacts:** Drag and drop your file, or select file for import.
-3. 🔗 **Map Fields:** Match spreadsheet columns to PowerList fields via the UI.
-4. 👀 **Monitor Status:** Follow real-time upload progress and error notifications.
-
----
-
-## 6️⃣ Procedure: PowerList Modification
-
-- ✏️ Enter Edit Mode for any list to modify settings, adjust tags, update upload maps, or reset contacts.
-- 💾 Save changes to update the PowerList immediately.
-
----
-
-## 7️⃣ Procedure: PowerList Filtering & Viewing
-
-- 🏷️ **By Tags:** Quickly filter lists by campaign, audience, or geography.
-- 👥 **By Members:** View or search contacts within a list.
-- 📊 **Table Navigation:** Utilize search, sorting, and paging for large lists.
-
----
-
-## 8️⃣ Procedure: PowerList Actions
-
-- 🔛 **Status Toggle:** Enable or pause lists instantly.
-- 🌀 **Duplicate:** Create a new PowerList by cloning existing settings.
-- ⬇️ **View/Download/Export:** Retrieve contact records or export as needed.
-- 🗑️ **Reset/Delete:** Archive or permanently delete lists.
-
----
-
-## 9️⃣ Procedure: Disposition Configuration
-
-- 📈 Review call outcomes in the dashboard.
-- 🤖 Assign automation or follow-up actions to individual disposition types.
-- 🌐 Integrate dispositions with external (e.g., CRM) systems as needed.
-
----
-
-## 🔟 Procedure: GHL (GoHighLevel) Integration
-
-- 📍 Assign destination GHL Location for new or synced contacts.
-- 🏷️ Auto-tag synced leads for downstream automation in GHL.
-- 🔄 Ensure mapping and workflows align with campaign objectives.
-
----
-
-## 1️⃣1️⃣ Critical Requirements & Constraints
-
-- ☎️ Every list must map at least one phone field.
-- 🆔 PowerList names must be unique; duplicates are not permitted.
-- 🔢 Each list must have at least 50 contacts for optimal performance.
-- 📄 File types supported: `.csv` and `.xlsx`
-- 🕵️ Monitor bulk uploads for errors; retry or correct as needed.
-- 🔒 Maintain data security, privacy, and adhere to system permissions.
-
----
-
-## 1️⃣2️⃣ Best Practices
-
-- 🏷️ Name lists and tags descriptively and consistently.
-- 🎚️ Tune dialer and call settings by campaign requirements and compliance needs.
-- 🔍 Regularly audit, clean, and back up your PowerLists.
-- ⚡ Update disposition workflows before campaign launch.
-- 🤝 Share documented list strategies with your team.
-- 🤖 Utilize GHL integration for deeper automation and monitor metrics continually.
-
-<Callout type="info" icon="✅" title="Tip">
-Use default configurations for rapid setup, or customize every aspect of your PowerLists. These SOPs make your setup reliable and repeatable!
-</Callout>
-
-
-
-## ➕ Creating PowerLists
-<img
-  src="/images/manage/powerlists/add-new.png"
-  alt="PowerLists Interface"
+  src="/images/manage/powerlists/overview.png"
+  alt="PowerLists list overview"
   className="rounded-lg border shadow-sm"
 />
-### 🚀 New PowerList Creation
-<CardGroup cols={2}>
-  <Card title="New PowerList" icon="plus">
-    Create new contact lists for campaigns
-    <br />**Button**: "New PowerList" - Start list creation wizard
-    <br />**Options**: Upload files, import data, manual entry
-  </Card>
-  
-  <Card title="Contact Fields" icon="table-cells">
-    Configure contact data fields and structure
-    <br />**Setup**: Define custom contact fields
-    <br />**Mapping**: Map uploaded data to fields
-    <br />**Validation**: Ensure data quality and format
-  </Card>
-  
-  <Card title="Dispositions" icon="clipboard-check">
-    Manage call outcome classifications
-    <br />**Categories**: Success, busy, no answer, voicemail
-    <br />**Custom**: Create specific disposition types
-    <br />**Tracking**: Monitor call result patterns
-  </Card>
-  
-  <Card title="Upload Data" icon="upload">
-    Import contact data from various sources
-    <br />**File Upload**: CSV, Excel file imports
-    <br />**Bulk Import**: Large dataset processing
-    <br />**Format**: Validate data before upload
-  </Card>
-  
-  <Card title="PowerList Form Fields" icon="file-lines">
-    Essential form configuration for list creation
-    <br />**Profile**: Select dialer profile for list
-    <br />**PowerList Name**: Unique identifier for the list
-    <br />**Required**: Name and profile fields mandatory
-  </Card>
-  
-  <Card title="Field Mapping Setup" icon="arrows-turn-to-dots">
-    Map spreadsheet columns to contact fields
-    <br />**Lead Name**: Map to contact name fields
-    <br />**Lead Mobile**: Map to phone number fields
-    <br />**Custom Fields**: Configure additional data mapping
-  </Card>
-  
-  <Card title="Data Import Options" icon="file-spreadsheet">
-    Multiple file format support for data import
-    <br />**Spreadsheet**: Excel and CSV file uploads
-    <br />**Validation**: Data format verification
-    <br />**Preview**: Review data before final import
-  </Card>
-  
-  <Card title="Profile Assignment" icon="user-gear">
-    Associate PowerList with dialer profiles
-    <br />**Profile Selection**: Choose from available profiles
-    <br />**Campaign Integration**: Link to calling campaigns
-    <br />**Configuration**: Automated dialing settings
-  </Card>
-</CardGroup>
 
-## 🔄 PowerList Workflow
 
-### 📈 List Lifecycle
+A **PowerList** is a named calling list for outbound work.
 
-<Tabs>
-  <Tab title="List Creation">
-    ```
-    📝 Creating New PowerLists:
-    - Click "New PowerList" button
-    - Choose import method (file/manual)
-    - Upload contact data
-    - Configure list settings
-    
-    Import Options:
-    ✅ CSV file upload
-    ✅ Excel file import
-    ✅ API integration
-    ✅ Manual contact entry
-    ```
-  </Tab>
-  
-  <Tab title="Contact Management">
-    ```
-    👥 Managing List Contacts:
-    - View uploaded contact count
-    - Track dialing progress
-    - Monitor daily activity
-    - Remove inactive contacts
-    
-    Key Metrics:
-    ✅ Total uploaded contacts
-    ✅ Successfully dialed numbers
-    ✅ Daily dialing volume
-    ✅ Removed/inactive contacts
-    ```
-  </Tab>
-  
-  <Tab title="Campaign Integration">
-    ```
-    🎯 Campaign Assignment:
-    - Assign lists to voice campaigns
-    - Set calling schedules
-    - Configure dialing strategies
-    - Track campaign performance
-    
-    Features:
-    ✅ Multi-campaign support
-    ✅ Automated dialing
-    ✅ Performance tracking
-    ✅ Real-time analytics
-    ```
-  </Tab>
-</Tabs>
+For each list, you can:
 
-## ⚡ PowerList Actions & Controls
+- set a unique list name,
+- define dialing behavior,
+- assign members and tags,
+- connect optional CRM location/tag settings,
+- define call-outcome actions (dispositions),
+- and upload contacts from files.
 
-### 🎛️ List Management Actions
 
-From the interface, you can see several action options (⋮) next to each PowerList:
+## 🖥️ Main screen (list view)
+
+**🏷️ Title and trail**
+
+Top area usually shows **PowerLists** and a breadcrumb like:
+
+`PowerList -> List`
+
+**🏁 Actions at the top**
+
+- **New PowerList**: starts list creation.
+- **SOPs**: opens built-in standard operating procedure reference.
+
+**🗂️ Filters (above table)**
+
+- **Tags**: filter lists by one or more assigned tags.
+- **PowerList Member**: filter lists by assigned member(s), when field is available.
+- **Filter**: applies selected filter values.
+
+**⚙️ Table controls**
+
+- Rows-per-page selector.
+- Search box to narrow visible rows.
+
+
+## 🗃️ Columns in the main table
+
+| What you see | What it means |
+|--------------|----------------|
+| **#ID** | Row number in current view. |
+| **Active** | Row menu entry point (`...`) with list actions. |
+| **ID** | System identifier for support/export matching. |
+| **PowerList** | List name; tag chips may appear next to it. |
+| **# Uploaded** | Count of contacts uploaded to list. |
+| **# Dialed** | Total contacts dialed over time. |
+| **# Daily Dialed** | Contacts dialed during current day. |
+| **# Removed** | Contacts removed from this list. |
+| **Created At** | Creation date/time in your timezone. |
+
+## ⚡ Menu actions (under Active)
+
+Action availability depends on role and list type. If visible, they usually mean:
+
+- **Status**: turn list on/off for dialing.
+- **Duplicate**: clones setup into a new list name; contacts are not copied.
+- **Edit**: opens full configuration form.
+- **View**: opens contacts view for that list.
+- **Delete**: permanently removes list and related contacts after confirmation.
+- **Download Statistics**: exports metrics and outcome summaries.
+- **Export Contacts**: spreadsheet-friendly contacts export.
+- **CSV Contacts**: CSV export format.
+- **PDF Contacts**: report-style PDF export.
+- **Reset**: resets dialing state of contacts to fresh/new without removing contacts.
+
+
 <img
   src="/images/manage/powerlists/actions.png"
-  alt="PowerLists Interface"
+  alt="PowerLists row actions menu"
   className="rounded-lg border shadow-sm"
 />
-<CardGroup cols={3}>
-  <Card title="Active/Inactive Toggle" icon="toggle-on">
-    Control list availability for campaigns
-    <br />**Active**: Available for dialing campaigns
-    <br />**Inactive**: Paused, not available for use
-  </Card>
-  
-  <Card title="More Actions" icon="ellipsis-vertical">
-    Comprehensive list management options
-    <br />**Access**: Click more options (⋮)
-    <br />**Actions**: Edit, view, delete, download statistics, export contact, CSV contact , PDF contact ,reset 
-  </Card>
-  
-  <Card title="Performance Tracking" icon="chart-line">
-    Monitor list effectiveness and metrics
-    <br />**Metrics**: Upload, dial, removal statistics
-    <br />**Analytics**: Daily performance tracking
-  </Card>
-</CardGroup>
 
-### ✏️ Editing a PowerList
+---
 
-To modify an existing PowerList, use the **Edit PowerList** interface as shown below:
+## 📝 Create or edit a PowerList 
+
+Use **New PowerList** or **Edit** from row menu.
+
+Use **Back** to leave without saving, and **Save** to apply changes.
+
+<img
+  src="/images/manage/powerlists/add-new.png"
+  alt="New PowerList setup form"
+  className="rounded-lg border shadow-sm"
+/>
+
+Many labels include help icons with short guidance on hover/focus.
+
+### 👤 People and naming
+
+- **PowerList Member**: choose one or more members when field is shown.
+- **PowerList Name**: unique, clear name for your company.
+- **Max Contacts**: list capacity limit; system may enforce minimum.
+
+### 📞 Calling behavior
+
+- **Must Disposition Calls**: enforce outcome selection before moving on.
+- **Seconds before Timeout**: ring wait before unanswered handling.
+- **Dial at a Time**: concurrent outbound calls for list.
+- **Max Attempts Daily**: daily try limit per contact.
+- **Max Attempts Total**: total try limit per contact.
+- **Next PowerList**: optional next list handoff target.
+
+### 🏷️ Organization and follow-up
+
+- **Tags**: labels for grouping/filtering lists later.
+- **AI Agent For Callback**: optional callback assistant assignment.
+- **Dialed Reset Daily**: resets daily counters at day boundary.
+- **Cool Down Time**: wait period before retrying same contact.
+
+### 🔗 CRM connection (GHL)
+
+- **GHL Location**: destination location for posting actions.
+- **GHL Tag On Disconnected**: optional tag applied for disconnected outcomes.
+
+### 📝 Contact fields (Collect User Information)
+
+Choose which data points are stored for contacts in this list (name/email/address/custom fields etc., based on your account).
+
+### 🏁 Dispositions
+
+For each outcome label, choose one action:
+
+- **No Action**
+- **Remove From List**
+- **Post To GHL**
+- **Post To GHL & Never Call**
+
+Choose actions based on your team workflow and compliance logic.
 
 <img
   src="/images/manage/powerlists/edit-powerlist.png"
-  alt="Edit PowerList Interface"
+  alt="Edit PowerList form"
   className="rounded-lg border shadow-sm"
 />
 
-### 🛠️ PowerList Edit Interface Breakdown
-
-| Section                          | What You Can Edit/Configure                                                                     |
-|-----------------------------------|-----------------------------------------------------------------------------------------------|
-| **PowerList Member & Name**       | View/update the PowerList's display name and assigned member                                   |
-| **Max Contacts & Disposition**    | Limit the number of contacts in the list and set max allowed disposition (call) attempts       |
-| **Dialing Controls**              | Set dial-at-a-time, max attempts per contact (daily/total), and customize dial timeout          |
-| **Tags & Agent Controls**         | Assign tags, select callback agents, enable/disable reset for dialed contacts, and set cooldown|
-| **GHL Integration**               | Pick "GHL Location", set "GHL Tag on Disconnected" for tight external platform integrations     |
-| **Custom Fields/Dispositions**    | Create custom fields and dispositions with specified actions/results (e.g., "No Action")        |
-| **Upload & Import Data**          | Drag-and-drop CSV/Excel to add records; use mapping tool to align import fields with PowerList  |
-
 ---
 
-### ✏️ How to Edit a PowerList
+## ⬆️ Uploading contacts
 
-1. Click on the **More Actions (⋮)** beside your PowerList.
-2. Choose **Edit**.
-3. Update any field/setting in the Edit interface.
-4. Click **Save** to apply your changes.
+### 🔁 Duplicate handling mode
 
-<Tip icon="edit">
-  You can optimize calling efficiency, automation, compliance, and agent workflow by fine-tuning PowerList settings.<br />
-  Use clear list names and relevant tags to keep management simple.
-</Tip>
- 
+- **Ignore**: skip duplicate rows.
+- **Overwrite**: replace existing matching data.
+- **Merge**: combine incoming and existing data.
 
-## 🎯 Campaign Integration & Usage
+### 📂 File selection
 
-### 🚀 Campaign Assignment
+- Upload supported spreadsheet/CSV file types shown in UI.
+- Then open **Mapping Tool**.
 
-<CardGroup cols={2}>
-  <Card title="Voice Campaign Integration" icon="microphone">
-    Seamlessly integrate PowerLists with voice campaigns
-    <br />**Assignment**: Direct list-to-campaign mapping
-    <br />**Automation**: Automated dialing from lists
-  </Card>
-  
-  <Card title="Multi-Campaign Support" icon="layer-group">
-    Use single lists across multiple campaigns
-    <br />**Efficiency**: Maximize list utilization
-    <br />**Tracking**: Monitor cross-campaign performance
-  </Card>
-  
-  <Card title="A/B Testing" icon="flask">
-    Test different approaches with list segments
-    <br />**Segmentation**: Split lists for testing
-    <br />**Comparison**: Compare performance metrics
-  </Card>
-  
-  <Card title="Exclusion Management" icon="ban">
-    Manage do-not-call and exclusion lists
-    <br />**Compliance**: Automatic exclusion handling
-    <br />**Protection**: Prevent unwanted contacts
-  </Card>
-</CardGroup>
+### 🗺️ Mapping rules
 
-### 📈 Real-time Campaign Tracking
+- Map file columns to internal fields.
+- At least one mapped **Phone Number** field is required.
+- Unused columns can be mapped to **Ignore**.
 
-Monitor your PowerList performance within active campaigns:
+### 💾 Save and progress
 
-#### 🎯 Campaign Metrics
-- **List Assignment**: Which campaigns are using each list
-- **Dialing Progress**: Real-time calling activity tracking
-- **Daily Performance**: Day-by-day dialing statistics
-- **Contact Status**: Track contact lifecycle within campaigns
+Click **Save** to store list settings and start import (if mapping is complete).
 
-#### 📊 Performance Analysis
-- **Conversion Rates**: Success rates by PowerList
-- **Contact Quality**: Effective vs removed contacts
-- **Campaign ROI**: Return on investment per list
-- **Optimization Insights**: Data-driven improvement recommendations
+Progress area may show:
 
-## 🔄 Data Management & Quality
+- job/reference id,
+- current status,
+- result summary.
 
-### 📁 Import/Export Operations
+Use **Check Status** to refresh progress, **Refresh Table** to update list counts, and **Close** when done.
 
-<CardGroup cols={2}>
-  <Card title="File Upload Support" icon="file-arrow-up">
-    Import contacts from various file formats
-    <br />**Formats**: CSV, Excel, TXT files
-    <br />**Validation**: Automatic data validation during import
-  </Card>
-  
-  <Card title="API Integration" icon="code">
-    Programmatic PowerList management
-    <br />**Real-time**: Live data synchronization
-    <br />**Automation**: Seamless system integration
-  </Card>
-  
-  <Card title="Export Options" icon="download">
-    Export PowerList data in multiple formats
-    <br />**Formats**: CSV, Excel, JSON
-    <br />**Filtering**: Export specific segments or full lists
-  </Card>
-  
-  <Card title="Data Validation" icon="check-double">
-    Ensure contact data quality and accuracy
-    <br />**Validation**: Phone, email format checking
-    <br />**Cleanup**: Remove invalid or duplicate contacts
-  </Card>
-</CardGroup>
- 
