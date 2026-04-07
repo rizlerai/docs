@@ -1,144 +1,111 @@
 ---
 title: "PowerList Tags"
-description: "Create and manage tags for PowerLists to enable efficient organization, segmentation, and targeted campaign management"
 icon: "tag"
 ---
 
-# 🏷️ PowerList Tags
-Design comprehensive PowerList tagging systems that enhance list organization, enable precise campaign targeting, and streamline marketing management through intelligent categorization and automated workflows.
-
-## 📋 PowerList Tags Overview
+**PowerList Tag** lets you create and manage labels for your PowerLists so teams can group lists consistently (for example by priority, campaign type, or follow-up state). Each tag can also be restricted by role, so only selected roles can view/use it.
 
 <img
   src="/images/manage/tags/powerlist-tag-overview.png"
-  alt="PowerList Tags Interface"
+  alt="PowerList Tags list view"
   className="rounded-lg border shadow-sm"
 />
 
-Organize and categorize your PowerLists with flexible tagging system, enabling quick identification, efficient segmentation, and targeted campaign management based on list characteristics and performance.
 
-### 📊 PowerList Tags Fields
+Use this page to maintain organization-wide PowerList tags.
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Tag identifier | `1`, `2`, `3`, `4`, `5` |
-| **Tag** | Tag name/label | `High Priority`, `Campaign Active`, `Follow-up Required` |
-| **Updated At** | Last modification | `08-15-2025 10:30 AM` |
-| **Created At** | Creation timestamp | `08-15-2025 09:15 AM` |
-| **Action** | Available operations | Edit, Delete, Duplicate |
+A tag record includes:
 
-## ➕ Creating PowerList Tags
+- **Tag** name
+- optional **role access links** (Assign role View)
+- created/updated timestamps
 
-### 🚀 Add New Tag
-<img
-  src="/images/manage/tags/powerlist-tag-add.png"
-  alt="Add New PowerList Tag Interface"
-  className="rounded-lg border shadow-sm"
-/>
 
-### 🎯 Tag Creation Process
+## 🗂️ Main list
 
-<CardGroup cols={2}>
-  <Card title="Create New Tag" icon="plus">
-    Add custom tags for PowerList organization
-    <br />**Input Field**: Enter tag name in text field
-    <br />**Add Button**: Click "Add" to create tag
-    <br />**Instant Setup**: Quick tag creation workflow
-  </Card>
-  
-  <Card title="Tag Naming Strategy" icon="text">
-    Develop consistent tag naming conventions
-    <br />**Descriptive**: Clear, meaningful tag names
-    <br />**Consistent**: Follow naming patterns
-    <br />**Business-Focused**: Align with objectives
-  </Card>
-  
-  <Card title="Role-Based Organization" icon="users">
-    Structure tags by user roles and permissions
-    <br />**Role Categories**: Organize tags by user access levels
-    <br />**Permission Hierarchy**: Create role-based tag relationships
-    <br />**Access Control**: Role-specific tag visibility and management
-  </Card>
- 
-</CardGroup>
+When you open the screen, you see a table of PowerList tags (typically newest first).
 
-### ✏️ Editing PowerList Tags
+| Column | Meaning |
+|--------|--------|
+| **#** | Row number in current list view. |
+| **Tag** | Tag label name. |
+| **Updated At** | Last modified date/time (your timezone). |
+| **Created At** | First created date/time (your timezone). |
+| **Action** | Edit/delete controls for that row. |
+
+### ⚙️ List controls
+
+- **Add** opens create form.
+- **Search** filters rows (`Search...` placeholder).
+- Pagination keeps long lists easy to scan (often 10 rows/page by default).
+
+## ➕ Adding a new tag
+
+1. Click **Add**.
+2. List hides and **Add PowerList Tag** form opens.
+3. Fill fields.
+4. Click **Submit**.
+
+While saving, a short message like **Please wait. Action in process...** may appear.
+
+- On success: green confirmation + page refresh/list reload.
+- On failure: red message with reason.
+
+
 
 <img
   src="/images/manage/tags/powerlist-tag-edit.png"
-  alt="Edit PowerList Tag Interface"
-  className="rounded-lg border shadow-sm my-4"
-  style={{maxWidth: "500px", margin: "1em 0"}}
+  alt="Edit PowerList Tag form"
+  className="rounded-lg border shadow-sm"
 />
 
-**Editing Steps:**
-1. **Tag Field:** Modify the tag name directly in the input box for the selected PowerList tag.
-2. **Assign Role View:** Select which user roles can see or use this tag in PowerLists.
-3. **Save Changes:** Click the **Submit** button to apply and update your changes instantly.
+## ✏️ Editing a tag
 
-<Tip icon="lightbulb">
-  Keep tag names concise and meaningful.<br />
-  Assign roles to control tag access and maintain effective list organization.
-</Tip>
+1. Click **Edit** in the row.
+2. **Edit PowerList Tag** form opens with existing values loaded.
+3. Update **Tag** and/or **Assign role View**.
+4. Click **Submit**.
+
+Save behavior is same as Add (wait message, success/error, then list refresh on success).
+
+<img
+  src="/images/manage/tags/powerlist-tag-add.png"
+  alt="Add PowerList Tag form"
+  className="rounded-lg border shadow-sm"
+/>
 
 
- 
+## 📝 Form fields
 
-## 🎯 Tag Applications
+**🏷️ Tag (required)**
 
-### 📈 Campaign Integration
+- The visible label name used across PowerList screens.
+- Required before submit.
+- Max length is typically up to 100 characters.
+- Help tooltip explains this field is for categorizing/organizing PowerLists.
 
-<CardGroup cols={2}>
-  <Card title="List Targeting" icon="bullseye">
-    Use tags for precise PowerList targeting
-    <br />**Segmentation**: Tag-based list selection
-    <br />**Exclusions**: Exclude specific tagged PowerLists
-  </Card>
-  
-  <Card title="Personalization" icon="heart">
-    Customize campaigns based on PowerList tags
-    <br />**Dynamic Content**: Tag-based content customization
-    <br />**Messaging**: Personalized communication strategies
-  </Card>
-  
-  <Card title="Search & Filter" icon="filter">
-    Advanced PowerList filtering capabilities
-    <br />**Multi-tag**: Combine multiple tags for filtering
-    <br />**Smart Search**: AI-powered tag suggestions
-  </Card>
-  
-  <Card title="Automation" icon="robot">
-    Automated workflows based on tags
-    <br />**Triggers**: Tag-based automation triggers
-    <br />**Workflows**: Multi-step automated processes
-  </Card>
-</CardGroup>
- 
+**👥 Assign role View**
 
-## 🔗 Integration & Automation
+- Multi-select list of organization roles.
+- Choose one or more roles allowed to view/use this tag.
+- Searchable picker makes long role lists easier.
+- Help text explains multi-role access behavior.
 
-### ⚡ Smart Tag Features
 
-<CardGroup cols={2}>
-  <Card title="CRM Integration" icon="arrows-rotate">
-    Seamless tag synchronization with CRM systems
-    <br />**Sync**: Bi-directional tag synchronization
-    <br />**Mapping**: Tag mapping between systems
-  </Card>
-  <Card title="Marketing Automation" icon="robot">
-    Trigger marketing workflows with tags
-    <br />**Triggers**: Tag-based automation triggers
-    <br />**Journeys**: Customer journey mapping
-  </Card>
-  <Card title="Analytics Integration" icon="chart-line">
-    Include tag data in reporting and analytics
-    <br />**Reports**: Tag performance reporting
-    <br />**Dashboards**: Tag-based performance dashboards
-  </Card>
-  
-  <Card title="External Platforms" icon="link">
-    Connect tags with external platforms
-    <br />**Social Media**: Social platform tag sync
-    <br />**Email Marketing**: Email platform integration
-  </Card>
-</CardGroup>
+**🗑️ Deleting a tag**
+
+1. Click row trash icon.
+2. Confirm prompt (**Are you sure?**).
+
+If successful:
+
+- tag is removed,
+- linked role assignments for that tag are removed,
+- list reloads with success message.
+
+If not found or another error occurs, an error message appears.
+
+<Warning>
+Delete is permanent for that tag record. Confirm before deleting tags used in active PowerList workflows.
+</Warning>
+

@@ -1,140 +1,108 @@
 ---
 title: "Contact Tags"
-description: "Create and manage tags for contacts to enable efficient organization, segmentation, and targeted communication"
+description: "User guide for creating, editing, and deleting contact tags with role-based visibility."
 icon: "tag"
 ---
 
-# 🏷️ Contact Tags
-Design comprehensive contact tagging systems that enhance customer data organization, enable precise audience targeting, and streamline marketing campaign management through intelligent categorization and automated workflows.
-
-## 📋 Contact Tags Overview
+**Contact Tag** lets you create and manage short labels used to group or describe contacts (for example, **VIP** or **Hot lead**). Tags belong to your organization and can be restricted by role, so only selected roles can view/use them.
 
 <img
   src="/images/manage/tags/overview.png"
-  alt="Contact Tags Interface"
+  alt="Contact Tags list view"
   className="rounded-lg border shadow-sm"
 />
 
-Organize and categorize your contacts with flexible tagging system, enabling quick identification, efficient segmentation, and targeted campaign management based on contact characteristics and behaviors.
 
-### 📊 Contact Tags Fields
+## 📋 The tag list
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **#** | Tag identifier | `1`, `2`, `3`, `4`, `5` |
-| **Tag** | Tag name/label | `VIP Customer`, `Lead`, `Follow-up Required` |
-| **Updated At** | Last modification | `08-15-2025 10:30 AM` |
-| **Created At** | Creation timestamp | `08-15-2025 09:15 AM` |
-| **Action** | Available operations | Edit, Delete, Duplicate |
+When you open this screen, you see a table of contact tags.
 
-## ➕ Creating Contact Tags
+| What you see | What it means |
+|----------------|----------------|
+| **#** | Row number in the current list view. |
+| **Tag** | Tag name. |
+| **Updated At** | Last changed date/time in your timezone. |
+| **Created At** | First created date/time in your timezone. |
+| **Action** | Controls to edit or delete the tag. |
 
-### 🚀 Add New Tag
+### ⚙️ List controls
+
+- **Add** opens the create form.
+- **Search** filters table rows (placeholder usually `Search...`).
+- Pagination keeps long lists manageable (commonly 10 rows per page by default).
+
+
+## ➕ Adding a new tag
+
+1. Click **Add**.
+2. The list hides and **Add Contact Tag** form opens.
+3. Fill required fields.
+4. Click **Submit**.
+5. On success, confirmation appears and list reloads with new tag.
+
+Use **Back** to return without saving.
+
 <img
   src="/images/manage/tags/add-tag.png"
-  alt="Add New Contact Tag Interface"
+  alt="Add Contact Tag form"
   className="rounded-lg border shadow-sm"
 />
 
-### 🎯 Tag Creation Process
 
-### Steps to Create and Organize Contact Tags
+## ✏️ Editing a tag
 
-#### 1. Create a New Tag
-- **Input Field:** Enter the desired tag name in the text field.
-- **Add Button:** Click **Add** to instantly create the tag.
-- **Quick Workflow:** The tag is added immediately and ready for use.
+1. Click **Edit** in the row’s Action column.
+2. **Edit Contact Tag** form opens with existing values prefilled.
+3. Update fields and click **Submit**.
 
-#### 2. Use a Tag Naming Strategy
-- **Descriptive:** Choose clear and meaningful names (e.g., "VIP Customer", "Lead").
-- **Consistent:** Stick to a specific naming convention or pattern.
-- **Business-Focused:** Make sure names align with your team or business objectives.
-
-#### 3. Organize Tags by Role
-- **Role Categories:** Set up tags based on user roles or access levels.
-- **Permission Hierarchy:** Define relationships between tags depending on user permissions.
-- **Access Control:** Manage which roles can view or edit certain tags.
-
-## ✏️ Editing Contact Tags
-
-Easily update tag names and assign role-based access using the edit functionality.
+Save flow is the same as Add: wait message -> success message -> list refresh.
 
 <img
   src="/images/manage/tags/edit-tags.png"
-  alt="Edit Contact Tag Interface"
-  className="rounded-lg border shadow-sm my-4"
-  style={{maxWidth: "500px", margin: "1em 0"}}
+  alt="Edit Contact Tag form"
+  className="rounded-lg border shadow-sm"
 />
 
-**Editing Steps:**
-1. **Tag Field:** Modify the tag name directly in the input box.
-2. **Assign Role View:** Choose which user roles can view or use the tag.
-3. **Save Changes:** Click the **Submit** button to apply your updates.
 
-<Tip icon="lightbulb">
-  Use descriptive tag names for clarity.<br />
-  Assign roles to limit tag access and maintain organization.
-</Tip>
 
-## 🎯 Tag Applications
+## 🗑️ Deleting a tag
 
-### 📈 Campaign Integration
+1. Click the row’s trash icon.
+2. Confirm when prompted.
+3. Tag is removed and a result message appears.
 
-<CardGroup cols={2}>
-  <Card title="Audience Targeting" icon="bullseye">
-    Use tags for precise campaign targeting
-    <br />**Segmentation**: Tag-based audience selection
-    <br />**Exclusions**: Exclude specific tagged contacts
-  </Card>
-  
-  <Card title="Personalization" icon="heart">
-    Customize content based on contact tags
-    <br />**Dynamic Content**: Tag-based content customization
-    <br />**Messaging**: Personalized communication strategies
-  </Card>
-  
-  <Card title="Search & Filter" icon="filter">
-    Advanced contact filtering capabilities
-    <br />**Multi-tag**: Combine multiple tags for filtering
-    <br />**Smart Search**: AI-powered tag suggestions
-  </Card>
-  
-  <Card title="Automation" icon="robot">
-    Automated workflows based on tags
-    <br />**Triggers**: Tag-based automation triggers
-    <br />**Workflows**: Multi-step automated processes
-  </Card>
-</CardGroup>
- 
+If that tag had role links only tied to that tag, those links are removed along with it.
 
-## 🔗 Integration & Automation
+<Warning>
+Delete is permanent for that tag record. Confirm before deleting tags used by active workflows.
+</Warning>
 
-### ⚡ Smart Tag Features
 
-<CardGroup cols={2}>
-  <Card title="CRM Integration" icon="arrows-rotate">
-    Seamless tag synchronization with CRM systems
-    <br />**Sync**: Bi-directional tag synchronization
-    <br />**Mapping**: Tag mapping between systems
-  </Card>
-  <Card title="Marketing Automation" icon="robot">
-    Trigger marketing workflows with tags
-    <br />**Triggers**: Tag-based automation triggers
-    <br />**Journeys**: Customer journey mapping
-  </Card>
-  <Card title="Analytics Integration" icon="chart-line">
-    Include tag data in reporting and analytics
-    <br />**Reports**: Tag performance reporting
-    <br />**Dashboards**: Tag-based performance dashboards
-  </Card>
-  
-  <Card title="External Platforms" icon="link">
-    Connect tags with external platforms
-    <br />**Social Media**: Social platform tag sync
-    <br />**Email Marketing**: Email platform integration
-  </Card>
-</CardGroup>
 
- 
+## 📝 Form fields (Add and Edit)
 
- 
+**🏷️ Tag (required)**
+
+- **Purpose:** User-facing tag name.
+- **Required:** Yes.
+- **Placeholder:** Usually `Enter tags`.
+- **Help text:** Suggests using clear names like VIP, Prospects, Hot Leads.
+
+You cannot submit with an empty Tag field.
+
+**👥 Assign role View**
+
+- **Purpose:** Select which roles can view/use this tag.
+- **Selection:** One or many roles.
+- **Control type:** Searchable dropdown.
+- **Placeholder:** Usually `Select role`.
+
+Use this field when tag visibility should be limited by role.
+
+**💾 Submit**
+
+Saves tag and role assignments.
+
+- On success: confirmation + return to list.
+- On failure: error explains what to fix.
+

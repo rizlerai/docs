@@ -1,191 +1,143 @@
 ---
 title: "PowerList Notes"
-description: "PowerList Notes system for tracking campaign insights, performance observations, and team collaboration on contact lists"
 icon: "note-sticky"
 ---
 
-# 📝 PowerList Notes 
-PowerList Notes is a dedicated note-taking system that allows teams to create, organize, and share notes specifically related to their PowerLists. This system enables users to document campaign insights, track performance observations, and maintain detailed records of PowerList activities to improve calling strategies and optimize contact engagement.
+This guide explains **PowerList Notes**  what this screen is for, how the table works, how to add/edit templates, and how saving/deleting behaves.
 
 <img
   src="/images/manage/powerlist-notes/overview.png"
-  alt="PowerList Notes Management Interface"
+  alt="PowerList Notes list view"
   className="rounded-lg border shadow-sm"
 />
 
-## 📊 Notes Dashboard Overview
 
-The PowerList Notes system provides a central place to create, organize, and share documentation related to your PowerLists and campaigns.
+**PowerList Notes** is where you create and manage reusable note templates tied to your PowerLists.
 
+Each template includes:
 
-### 📋 Notes Interface Fields
+- a **Title**,
+- one or more linked **PowerLists**,
+- and formatted **Notes** content.
 
-| Field | Description | Examples |
-|-------|-------------|----------|
-| **#️⃣** | Note ID | `1`, `2`, `3`, `4`, `5` |
-| **📰 Title** | Note title | `Q4 Campaign Strategy`, `Lead Quality Analysis` |
-| **🏷️ Category** | Note type | Campaign Strategy, Performance Review |
-| **📋 PowerLists** | Linked PowerLists | `Enterprise Leads`, `Follow-up Prospects` |
-| **⚡ Action** | Available actions | Edit, Delete|
+You can also use placeholders in the note body (double curly-brace format) so contact values and current date/time can be inserted later when templates are used in other parts of the product.
+
+Repeated for clarity: one row in this module is one reusable **note template**, not a one-time note entry.
 
 
-### 🚀 Creating a New PowerList Note
+## 📋 Main list view
+
+When the page opens, you see your organization’s PowerList note templates in a table.
+
+### ➕ Add PowerList Note
+
+Click **Add PowerList Note** to open the create form. The list view hides while the form is open.
+
+### 📑 Table columns
+
+| What you see | What it means |
+|--------------|---------------|
+| **#** | Row number in current list page. |
+| **Title** | Template name. |
+| **PowerLists** | Linked list names (comma-separated when multiple). |
+| **Created At** | First saved date/time in your account timezone. |
+| **Action** | **Edit** opens form; trash deletes after confirmation. |
+
+**🔎 Finding entries**
+
+- Use **Search** above the table to filter rows.
+- Change rows-per-page when needed.
+- Use paging controls (**Previous**, **Next**, page numbers) for longer lists.
+
+
+
+## ✏️ Add or edit a template
+
+- **Add**: click **Add PowerList Note**.
 
 <img
   src="/images/manage/powerlist-notes/add-powerlist.png"
-  alt="Add PowerList Note - Interface Overview"
-  className="rounded-lg border shadow-sm mb-4"
+  alt="Add PowerList Note form"
+  className="rounded-lg border shadow-sm"
 />
 
-The "Add PowerList Note" interface enables users to quickly document insights or strategies related to PowerLists. Here’s how the note creation experience works:
-
-<CardGroup cols={2}>
-  <Card title="Add PowerList Note" icon="plus">
-    Start a new note by clicking the yellow **Add** button.  
-    The editor opens fields for:
-    - **Title:** Enter a descriptive note title.
-    - **PowerLists:** Multi-select to link this note to one or more PowerLists.
-    - **Note Content:** Write your observations in a robust rich text editor (supports formatting, lists, code, etc.).
-    - **Dynamic Variables Reference:** Quickly insert variables (shown above the editor) to personalize commentary or include dynamic data from PowerList contacts.
-    - **File Attachments:** Optionally attach files relevant to your note.
-  </Card>
-
-  <Card title="Easy Organization & Collaboration" icon="users">
-    - **Categories & Tags:** Assign categories (e.g., Strategy, Review) and add custom tags for efficient search and organization.
-    - **Live Collaboration:** Notes can be shared with your team. Real-time editing, comments, and mentions are supported to enhance feedback and teamwork.
-    - **Permission Controls:** Choose who can view, edit, or manage each note, optimizing privacy and group workflows.
-    - **Draft & Publish:** Save as draft for later edits or publish immediately for your team.
-  </Card>
-</CardGroup>
-
-**Tip:** All notes linked to PowerLists are easily discoverable and filterable within the dashboard, streamlining team knowledge sharing.
-### ✏️ Editing an Existing PowerList Note
+- **Edit**: click **Edit** on a row.
 
 <img
   src="/images/manage/powerlist-notes/edit-powerlist.png"
-  alt="Edit PowerList Note - Interface Overview"
-  className="rounded-lg border shadow-sm mb-4"
+  alt="Edit PowerList Note form"
+  className="rounded-lg border shadow-sm"
 />
 
-The "Edit PowerList Note" interface lets you update and refine your existing documentation and strategies attached to PowerLists. Here’s how the note editing process works:
 
-<CardGroup cols={2}>
-  <Card title="Edit PowerList Note" icon="edit">
-    Open the note you wish to edit using the **Edit** action (pencil icon).  
-    The editor allows you to modify:
-    - **Title:** Revise the note’s title to better reflect its focus.
-    - **Linked PowerLists:** Update which PowerLists are associated with this note.
-    - **Note Content:** Make changes in the rich text editor (full formatting, lists, code, etc.).
-    - **Dynamic Variables Reference:** Add, remove, or update dynamic data variables for personalized insights.
-    - **File Attachments:** Attach new files or remove existing ones as needed.
-  </Card>
+Both actions open the same form. In edit mode, the heading is typically **Edit PowerList Note** and existing values are prefilled.
 
-  <Card title="Flexible Updates & Sharing" icon="users">
-    - **Categories & Tags:** Edit assigned categories or update/add tags for improved organization and discoverability.
-    - **Team Collaboration:** Notes remain shareable—collaborate in real time, leave comments, and tag team members during edits.
-    - **Permission Controls:** Adjust who can view, edit, or administer the note to align with evolving privacy or workflow preferences.
-    - **Draft & Republish:** Save changes as a draft or instantly update for your team to see the latest information.
-  </Card>
-</CardGroup>
+**🔙 Back**
 
-**Tip:** Keeping your notes updated ensures your team always has access to the latest strategies and campaign documentation, with all changes instantly searchable and filterable.
+Click **Back** to return to the list without saving.
+
+Important repeat: **Back** discards unsaved form changes.
 
 
 
-## 🔄 Note Management Workflow
 
-<Tabs>
-  <Tab title="Creating Notes">
-    ```
-    📝 Note Creation Steps:
-    
-    1. ➕ Click "Add PowerList Note"
-    2. 📝 Enter note title and select category
-    3. ✍️ Write content using rich text editor
-    4. 🔗 Link to relevant PowerLists
-    5. 🏷️ Add tags for organization
-    6. ⭐ Set priority and status
-    7. 💾 Save or publish note
-    
-    Content Options:
-    ✅ Rich text formatting
-    ✅ File attachments
-    ✅ PowerList linking
-    ✅ Team collaboration
-    ✅ Comment threads
-    ```
-  </Tab>
-  
-  <Tab title="Organization">
-    ```
-    🗂️ Note Organization:
-    
-    Categories:
-    - 🎯 Campaign Strategy
-    - 📊 Performance Analysis
-    - 📢 Team Updates
-    - 📚 Training Materials
-    - ⭐ Best Practices
-    
-    Tags:
-    - 🎯 #strategy
-    - 📈 #performance
-    - 🔧 #optimization
-    - 🎓 #training
-    - 🏆 #results
-    
-    Status Options:
-    - 📝 Draft (work in progress)
-    - ✅ Active (published)
-    - 📦 Archived (completed)
-    ```
-  </Tab>
-  
-  <Tab title="Collaboration">
-    ```
-    👥 Team Collaboration:
-    
-    Sharing Options:
-    - 👨‍👩‍👧‍👦 Team members
-    - 👤 Specific users
-    - 🏢 Department access
-    - 👀 Read-only or ✏️ edit permissions
-    
-    Features:
-    - ⚡ Real-time editing
-    - 💬 Comment threads
-    - 📢 @mentions for notifications
-    - 📚 Version history
-    - 📊 Activity tracking
-    
-    Notifications:
-    - 💬 New comments
-    - 🔄 Content updates
-    - 📢 Mentions
-    - 📊 Status changes
-    ```
-  </Tab>
-</Tabs>
 
-## 📂 Note Categories
+## 📝 Form fields
 
-<CardGroup cols={2}>
-  <Card title="Campaign Strategy" icon="chess">
-    Document campaign planning and strategy decisions
-    <br />**Content**: Target audience, messaging, tactics
-    <br />**Use Case**: Planning new campaigns, strategy reviews
-  </Card>
-  
-  <Card title="Performance Analysis" icon="chart-line">
-    Track and analyze PowerList performance
-    <br />**Content**: Metrics analysis, improvement opportunities
-    <br />**Use Case**: Regular performance reviews, optimization planning
-  </Card>
- 
-  <Card title="Team Updates" icon="bullhorn">
-    Communicate important updates and changes
-    <br />**Content**: Process changes, announcements, updates
-    <br />**Use Case**: Team communication, change management
-  </Card>
-</CardGroup>
+**🏷️ Title**
+
+A short, clear template name (for example, "Follow-up call summary").
+
+- Required before save.
+- Should be unique within your organization.
+
+**⚠️ Duplicate titles**
+
+If a title already exists, save fails and an error message appears until you use a different title.
+
+### 🗂️ PowerLists
+
+Choose where this template should be available.
+
+- You can select **one or many** PowerLists.
+- List usually shows active PowerLists available for your organization.
+- Help icons beside labels explain expected usage.
+
+### 📝 Notes
+
+This is the main body of your template.
+
+- Rich-text editor supports standard formatting (headings, lists, bold, links, etc.).
+- Content is saved exactly as entered when you submit.
+
+**🪄 Placeholders**
+
+Above the editor, you may see placeholders in `{{double_curly}}` format (including date/time placeholder such as `{{current_dateTime}}`).
+
+- Use exact spelling shown on screen.
+- When supported in downstream workflow, placeholders are replaced with actual contact values and current date/time.
+
+Repeated for clarity: placeholder text must match exactly, including brackets.
+
+
+**💾 Saving (Submit)**
+
+Click **Submit** to save template changes.
+
+- While saving, short wait message may appear.
+- On success, confirmation appears and screen returns to list.
+- On failure, error message explains what to fix.
+- If required fields (like Title) are missing, validation prompts appear before save.
+
+
+**🗑️ Deleting a template**
+
+Click the row trash icon and confirm.
+
+- After confirmation, template is removed.
+- You stay in the same module and get a success/error notice.
+
+<Warning>
+Deleted templates cannot be recovered. Confirm before deleting shared templates used by your team.
+</Warning>
 
