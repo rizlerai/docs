@@ -1,197 +1,191 @@
 ---
 title: "DND Numbers"
+description: "User guide for adding, editing, filtering, and managing Do Not Disturb entries."
 icon: "ban"
 ---
 
-import { Callout } from 'nextra/components'
+**DND Number** is where you keep a list of phone numbers (and related details) that should be treated as **Do Not Disturb** for your organization. Each entry tells the system which contact channels should be limited.
+
+<img
+  src="/images/DND-number/overview.png"
+  alt="DND Numbers list overview"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-The DND Numbers module allows you to manage phone numbers that should not be contacted through certain communication channels. DND stands for **Do Not Disturb** — these are numbers where people have requested not to receive specific types of messages or calls. When you add a number to this list, the system remembers which channels to block, helping you respect preferences and stay compliant.
 
-<Callout type="info" emoji="ℹ️">
-  **What are DND Numbers?**
-  
-  Numbers on this list have one or more communication channels blocked (email, SMS, calls, voicemail, or inbound calls/SMS). The system uses this list to prevent sending messages or placing calls through blocked channels.
-</Callout>
+## 📋 Main list
 
-<img src="/images/DND-number/overview.png" alt="DND Numbers Overview" className="rounded-lg border shadow-sm" />
+When you open the screen, you see:
+
+- a table of DND entries
+- and an **Add DND Number** button at the top.
+
+### 📝 What each column shows
+
+| Column | Meaning |
+|--------|---------|
+| **#** | Row number in the list. |
+| **First Name** | First name or label, if provided. |
+| **Last Name** | Last name, if provided. |
+| **Area Code** | Area code, if provided. |
+| **Email** | Related email, if provided. |
+| **DND Status** | Which DND channel types are active for this row. |
+| **Added By** | User who created this entry. |
+| **Created At** | Added date/time in your timezone. |
+| **Action** | Row controls to edit or delete. |
+
+If a value was never provided, the table may show **N/A**.
+
+### 🔍 Search and ordering
+
+- Search box above table filters by matching text across searchable columns.
+- Typical searchable values include names, area code, email, added-by, and date text.
+- Default order is usually newest entries first.
+
+
+
+## 🎛️ Filters 
+
+Filters narrow results before table refresh.
+
+<img
+  src="/images/DND-number/filters.png"
+  alt="DND filters and date range controls"
+  className="rounded-lg border shadow-sm"
+/>
+
+### 📅 Date range
+
+Filters by **Created At** date.
+
+- Choose a preset (today, yesterday, this week, last month, etc.).
+- Or choose **Custom dates** and set **Start Date** + **End Date**.
+- Click **Filter** to apply.
+
+For presets, dates are auto-filled. For custom range, both dates should be selected before applying.
+
+### 🚦 DND status filter
+
+Shows rows matching selected status type:
+
+- **All**
+- **DND all channels**
+- **Emails**
+- **Text messages**
+- **Calls & voicemails**
+- **DND inbound calls and SMS**
+
+Choose one option, then click **Filter**.
+
+
+
+## ➕ Adding a DND number
+
+1. Click **Add DND Number**.
+2. Fill form fields.
+3. Click **Submit**.
+
+On success, confirmation appears and list refreshes with the new entry.
+
+Use **Back** to return without saving.
+
+<img
+  src="/images/DND-number/add-form.png"
+  alt="Add DND number form"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+
+## ✏️ Editing a DND number
+
+1. Click **Edit** on a row.
+2. Update fields.
+3. Click **Submit**.
+
+For existing rows, DND checkbox changes may save shortly after toggling. Still click **Submit** when changing text fields (name, phone, area code, email) so all updates are persisted together.
+
+<img
+  src="/images/DND-number/edit-form.png"
+  alt="Edit DND number form"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+
+## 🖊️ Form fields (add and edit)
+
+**🧑 First name**
+
+Optional short text.
+
+**👤 Last name**
+
+Optional short text.
+
+**☎️ Phone number (required)**
+
+Required primary number for this DND entry.
+
+- Must be present before save.
+- Input formatting is normalized by system.
+
+**📞 Area code**
+
+Optional short text.
+
+**📧 Email**
+
+Optional email address field.
+
+**🚫 DND status (checkboxes)**
+
+This section defines which channels are limited for this number.
+
+The UI is split as:
+
+- top: **DND all channels**
+- middle: individual options (Emails, Text messages, Calls & voicemails)
+- bottom: **DND inbound calls and SMS**
+
+**1️⃣ DND all channels**
+
+- Turning this **on** applies broad DND across channel types.
+- When turned on, middle individual options are turned off.
+
+**2️⃣ Individual channels**
+
+- **Emails**
+- **Text messages**
+- **Calls & voicemails**
+
+If any of these turn on, **DND all channels** is turned off.
+
+If one of these turns off in edit logic, **DND inbound calls and SMS** may also turn off to maintain consistency.
+
+**3️⃣ DND inbound calls and SMS**
+
+Separate option shown at bottom with info icon.
+
+- Can be toggled independently in UI behavior.
+- May be constrained by broader DND logic based on implementation rules above.
+
+### 🏷️ How status appears in table
+
+Rows show color badges for active DND types (for example DND All, Emails, Text Messages). Badge text is normalized for readability.
+
+
+
+## 🗑️ Deleting a DND number
+
+1. Click row **delete** control.
+2. Confirm prompt.
+
+If successful, row is removed and success message appears. If not, error message is shown.
+
+<Warning>
+Delete is permanent for that entry. To restore it later, add it again as a new DND row.
+</Warning>
 
 ---
-
-## 🎯 Overview
-
-The DND Numbers module allows you to view, add, edit, and delete do-not-contact entries. You can filter by date range and DND status, and search the list by name, email, area code, or who added the entry.
-
-- **📋 Central List** — See all DND numbers in one table with status badges
-- **➕ Add & Edit** — Manage contact details and which channels to block
-- **🔍 Filter & Search** — Narrow by date range, DND status, or free-text search
-- **🚦 Clear Status** — Colored badges show at a glance which channels are blocked
-- **⚡ Immediate Updates** — DND Status checkbox changes save as soon as you change them when editing
-
----
-
-## 🚀 Accessing the DND Numbers Page
-
-1. Navigate to the **DND Numbers** section in your main menu
-2. Click on **DND Numbers** from the options
-3. The DND Numbers page will load showing all entries (default: numbers added today)
-
----
-
-## 📋 DND Numbers List
-
-When you open the DND Numbers page, you see a table of all numbers on the DND list.
-
-**Purpose:** Display all DND entries with key contact and status information so you can manage and filter them.
-
-**How it works:**
-
-- The list shows entries based on your current date range and DND status filters
-- By default, the list shows entries from **today**; use the filters to change the range
-- Each row includes contact fields, DND Status badges, who added the number, and when it was created
-- Use the **Action** column to edit or delete an entry
-
-<img src="/images/DND-number/overview.png" alt="DND Numbers List Table" className="rounded-lg border shadow-sm mb-4" />
-
-| Field | Description | Purpose |
-|-------|-------------|---------|
-| **#** | Sequential row number | Quick reference and navigation |
-| **First Name** | Person's first name (if provided) | Identification |
-| **Last Name** | Person's last name (if provided) | Identification |
-| **Area Code** | Phone area code (if provided) | Number context |
-| **Email** | Email address associated with the number (if provided) | Contact and search |
-| **DND Status** | Colored badges for blocked channels (see below) | See at a glance what is blocked |
-| **Added By** | User who added this number | Audit and filtering |
-| **Created At** | Date and time when the number was added | Sorting and date filter |
-| **Action** | Edit and Delete buttons | Manage the entry |
-
----
-
-## 🚦 Understanding DND Status
-
-The **DND Status** column shows colored badges indicating which communication channels are blocked for each number. Each badge type has a distinct color; a single number can have **multiple badges** if multiple channels are blocked (e.g. both DND Email and DND SMS).
-
-| Badge | Color | Meaning |
-|-------|--------|---------|
-| **DND All** | Red | Do not contact through any channel — no email, SMS, calls, or voicemail |
-| **DND Email** | Blue | Do not send emails |
-| **DND SMS** | Green | Do not send text messages |
-| **DND Call Voicemail** | Yellow | Do not place calls or leave voicemails |
-| **DND Inbound Call SMS** | Light blue | Do not allow incoming calls and SMS |
-
----
-
-## ➕ Adding a New DND Number
-
-**Purpose:** Add a phone number to the DND list and specify which communication channels to block.
-
-**How it works:**
-
-1. Click the **"Add DND Number"** button at the top of the page
-2. Fill in the form (phone number is required; name, area code, and email are optional)
-3. Select which channels to block under **DND Status**
-4. Click **"Submit"** to save; the number appears in the list and a success message is shown
-
-<img src="/images/DND-number/add-form.png" alt="Add DND Number Form" className="rounded-lg border shadow-sm mb-4" />
-
-**Required field:** **Phone Number** — Enter in any format; the system will format it correctly.
-
-**Optional fields:** **First Name** (up to 20 characters), **Last Name** (up to 20 characters), **Area Code** (up to 5 characters), **Email** (up to 150 characters; must be valid).
-
-**DND Status — choose which channels to block:**
-
-- **DND all channels** — Blocks email, SMS, calls, and voicemail. When selected, you cannot select individual channels below.
-- **Emails** — Block email to this number
-- **Text Messages** — Block SMS to this number
-- **Calls & Voicemails** — Block calls and voicemail to this number
-- **DND Inbound Calls and SMS** — Block incoming calls and text messages (can be used alone or with others)
-
-<Callout type="warning" emoji="⚠️">
-  **Important:** If you select **DND all channels**, the individual channel options are disabled. If you select any individual channel, **DND all channels** is automatically unchecked.
-</Callout>
-
----
-
-## ✏️ Editing an Existing DND Number
-
-**Purpose:** Update contact information or change which channels are blocked for a number already on the list.
-
-**How it works:**
-
-1. Find the number in the table and click **"Edit"** in the **Action** column
-2. The form opens with the current information; update any fields (first name, last name, area code, email, phone number, or DND Status)
-3. **DND Status** checkbox changes are saved **immediately** when you change them — you do not need to click Submit for those
-4. Click **"Submit"** to save all other changes; the form closes and the list updates with a success message
-
-<img src="/images/DND-number/edit-form.png" alt="Edit DND Number Form" className="rounded-lg border shadow-sm mb-4" />
-
-**Note:** When editing, DND Status checkbox changes are saved right away. You can continue editing other fields and then click Submit to save the rest.
-
----
-
-## 🗑️ Deleting a DND Number
-
-**Purpose:** Remove a number from the DND list permanently.
-
-**How it works:**
-
-1. Find the number in the table and click the **delete (trash) icon** in the **Action** column
-2. A confirmation dialog appears asking **"Are you sure?"**
-3. Click **OK** to confirm deletion or **Cancel** to keep the number
-4. If you confirm, the number is removed from the list and a success message is shown
-
-**Warning:** Deletion is permanent. To have the number on the list again, you must add it as a new entry.
-
----
-
-## 🎛️ Filter Options and Search
-
-Use the filters at the top of the page to narrow the list by date range and DND status; click **"Filter"** to apply. Use the search box above the table to find entries by first name, last name, area code, email, who added the entry, or created date — results update as you type (case-insensitive, partial matches supported).
-
-<img src="/images/DND-number/filters.png" alt="DND Numbers Filters" className="rounded-lg border shadow-sm mb-4" />
-
-**Date range:** Choose a predefined period (Today, Yesterday, This Week, Last 7 Days, Last 14 Days, This Month, Last 30 Days, Last Month, etc.) or **Custom dates** to pick your own start and end date. For **Custom dates**, the Start Date and End Date fields become active; click them to open the calendar. Click **"Filter"** to apply. Dates follow your account's time zone.
-
-| Option | What it includes |
-|--------|-------------------|
-| **Custom dates** | Your own start and end date |
-| **Today** | Numbers added today only |
-| **Yesterday** | Numbers added yesterday |
-| **This Week (Sun - Today)** | From Sunday of current week to today |
-| **This Week (Mon - Today)** | From Monday of current week to today |
-| **Last 7 Days** | Past 7 days including today |
-| **Last Week (Sun - Sat)** | Previous Sunday through Saturday |
-| **Last Week (Mon - Sun)** | Previous Monday through Sunday |
-| **Last Business Week (Mon - Fri)** | Previous Monday through Friday |
-| **Last 14 Days** | Past 14 days including today |
-| **This Month** | First day of current month to today |
-| **Last 30 Days** | Past 30 days including today |
-| **Last Month** | Entire previous month |
-
-**DND status:** Open the **"DND Status"** dropdown and select **All**, **DND all channels**, **Emails**, **Text Messages**, **Calls & Voicemails**, or **DND Inbound Calls and SMS**, then click **"Filter"** to show only entries matching that status.
-
----
-
-## ⚙️ How the Module Works
-
-**When you add a number:** The system stores all information you provide and your DND Status selections, records who added the number and when, and which company it belongs to. The number is immediately active and used to block the selected channels.
-
-**When you edit:** You can change any contact or DND fields. DND Status checkbox changes are saved immediately; clicking **Submit** saves the rest (name, phone, email, area code, etc.).
-
-**DND status logic:** **DND all channels** is the most restrictive and clears individual channel options. Individual options (Emails, Text Messages, Calls & Voicemails) can be combined. **DND Inbound Calls and SMS** is independent and can be combined with others or used alone. Selecting **DND all channels** clears individual channels; selecting an individual channel clears **DND all channels**.
-
-**Phone number formatting:** You can enter the number in any format (with or without dashes, spaces, or parentheses); the system converts it automatically. **Time zone:** All dates and times are shown in your account's time zone. **Company restrictions:** Non-administrators see only their company's DND numbers; administrators see all companies. The system tracks company per number automatically.
-
----
-
-## 📋 Summary
-
-With the DND Numbers module you can:
-
-- **Add** numbers with contact details and DND preferences
-- **Edit** entries to update information or DND settings (DND checkbox changes save immediately when editing)
-- **Delete** numbers when no longer needed (permanent; add again if required later)
-- **Filter** by date range and DND status, and **search** the table
-- See at a glance which channels are blocked for each number via colored status badges
-
-The system handles phone formatting, time zones, and company assignment automatically so you can maintain an accurate do-not-contact list for each channel.
