@@ -1,130 +1,133 @@
 ---
 title: "Call Reports"
-description: "Comprehensive call analytics and reporting dashboard for tracking communication performance"
+description: "User guide for Reports → Call: filters, call table columns, search, and export."
 icon: "phone"
 ---
 
-# 📞 Call Reports
+# 📞 Call Report (Reports → Call)
 
-Monitor and analyze your communication performance with detailed call reports and real-time analytics.
+The **Call** option under **Reports** is where you review **phone calls** for your organization: who was involved, numbers, outcomes, length, and when each call happened. Everything below is about that **Call** report only.
 
-<img src="/images/reports/call/overview.png" alt="Call Reports Dashboard" className="rounded-lg border shadow-sm" />
-
-## 🎯 Overview
-
-The Call Reports system provides comprehensive tracking and analysis of all voice communications, enabling data-driven decisions for improving customer engagement and agent performance.
-
-### 📚 Key Benefits
-- **📊 Real-time Analytics** - Live call monitoring and instant metrics
-- **🔍 Advanced Filtering** - Precise data segmentation and analysis  
-- **📈 Performance Insights** - Identify trends and optimization opportunities
-- **📱 Multi-channel Tracking** - Monitor inbound, outbound, and AI-assisted calls
-
----
-
-## 🔄 CSV Report Workflow
-
-<img src="/images/reports/call/filters.png" alt="Call CSV Report Filters UI" className="rounded-lg border shadow-sm mb-4" />
-
-This dashboard allows you to filter, view, and download call data in CSV format for in-depth analysis.
-
-### 1️⃣ Filter Data
-
-<figure>
-  <img src="/images/reports/call/filters.png" alt="Call CSV Filter Options" style={{ border: '1px solid #222', borderRadius: '0.5rem', width: '100%', maxWidth: '510px', margin: '0.5rem 0' }} />
-  <figcaption style={{ fontSize: '0.95em', color: '#888' }}>Example filter controls for generating CSV call reports.</figcaption>
-</figure>
-
-- **Date Range:** Pick standard (Last Month) or custom start/end dates (e.g., `12/1/2023` to `12/31/2023`)
-- **Call Status:** Choose Completed, Cancelled, Failed, or All
-- **Call Direction:** Inbound, Outbound, or All
-- **Agent(s):** Filter by specific agents or view all
-- **Duration:** Set minimum (`0 sec`) and maximum (`No limit`) call lengths
-
-Click the **Filter** button to apply your selections to the call log.
-
-### 2️⃣ Export to CSV
-
-- After filtering, press the **.CSV** button to instantly download the filtered call data as a CSV file.
-- The CSV includes all matching records with columns for each key field (date, time, agent, status, duration, etc.).
-- Use the CSV in Excel, Google Sheets, or other analytics tools for further reporting.
-
-**Tip:** Use filters to limit export size (e.g., by date range or status) for faster processing and easier analysis.
-
-### 3️⃣ Analyze Exported Data
-
-- Open the CSV file in your preferred spreadsheet or BI tool.
-- Create custom pivots, charts, or combine with other datasets for advanced insights.
-- Repeat the process with different filters as needed.
-
----
+<img
+  src="/images/reports/call/overview.png"
+  alt="Call report table and filters"
+  className="rounded-lg border shadow-sm"
+/>
 
 
----
+**👀 What you see here**
 
-## 📋 Report Fields
+**Phone calls** show in a table—**one row per call**. The table updates when you change filters and apply them, or when you change the date range (where that refreshes on its own).
 
-<img src="/images/reports/call/history-id.png" alt="Call Details View" className="rounded-lg border shadow-sm mb-4" />
+At the top you pick **which time range** and **which calls** matter. Each row below is **one call** that matches those choices.
 
-| Field           | Description                        | Use Case                                      |
-|-----------------|------------------------------------|-----------------------------------------------|
-| **Sr.No**       | Sequential record number           | Quick reference and navigation                |
-| **First Name**  | Caller's first name (if available) | Personalize reports and identify customers    |
-| **Last Name**   | Caller's last name (if available)  | Further identification and customer tracking  |
-| **From Number** | Caller's phone number              | Identify call sources and customer tracking   |
-| **To Number**   | Recipient's phone number           | Monitor destination patterns                  |
-| **Transcription** | AI-generated call transcript     | Content analysis and quality review           |
-| **Status**      | Call completion state              | Performance tracking and issue identification |
-| **Date/Time**   | Call timestamp                     | Trend analysis and scheduling insights        |
-| **Duration**    | Call length with playback          | Efficiency metrics and engagement measurement |
 
-### 🏷️ Status Types
-- ✅ **Completed** - Successfully connected and finished
-- ❌ **Cancelled** - Call terminated before connection
-- ⚠️ **Failed** - Technical issues or connectivity problems
+## 🛠️ Filters
 
----
+<img
+  src="/images/reports/call/filters.png"
+  alt="Call report filter controls"
+  className="rounded-lg border shadow-sm"
+/>
 
-## 🎛️ Filter Controls
+ **🗓️ Date range**
 
-<img src="/images/ai/call-history-advancefilter.png" alt="Advanced Filters" className="rounded-lg border shadow-sm mb-4" />
+Controls how **Start Date** and **End Date** are filled:
 
-### 🕹️ Primary Filters
-- **📅 Date Range**: Last Week, Month, Custom dates
-- **📞 Call Direction**: All, Inbound, Outbound
-- **👥 Agents**: All agents or specific selections
-- **⏱️ Duration**: Minimum and maximum call lengths
+- **Custom dates** — You enter **Start Date** and **End Date** yourself; those fields are editable.
+- **Presets** (*Today*, *Yesterday*, *This week*, *Last 7 days*, *This month*, *Last month*, and similar) — The dates are set for you and stay fixed for that preset.
 
-### 🧩 Advanced Options
-- **🔍 Text Search**: Find specific transcription content
-- **📊 Status Filtering**: Focus on specific call outcomes
-- **🔢 Results Limit**: Control data display (10, 25, 50, 100 entries)
+If you are **not** on custom dates, changing the date range refreshes the **calls** shown. On **custom dates**, set start and end, then use **Filter** (or another control that refreshes).
 
----
+Call times use **your account time zone**, so “today” matches your local calendar day.
 
-## 🎵 Audio Playback
+**📅 Start date and end date**
 
-<img src="/images/reports/call/audio.png" alt="Call Transcription and Audio" className="rounded-lg border shadow-sm mb-4" />
+Work with **Date range**. They set the **from–to** window for **calls** in the table. Editable only when **Custom dates** is selected.
 
-### 🎼 Features
-- **▶️ Play/Pause Controls** - Navigate through recordings
-- **⏭️ Speed Control** - Adjust playback speed (0.5x to 2x)
-- **🔊 Volume Control** - Audio level adjustment
-- **📝 Transcript Sync** - Follow along with text while listening
+**✅ Call status**
 
----
+Limits **calls** to one outcome, or shows **all** outcomes:
 
-## 🛠️ Troubleshooting
+- **All** — Every outcome.
+- **Answered**, **Completed**, **Busy**, **No-answer**, **Failed**, **Missed Call**, **Cancel** — Only **calls** with that outcome.
 
-| Issue | Solution |
-|-------|----------|
-| **No audio playback** | Check browser permissions and audio settings |
-| **Missing transcriptions** | Verify AI transcription service is enabled |
-| **Slow loading** | Reduce date range or apply more specific filters |
-| **Export failures** | Check data size limits and try smaller datasets |
+Pick a value and apply it (for example **Filter**, or change the date range where it auto-refreshes).
 
----
+**⏱️ Minimum duration**
 
-<Note>
-**Pro Tip**: Use the advanced filters to create custom views for different stakeholders. Sales teams might focus on completed calls with longer durations, while support teams may prioritize failed calls for follow-up.
-</Note>
+Keeps **calls** whose **length** is **at least** what you select (from zero up to two hours). Shorter **calls** are hidden—useful when you only care about **calls** that ran long enough.
+
+**⏳ Maximum duration**
+
+Optional upper cap on length:
+
+- **No limit** — No maximum.
+- Any other value — **Calls** **longer** than that are excluded.
+
+Together with minimum duration, you can focus on **calls** in a certain length range.
+
+**🔄 Call direction**
+
+- **All** — Incoming and outgoing **calls**.
+- **Inbound** — **Calls** you received.
+- **Outbound** — **Calls** you placed.
+
+**👤 Agents**
+
+Shows **calls** for **one** person, or—where the menu includes it—**everyone** (**All**). The names are people who can place or receive **calls** in your setup.
+
+If the team is not set up, you may see a single placeholder instead of names.
+
+**🔎 Filter**
+
+Applies your choices and reloads the **call** table. Use it after changing something that does not refresh by itself (for example **custom** start and end dates).
+
+**💾 Download (export)**
+
+Saves a file using the **same** choices as the Call Report (dates, status, duration limits, direction, agent). The file has contact name, numbers, transcription, status, direction, how long the **call** lasted, and when it happened—so you can open it in a typical office spreadsheet program.
+
+## 📋 What each column means (calls)
+
+<img
+  src="/images/reports/call/history-id.png"
+  alt="Call report row example"
+  className="rounded-lg border shadow-sm"
+/>
+
+**#️⃣ Sr. No.**
+
+A reference number for the row. Newer calls appear higher up.
+
+**🧑 First name / Last name**
+
+The **contact** linked to that **call**, when known. A dash means the name was not available.
+
+**📞 From number**
+
+Where the **call** came from (caller side).
+
+**☎️ To number**
+
+Where the **call** went (destination).
+
+**📝 Transcription**
+
+Text from the **call**, when available. Long text may wrap so you can read it in the same row.
+
+**🏷️ Status**
+
+**How the call ended**, plus:
+
+- A small **incoming** or **outgoing** marker for quick direction.
+- For completed calls with a **recording**, a **player** so you can listen without leaving the Call Report.
+
+<img
+  src="/images/reports/call/audio.png"
+  alt="Call recording player on a call row"
+  className="rounded-lg border shadow-sm"
+/>
+
+**🗓️ Dated** 
+
+When that **call** was logged, in **your** time zone.

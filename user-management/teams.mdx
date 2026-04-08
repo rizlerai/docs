@@ -1,142 +1,111 @@
 ---
 title: "Teams"
-description: "Organize users into teams, manage team permissions, and configure team-based access controls"
 icon: "user-group"
 ---
 
-# 👥 Teams Management
 
-<Info>
-The Teams section is your central hub for organizing users into functional groups. Create teams, assign users with specific roles, and manage team-based workflows to improve collaboration and productivity across your organization.
-</Info>
+**Teams** lets you give your organization’s groups a name, keep that list up to date, and decide which people belong to each team. For each person on a team, you can also mark whether they act as a **manager** for that team.
 
-## 🔍 Overview
 
-The Teams management interface provides a comprehensive solution for organizing users into collaborative groups. It allows you to:
+## 📋 The main Teams list
 
-- 👥 **Create** teams for different departments or projects
-- 👤 **Assign** users to teams with specific roles
-- 🎭 **Designate** team managers for leadership roles
-- 📊 **Monitor** team composition and changes
-- ⚡ **Streamline** team-based workflows and permissions
+You see a table of all teams that belong to your company.
 
-<img src="/images/user-management/teams/overview.png" alt="Teams Management Overview" className="rounded-lg border shadow-sm" />
+<img
+  src="/images/user-management/teams/overview.png"
+  alt="Teams list table"
+  className="rounded-lg border shadow-sm"
+/>
 
-## 📋 Team Information & Fields
+| What you see | What it means |
+|--------------|----------------|
+| **#** | Row number (1, 2, 3, …). |
+| **Name** | The name you gave the team. |
+| **Updated At** | The last time that team’s record was changed, **shown in your own time zone** (as set on your profile). |
+| **Action** | Things you can do for that row (see below). |
 
-### Core Team Data
+Above the table there is an **Add** button to create a new team.
 
-| Field | Description | Purpose | Format |
-|-------|-------------|---------|---------|
-| **👥 Team Name** | Unique identifier for the team | Team identification and display | Text (up to 50 characters) |
-| **📅 Updated At** | Last modification timestamp | Change tracking and history | MM-DD-YYYY HH:MM format |
-| **👤 Assigned Users** | Number of users in the team | Team size monitoring | Numeric count |
-| **⚙️ Actions** | Available team operations | Team management controls | Setup/Edit/Delete |
+The list can be searched and sorted using the controls built into the table (for example, a search box and paging), so you can find a team quickly when there are many.
 
-### Team Management Actions
 
-<CardGroup cols={3}>
-<Card title="➕ Add Team" icon="plus">
-- **Purpose**: Create new team groups
-- **Use Case**: Organize users by department or project
-- **Workflow**: Name team → Assign users → Configure roles
-</Card>
-<Card title="⚙️ Setup Team" icon="gear">
-- **Purpose**: Configure team members and roles
-- **Use Case**: Assign users and designate managers
-- **Access**: User assignment and role management
-</Card>
+## ➕ Adding a team
 
-<Card title="✏️ Edit Team" icon="pencil">
-- **Purpose**: Modify team name and basic details
-- **Use Case**: Update team names or descriptions
-- **Impact**: Changes apply to team identification
-</Card>
+1. Click **Add**. The list hides and a form appears.
+2. The form title reads **Add Team**.
+3. Fill in **Name**. A short hint next to the label says to enter a clear, descriptive name for the team.
+4. Click **Submit**. Another hint explains that this saves the team in the system.
 
-<Card title="🗑️ Delete Team" icon="trash">
-- **Purpose**: Remove obsolete teams
-- **Use Case**: Clean up unused or outdated teams
-- **Safety**: Confirmation required before deletion
-</Card>
-</CardGroup>
+**Before you save:** The name cannot be empty. If it is, you are asked to fill in the fields.
 
-## 👤 User Assignment & Management
+**Duplicate names:** You cannot have two teams with the **same name** for your company. If that name is already used, you see a message that it already exists and the team is not created.
 
-### Team Member Assignment Interface
+**After a successful save:** You see a short success message, then the page returns to the main Teams list automatically.
 
-The user assignment interface allows you to efficiently organize users into teams with specific roles:
+Use **Back** if you want to return to the list without saving.
 
-<img src="/images/user-management/teams/user-asign.png" alt="User Assignment to Teams" className="rounded-lg border shadow-sm" />
 
-### Assignment Process
+## ✏️ Editing a team
 
-<Steps>
-<Step title="👥 Access Team Setup">
-**Navigation**: Teams → Select Team → Setup Team
+1. On the row for the team, click **Edit**. The list hides and the form appears with the title **Edit Team**.
+2. The **Name** field is filled with the current team name. You can change it and click **Submit**.
 
-- **Location**: Action button on team row
-- **Purpose**: Configure team membership and roles
-- **Access**: Admin-level permissions required
-</Step>
+The same rules apply as when adding: the name must be filled in, and it must not duplicate another team’s name in your company (except the team you are editing).
 
-<Step title="🔍 Search Users">
-**Function**: Filter available users
+After a successful save, you see a success message and return to the main list.
 
-- **Search Bar**: Located at top-right of interface
-- **Purpose**: Quickly find specific users
-- **Filter**: Real-time search across user names
-- **Use Case**: Large user bases or specific assignments
-</Step>
+**Back** returns to the list without requiring you to use the form.
 
-<Step title="✅ Select Team Members">
-**Action**: Check users for team assignment
 
-- **Method**: Checkbox selection for each user
-- **Visual**: Clear indication of selected users
-- **Flexibility**: Add/remove users as needed
-- **Bulk**: Select multiple users simultaneously
-</Step>
+## 🗑️ Deleting a team
 
-<Step title="🎭 Assign Manager Roles">
-**Configuration**: Designate team leadership
+1. Click the **delete** control on the row (trash icon).
+2. A confirmation asks if you are sure.
+3. If you confirm, that team is removed. You are returned to where you were, with a message that the record has been deleted.
 
-- **Field**: "Manager" dropdown for each user
-- **Options**: "Yes" or "No" for manager status
-- **Purpose**: Define team hierarchy and leadership
-- **Impact**: Manager permissions and responsibilities
-</Step>
 
-<Step title="💾 Setup Team">
-**Completion**: Apply team configuration
 
-- **Button**: Purple "Setup" button at bottom-left
-- **Validation**: System validates team composition
-- **Confirmation**: Team setup completed successfully
-- **Result**: Users assigned with specified roles
-</Step>
-</Steps>
+## 🧩 Setting up who is on a team (“Setup Team”)
 
-### Team Member Roles
+**Setup Team** opens a separate screen whose title is **Assign Users to** followed by the **team’s name**.
 
-<CardGroup cols={2}>
-<Card title="👤 Team Member" icon="user">
-**Role**: Standard team member
-**Permissions**: Basic team access
-**Responsibilities**: Contribute to team objectives
-**Management**: Assigned by team manager
-</Card>
+<img
+  src="/images/user-management/teams/user-asign.png"
+  alt="Assign users to team with search and manager options"
+  className="rounded-lg border shadow-sm"
+/>
 
-<Card title="🎭 Team Manager" icon="user-check">
-**Role**: Team leadership position
-**Permissions**: Enhanced team management capabilities
-**Responsibilities**: Lead team activities and decisions
-**Authority**: Can manage team members and workflows
-</Card>
-</CardGroup>
+### 📝 What this screen does
 
-## 🔄 Team Management Workflow
+- It lists **every person in your company** (not only people already on the team).
+- For each person you can:
+  - **Include them on the team** — turn the option on next to their name, or leave it off to exclude them.
+  - **Manager** — choose **Yes** or **No**. This is separate from simply being on the team: you can be on the team without being marked as manager, or be marked as manager.
 
-### Complete Workflow Process
+There is a **search** box at the top. As you type, the list **hides people whose names do not match** what you typed, so you can work faster on large lists. Matching is based on the **name** shown for each person.
+
+At the bottom, **Setup** saves your choices.
+
+### 🚫 If nobody appears
+
+The list only shows rows when there is at least one person in the company to show. If your company has no users in the system, you will not see any rows here.
+
+### 💾 What happens when you click **Setup**
+
+The system **replaces** the team’s membership with exactly what you selected:
+
+- Anyone **checked** is on the team; their **Manager** choice (**Yes** / **No**) is stored for that team.
+- Anyone **not checked** is **not** on the team after you save.
+
+So you are always defining the **full** current membership in one go, not “adding one person” in isolation.
+
+After a successful save, you are taken back to the **Teams** list with a message that the update succeeded. If something goes wrong, you may see a warning instead.
+
+**Note:** The system records **who was on the team before** and **who is on the team after** this change, for accountability (for example, member lists in before/after form).
+
+
+
+### 🔄 Complete Workflow Process
 
 ```mermaid
 graph TD
@@ -171,60 +140,3 @@ graph TD
     T --> V
     U --> V
 ```
-
-## 📊 Team Statistics & Insights
-
-<CardGroup cols={3}>
-<Card title="👥 Total Teams" icon="user-group">
-**Current Count**: Track active teams
-**Growth Rate**: Monitor team creation trends
-**Utilization**: Measure team assignment rates
-</Card>
-
-<Card title="👤 Team Members" icon="users">
-**Average Size**: Track team member distribution
-**Largest Teams**: Identify major team groups
-**Member Distribution**: Analyze team composition
-</Card>
-
-<Card title="🎭 Team Managers" icon="user-check">
-**Manager Ratio**: Track leadership distribution
-**Manager Coverage**: Ensure all teams have leadership
-**Leadership Analysis**: Monitor management effectiveness
-</Card>
-</CardGroup>
-
-    
-
-## 🔗 Integration Points
-
-### Related Features
-
-<CardGroup cols={2}>
-<Card title="👤 Users Management" icon="users">
-**Connection**: Users are assigned to teams
-**Navigation**: `User Management > Users`
-**Purpose**: Manage individual user accounts and team assignments
-</Card>
-
-<Card title="🎭 Roles Management" icon="shield">
-**Connection**: Teams can have role-based access
-**Navigation**: `User Management > Roles`
-**Purpose**: Define permissions for team members
-</Card>
-
-<Card title="📊 Team Analytics" icon="chart-line">
-**Connection**: Track team performance and metrics
-**Navigation**: Dashboard and Reports sections
-**Purpose**: Monitor team productivity and collaboration
-</Card>
-
-<Card title="🔐 Team Permissions" icon="lock">
-**Connection**: Control team-based access to features
-**Navigation**: Settings and configuration areas
-**Purpose**: Manage team-specific capabilities and restrictions
-</Card>
-</CardGroup>
-
-
-
