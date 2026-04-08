@@ -1,11 +1,10 @@
 ---
 title: "All Workflows"
-description: "User guide for creating, organizing, and running workflows: folders, builder, settings, status, and actions."
 icon: "split"
 ---
 
 
-This guide explains how to use the Workflows area: what it is for, what you see on each screen, and how to build and manage automations step by step.
+**Workflows** are automated sequences: something happens in your business (a trigger), and the system can then run one or more steps (actions) you have designed. You can group workflows into **folders**, see their **status**, open the **design screen** to build triggers and steps, adjust **communication settings**, and review **past runs** in an execution log.
 
 <img
   src="/images/workflow/overview.png"
@@ -13,24 +12,23 @@ This guide explains how to use the Workflows area: what it is for, what you see 
   className="rounded-lg border shadow-sm"
 />
 
-## 🤔 What is a workflow?
 
-A workflow is an automation you define: **when something happens** (a trigger), **the system runs the steps you arranged** (actions), in order. You can organize workflows into folders, turn them on or off, and copy them when you need a similar setup.
 
-## 🗂️ All Workflows
+## 📋 All Workflows (main list)
 
-This is the home for every workflow your team has created.
+The screen is split into two parts: **Folders** on the left and **All Workflows** on the right.
 
 <img
   src="/images/workflow/all-workflows.png"
-  alt="All Workflows dashboard with folders and list"
+  alt="All Workflows with folders on the left and table on the right"
   className="rounded-lg border shadow-sm"
 />
 
-### 🗃️ Folders (left side)
+### 🗂️ Folders (left)
 
-- **All Workflows** shows every workflow. Choosing a folder narrows the list to workflows stored in that folder.
-- You can **add folders** to group workflows by team, campaign, or any label you like.
+- **All Workflows** — Shows every workflow for your organization. This row is highlighted when you are viewing the full list.
+- **Your folders** — Each folder is a label you create to organize workflows. Click a folder to show only workflows stored in that folder.
+- **+ Add** — Opens a small window to create a folder. You give the folder a **name** and save.
 
 <img
   src="/images/workflow/add-folder.png"
@@ -40,44 +38,20 @@ This is the home for every workflow your team has created.
 
 <img
   src="/images/workflow/folders.png"
-  alt="Workflow folders list"
+  alt="Workflow folders list with drag handles"
   className="rounded-lg border shadow-sm"
 />
 
-- Each folder can be **renamed** or **removed**. Removing a folder does not delete the workflows inside; they are simply moved out of that folder.
-- Folders can be **reordered** by dragging the handle next to the folder name.
+- **Drag handle** (next to each folder name) — Lets you drag folders up or down to change order. When you finish dragging, the new order is saved.
+- **More options** (three dots) on a folder — **Edit** opens the same kind of window to change the folder name. **Delete** removes the folder; workflows that were only in that folder are moved to **No Folder** (they are not deleted).
+- If you have no custom folders yet, you see a short message encouraging you to create some.
 
 
-### 📋 Main list (right side)
 
-The table shows:
+### 📑 All Workflows table (right)
 
-| What you see | What it means |
-|--------------|----------------|
-| **Name** | Opens the visual builder for that workflow when you click it. |
-| **Status** | Whether the workflow is a draft, active, or turned off . |
-| **Created By** | Who created the workflow. |
-| **Created At** | When it was created. |
-| **Action menu** | Opens options for that row (see below). |
-
-### ⚙️ Actions from the list
-
-From the **⋯** menu on a row you can:
-
-<img
-  src="/images/workflow/edit-workflows.png"
-  alt="Edit workflow classic form"
-  className="rounded-lg border shadow-sm"
-/> 
-
-- **View Detail** — See workflow summary information and key details in a dedicated panel.
-- **Edit** — Open the visual builder to change triggers, steps, and settings.
-- **Change Folder** — Move the workflow to another folder or to no folder.
-- **Activate** or **Deactivate** — Turn the workflow on or off without deleting it.
-- **Duplicate** — Create a copy named with “(Copy)”, saved as a draft, and open it in the builder.
-- **Delete** — Remove the workflow permanently (you will be asked to confirm).
-
-Use **Create Workflow** to start a new workflow. A new item is created for you and you are taken straight into the builder.
+- **Title:** All Workflows.
+- **Create Workflow** — Starts a **new** workflow. The system creates it with a default name that includes the date and time, sets it as a **draft**, and takes you straight to the **design screen** . You do not fill in a separate form first when you use this button.
 
 <img
   src="/images/workflow/create-button.png"
@@ -85,94 +59,64 @@ Use **Create Workflow** to start a new workflow. A new item is created for you a
   className="rounded-lg border shadow-sm"
 />
 
-## 🔄 Workflow status
+- The table can show **how many rows per page** you want (for example 10). You can **search** the list.
+- **Columns:**
+  - **#** — Row number.
+  - **Name** — The workflow name. Clicking the name opens the **design screen** for that workflow.
+  - **Status** — Shown as a label:
+    - **Draft** — Not yet turned on for live runs in the usual way.
+    - **Inactive** — Not running.
+    - **Active** — Running according to your rules.
+  - **Created By** — The person who created the workflow.
+  - **Created At** — Creation date (month, day, year).
+  - **Action** — Opens a menu (three dots) with:
+    - **Edit** — Opens the **design screen**.
+    - **Change Folder** — Opens a window to put this workflow in **No Folder** or in one of your folders, then save.
+    - **Activate** or **Deactivate** — Switches between **active** and **inactive**. (If the workflow is **draft**, the wording still follows this pattern from the menu.)
+    - **Duplicate** — Makes a copy whose name ends with “(Copy)”, sets it to **draft**, and opens the **design screen** for the copy.
+    - **Delete** — Removes the workflow after you confirm.
 
-| Status | Meaning |
-|--------|---------|
-| **Draft** | Still being designed. It will not run until you publish it. |
-| **Active** | Published and running: it can run when its triggers occur. |
-| **Inactive** | Turned off: it will not run until you activate it again. |
-
-
-## 👁️ View Workflow
-
-This screen summarizes one workflow:
-
-<img
-  src="/images/workflow/view-workflow.png"
-  alt="View workflow summary"
-  className="rounded-lg border shadow-sm"
-/>
-
-- **Name, status, description** — Basic information.
-- **Who created it** and **when it was last updated** — For your records.
-- Buttons to **open the builder**, **make a copy**, or **go back** to the full list.
-- **Activate / Deactivate**, **Edit**, **Duplicate**, and **Delete** — Same ideas as on the main list.
-- A **Statistics** area may show summary numbers when that information is available elsewhere in the product.
-
-
-## 📝 Create Workflow (classic form)
-
-There is a screen where you can type a **name**, optional **description**, choose a **trigger type** from a fixed list (for example new contact, form submission, appointment booked), and optionally fill **extra fields** that depend on the type you picked. New workflows from this path start as **drafts**.
-
-> **Note:** The usual path today is **Create Workflow** from **All Workflows**, which creates a draft and sends you to the **builder** immediately. The classic form is an alternative if your team still uses it.
+**Deleting a workflow** asks for confirmation. **Changing folder** from the table asks you to pick a folder and confirm with **Save**.
 
 
 
-## ✏️ Edit Workflow (classic form)
+## 🛠️ Workflow design screen
 
-This screen lets you change the **name**, **description**, **trigger type**, and **status** using the same kind of trigger list and optional extra fields as the create form. It also explains **Draft**, **Active**, and **Inactive** in plain language and shows who created the workflow and when.
-
-For full visual design (triggers on the canvas, action steps, filters), use **Edit** from the list to open the **builder**.
-
-<img
-  src="/images/workflow/edit-workflows.png"
-  alt="Edit workflow classic form"
-  className="rounded-lg border shadow-sm"
-/>
-
-
-
-## 🏗️ Workflow Builder
-
-The builder is where you design the automation visually. It opens in a full-screen layout focused on your workflow.
+This is a full-page **Workflow Builder** where you shape triggers, steps, and saving. It uses its own top bar (logo, profile menu with Profile and Log Out).
 
 <img
   src="/images/workflow/workflow-builder.png"
-  alt="Workflow builder canvas"
+  alt="Workflow Builder full page"
   className="rounded-lg border shadow-sm"
 />
 
-### ⬆️ Top bar
+### 🏷️ Top bar (workflow name and actions)
 
-- **Workflow name** — Shown at the top; you can edit it with the small edit control beside it.
-- **Builder** — The design surface for triggers and steps.
-- **Settings** — Time zone, who may run the workflow, time windows, and default sender details for messages.
-- **Zoom** — Make the canvas larger or smaller.
-- **SOPs** — Opens help or standard procedures for using workflows, if your team has configured them.
-- **Test** — Reserved for testing the workflow; behavior depends on product updates.
-- **Publish / Draft** — Toggles whether the workflow is live or stays a draft.
-- **Save** — Saves your design. The system may also save your work in the background as you go.
+- **Workflow name** — Shown in large text. The **pencil** button lets you **change the name** in a prompt.
+- **Builder** — Tab for the visual canvas (default).
+- **Settings** — Tab for communication and timing options (see below).
+- **Executions Log** — Tab for a table of past runs (see below).
+- **SOPs** — Opens help text (**Standard Operating Procedures**) about how to use the builder: basics, triggers, actions, conditions, saving, testing, and related topics in expandable sections.
+- **Zoom out / Zoom in** — Changes how large the canvas appears.
+- **Test** — Runs a test of the workflow (what exactly happens depends on your setup).
+- **Status control** — Works with whether the workflow is running or held back; the label and icon on the button match what you see at the moment (for example play or pause). Use this together with **Draft / Active / Inactive** on the main list.
+- **Save** — Saves the workflow design you have built on the canvas.
 - **Back** — Returns to **All Workflows**.
 
-### 🎨 Builder canvas
+### 💡 Builder tab (canvas)
+
+- Large **grid** area where your workflow is drawn.
+- **Add New Trigger** — Opens a panel to **search** and pick from **categories** of triggers (the exact list comes from your system’s trigger library). Choosing one adds a **trigger block** to the canvas.
+
+
 
 <img
   src="/images/workflow/edit-workflows-details.png"
-  alt="Workflow builder with trigger and steps"
+  alt="Workflow builder canvas with triggers and steps"
   className="rounded-lg border shadow-sm"
 />
 
-1. **Add New Trigger** — Opens a panel of available triggers, grouped by category (Contacts, Appointments, Opportunities, Events). You can search. Pick one to add it to your design.
-
-<img
-  src="/images/workflow/add-triggers.png"
-  alt="Choosing a workflow trigger"
-  className="rounded-lg border shadow-sm"
-/>
-
-2. **Trigger cards** — Each trigger has a name and description you can set. Some triggers allow **filters** so the workflow only runs when extra conditions match (for example certain tags, sources, or call details — depending on the trigger).
-3. **Steps under a trigger** — After a trigger, you add **actions** one after another (for example send a text, wait, update tags). Steps run **top to bottom** in the order you place them.
+- Triggers sit in a **row**; you can add more than one. Each trigger can connect downward to **actions** (steps). **Plus** controls under triggers add the next steps.
 
 <img
   src="/images/workflow/add-actions.png"
@@ -180,50 +124,49 @@ The builder is where you design the automation visually. It opens in a full-scre
   className="rounded-lg border shadow-sm"
 />
 
-4. **Connectors** — Lines show how the trigger connects to its steps.
-5. **Mini map** — A small overview of a large workflow; appears when useful.
-6. **Selecting a step** — When you select a trigger or action, a small toolbar may offer **Edit**, **Delete**, or **Duplicate** for that piece.
+- **Lines** connect triggers to actions so you can see the flow.
+- **Workflow Overview** (mini map) — A small overview box can show a simplified picture of the flow; you can drag inside it to move your view on the big canvas.
+- **Node toolbar** (when a block is selected) — **Edit**, **Delete**, **Duplicate** for that piece of the flow.
+- Trigger blocks are styled in **green** tones; action blocks in **yellow** tones; condition-style blocks use **red** accents in the design.
 
-Triggers and actions are chosen from lists maintained for your organization. Typical **trigger** groups include:
+Triggers and actions come from your organization’s libraries. Examples include contact, appointment, pipeline, and dialer-related triggers, and actions such as tags, notes, SMS, waits, and pipeline moves—each action has its own configuration when you edit it.
 
-- **Contacts** — Contact changed, contact created, tag added or removed, disposition change, note added or changed.
-- **Appointments** — Appointment status changes, customer booked an appointment.
-- **Opportunities** — Pipeline stage change.
-- **Events** — Dialer call details, AI call details, incoming SMS (sometimes with extra choices), or a manual trigger.
+### ⚙️ Settings tab
 
-Typical **actions** include working with contact tags and disposition, notes, assigned users, deleting a contact (destructive — use with care), sending information to another system by link, sending SMS, **waiting** for a delay or until a time window, and moving contacts to a pipeline stage.
+A **Save Settings** button at the top saves this tab.
 
-Each action opens its own **configuration** when you edit it (what to send, which tag, which pipeline stage, and so on).
+<img
+  src="/images/workflow/workflow-settings.png"
+  alt="Workflow communication settings"
+  className="rounded-lg border shadow-sm"
+/>
 
-### ⚙️ Settings 
+- **Timezone — Account Timezone** — Pick the time zone used for **wait** steps and for **time window** rules. Help text explains that waits and time windows follow this zone.
+- **Allowed Users** (shown when your organization uses the full company user list) — Pick which people may **start** this workflow. If you leave it empty, **everyone** can trigger it.
+- **Time Window**
+  - Switch **Specific Time** on to limit when automated actions may run.
+  - When on: **Start Time**, **End Time**, and **Include Days** (Sunday through Saturday checkboxes). Help text explains that actions only run inside this window, otherwise the system waits for the next allowed window.
+- **Sender Details**
+  - **From Name** and **From Email** — Defaults for outgoing email; individual email steps can override these.
+  - **From Number** — Default sending number where applicable. Help text references email and overrides inside email actions.
 
-**Timezone**
-
-- Chooses which timezone is used for **Wait** steps and for **time window** rules.
-
-**Allowed users** (on accounts that show this section)
-
-- Optionally limit which team members may start or trigger this workflow. If nobody is selected, all users in the account are allowed.
-
-**Time window**
-
-- Optional. When enabled, you set a **start time**, **end time**, and **days of the week**. Outside that window, automated actions wait until the next allowed time. Help text on the screen explains how this interacts with Wait steps.
-
-**Sender details**
-
-- Default **from name**, **from email**, and **from number** for outgoing messages where the product uses these defaults. Individual message actions may still override them where the product allows.
-
-Use **Save Settings** to store changes on this tab.
-
-![Workflow Settings](/images/workflow/workflow-settings.png)
+### 📊 Executions Log tab
 
 
+<img
+  src="/images/workflow/workflow-execution-logs.png"
+  alt="Workflow communication settings"
+  className="rounded-lg border shadow-sm"
+/>
 
+- **Title:** Workflow Executions Log.
+- **Filter by trigger** — For example All Triggers, Contact Tag Added/Removed, Contact Created/Changed, Disposition Change, Note Added, Pipeline Stage Change, Appointment Status, Incoming SMS, Customer Booked Appointment, Dialer Call Details, AI Call Details.
+- **Filter by status** — All, Completed, Running, Failed, Paused.
+- **Table columns:** #, Trigger, Contact, Status, Actions, Started At, Duration, Details (to open more information about that run).
+  
 ## 💾 Saving your work
 
 - Use **Save** on the builder when you want to be sure everything is stored.
 - The builder may **save automatically** as you work; you can still use **Save** whenever you prefer.
 
-Your design — which triggers you added, their filters, and the ordered list of actions — is kept together with the workflow’s name, description, and status.
-
-
+Your design—which triggers you added, their filters, and the ordered list of actions—is kept together with the workflow’s name, description, and status.

@@ -1,171 +1,149 @@
 ---
 title: "Phone Numbers"
-description: "Manage your AI phone numbers with comprehensive controls for SIP trunks, Ai sync Numbers, and Twilio integrations. This system provides complete phone number lifecycle management from purchase to monitoring"
 icon: "phone"
 ---
 
-![Phone Numbers](/images/ai/phone-number/overview.png)
+### 📖 Overview
 
-import { Callout } from 'nextra/components'
+Use **AI Phone Numbers** to manage phone numbers that work with your AI assistants. You can see all AI numbers for your organization, give them names, choose which assistant answers incoming calls and which one places outgoing calls, connect existing **Rizz** numbers to AI, buy new numbers on another page, and optionally enroll numbers in **spam protection** so carriers are less likely to treat them as unwanted calls.
 
-## 🎛️ Management Tabs
-
-**Available Platforms**
-- **Ai sync Numbers** - Native platform phone numbers and configurations  
-- **Purchase Twilio No** - Acquire and configure new Twilio phone numbers
-
-![Phone Numbers](/images/ai/phone-number/platform.png)
-
-## 🛒 Purchase Phone Number
-
- 
-
-The purchase interface allows you to acquire new phone numbers with AI agent configuration:
-
-![Buy Phone Number Modal](/images/ai/phone-number/purchase.png)
-
-### ⚙️ Configuration Fields
-
-**Enter Area Code (217)**
-- **Purpose**: Specifies the geographic area for the phone number
-- **Function**: Determines the local area code (217 = Illinois area)
-- **Usage**: Helps customers recognize local numbers for better answer rates
-- **Help**: Click the question mark icon for area code information
-
-**Inbound Agent (Search...)**
-- **Purpose**: Selects which AI agent handles incoming calls
-- **Function**: Routes incoming calls to the specified AI agent
-- **Configuration**: Dropdown with searchable agent list
-- **Help**: Click the question mark icon for agent selection guidance
-
-**Outbound Agent (QA1)**
-- **Purpose**: Selects which AI agent makes outgoing calls
-- **Function**: Uses this agent for outbound campaigns and calls
-- **Current Setting**: "QA1" agent is pre-selected
-- **Management**: Use 'X' to clear selection, dropdown arrow to change
-
-**Nickname (QA1)**
-- **Purpose**: Custom identifier for easy management
-- **Function**: Internal reference name for the phone number
-- **Usage**: Helps organize multiple numbers in your dashboard
-
-Actions:
-- **Close** - Cancel purchase without saving
-- **Save Changes** - Complete purchase and configure number
+<img
+  src="/images/ai/phone-number/overview.png"
+  alt="AI Phone Numbers main view"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-## 🤖 Ai sync Number Configuration
+## 🔘 Buttons at the top of the page
 
-Click **Ai sync Numbers** tab to access native platform number configuration:
+| What you see | What it does |
+|--------------|--------------|
+| **Rizz Numbers** | Opens a window to connect an existing **Rizz** phone number (from your account) to inbound and/or outbound AI assistants. |
+| **Purchase No** | Takes you to another page where you can search for and buy a new number (from available providers) and attach AI assistants at purchase time. |
 
-**Required Fields**
-- **Setup Number** - Select from available Ai sync numbers dropdown
-- **Inbound Agent** - AI agent for incoming calls
-- **Outbound Agent** - AI agent for outgoing calls
-
-**Optional**
-- **Nickname** - Custom identifier for the number
-
-**Actions**
-- **Cancel** - Close without saving
-- **Save** - Apply configuration
-
-![Phone Numbers](/images/ai/phone-number/ai-sync-number.png)
-
-## ⚡ Available Actions
+<img
+  src="/images/ai/phone-number/platform.png"
+  alt="Top toolbar with Rizz Numbers and Purchase No"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-![Phone Numbers](/images/ai/phone-number/actions.png)
+## 🗂️ The main table — columns explained
+
+Each row is one AI phone number. Columns are:
+
+| Column | Meaning |
+|--------|---------|
+| **#** | Row number (1, 2, 3, …). |
+| **Name** | The **nickname** you gave this number so you can recognize it in lists. |
+| **Phone Number** | The full phone number. |
+| **Spam Status** | The current spam-reputation status tracked for this number (for example whether it is clean, in progress of checking, or flagged). |
+| **Code** | The three-digit code associated with this number. |
+| **Renewel At** | If this number is **billable** for your account, this shows when the next renewal date/time is, in **your** time zone. If the number is not billable in that way, this cell may be empty. |
+| **Updated At** | When this record was last changed, in **your** time zone. |
+| **Action** | Buttons for **Spam Protect** (when allowed), **Edit**, and **Delete**. A **Token** control exists in the page for advanced inbound contact mapping but is normally hidden. |
+
+<img
+  src="/images/ai/phone-number/actions.png"
+  alt="AI phone number row actions"
+  className="rounded-lg border shadow-sm"
+/>
 
 
+## ⚙️ Actions on a row
 
-### ✏️ Edit
-- **Purpose**: Modify phone number configuration and settings
-- **Function**: Update agent assignments, routing, and preferences
-- **Access**: Opens configuration dialog for changes
+**🛡️ Spam Protect**
 
-### 🔑 Token
-- **Purpose**: Map GoHighLevel (GHL) fields to data used in AI-powered calls
-- **Function**: User assigns which GHL fields the AI should use during calls by mapping them as tokens. Multiple fields can be selected if required.
-- **Note**: Tokens here are not authentication credentials—they are simply field mappings for data access during calls.
+- Appears only when this AI number is **not** already in the spam protection program.
+- After you confirm, the system checks your company’s messaging profile setup. If something is missing, you may be asked to contact support.
+- If the number is already listed under spam protection, you will see a message instead of adding it twice.
+- On success, the **Spam Protect** button is hidden for that row.
 
-### 🛡️ Spam Protect
-- **Purpose**: Protect your phone numbers from being marked as spam or scam likely by carriers and call-blocking apps.
-- **How it Works**: Continuously checks your numbers’ standing across major networks and spam databases, delivering live status reports and timely notifications..
-- **Key Benefits**: 
-  - Instant alerts if a number becomes flagged or is at risk
-  - Detailed compliance and reputation monitoring
-  - Actionable insights to help you maintain high call deliverability and avoid disruptions
+**🗑️ Delete**
 
-**🛡️ Spam Protection Detail**
+Asks for confirmation, then removes the AI number. Use only when you are sure you no longer need it.
 
- 
-With 98% of consumers sending suspected spam calls to voicemail and 90% screening calls before answering, protecting your caller ID reputation is critical. Spam Protection ensures full visibility into your outbound calls so you can quickly detect flagged numbers and maintain trust, compliance, and connection with customers.
+### 🏷️ Token 
 
+If available, this opens **Inbound User Information**, where you link your contact fields to fields in **GoHighLevel (GHL)** and pick a **GHL Location**. You must map **at least one** field before saving. This helps inbound call information line up with your CRM fields. Changing the location can load that location’s custom fields for mapping.
 
-**🛡️ How Spam Protection Works**
-  
+<img
+  src="/images/ai/phone-number/token.png"
+  alt="Inbound user information and GHL token mapping"
+  className="rounded-lg border shadow-sm"
+/>
 
-- **Live Status Monitoring:** Instantly see the current standing of each number:
-  - **🟢 Clean:** No spam reports—number is safe and ready for use.
-  - **🔴 Flagged:** Detected as spam by carriers (e.g., T-Mobile, Verizon) or third-party databases.
-  - **🟡 Pending:** Number is under review or awaiting verification.
-  - **⚫ Blocked:** Number has been blocked by a carrier or call-blocking service.
+**Tokens** are field mappings (not login credentials): they tell the AI which GHL contact fields to use on **incoming** calls. Only mapped fields are available to the AI.
 
-- **Automated Alerts & Recommendations:** Receive immediate notifications if a number’s status changes. The system will recommend actions, such as replacing a flagged number, to help you avoid disruptions and maintain high answer rates.
+Example mappings you might see or configure include **GHL Location**, **Phone Number** (`phone_number` / `phone_number1`), **Email** / **Email Address**, **First Name**, **Last Name**, address fields (**address**, **city**, **zip_code**, **country**), and custom fields such as **AudienceLabelId** (`audiencelabelid`), aligned with your GHL setup.
 
-- **Continuous Reputation Checks:** Your numbers are checked across major networks and spam registries, so you’re always informed about potential risks.
+### ⚙️ Phone Number Settings
 
+This window is used in two situations:
 
-## 🔑 Token Management 
+<img
+  src="/images/ai/phone-number/edits.png"
+  alt="AI phone number row actions"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-**Tokens** are mappings between GoHighLevel (GHL) fields and the data used by the AI during incoming calls only. They allow you to specify which GHL fields the AI can access and use when handling inbound calls. Only the fields you map will be available to the AI for incoming call workflows.
+1. **Adding a new AI number** (when opened without editing an existing row — for example from flows that open this modal with empty or default values).
+2. **Editing** an existing number (via **Edit** on a row).
 
-![Token Management](/images/ai/phone-number/token.png)
+**Fields:**
 
-GoHighLevel (GHL) Field Mapping (Incoming Calls Only)
+| Field | Purpose |
+|-------|---------|
+| **Enter Code** | The three-digit code for the region where you want the new number, or the code tied to this number when editing. Help text: *Enter the 3-digit code for the location where you want to purchase a number.* |
+| **Inbound Agent** | The AI assistant that answers **incoming** calls to this number. Help text: *Select the AI agent that will handle incoming calls to this number.* |
+| **Outbound Agent** | The AI assistant used for **outgoing** calls from this number. Help text: *Select the AI agent that will handle outgoing calls from this number.* |
+| **Nickname** | A short label so you can find this number easily. Help text: *Give this number a descriptive name for easy identification.* |
 
-Map the data fields from your GHL account to the fields used by the AI during incoming calls. This ensures the AI has access to the right information for each inbound call.
+**💾 Save Changes:**
 
- Example Field Mappings (Incoming):
+- **Code** and **nickname** are required before the system will proceed.
+- If you are **creating** a new number, the system requests a new number for that code, applies your assistant choices and nickname, and records a **usage charge** for obtaining that phone number where your plan requires it.
+- If you are **updating** an existing number, the system updates the phone connection and nickname, and adjusts assignments so that **another number in your account cannot use the same inbound assistant or the same outbound assistant** at the same time—those other numbers are cleared for that assistant type when needed.
 
-**GHL Location**
-- The primary GoHighLevel account location associated with this data mapping.
-
-**Phone Number (`phone_number` or `phone_number1`)**
-- Maps to the contact’s main phone number field in GHL.
-
-**Email (`email` or `emailAddress`)**
-- Maps to the contact's primary email address field in GHL.
-
-**First Name (`first_name`)**
-- Maps to the contact's first name as stored in GHL.
-
-**Last Name (`last_name`)**
-- Maps to the contact's last name in GHL.
-
-**Email Address (`emailAddress`)**
-- For accounts with a separate email field, this maps to "Email Address" in GHL (useful if both Email and Email Address exist).
-
-**Address Fields**
-- **Address (`address`)**: Street or full address field in GHL.
-- **City (`city`)**: City name from the GHL contact record.
-- **Zip Code (`zip_code`)**: Postal/zip code field in GHL.
-- **Country (`country`)**: Country field as defined in GHL.
-
-**AudienceLabelId (`audiencelabelid`)**
-- Maps to a custom field used for audience segmentation or tagging.
-
-> _All mappings should be linked to the actual GHL data fields used for each contact, as shown in the configuration interface below:_
+On success, the page refreshes so you see the latest list.
 
 
+## 🔗 Connect Rizz Number 
 
-> Only the mapped fields are used by the AI during incoming calls. 
+This connects an existing **Rizz** number from your account (one that is already set up for voice routing and is not reserved only for the dialer) to AI assistants.
 
-### 🔐 How Tokens Work   
+<img
+  src="/images/ai/phone-number/ai-sync-number.png"
+  alt="Connect Rizz number to inbound and outbound AI assistants"
+  className="rounded-lg border shadow-sm"
+/>
 
-Think of tokens as labels that tell the AI which piece of your contact info to use during a call. For example, you connect "First Name" in your system to "First Name" for the AI, so it knows what to say. You just match up the fields you want the AI to use—nothing complicated.
+**Fields:**
 
- 
- 
+| Field | Purpose |
+|-------|---------|
+| **Setup Number** | Choose which existing Rizz number to connect. Help text: *Select an existing Rizz number from your account to setup with AI agents.* |
+| **Nickname (Optional)** | A label for this connection. Help text: *Give this Rizz number a descriptive name for easy identification.* |
+| **Inbound Agent** | Which AI assistant answers calls to this Rizz number. Help text: *Select the AI agent that will handle incoming calls to this Rizz number.* |
+| **Outbound Agent** | Which AI assistant places calls from this Rizz number. Help text: *Select the AI agent that will handle outgoing calls from this Rizz number.* |
+
+You must pick a **Setup Number**. Saving applies the same kind of rule as above: only one number at a time can hold a given inbound assistant, and only one can hold a given outbound assistant; other numbers may be unassigned from that assistant automatically.
+
+
+## 🛒 Purchase No 
+
+On the purchase page you typically:
+
+- Choose a **nickname** (required).
+- Choose **inbound** and **outbound** AI assistants.
+- Search for and select an available phone number.
+- Choose a **provider** (for example Twilio or Plivo).
+
+<img
+  src="/images/ai/phone-number/purchase.png"
+  alt="Purchase phone number page"
+  className="rounded-lg border shadow-sm"
+/>
+
+When you complete a purchase successfully, the new number is bought and wired up with the same assistant and nickname behavior as in the main AI Numbers list.

@@ -1,118 +1,119 @@
 ---
 title: "Purchase  Number"
 icon: "credit-card"
-description: "Purchase phone numbers instantly and connect them to your AI agents with simple, guided setup for Twilio and Ai Sync providers"
 ---
 
-Purchase dedicated phone numbers for your AI agents and get them operational in minutes with our streamlined setup process. Each number can be configured with specialized inbound agents or outbound agents  on behalf of your business.
+### 📱 Overview
 
- 
-<Callout type="info">
-✨ **Instant Activation**: Your AI agents can start taking calls immediately after purchase. No waiting periods, no complex setup - just select, configure, and go live.
-</Callout>
+**Purchase Number** is where you **find an available phone number**, **choose one**, and **buy it** so it can be used with your AI setup. After a successful purchase, you are taken back to **My Numbers**, where your numbers are listed.
 
-## Getting Started
-
-To purchase a new phone number, Click **Purchase Number** from the main navigation menu.
-
-![Purchase Number Interface](/images/ai/purchase-number/purchase.png)
-
-## Configuration Steps
-
-### 1. 📝 Nickname (Optional)
-
-Add a friendly name to identify your phone number easily:
-
-- **Field**: Nickname (Optional)
-- **Purpose**: Internal identification and organization
-- **Example**: "Customer Service Line", "Sales Department", "Support Hotline"
-
-<Callout type="tip">
-💡 **Best Practice**: Use descriptive nicknames that reflect the number's purpose for better organization.
-</Callout>
-
-### 2. 🤖 Agent Assignment
-
-Configure which AI agents will handle calls for this number:
-
-#### 📞 Inbound Agent
-- **Purpose**: Handles incoming calls to this number
-- **Configuration**: Select from your available AI agents
+<img
+  src="/images/ai/purchase-number/purchase.png"
+  alt="Purchase Number page with nickname, agents, provider, and search"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-#### 📞 Outbound Agent  
-- **Purpose**: Makes outgoing calls from this number
-- **Configuration**: Select from your available AI agents
+## 📝 Fields and controls (top row)
+
+ **🏷️ Nickname (Optional)**
+
+- This is a **short label** you can give the number so you recognize it later (for example a team or campaign name).
+- **Important:** The label says “Optional,” but **when you press Purchase Number**, the system **requires a nickname**. If you leave it blank, you may see a message asking you to **enter a nickname** before the purchase can finish.
 
 
-<Callout type="warning">
-⚠️ **Important**: Both inbound and outbound agents must be configured before purchasing the number.
-</Callout>
+**🤖 Inbound Agent**
 
-### 3. 🌐 Provider Selection
+- Chooses which **AI agent** should handle **calls coming in** to this number.
+- The list shows **agent names** from your company. You can **search inside the list** by typing (the box behaves like a searchable list, not only a plain scroll).
+- You can also **clear** your choice using the clear option on the control, if your setup allows it.
 
-Choose your telecommunications provider:
+**🚀 Outbound Agent**
 
-#### Available Providers:
-- **Twilio** (Default) - Primary carrier option
-- **Ai Sync** - Alternative carrier option
+- Chooses which **AI agent** should be used for **outgoing** use associated with this number, according to how your account is set up.
+- Same kind of **searchable list** as Inbound Agent, with the same agents available.
 
-**Selection Interface:**
-- Dropdown menu with provider options
-- **Twilio** appears as the selected default option
-- Easy switching between providers
+**Together:** Inbound and Outbound define **who answers incoming calls** and **which agent profile applies for outbound** behavior for this number after it is purchased and linked.
 
-### 4. 🌍 Geographic Configuration
 
-#### Countries
-- **Default**: USA
-- **Options**: Select from available countries based on provider
-- **Purpose**: Determines available area codes and number formats
+## 🔍 Fields and controls (search row)
 
-#### Search Parameters
-Configure how to search for available numbers:
+These fields control **where and how** the system looks for **available** numbers **before** you buy. They do **not** complete the purchase by themselves—you still use **Search**, then **Purchase Number**.
 
-**Search By Options:**
-- **AreaCode** (Default) - Search by specific area code
-- **Region** - Search by geographic region
-- **City** - Search by specific city
-![Purchase Number Interface](/images/ai/purchase-number/search.png)
+<img
+  src="/images/ai/purchase-number/search.png"
+  alt="Provider, country, search by, and search field"
+  className="rounded-lg border shadow-sm"
+/>
 
-**AreaCode/Region/City Field:**
-- Enter specific area code (e.g., "212", "415")
-- Or enter region/city name based on search type
-- **Search Button**: 🔍 Click to find available numbers
+**🛰️ Provider**
 
-### 5. 📋 Number Selection
+- Picks **which phone service connection** to use when **searching** and **buying**:
+  - **Twilio** — one option.
+  - The **second option** uses your product’s **branded name** (it is the Plivo-related option in the system).
 
-After clicking **Search**, available numbers will display in a table format:
+**🌐 Countries**
 
-| Column | Description | Icon |
-|--------|-------------|------|
-| **Phone #** | Available phone number | 📱 |
-| **Locality** | Geographic location | 📍 |
-| **Capabilities** | Supported features (Voice, SMS, MMS) | ⚡ |
+- Limits the search to numbers in:
+  - **USA**, or
+  - **Canada**
+- Pick the country where you want the number to be located.
 
-<Callout type="info">
-📊 **Search Results**: The table will populate with available numbers matching your search criteria. Review capabilities before selection.
-</Callout>
+**🔠 Search By**
 
-## Purchase Process
+- Tells the system **how to interpret** what you type in the next box:
+  - **AreaCode** — search by dialing area (for example a three-digit area code where that applies).
+  - **Region** — search by region.
+  - **City** — search by city name or label, depending on what the service supports.
 
-### Step-by-Step Purchase:
+**📝 AreaCode / Region / City (single text box)**
 
-1. **🔍 Search**: Use the search functionality to find available numbers
-2. **📋 Review**: Examine the results table for suitable options
-3. **✅ Select**: Choose your preferred number from the results
-4. **💳 Purchase**: Click the **Purchase Number** button
-5. **❌ Cancel**: Use **Cancel** button to abort the process
+- This is the **actual search text** (code, region, or city) matching the option you chose under **Search By**.
+- It works together with **Countries** and **Provider** to narrow the list.
 
-### Action Buttons:
+**🔎 Search (button)**
 
-- **🛒 Purchase Number** (Blue button) - Confirms the purchase
-- **❌ Cancel** (Red button) - Cancels the purchase process
+- **You must type something** in the AreaCode/Region/City box before Search does anything useful.
+- If that box is **empty**, the page shows a short message asking you to **fill the fields** (meaning: enter a search value).
+- If you did enter a value, the page first shows a **“please wait”** style message while the lookup runs.
+- When the lookup **succeeds**, a **table** fills with rows of numbers.
+- When it **fails**, a **message** appears explaining the problem (for example, nothing found, or your account is not set up for that provider).
 
- 
- 
- 
- 
+
+## 📋 The results table
+
+After a successful search, you see a table with a header row and a scrollable area (the list does not grow endlessly in view—it scrolls inside a fixed height).
+
+Columns:
+
+| Column | Meaning |
+|--------|---------|
+| **#** | Row number (1, 2, 3, …). |
+| **Friendly Name** | A readable label for the number provided by the service. |
+| **Phone #** | The actual phone number format you are choosing. |
+| **Locality** | Where the number is associated (city, region, postal details, country—whatever the service returns). |
+| **Capabilities** | What the number can do (for example text-related features and voice), listed in short form. |
+| **(last column, no title)** | A **choice control** so you pick **one** number. Only **one** row should be selected at a time. |
+
+Until you run **Search**, the table body stays **empty**.
+
+## 🛒 Finishing the purchase
+
+**💳 Purchase Number (button)**
+
+When you click **Purchase Number**, the system:
+
+1. Reads your **nickname**, **Inbound Agent**, **Outbound Agent**, **Provider**, and the **one number** you selected in the table.
+2. If **no number** is selected, you see a message asking you to **select a number**.
+3. If a number **is** selected, a **please wait** style message appears while the system:
+   - **Acquires** the number through the provider you chose (**Twilio** or the **branded Plivo** path), and then
+   - **Links** that number to your **nickname** and **agents** in the way your product is designed (including voice routing setup behind the scenes).
+
+If something goes wrong during acquisition or linking, an **error message** appears in the message area on the page.
+
+If everything **succeeds**, you see a **success message**, and after a **short pause** you are **automatically taken** to **My Numbers** so you can see your number in the list.
+
+**❌ Cancel (button)**
+
+- Takes you **back to My Numbers** **without** buying a number.
+- No purchase happens when you use **Cancel**.

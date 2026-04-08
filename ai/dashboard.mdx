@@ -1,209 +1,284 @@
 ---
 title: "AI Dashboard"
-description: Track key metrics, analyze call performance, and gain insights into your AI agents' effectiveness with real-time data visualization.""
 icon: "chart-line"
 ---
 
-## 📊 Dashboard Overview
+#### 📊 Overview 
 
-The AI Dashboard provides a complete view of your call center operations with advanced filtering options:
+The **AI Dashboard** is a central overview of your AI assistants and the calls handled by them. Here you can see how many agents and phone numbers you have, how many calls occurred in a chosen period, how long calls lasted on average, how many were successful, how many appointments were booked, and why calls ended. Charts and tables below help you explore the details.
 
-- **Agent Selection** - Filter data by specific agents or view all agents
-- **Date Range Controls** - Analyze performance over custom time periods 
-- **Real-time Updates** - Live data refresh for current metrics
+<img
+  src="/images/ai/dashboard/overview.png"
+  alt="AI Dashboard filters for agent and date range"
+  className="rounded-lg border shadow-sm"
+/>
 
-![AI Dashboard Interface](/images/ai/dashboard/filter.png)
+## 🧰 Filters (top row)
 
+This row controls **which agent** and **which date range** the overview uses.
 
-## 📈 Key Performance Metrics
-- **Total Agents**: Number of active AI agents in your system
-- **Total Numbers**: Phone numbers configured for inbound/outbound calls
-- **Total Calls**: Complete call volume for selected period
-- **Avg Duration**: Mean call length across all interactions (e.g., `0m 34s`)
-- **Appointments**: Scheduled meetings generated from calls
-- **Call Successful**: Successfully completed call interactions
-- **Transfers**: Number of calls transferred to another agent 
+<img
+  src="/images/ai/dashboard/filter.png"
+  alt="AI Dashboard filters for agent and date range"
+  className="rounded-lg border shadow-sm"
+/>
 
-![AI Dashboard Interface](/images/ai/dashboard/kpi.png)
+**👤 Select Agent**
 
-## 📅 Appointment Tracking
+- **All** — data for every AI agent combined.
+- Choosing a named agent limits the overview to that agent’s calls and metrics.
+- Changing the agent usually refreshes the overview automatically; if not, press **Filter**.
 
-The Appointment section provides a detailed overview of meetings scheduled as a result of calls handled by your AI agents. This feature helps you monitor appointment generation and follow-up efficiency directly from the dashboard.
-- **Dashboard Card**: The "Appointments" card displays the total number of appointments generated within the selected date range. Clicking this card opens a detailed modal.
+**📅 Date Range**
 
-![AI Dashboard Interface](/images/ai/dashboard/appointment1.png)
+Pick a preset such as Today, Yesterday, Last 7 Days, This Month, Last Month, and others.
 
-- **Appointment Details Modal**: View a comprehensive table listing all appointments, including:
-  - **Call Date**: When the call occurred
-  - **Agent**: The AI agent or user who handled the call
-  - **From/To**: Caller and recipient phone numbers
-  - **Duration**: Length of the call
-  - **Appointment**: Scheduled date and time of the appointment
-  - **Status**: Whether the appointment was confirmed
-  - **Sentiment**: Customer sentiment detected during the call (e.g., Positive, Neutral)
-  - **Recording**: Access to the call recording for review
-  - **Actions**: View more details about each appointment
-- **Filtering & Search**: Filter appointments by agent, date range, or search for specific entries.
-- **Pagination**: Easily navigate through multiple pages of appointment records.
+- If you choose **Custom dates**, the **Start Date** and **End Date** fields become active. Set your range, then press **Filter**.
+- For other presets, start and end dates are set for you and those fields stay inactive; the overview may refresh on its own.
 
-![AI Dashboard Interface](/images/ai/dashboard/appointment2.png)
+**🗓️ Start Date / End Date**
 
-This section enables you to track appointment outcomes, review call quality, and optimize agent performance based on real data.
+- Used only with **Custom dates**.
+- Charts and summary cards follow the period you define here once you apply the filter.
 
-## 📊 Analytics & Reporting
+**🔄 Filter**
 
+- Use this after changing dates or when the screen does not refresh by itself. It updates all related numbers and charts for your current choices.
 
-## #☎️ Number Status Overview
 
-Get a real-time overview of your phone number health and spam protection status. This section helps you monitor, manage, and proactively address issues with any of your AI phone numbers.
+## 📈 Summary cards
 
-### Number Status Chart
+Each card shows one key figure. Hovering (or focusing) on a card may show a short explanation.
 
-The chart below visualizes the status of all your numbers at a glance:
-- 🟢 **Clean Numbers** – Numbers with no spam or flag reports.
-- 🔴 **Flagged/Spam** – Numbers detected as spam or flagged by carriers or third-party databases.
-- ⚫ **Blocked** – Numbers fully blocked by a carrier or service.
+<img
+  src="/images/ai/dashboard/kpi.png"
+  alt="AI Dashboard summary metric cards"
+  className="rounded-lg border shadow-sm"
+/>
 
-![Number Status Chart](/images/ai/dashboard/number-status-overview.png)
+**👩‍💻 Total Agents**
 
-- **Other Numbers:** 29
+- The number of **all** AI agents in your account, whether active or inactive.
+- This count does **not** depend on the date filter; it describes your overall setup.
 
-### AI Spam Numbers Details
+**☎️ Total Numbers**
 
-A detailed table lets you review and act on any flagged or concerning numbers.
+- The total count of **phone numbers** used with your AI setup.
+- One agent can have more than one number.
 
-| Phone Number | Nickname | Spam Status | Area Code | Inbound Agent | Outbound Agent | Actions |
-|--------------|----------|------------|-----------|---------------|---------------|---------|
-| *No spam numbers detected* | | | | | | |
+**📞 Total Calls**
 
-- Quickly see the status, nickname, and routing details for each number. 
-- Use search and filtering to find specific numbers or review only flagged numbers.
-- If a number is flagged or blocked, recommended actions will appear in the "Actions" column to help you resolve issues (e.g., replace or remove the number).
+- All calls in the **selected date range** and **selected agent** scope, including inbound and outbound.
 
-**Pagination** and search controls let you efficiently manage large inventories.
+**⏱️ Avg Duration**
 
-![Number Status Table](/images/dashboard/number-status-table.png)
+- The **average length** of calls in that period, shown in minutes and seconds.
 
-**Tip:** Monitor this overview regularly to ensure all phone numbers are healthy, avoid call delivery issues, and respond fast to any spam flagging or blocking events.
+**📅 Appointments**
 
+- Calls where an **appointment date and time** was recorded.
+- **Clicking this card** opens the **Appointment Details** panel  .
 
+**✅ Call Successful**
 
-### 📞 Call Counts Analysis
-- **Call Counts Chart** - Visual representation of call volume over time
-- **Trend Analysis** - Identify peak calling periods and patterns
-- **Historical Comparison** - Compare performance across different time periods
+- Calls marked as **successful** (yes).
 
-![AI Dashboard Interface](/images/ai/dashboard/call-counts.png)
+**🔀 Transfers**
 
+- Calls that ended with a **transfer** to another destination.
 
-### ✅ Call Success Rate Analysis
-- **Successful Calls** - Calls that achieved their intended outcome
-- **Unsuccessful Calls** - Calls that didn't meet success criteria
-- **Unknown Status** - Calls with unclear outcomes requiring follow-up
 
-### 🔄 Call Direction Distribution
-- **Outbound Calls** - Proactive calls to prospects and customers
-- **Web-initiated Calls** - Calls from web interactions or forms
-- **Inbound Calls** - Calls received from customers and prospects
+## 🚦 Number Status Overview
 
-![AI Dashboard Interface](/images/ai/dashboard/call-direction.png)
+This section focuses on **spam or risk status** of your numbers. It reflects the **current status** of numbers more than a single call date.
 
-### 😊 Customer Experience Insights
-- **Disconnection Reasons** - Analysis of why calls end (user hangup, voicemail reached, etc.)
-- **User Sentiment Distribution** - Customer satisfaction analysis from call interactions
+**📊 Number Status Chart**
 
-![AI Dashboard Interface](/images/ai/dashboard/disconnection-reason.png)
+- A chart comparing **Clean** and **Flagged** numbers.
+- Counts shown beside the chart:
+  - **Clean Numbers**
+  - **Flagged Numbers**
+  - **Total Numbers** (overall count used in this view)
 
-### 📏 Performance Metrics
-- **Call Picked Up Rate** - Answer rate for outbound calls
-- **Call Success Rate** - Percentage breakdown of successful vs. unsuccessful calls
+<img
+  src="/images/ai/dashboard/number-status-overview.png"
+  alt="Number status chart comparing clean and flagged numbers"
+  className="rounded-lg border shadow-sm"
+/>
 
-![AI Dashboard Interface](/images/ai/dashboard/call-rate.png)
+**⚠️ AI Spam Numbers Details**
 
-  
-- **Call Transfer Rate** - Frequency of calls requiring human intervention
+Lists numbers whose status is **Flagged** or **In Progress**.
 
+| Column | Meaning |
+|--------|---------|
+| **#** | Row number |
+| **Phone Number** | The phone number |
+| **Nickname** | The label you gave the number |
+| **Spam Status** | Current status (for example flagged or in progress) |
+| **Area Code** | Area code |
+| **Inbound Agent** | Agent linked for inbound calls |
+| **Outbound Agent** | Agent linked for outbound calls |
+| **Updated At** | When the record was last updated |
 
-![AI Dashboard Interface](/images/ai/dashboard/transfer-voicemail.png)
 
-### 🔁 Call Transfers By Agent
 
-Track and analyze when your AI agents transfer calls to human representatives.
+## 📊 Call Analytics
 
-A call transfer occurs when your AI agent hands off a call to a human representative or another phone number. This happens when callers request human assistance, complex issues arise, or your transfer criteria are met.
+Charts in this section use your **selected date range** and **agent**.
 
-The **Transfers by Agent** chart shows which agents are transferring the most calls using a doughnut chart visualization.
+**📆 Call Counts**
 
-![Transfers by Agent Chart](/images/dashboard/analytics/transfer-by-agent.png)
+- How many calls occurred on each day across the period.
 
-**Reading the Transfers by Agent chart:**
+<img
+  src="/images/ai/dashboard/call-counts.png"
+  alt="Call counts over time"
+  className="rounded-lg border shadow-sm"
+/>
 
-| Element           | Description                                         |
-|-------------------|-----------------------------------------------------|
-| **Colored Segments** | Each color represents a different AI agent          |
-| **Segment Size**     | Larger segments = more transfers by that agent      |
-| **Center Space**     | Empty center for clean visualization                |
+**🟢 Call Success Rate**
 
-**How to interpret:**
+- Share of calls marked successful, unsuccessful, or unknown (ring-style chart).
 
-- If "Agent Sarah" has the largest segment, she transferred the most calls.
-- Smaller segments indicate agents with fewer transfers.
-- Hover over any segment to see exact numbers.
+**🔄 Call Directions**
 
-**How to view transfer details:**
+- How many calls were **inbound**, **outbound**, or **web**.
 
-1. Click directly on a colored segment of the doughnut chart,
-2. Select an agent's name from the legend below the chart,
-3. Or, if there are many agents, click the **"+X more"** link and pick an agent from the expanded list.
+<img
+  src="/images/ai/dashboard/call-direction.png"
+  alt="Call direction distribution"
+  className="rounded-lg border shadow-sm"
+/>
 
-#### 📝 Transfer Details
+**🔚 Disconnection Reasons**
 
-When you click on an agent, the **Transfer Details** modal opens showing all transfer records for that agent.
+- **Why** each call ended — for example caller hung up, assistant hung up, transfer, voicemail reached, busy line, no answer, or other connection or system situations. Counts are shown per reason type.
 
-![Transfer Call Details](/images/dashboard/analytics/transfer-call-details.png)
+<img
+  src="/images/ai/dashboard/disconnection-reason.png"
+  alt="Disconnection reasons chart"
+  className="rounded-lg border shadow-sm"
+/>
 
-**Table columns:**
+**😊 User Sentiment Distribution**
 
-| Column | Description |
-|--------|-------------|
-| **Call Date** | Date and time of the call |
-| **Agent** | AI agent who handled the call |
-| **From** | Caller's phone number |
-| **To** | Destination phone number |
-| **Duration** | Call length |
-| **Status** | Shows "Call Transfer" |
-| **Direction** | Inbound or Outbound |
-| **Sentiment** | Positive, Neutral, or Negative |
-| **Recording** | Audio player to listen to the call |
-| **Actions** | View complete call details |
+- How calls are split across **Positive**, **Neutral**, **Negative**, and **Unknown** sentiment.
 
-**Table features:**
+**☎️ Call Picked Up Rate**
 
-- **Search**: Find specific calls using the search box
-- **Sort**: Click column headers to sort
-- **Pagination**: Navigate through pages
-- **Entries**: Choose 10, 25, 50, or 100 rows per page
+- Over time, the percentage of calls where the end reason indicates a connected conversation (for example caller hangup, assistant hangup, or transfer) versus all calls.
 
-The Call Details modal provides an in-depth view of a transferred call record:
+**🎯 Call Successful Rate**
 
-![Call Details Modal](/images/dashboard/analytics/call-details.png)
+- Over time, the percentage of calls marked successful.
 
-**What you'll see in the Call Details modal:**
+<img
+  src="/images/ai/dashboard/call-rate.png"
+  alt="Call picked up rate and call successful rate over time"
+  className="rounded-lg border shadow-sm"
+/>
 
-- **Call info panel:** Displays agent name, call date and time, duration, direction (inbound/outbound), source and destination numbers, and appointment info (if available).
-- **Call Analysis:** Highlights whether the call was successful, sentiment classification (Positive, Neutral, or Negative), and the reason for call hangup (e.g., "Call Transfer").
-- **Recording player:** Listen to a real call audio file right in the modal—press play to review the interaction.
-- **Summary:** A concise text explanation of what happened during the call, such as who the user was transferred to and what actions the agent took.
-- **Transcription:** Read a detailed, line-by-line transcript of the call so you can quickly scan how the conversation unfolded.
+**🔀 Call Transfer Rate**
 
-This detailed call modal helps supervisors and analysts review agent performance, audit the quality of transfers, and understand both outcome and customer experience—offering transparency and actionable insights for every recorded transfer call.
+- Over time, the percentage of calls that ended in a transfer.
 
+<img
+  src="/images/ai/dashboard/transfer-voicemail.png"
+  alt="Call transfer rate and voicemail rate over time"
+  className="rounded-lg border shadow-sm"
+/>
 
-### ⚙️ Operational Efficiency
-- **Average Call Duration Trends** - Track how call lengths change over time
-- **Appointment Tracking** - Monitor scheduled meetings and conversion rates over time
-- **Voicemail Rate** - Percentage of calls reaching voicemail systems
+**👨‍💼 Transfers by Agent**
 
-![AI Dashboard Interface](/images/ai/dashboard/average-call.png)
+- Which **AI agent** transferred calls and how many times.
 
+<img
+  src="/images/dashboard/analytics/transfer-by-agent.png"
+  alt="Transfers by agent doughnut chart"
+  className="rounded-lg border shadow-sm"
+/>
 
+**Reading the chart:** Each color is a different AI agent; larger segments mean more transfers. Hover a segment for exact counts. You can click a segment, use the legend below, or use **+X more** to pick an agent when there are many.
+
+**⏲️ Average Call Duration**
+
+- Average call length by day over the period.
+
+**📅 Appointments**
+
+- Trend of appointment-related activity by day.
+
+**📬 Voicemail Rate**
+
+- Percentage of calls that reached voicemail.
+
+<img
+  src="/images/ai/dashboard/average-call.png"
+  alt="Average call duration, appointments trend, and voicemail rate"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+## 📆 Appointment Details panel
+
+Opens when you **click the Appointments** summary card.
+
+<img
+  src="/images/ai/dashboard/appointment1.png"
+  alt="Appointment details panel header"
+  className="rounded-lg border shadow-sm"
+/>
+
+- Shows the **company** name and total **appointment** count at the top.
+- Table columns typically include:
+  - **Call Date** — when the call happened
+  - **Agent** — which AI agent handled it
+  - **From / To** — calling and called numbers
+  - **Duration** — call length
+  - **Appointment** — booked appointment time
+  - **Status** — whether the call was marked successful
+  - **Sentiment** — sentiment label
+  - **Recording** — audio player if a recording exists
+  - **Actions** — **Details** to open full call information
+
+<img
+  src="/images/ai/dashboard/appointment2.png"
+  alt="Appointment details table"
+  className="rounded-lg border shadow-sm"
+/>
+
+Use **Close** to dismiss the panel. An error message may appear if data cannot be loaded.
+
+## 📞 Call Details panel
+
+Opens when you choose **Details** on a call row.
+
+<img
+  src="/images/dashboard/analytics/call-details.png"
+  alt="Call details panel"
+  className="rounded-lg border shadow-sm"
+/>
+
+- Date and time, **Agent**, **Duration**, **Direction** (inbound, outbound, or web).
+- **From** and **To** numbers.
+- **Appointment** — scheduled time, or not specified.
+- **Call Analysis**: whether the call was successful, user sentiment, and **Hangup reason** (why the call ended).
+- **Recording** may appear with playback controls if available.
+- If present, **Summary** and **Transcription** appear in separate sections; if not stored for that call, those sections stay hidden.
+
+
+## 🔀 Transfer Details panel
+
+Used for a detailed list of **transfer** calls when opened from the workflow that uses it.
+
+<img
+  src="/images/dashboard/analytics/transfer-call-details.png"
+  alt="Transfer details panel"
+  className="rounded-lg border shadow-sm"
+/>
+
+- Shows the **Agent** name and total **transfer** count at the top.
+- Table: **Call Date**, **Agent**, **From**, **To**, **Duration**, **Status**, **Direction**, **Sentiment**, **Recording**, **Actions** (Details).
+
+Table features often include search, sort, pagination, and a choice of how many rows to show per page.
