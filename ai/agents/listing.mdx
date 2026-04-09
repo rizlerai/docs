@@ -3,229 +3,172 @@ title: "Listing"
 icon: "list"
 ---
 
+#### 🤖  User Guide
 
-The AI Agent Listing page is your main dashboard for managing all your AI agents. It provides a comprehensive view of all agents, allows you to organize them into folders, and perform actions like testing calls, managing phone numbers, importing/exporting agents, and editing configurations.
+The **AI Agents** page is where you view all of your company’s voice AI agents, organize them, and open the tools needed to manage each one. The left side shows **Folders**; the right side shows the **All Agents** list.
 
-![Listing](/images/ai/AI-agent/listing/overview.png)
-
-## 🗂️ Page Layout
-
-### 📁 Left Sidebar - Folders Section
-- **Folders Panel**: Organize your agents into custom folders
-- **All Agents**: Default view showing all agents regardless of folder
-- **Add Folder**: Create new folders to organize agents
-- **Folder Management**: Edit, delete, and reorder folders
-
-![Folders](/images/ai/AI-agent/listing/folder.png)
-
-#### ✨ Creating Folders
-1. Click **"+ Add"** in the Folders section
-2. Enter a descriptive folder name
-3. Click **"Save"** to create the folder
-4. The folder appears in the left sidebar
-
-![Create Folder](/images/ai/AI-agent/listing/adds.png)
-
-#### 🛠️ Managing Folders
-- **Edit Folder**: Click the three-dot menu (⋮) next to any folder
-- **Delete Folder**: Remove folder and its organization
-- **Reorder Folders**: Drag and drop folders to change order
-- **Select Folder**: Click a folder to view agents within it
-
-**🏷️ Folder Features**
-- **Drag & Drop**: Reorder folders by dragging the handle (⋮⋮)
-- **Active Selection**: Currently selected folder is highlighted
-- **Auto-Save**: Last selected folder is remembered
-- **Scroll Support**: Long lists scroll automatically
-
-**🗂️ Folder Filtering**
-- **📋 All Agents**: By default, see the entire agent catalog regardless of organizational folder.
-- **📁 Specific Folder**: Click a folder from the sidebar to display only the agents within that group.
-- **🔄 Auto-refresh**: Whenever you switch folders, the agents table refreshes automatically to show the most relevant data.
-
-![Number Management](/images/ai/AI-agent/listing/folder-actions.png)
+<img
+  src="/images/ai/AI-agent/listing/overview.png"
+  alt="AI Agents page with folders and All Agents list"
+  className="rounded-lg border shadow-sm"
+/>
 
 
 
-### 🧑‍💻 Main Content Area - Agents Table
-- **Agents List**: Table showing all your AI agents
-- **Search Function**: Find specific agents quickly
-- **Action Buttons**: Import agents and add new agents
-- **Agent Details**: View agent information and perform actions
+## 📁 Left panel: Folders
 
-![Table Header](/images/ai/AI-agent/listing/headers.png)
-#### 📋 AI Agents Table Columns
+**📋 “All Agents”**
 
-The Agents Table provides a detailed overview of every AI agent's status and attributes. Here are the main columns you’ll find:
+When it is selected, you see **every agent** (no folder filter).
 
-- **Name**: The agent’s display name for easy identification.
-- **Status**: Instantly see if the agent is **Active** or **Inactive**.
-- **Assigned Numbers**: Displays a summary of phone numbers currently linked to the agent (with clickable access for more details).
-- **Renewal At**: Indicates the scheduled date or time for the agent’s upcoming renewal.
-- **Last Modified**: Shows when the agent was most recently updated.
-- **Action Menu (⋮)**: Quickly access actions such as Edit, Export, test call, endpoints, and Delete.
+**📂 Your own folders**
 
-These columns help you quickly scan and manage your growing fleet of AI agents with ease.
+- Each folder has a **name** you chose.
+- Using the **grip icon**, you can **drag a folder up or down** to change **order only** (which folder appears higher in the list).
+- The **three dots** next to a folder open **Edit** or **Delete**.
+- **+ Add** opens a small window: enter a **Folder Name** and choose **Save** to create a new folder.
 
-#### ➕ Add New Agent
-1. Click **"+ Add Agent"**  
-2. A new agent is instantly created with default settings  
-3. You are immediately redirected to the agent editing page to customize details and configuration  
+<img
+  src="/images/ai/AI-agent/listing/folder.png"
+  alt="Folders panel with All Agents and custom folders"
+  className="rounded-lg border shadow-sm"
+/>
 
-![Number Management](/images/ai/AI-agent/listing/add-agent.png)
+<img
+  src="/images/ai/AI-agent/listing/adds.png"
+  alt="Add folder window"
+  className="rounded-lg border shadow-sm"
+/>
 
-#### 📥 Import Agent
-1. Click **"Import Agent"**
-2. Select a **JSON** file containing the agent configuration
-3. Preview details before importing
-4. Click **"Import Agent"** to complete
+**🆕 No folders yet**
 
-![Import Agent](/images/ai/AI-agent/listing/import-agent.png)
+If you have not created any folders, you will see a short message encouraging you to create folders so you can organize agents.
 
-## ⚡ Agent Actions (Per Agent)
+**💾 Remembering the selected folder**
 
-Below are all available actions you can take for any agent in the listing table. These actions are accessed via the action menu (⋮) on each agent row or relevant buttons in the interface.
+The application remembers **which folder you last selected**. The next time you open this page, that same folder is selected again when it still exists. If that folder was removed, you are returned to **All Agents**.
 
-### ✏️ Edit Agent
-- Click on the agent's name directly, or choose **"Edit"** from the action menu.
-- This brings you to the agent configuration page.
-- You can modify prompt scripts, settings, AI behaviors, or custom business logic.
-- Save your edits to instantly apply all changes.
+**🗑️ Deleting a folder**
 
-### 🌐 View Endpoints
-- Choose **"Endpoints"** from the action menu.
-- See a complete summary: endpoint names, webhook URLs, HTTP methods, and all form parameters.
-- Review integration details, copy webhook info for your developers, or consult the guide for API setup.
-- #### [ 🔗 View Endpoints Details ](/ai/agents/endpoint)
+You are asked to **confirm** before a folder is removed. The page may refresh afterward.
 
-### 🚀 Test Call
-- Open the action menu (⋮) next to your desired agent.
-- Select **"Test Call"**.
-- Enter the phone number you'd like to dial for testing.
-- Press **"Call"** to run a real test call using the agent’s current configuration.
-- View the real-time call outcome or diagnostic feedback once the test is complete.
-
-### 📂 Change Agent Folder
-- Find **"Change Folder"** under the action menu.
-- Select a new folder from the dropdown or folder tree.
-- Click **"Save"** to reorganize and move the agent into the chosen folder.
-
-### 🧩 AI Widget Configuration
-
-Easily set up your AI agent widget for your website or CRM:
-
-- Click **"AI Widget Configuration"** in the agent’s menu.
-- Quickly adjust settings like text color, font style, or avatar.
-- Copy the embed code and paste it onto your site or app.
-
-### 📝 Duplicate Agent
-- Use the action menu and pick **"Duplicate"**.
-- The system will create an exact agent copy, including all numbers and settings, named "**Copy of [Original Agent Name]**".
-- Edit this new agent to change assignment, details, or folders as needed.
-
-### ⬇️ Export Agent
-- Select **"Export"** in the action menu.
-- Download the agent’s complete configuration in a single **JSON** file.
-- Perfect for backups, sharing across teams, migrating agents, or importing to another system.
+<img
+  src="/images/ai/AI-agent/listing/folder-actions.png"
+  alt="Folder edit and delete options"
+  className="rounded-lg border shadow-sm"
+/>
 
 
- **🗑️ Delete Agent**
-- In the action menu, select **"Delete"**.
-- You’ll see a warning prompt—deletion is permanent and cannot be undone.
-- Confirm to permanently remove the agent and all associated records.
+## 🖥️ Right panel: “All Agents” — top buttons
+
+<img
+  src="/images/ai/AI-agent/listing/headers.png"
+  alt="Import Agent and Add Agent above the table"
+  className="rounded-lg border shadow-sm"
+/>
+
+**📥 Import Agent**
+
+- Use this to bring an agent back into the system using a **file you previously exported** (or a compatible backup file).
+- After you pick a file, you may see a short preview such as the **agent name** and **voice identifier** when available.
+- Choosing **Import Agent** starts the import; on success, the list refreshes.
+- If the file is invalid or incomplete, you will see an error message.
+
+<img
+  src="/images/ai/AI-agent/listing/import-agent.png"
+  alt="Import Agent window with file preview"
+  className="rounded-lg border shadow-sm"
+/>
+
+**➕ Add Agent**
+
+This depends on **your plan**:
+
+- If **both** agent types are available, a window asks roughly **how many calls per day** the agent will handle.
+  - **Under 100 calls per day** is described as higher voice quality and lower delay; **Get Started** takes you to the setup path that matches that choice.
+  - **100 or more calls per day** is described for higher volume; **Get Started** opens the other matching setup path.
+- If your plan only allows **one** agent type, **Add Agent** goes **straight** to the correct “create agent” screen without that two-card window.
 
 
-**💡 Tip:** All actions are designed to support streamlined workflow and optimal bulk administration—use multi-tab editing for advanced agent management or take advantage of keyboard shortcuts if supported by your interface.
 
-![Agent Actions](/images/ai/AI-agent/listing/actions.png)
+## 📊 The Agents table
 
+**🔢 # (Number)**
 
-## ☎️ Number Management Modal
+The **row number** on the current page. Numbers change when you move to another page.
 
-**🚪 Opening Number Management**
-1. Click **"Numbers"** under any agent name
-2. Modal opens with two sections: **Available Numbers** (left) and **Assigned Numbers** (right)
+**🏷️ Name**
 
-![Number Management](/images/ai/AI-agent/listing/number-management.png)
+- The **agent’s name** (very long names may be shortened on screen).
+- Clicking the name opens that agent’s **full editing** screen (the right screen depends on the agent type).
+- The **Numbers** button opens the **phone numbers** window .
+- **Agent ID** is the unique identifier the system uses for that agent everywhere.
 
-### 📞 Available Numbers Section
-- **View Available**: See all unassigned numbers
-- **Number Details**: Phone number and status
-- **Assign Actions**:
-  - **Inbound Button**: Assign for incoming calls
-  - **Outbound Button**: Assign for outgoing calls
-- **Status Indicators**:
-  - **Clean**: Safe to use
-  - **Flagged**: Has issues
-  - **Other Statuses**: Additional indicators may appear
+**📅 Renewal At**
 
-### 📲 Assigned Numbers Section
-- **View Assigned**: See numbers on this agent
-- **Number Types**: **Inbound** and **Outbound**
-- **Unassign**: Remove number assignments
-- **Status Tracking**: Monitor health and updates
+If the agent is **billable**, this may show the **next renewal date and time** in your timezone. Otherwise it may stay empty.
 
-### 🔄 Number Assignment Process
-1. Select an available number
-2. Choose **Inbound** or **Outbound**
-3. Number is assigned automatically
-4. Success confirmation appears
-5. Lists refresh automatically
+**🔛 Status**
 
-### 🚫 Number Unassignment Process
-1. Find the number in Assigned
-2. Click **Unassign**
-3. Confirm unassignment
-4. Number returns to Available
+- A switch for **on** or **off**.
+- **On** means the agent is treated as **active**.
+- **Off** means **inactive**.
+- When you change it, you may briefly see a “please wait” style message, then success or failure.
 
-### 📊 Number Status Management
-- **Monitor Status**: Check number health regularly
-- **Clean Numbers**: Use for active campaigns
-- **Flagged Numbers**: Investigate or avoid
-- **Status Updates**: Real-time changes
+<img
+  src="/images/ai/AI-agent/listing/statuss.png"
+  alt="Agent status toggle in the table"
+  className="rounded-lg border shadow-sm"
+/>
 
-### 🗃️ Bulk Number Management
-- **Multiple Assignments**: Assign multiple numbers to one agent
-- **Type Mixing**: Mix inbound and outbound
-- **Quick Actions**: Fast assign/unassign
-- **Batch Operations**: Manage many at once
+**⏰ Updated At**
 
+The **date and time** of the last recorded change to the agent, shown in **your timezone**.
 
-## 📶 Status Management
+**⚙️ Action**
 
-**🚦 Agent Status**
-- **Active**: Running and available for calls
-- **Inactive**: Disabled and won’t handle calls
-- **Toggle**: Click to switch states
+Opens a **menu** with more choices .
 
-![Status](/images/ai/AI-agent/listing/statuss.png)
+## ⋮ Three-dot menu 
 
-## 🔍 Search and Filtering
+The exact wording or destination can differ slightly by agent type, but in general:
 
-**🔍 Search Function**
-- **🔎 Search Bar**: Instantly search and locate specific agents using the search bar above the agents table.
-- **⚡ Real-time Search**: Results update dynamically as you type—no extra button pressing needed.
-- **📑 Search Fields**: The search checks agent names as well as key details, helping you quickly narrow down your results.
+| Option | What it does |
+|--------|----------------|
+| **Edit** | Opens the full settings screen for that agent. |
+| **Endpoints** | Shows the **address**, **method**, and **fields** used to start calls from outside systems, in a dedicated view . |
+| **Test Call** | Opens a small window: enter a **phone number** to try a test call. |
+| **AI Widget Configure** | Opens the screen for the **website call widget** tied to that agent. |
+| **Add Folder / Change Folder** | Puts the agent in a folder or moves it; you can also choose **no folder**. |
+| **Duplicate** | Creates a **new copy** based on that agent. Your company’s **agent limits** and **extra charges** may apply. |
+| **Export** | Saves the agent’s setup and related details into a **file** for backup or for importing elsewhere. |
+| **Delete** | **Permanently** removes the agent after you confirm. **Extra permission** may be required. |
+
+<img
+  src="/images/ai/AI-agent/listing/actions.png"
+  alt="Agent row action menu"
+  className="rounded-lg border shadow-sm"
+/>
 
 
-## 🛠️ Troubleshooting
 
-**😕 Agent Not Showing**
-- **Check Folder Selection**: Make sure you’ve selected the correct folder in the sidebar (e.g., "All Agents" or a specific folder).
-- **Verify Agent Status**: Ensure the agent isn’t set to "Inactive", as filters may hide them.
-- **Refresh the Page**: Sometimes a quick refresh loads recent changes.
-- **Check Search Filters**: Make sure your search term isn’t hiding the agent by accident.
+## ☎️ Numbers window (Manage Numbers)
 
-**📞 Numbers Not Working**
-- **Verify Assignments**: Confirm the number is properly assigned to the agent.
-- **Check Number Status**: Ensure the number is not flagged or out of service.
-- **Test Alternatives**: Try assigning and using a different inbound/outbound number.
-- **Contact Support**: If issues persist, reach out to the support team for assistance.
+When you click **Numbers**:
 
-**📤 Import/Export Issues**
-- **Check File Format**: Only JSON files are supported for import and export.
-- **Check File Size Limits**: Files that are too large may not be accepted—try a smaller file.
-- **Permissions**: Make sure you have the correct permissions for these operations.
-- **Try Another File**: If one file fails, test with a known good example to isolate the issue.
+- The title shows that **agent’s name**.
+- **Left — Available numbers:** Numbers that are not yet tied to this agent (where the system allows assignment). Each row shows the number, a **status** (such as clean or flagged), and **Outbound** / **Inbound** actions when applicable.
+- **Right — Assigned numbers:** Numbers already linked to this agent, with **type** (inbound/outbound), **status**, and **Unassign** to remove a link.
+
+Some numbers may need an extra setup step; errors are shown if something fails.
+
+<img
+  src="/images/ai/AI-agent/listing/number-management.png"
+  alt="Available and assigned numbers for an agent"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+
 
 

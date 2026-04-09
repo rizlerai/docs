@@ -3,274 +3,228 @@ title: "General"
 icon: "sliders"
 ---
 
-The AI Agent Module allows you to create intelligent voice assistants that make and receive phone calls automatically. Your agents can conduct natural conversations, book appointments, transfer calls, and connect with your CRM.
+#### 🎛️  General Tab
 
-## ✨ Main Features
-
-- **Create AI Agents** – Design voice assistants with custom personalities and flows
-- **Handle Phone Calls** – Manage both inbound and outbound calls
-- **AI Conversations** – Automate dialogue using smart prompt configurations
-- **CRM Integration** – Tie directly into GoHighLevel for data sync
-- **Phone Number Management** – Assign & control numbers for each agent
-- **Import/Export** – Share agent setups easily
-
----
-
-## 🛠️ How to Use
-
-### 1️⃣  Access AI Agents
-
-1. Open the dashboard.
-2. Click **AI Agents** in the sidebar.
-3. Click **Add Agent**.
-
----
-
-### 2️⃣  Configure Your Agent
-
-Agent setup is organized into several tabs, starting with "General". This guide walks you through the key components found in the General tab.
-
----
-
-## ⚙️  General Settings
-
-### 🆔 Agent Information
-
-- **Agent Name:** Set a unique display name for your agent  
-- **Status:** Toggle whether the agent is Active or Inactive  
-- **Folder:** Select a folder to organize agents  
-- **GHL Location:** Assign the agent to a specific GoHighLevel account or sub-location  
-- **Timezone:** Choose your agent’s operating timezone (used for scheduling and reporting)  
-  ![GHL Location](/images/ai/AI-agent/edit/general/header.png)
+This is where you set your AI agent’s **name**, **on or off state**, **folder**, **location**, **time zone**, **how the first message works**, and **full instructions (the prompt)**. **General** holds the core setup.
 
 
 
+## 🗂️ Above the tabs
 
----
-
-
-### 🧠 Prompt Editing Modes & Management Actions
-> ![General Prompt UI](/images/ai/AI-agent/edit/general/prompt-select.png)
-
-<CardGroup cols={2}>
-  <Card title="Sectioned Prompt" icon="layer-group">
-    <b>Best for most users</b>  
-    <br />
-    Break your agent’s logic into 12 sections—like Instructions, Greetings, Call Flow, Character, Booking, FAQ, and more.<br />
-    <b>Why use it?</b>
-    <ul>
-      <li>Easy to organize and edit</li>
-      <li>Each area is separate—so changes are safe</li>
-      <li>Great for teams or beginners</li>
-    </ul>
-    <b>How?</b>
-    <ol>
-      <li>Select <b>Sectioned Prompt</b> at the top</li>
-      <li>Fill out or skip any section you want</li>
-    </ol>
-  </Card>
-  <Card title="Single Prompt" icon="file-lines">
-    <b>For prompt experts</b>
-    <br />
-    Use one big box for all instructions if you want full control and advanced formatting.
-    <b>Why use it?</b>
-    <ul>
-      <li>Edit and paste everything at once</li>
-      <li>Great for importing/exporting</li>
-    </ul>
-    <b>How?</b>
-    <ol>
-      <li>Select <b>Single Prompt</b> at the top</li>
-      <li>Edit or paste your full prompt</li>
-    </ol>
-  </Card>
-</CardGroup>
-
----
-
-<CardGroup cols={3}>
-  <Card title="Copy" icon="copy">
-    Copy your entire prompt or all sections.<br />
-    <b>How?</b> Click <span style={{color:"green", fontWeight:"bold"}}>COPY PROMPT</span>.<br />
-    <small>Useful for backups and sharing.</small>
-  </Card>
-  <Card title="Paste" icon="paste">
-    Paste copied prompt text in one click.<br />
-    <b>How?</b> Click <span style={{color:"blue", fontWeight:"bold"}}>PASTE PROMPT</span>.<br />
-    <small>Sections fill automatically if formatted.</small>
-  </Card>
-  <Card title="Clear" icon="trash-can">
-    Remove all prompt text instantly.<br />
-    <b>How?</b> Click <span style={{color:"red", fontWeight:"bold"}}>CLEAR PROMPT</span>.<br />
-    <small><b style={{color:"red"}}>Warning:</b> This cannot be undone.</small>
-  </Card>
-</CardGroup>
-
-### 📝 Prompt Configuration
-The heart of your agent’s intelligence—this is where you define instructions, greetings, behaviors, and flows.
-
-#### 🧩 Core Configuration Areas:
-
-- **Project Instructions / Request 📝:**  
-  This is the primary area to specify your agent’s core instructions, deliverables, and what success looks like for each campaign or use case.
-
-  Use this section to outline:
-  - The main objectives and what the AI agent is responsible for.
-  - Important rules, boundaries (for example: “Do not transfer calls”, “Never share price info on first contact”), and any must-follow do’s/don’ts.
-  - What the agent should say, avoid, highlight, or always confirm during calls.
-
-  Example:
-  > ```
-  > You are an AI phone agent. Your job is to engage appointments with human-sounding warmth, read details dynamically, and create a natural conversation experience.
-  > 
-  > - Never disclose you are AI. You must NOT talk, chat, or confirm that you’re AI under any circumstance.
-  > - You must:
-  >   * Keep introductions brief (1 sentence or less)
-  >   * Work to identify if they qualify for the offer
-  >   * Only transfer the call to a real staff member after confirming qualified criteria.
-  > ```
-  The interface allows you to expand for a larger editor when writing long instructions.
+| Element | What it does |
+|--------|----------------|
+| **Back to Agents** | Returns you to the list of agents. |
+| **Agent title (page heading)** | Shows the name currently used for this agent. |
+| **Delete** | After confirmation, removes this agent. |
+| **Talk With Agent** | Starts a test call so you can hear how the agent responds. **Hangup** ends the test call. |
 
 
-- **Greeting :**  
-  Customize how your agent greets contacts for both outbound and inbound calls.  
-  ![Greetings UI](/images/ai/AI-agent/edit/general/greeting-phrase.png)
-  In the "Greetings" section, you can set a different greeting phrase for outbound scenarios. For example:  
-  ```
-  ➔ "Hi {{first_name}}, this is Sarah from Orbit, warm hello!"
-  ```
-  The interface supports dynamic variables such as `{{first_name}}` to further personalize greetings.  
-  Use the **Expand** button to view or edit more complex greeting templates and see all available tags.
 
-
-- **Call Flow:**  
-  Set up the exact call sequence your agent should follow (Introduction → Discovery → Offer → Close).  
-  ![Call Flow](/images/ai/AI-agent/edit/general/call-flow.png)
-
-- **Character:**  
-  Give your agent a personality, tone, and behavioral traits.  
-  ![Character](/images/ai/AI-agent/edit/general/character.png)
-  Define how formal, casual, or playful your agent should be, including “human-like” fillers if needed.
-
-- **Transfer Call:**  
-  Set up how and when the agent should transfer to a human, plus fallback instructions if no one answers.  
-  ![Transfer Call](/images/ai/AI-agent/edit/general/transfer-call.png)
-
-- **Critical Instructions:**  
-  Add strict guidelines for agent behavior—keep conversations human-like, never reveal it is AI, safeguard sensitive info, and follow call rules.  
-  ![Critical instructions](/images/ai/AI-agent/edit/general/critical-instructions.png)
-
----
-
-### 🏷️ Custom Field References
+## 1️⃣ Top row
 
 <img
-  src="/images/ai/AI-agent/edit/general/custom-field-references.png"
-  alt="Custom Field References Section"
+  src="/images/ai/AI-agent/edit/general/header.png"
+  alt="Agent name, status, folder, GHL location, and timezone"
   className="rounded-lg border shadow-sm"
 />
 
-- Easily reference and insert field tags (e.g., `{lead.firstName}`, `{appointment.time}`) into scripts, messages, and notes.
-- Copy-paste variables to personalize any dialog line.
-- Use curly braces `{field}` for all variable tags.
-- Includes one-click copy, context hints, and a collapsible interface.
+**🏷️ Display name (agent name)**
 
----
+You see the name and an **edit** control.
 
-### 🏢 What Does Your Company Do
+- **Edit** opens a field below; **Update** sends the new name.
+- On success, the name at the top of the page and in General both update.
+- The name is also updated on the calling side so calls use the same display name.
 
-Configure how agents answer “What does your company do?” and similar questions about your business’s value proposition.
+**🔛 Status**
 
-- Use a simple, conversational format:  
-  - **Problem** / Pain → “Most [industry] struggle with…”  
-  - **Solution** → “We help by…”  
-  - **Result** → “So you…”  
-  - **Pivot** → “The best way to see it is on a quick strategy call.”
-- Keep answers short (10–15 sec) and guide conversation naturally toward your desired next step.
-- Example template:  
-  ~ "We build AI tools that handle the boring parts of outreach and follow-up. That way business owners don't lose leads and can close deals faster. Honestly though, it's easier to just show you live on a strategy call — that way you'll see exactly how it works."
-- Collapsible editor, structured format, and room for multiple response templates.
-![If asked what does your company do](/images/ai/AI-agent/edit/general/if-asked.png)
+A switch for **on** or **off**.
 
----
+- **On** — the agent is treated as available for use.  
+- **Off** — the agent is not active for handling work.
 
-### 📜 Script
+**📁 Folder**
 
-Define the step-by-step call flow and script the agent will follow:
+Help text explains that you can group agents into folders for organization.
 
-- Start with greeting and introduction
-- Proceed to qualification, discovery, and booking phases
-- Use a tilde `~` to begin each line for clarity
-- Drag-and-drop ordering, color-coded phases, and a collapsible script editor panel
+Choosing a folder **saves immediately** when you change the selection.
 
-Example script:
-```
-~ Hi, this is [Agent Name] calling from [Company]. How are you today?
-~ The reason for my call is to see if you’re open to a quick chat about [value proposition/solution].
-~ Can I ask—are you currently facing challenges with [problem/industry pain point]?
-~ I’d love to show you how we’ve helped others by [brief benefit].
-~ What works better for you—a call this week or next for a quick walkthrough?
-~ To make sure you get the most out of it, is there anything specific you’d like us to cover?
-~ Amazing. I’ve booked you in and will send you a confirmation—looking forward to our chat!
-```
-![Call script flow](/images/ai/AI-agent/edit/general/call-script-flow.png)
+**📍 GHL Location**
 
----
+Help text explains that this is the **GoHighLevel location** where call data, contacts, and conversation records are tied.
 
-### 🛡️ Objection Handling
+Changing the location **saves** and can refresh related choices elsewhere (for example calendars or field lists). On first load or when you change location, **automatic field matching** may run if no mappings existed before.
 
-Train your AI agent with strong, ready-to-use responses for the most common objections.  
-- Editable objection-response pairs
-- Copy to clipboard and search/filter features
-- Structure by topic (e.g., “Not interested”, “What is this?”, “Already work with someone”, etc.)
+**🕒 Timezone**
 
-| **Objection**        | **Example Response** |
-|----------------------|---------------------|
-| Not interested       | "Totally understand. A lot of business owners said the same..." |
-| What is this about?  | "Good question. Based on what I see, your company..."          |
-| Send me something.   | "Absolutely! Is email best? I'll send you a quick overview..." |
-| …                    | …                                                         |
+Help text explains that this is the time zone used for this agent for scheduling and time-related behavior.
 
-![Objection Handling](/images/ai/AI-agent/edit/general/objective-response.png)
-
----
-
-### 📅 Booking Flow
-
-Set up the entire appointment booking workflow:
-
-- Syncs with GoHighLevel calendars
-- Automates qualification, slot presentation, confirmation, and reminders
-- Handles time zone logic and no-availability scenarios
-- Drag-and-drop reorderable steps, script editor, collapsible panel
-
-![Appt booking flow for ghl](/images/ai/AI-agent/edit/general/appt-book-ghl.png)
-
----
-
-### 📚 FAQ / Knowledge Base
-
-Centralize common questions, business info, and responses for compliance, business hours, objections, etc.
-
-- Markdown/Plain Text support
-- Edit in a single unified panel
-- Live reference for your AI agent
-- Collapsible for a clean workspace
-
-![Faq knowledge base objection handling](/images/ai/AI-agent/edit/general/FAQ.png)
-
----
+Changing the time zone **saves immediately**.
 
 
-- **💾 Save:** Save current prompt configuration  
-  ![Save](/images/ai/AI-agent/edit/general/save.png)
-- **Override:** Update the current version immediately    
-  ![General](/images/ai//AI-agent/edit/general/save-functions.png)
-- **New Version:** Create a backup before applying changes  
-  ![General](/images/ai/AI-agent/edit/general/new-version.png)
-- **Load Prompt:** Select from saved prompts  
-- **Delete Prompt:** Remove old or unwanted prompts
 
-   - Use Save to apply changes, or create a new version as a backup (supports rollback capability and experimentation).
+## 2️⃣ Welcome Message
 
----
+Help text explains that you control **how the conversation starts** — whether the caller speaks first or the AI speaks first.
+
+<img
+  src="/images/ai/AI-agent/edit/general/welcome-message.png"
+  alt="General prompt area with sectioned and single modes"
+  className="rounded-lg border shadow-sm"
+/>
+
+Three choices:
+
+1. **User initiates**  
+   The AI stays quiet until the caller speaks.
+
+2. **AI initiates — dynamic opening**  
+   The AI starts the call; the first line comes from the **system default** (you do not type a custom line).
+
+3. **AI initiates — your own opening**  
+   The AI starts and uses **exactly the text** you type in the box below.
+
+The large text box **only appears** when the third option is selected.
+
+These welcome settings are applied when you press **Save** on the prompt (see below), together with the rest of the General prompt.
+
+
+
+## 3️⃣ General Prompt
+
+Help text explains that this is where you define **how the agent behaves**, **what it should do**, and **what limits it should follow**. It is the foundation for conversations.
+
+<img
+  src="/images/ai/AI-agent/edit/general/prompt-select.png"
+  alt="General prompt area with sectioned and single modes"
+  className="rounded-lg border shadow-sm"
+/>
+
+**📝 Default Prompt**
+
+Opens a small window: choose an **industry**, then a **starter prompt**. **Use This Prompt** fills the related fields; you can edit afterward..
+
+**🏷️ Prompt name**
+
+A **name is required** before saving.
+
+When saved, the system adds a **date and time** to the name so each saved copy is distinct.
+
+**📜 Version list (drop-down)**
+
+Shows saved prompt versions for **this agent**.
+
+Choosing one **reloads** those sections into the form.
+
+The trash control **deletes** the selected version, after confirmation.
+
+**🗃️ Sectioned vs Single**
+
+- **Sectioned Prompt** — one box per topic (easier editing).  
+- **Single Prompt** — everything in one large box (for users who prefer one canvas).
+
+When you switch modes, the content is **split** or **merged** so nothing is lost.
+
+**📋 Copy, Paste, Clear**
+
+- **COPY PROMPT** — copies the active content (section format when in sectioned mode).  
+- **PASTE PROMPT** — pastes that format back into the fields.  
+- **CLEAR PROMPT** — clears the fields, after confirmation.
+
+A short line under the radios explains the current mode in plain language.
+
+
+
+## 4️⃣ Placeholder tags (dynamic variables)
+
+Below the prompt area, a line shows **tags in curly braces**. These come from your contact fields, plus **current date and time** and **join meeting pin** where applicable.
+
+During a live call, these tags are **filled with real values** for that contact or call so the agent can speak accurately.
+
+
+## 5️⃣ Sectioned boxes (when Sectioned mode is on)
+
+Each section has a help icon with a short hint.
+
+| Section | Purpose in plain words |
+|---------|-------------------------|
+  | **Project instructions / Request** | What you want the agent to accomplish — the main job. |
+| **Greetings** | How every conversation should start. |
+| **Call Flow** | The natural order of the call. |
+| **Character** | Tone, personality, style. |
+| **Transfer Call** | How to hand off to a human. |
+| **Critical Instructions / Guardrails** | What must never happen; boundaries. |
+| **Custom Field References** | Notes on extra fields you rely on. |
+| **What Your Company Does** | What you offer and how you help. |
+| **Script** | Step-by-step talking points. |
+| **Objection Handling** | How to respond to pushback. |
+| **Booking flow** | How appointments should be booked (including with GHL). |
+| **FAQ / Knowledge Base** | Common questions and facts. |
+
+Each section has **Expand** to enlarge the box for long text.
+
+In **Single** mode, one **All Prompts** box is shown instead.
+
+
+
+## 6️⃣ Apply this prompt to other agents (when shown)
+
+This block appears when the system offers **other agents** you can target.
+
+<img
+  src="/images/ai/AI-agent/edit/general/to-other-agent.png"
+  alt="Save and version controls"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+- You may select **more than one** agent (hold Ctrl on Windows or Command on Mac while clicking).
+- When you press **Save**, the same prompt and welcome behavior can be applied to those agents so you do not repeat the work for each one.
+
+Some agent types may be updated through a different path behind the scenes; the outcome for you is still one save that updates multiple agents when selected.
+
+
+## 7️⃣ Save and New Version
+
+<img
+  src="/images/ai/AI-agent/edit/general/save.png"
+  alt="Save and version controls"
+  className="rounded-lg border shadow-sm"
+/>
+
+**💾 Save**
+
+- **Prompt name** is required.  
+- If **no older version** is selected in the list, the save is treated as a **new copy** under that name.  
+- If **an older version is selected**, you are asked whether to **replace that version** or **create another copy**.  
+  - **Override** — that version is updated with your current text.  
+  - **New version** — the old row stays; a new row is added.
+
+When save succeeds:
+
+<img
+  src="/images/ai/AI-agent/edit/general/save-functions.png"
+  alt="Override and related save options"
+  className="rounded-lg border shadow-sm"
+/>
+
+- All sections are **combined into one full instruction** for the AI, with a **current date and time** line at the end.  
+- That full instruction is what the **live agent** uses.  
+- A **history row** is also stored with a timestamp in the name.
+
+**🆕 New Version**
+
+If nothing is selected in the version list, this path creates a new version directly.
+
+If something is selected, you may be asked for a name, then a new version is stored.
+
+
+
+<img
+  src="/images/ai/AI-agent/edit/general/new-version.png"
+  alt="New Version control"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+
