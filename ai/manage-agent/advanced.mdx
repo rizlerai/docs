@@ -1,494 +1,365 @@
 ---
 title: "Advanced"
-description: "Configure advanced agent capabilities, API integrations, phone number management, and testing tools. This section provides expert-level controls for enhanced agent functionality"
 icon: "gears"
 ---
 
-Enable your agent with advanced capabilities for enhanced call management and integration features.
+#### ⚙️ Advanced tab (user guide)
 
-# 🔴 End Call 
-- **Purpose**: Configure when and how the agent should end calls
-- **Settings**: Define call termination rules and conditions
-- **Usage**: Automated call completion based on conversation flow
+The **Advanced** tab is where you give your agent **extra abilities** during calls: ending calls on purpose, transferring callers, booking appointments, collecting details after or during a call, joining meetings, using phone menus (press-a-number systems), optional clinic-related options, and connecting custom actions.
 
-![Advanced](/images/ai/AI-agent/edit/advance/end-call.png)
-
-### ⚙️ Configuration Options
-- **Auto End**: Set call termination triggers and timeout limits
-- **Farewell Message**: Customize closing message before ending calls
-
-![Advanced](/images/ai/AI-agent/edit/advance/end-call2.png)
-# 🔄 Call Transfer 
-
-<Info>
-Transform your customer experience with intelligent call routing that seamlessly connects customers to the right human agents at the perfect moment.
-</Info>
-
-The Call Transfer feature enables seamless handoff of customer calls from AI agents to human representatives, ensuring optimal customer service in retail environments.
-
----
-## 🎯 Transfer Configuration Dialog
-
-<Card title="Transfer Call Setup" icon="phone">
-Configure how your AI agent transfers calls to human representatives with advanced routing and messaging options.
-</Card>
-
-![Call Transfer Dialog](/images/ai/AI-agent/edit/advance/call-transfer.png)
-
-### 📝 Basic Transfer Settings
-
-<AccordionGroup>
-  <Accordion title="Description Field">
-    **Purpose**: Brief description of the transfer scenario  
-    **Example**: "hello transfer" - Simple identifier for this transfer configuration  
-    **Usage**: Helps team members understand when this transfer is used
-  </Accordion>
-
-  <Accordion title="Transfer Destination">
-    **Purpose**: Defines where the call should be routed  
-    **Options**: 
-    - **Dynamic Routing** (`transfer_destination.type: "inferred"`)  
-      - The AI model infers the correct transfer destination based on context.
-      - **Prompt** (`transfer_destination.prompt`): Provide a specific instruction or context for the transfer, which will be combined with the global prompt and call transcript to deduce the right number. You can use dynamic variables here (e.g., `{{customer_issue}}`).
-    - **Static Routing**: Route calls to a specific, pre-set phone number or extension.  
-      - **How it works**: You can specify a fixed E.164 number (e.g., `+1234567890`), a department extension, or use a dynamic variable such as `{{transfer_number}}` to determine the destination at runtime.  
-    - **Specific phone numbers**
-    - **Department extensions**
-    
-    **Retail Application**: Route customers to appropriate departments (sales, support, billing)
-  </Accordion>
-
-  <Accordion title="Dynamic Routing Logic">
-    **Purpose**: Configure AI-driven transfer destination using the `transfer_destination.type` and `transfer_destination.prompt` fields.
-![Call Transfer Dialog](/images/ai/AI-agent/edit/advance/call-transfer-dynamic.png)
-    **transfer_destination.type**:  
-    - **Required**  
-    - **Options**: `"inferred"`  
-    - Set to `"inferred"` to enable the AI to deduce the correct transfer destination.
-
-    **transfer_destination.prompt**:  
-    - **Required**  
-    - Provide a prompt that guides the AI in selecting the right number or department.  
-    - The model combines this prompt with the global prompt and the call transcript to infer the best transfer destination.  
-    - You can use dynamic variables (e.g., `{{customer_issue}}`, `{{customer_priority}}`) to tailor the routing.
-
-    **Example Prompt**:  
-    - "Transfer this call to the most appropriate sales agent based on the customer's inquiry and priority."
-    - "Route to the senior support agent if the customer is VIP, otherwise to the general support queue."
-
-    **Retell AI Use**:  
-    - With Retell AI, you can intelligently route high-value customers to senior sales agents by crafting a prompt such as:  
-      `"If the customer is identified as VIP, transfer to the senior sales line; otherwise, route to the general sales team."`
-  </Accordion>
-
-  <Accordion title="Static Routing">
-    **Purpose**: Route calls to a fixed, pre-defined destination using explicit transfer fields.
-
-    **transfer_destination.type**  
-    - **Type**: `enum<string>` (**required**)  
-    - **Description**: The type of transfer destination.  
-    - **Available options**:  
-      - `predefined` (Use this for static routing to a specific number or extension.)
-
-    **transfer_destination.number**  
-    - **Type**: `string` (**required**)  
-    - **Description**: The number to transfer to, in E.164 format (e.g., `+1234567890`) or a dynamic variable (e.g., `{{transfer_number}}`).  
-    - **Example**:  
-      - `+18005551234`  
-      - `{{preferred_agent_number}}`
-
-    **transfer_destination.extension**  
-    - **Type**: `string` (optional)  
-    - **Description**: Extension digits to dial after the main number connects. Sent via DTMF. Allow digits, `*`, `#`.  
-    - **Example**:  
-      - `"123*456#"`
-
-    **How it works**:  
-    - The transfer always goes to the same phone number or department, regardless of customer or context.
-    - You can specify a fixed E.164 number, a department extension, or use a dynamic variable for runtime selection.
-  </Accordion>
-</AccordionGroup>
-
-### 📞 Displayed Phone Number
-
-The **Displayed Phone Number** controls which caller ID shows when the system transfers a call. You can set it to either:
-
-- **AI Agent Number**: Shows the Rizz AI Agent’s assigned phone number for all transfers.  
-  - *Use when*: You want all calls to appear from your main business or agent line—ensures consistency.
-  - *Behavior*: Caller ID always displays the AI Agent’s number.
-
-- **Lead/User Number**: Shows the lead's or user's own phone number for each transfer.
-  - *Use when*: You want calls to look like they're coming directly from the lead or user.
-  - *Requirements*: Your telephony provider must support caller ID override; check with your carrier.
-  - *Behavior*: Caller ID dynamically displays the relevant user’s or lead’s number.
-
-**Tip:**  
-If your provider doesn’t allow caller ID override, use the AI Agent Number option. Always test after making changes to confirm the correct caller ID appears.
+You will also find **phone number assignment** for this agent, **tools to test and connect** the agent, and **sender** settings for notifications.
 
 
 
----
+## 📋 Agent Functions (main section)
 
-### 🌟 Warm Transfer
+Under the title **Agent Functions**, a short line explains that you can turn on things like calendar booking and ending calls—read it once; it sets context for everything below.
 
-<div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px'}}>
-  <img src="/images/ai/AI-agent/edit/advance/call-transfer-warm.png" alt="Warm Transfer"  />
+Below that, a **grid of cards** lets you **open setup** for each type of function. Each card has a title, one line of help text, and a **Configure** button (or a switch in one special case).
+
+
+
+## 🔴 End Call
+
+**Purpose:** Tell the agent **when and how** it may end the call after your business goal is finished.
+
+1. Choose **Configure** on the End Call card.  
+2. A panel opens with a single large text area: **Description**.  
+3. Write clear instructions in everyday language (for example: after the appointment is booked, end the call politely).  
+4. Choose **Save**. **Cancel** closes without saving.
+
+*The configure panel is a single **Description** field—similar to this:*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/end-call2.png"
+  alt="End Call description field and Save"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+
+
+## 🔄 Call Transfer
+
+**Purpose:** Send the caller to another phone number or to a destination chosen **dynamically** from the conversation.
+
+1. Choose **Configure** on the Call Transfer card.  
+2. Fill in only the fields that apply to your choices.
+
+*Main transfer settings (description, destination, type):*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/call-transfer.png"
+  alt="Call Transfer description, destination, and type"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+**Description** — Instructions for **when** and **why** to transfer—what the agent should look for before transferring.
+
+**Transfer to** — **Static destination:** transfer always goes to **one phone number** you enter; you can turn on **Extension** and type an extension if needed. **Dynamic routing:** instead of one fixed number, you describe **how** the agent should decide where to send the call; a text box appears for that explanation.
+
+*When you use **dynamic routing**, you fill the prompt-style field for how the destination is chosen:*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/call-transfer-dynamic.png"
+  alt="Dynamic routing transfer destination prompt"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+**Type** — **Cold transfer:** the caller is moved to the other party in a straightforward way. **Warm transfer:** extra options appear for a more guided handoff.
+
+*Cold transfer focuses on a direct handoff—your screen may look like this when that path is selected:*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/call-transfer2.png"
+  alt="Cold transfer settings"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+**Warm transfer options (when you pick Warm)** — **On-hold music:** what the caller hears while waiting (ringtone, relaxing sound, uplifting beats, or none). **Navigate IVR:** if the other side uses a “press 1 for…” menu, describe how the agent should handle it; turning this on can affect related options (the screen explains when something is locked or auto-enabled). **Human detection:** when on, the agent tries to confirm a **real person** answered before finishing the handoff; you can set **how long to wait** for an answer and whether the agent sends a short “Hello” first. **Whisper message:** optional message heard **only by the person receiving the transfer** (prompt style or one fixed sentence). **Three-way message:** optional message spoken **after** the transfer connects so **both** sides can hear it (for example a short introduction).
+
+<div className="not-prose my-6 grid gap-4 md:grid-cols-2">
+  <figure className="m-0">
+    <img
+      src="/images/ai/AI-agent/edit/advance/call-transfer-warm.png"
+      alt="Warm transfer human detection and messages"
+      className="rounded-lg border shadow-sm w-full"
+    />
+    <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      Warm transfer: detection, whisper, and related options
+    </figcaption>
+  </figure>
+  <figure className="m-0">
+    <img
+      src="/images/ai/AI-agent/edit/advance/call-transfer-warm-options.png"
+      alt="Warm transfer on-hold music and IVR"
+      className="rounded-lg border shadow-sm w-full"
+    />
+    <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      Warm transfer: on-hold music and IVR navigation
+    </figcaption>
+  </figure>
 </div>
 
-When you choose **Warm Transfer**, your experience is seamless and personal. Here’s what happens from your perspective:
-
-- The AI agent will greet you and ask about your needs.
-- Before connecting you to a human agent, the AI summarizes your situation so you don’t have to repeat yourself.
-- You’ll hear a friendly introduction as you’re transferred, and the human agent will already know why you’re calling.
-- This means you get a smooth, high-touch handoff—no awkward silences or confusion.
-
-<CardGroup cols={2}>
-  <Card title="✨ What You Can Expect" icon="wand-magic-sparkles">
-    <ul>
-      <li><b>Personalized Introduction:</b> The AI introduces you and your needs to the agent.</li>
-      <li><b>On-hold Music:</b> Enjoy relaxing or branded music while you wait.</li>
-      <li><b>Custom Greetings:</b> Both you and the agent can hear a tailored handoff message.</li>
-      <li><b>Quick Connection:</b> The agent is ready to help as soon as you’re connected.</li>
-      <li><b>Options for Privacy:</b> The AI can greet just the agent if needed.</li>
-    </ul>
-  </Card>
-  <Card title="🚀 Your Experience" icon="handshake">
-    <ol>
-      <li>The AI listens and understands your request.</li>
-      <li>You’re introduced to the right person, with your context already shared.</li>
-      <li>The agent is prepared to help you right away—no need to repeat yourself.</li>
-    </ol>
-    <div style={{marginTop: '8px', color: '#4caf50', fontWeight: 500}}>
-      <span>Result: You get fast, informed, and personal support every time!</span>
-    </div>
-  </Card>
-</CardGroup>
-
----
-
-### 💬 Warm Transfer Configuration
-<img src="/images/ai/AI-agent/edit/advance/call-transfer-warm-options.png" alt="Warm Transfer" />
-
-Warm Transfer offers a highly customizable and seamless handoff experience. Here are the key configuration options and advanced features you can enable:
-#### 🧑‍💼 Human Detection
-The AI can automatically detect when a human agent joins the call, ensuring that context and introductions are delivered at the right moment. This helps avoid confusion and guarantees a smooth transition for both the customer and the agent.
-
-#### 🎵 On-hold Music
-During the warm transfer process, customers can listen to relaxing or branded on-hold music while waiting for the agent to join. This feature enhances the customer experience and can be customized to match your brand.
-
-#### ☎️ Navigate IVR (Interactive Voice Response)
-If your transfer destination uses an IVR system, the AI can automatically navigate menu prompts by sending DTMF tones (keypad inputs). This allows the AI to reach the correct department or extension before connecting the customer, making the transfer process faster and more accurate.
-
-<CardGroup cols={3}>
-  <Card title="Whisper Message" icon="eye">
-    **Purpose**: Private message spoken only to the transfer agent  
-    **Content**: Customer context, inquiry details, urgency level  
-    **Retail Examples**: 
-    - "Customer calling about order #12345, high priority"
-    - "Customer needs help with product return"
-    - "VIP customer, transfer to senior sales"
-  </Card>
-
-  <Card title="Handoff Message" icon="arrow-right-arrow-left">
-    **Purpose**: AI-generated message based on conversation context  
-    **Functionality**: Dynamically creates relevant transfer information  
-    **Retail Benefits**: Provides real-time context to human agents
-  </Card>
-
-  <Card title="Three-way Message" icon="users">
-    **Purpose**: Message heard by both customer and agent after transfer  
-    **Content**: Introduction and context for all parties  
-    **Retail Examples**: 
-    - "I'm transferring you to Sarah, our product specialist"
-    - "John will help you with your billing inquiry"
-    - "You're now connected with our sales team"
-  </Card>
-</CardGroup>
-
-
----
- 
+**Displayed phone number** — Choose which caller ID style fits your process—often your **AI agent’s number** or the **lead’s number**, depending on what your organization expects.
 
-<Warning>
-Always test your transfer configurations with sample calls to ensure smooth customer experience and proper routing.
-</Warning>
-
-### ❄️ Cold Transfer
-  <img src="/images/ai/AI-agent/edit/advance/call-transfer2.png" alt="Warm Transfer"   />
-
-
-
-If you want to be connected to a human agent as quickly as possible, **Cold Transfer** is the fastest option. With Cold Transfer, you’re sent straight to a person—there’s no AI greeting, no summary, and no waiting for an introduction. You just get immediate help.
-
-<CardGroup cols={2}>
-  <Card title="⚡ What Happens" icon="bolt">
-    <ul>
-      <li>You call in and are transferred directly to a human agent.</li>
-      <li>Your call is not delayed by any AI messages or explanations.</li>
-      <li>If enabled, your phone number can be shown to the agent (requires special setup).</li>
-    </ul>
-  </Card>
-  <Card title="💡 When to Use Cold Transfer" icon="circle-exclamation">
-    <ul>
-      <li>🚨 For emergencies when every second matters</li>
-      <li>📞 When you have a quick question and want to skip the AI</li>
-      <li>⚡ Any time you want the fastest possible connection to a real person</li>
-    </ul>
-    <div style={{marginTop: '8px', color: '#2196f3', fontWeight: 500}}>
-      <span>You’re connected instantly—no explanations, just direct action.</span>
-    </div>
-  </Card>
-</CardGroup>
+**Save** applies the transfer setup. **Cancel** closes without saving.
 
----
-  
 
+## 📅 Calendar Appointments
 
- 
+**Purpose:** Let the agent **check availability** and **book appointments** on a calendar you connect.
 
+1. Choose **Configure** on the Calendar Appointments card.  
+2. **Book Appointments On:** Pick where your calendar lives—**Go High Level** or your **product’s own calendar** (labels match your screen). Help text explains when to pick each.  
+3. **Select Calendar:** After choosing the platform, pick the specific calendar. For the Go High Level path, calendars often fill after your location is connected; if the list is empty, finish connection steps first.
 
- 
+*Choosing where appointments are booked and which calendar to use:*
 
-# 📅 Calendar Appointments 
-- **Purpose**: Manage appointment scheduling settings
-- **Integration**: GoHighLevel calendar synchronization
-- **Features**: Automated booking and confirmation workflows
+<img
+  src="/images/ai/AI-agent/edit/advance/calender.png"
+  alt="Book appointments on and calendar selection"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-![Advanced](/images/ai/AI-agent/edit/advance/calender.png)
+4. **Appointment title:** What should appear on the calendar when a booking is made (for example “Sales call”).  
+5. **Booking window (days):** How many **days ahead** the agent may offer times (example: **7** means only slots in the next seven days).  
+6. **Collect contact information:** Which details the agent should gather before booking; the list depends on your platform. Select more than one where allowed.  
+7. **Calendar timezone:** The **calendar’s** timezone—should match how the calendar is set up in your booking system.  
+8. **Save** applies everything. **Cancel** closes without saving.
 
- **Appointment Settings**
-- **Calendar & Platform**: Select GHL calendar and booking platform
-- **Booking Rules**: Set advance booking days and required information fields
+*Title, booking window, contact fields, and timezone:*
 
-![Advanced](/images/ai/AI-agent/edit/advance/calender-2.png)
+<img
+  src="/images/ai/AI-agent/edit/advance/calender-2.png"
+  alt="Appointment title, booking window, and timezone"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-# 📋 Post-Call Information 
-- **Purpose**: Collect information after call completion
-- **Configuration**: Define data collection parameters
-- **Usage**: Gather feedback and call outcome details
+The line near **Active Functions** that mentions your calendar updates when a calendar is selected and saved, or may show that none is selected yet.
 
-![Advanced](/images/ai/AI-agent/edit/advance/post-calll.png)
 
- **Data Collection Setup**
-- **Fields**: Configure required user information (name, email, phone)
-- **Integration**: Connect to CRM systems for automatic data entry
 
-![Advanced](/images/ai/AI-agent/edit/advance/post-call.png)
 
-# 📝Live Call Updates 
-- **Purpose**: AI agent will update information during active calls.
+## 📋 Post-Call Information
 
-![Advanced](/images/ai/AI-agent/edit/advance/live-call.png)
+**Purpose:** After the call ends, have the agent **capture specific information** you care about (aligned with fields your system can store).
 
-- **Configuration**: You need to select GHL fields that you want to update during the calls
+1. Choose **Configure** on the Post-Call Information card.  
+2. Use **Collect User Information** to select one or more items (the list depends on your connected setup).  
+3. **Save** applies. **Cancel** closes without saving.
 
-![Advanced](/images/ai/AI-agent/edit/advance/update-info-2.png)
+*Opening post-call setup from the card:*
 
-![Advanced](/images/ai/AI-agent/edit/advance/update-info-3.png)
+<img
+  src="/images/ai/AI-agent/edit/advance/post-calll.png"
+  alt="Post-Call Information configure entry"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-# 🎥 Join Meeting 
-- **Purpose**: Configure video meeting integration
-- **Settings**: Meeting platform connections and settings
-- **Usage**: Seamless video call transitions
+*Selecting which information to collect:*
 
-![Advanced](/images/ai/AI-agent/edit/advance/join-meeting.png)
+<img
+  src="/images/ai/AI-agent/edit/advance/post-call.png"
+  alt="Collect user information multi-select"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-**Meeting Integration Setup**
-- **Platform Support**: Google Calendar, Zoom, Teams integration
-- **Auto-Join**: Enable automatic meeting participation
+Active Functions shows **how many** fields you selected.
 
-![Advanced](/images/ai/AI-agent/edit/advance/join-2.png)
 
-# 🔗 API Configuration
 
-**API Configuration for the agent** ⚙️
-- **Purpose**: Set up custom API endpoints and webhooks
-- **Configuration**: Define API authentication and data flow
-- **Usage**: Custom integrations and third-party service connections
+## 📝 Live Call Updates
 
-![Advanced](/images/ai/AI-agent/edit/advance/api-configration.png)
+**Purpose:** While the call is still active, update **stored information** when the caller says something relevant.
 
-### 🔌 API Setup Details
-**API Configuration Fields**  
-- **Function Name**: Enter a unique name for the API function (e.g., send_data, update_crm) to identify it in your AI agent's workflow.
-- **Function Prompt**: Define an internal prompt that instructs the agent on when or how to use this API configuration (example: *When user provides email address, send lead data to CRM system*).
-- **API URL & HTTP Method**: Specify the target API URL (e.g., `https://api.example.com/webhook`) and select the HTTP Method (POST, GET, PUT, etc.) to match the endpoint's requirements.
-- **Headers**: Add custom headers (e.g., Authorization, Content-Type) as needed. Format is `[Header Name]: [Value]`, such as `Authorization: Bearer token_here`.
-- **Content Type**: Choose the payload format for your request (e.g., `application/json`).
-- **Request Body Template**: Define the JSON body template with placeholders for AI to insert values dynamically (example placeholders: `{caller_number}`, `{entered_code}`, `{action_taken}`, `{flow_name}`, `{custom_field1}`, `{custom_field2}`).
-    - Example:
-      ```
-      {
-        "caller_number": "{caller_number}",
-        "entered_code": "{entered_code}",
-        "action_taken": "{action_taken}",
-        "flow_name": "{flow_name}",
-        "custom_field1": "{custom_field1}"
-      }
-      ```
-- **Available Placeholders**: Use variables like `{caller_number}`, `{entered_code}`, `{action_taken}`, `{flow_name}`, and any custom fields defined in your workflow.
-- **Request Timeout**: Specify the timeout for API requests (in seconds), e.g., `10`.
-- **Testing Tools**: Use the built-in "Test API Configuration" button to validate your setup with sample data before saving.
+*What the Live Call Updates function is for:*
 
-![Add API Configuration](/images/ai/AI-agent/edit/advance/api-configration2.png)
+<img
+  src="/images/ai/AI-agent/edit/advance/live-call.png"
+  alt="Live Call Updates purpose and configure"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-# ☎️ Press Digit IVR Navigation  
+1. Choose **Configure** on the Live Call Updates card.  
+2. Select the information the agent is allowed to update during the call.
 
-**Empower your  AI agent to breeze through phone menus using DTMF (Dual-Tone Multi-Frequency) keypad input!**  
-> *Requires Call API v2. Need to upgrade? [See the migration guide.]*
+*Choosing which fields can be updated during the call:*
 
----
+<img
+  src="/images/ai/AI-agent/edit/advance/update-info-2.png"
+  alt="Select fields for live updates"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-![IVR Press Digit](/images/ai/AI-agent/edit/advance/press-digit-IVR.png)
+3. **Save** applies.
 
-### 🚦 Why Press Digit is a Game-Changer
+*Additional options on the same flow (if your screen shows these steps):*
 
-When your AI agent makes outbound calls, it often meets IVR systems—those automated voices asking you to "press 1 for Support, press 2 for Sales." With the Press Digit feature, your agent can instantly handle these prompts, saving time and keeping conversations on track.
+<img
+  src="/images/ai/AI-agent/edit/advance/update-info-3.png"
+  alt="Live update save and related controls"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-- **Voice IVR:** Some menus accept spoken instructions. For these, just add a prompt so your agent talks back!
-- **DTMF IVR:** Most menus expect keypad presses. This is where Press Digit shines.
+Active Functions shows **how many** fields are in use.
 
----
+## 🎥 Join Meeting
 
-### 🚀 Get Started: Enable Press Digit in 3 Easy Steps
+**Purpose:** Connect **video meeting** behavior so the agent can work with your meeting flow.
 
+1. Choose **Configure** on the Join Meeting card.  
+2. **Select Google Calendar:** Pick the calendar to use when this applies.
 
-![IVR Press Digit](/images/ai/AI-agent/edit/advance/press-digit-IVR-edit.png)
+*Calendar selection for join-meeting behavior:*
 
-#### 1️⃣ Add the "Press Digit" Tool
+<img
+  src="/images/ai/AI-agent/edit/advance/join-meeting.png"
+  alt="Join Meeting Google Calendar selection"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-- Go to your agent’s configuration.
-- Add the **Press Digit tool**.
-- (Optional) Add a description, such as:  
-  _"Automatically press 1 to speak to customer care."_
+3. **Description:** Explain when and how the agent should use the meeting action.  
+4. **Save** applies. **Cancel** closes without saving.
 
-#### 2️⃣ Give Your Agent Smart Prompts
+*Description and save—aligned with the fields above:*
 
-Enhance your agent's logic by updating prompts like:
+<img
+  src="/images/ai/AI-agent/edit/advance/join-2.png"
+  alt="Join Meeting description and Save"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-- **For Unpredictable Menus:**  
-  ```
-  If you hear an IVR menu, listen carefully and press the right number to reach the right team.
-  ```
-- **For Known Options:**  
-  ```
-  Immediately press 2 to reach the Billing Department after the call connects.
-  ```
 
-#### 3️⃣ See It in Action!
 
-- Make a real or test call to a line with an IVR menu.
-- Or, mimic an IVR at your own number (“Press 1 for anything!”).
-- Watch as your agent navigates the options—hands free!
+## 🏥 Setup Cloud Clinic Integration (only if you see this card)
 
----
+**Purpose:** Turn clinic-related features on for this agent when your organization uses that integration.
 
+You may see a switch to enable or disable the feature. If your **profile** is missing required clinic connection details, the switch may stay off and a note tells you to add **Source System Id** and **Auth Token** in **Profile Settings** first.
 
-> **Tip:** The smarter your agent’s prompt, the smoother your IVR journeys!
 
 
+## 🔗 API Configuration
 
-# 📞 Phone Number Configuration
+**Purpose:** Manage **custom web actions** the agent can call (your own services), separate from the built-in calendar and transfer tools.
 
-**Inbound Numbers**
-- **Purpose**: Configure numbers for incoming calls
-- **Settings**: Assign specific numbers to agent
-- **Management**: Add, edit, or remove inbound routing
+Choose **Configure** to open the list of API actions. When an API-style action is active, **Active Functions** can show an **API Configuration** summary with address, method, and content style.
 
+*List of configured API actions:*
 
-**Outbound Numbers**  
-- **Purpose**: Set up numbers for outgoing calls
-- **Settings**: Configure caller ID and routing preferences
-- **Management**: Manage outbound calling capabilities
+<img
+  src="/images/ai/AI-agent/edit/advance/api-configration.png"
+  alt="API configuration list"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-![Advanced](/images/ai/AI-agent/edit/advance/phone-number.png)
+*Adding or editing a single API action (fields vary by your setup):*
 
-**Number Management Features**
-- **Assignment**: Assign numbers to agents with routing rules
-- **Analytics**: Track call volume and performance per number
+<img
+  src="/images/ai/AI-agent/edit/advance/api-configration2.png"
+  alt="Add or edit API configuration form"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-# 🛠️ Tools & Testing
 
-**Available Tools**
-![Advanced](/images/ai/AI-agent/edit/advance/tools-testing.png)
-### 📞 Test Call 
-- **Purpose**: Test agent functionality with live calls
-- **Usage**: Validate agent responses and behavior
-- **Benefits**: Quality assurance and troubleshooting
 
+## ☎️ Press Digit (IVR Navigation)
 
+**Purpose:** When the other side uses a **phone tree** (“Press 1 for sales…”), the agent can listen and press the right keys.
 
-### 🧩 AI Widget Configure
-- **Purpose**: Customize web widget appearance and functionality
-- **Settings**: Branding, colors, and interaction preferences
-- **Usage**: Website integration and user experience optimization
+*Press Digit as an agent function you can configure:*
 
+<img
+  src="/images/ai/AI-agent/edit/advance/press-digit-IVR.png"
+  alt="Press Digit IVR in Agent Functions"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-### 🌐 Endpoints
-- **Purpose**: Manage API endpoints and webhook configurations
-- **Settings**: URL management and data flow controls
-- **Usage**: External system integrations and data synchronization
+1. Choose **Configure** on the Press Digit card.  
+2. **Description:** Explain the situation (for example, navigate to support). Stay within the **character limit** shown under the box.  
+3. **Pause detection delay:** How long the agent waits before sending each digit—adjust if menus are slow or fast (allowed min/max are on screen).  
+4. **Save** applies. **Cancel** closes without saving.
 
+*Description field, character limit, and pause delay:*
 
-### 🗺️ Map Inbound Call GHL Fields
+<img
+  src="/images/ai/AI-agent/edit/advance/press-digit-IVR-edit.png"
+  alt="Press Digit description and pause detection delay"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-When you select a GHL location for your agent, the system automatically maps the standard/default fields from that location for use in inbound call workflows. You don’t need to manually configure the basics—default fields exposed at that GHL location are auto-mapped so your inbound mapping starts aligned with what’s available in GHL.
 
-![Advanced](/images/ai/AI-agent/edit/advance/GHL-fields.png)
 
-**Custom and Additional Mappings**  
-Auto-mapping covers the typical field set for your chosen location. If your workflow requires more, you can manually add, edit, or adjust mappings here:
-- Map additional GHL fields that are important to your process.
-- Adjust or replace mappings if the default setup doesn’t match your needs.
+## 📞 Phone Number Configuration
 
-Examples of fields to map: Phone Number, Email, First Name, Last Name, Address, or any custom text field.
+**Purpose:** Choose which **incoming** and **outgoing** phone numbers this agent uses from numbers available to your account.
 
-> Only the GHL fields mapped here will be accessible to the AI for inbound calls.
+**Inbound Numbers** — Open the list and pick the number that should receive calls for this agent; use the **save** control next to the list to apply.
 
+**Outbound Numbers** — Pick the number used or shown for outbound calls from this agent; use the **save** control next to the list to apply.
 
+If a number is already used elsewhere, your organization’s rules may limit what appears in the list.
 
-### 🔗 Configuration Webhook Endpoints
+*Inbound and outbound pickers on one screen:*
 
-Each AI agent can have its own webhook endpoint, allowing you to send different events to different systems depending on which agent handles a call.
+<img
+  src="/images/ai/AI-agent/edit/advance/phone-number.png"
+  alt="Inbound and outbound phone number selection"
+  className="rounded-lg border shadow-sm my-4"
+/>
 
-<div style={{display: 'flex', justifyContent: 'center', margin: '20px 0'}}>
-  <img src="/images/ai/AI-agent/edit/advance/configure-webhook-endpoints.png" alt="Configure Webhook Endpoint" style={{maxWidth: 400, borderRadius: 8}} />
+
+## 🛠️ Tools & Testing
+
+Shortcuts for **trying the agent** and **technical setup**.
+
+*The row of tool buttons on the agent page:*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/tools-testing.png"
+  alt="Test Call, AI Widget, Endpoints, GHL fields, Webhook"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+| Button | What it is for |
+|--------|----------------|
+| **Test Call** | Start a test call flow so you can hear how the agent behaves. |
+| **AI Widget Configure** | Open setup for the chat or web widget tied to this agent. |
+| **Endpoints** | View connection addresses and related information for integrations. |
+| **Map Inbound Call GHL Fields** | Match incoming call data to fields in your connected business platform. |
+| **Configure Webhook Endpoint** | Set or view where call events can be sent for other systems. |
+
+Open each when you need that task—some panels are for administrators or technical staff.
+
+***Map Inbound Call GHL Fields** opens field mapping similar to this:*
+
+<img
+  src="/images/ai/AI-agent/edit/advance/GHL-fields.png"
+  alt="Map inbound call GHL fields"
+  className="rounded-lg border shadow-sm my-4"
+/>
+
+***Configure Webhook Endpoint** uses a URL and HTTP method like this:*
+
+<div className="not-prose flex justify-center my-6">
+  <img
+    src="/images/ai/AI-agent/edit/advance/configure-webhook-endpoints.png"
+    alt="Webhook URL and HTTP method"
+    className="max-w-md rounded-lg border shadow-sm"
+  />
 </div>
 
 
-**Webhook Endpoint URL**
+## ✉️ Sender Management
 
-- Enter the full URL where you want to receive webhook notifications.
-- This can be any endpoint capable of handling HTTP requests from Rizz Dial.
-- **Example:**  
-  `https://your-domain.com/webhook-receiver`
+**Purpose:** Manage **where** notifications about this agent can be sent (for example email or text), as rows in a table.
 
-**HTTP Method**
+**Add Sender** opens a short form. **Send To:** destination (email or phone, depending on your process). **Send Type:** **Email** or **SMS**. Saving adds a row; the table includes actions to manage existing entries.
 
-Select the HTTP method your endpoint expects:
+*Sender list and Add Sender:*
 
-- **GET** — Sends webhook data in URL parameters.
-- **POST** (recommended) — Sends webhook data in the request body.
-
-**Save Configuration**
-
-1. Click the **Save** button to apply your webhook settings.
-2. A success message will confirm your webhook is configured.
-
-> Make sure your endpoint is ready to receive test requests before saving the configuration!
-
-
-
-## ✉️ Sender Management 
-
- **Email/SMS Sender Configuration**
-- **Table Structure**: ID, Send To, Send Type, Action columns
-- **Purpose**: Manage automated message sending capabilities
-- **Controls**: 
-  - **Show**: Display 10, 25, 50, or 100 entries per page
-  - **Search**: Find specific sender configurations
-  - **Add Sender**: Create new automated messaging rules
-
-![Advanced](/images/ai/AI-agent/edit/advance/sender-managment.png)
-
-
+<img
+  src="/images/ai/AI-agent/edit/advance/sender-managment.png"
+  alt="Sender management table"
+  className="rounded-lg border shadow-sm my-4"
+/>

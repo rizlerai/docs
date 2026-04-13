@@ -1,108 +1,251 @@
 ---
 title: "Call Handling"
-description: "Configure rules for redial attempts, call timing, voicemail scenarios, and call transfers."
 icon: "phone-volume"
 ---
 
+#### User Guide
+
+The **Call Handling** tab controls what happens when calls do not connect as hoped, when a **voicemail** is detected, and how long calls may run or stay quiet before ending. It is grouped into three areas:
+
+1. **🔄 Redial Settings** — automatic follow-up dialing behavior  
+2. **📧 Voicemail Detection** — what the agent does when it reaches voicemail  
+3. **⏱️ Call Duration & Silence Settings** — time limits and silence rules  
+
+Small **information icons** next to section titles show extra hints when you point at them.
+
 <img
   src="/images/ai/AI-agent/edit/call-handling/overview.png"
-  alt="Call Handling Overview"
+  alt="Call Handling tab overview"
   className="rounded-lg border shadow-sm"
 />
 
----
 
-## 🔄 Redial Settings
+## 🗂️ Opening the tab
 
-Fine-tune how your AI agent handles call re-attempts to maximize connection rates.
+Select **Call Handling** in the row of tabs on the agent settings page.
+
+**🔄 Redial Settings**
+
+This block decides whether the system should **try the number again** after a failed attempt, **how long to wait** between tries, whether **voicemail counts** as a reason to redial, **which agent** should place the redial, and whether **local presence** is used.
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/voice-settings.png"
-  alt="Redial Settings UI"
+  alt="Redial settings controls"
   className="rounded-lg border shadow-sm"
 />
 
-**Redial Configuration Options:**
+**🔘 Enable Redial**
 
-| Setting                   | Value/Description                              |
-|---------------------------|------------------------------------------------|
-| **Enable Redial**         | Toggle to turn redial attempts on or off       |
-| **Redial After**          | Number of times to retry (e.g., 1–5)           |
-| **Redial on Voicemail**   | Yes/No – Retry if voicemail is reached         |
-| **Redial Agent**          | Yes/No – Assign another agent for retry        |
-| **Local Presence**        | Yes/No – Use local presence when redialing     |
+**What it does**  
+Turns automatic redial **on** or **off**.
 
-_Example: The interface includes a redial toggle, options for redial count, voicemail redial behavior, agent reassignment, and use of local presence, as shown above._
+- **On** — follow-up attempts may be made according to your other choices in this block.  
+- **Off** — no automatic redial from these settings.
 
+**How it works**  
+When you change the switch, your choice is saved. Changing **Redial After** at the same time also saves together with this setting.
 
 
----
+**⏳ Redial After**
 
-## 📞 Voicemail Detection
+**What it does**  
+Sets **how long to wait** before placing the next attempt when redial is enabled.
 
-Decide how your agent responds when a voicemail is reached.
+**Choices**
 
-- **Voicemail Detection Toggle:** Enable detection to let the system recognize voicemail greetings.
-- **Actions:**
-  - **Hang up if reaching voicemail:** End call to prioritize live connections.
-  - **Leave a message if reaching voicemail:** Deliver a pre-set voicemail message to the recipient.
-- **Redial after voicemail:** Choose whether or not to retry calling after leaving or reaching a voicemail.
+- Instantly  
+- 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 45, or 60 minutes  
+
+**How it works**  
+Each time you change this list, the new wait time is saved (together with the current **Enable Redial** on/off state).
+
+
+
+**📥 Redial on Voicemail**
+
+**What it does**  
+Sets whether a call that reaches **voicemail** should be treated in a way that allows **redial** behavior according to your rules.
+
+**Choices**
+
+- **Yes**  
+- **No**  
+
+**How it works**  
+When you change this, the new choice is saved on its own.
+
+
+
+**👤 Redial Agent**
+
+**What it does**  
+Lets you choose **another agent** (from your available agents) to handle the **redial** call, or leave redial agent unset.
+
+**Choices**
+
+- **No** — no specific redial agent selected.  
+- Any **named agent** you pick from the searchable list — that agent is used for the redial when this setting applies.
+
+**How to use it**  
+Click the field, type to **search** by name if needed, then pick an agent. Clearing the selection returns to **No**. Changes save when your selection changes.
+
+
+**🌎 Local Presence**
+
+**What it does**  
+Turns **local presence** **on** or **off** for this agent’s calling behavior (for example, whether outbound calls use a local-style caller identity where your service supports it).
+
+**Choices**
+
+- **No**  
+- **Yes**  
+
+**How it works**  
+When you change this, the new choice is saved.
+
+
+
+**ℹ️ Help text for Redial Settings (information icon)**
+
+Explains that you are configuring **automatic redial** after failed calls, including **how many kinds of conditions** apply, **delays between attempts**, and **when** redialing is allowed.
+
+
+
+## 📧 Voicemail Detection
+
+This block sets whether **voicemail detection** is used at all, and if so, whether the agent should **hang up** or **leave a message**.
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/voice-detection.png"
-  alt="Voicemail Detection"
+  alt="Voicemail detection main controls"
   className="rounded-lg border shadow-sm"
 />
+
+**🔀 Main switch — “Hang up or leave a voicemail if a voicemail is detected”**
+
+**What it does**  
+Turns voicemail handling **on** or **off**.
+
+- **On** — you can choose **hang up** or **leave a message** below.  
+- **Off** — the extra choices are hidden; voicemail handling for this agent is turned off.
+
+**How it works**  
+When you turn it **on**, the system first enables detection, then applies a **hang up** style rule as the starting point; you can change to **leave a message** afterward.  
+When you turn it **off**, voicemail handling is cleared.
+
 <img
   src="/images/ai/AI-agent/edit/call-handling/voice-toggle.png"
-  alt="Voicemail Options"
+  alt="Hang up or leave message options for voicemail"
   className="rounded-lg border shadow-sm"
 />
 
----
-## ⏳ Call Duration, Transfer, Silence, and Pre-Conversation Media
 
-Easily configure advanced controls to shape each call’s flow and quality, letting you deliver efficient, natural conversations and improved user experience.
+
+**📴 Hang up if reaching voicemail**
+
+**What it does**  
+If voicemail is detected, the call **ends** without leaving a message.
+
+**How it works**  
+Selecting this option saves that behavior. The message box for leaving voicemail is not used while this is selected.
+
+
+
+**📝 Leave a message if reaching voicemail**
+
+**What it does**  
+If voicemail is detected, the agent can **leave a message** instead of hanging up immediately.
+
+**How it works**  
+When you select this, the **message area** and **message style** controls appear. You type what should be said (or guided), then save with the **save** button next to the style list.
+
+
+
+**🎭 Message style (Static / Prompt)**
+
+**What it does**  
+Chooses **how** the voicemail message is formed.
+
+- **Static** — the agent follows the **exact wording** you provide in the box.  
+- **Prompt** — the agent follows the **instructions or wording** you provide in a more flexible, spoken style (as your platform interprets “prompt” for voicemail).
+
+**How it works**  
+Pick **Static** or **Prompt**, enter text in the box, then press the **save** button (disk icon) to store the message. If you change the style and already have text, the product may try to save again when that makes sense.
+
+
+
+**🗒️ Message text box**
+
+**What it does**  
+Holds the **words or instructions** for the voicemail message.
+
+**When it is active**  
+It is only editable when **Leave a message** is selected and voicemail handling is **on**. If you chose **Hang up**, the box is not used.
+
+
+
+**ℹ️ Help text for Voicemail Detection (information icon)**
+
+Explains that you can **hang up right away** or **leave a message** when voicemail is detected.
+
+
+**⏲️ Note on detection timing**
+
+The product may track **how long** to listen for voicemail in the background. Some timing values are prepared for display in older layouts; **only the controls you actually see on the page** need to be set by you. If you do not see a separate “timeout” control, rely on the main switch and the hang-up / message choices above.
+
+
+
+## ⏱️ Call Duration & Silence Settings
+
+This block sets **how long the caller may stay silent** before the call ends, the **maximum length** of a call, and a **short pause** before the agent starts speaking.
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/call-duration.png"
-  alt="Call Duration, Transfer & Silence Management Interface"
+  alt="Call duration and related controls"
   className="rounded-lg border shadow-sm"
 />
 
-**Key Settings:**
+**🤫 End Call on Silence**
 
-- **Max Call Duration:** Set a maximum time limit for each call (e.g., up to 15 minutes). Once the limit is reached, the call will end automatically—useful for managing system resources and agent availability.
-- **Max Duration in Transfer:** Define a separate maximum duration for agent-to-agent or number transfer scenarios (e.g., if your AI agent transfers a call, you can limit how long the transferred call stays connected).
+**What it does**  
+Sets how much **continuous silence** is allowed before the call **ends automatically**.
 
-### 🤫 Silence Management
+**Range (on the control)**  
+From **10 seconds** up to **30 minutes** (shown as seconds or minutes while you move the control).
 
-Silence management lets you define how your AI agent should react if there is no speech detected from the contact or after the agent finishes speaking. You can set a **silence timeout**—for example, if there is no response from the caller for a certain number of seconds, the agent can react by re-prompting, ending the call, or handling the situation in another way. This ensures calls are active, reduces time wasted on abandoned calls, and creates a more lifelike interaction.
+**How it works**  
+Move the control to choose the length. When you **release** the control after moving it, the new value is saved. A short confirmation message may appear when the save succeeds.
 
 <img
   src="/images/ai/AI-agent/edit/call-handling/silence-management.png"
-  alt="Silence Management Interface"
+  alt="End call on silence control"
   className="rounded-lg border shadow-sm"
 />
 
-**How silence management works:**
-- Specify the maximum allowed silence duration (e.g., 5–30 seconds).
-- Pick what the agent does after silence—repeat a question, end the call, or take a custom action.
-- Prevents awkward pauses and helps move conversations forward efficiently.
 
----
+**⏲️ Max Call Duration**
 
-### 🎵 Pre-Conversation Media
+**What it does**  
+Sets the **longest** a single call may last before it **ends automatically**.
 
-Pre-conversation media lets you play an audio clip to the recipient before your AI agent starts speaking (for example, a ringtone, introduction, or compliance notice). This feature helps set expectations for the call and meets regulatory or branding needs.
+**Range (on the control)**  
+From **1 minute** up to **2 hours** (the screen may show minutes or hours for longer times).
 
-You can upload or select an audio file to play automatically before the main conversation begins.
+**Rules**  
+The product expects at least **one minute**. The control’s minimum is set so you normally cannot go below that.
 
-**Benefits:**
-- Creates a professional first impression and smoother call start.
-- Supports compliance—play a legal disclaimer, greetings, or branding intro automatically.
-
-*Both silence management and pre-conversation media can be tailored in your AI agent’s call handling settings for the ideal experience on every call.*
+**How it works**  
+Move the control; the label updates to show minutes or hours. The value is saved after you finish adjusting (including when you release the mouse after dragging).
 
 
-_These customizable options help reduce abandoned calls, ensure compliance, create a more comfortable start to conversations, and allow fine-tuned silence tolerance for more human-like interactions._
+
+**⏸️ Pause Before Speaking**
+
+**What it does**  
+Sets how long the agent **waits** after the call connects before **starting to speak**.
+
+**Range (on the control)**  
+From **0 seconds** up to **5 seconds**.
+
+**How it works**  
+Move the control; the label shows seconds. The value saves after you finish adjusting (including when you release the mouse after dragging).

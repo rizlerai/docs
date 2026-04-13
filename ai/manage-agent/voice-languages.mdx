@@ -3,150 +3,237 @@ title: "Voice & Language"
 icon: "microphone"
 ---
 
+#### 🎙️ User Guide
 
+The **Voice & Language** tab is where you choose **how your agent thinks (in text)**, **how it sounds**, **which language it uses**, and **optional background sound on calls**.
 
-Configure your AI agent’s voice, language, AI model, and audio background for precise, natural-sounding conversations. Effortlessly switch between different languages to enable multilingual interactions, ensuring your agent can converse fluently with people from diverse backgrounds.
+Small **information icons** next to labels give short hints when you point at them.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/overview.png"
-  alt="Voice and Language Configuration Overview"
+  alt="Voice and Language tab overview"
   className="rounded-lg border shadow-sm"
 />
 
----
+## 🗂️ Opening the tab
 
-## 🤖 AI Model Selection
+Select **Voice & Language** in the row of tabs at the top of the agent settings. The screen is laid out in two columns: model and voice on the first row; language and background sound on the second.
 
-Select the AI model to power your agent’s speech and conversations.
+
+## 🤖 AI Model
+
+**What it does**  
+This is the “brain” behind your agent’s replies. Different options can differ in quality, speed, and **cost per minute** (shown next to each name).
+
+**How to use it**  
+Open the list, then pick one option. The top of the box updates to show your choice (including a small brand-style icon where shown). Your selection is saved when you pick it.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/available-models.png"
-  alt="Available AI Models"
+  alt="AI model dropdown with pricing"
   className="rounded-lg border shadow-sm"
 />
 
-**Available Models:**
-- **GPT 5** ($0.04/min)
-- **GPT 5 Mini** ($0.012/min)
-- **GPT 5 Nano** ($0.004/min)
-- **GPT 5.1** ($0.05/min)
-- **GPT 5.2** ($0.06/min)
-- **GPT 4.1** ($0.045/min)
-- **GPT 4.1 Mini** ($0.016/min)
-- **GPT 4.1 Nano** ($0.004/min)
-- **Claude 4.5 Sonnet** ($0.06/min)
-- **Claude 4.0 Sonnet** ($0.06/min)
-- **Claude 3.5 Haiku** ($0.02/min)
-- **Gemini 2.5 Flash** ($0.035/min)
+**Choices available (as shown in the product)**  
+Each line includes an approximate **per-minute price** in parentheses.
+
+- **GPT 5** ($0.04/min)  
+- **GPT 5 mini** ($0.012/min)  
+- **GPT 5 nano** ($0.003/min)  
+- **GPT 5.1** ($0.05/min)  
+- **GPT 5.2** ($0.06/min)  
+- **GPT 4.1** ($0.045/min)  
+- **GPT 4.1 mini** ($0.016/min)  
+- **GPT 4.1 Nano** ($0.004/min)  
+- **Claude 4.5 Sonnet** ($0.06/min)  
+- **Claude 4.0 Sonnet** ($0.06/min)  
+- **Claude 4.5 Haiku** ($0.02/min in the dropdown list; the summary line at the top may show $0.011/min for the same model depending on how the page was loaded)  
+- **Gemini 2.5 Flash** ($0.035/min)  
 - **Gemini 2.5 Flash Lite** ($0.006/min)
 
-*Tip: Model quality/price varies — higher-tier models sound more natural and understand context better.*
+**Tooltip (information icon)**  
+Explains that this controls the model powering responses, and that options differ in intelligence, speed, and cost.
 
----
+## 🎤 Voice
 
-## 🎙️ Voice Settings
+**What it does**  
+Sets the **spoken voice** your agent uses on calls—tone and style depend on the voice you pick.
 
-Personalize how your agent sounds and speaks.
+**What you see on the tab**  
+A field shows your **current voice** as a name and an **identifier** in parentheses. Next to it is a **settings (gear)** button (see [⚙️ Voice Settings window](#voice-settings-window)).
 
-### 1️⃣ Voice Selection
+**How to pick or change a voice**  
+The main catalog opens in a large **Voice List** window (scrollable). There you can hear samples, filter, search, and confirm a voice with **Use This**.
+
+**Tooltip**  
+Explains that different voices have different tones and speaking styles.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-selection.png"
-  alt="Voice Selection Interface"
+  alt="Current voice field and gear for voice settings"
   className="rounded-lg border shadow-sm"
 />
 
-- Choose from a library of voices.
-- Filter by gender (Male/Female), accent (American/British/Other), or provider (Eleven Labs, Deepgram, OpenAI).
-- Preview voice samples before saving.
+
+## 📋 Voice List window (voice catalog)
+
+This window helps you browse all voices that are **available for your agent**.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-lists.png"
-  alt="Available Voice Options"
+  alt="Voice List catalog with filters and table"
   className="rounded-lg border shadow-sm"
 />
 
-**Examples:**
+**Filters (top row)**
 
-| **Voice**   | **Accent**    | **Gender** | **Description**            |
-|-------------|---------------|------------|----------------------------|
-| Adam        | British       | Male       | Professional, authoritative|
-| Dorothy     | British       | Female     | Clear, friendly            |
-| Nova        | American      | Female     | Warm, experienced          |
-| Billy       | American      | Male       | Energetic, casual          |
+- **Gender:** All, Male, or Female  
+- **Accent:** All, American, or British  
+- **Provider:** All, Eleven Labs, Deepgram, Open AI, or Custom Voice  
+- **Search:** Type to narrow the list by text you see in the table  
 
----
+**Table columns**
 
-### 2️⃣ Voice Configuration
+- **Play:** Hear a short sample (play / pause behavior).  
+- **Voice:** Picture and **display name**.  
+- **Trait:** Badges for **accent**, **age**, and **gender** when that information exists.  
+- **Voice ID:** The label used to identify that voice in the system.  
+- **Action:** **Use This** — selects that voice for your agent and applies it in line with the rest of the page.
+
+**Footer**
+
+- **Close** — exits without applying a new voice via **Use This**.  
+- **Save Changes** — appears in the footer; the main way to apply a voice is **Use This** on a row.
+
+
+
+## ⚙️ Voice Settings window (gear button next to Voice) {#voice-settings-window}
+
+**What it does**  
+Fine-tunes **how the agent’s voice behaves**, separate from *which* voice you chose.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/voice-setting.png"
-  alt="Voice Settings Panel"
+  alt="Voice Speed, Temperature, and Volume sliders"
   className="rounded-lg border shadow-sm"
 />
 
-- **Speed:** 0.00–2.00 — Controls how quickly the agent speaks.
-- **Temperature:** 0.00–2.00 — Adjusts expressiveness and tone.
-- **Volume:** 0.00–2.00 — Sets audio loudness.
+**Fields inside**
 
-Fine-tune each to match your brand and scenario. 
+1. **Voice Speed**  
+   A draggable control from slow to fast (ends labeled roughly **0.00** to **2.00**).  
+   When you finish adjusting (release the control), the new speed is saved. The number in the middle updates as you move it.
 
----
+2. **Voice Temperature**  
+   A draggable control on the same kind of scale.  
+   This affects how **expressive or varied** the speech feels (higher often means more variation).  
+   When you release the control, the value is saved.
 
-### 3️⃣ Language
+3. **Voice Volume**  
+   A draggable control for how **loud** the agent’s voice is (same scale style).  
+   When you release the control, the value is saved.
 
-Set your agent’s speaking language.
+**Footer**  
+**Close** — closes the window. Changes to the three controls are applied when you **release** each control, not from a separate Save button inside this window (there is no active Save button for these three in the footer).
+
+**Defaults**  
+If no value was stored before, speed, temperature, and volume each start around **1**.
+
+
+
+## 🌐 Language
+
+**What it does**  
+Sets the **main language** for the agent. This affects **understanding what callers say** and **how replies are formed**.
+
+**How to use it**  
+Open the list and choose one language. When your choice changes, the system tries to save it right away.
+
+**If nothing is selected**  
+If the list is left on **Select Language**, the product may warn you to choose a language first and will not treat that as a valid save.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/languages.png"
-  alt="Language Selection Interface"
+  alt="Language dropdown"
   className="rounded-lg border shadow-sm"
 />
 
-- **Primary language:** Choose from English, Spanish, French, German, Japanese, Portuguese, Chinese, Russian, Italian, and more.
-- **Multiple languages:** Enable real-time multilingual support.
+**Choices in the list**
 
-> *For example: “English (US)”, “Spanish (ES)”, “French (FR)” etc.*
+- Select Language (empty)  
+- English (United States)  
+- English (India)  
+- English (United Kingdom)  
+- German (Germany)  
+- Spanish (Spain)  
+- Spanish (Latin America)  
+- Hindi (India)  
+- Japanese (Japan)  
+- Portuguese (Portugal)  
+- Portuguese (Brazil)  
+- French (France)  
+- Chinese (China)  
+- Russian (Russia)  
+- Italian (Italy)  
+- Korean (South Korea)  
+- Dutch (Netherlands)  
+- Polish (Poland)  
+- Turkish (Turkey)  
+- Vietnamese (Vietnam)  
+- **Multiple Languages** — use when the agent should work across more than one language rather than a single fixed one  
 
----
+**Tooltip**  
+States that this affects both recognition of speech and generation of responses.
 
-### 4️⃣ Background Sound
 
-Add ambient audio for a professional, human-like feel.
+
+## 🎵 Background Sound
+
+**What it does**  
+Adds a **soft ambient sound** behind the call so the call can feel more natural or help mask noise.
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/background-sound.png"
-  alt="Background Sound Options"
+  alt="Background sound dropdown"
   className="rounded-lg border shadow-sm"
 />
 
-**Options include:**
-- **Clean White Noise** — subtle, professional
-- **Office Chatter** — business environment
-- **Cafe Ambience** — casual, friendly
-- **Event Hall** — wide, open atmosphere
-- **Open Air** — natural outdoor sounds
+**Main list on the tab**
+
+- **Select Sound** — means **no** background sound (same as turning it off).  
+- **Cafe Ambience**  
+- **Event Hall Background**  
+- **Open Air - Summer**  
+- **Open Air - Mountain**  
+- **Clean White Noise**  
+- **Office Chatter**  
+
+When you change this list (after the page has finished loading), your choice is saved automatically.
+
+**Gear button (next to Background Sound)**  
+Opens **Background Sound Volume** (see [🔊 Background Sound Volume window](#background-sound-volume-window)).
+
+**Tooltip**  
+Explains using ambient sound for a more professional feel or to mask background noise.
+
+
+
+## 🔊 Background Sound Volume window (gear next to Background Sound) {#background-sound-volume-window}
+
+**What it does**  
+Sets how **strong** the background sound is—not the agent’s voice volume (that is under **Voice Settings**).
 
 <img
   src="/images/ai/AI-agent/edit/voices-languages/background-sound-volume.png"
-  alt="Background Sound Volume Control"
+  alt="Background sound volume slider and Save"
   className="rounded-lg border shadow-sm"
 />
 
-**Volume:** 0.0–2.0 (recommended: 0.2–0.6)  
-Control the sound background level for clarity without distraction.
+**Control**  
+A **Volume** bar from **0** to **2**, with the current level shown in the middle as you move it.
 
----
+**Save**  
+Press **Save** to store the volume. You must have a **real** background sound selected (not “Select Sound” / off); otherwise you may get a message asking you to pick a background sound first.
 
-## ⚡ Quick Setup Checklist
-
-| **Use Case**            | **Model**           | **Voice**        | **Language**     | **Background**           |
-|-------------------------|---------------------|------------------|------------------|--------------------------|
-| Professional Services   | GPT 4.1             | Adam (British)   | English (UK)     | Office Chatter (0.3)     |
-| Customer Support        | GPT 4.1 Mini        | Dorothy (British)| English (US)     | Clean White Noise (0.2)  |
-| Creative Services       | Claude 4.5 Sonnet   | Lily (American)  | English (US)     | Cafe Ambience (0.4)      |
-
----
-
-- Use **Voice & Language** settings to make your agent sound on-brand and natural for any demographic or context.
-- Adjust background and voice parameters for the best customer experience.
+**Close**  
+Closes the window without using **Save** for that visit (your last saved volume remains whatever was saved successfully before).

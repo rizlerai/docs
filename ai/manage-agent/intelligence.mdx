@@ -1,81 +1,164 @@
 ---
 title: "Intelligence"
-description: "Configure AI model settings, processing capabilities, and cognitive behaviors"
+description: "User guide for Knowledge Base, conversation sliders, pronunciation dictionary, reminders, AutoRizz, Smooth Talk, and boosted keywords."
 icon: "lightbulb"
 ---
 
+#### 💡 Intelligence Tab (User Guide)
+
+The **Intelligence** tab controls how your agent listens, how quickly it speaks back, how it says specific words, whether it uses short natural acknowledgements during a call, and how it handles reminders and special word lists.
+
+
+
+## 📐 Layout of the screen
+
+- **Main (wider) column:** Knowledge Base, Conversation Settings, Pronunciation Dictionary, Reminder Settings  
+- **Side (narrow) column:** AutoRizz, Smooth Talk, Boosted Keywords  
+
+
+
 ## 📚 Knowledge Base
 
-- **Attach Knowledge Base**: Link relevant information, company FAQs, or documentation to the agent.
-- **Context Awareness**: Enable the agent to use knowledge base content in live conversations.
-- **Information Retrieval**: Allow the agent to answer user questions by referencing attached materials.
+**Purpose**  
+Connect your agent to reference material so it can answer using the right context—your business facts, FAQs, or uploaded knowledge you have already created in your account.
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/knowledge-base.png)
+**How to use it**
 
----
+- Read the short description under the title: it explains that a knowledge base gives the agent context.  
+- Use the dropdown list to **select one or more** knowledge bases (whatever your organization has already created).  
+- Click **Update** to apply your selection.  
+- Nothing is applied to the agent until you click **Update**.
+
+**Note**  
+If the list is empty, your team needs to create knowledge bases elsewhere in the product first. Only existing items appear here.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/knowledge-base.png"
+  alt="Knowledge Base selection and Update"
+  className="rounded-lg border shadow-sm"
+/>
+
+
 
 ## 💬 Conversation Settings
 
-- **Responsiveness**: Adjust how quickly the agent responds after the user stops speaking.  
-  Range: 0 (fastest) – 1 (longest pause)
-- **Interruption Sensitivity**: Set how easily the agent can be interrupted by the user during speech.  
-  Range: 0 (hard to interrupt) – 1 (easy to interrupt)
+**Purpose**  
+Fine-tune how the agent behaves during live conversation: how fast it responds after someone stops talking, and how easily the caller can interrupt or cut in.
 
-<img src="/images/ai/AI-agent/edit/intelligence/responsiveness.png" alt="Responsiveness Setting" className="rounded-lg border shadow-sm" />
-<img src="/images/ai/AI-agent/edit/intelligence/intruption.png" alt="Interruption Sensitivity" className="rounded-lg border shadow-sm" />
+The small **?** next to the section title shows a tooltip with extra context when you hover.
 
----
+**Responsiveness** controls **how soon** the agent starts speaking after the caller finishes a sentence. Use the slider from low to high; the number next to it shows the current level (two decimal places). When you **release** the slider after moving it, the value saves automatically—there is no separate Save button for this control.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/responsiveness.png"
+  alt="Responsiveness slider"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Interruption Sensitivity** controls how **sensitive** the agent is when the caller speaks over the agent or jumps in—how strongly the agent reacts to being interrupted. Same kind of slider and on-screen value; saving happens when you **release** the slider after adjusting.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/intruption.png"
+  alt="Interruption sensitivity slider"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Note:** The tooltip may mention other topics (such as ambient sound). In this section, only **Responsiveness** and **Interruption Sensitivity** are configured. Other audio options may live on other tabs.
 
 ## 🗣️ Pronunciation Dictionary
 
-- **Custom Pronunciation**: Define how specific words and names are pronounced by the agent.
-- **Company Names**: Ensure your organization’s or clients' names are spoken correctly.
-- **Technical Terms**: Add specialized jargon or industry vocabulary for accurate pronunciation.
+**Purpose**  
+Teach the agent to pronounce **names, brands, or technical terms** the way you want, instead of guessing wrong.
 
-<img src="/images/ai/AI-agent/edit/intelligence/pronunciation-dictionary.png" alt="Pronunciation Dictionary" className="rounded-lg border shadow-sm" />
+**The list** — Each row is **one word** (or entry). **Edit (pencil)** opens the form with that entry filled in; **Delete (trash)** removes it after you confirm.
 
----
+Click **Add Pronunciation** to open the form:
+
+| Field | Meaning |
+|--------|---------|
+| **Words** | The word or phrase the agent should say correctly |
+| **Pronunciation** | Choose **IPA** or **CMU** (two standard ways to write sounds) |
+| **Phoneme** | Type the pronunciation using the system you chose |
+
+Use **Save** in the form to add or update, or **Cancel** to close without saving. Editing loads the current values from your agent’s saved settings.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/pronunciation-dictionary.png"
+  alt="Pronunciation dictionary list and add form"
+  className="rounded-lg border shadow-sm"
+/>
+
 
 ## ⏰ Reminder Settings
 
-- **Configuration**: Set up reminders using specific time fields.
-- **Purpose**: Automate the scheduling of follow-ups and notifications for tasks.
+**Purpose**  
+Control how the agent sends **reminder messages** during a call when needed—for example, if the caller goes quiet for too long.
 
-![Intelligence](/images/ai/AI-agent/edit/intelligence/reminder-settings.png)
+**Fields**
 
----
+- The **first number** with **“Second”** — how many **seconds** to wait before a reminder can be triggered (the gap between reminders).  
+- The **second number** with **“Time”** — the **maximum number of times** a reminder can be sent (count limit).
 
-## 👍 Auto AI Sync
+Use the small **Save** button (disk icon) on the right after entering both values. Both numbers must be **greater than zero**; otherwise you will see a message asking for valid numbers.
 
-<img src="/images/ai/AI-agent/edit/intelligence/auto-sync.png" alt="Auto AI Sync" className="rounded-lg border shadow-sm" />
+<img
+  src="/images/ai/AI-agent/edit/intelligence/reminder-settings.png"
+  alt="Reminder settings fields and save"
+  className="rounded-lg border shadow-sm"
+/>
 
-- **Toggle**: Enable or disable automatic backchanneling (affirmative cues like 'yeah', 'uh-huh').
-- **Frequency**: Control how often the agent uses affirmations (0–1).
-- **Purpose**: Maintains natural, engaging conversation by showing the agent is actively listening.
 
-<img src="/images/ai/AI-agent/edit/intelligence/auto-sync-toggle.png" alt="Auto AI Sync Toggle" className="rounded-lg border shadow-sm" />
 
-**When Auto AI Sync is Enabled:**
-- **Frequency Control**: Use the slider to set affirmation usage frequency.
-- **Words List**: Customize which words or sounds the agent uses for natural backchanneling (e.g., [Hmm], [ok]).
-- **Purpose**: Helps the conversation feel active and lively.
+## ⚡ AutoRizz
 
----
+**Purpose**  
+Lets the agent use short **natural acknowledgements** during a conversation—similar to “yeah,” “uh-huh,” or “hmm” so the call feels more human.
 
-## 🗣️ Smooth Talk
+<img
+  src="/images/ai/AI-agent/edit/intelligence/auto-sync.png"
+  alt="AutoRizz main area"
+  className="rounded-lg border shadow-sm"
+/>
 
-- **Toggle**: Automatically convert numbers, currency, and dates into natural speech.
-- **Purpose**: Makes the agent sound more like a human by pronouncing figures conversationally.
-- **Examples**: "15" → "fifteen", "$20" → "twenty dollars"
+**Main switch** — **On** shows **Frequency** and **Words List** below; **Off** hides those options and turns off this behaviour.
 
-<img src="/images/ai/AI-agent/edit/intelligence/smooth-talk.png" alt="Smooth Talk" className="rounded-lg border shadow-sm" />
+**Frequency** controls **how often** those acknowledgements appear (slider low to high, with a number badge). The value is usually applied when you **release** the mouse after dragging.
 
----
+<img
+  src="/images/ai/AI-agent/edit/intelligence/auto-sync-toggle.png"
+  alt="AutoRizz frequency and words list"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Words List** is a large box: **one word or short phrase per line**—the phrases the agent may use. Click the **Save** button after editing; until you save, new lines are not applied. You must keep **at least one** non-empty line, or you will see an error.
+
+When you open the page, values may refresh from the agent’s current saved settings so the screen matches what is stored.
+
+
+
+## ✨ Smooth Talk
+
+**Purpose**  
+When **on**, the agent converts **numbers, money amounts, and dates** into more **natural spoken form** for read-aloud quality.
+
+Only an **On / Off** switch; changing it applies immediately. The card body below the header is intentionally empty—no extra fields.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/smooth-talk.png"
+  alt="Smooth Talk toggle"
+  className="rounded-lg border shadow-sm"
+/>
+
 
 ## 🔤 Boosted Keywords
 
-- **Custom Keywords List**: Expand the AI model’s vocabulary with specific terms.
-- **Use Cases**: Add product names, technical terminology, industry-specific language, or company phrases.
-- **Purpose**: Improves the agent’s recognition and accurate usage of specialized or branded words.
+**Purpose**  
+Give a **custom list of important words** (names, brands, industry terms) so the agent is more likely to recognize and say them correctly.
 
-<img src="/images/ai/AI-agent/edit/intelligence/boosted-keywords.png" alt="Boosted Keywords" className="rounded-lg border shadow-sm" />
+Type **one keyword per line** in the text area, then click the **Save** button (icon) at the bottom corner. You must enter **at least one** keyword, or saving will show an error.
+
+<img
+  src="/images/ai/AI-agent/edit/intelligence/boosted-keywords.png"
+  alt="Boosted keywords text area and save"
+  className="rounded-lg border shadow-sm"
+/>
