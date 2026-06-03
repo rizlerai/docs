@@ -259,23 +259,23 @@ The full conversation text when available. Long text is formatted for reading: l
 A default message about opting out may appear if no transcript is available or recordings were opted out of.
 
 
-## 📤 How exports relate to the table
+## 📤 Exporting Your Call Data
 
-Exports use the **same filters** as the list (dates, agent, duration, direction, sentiment, success, numbers, hangup reason).  
+When you export call history, the export file reflects exactly what you see in your filtered table—using all the same filters (like date, agent, call duration, direction, sentiment, success, phone numbers, and hangup reason).
 
-Exported rows include:
+Each exported row will include:
 
-- A sequential **ID** number in the file  
-- **Time** (your time zone)  
-- **Agent Name**  
-- **From Number** / **To Number**  
-- **Call Duration**  
-- **Call Type**  
-- **Direction**  
-- **Hangup Reason**  
-- **User Sentiment**  
-- **Call Successful**  
-- **Call Summary** — **full** text (not the short preview)  
-- **Call Transcript** — **full** text (not the short preview)  
+- A unique **ID** (per row, in order)
+- **Time** (displayed in your time zone)
+- **Agent Name**
+- **From Number** and **To Number**
+- **Call Duration**
+- **Call Type**
+- **Direction** (inbound/outbound)
+- **Hangup Reason**
+- **User Sentiment**
+- **Call Successful** (yes/no)
+- **Call Summary** (the complete summary, not just a snippet)
+- **Call Transcript** (the full conversation, not just a preview)
 
-Recordings are **not** embedded in these files; use the list or detail screen to play audio.
+> **Note:** Audio recordings are *not* included in exported files. To listen to call recordings, use the main list or the detail screen.
