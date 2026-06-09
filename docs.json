@@ -81,13 +81,7 @@
               "conversation/conversations"
             ]
           },
-          {
-            "group": "Messages",
-            "icon": "message",
-            "pages": [
-              "messages/messages"
-            ]
-          },
+
           {
             "group": "Phone Numbers",
             "icon": "phone",
