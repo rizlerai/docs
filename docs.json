@@ -57,6 +57,7 @@
                       "ai/manage-agent/general",
                       "ai/manage-agent/voice-languages",
                       "ai/manage-agent/call-handling",
+                      "ai/manage-agent/compliance",
                       "ai/manage-agent/intelligence",
                       "ai/manage-agent/integration",
                       "ai/manage-agent/advanced"
@@ -78,6 +79,20 @@
             "icon": "comment-dots",
             "pages": [
               "conversation/conversations"
+            ]
+          },
+          {
+            "group": "Messages",
+            "icon": "message",
+            "pages": [
+              "messages/messages"
+            ]
+          },
+          {
+            "group": "Phone Numbers",
+            "icon": "phone",
+            "pages": [
+              "phone-numbers/phone-numbers"
             ]
           },
           {

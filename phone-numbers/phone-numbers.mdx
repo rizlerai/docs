@@ -1,0 +1,129 @@
+---
+title: "Phone Numbers"
+icon: "phone"
+---
+
+
+<img
+  src="/images/settings/phone-numbers/overview.png"
+  alt="Phone Numbers settings page overview"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+## 📞 What is this page?
+
+The **Phone Numbers** page is where you manage every phone number your business owns inside the platform.
+
+Think of it like a **control room for your numbers.** Your account holds a set of phone numbers — each one can be put to a specific job. You can point a number at a human team member, or hand it over to an AI agent to handle calls and messages automatically.
+
+Numbers that haven't been given a job yet sit in a **shared pool** and act as a general-purpose fallback — the system grabs one from the pool whenever no specific number applies.
+
+
+## 🤔 Why would you use this page?
+
+You come here when you need to:
+
+- See all the phone numbers your business owns in one place
+- Decide **who or what** answers when someone calls or texts a number
+- Enable a number for **AI-powered calling**
+- Register a number for **SMS compliance** (10DLC / A2P) so your texts actually reach people
+- Assign an **automated chatbot** to handle text conversations
+
+
+## 📊 What can you see at the top?
+
+At the very top, four summary cards give you an instant snapshot:
+
+<CardGroup cols={2}>
+  <Card title="Total numbers" icon="hashtag">
+    How many numbers your account owns
+  </Card>
+  <Card title="A2P-linked" icon="circle-check">
+    How many are fully registered and approved for SMS
+  </Card>
+  <Card title="Assigned" icon="user-check">
+    How many have been given a specific user or agent
+  </Card>
+  <Card title="In shared pool" icon="layer-group">
+    How many are sitting idle with no assignment
+  </Card>
+</CardGroup>
+
+
+## 🔍 Finding a number
+
+Use the **search bar** to quickly find any number. You can search by:
+
+- The phone number itself
+- A user's name or email
+- An AI agent's name
+
+
+## ⚙️ What can you do with each number?
+
+Every number in the list has its own row. Here is everything you can do with it.
+
+
+### 1️⃣ Activate the number for AI
+
+> **What it does:** Turns on AI capabilities for this number so it can be used with AI voice agents.
+
+When you buy a number it starts as a plain phone number — it can ring, but it has no AI behind it. Clicking **Activate For AI** connects the number to the AI calling system.
+
+**When to use it:** You want an AI agent to pick up calls on this number, or you want to make automated outbound calls from it.
+
+**After activation:** The button disappears. The Inbound and Outbound dropdowns will now show your AI agents as options.
+
+
+### 2️⃣ Link a 10DLC campaign (A2P registration)
+
+> **What it does:** Registers your number under an approved SMS campaign so your text messages reach recipients without being blocked.
+
+US phone carriers require businesses to register their phone numbers before sending text messages at scale. This process is called **A2P 10DLC registration**. If you skip it, your SMS messages will likely be filtered or blocked.
+
+Each number shows one of three statuses:
+
+| Status | Meaning |
+|---|---|
+| ✅ **A2P linked** | Fully approved — SMS works normally |
+| ⏳ **A2P Link In Progress** | Registration submitted, waiting for carrier approval |
+| ⚠️ **Not A2P-linked** | Not registered — SMS may be blocked |
+
+**When to use it:** Your number shows "Not A2P-linked" and you need to send SMS messages from it.
+
+**How to do it:** Click the **10DLC** button on that number, pick a campaign from the list, and confirm. The status will update to "In Progress" and eventually "Linked" once approved.
+
+
+### 3️⃣ Set inbound routing
+
+> **What it does:** Decides where incoming calls and messages on this number go — to a specific human, or to an AI agent.
+
+**Options:**
+
+- **Route to a User** — pick any active team member. When someone calls this number, that person's line rings.
+- **Route to an AI Agent** — pick an inbound AI agent. When someone calls, the AI picks up and handles the conversation automatically.
+- **No routing** — remove the assignment. The number falls back to the shared pool behavior.
+
+
+
+### 4️⃣ Set outbound AI agent
+
+> **What it does:** Assigns an AI agent to make outbound automated calls from this number.
+
+When your system needs to place an automated call — for a follow-up, a reminder, or a campaign — it uses the outbound agent assigned to that number.
+
+**When to use it:** You want one specific number to always be used when a particular AI agent calls people.
+
+**Requirements:** The number must first be activated for AI. If it hasn't been activated, this dropdown is locked.
+
+
+### 5️⃣ Set chatbot agent
+
+> **What it does:** Assigns an automated chatbot to handle incoming text messages on this number.
+
+When someone texts this number, the chatbot agent takes over the conversation automatically — answering questions, collecting info, or routing the person to the right place.
+
+**Requirements:** The number must be **A2P-linked** before a chatbot can be assigned. This ensures your automated texts are properly registered with carriers.
+
+
