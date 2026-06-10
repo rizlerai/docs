@@ -135,6 +135,7 @@
               "manage/powerlists",
               "manage/powerlist-notes",
               "manage/contacts",
+              "manage/import-contacts",
               {
                 "group": "Tags",
                 "icon": "tags",
