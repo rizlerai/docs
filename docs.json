@@ -239,6 +239,7 @@
             "icon": "gear",
             "pages": [
               "settings/social-sign-in-integration",
+              "settings/connected-apps",
               "settings/business-detail",
               "settings/whitelabel-settings",
               "settings/twilio-credentials",
