@@ -242,6 +242,7 @@
               "settings/business-detail",
               "settings/whitelabel-settings",
               "settings/twilio-credentials",
+              "settings/s3-storage",
               "settings/ai-settings",
               "settings/api-oath-setting",
               "settings/working-hours"
