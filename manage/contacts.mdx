@@ -1,125 +1,210 @@
 ---
 title: "Contacts"
-description: "User guide for viewing, filtering, and managing contacts inside PowerLists."
 icon: "address-book"
 ---
 
+The **Contacts** page is the main place to view, search, filter, and manage contacts in RizzDial. It gives you a modern table view for daily contact management and quick access to each contact's activity history.
 
-
-**Contacts** is where you view and work with people stored in your **PowerLists**. You can choose a list, search and sort rows, show/hide columns, open a person’s conversation, delete contacts, and run bulk actions (move list, update tags, delete).
 
 <img
   src="/images/manage/contact/overview.png"
-  alt="Contacts table view with filters and column controls"
+  alt="Contacts page with search, filters, and contact table"
   className="rounded-lg border shadow-sm"
 />
 
+## ✨ What you can do
 
-## 📂 Choosing a PowerList
+- View all visible contacts.
+- Search contacts by name, phone number, or email.
+- Filter contacts by tag.
+- Filter contacts by powerlist.
+- Sort contacts by newest, oldest, or name.
+- Open a contact's activity page to review calls, messages, notes, and workflows.
+- Select contacts and apply bulk actions.
+- Import new contacts from a CSV file.
 
-Use **Select PowerList** to choose which list fills the table.
+## 📋 Contact table
 
-- If you arrived from another page that already selected a list, that list may be pre-selected.
-- The dropdown options depend on your role: some users see all company lists, others only lists they are assigned to.
-- Changing the selected list reloads the table with that list’s contacts.
+The main table shows the most important contact details:
 
+| Column | What it shows |
+|--------|---------------|
+| **Name** | Contact name |
+| **Phone** | Phone number |
+| **Email** | Email address |
+| **Tags** | Tags assigned to the contact |
+| **Added** | Date the contact was added |
 
+Each row is clickable, or use the external-link icon on a row to open that contact's **activity page**. See [Contact activity page](#-contact-activity-page) below for what you can do there.
 
-## 👁️‍🗨️ Showing and hiding columns
+**🔍 Search**
 
-Use **Show/Hide Columns** to control which optional columns are visible.
+Use the search bar at the top to find contacts.
 
-- Selection checkbox, row number, and action column stay visible.
-- Optional contact fields can be shown/hidden in any combination.
-- Preferences are saved in this browser for around 30 days.
-- First-time/default behavior usually shows all optional columns.
-- **Created At** can be toggled from this panel.
+The search supports:
 
+- First name
+- Last name
+- Email
+- Phone number
 
+Phone search works best when you enter at least four digits.
 
-## 🗂️ What the table contains
+The search input is debounced, so the page waits briefly while you type before reloading results. This keeps the page responsive and avoids unnecessary API calls.
 
-**1️⃣ First column — selection**
+**🏷️ Tag filter**
 
-- Row checkbox selects contact for bulk actions.
-- Header checkbox selects/clears all rows on current page.
+Filter the list by a contact tag using the **Tags** dropdown.
 
-**2️⃣ Second column — row number**
+The tag dropdown shows available tags for your company. When possible, it also shows the number of visible contacts using each tag.
 
-- Simple row index.
-- Can also be used in sorting flows where available.
+You can also click a tag chip inside the contact table to immediately filter by that tag.
 
-**⚡ Third column — Action**
+**📂 Powerlist filter**
 
-Per-row quick actions:
+Filter contacts by powerlist using the **Powerlist** dropdown.
 
-- **View** (eye): opens that contact’s conversation/activity view.
-- **Delete** (trash): deletes that contact after confirmation.
+The powerlist picker shows available powerlists and their contact counts. Selecting a powerlist limits the table to contacts inside that list.
 
-Delete is permanent.
+This is helpful when you want to work on one campaign list or one imported segment at a time.
 
-**🧑‍💼 Contact detail columns**
+**↔️ Sorting**
 
-After Action, table shows your organization’s configured contact fields (for example name, phone, email, address, custom fields).
+Sort contacts using the dropdown next to the search bar:
 
-- Labels are displayed in readable form.
-- Some internal system-only fields are hidden from table for clarity.
+| Sort option | What it does |
+|-------------|--------------|
+| **Newest first** | Shows recently added contacts at the top |
+| **Oldest first** | Shows oldest contacts at the top |
+| **Name A-Z** | Sorts contacts alphabetically by name |
 
-**🕑 Created At**
+Sorting makes it easier to review fresh imports, older records, or alphabetized contact lists.
 
-Shows timestamp in your account timezone. In this implementation, it reflects the contact’s last update time so you can judge record freshness.
+**📄 Pagination**
 
+The page loads contacts in pages instead of loading the whole database at once.
 
+By default, it requests 50 contacts per page. This keeps the page fast, even for companies with large contact tables.
 
-## 🔍 Searching
+Use **Prev** and **Next** to move between pages.
 
-Use the search box (placeholder: **Search Contact...**) to filter loaded contacts for the selected PowerList.
+**📥 Import CSV shortcut**
 
-Search scope = current list context, not all lists globally.
+The **Import CSV** button sends you to the contact import page.
 
+This is useful when the contact list is empty or when you need to add a new batch of leads.
 
+**🔄 Refresh button**
 
-## ↔️ Sorting
+The refresh button reloads the current list using the active search, filters, sort, and page.
 
-Default sort usually places newer/higher-index records first.
+Use it after imports or bulk actions to see the latest data.
 
-Where header sorting is available, click column headers to change sort order.
+## 📜 Contact activity page
 
+Click a contact row or the external-link icon on a row to open the **Contact activity page**. This is the full history view for one contact — not the main Contacts table.
 
+<img
+  src="/images/manage/contact/activity.png"
+  alt="Contact activity page with details, notes, and call timeline"
+  className="rounded-lg border shadow-sm"
+/>
 
-## 🗂️ Bulk Actions
+### 🔙 Header and navigation
 
-Selecting at least one row shows a bulk-action bar.
+At the top of the activity page you will see:
+
+- **Back** — return to the Contacts list.
+- **Contact ID and phone** — for example `Contact #18383` and the primary phone number.
+- **Dashboard** and **Contacts** — quick links to other areas of the app.
+- **Refresh** — reload the activity timeline and contact details.
+
+### 🧾 Contact details
+
+The **Contact details** section summarizes the contact record:
+
+| Field | What it shows |
+|-------|---------------|
+| **Summary cards** | Counts for Messages, Calls, Emails, Notes, and Workflows |
+| **Primary phone** | Main phone number for the contact |
+| **Added** | Date and time the contact was created |
+| **Powerlist** | Powerlist the contact belongs to |
+| **Consent** | Consent status — for example **No consent on file** when consent has not been recorded |
+
+If the contact has no name saved, the page may show **Unnamed contact**.
+
+### 🗂️ Activity filters
+
+Use the filter tabs to narrow the timeline:
+
+| Tab | What it shows |
+|-----|---------------|
+| **All** | Every activity type |
+| **Messages** | SMS and chat messages |
+| **Calls** | Voice call logs |
+| **Email** | Email activity |
+| **Workflows** | Workflow runs tied to this contact |
+
+Each tab shows a count so you can see how many items exist in each category.
+
+### 📝 Internal team note
+
+The **Internal team note** box lets your team leave a quick note that is only visible inside RizzDial — not sent to the contact.
+
+- Type your note in the text area.
+- Press **Cmd-Enter** (Mac) or use **Post note** to save.
+
+Use this for handoffs, context, or reminders about the contact.
+
+### 📅 Activity timeline
+
+Below the details and note area, the **timeline** lists interactions in order, grouped by date (for example **THURSDAY 11 JUNE**).
+
+Each entry shows what happened and when. For **calls**, a typical entry includes:
+
+- Badges such as **CALL**, **Outbound**, and **Completed**
+- Time of the call
+- A transcript preview with speaker labels
+- **From** and **To** phone numbers
+- A **Recording** link to play the call audio when a recording is available
+
+Messages, emails, and workflow events appear in the same timeline when you use the **All** filter or the matching tab.
+
+## ⚡ Bulk actions
+
+Select one or more contacts from the table. After contacts are selected, a bulk action bar appears.
 
 <img
   src="/images/manage/contact/bulk-actions.png"
-  alt="Bulk actions bar in Contacts"
+  alt="Bulk action bar with Tag and Delete options on selected contacts"
   className="rounded-lg border shadow-sm"
 />
 
-It includes three main actions:
+Available actions:
 
-**🔄 Change PowerList**
+**🏷️ Apply tag**
 
-1. Select destination PowerList.
-2. Click **Apply**.
-3. Confirm.
+When you apply a tag, the selected tag is added to all selected contacts.
 
-Selected contacts are moved to the chosen list.
+If workflow automations are connected to tag changes, applying a tag can trigger those workflows.
 
-**🏷️ Update Tags**
+**➖ Remove tag**
 
-1. Select one or more tags.
-2. Click **Apply**.
-3. Confirm.
+When you remove a tag, that tag is removed from all selected contacts that currently have it.
 
-Important behavior: this replaces existing tags on selected contacts with the chosen set.
+If workflow automations are connected to tag removal, removing a tag can trigger those workflows.
 
-**🗑️ Delete**
+**🗑️ Delete contacts**
 
-Click **Delete** and confirm.
+The delete action asks for confirmation before running.
 
-All selected contacts are permanently removed.
+When possible, contacts are soft deleted by marking them as deleted. This hides them from the Contacts page while keeping their activity history available. If your contact table does not support soft delete, contacts are removed directly.
 
-Counts near action buttons show how many contacts are selected.
+**👁️ Visibility and permissions**
+
+The Contacts page only shows visible contacts.
+
+If a contact is marked as deleted, it is hidden from the list.
+
+For users who are not company-level users and do not have permission to view all contacts, results may be restricted to contacts inside assigned powerlists only.
 

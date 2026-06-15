@@ -136,6 +136,7 @@
               "manage/powerlist-notes",
               "manage/contacts",
               "manage/import-contacts",
+              "manage/bulk-actions",
               {
                 "group": "Tags",
                 "icon": "tags",
