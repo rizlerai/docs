@@ -1,48 +1,218 @@
 ---
-title: 'Social Sign In / Integration'
-description: 'Configure social media authentication and third-party integrations'
+title: 'Integrations'
 icon: 'share-nodes'
 ---
 
-Easily connect your account to leading social platforms such as Google for streamlined sign-in and frictionless access control. 🚀
+The **Integrations** tab is where you connect RizzDial with outside apps and services. These connections help you sign in faster, sync contacts and leads, connect calendars, and prepare other tools for automation.
 
-![Social Sign In](/images/settings/social-sign/overall.png)
 
-## 🔗 LeadConnector Integration
 
-Manage your Go HighLevel (LeadConnector) locations and AI agent assignments from a unified interface. 🤖
+<img
+  src="/images/settings/social-sign/overview.png"
+  alt="Integrations tab showing Google Sign In, LeadConnector, Facebook Lead Ads, and other integration cards"
+  className="rounded-lg border shadow-sm"
+/>
 
-### 📋 Table Overview
+## 🎯 What This Tab Is Used For
 
-The LeadConnector Integration panel (see below) displays all your connected Go HighLevel locations with detailed controls for each:
+Use the Integrations tab when you want to:
 
-| 🗺️ Location            | 🧑‍💼 Agent Name Field      | ⭐ Default | 🔄 Sync Contact | 🆔 Assign User ID | ⚙️ Action                  |
-|-------------------------|---------------------------|---------|--------------|----------------|--------------------------|
-| `ioJeiPR1uloS2FVwmnEb`  | Select Field (dropdown)   | ⬜      | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
-| Rider Dev               |                           |         |              |                |                          |
-| `HIJ4DiCHCHyKPvFP5R`    | No Fields Available       |         | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
-| CHL AIR: Review Trading |                           |         |              |                |                          |
-| `wLnZPr9g4uWFwE92IDS`   | Select Field (dropdown)   | ⬜      | Answered     | Yes/No toggle  | Re-Connect / Disconnect  |
-| Rider Dev 2             |                           |         |              |                |                          |
+- Connect Google Sign In to your account
+- Manage LeadConnector locations
+- Connect Facebook Lead Ads and sync leads from Facebook Pages
+- Choose which Facebook Pages should send leads into RizzDial
+- Assign Facebook Lead Forms to PowerLists
+- Map Facebook form questions to RizzDial contact fields
+- Check whether calendar, email, payment, or social integrations are available
+- Disconnect an integration when it is no longer needed
 
-**Interface Details:**
-- 🗺️ **Location:** Displays the internal unique code or name for Go HighLevel (LeadConnector) locations.
-- 🧑‍💼 **Agent Name Field:** Lets you select or assign an agent to handle processes related to this location. If no agent is assignable, shows "No Fields Available".
-- ⭐ **Default:** Use the switch to mark a location as default.
-- 🔄 **Sync Contact:** Set contact sync scope (e.g., All, Answered, or No sync).
-- 🆔 **Assign User ID:** Toggle Yes/No to enable or disable user ID assignment for synced contacts.
-- ⚙️ **Action:** Instantly "Re-Connect" to refresh integration, or "Disconnect" to remove the connection.
 
-### ➕ Connect New
+The Integrations tab shows a group of integration cards. Each card represents one app or service.
 
-To add a new LeadConnector integration, click <b>Connect New</b>. ✨
+Each card normally shows:
 
-### 🔗 Embedding Link
+- App name
+- App icon
+- Connection status
+- A short note about the connection
+- A button such as **Connect**, **Manage**, **Disconnect**, or **Awaiting setup**
 
-You can embed the AI Sync CRM integration in LeadConnector. Use the <b>Embedding Link</b> provided at the top-right of the interface. 🌐
+Status labels help you quickly understand what is ready:
 
-**Additional Controls:**
-- 📝 <b>Showtest View:</b> Preview your current LeadConnector integrations.
-- 🌐 <b>Embedding Link:</b> Generate a special URL to embed the integration management table into external tools or dashboards.
+| Status | Meaning |
+|--------|---------|
+| **Connected** | The app is already linked |
+| **Not Connected** | The app is available but not linked yet |
+| **Awaiting setup** | The app is shown, but it is not ready to connect on the current account or plan |
 
-![LeadConnector Integration Table](/images/settings/social-sign/image-3.png)
+## 🔌 Available Integration Cards
+
+### 🔐 Google Sign In
+
+Google Sign In lets you connect your Google account for login access.
+
+When it is not connected, the card shows a **Sign in with Google** button. After connection, the card shows **Connected** and may display the connected Google email address.
+
+Use this when you want easier account access through Google.
+
+
+### 🔗 Managing LeadConnector
+
+Click **Manage** on the LeadConnector card to open the LeadConnector Integration window.
+
+<img
+  src="/images/settings/social-sign/leadconnector.png"
+  alt="LeadConnector Integration window showing connected locations, sync settings, and action buttons"
+  className="rounded-lg border shadow-sm"
+/>
+
+**➕ Connect New**
+
+Use **Connect New** when you want to add another LeadConnector location.
+
+After clicking it, you are taken through the connection process. Once completed, the location appears in the LeadConnector table.
+
+**🔄 Re-Connect**
+
+Use **Re-Connect** when an existing location needs to be refreshed or authorized again.
+
+This is useful if:
+
+- The connection expired
+- Permissions changed
+- The location is not syncing correctly
+
+**❌ Disconnect**
+
+Use **Disconnect** when a location should no longer be linked to RizzDial.
+
+Before disconnecting, make sure the location is not needed for active workflows or contact syncing.
+
+####  **🌐 Embedding Link**
+
+The **Embedding Link** button copies a special link to the clipboard.
+
+Use this when you need to place or share the embedded RizzDial experience inside a connected LeadConnector environment.
+
+**🧑‍💼 Agent Name Field**
+
+The **Agent Name Field** dropdown lets you choose which connected-location custom field should store or receive the agent name.
+
+The list loads available custom fields from the connected location. After selecting a field, the choice saves automatically.
+
+**⭐ Default Location**
+
+The **Default** switch marks which connected LeadConnector location should be treated as the main location.
+
+Only one location should be default at a time. If there is only one connected location, the system does not allow you to turn off the default setting because at least one default is needed.
+
+**🔄 Sync Contact**
+
+The **Sync Contact** dropdown controls which contacts should sync.
+
+Available choices:
+
+- **All** — sync all eligible contacts
+- **Answered** — sync contacts based on answered activity
+- **No** — do not sync contacts for that location
+
+The setting saves automatically after you change it.
+
+**🆔 Assign User ID**
+
+The **Assign User ID** switch controls whether user assignment information should be included for that connected location.
+
+When turned on, the setting shows **Yes**. When turned off, it shows **No**. The change saves automatically.
+
+
+### 📘 Facebook Lead Ads
+
+ 
+
+Click **Connect Facebook** or **Manage** on the Facebook Lead Ads card.
+
+<img
+  src="/images/settings/social-sign/facebook-lead-ads.png"
+  alt="Facebook Lead Ads management window showing Pages, lead forms, PowerList assignment, and Map Fields"
+  className="rounded-lg border shadow-sm"
+/>
+
+#### 🔗 Connect Facebook
+
+If Facebook is not connected, click **Connect Facebook** and sign in with a Facebook account that has access to the business Pages you want to use.
+
+The connected Facebook account must have the correct Page permissions. If no Pages appear after connecting, confirm that the Facebook user is an admin or has lead access for the Page.
+
+**🔄 Refresh Pages**
+
+**Refresh Pages** reloads the current Facebook Pages and connection information.
+
+Use it when:
+
+- A Page was added recently
+- Permissions were changed
+- The list looks outdated
+
+**📥 Sync Assets**
+
+**Sync Assets** pulls the latest Facebook Pages, Lead Forms, and form fields into RizzDial.
+
+Use it after:
+
+- Connecting Facebook for the first time
+- Creating a new Facebook Lead Form
+- Editing form questions in Facebook
+- Changing Page access
+
+After syncing, the module shows how many Pages, Lead Forms, and fields were synced.
+
+**🔛 Turn Lead Delivery On or Off**
+
+Each Facebook Page can be switched on or off for lead delivery.
+
+- **Leads On** means RizzDial should receive leads from that Page
+- **Off** means the Page is connected but not sending leads into RizzDial
+
+Turn on only the Pages that should send leads to your account.
+
+**📋 Assign Lead Forms to PowerLists**
+
+After syncing assets, Facebook Lead Forms appear under their Page.
+
+Each form can be assigned to a PowerList. This tells RizzDial where new leads from that form should go.
+
+If a form is not assigned to a PowerList, new leads may not be organized the way you expect.
+
+**🗺️ Map Fields**
+
+The **Map Fields** button lets you match Facebook form questions with RizzDial contact fields.
+
+For each Facebook question, choose the RizzDial field where the answer should be saved. If a question should not be imported, leave it blank or choose **Do not import**.
+
+Good field mapping helps keep contact records clean and useful.
+
+| Facebook Question | RizzDial Field |
+|-------------------|----------------|
+| Full Name | First Name / Last Name or Name field |
+| Phone Number | Phone Number |
+| Email | Email |
+| City | City |
+
+After selecting the fields, click **Save Mapping**.
+
+**🔄 Reconnect Facebook**
+
+Use **Reconnect** when Facebook permissions need to be refreshed.
+
+This is useful if:
+
+- Page access changed
+- Lead forms stopped syncing
+- The connected Facebook user changed roles
+- Facebook asks for renewed authorization
+
+**❌ Disconnect Facebook**
+
+Use **Disconnect** when Facebook Lead Ads should no longer send leads into RizzDial.
+
+Disconnecting can stop active Page lead subscriptions, so confirm this action carefully.
