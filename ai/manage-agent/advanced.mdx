@@ -40,69 +40,79 @@ Below that, a **grid of cards** lets you **open setup** for each type of functio
 
 ## 🔄 Call Transfer
 
-**Purpose:** Send the caller to another phone number or to a destination chosen **dynamically** from the conversation.
+**Empower your callers to reach the right person—instantly.** The **Call Transfer** feature allows your AI agent to intelligently hand off conversations to a real staff member or team whenever personalized human support is needed, a booking must be made, or a specialized department should step in.
 
-1. Choose **Configure** on the Call Transfer card.  
-2. Fill in only the fields that apply to your choices.
 
-*Main transfer settings (description, destination, type):*
+1. Click the **Configure** button on the Call Transfer card.
+2. Complete a few simple settings—tailored to *your* workflow.
+3. Hit **Save** to activate. Use **Cancel** to exit without changes.
+
+
+### 🔁  Warm  Transfer 
+
+Decide how callers are routed:
+
+- **Warm Transfer:** Your AI agent smoothly prepares the handoff and connects the caller to a single destination—no awkward transitions!
 
 <img
-  src="/images/ai/AI-agent/edit/advance/call-transfer.png"
-  alt="Call Transfer description, destination, and type"
+  src="/images/ai/AI-agent/edit/advance/warm-transfer.png"
+  alt="Warm Transfer with Caller ID Mode, Description, and Phone Number"
   className="rounded-lg border shadow-sm my-4"
 />
 
-**Description** — Instructions for **when** and **why** to transfer—what the agent should look for before transferring.
 
-**Transfer to** — **Static destination:** transfer always goes to **one phone number** you enter; you can turn on **Extension** and type an extension if needed. **Dynamic routing:** instead of one fixed number, you describe **how** the agent should decide where to send the call; a text box appears for that explanation.
 
-*When you use **dynamic routing**, you fill the prompt-style field for how the destination is chosen:*
+**📞 Caller ID Mode**
+
+Control the number displayed to the receiving party:
+
+| Option                | What shows up for the recipient            |
+|-----------------------|--------------------------------------------|
+| **Agent Phone Number**| The agent's assigned business number       |
+| **User Phone Number** | The caller’s own phone number              |
+
+---
+
+**📝 Description**
+
+Add clear, concise instructions for your AI about what to say during the transfer. *(Example: “Introduce the caller and explain they want to schedule an appointment. Then connect the call.”)*
+
+
+**☎️ Phone Number**
+
+Designate the **destination number** (in international format, e.g. `+14154155555`).  
+> ⚠️ If left blank and you save, Call Transfer will be disabled.
+
+
+### 🗓️ Schedule Transfer
+
+Route callers automatically to different numbers based on business hours, staffing, or special scenarios.
 
 <img
-  src="/images/ai/AI-agent/edit/advance/call-transfer-dynamic.png"
-  alt="Dynamic routing transfer destination prompt"
+  src="/images/ai/AI-agent/edit/advance/schedule-transfer.png"
+  alt="Schedule Transfer with fallback number, business hours routing rules, and failover behavior"
   className="rounded-lg border shadow-sm my-4"
 />
 
-**Type** — **Cold transfer:** the caller is moved to the other party in a straightforward way. **Warm transfer:** extra options appear for a more guided handoff.
+**🌟 Features:**
 
-*Cold transfer focuses on a direct handoff—your screen may look like this when that path is selected:*
+- **Description:** What should your AI say during the handoff? (Think: a quick summary and polite introduction.)
+- **Default/Fallback Number:** Used as the primary transfer and as a safety net if all else fails.
+- **Business Hours Routing:**  
+   1. Set **Routing Mode** to **Use day/time rules**
+   2. Click **Add Rule** for blocks like "Weekdays Morning" or "After Hours".
+      - **Days:** Which weekdays the rule applies to
+      - **Start/End time:** When is this number active?
+      - **Transfer Number:** Destination for this time period
+      - **Label:** Easily recognize the rule (e.g. "Lunch Shift")
+      - **Remove:** Clear outdated rules in one click
+- **Failover Behavior:**  
+   If the transfer doesn’t connect:  
+   - Enable **Continue conversation if transfer fails**
+   - Provide a **Failure Message** — what your AI should say instead  
+     *(Example: “Sorry, I couldn't reach a human right now. Can I help you with something else?”)*
 
-<img
-  src="/images/ai/AI-agent/edit/advance/call-transfer2.png"
-  alt="Cold transfer settings"
-  className="rounded-lg border shadow-sm my-4"
-/>
 
-**Warm transfer options (when you pick Warm)** — **On-hold music:** what the caller hears while waiting (ringtone, relaxing sound, uplifting beats, or none). **Navigate IVR:** if the other side uses a “press 1 for…” menu, describe how the agent should handle it; turning this on can affect related options (the screen explains when something is locked or auto-enabled). **Human detection:** when on, the agent tries to confirm a **real person** answered before finishing the handoff; you can set **how long to wait** for an answer and whether the agent sends a short “Hello” first. **Whisper message:** optional message heard **only by the person receiving the transfer** (prompt style or one fixed sentence). **Three-way message:** optional message spoken **after** the transfer connects so **both** sides can hear it (for example a short introduction).
-
-<div className="not-prose my-6 grid gap-4 md:grid-cols-2">
-  <figure className="m-0">
-    <img
-      src="/images/ai/AI-agent/edit/advance/call-transfer-warm.png"
-      alt="Warm transfer human detection and messages"
-      className="rounded-lg border shadow-sm w-full"
-    />
-    <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Warm transfer: detection, whisper, and related options
-    </figcaption>
-  </figure>
-  <figure className="m-0">
-    <img
-      src="/images/ai/AI-agent/edit/advance/call-transfer-warm-options.png"
-      alt="Warm transfer on-hold music and IVR"
-      className="rounded-lg border shadow-sm w-full"
-    />
-    <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Warm transfer: on-hold music and IVR navigation
-    </figcaption>
-  </figure>
-</div>
-
-**Displayed phone number** — Choose which caller ID style fits your process—often your **AI agent’s number** or the **lead’s number**, depending on what your organization expects.
-
-**Save** applies the transfer setup. **Cancel** closes without saving.
 
 
 ## 📅 Calendar Appointments
