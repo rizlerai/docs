@@ -117,37 +117,50 @@ Route callers automatically to different numbers based on business hours, staffi
 
 ## 📅 Calendar Appointments
 
-**Purpose:** Let the agent **check availability** and **book appointments** on a calendar you connect.
+**Purpose:** Let your agent **check availability** and **book appointments** in your connected calendar system.
 
-1. Choose **Configure** on the Calendar Appointments card.  
-2. **Book Appointments On:** Pick where your calendar lives—**Go High Level** or your **product’s own calendar** (labels match your screen). Help text explains when to pick each.  
-3. **Select Calendar:** After choosing the platform, pick the specific calendar. For the Go High Level path, calendars often fill after your location is connected; if the list is empty, finish connection steps first.
+There are three main platforms you can use for direct calendar integration:
+- **Go High Level (GHL)**
+- **Calendly**
+- **Rizz Dial**
 
-*Choosing where appointments are booked and which calendar to use:*
+*Choosing the booking method and selecting GHL, Calendly, or Google Calendar/Rizz Dial:*
+
 
 <img
   src="/images/ai/AI-agent/edit/advance/calender.png"
-  alt="Book appointments on and calendar selection"
+  alt="Appointment booking options and calendar selection"
   className="rounded-lg border shadow-sm my-4"
 />
 
-4. **Appointment title:** What should appear on the calendar when a booking is made (for example “Sales call”).  
-5. **Booking window (days):** How many **days ahead** the agent may offer times (example: **7** means only slots in the next seven days).  
-6. **Collect contact information:** Which details the agent should gather before booking; the list depends on your platform. Select more than one where allowed.  
-7. **Calendar timezone:** The **calendar’s** timezone—should match how the calendar is set up in your booking system.  
-8. **Save** applies everything. **Cancel** closes without saving.
+1. From the **Calendar Appointments** card, click **Configure**.
+2. **Appointment Booking Method:** Choose how the AI will book appointments. Options include:
+   - **Direct Calendar Booking:** Book directly onto your connected GHL, Calendly, or Google Calendar/Rizz Dial account.
+   - **Collect and Notify:** The AI collects booking information from the caller and notifies your team to schedule manually (no direct integration).
+   - **Request Callback:** The AI collects info so a staff member can call back to schedule.
+3. If you choose **Direct Calendar Booking**:
+   - **Select Calendar Platform:** Pick between GHL, Calendly, or Google Calendar/Rizz Dial. Pick whichever you've connected.
+   - **Choose Calendar:** Select the specific calendar your agent should book onto. If nothing shows, make sure you've connected your integration properly.
+  
+4. **Appointment Title:** Set what the calendar event will be called (e.g., “Sales Call” or “Consultation”).
+5. **Booking Window:** Set how many **days into the future** your agent can offer appointments (e.g., only show openings for the next 7 days).
+6. **Collect Contact Information:** Choose which caller details your agent must collect (options vary by integration and platform).
+7. **Additional Booking Options (if enabled by your calendar):**
+   - **Custom Fields:** Collect extra info like reason for the appointment or preferences.
+   - **Allow Reschedule/Cancellation:** Agent can offer callers the ability to reschedule or cancel.
+   - **Buffer Times:** Set spacing between appointments.
+8. **Calendar Timezone:** Set the timezone of the calendar to match your team's preferences or business location.
+9. **Save** saves changes. **Cancel** discards your edits.
 
-*Title, booking window, contact fields, and timezone:*
+*Customizing appointment details, contact fields, and extra options:*
 
 <img
-  src="/images/ai/AI-agent/edit/advance/calender-2.png"
-  alt="Appointment title, booking window, and timezone"
+  src="/images/ai/AI-agent/edit/advance/calendar-2.png"
+  alt="Appointment title, window, contact fields, and options"
   className="rounded-lg border shadow-sm my-4"
 />
 
-The line near **Active Functions** that mentions your calendar updates when a calendar is selected and saved, or may show that none is selected yet.
-
-
+When your calendar is connected and saved, you’ll see a confirmation shown by **Active Functions**. If not, messaging will indicate that no calendar is selected.
 
 
 ## 📋 Post-Call Information
