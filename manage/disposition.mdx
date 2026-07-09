@@ -118,12 +118,14 @@ Click **Submit** to save.
 - On failure: message stays on the form so you can fix the issue.
 
 
-## ✏️ Edit a disposition
+## ✏️ Editing a Disposition
 
-1. Click **Edit** on the row.
-2. The form opens as **Edit Disposition**.
-3. Existing values load (name, roles, location, notes field, and colors).
-4. Update fields and click **Submit**.
+To make changes to an existing disposition:
+
+1. Find the disposition you want to update and click **Edit**.
+2. The **Edit Disposition** form will open, displaying the current settings (name, roles, location, notes field, and colors).
+3. Adjust any fields as needed.
+4. Click **Submit** to save your changes.
 
 <img
   src="/images/manage/disposition/edit.png"
@@ -131,16 +133,17 @@ Click **Submit** to save.
   className="rounded-lg border shadow-sm"
 />
 
-Editing follows the same validation as adding, including the unique-name rule.
+All editing is subject to the same rules as adding a disposition, including the requirement for a unique name.
 
 <Warning>
-Changing disposition names can impact historical reporting consistency. If reporting history matters, consider creating a new disposition instead of renaming an old one.
+Renaming a disposition can affect historical reports. If you need to keep reporting history unchanged, it may be better to create a new disposition rather than modifying the name of an existing one.
 </Warning>
 
+---
 
-## 🕹️ Switches on the list
+## 🕹️ Quick Toggles on the List
 
-You do not need to open Edit for these two toggles:
+You can use these switches directly in the list, without opening the edit form:
 
 <img
   src="/images/manage/disposition/toggle-buttons.png"
@@ -148,24 +151,23 @@ You do not need to open Edit for these two toggles:
   className="rounded-lg border shadow-sm"
 />
 
-### ❓ Setup Didn't Answer Button
+### ❓ Didn't Answer Button
 
-- Enable this on one row to make that row the automatic "didn't answer" choice.
-- Only **one** row can hold this setting at a time.
-- Turning it on for another row clears the old one.
+- Enable this on one disposition to make it your organization's designated "didn't answer" label.
+- Only one disposition can have this setting at a time; enabling it for a different disposition will disable it on the previous one.
 
-### ⭐ Setup Default Option
+### ⭐ Default Option
 
-- Works the same pattern for your organization's general default disposition.
-- Only **one** row can be the default option at a time.
-- Choosing a new default clears the previous default.
+- Set the general default disposition for your organization using this toggle.
+- Again, only one row can be set as the default at a time; changing the default will automatically clear the former default status.
 
-If an update fails, you may see an alert and the toggle can return to its previous value.
+If your update doesn’t save, an alert will appear and the toggle will revert to its earlier state.
 
+---
 
-## ☎️ Call Status
+## ☎️ Mapping Call Status
 
-Use the **Call Status** dropdown on each row to map that disposition to the right call situation.
+Each disposition row has a **Call Status** dropdown to align that disposition with the relevant call outcome.
 
 <img
   src="/images/manage/disposition/call-status.png"
@@ -173,10 +175,9 @@ Use the **Call Status** dropdown on each row to map that disposition to the righ
   className="rounded-lg border shadow-sm"
 />
 
-- Select the new value.
-- The change saves immediately.
-- Mapping is important because status grouping/reporting depends on it.
-
+- Pick the desired call status from the dropdown.
+- Your change is saved instantly.
+- Proper mapping ensures dispositions are grouped accurately for status reporting.
 
 ## 🗑️ Delete a disposition
 
