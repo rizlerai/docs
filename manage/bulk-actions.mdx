@@ -3,8 +3,7 @@ title: "Bulk Actions"
 icon: "layer-group"
 ---
 
-The **Bulk Actions** page is the control center for contact imports and large contact updates. It helps you watch CSV import progress, review import results, and safely apply changes to many contacts at once.
-
+The **Bulk Actions** page allows you to manage contact imports and perform large-scale updates efficiently. From this page, you can monitor CSV import progress, review detailed results, and safely execute actions affecting many contacts at once.
 
 <img
   src="/images/manage/bulk-actions/overview.png"
@@ -12,63 +11,59 @@ The **Bulk Actions** page is the control center for contact imports and large co
   className="rounded-lg border shadow-sm"
 />
 
-The page has two main areas:
+The page is divided into two main sections:
 
-1. **Import Jobs** — running and completed contact imports.
-2. **Bulk Contact Actions** — select a group of contacts and run one action on all matching contacts.
+1. **Import Jobs** — View and manage ongoing and completed contact imports.
+2. **Bulk Contact Actions** — Filter and select groups of contacts, then execute bulk actions on them.
 
-Instead of editing contacts one by one, you can manage thousands of contacts from one screen.
-
+This enables you to update thousands of contacts simultaneously, rather than manually editing records one by one.
 
 ## 📥 Import Jobs
 
-The **Import Jobs** tab shows recent import activity with a clear status.
+Within the **Import Jobs** tab, you’ll find a log of recent import activity accompanied by a clear job status:
 
-| Status | Meaning |
-|--------|---------|
-| **Starting** | The import is being prepared. |
-| **Running** | Rows are actively being processed. |
-| **Finalizing** | The import is finishing and saving final results. |
-| **Completed** | The import finished successfully. |
-| **Failed** | The import stopped or could not complete. |
+| Status         | Definition                                     |
+|----------------|------------------------------------------------|
+| **Starting**   | The import process is initializing.            |
+| **Running**    | The import is actively processing rows.        |
+| **Finalizing** | Wrapping up and saving final results.          |
+| **Completed**  | The import finished without issues.            |
+| **Failed**     | An error occurred and the import stopped.      |
 
+### 📋 Viewing Import Details
 
-### 📋 Import details
-
-Click **Details** on a job to open a summary of that import.
+Click the **Details** button for any import job to access a summary and breakdown.
 <img
   src="/images/manage/bulk-actions/detail.png"
   alt="Bulk Contact Actions with contact filters and action picker"
   className="rounded-lg border shadow-sm"
 />
 
-You can review:
+Available details include:
 
-- File name or import ID.
-- Total processed rows.
-- Imported contacts.
-- Updated contacts.
-- Skipped contacts.
-- Cleanup breakdown.
-- Error message, if the import failed.
+- File name or import identifier
+- Number of rows processed
+- How many contacts were imported, updated, or skipped
+- Cleanup summary
+- Any error messages from failed imports
 
-This gives you an audit-style view of what happened during the import.
+These details give you transparency and a clear audit trail for every import.
 
-**🛑 Cancel running imports**
+**🛑 Cancel an Ongoing Import**
 
-If an import is still running, you can cancel it.
+If an import is still in progress, you have the option to cancel it.
 
-Canceling stops the remaining rows from being processed. Contacts that were already imported stay in the system. If the import created a new powerlist but no contacts were imported, the empty powerlist is cleaned up automatically.
+Canceling an import halts the processing of any additional rows. Contacts already imported remain unchanged. If a new powerlist was created but no contacts were imported, the empty powerlist is automatically removed.
 
-**🗑️ Delete import records**x
+**🗑️ Remove Import Records**
 
-Completed or failed import records can be deleted from the Bulk Actions page.
+You can delete completed or failed import records from the Bulk Actions page.
 
-This only removes the import audit record from the import list. It does **not** delete contacts that were already imported.
+This action only removes the record from the job history—it does **not** affect contacts that have already been imported.
 
 ## ⚡ Bulk Contact Actions
 
-The **Bulk Contact Actions** tab lets you select contacts with filters and then apply an action.
+The **Bulk Contact Actions** tab provides a way to filter contacts and then apply a batch operation.
 
 <img
   src="/images/manage/bulk-actions/bulk-action.png"
@@ -76,29 +71,29 @@ The **Bulk Contact Actions** tab lets you select contacts with filters and then 
   className="rounded-lg border shadow-sm"
 />
 
-### 1️⃣ Step 1 — Choose contacts
+### 1️⃣ Step One: Filter Contacts
 
-Filter contacts by:
+Choose contacts to act on by using one or more filters:
 
-| Filter | What it matches |
-|--------|-----------------|
-| **Import batch** | Contacts from a completed import that is tied to a powerlist. |
-| **Powerlist** | Contacts currently assigned to a selected powerlist. |
-| **Tag** | Contacts that already have a selected tag. |
+| Filter          | Description                                                      |
+|-----------------|------------------------------------------------------------------|
+| **Import batch**| Contacts from a specific completed import (linked to a powerlist).|
+| **Powerlist**   | Contacts assigned to a particular powerlist.                     |
+| **Tag**         | Contacts with a selected tag.                                    |
 
-Filters can be combined. For example, you can select contacts from one powerlist that also have a specific tag.
+Filters can be combined, letting you select, for example, contacts that are in a powerlist and have a specific tag.
 
-After filters are selected, the page previews how many contacts match. Check this count before running any action.
+Once your filters are set, a preview displays the total number of contacts matched. Always check this number before proceeding.
 
-### 2️⃣ Step 2 — Pick an action
+### 2️⃣ Step Two: Select a Bulk Action
 
-You can run one of these actions:
+Available bulk actions include:
 
-| Action | What it does |
-|--------|--------------|
-| **Apply tag** | Adds one or more tags to all matching contacts. |
-| **Remove tag** | Removes one or more tags from all matching contacts. |
-| **Move to powerlist** | Moves all matching contacts to another powerlist. |
-| **Delete contacts** | Marks matching contacts as deleted and hides them from the Contacts page. |
+| Action                | Effect                                                                              |
+|-----------------------|-------------------------------------------------------------------------------------|
+| **Apply tag**         | Add one or more tags to all matching contacts.                                      |
+| **Remove tag**        | Remove one or more tags from all matching contacts.                                 |
+| **Move to powerlist** | Transfer all selected contacts to another powerlist.                                |
+| **Delete contacts**   | Mark contacts as deleted, hiding them from the main Contacts page.                  |
 
-Before the action runs, the page asks for confirmation and shows the matching contact count.
+Before applying the chosen action, you'll be asked to confirm. The system will display exactly how many contacts will be affected.
