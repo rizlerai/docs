@@ -74,44 +74,47 @@ Other tools:
 
 ### ☝️ Single-Number Actions (`...` menu)
 
-Available actions (some may depend on provider/state):
+When you click the `...` menu on a number row, you'll see several possible actions, depending on the provider and state of the number:
 
-- **Spam Protect:** Add number to spam protection.
-- **Edit:** Update title/status/10DLC/use-case.
-- **Activate for AI:** Connects number for AI calling/routing (may disappear after activation).
-- **Delete:** Remove number after confirmation (provider cleanup applied if supported).
-- **Endpoints:** Show inbound endpoint details for integrations.
-- **10DLC:** Assign a messaging campaign (if not yet assigned).
+- **Spam Protect:** Enable spam protection for the number.
+- **Edit:** Change the title, status, 10DLC registration, or use-case for the number.
+- **Activate for AI:** Enable AI features for calling and routing with this number (option might disappear after activation).
+- **Delete:** Permanently remove the number, with provider-side cleanup if supported (confirmation required).
+- **Endpoints:** View inbound API endpoint and integration details.
+- **10DLC:** Assign or update a messaging campaign if not already set.
 
 <img
   src="/images/manage/ai-sync-number/assign-chatbot.png"
   alt="Assign Chatbot to Number – agent selection popup"
   className="rounded-lg border shadow-sm"
 />
+
 - **Assign Chatbot:**  
-  According to the image, this option lets you pick an AI agent (chatbot) from a list for that number. When you assign an agent, that AI will automatically reply to chat messages sent to this number, and will continue the ongoing conversation with the contact. This is how you link a number to the AI agent who should handle its chats.
+  As shown above, this lets you assign an AI (chatbot) to the number from a list of available agents. Once assigned, this AI agent will automatically respond to chat messages sent to the number and continue conversations with contacts. Use this option to connect a specific chatbot to handle communications for that number.
 
+---
 
+### ⚡ How to Quickly Activate for AI
 
-### ⚡ Quick: Activate for AI
+**To activate AI for a single number:**
 
-**One number:**
+1. Navigate to **Users → Phone Numbers**.
+2. Click the `...` menu for the relevant number.
+3. Select **Activate for AI**.
+4. Confirm the action and then look for a success message.
 
-1. Go to **Users -> Phone Numbers**.
-2. Open `...` menu on a row.
-3. Click **Activate for AI**.
-4. Confirm and check for messages.
+**To activate AI for multiple numbers:**
 
-**Multiple numbers:**
-
-1. Select several rows.
-2. Open **Bulk Action**.
+1. Select the numbers you want using the checkboxes.
+2. Click on the **Bulk Action** bar.
 3. Choose **Activate For AI**.
-4. Confirm it.
+4. Confirm your choice.
 
-*After activation*: Number is enabled for AI calls/logic (system checks for required credentials; error if missing).
+After activation, numbers are enabled for AI calls and logic. If required credentials or setup are missing, the system will display an error message.
 
-### 🛒 How to Purchase a Number
+---
+
+### 🛒 Purchasing a Phone Number
 
 <img
   src="/images/manage/ai-sync-number/purchase.png"
@@ -119,8 +122,7 @@ Available actions (some may depend on provider/state):
   className="rounded-lg border shadow-sm"
 />
 
-
-Click **Purchase** to open the buy form.
+Click the **Purchase** button to start the buying process.
 
 <img
   src="/images/manage/ai-sync-number/new-purchase.png"
@@ -128,32 +130,32 @@ Click **Purchase** to open the buy form.
   className="rounded-lg border shadow-sm"
 />
 
-Steps:
+Follow these steps:
 
-1. **Provider:** Choose first carrier, Twilio, or V2.
-2. **Countries:** Pick USA/Canada.
-3. **Type:** Local, Toll Free, Mobile.
-4. **Search By:** AreaCode, Region, City.
-5. Enter value, click **Search**.
+1. **Provider:** Choose the carrier (first carrier, Twilio, or V2).
+2. **Countries:** Select the country (USA/Canada).
+3. **Type:** Pick the number type—Local, Toll Free, or Mobile.
+4. **Search By:** Filter by AreaCode, Region, or City.
+5. Enter a value and click **Search**.
 
-Table results:
+Your search results will display a table like this:
 
-| Column           | Meaning                                    |
-| ---------------- | ------------------------------------------ |
-| **#**            | Result order                               |
-| **Friendly Name**| Label from provider                        |
-| **Phone #**      | The candidate number                       |
-| **Locality**     | Geo details (optional)                     |
-| **Capabilities** | Voice/SMS/MMS supported?                   |
-| **Checkbox**     | Select for bulk buy                        |
-| **Action**       | **Purchase** (single row)                  |
+| Column           | Description                                 |
+| ---------------- | ------------------------------------------- |
+| **#**            | Row/order number                            |
+| **Friendly Name**| Provider-supplied label                     |
+| **Phone #**      | The available number                        |
+| **Locality**     | Geographic information (if shown)           |
+| **Capabilities** | Whether the number supports Voice/SMS/MMS   |
+| **Checkbox**     | Select for multi-buy                        |
+| **Action**       | **Purchase** (to buy instantly)             |
 
-Options:
+You can:
 
-- **Purchase:** Buys that number.
-- **Buy Multiple:** Buys all selected.
+- **Purchase** a single number by clicking its action button.
+- **Buy Multiple** numbers at once by selecting checkboxes and confirming.
 
-(If required fields are missing, the form will prompt you. Billing/provider setup may also be needed.)
+If any required details are missing, you'll see a prompt before purchase completes. Billing and provider setup may also be required before buying.
 
 
 ### ✏️ Edit a Number
