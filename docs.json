@@ -44,7 +44,6 @@
             "icon": "brain",
             "pages": [
               "ai/dashboard",
-              "ai/knowledge-base",
               {
                 "group": "AI Agents",
                 "icon": "robot",

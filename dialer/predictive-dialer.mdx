@@ -1,43 +1,79 @@
 ---
 title: 'Predictive Dialer'
-description: 'The Predictive Dialer is an advanced automated calling system that enables efficient outbound calling campaigns by predicting agent availability and optimizing call connection rates.'
+description: 'Create and manage outbound voice campaigns. AI Campaigns are available today; the predictive Dialer workflow for live human agents is coming soon.'
 icon: 'phone-arrow-up-right'
 ---
-## 📞 Add Voice Campaign
+## 📞 Voice Campaigns
 
-To create a new predictive dialer campaign, fill out the following form:
+Open the Voice Campaigns page to create, monitor, and manage outbound calling campaigns:
 
 https://app.aisync.link/manage/voice_campaign
 
-![AI Dashboard Interface](/images/ai/add-voice.png)
+![Voice Campaigns list](/images/dialer/predictive/voice-compaign.png)
 
-**Title**
-Enter a unique name for your campaign (e.g., "TEST1"). Use descriptive names to easily identify different campaigns.
+**Top actions**
 
-**Campaign Type**
-Select "Predictive" for automated dialing. This automatically calls multiple numbers and connects answered calls to available agents.
+- **Search campaigns…** — find campaigns by name.
+- **+ New Campaign** — open the Voice Campaign Builder.
 
-**Agent**
-Choose "All" to assign all available agents, or select specific agents. The system distributes calls based on agent availability.
+**Table columns**
+
+| Column | Description |
+|--------|-------------|
+| **Campaign** | Campaign name (AI campaigns show a robot icon). |
+| **Type** | Campaign engine — for example **AI**. |
+| **Status** | Current state — Pending, In Progress, Paused, or Completed. |
+| **Calls / HR** | Target calls per hour for the campaign. |
+| **Created** | Date and time the campaign was created. |
+| **Actions** | Start, edit, view report, or delete (availability depends on status). |
+
+## 🚀 Launch a Voice Campaign
+
+Select **+ New Campaign** to open the Voice Campaign Builder.
+
+![Launch a voice campaign](/images/dialer/predictive/add-voice.png)
+
+### 📝 Step 1 — Campaign Type
+
+Choose the campaign engine:
+
+- **AI Campaign** — automated calling powered by your selected AI voice agent. Available for new campaigns.
+- **Dialer** — predictive dialer workflow for live human agents. Shown as **Coming Soon**.
+
+### 🧠 Step 2 — AI Campaign Details
+
+Fill in the following fields:
+
+**Campaign Title**
+Enter a clear name for your campaign (e.g., "June patient follow-up").
+
+**AI Agent**
+Select the AI voice agent that will place or handle the calls.
+
+**Calls Per Hour**
+Set how many calls the campaign should attempt each hour (e.g., `120`).
+
+**Local Presence**
+Choose whether to use local presence dialing (`Yes` or `No`).
+
+**Pipeline**
+Select the pipeline this campaign should use.
+
+**Pipeline Stages**
+After choosing a pipeline, select which stages the campaign should dial.
 
 **Powerlist**
-Select a contact list from the dropdown. Ensure your powerlist contains valid phone numbers for optimal performance.
+Select one or more contact lists. Use search to find lists, then check the ones to include. A badge shows how many powerlists are selected.
 
-**Call Staggering**
-Set the interval between calls (default: "1 Second"). This controls call pacing - shorter intervals increase volume, longer intervals give agents more time.
+The **Campaign Summary** panel on the right updates as you configure the campaign (type, AI agent, local presence, pipeline, stages, powerlists, and calls per hour).
 
-**Voice Templates**
-Choose a voice script from the dropdown. Templates ensure consistent messaging during calls.
-
-Click **Submit** to create your campaign.
-
-![AI Dashboard Interface](/images/ai/voice-campaign.png)
+Click **Create Campaign** when ready. Campaigns are saved as **Pending** until you start them from the campaign list.
 
 ## 🎯 Predictive Dialer + AI Agent Handling
 
 ### 🔄 Dialing Behavior
 
-The system dials 5 numbers at a time using predictive dialing.
+When the Dialer engine is available, the system dials multiple numbers at a time using predictive dialing.
 
 When multiple contacts pick up:
 
@@ -71,40 +107,3 @@ The PowerList-assigned AI agent will:
 
     - Re-engage the lead via automated callback
     - Attempt to qualify, reschedule, or book appointment directly
-
-## ⚡ Speed Dial
-
-Launch real-time dialing interface 
-
-![AI Dashboard Interface](/images/ai/speedd-dial.png)
-
-## 🚀 Speed Dial Interface
-
-The Speed Dial modal provides real-time campaign monitoring and control with the title "Calls to make based on available agents":
-
-### 📊 Call Volume Display
-
-**Calls**: Shows queued call numbers with visual bar indicators
-- Example: "12" and "24" calls displayed as progress bars
-- Yellow sections at bottom indicate call progress/completion
-- Plus (+) button to increase call volume
-
-### 🧑‍💼 Agent Management
-
-**Agents**: Displays active agent information
-- Agent 1: "12.00" (availability/capacity metric)
-- Agent 2: "12.00" (availability/capacity metric)
-- Real-time tracking of agent status and workload
-
-### 📈 Performance Monitoring
-
-**CPA**: Cost Per Acquisition tracking
-- Red X indicator showing current CPA status
-- Real-time performance metrics for campaign optimization
-
-### 🛠️ Interface Controls
-
-- **Close**: X button in top-right corner to exit Speed Dial
-- **Dynamic Updates**: Interface updates in real-time based on agent availability and call progress
-
-![AI Dashboard Interface](/images/ai/speed-dial2.png)

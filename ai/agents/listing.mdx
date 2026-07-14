@@ -155,13 +155,25 @@ The exact wording or destination can differ slightly by agent type, but in gener
 
 ## ☎️ Numbers window (Manage Numbers)
 
-When you click **Numbers**:
+When you click **Numbers**, you’ll open the Manage Numbers panel for that agent:
 
-- The title shows that **agent’s name**.
-- **Left — Available numbers:** Numbers that are not yet tied to this agent (where the system allows assignment). Each row shows the number, a **status** (such as clean or flagged), and **Outbound** / **Inbound** actions when applicable.
-- **Right — Assigned numbers:** Numbers already linked to this agent, with **type** (inbound/outbound), **status**, and **Unassign** to remove a link.
+- The **panel title** displays the agent’s name (example: “Dasha H Test”).
+- Two columns are shown:
+  - **Available Numbers** (left): Lists all phone numbers that are not currently assigned to the agent but available for use.
+    - **Number:** The phone number available for assignment.
+    - **Status:** Each number shows its current status, such as **Clean** (green label) or another state if flagged.
+    - **Action:** 
+      - If assignable, you’ll see blue **Inbound** and **Outbound** buttons depending on the features the number supports. Click one to instantly assign the number to the agent for that capability.
+      - The green **Chat** button will only enabled if the number is an A2P-linked number (i.e., linked for Application-to-Person messaging). Only these numbers can be assigned the chat functionality.
+        - Some numbers may allow both **Inbound** and **Outbound** assignment at once.
+ 
+  - **Assigned Numbers** (right): Lists all numbers currently tied to the agent.
+    - **Number:** The assigned phone number.
+    - **Type:** Each assigned number displays a label such as **Inbound** or **Outbound** depending on its assigned function.
+    - **Status:** Shows the current state, such as **Clean** (green label).
+    - **Action:** A red **Unassign** button lets you immediately remove the number from the agent.
 
-Some numbers may need an extra setup step; errors are shown if something fails.
+If assignment or removal fails, you will see an error message. Some numbers may require extra setup before they can be assigned.
 
 <img
   src="/images/ai/AI-agent/listing/number-management.png"

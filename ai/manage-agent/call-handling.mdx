@@ -3,13 +3,14 @@ title: "Call Handling"
 icon: "phone-volume"
 ---
 
-#### User Guide
+#### 📖 User Guide
 
-The **Call Handling** tab controls what happens when calls do not connect as hoped, when a **voicemail** is detected, and how long calls may run or stay quiet before ending. It is grouped into three areas:
+The **Call Handling** tab controls what happens when calls do not connect as hoped, when a **voicemail** is detected, how long calls may run or stay quiet before ending, and whether the agent **remembers callers** across calls. It is grouped into four areas:
 
 1. **🔄 Redial Settings** — automatic follow-up dialing behavior  
 2. **📧 Voicemail Detection** — what the agent does when it reaches voicemail  
 3. **⏱️ Call Duration & Silence Settings** — time limits and silence rules  
+4. **🧠 Caller Memory** — remember callers across calls (optional cost)  
 
 Small **information icons** next to section titles show extra hints when you point at them.
 
@@ -195,6 +196,30 @@ The product may track **how long** to listen for voicemail in the background. So
 
 
 
+## 🧠 Caller Memory
+
+This block controls whether the agent **remembers callers across calls**, so later conversations can continue with prior context instead of starting from scratch every time.
+
+<img
+  src="/images/ai/AI-agent/edit/call-handling/caller-memory.png"
+  alt="Caller Memory settings"
+  className="rounded-lg border shadow-sm"
+/>
+
+**🔘 Memory ON / OFF**
+
+**What it does**  
+Turns caller memory **on** or **off** for this agent.
+
+- **On** — the agent remembers callers across calls.  
+- **Off** — each call is treated without shared caller memory from previous conversations.
+
+**Cost note**  
+While memory is **ON**, AI call cost increases by approximately **$0.02 / minute**.
+
+
+
+
 ## ⏱️ Call Duration & Silence Settings
 
 This block sets **how long the caller may stay silent** before the call ends, the **maximum length** of a call, and a **short pause** before the agent starts speaking.
@@ -249,3 +274,5 @@ From **0 seconds** up to **5 seconds**.
 
 **How it works**  
 Move the control; the label shows seconds. The value saves after you finish adjusting (including when you release the mouse after dragging).
+
+

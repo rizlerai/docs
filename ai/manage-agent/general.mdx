@@ -115,46 +115,38 @@ These welcome settings are applied when you press **Save** on the prompt (see be
 
 ## 4️⃣ General Prompt
 
-Help text explains that this is where you define **how the agent behaves**, **what it should do**, and **what limits it should follow**. It is the foundation for conversations.
+This area controls how your AI agent’s core behavior is set and versioned. Here, you specify **exactly what the agent should do, how it should act, and any boundaries or rules it must follow.**
 
 <img
   src="/images/ai/AI-agent/edit/general/prompt-select.png"
-  alt="General prompt area with sectioned and single modes"
+  alt="General prompt area showing prompt selection, versioning and key action buttons"
   className="rounded-lg border shadow-sm"
 />
 
-**📝 Default Prompt**
+The prompt editor includes:
 
-Opens a small window: choose an **industry**, then a **starter prompt**. **Use This Prompt** fills the related fields; you can edit afterward..
+- **Prompt Name:**  
+  You must enter a unique name before saving your prompt. When saving, the system adds the current date and time to the name to keep each version distinct.
 
-**🏷️ Prompt name**
+- **Version List (dropdown):**  
+  Lets you access past prompt versions for this agent. Selecting a version immediately reloads its contents into the editor for review or modification. The trash icon deletes a saved version after confirmation.
 
-A **name is required** before saving.
+- **Prompt Mode:**  
+  Two options are available—**Sectioned Prompt** (each topic in its own box) and **Single Prompt** (all content in one). Switching modes will automatically split or merge your content, with no data lost. A description below the radio buttons clarifies the current mode.
 
-When saved, the system adds a **date and time** to the name so each saved copy is distinct.
+- **Action Buttons:**  
+  - **Copy Prompt:** Copy for resuse.
+  - **Paste Prompt:** Inserts prompt content from your clipboard (preserving section format in Sectioned mode).
+  - **Clear Prompt:** Erases all content, after confirmation.
+  - **Launch Pad:** Additional tool options (such as importing/exporting prompts).
 
-**📜 Version list (drop-down)**
+- **Default Prompt:**  
+  Create a new prompt by choosing an industry and a starter template. Using this will pre-fill all related fields, which you’re free to further edit.
 
-Shows saved prompt versions for **this agent**.
+- **Placeholder Tags:**  
+  Below the prompt, you’ll see a line showing available dynamic variables (e.g., `{first_name}`, `{meeting_pin}`) that the agent can use during conversations for accurate, tailored responses.
 
-Choosing one **reloads** those sections into the form.
-
-The trash control **deletes** the selected version, after confirmation.
-
-**🗃️ Sectioned vs Single**
-
-- **Sectioned Prompt** — one box per topic (easier editing).  
-- **Single Prompt** — everything in one large box (for users who prefer one canvas).
-
-When you switch modes, the content is **split** or **merged** so nothing is lost.
-
-**📋 Copy, Paste, Clear**
-
-- **COPY PROMPT** — copies the active content (section format when in sectioned mode).  
-- **PASTE PROMPT** — pastes that format back into the fields.  
-- **CLEAR PROMPT** — clears the fields, after confirmation.
-
-A short line under the radios explains the current mode in plain language.
+Every setting here is applied only when you save the prompt version. You can freely test changes and revert as needed with version controls.
 
 
 
