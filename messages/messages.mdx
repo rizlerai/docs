@@ -3,7 +3,7 @@ title: "Messages"
 icon: "inbox"
 ---
 
-The **Messages** module is your main **SMS inbox**. Use it to see recent conversations, search for a contact, start a new chat, send replies, and review a contact's wider activity — all from one screen.
+The **Messages** module is your main **SMS inbox**. Use it to see recent conversations, search for a contact, start a new chat, send replies, review a contact's wider activity, and update contact details — all from one screen.
 
 
 ## ✨ What this module is for
@@ -16,23 +16,22 @@ Use **Messages** when you want to:
 - Send a new SMS reply to a selected contact.
 - Start a conversation with an existing contact.
 - Review the contact's full activity — messages, calls, emails, notes, tag changes, and workflow steps.
+- Update contact info, tags, notes, appointments, pipeline stage, SMS settings, and DND preferences without leaving the inbox.
 - Jump from the conversation straight to the contact's full record.
 
-  
-
-
-
-The Messages screen has two main areas.
+The Messages screen has three main areas.
 
 <img
   src="/images/messages/overview.png"
-  alt="Messages inbox with conversation list on the left and SMS thread on the right"
+  alt="Messages inbox with conversation list on the left, SMS thread in the middle, and contact details on the right"
   className="rounded-lg border shadow-sm"
 />
 
 ### 📥 Inbox sidebar (left)
 
 The left side is the **inbox list**. It shows recent message threads, with the newest conversations near the top.
+
+The header shows **Inbox** and the current **thread count** — for example, *20 threads*.
 
 Each conversation row can show:
 
@@ -51,22 +50,7 @@ At the top of the sidebar, you also have quick buttons for:
 - Switching between **light** and **dark** mode.
 - Going back to the **dashboard**.
 - Opening the **contacts** area.
-- **Starting a new conversation**.
-
-### 💬 Conversation panel (right)
-
-The right side shows the selected contact's conversation and activity.
-
-At the top, you see:
-
-- Contact **name**
-- **Phone number**
-- **Email address**, if available
-- Contact **tags**, if available
-- A **Contact** button to open the full contact record
-- Two tabs: **Messages** and **All activity**
-
-If no conversation is selected, the screen asks you to pick a conversation or start a new one.
+- **Composing** a new conversation with the **Compose** button.
 
 **🔍 Searching conversations**
 
@@ -83,18 +67,99 @@ Search updates automatically as you type. The inbox also refreshes in the backgr
 
 Press the shortcut to jump straight to the search box.
 
+### 💬 Conversation panel (middle)
+
+The middle area shows the selected contact's conversation and activity.
+
+At the top, you see:
+
+- Contact **name**
+- **Phone number**
+- A **Contact** button to open the full contact record
+- Two tabs: **Messages** and **All activity**
+
+
+### 👤 Contact sidebar (right)
+
+The right side is the **contact sidebar**. It shows details and settings for the currently selected contact. Each section can be expanded or collapsed.
+
+At the top of the sidebar you see the contact's **avatar**, **name**, and **phone number**. Use the **external link** icon to open the contact's full record in a separate view.
+
+<img
+  src="/images/messages/contact-functions.png"
+  alt="Messages contact sidebar with Contact Info, Dispositions, Tags, Notes, Appointments, Pipelines, SMS Setting, and DND Numbers"
+  className="rounded-lg border shadow-sm"
+/>
+
+**📋 Contact Info**
+
+Shows the core fields your company stores for this person — for example first name, last name, phone, email, and custom fields. Edit what you are allowed to change and click **Save Changes**. After a successful save, the name and phone shown in the conversation header update to match.
+
+**🏅 Dispositions**
+
+**Dispositions** are outcome labels your company defines — for example *Not Interested*, *Callback Needed*, or *Sold*. Pick the one that matches the latest interaction. Selections often save immediately when changed.
+
+**🔖 Tags**
+
+**Tags** act as flexible labels like *VIP* or *High Priority*. Add or remove tags with the multi-select control and click **Save Tags** so changes are stored.
+
+**🗒️ Notes**
+
+Notes are **internal** — they are not sent to the contact. View existing notes, add new ones, or edit notes that are already saved. After saving, the list refreshes with the newest notes first.
+
+**📅 Appointments**
+
+Shows appointments connected to this contact — for example date, time, calendar, duration, and status. Use **Add** to book new appointments when calendar integration is active.
+
+**🏗️ Pipelines**
+
+The **Pipelines** section links this contact to a **pipeline** and **stage** — for example New → Qualified → Won. Choose a pipeline, pick the right stage, and save.
+
+**📲 SMS Setting**
+
+SMS settings control which number you use when sending texts from Messages.
+
+- **From** — choose a **business number** that is registered and approved for outbound SMS.
+- **To** — shows the contact's phone number as read-only. If it is wrong, edit it under **Contact Info**, not here.
+
+**🚫 DND Numbers**
+
+**DND Numbers** (Do Not Disturb) settings let you respect contact preferences and regulations.
+
+- **DND all channels** — blocks all supported outbound channels for this contact.
+- Or choose specific channels: **Emails**, **Text messages**, **Calls & voicemails**.
+- **DND Inbound Calls and SMS** — an extra setting for how the system handles incoming calls and texts.
+
+Many DND options save as soon as you click them. If sending is blocked by DND, you see a warning until an allowed user changes those settings.
+
+**👤 Contact button**
+
+The **Contact** button in the conversation header also opens the selected contact's full record and timeline.
+
+Use it when you need deeper contact history or actions that are not available inside the Messages inbox.
+
+The Messages module is for **quick conversation handling and inline contact updates**. The full contact record is for **complete contact management**.
+
+**🌓 Theme toggle**
+
+The theme button lets you switch the inbox between **dark mode** and **light mode**.
+
+This affects the Messages screen display only. Use whichever view is easier for you to read.
+
+If no conversation is selected, the screen asks you to pick a conversation or start a new one.
+
 ## ✏️ How to start a new conversation
 
 You can begin a new conversation in one of two ways:
 
-1. Click the **pencil** icon at the top of the inbox list, **or**
+1. Click **Compose** at the top of the inbox list, **or**
 2. Use the keyboard shortcut: press **`N`**.
 
 This opens the **New conversation** popup. In the popup:
 
 1. Enter a contact name or phone number into the search field.
 2. Choose the correct contact from the search results.
-3. The conversation view appears on the right.
+3. The conversation view appears in the middle panel.
 4. Type your message and send.
 
 <img
@@ -102,8 +167,6 @@ This opens the **New conversation** popup. In the popup:
   alt="Screenshot of the new conversation popup with a contact search box"
   className="rounded-lg border shadow-sm"
 />
-
-
 
 **💬 Messages tab**
 
@@ -126,6 +189,11 @@ To send a message:
 2. Type your message in the message box at the bottom.
 3. Click **Send**, or press **`Enter`**.
 
+The message box also includes:
+
+- An **attachment** icon for adding files, when supported.
+- An **emoji** picker for inserting symbols into your message.
+
 **Typing shortcuts**
 
 | Action | Shortcut |
@@ -136,7 +204,6 @@ To send a message:
 The module sends SMS from your available **A2P-registered number**. If no registered sending number is available, the message cannot be sent until your account has a valid SMS number ready.
 
 While a message is being sent, the module may briefly show it in the conversation right away. If the send fails, you see an error message and the failed message is marked.
-
 
 ## 📋 All activity tab
 
@@ -160,25 +227,6 @@ This can include:
 - Workflow activity
 
 Use this tab when you need more context before replying. For example, you can check whether the contact recently received an email, completed a workflow step, had a call, or had a tag changed.
-
-**👤 Contact button**
-
-The **Contact** button opens the selected contact's full record and timeline.
-
-Use it when you need to:
-
-- View or edit more contact details.
-- See the complete contact profile.
-- Review deeper contact history.
-- Take actions that are not available inside the Messages inbox.
-
-The Messages module is for **quick conversation handling**. The full contact record is for **complete contact management**.
-
-**🌓 Theme toggle**
-
-The theme button lets you switch the inbox between **dark mode** and **light mode**.
-
-This affects the Messages screen display only. Use whichever view is easier for you to read.
 
 ## 📭 Empty states
 

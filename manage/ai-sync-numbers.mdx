@@ -3,202 +3,215 @@ title: "Phone Numbers"
 icon: "phone"
 ---
 
-This guide explains the **Phone Numbers** area in simple language, including list actions, filters, per-number actions, purchasing, editing, and bulk operations.
+The **Phone Numbers** page is where you view and manage the phone numbers connected to your workspace.
 
 <img
   src="/images/manage/ai-sync-number/overview.png"
-  alt="Phone Numbers main list"
+  alt="Phone Numbers page with action buttons, filters, and the phone number table"
   className="rounded-lg border shadow-sm"
 />
 
-The **Phone Numbers** page is where you see every number tied to your workspace, buy new ones, and control how each number is used for AI calls, dialer workflows, and messaging compliance.
+## ✨ What you can do
 
-You can also:
-
-- import external numbers,
-- link 10DLC campaigns,
-- configure endpoints for inbound messaging,
-- perform bulk updates across rows.
-
-Breadcrumb: `Users -> Phone Numbers`
-
-
-### 🏁 Actions at the Top
-
-- **Purchase:** Opens **Purchase Number** flow to search and buy one or many numbers.
-- **Import Twilio Numbers:** (If enabled) Lets you add your own Twilio numbers.
-- **Local Preference API:** Opens guidance for checking local presence (endpoint details shown).
+- View all phone numbers available to your workspace.
+- Purchase one or more new numbers.
+- Import numbers from a connected Twilio account, when enabled.
+- Import 10DLC campaigns from Twilio, when enabled.
+- Filter numbers by use, provider, type, or status.
+- Search, sort, paginate, and download the number list.
+- Edit a number or enable it for AI.
+- Configure endpoints, 10DLC, spam protection, or chatbot assignment when available.
+- Select multiple numbers and apply bulk actions.
 
 
-### 🔍 Filters, Search, and Export
-
-Filters can be combined. Editing any filter refreshes the table.
-
-| Control      | What it does                                                                      |
-| ------------ | --------------------------------------------------------------------------------- |
-| **Filter By** | All, Ai, Dialer, Both                                                           |
-| **Provider** | All, first carrier, Twilio, or V2                                                |
-| **Type**     | All, Local, Toll Free, Mobile                                                    |
-| **Status**   | All, Unverified, Verified                                                        |
-
-Other tools:
-
-- **Download:** Export current view to spreadsheet.
-- **Search:** Box for searching by title/number.
-- **Paging & Sort:** Set rows per page, change pages, sort by Purchased At (usually newest first).
+| Button | What it does |
+|--------|--------------|
+| **Purchase** | Opens the purchase flow for finding and buying new numbers |
+| **Import Twilio Numbers** | Shows numbers from your connected Twilio account that can be imported |
+| **Import 10DLC Campaigns** | Imports supported 10DLC campaign information from your connected Twilio account |
+| **Local Preference API** | Opens local-presence API guidance and endpoint information |
 
 
+#### 📥 Import Twilio numbers
 
-### 📑 Table Columns
+The **Import Twilio Numbers** button will only appear if you have connected your Twilio account in the workspace settings. If your Twilio account is not attached, this option will not be shown.
 
-| Column      | Meaning                                                           |
-| ----------- | ----------------------------------------------------------------- |
-| **Checkbox**    | Select rows for bulk actions; header selects all on page         |
-| **#**           | Row number in view                                              |
-| **Title**       | Optional number label                                           |
-| **Phone No.**   | Full number with country code                                  |
-| **AreaCode**    | Area or region code                                            |
-| **Provider**    | Carrier source                                                 |
-| **10DLC**       | Messaging registration (for US compliance)                     |
-| **Renwel At**   | Renewal date/time (shown as "Renwel At" in UI)                 |
-| **Status**      | Verified or Unverified                                         |
-| **Purchased At**| When number was added                                          |
-| **Action**      | `...` menu for actions                                         |
+Once your Twilio account is connected and the button appears, you can click **Import Twilio Numbers** to open a window displaying all phone numbers associated with your Twilio account.
+
+<img
+  src="/images/manage/ai-sync-number/Screenshot 2026-07-15 at 10.44.16 am.png"
+  alt="Import Twilio Numbers window with available phone numbers and Import buttons"
+  className="rounded-lg border shadow-sm"
+/>
+
+In this window, you can:
+
+- Use **Search numbers...** to find a specific number.
+- Change how many entries appear on each page.
+- Click **Import** next to the number you want to add.
+- Close the window without importing anything.
+
+After you import a number successfully, it will appear on the **Phone Numbers** page. Numbers already imported to your workspace will no longer show up in the import list.
+
+#### 📋 Import 10DLC campaigns
+
+The **Import 10DLC Campaigns** button will only appear if you already have at least one 10DLC campaign set up in your workspace settings. If there are no campaigns configured in your account, you will not see this option.
+
+Once you have a campaign and the button becomes available, clicking **Import 10DLC Campaigns** will show you a list of all 10DLC campaigns currently attached to your connected  account. 
+
+From this window, you can:
+
+1. View all available 10DLC campaigns linked to your account.
+2. Select the campaign(s) you wish to import.
+3. Complete the import; the campaign will appear in the platform.
+4. Use the available number actions to link or update 10DLC information as required.
+
+
+## 🔍 Filters, search, and export
+
+
+
+<img
+  src="/images/manage/ai-sync-number/overview.png"
+  alt="Phone Numbers page with action buttons, filters, and the phone number table"
+  className="rounded-lg border shadow-sm"
+/>
+
+
+Filters can be combined. Changing a filter refreshes the table.
+
+| Control | What it does |
+|---------|--------------|
+| **Filter By** | Shows All, AI, Dialer, or Both |
+| **Provider** | Filters numbers by their carrier or provider |
+| **Type** | Shows All, Local, Toll Free, or Mobile numbers |
+| **Status** | Shows All, Unverified, or Verified numbers |
+
+Other tools include:
+
+- **Download** — exports the current list.
+- **Search** — searches the visible number records.
+- **Show entries** — changes how many rows appear on each page.
+- **Sorting** — click supported column headings to change the order.
+- **Pagination** — moves between pages when the list contains more rows.
+
+## 📑 Table columns
+
+
+
+| Column | What it shows |
+|--------|---------------|
+| **Checkbox** | Selects the row for bulk actions; the header checkbox selects all visible rows |
+| **#** | Row number in the current view |
+| **Action** | Opens the actions available for the number |
+| **Title** | Optional internal label |
+| **Phone No.** | Full phone number with country code |
+| **AreaCode** | Area or region code |
+| **Provider** | Carrier or provider for the number |
+| **10DLC** | Messaging campaign or registration information |
+| **Renewal At** | Renewal date or availability of renewal information |
+| **Status** | Verified or Unverified |
+| **Purchased At** | Date and time the number was added |
+
+## ☝️ Single-number actions
+
+Click the **Action** button on a row to open its menu. Available actions depend on the number's provider, status, and enabled workspace features.
 
 <img
   src="/images/manage/ai-sync-number/actions1.png"
-  alt="Phone number row actions menu"
+  alt="Import Twilio Numbers window with available phone numbers and Import buttons"
   className="rounded-lg border shadow-sm"
 />
 
+| Action | What it does |
+|--------|--------------|
+| **Spam Protect** | Enables spam-protection monitoring when supported |
+| **Edit** | Changes the title, status, 10DLC setting, or intended use |
+| **Activate for AI** | Enables supported AI calling and routing features |
+| **Delete** | Removes or releases the number after confirmation |
+| **Endpoints** | Shows inbound API endpoint and integration details |
+| **10DLC** | Assigns or updates a messaging campaign |
+| **Assign Chatbot** | Connects an available chatbot to messages received by the number |
 
-### ☝️ Single-Number Actions (`...` menu)
+Once a chatbot is assigned, it can respond to supported incoming messages and continue conversations with contacts using that number.
 
-When you click the `...` menu on a number row, you'll see several possible actions, depending on the provider and state of the number:
+## ⚡ Activate numbers for AI
 
-- **Spam Protect:** Enable spam protection for the number.
-- **Edit:** Change the title, status, 10DLC registration, or use-case for the number.
-- **Activate for AI:** Enable AI features for calling and routing with this number (option might disappear after activation).
-- **Delete:** Permanently remove the number, with provider-side cleanup if supported (confirmation required).
-- **Endpoints:** View inbound API endpoint and integration details.
-- **10DLC:** Assign or update a messaging campaign if not already set.
+**Activate one number**
 
-<img
-  src="/images/manage/ai-sync-number/assign-chatbot.png"
-  alt="Assign Chatbot to Number – agent selection popup"
-  className="rounded-lg border shadow-sm"
-/>
-
-- **Assign Chatbot:**  
-  As shown above, this lets you assign an AI (chatbot) to the number from a list of available agents. Once assigned, this AI agent will automatically respond to chat messages sent to the number and continue conversations with contacts. Use this option to connect a specific chatbot to handle communications for that number.
-
----
-
-### ⚡ How to Quickly Activate for AI
-
-**To activate AI for a single number:**
-
-1. Navigate to **Users → Phone Numbers**.
-2. Click the `...` menu for the relevant number.
+1. Open **Users → Phone Numbers**.
+2. Open the relevant number's **Action** menu.
 3. Select **Activate for AI**.
-4. Confirm the action and then look for a success message.
+4. Confirm the action.
+5. Wait for the success message.
 
-**To activate AI for multiple numbers:**
+The option may disappear after the number has been activated.
+
+**Activate multiple numbers**
 
 1. Select the numbers you want using the checkboxes.
-2. Click on the **Bulk Action** bar.
+2. Open the **Bulk Action** bar.
 3. Choose **Activate For AI**.
-4. Confirm your choice.
+4. Confirm the action.
 
-After activation, numbers are enabled for AI calls and logic. If required credentials or setup are missing, the system will display an error message.
+If required provider credentials or workspace settings are missing, the platform displays an error message.
 
----
-
-### 🛒 Purchasing a Phone Number
-
-<img
-  src="/images/manage/ai-sync-number/purchase.png"
-  alt="Purchase search results table"
-  className="rounded-lg border shadow-sm"
-/>
+## 🛒 Purchase phone numbers
 
 Click the **Purchase** button to start the buying process.
 
-<img
-  src="/images/manage/ai-sync-number/new-purchase.png"
-  alt="Purchase Number form"
-  className="rounded-lg border shadow-sm"
-/>
+To find a number:
 
-Follow these steps:
+1. Choose a **Provider**.
+2. Select a **Country**.
+3. Choose a number **Type** — Local, Toll Free, or Mobile.
+4. Choose how to search — for example AreaCode, Region, or City.
+5. Enter a search value.
+6. Click **Search**.
 
-1. **Provider:** Choose the carrier (first carrier, Twilio, or V2).
-2. **Countries:** Select the country (USA/Canada).
-3. **Type:** Pick the number type—Local, Toll Free, or Mobile.
-4. **Search By:** Filter by AreaCode, Region, or City.
-5. Enter a value and click **Search**.
+Search results can include:
 
-Your search results will display a table like this:
+| Column | What it shows |
+|--------|---------------|
+| **Friendly Name** | Provider-supplied label |
+| **Phone #** | Available phone number |
+| **Locality** | Geographic information, when available |
+| **Capabilities** | Whether the number supports Voice, SMS, or MMS |
+| **Checkbox** | Selects the number for a multi-number purchase |
+| **Action** | Purchases one number directly |
 
-| Column           | Description                                 |
-| ---------------- | ------------------------------------------- |
-| **#**            | Row/order number                            |
-| **Friendly Name**| Provider-supplied label                     |
-| **Phone #**      | The available number                        |
-| **Locality**     | Geographic information (if shown)           |
-| **Capabilities** | Whether the number supports Voice/SMS/MMS   |
-| **Checkbox**     | Select for multi-buy                        |
-| **Action**       | **Purchase** (to buy instantly)             |
+You can purchase one number from its action button or select multiple numbers and confirm a bulk purchase. Billing and provider setup may be required.
 
-You can:
+## ✏️ Edit a number
 
-- **Purchase** a single number by clicking its action button.
-- **Buy Multiple** numbers at once by selecting checkboxes and confirming.
+Open **Action → Edit** on a row.
 
-If any required details are missing, you'll see a prompt before purchase completes. Billing and provider setup may also be required before buying.
+| Field | What it controls |
+|-------|------------------|
+| **Title** | Internal label for the number |
+| **Status** | Verified or Unverified |
+| **10DLC Enable** | Whether 10DLC features are enabled |
+| **Use For** | AI, Dialer, or Both |
 
+Click **Submit** to save your changes.
 
-### ✏️ Edit a Number
+## 📦 Bulk actions
 
-Open `...` → **Edit** on a row to update:
-
-| Field           | Meaning                                  |
-| --------------- | ---------------------------------------- |
-| **Title**       | Internal label                           |
-| **Status**      | Verified / Unverified                    |
-| **10DLC Enable**| Yes/No for 10DLC features                |
-| **Use For**     | Both, Ai, or Dialer                      |
-
-Click **Submit** to save.
-
-### 📦 Bulk Actions
-
-Select rows with checkboxes to see bulk action bar.
+Select one or more rows to show the bulk action controls.
 
 <img
   src="/images/manage/ai-sync-number/bulk-action.png"
-  alt="Bulk actions on phone numbers list"
+  alt="Import Twilio Numbers window with available phone numbers and Import buttons"
   className="rounded-lg border shadow-sm"
 />
 
-Bulk actions:
+Available actions can include:
 
-- **Verified / Unverified:** Change status.
-- **Spam Protect:** Attempt bulk spam-protection.
-- **Activate For AI:** Activate AI where possible.
-- **Delete:** Remove selected numbers after prompt.
+- **Verified / Unverified** — changes the selected numbers' status.
+- **Spam Protect** — enables spam protection where supported.
+- **Activate For AI** — activates supported numbers for AI.
+- **Delete** — removes selected numbers after confirmation.
 
-Partial success is possible (system will report failures if some rows can't be processed).
+Some rows may succeed while others fail because providers and number states can differ. Review the result message after the action finishes.
 
-
-
-### 📝 10DLC & Routing Notes
-
-- **10DLC** mainly affects compliant US texting.
-- Voice-only can work without 10DLC.
-- SMS flows may route through other numbers if 10DLC isn't linked.
-
-Assign 10DLC campaigns using the row action in the table.
-
----
- 
+  
