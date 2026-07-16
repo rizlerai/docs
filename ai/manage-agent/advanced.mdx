@@ -365,14 +365,34 @@ Open each when you need that task—some panels are for administrators or techni
 
 ## ✉️ Sender Management
 
-**Purpose:** Manage **where** notifications about this agent can be sent (for example email or text), as rows in a table.
-
-**Add Sender** opens a short form. **Send To:** destination (email or phone, depending on your process). **Send Type:** **Email** or **SMS**. Saving adds a row; the table includes actions to manage existing entries.
-
-*Sender list and Add Sender:*
+**Purpose:** Choose **who receives notifications** about this agent — by email or SMS — and keep those destinations in one list.
 
 <img
   src="/images/ai/AI-agent/edit/advance/sender-managment.png"
-  alt="Sender management table"
+  alt="Sender Management table with Add Sender button"
   className="rounded-lg border shadow-sm my-4"
 />
+
+The table lists every sender destination configured for this agent:
+
+| Column | What it shows |
+|--------|---------------|
+| **ID** | Unique ID for the sender row |
+| **Send To** | Destination address — an email or phone number |
+| **Send Type** | How the notification is sent: **Email** or **SMS** |
+| **Action** | Manage or remove that sender |
+
+Use **Search** to find a destination quickly, and **Show entries** / pagination when the list grows.
+
+### ➕ Add a sender
+
+1. Click **+ Add Sender**.
+2. Enter **Send To** — the email address or phone number that should receive notifications.
+3. Choose **Send Type**:
+   - **Email** — notifications go to that email address.
+   - **SMS** — notifications go as a text message to that phone number.
+4. Save to add the row to the table.
+
+If no senders are configured yet, the table shows **No data available in table** until you add the first one.
+
+Use the row **Action** controls to update or remove an existing sender when your notification destinations change.
