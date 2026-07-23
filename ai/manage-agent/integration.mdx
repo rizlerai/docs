@@ -1,66 +1,62 @@
 ---
 title: "Integration"
-description: "Configure GHL (GoHighLevel) integration and post-call data sync for call analytics and CRM updates."
+description: "Set up GoHighLevel (GHL) integration to automatically sync call data, recordings, and outcomes with your CRM."
 icon: "link"
 ---
 
-# 🔗 GHL Integration & Post-Call Analysis
+# 🔗 Integrating with GoHighLevel (GHL)
 
-Easily connect your AI agent with GoHighLevel (GHL) to automate the flow of call records, insights, and tags into your CRM.
+Seamlessly connect your AI agent to GoHighLevel to automate CRM updates with call recordings, transcriptions, analytics, and tags—no manual data entry required.
 
-![Integration](/images/ai/AI-agent/edit/integration/overview.png)
+![Integration Overview](/images/ai/AI-agent/edit/integration/overview.png)
 
-## 📤 Recording & Transcription
+## 📤 Recording & Transcription Sync
 
-- **Send Recording to GHL**  
-  Enable or disable automatic transmission of call recordings to GHL.
-- **Send Transcription to GHL**  
-  Toggle sending AI-generated call transcriptions to GHL.
-- **Send User Sentiment to GHL**  
-  Allow GHL to receive AI-assigned sentiment (positive, negative, neutral) for each call.
-- **Send Call Summary to GHL**  
-  Automatically push concise call summaries to GHL custom fields.
+Configure which call details are sent to GHL:
 
-*Set up custom fields within your GoHighLevel account (e.g., "Call Recording URL", "Call Transcription", "User Sentiment", "Call Summary"). In your integration dashboard, simply map which AI data field syncs to which GHL custom field—your data will flow automatically!*
+- **Recording Upload**  
+  Automatically send call recordings to GHL, or toggle off if not needed.
+- **Transcription Upload**  
+  Choose whether AI-generated call transcripts should be added to GHL.
+- **User Sentiment Sharing**  
+  Send AI-scored sentiment (positive, neutral, negative) for each call.
+- **Call Summary Sync**  
+  Populate GHL custom fields with concise summaries of each call.
 
-![Integration](/images/ai/AI-agent/edit/integration/image1.png)
+*First, create custom fields in GoHighLevel for details like "Recording URL," "AI Transcription," "Sentiment," and "Summary." In the integration dashboard, map each AI data point to your chosen GHL field. Once mapped, data flows automatically.*
 
-## ⏱️ Call Data
+![Recording and Transcription Integration](/images/ai/AI-agent/edit/integration/image1.png)
 
-- **Send Call Duration to GHL**  
-  Track and send call duration to a dedicated custom field for analytics and billing.
-- **Call Direction**  
-  Automatically record whether a call was inbound or outbound for every contact.
+## ⏱️ Call Analytics & Data Points
 
-*For each data point, create the custom field (e.g., "Call Duration") in GHL, then link your agent's analytics in the integration settings.*
+Send key analytics to GHL:
 
-![Integration](/images/ai/AI-agent/edit/integration/image2.png)
+- **Call Duration**  
+  Automatically log call duration for tracking or billing.
+- **Call Direction (Inbound/Outbound)**  
+  Record whether each call was incoming or outgoing.
 
-## 🏷️ Call Status Tags in GHL
+*For every metric, add matching custom fields in GHL (e.g., "Call Duration"), then connect your agent’s analytics to these fields within the integration settings.*
 
-Automatically tag each contact in your GHL account based on the outcome of the call:
+![Call Data Integration](/images/ai/AI-agent/edit/integration/image2.png)
 
-- **Tag on Answered**  
-  Applies a tag like "Answered" to contacts/leads when a call is answered.
-- **Tag on No Answered**  
-  Applies a tag like "No Answered" if the call was not picked up.  
-- **Tag on Busy**  
-  Tags with "Busy" if the line was engaged.
-- **Tag on Inactivity**  
-  Marks contacts with an "Inactivity" tag if no engagement is detected on the call.
-- **Tag on Appointment**  
-  Tags contacts/leads as "Appointment Set" when an appointment is booked.
-- **Tag on Call Transfer**  
-  Tags contacts/leads when a call transfer occurs.
-- **Tag on Voicemail**  
-  Assigns a "Voicemail" tag if the call goes to voicemail.
-- **Tag on Call Direction**  
-  Tags contacts/leads with the direction of the call (Inbound/Outbound).
-- **Tag on User Hang Up**  
-  Tags contacts when the user hangs up the call.
-- **Tag on Failed Outbound Call**  
-  Tags contacts/leads when an outbound call attempt fails.
+## 🏷️ GHL Call Outcome Tags
 
-> **Note:** Tags help you filter, track, and automate follow-ups directly inside your GHL CRM. Tagging works instantly—no manual setup required.
+Let your AI agent tag contacts/leads in GHL based on call results:
 
-![Integration](/images/ai/AI-agent/edit/integration/image3.png)
+- **Answered**
+- **No Answer**  
+- **Busy**
+- **Inactivity**
+- **Appointment Set**
+- **Call Transfer**
+- **Voicemail**
+- **Call Direction (Inbound/Outbound)**
+- **User Hung Up**
+- **Failed Outbound Call**
+
+For each outcome, the relevant tag is automatically applied—helping you filter, track, and automate next actions in GHL.
+
+> **Tip:** Tags appear immediately in your GHL CRM for rapid sorting, follow-up automation, and reporting—no extra setup needed.
+
+![Call Outcome Tags Integration](/images/ai/AI-agent/edit/integration/image3.png)
