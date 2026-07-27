@@ -220,9 +220,9 @@ Charts in this section use your **selected date range** and **agent**.
 />
 
 
-## 📆 Appointment Details panel
+## 📆 Appointment Details Panel
 
-Opens when you **click the Appointments** summary card.
+This panel appears when you **click on the Appointments** summary card.
 
 <img
   src="/images/ai/dashboard/appointment1.png"
@@ -230,17 +230,17 @@ Opens when you **click the Appointments** summary card.
   className="rounded-lg border shadow-sm"
 />
 
-- Shows the **company** name and total **appointment** count at the top.
-- Table columns typically include:
-  - **Call Date** — when the call happened
-  - **Agent** — which AI agent handled it
-  - **From / To** — calling and called numbers
+- Displays the **company name** and the total number of **appointments** at the top.
+- The table usually includes these columns:
+  - **Call Date** — date and time of the call
+  - **Agent** — AI agent managing the call
+  - **From / To** — caller and recipient numbers
   - **Duration** — call length
-  - **Appointment** — booked appointment time
-  - **Status** — whether the call was marked successful
-  - **Sentiment** — sentiment label
-  - **Recording** — audio player if a recording exists
-  - **Actions** — **Details** to open full call information
+  - **Appointment** — scheduled appointment time
+  - **Status** — was the call successful
+  - **Sentiment** — detected sentiment
+  - **Recording** — audio player if there’s a recording
+  - **Actions** — **Details** option for more information
 
 <img
   src="/images/ai/dashboard/appointment2.png"
@@ -248,11 +248,13 @@ Opens when you **click the Appointments** summary card.
   className="rounded-lg border shadow-sm"
 />
 
-Use **Close** to dismiss the panel. An error message may appear if data cannot be loaded.
+Use the **Close** button to exit the panel. If there is an issue loading data, an error message will be shown.
 
-## 📞 Call Details panel
+---
 
-Opens when you choose **Details** on a call row.
+## 📞 Call Details Panel
+
+This panel opens when you select **Details** on a call entry.
 
 <img
   src="/images/dashboard/analytics/call-details.png"
@@ -260,17 +262,18 @@ Opens when you choose **Details** on a call row.
   className="rounded-lg border shadow-sm"
 />
 
-- Date and time, **Agent**, **Duration**, **Direction** (inbound, outbound, or web).
-- **From** and **To** numbers.
-- **Appointment** — scheduled time, or not specified.
-- **Call Analysis**: whether the call was successful, user sentiment, and **Hangup reason** (why the call ended).
-- **Recording** may appear with playback controls if available.
-- If present, **Summary** and **Transcription** appear in separate sections; if not stored for that call, those sections stay hidden.
+- Displays: date and time, **Agent**, **Duration**, and **Direction** (inbound, outbound, or web).
+- **From** and **To** phone numbers.
+- **Appointment** field—shows time if booked, or “not specified.”
+- **Call Analysis** section: indicates success, user sentiment, and **Hangup reason**.
+- **Recording** is available with playback controls if there’s an audio file.
+- If a **Summary** or **Transcription** exists, these appear in their own sections; otherwise, they are hidden.
 
+---
 
-## 🔀 Transfer Details panel
+## 🔀 Transfer Details Panel
 
-Used for a detailed list of **transfer** calls when opened from the workflow that uses it.
+This panel offers an in-depth view of all **transferred** calls within the relevant workflow.
 
 <img
   src="/images/dashboard/analytics/transfer-call-details.png"
@@ -278,7 +281,7 @@ Used for a detailed list of **transfer** calls when opened from the workflow tha
   className="rounded-lg border shadow-sm"
 />
 
-- Shows the **Agent** name and total **transfer** count at the top.
-- Table: **Call Date**, **Agent**, **From**, **To**, **Duration**, **Status**, **Direction**, **Sentiment**, **Recording**, **Actions** (Details).
+- Shows the **Agent**’s name and total number of **transfers** at the top.
+- The table lists: **Call Date**, **Agent**, **From**, **To**, **Duration**, **Status**, **Direction**, **Sentiment**, **Recording**, and **Actions** (Details).
 
-Table features often include search, sort, pagination, and a choice of how many rows to show per page.
+The table often provides features such as searching, sorting, pagination, and the ability to select how many rows are displayed per page.
