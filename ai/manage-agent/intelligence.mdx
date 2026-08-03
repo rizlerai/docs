@@ -43,11 +43,11 @@ If the list is empty, your team needs to create knowledge bases elsewhere in the
 ## 💬 Conversation Settings
 
 **Purpose**  
-Fine-tune how the agent behaves during live conversation: how fast it responds after someone stops talking, and how easily the caller can interrupt or cut in.
+Adjust the agent’s behavior in live conversation—specifically, how quickly it responds after the caller finishes speaking and how sensitive it is to being interrupted.
 
-The small **?** next to the section title shows a tooltip with extra context when you hover.
+A small **?** icon beside the section heading provides additional tooltips when you hover.
 
-**Responsiveness** controls **how soon** the agent starts speaking after the caller finishes a sentence. Use the slider from low to high; the number next to it shows the current level (two decimal places). When you **release** the slider after moving it, the value saves automatically—there is no separate Save button for this control.
+**Responsiveness** sets how fast the agent replies following a pause from the caller. Use the slider to adjust; the adjacent number (rounded to two decimals) shows the current setting. The value saves as soon as you release the slider—no Save button is needed.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/responsiveness.png"
@@ -55,7 +55,7 @@ The small **?** next to the section title shows a tooltip with extra context whe
   className="rounded-lg border shadow-sm"
 />
 
-**Interruption Sensitivity** controls how **sensitive** the agent is when the caller speaks over the agent or jumps in—how strongly the agent reacts to being interrupted. Same kind of slider and on-screen value; saving happens when you **release** the slider after adjusting.
+**Interruption Sensitivity** adjusts how easily the agent picks up on being interrupted by the caller. This uses a similar slider and live value readout. As with the previous control, releasing the slider updates the value right away.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/intruption.png"
@@ -63,24 +63,25 @@ The small **?** next to the section title shows a tooltip with extra context whe
   className="rounded-lg border shadow-sm"
 />
 
-**Note:** The tooltip may mention other topics (such as ambient sound). In this section, only **Responsiveness** and **Interruption Sensitivity** are configured. Other audio options may live on other tabs.
+**Note:** The tooltip may reference other features such as ambient noise handling, but only Responsiveness and Interruption Sensitivity are managed here. Other audio settings may be found in different tabs.
 
 ## 🗣️ Pronunciation Dictionary
 
 **Purpose**  
-Teach the agent to pronounce **names, brands, or technical terms** the way you want, instead of guessing wrong.
+Ensure the agent pronounces names, brands, or technical terms correctly by specifying custom pronunciations.
 
-**The list** — Each row is **one word** (or entry). **Edit (pencil)** opens the form with that entry filled in; **Delete (trash)** removes it after you confirm.
+**List Interface:**  
+Each entry in the list covers a single word or phrase. Use the **Edit** (pencil) button to change an entry, or **Delete** (trash) to remove it (with confirmation).
 
-Click **Add Pronunciation** to open the form:
+To add a new pronunciation, click **Add Pronunciation**. The form includes:
 
-| Field | Meaning |
-|--------|---------|
-| **Words** | The word or phrase the agent should say correctly |
-| **Pronunciation** | Choose **IPA** or **CMU** (two standard ways to write sounds) |
-| **Phoneme** | Type the pronunciation using the system you chose |
+| Field             | Description                                                 |
+|-------------------|-------------------------------------------------------------|
+| **Words**         | The word or phrase the agent will say                       |
+| **Pronunciation** | Select either **IPA** or **CMU**—speech sound notations     |
+| **Phoneme**       | Enter the pronunciation in the selected sound system        |
 
-Use **Save** in the form to add or update, or **Cancel** to close without saving. Editing loads the current values from your agent’s saved settings.
+Click **Save** to add or update an entry, or **Cancel** to exit without changes. When editing, the form will populate with the selected entry’s current details.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/pronunciation-dictionary.png"
@@ -92,14 +93,14 @@ Use **Save** in the form to add or update, or **Cancel** to close without saving
 ## ⏰ Reminder Settings
 
 **Purpose**  
-Control how the agent sends **reminder messages** during a call when needed—for example, if the caller goes quiet for too long.
+Configure how the agent issues reminders during a call, for example if silence from the caller exceeds a threshold.
 
-**Fields**
+**Fields:**
 
-- The **first number** with **“Second”** — how many **seconds** to wait before a reminder can be triggered (the gap between reminders).  
-- The **second number** with **“Time”** — the **maximum number of times** a reminder can be sent (count limit).
+- **Seconds:** Sets the minimum time before a reminder is triggered (i.e., time gap between reminders).
+- **Times:** Defines the maximum number of reminders the agent can send per call.
 
-Use the small **Save** button (disk icon) on the right after entering both values. Both numbers must be **greater than zero**; otherwise you will see a message asking for valid numbers.
+Click the **Save** button (disk icon) after entering both numbers. Both must be greater than zero—otherwise, a validation message will appear.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/reminder-settings.png"
@@ -112,7 +113,7 @@ Use the small **Save** button (disk icon) on the right after entering both value
 ## ⚡ AutoRizz
 
 **Purpose**  
-Lets the agent use short **natural acknowledgements** during a conversation—similar to “yeah,” “uh-huh,” or “hmm” so the call feels more human.
+Allows the agent to naturally insert short acknowledgement phrases (like “yeah,” “uh-huh,” or “hmm”) during calls to sound more conversational.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/auto-sync.png"
@@ -120,9 +121,10 @@ Lets the agent use short **natural acknowledgements** during a conversation—si
   className="rounded-lg border shadow-sm"
 />
 
-**Main switch** — **On** shows **Frequency** and **Words List** below; **Off** hides those options and turns off this behaviour.
+**Main Toggle:**  
+Switching AutoRizz **On** reveals the Frequency slider and the Words List box; switching **Off** hides these and disables the feature.
 
-**Frequency** controls **how often** those acknowledgements appear (slider low to high, with a number badge). The value is usually applied when you **release** the mouse after dragging.
+**Frequency** adjusts how often the agent uses acknowledgements (slider, with a live value badge). The updated value is stored when the slider is released.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/auto-sync-toggle.png"
@@ -130,18 +132,16 @@ Lets the agent use short **natural acknowledgements** during a conversation—si
   className="rounded-lg border shadow-sm"
 />
 
-**Words List** is a large box: **one word or short phrase per line**—the phrases the agent may use. Click the **Save** button after editing; until you save, new lines are not applied. You must keep **at least one** non-empty line, or you will see an error.
+**Words List** consists of a text box, with each line representing a word or short phrase the agent can use. Make your changes, then click **Save**—unsaved changes do not apply. At least one line must contain content, otherwise an error is shown.
 
-When you open the page, values may refresh from the agent’s current saved settings so the screen matches what is stored.
-
-
+The list and frequency reload automatically to reflect the agent’s most recently stored settings.
 
 ## ✨ Smooth Talk
 
 **Purpose**  
-When **on**, the agent converts **numbers, money amounts, and dates** into more **natural spoken form** for read-aloud quality.
+When enabled, Smooth Talk makes the agent read out numbers, currencies, and dates in a more natural, conversational way.
 
-Only an **On / Off** switch; changing it applies immediately. The card body below the header is intentionally empty—no extra fields.
+There is just a simple On/Off switch; toggling it takes effect immediately. No extra configuration fields appear in this section.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/smooth-talk.png"
@@ -153,9 +153,9 @@ Only an **On / Off** switch; changing it applies immediately. The card body belo
 ## 🔤 Boosted Keywords
 
 **Purpose**  
-Give a **custom list of important words** (names, brands, industry terms) so the agent is more likely to recognize and say them correctly.
+Provide a custom list of high-priority words—such as important names or industry-specific terms—to improve the agent’s recognition and pronunciation.
 
-Type **one keyword per line** in the text area, then click the **Save** button (icon) at the bottom corner. You must enter **at least one** keyword, or saving will show an error.
+Enter one keyword per line in the input area. Click the **Save** icon below to apply your list. At least one keyword is required, or you’ll see a validation error.
 
 <img
   src="/images/ai/AI-agent/edit/intelligence/boosted-keywords.png"
