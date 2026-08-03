@@ -1,0 +1,121 @@
+---
+title: "MCP"
+icon: "robot"
+---
+
+**MCP** connects your AI assistant (**Claude**, **Codex**, or **Grok**) directly to **AI Sync**.
+
+After a one-time setup, you can work with your AI Sync project by giving normal instructions to your agent — create agents, manage numbers, check calls, and more — **without opening or login to your project**.
+
+<img
+  src="/images/mcp/claude.png"
+  alt="Connect to AI Sync MCP window"
+  className="rounded-lg border shadow-sm"
+/>
+
+## 🎯 Why use MCP?
+
+Without MCP, you open the AI Sync Dashboard and click through screens to do work.
+
+With MCP, you stay in your AI client and type what you need. Your agent talks to AI Sync for you.
+
+| Without MCP | With MCP |
+|-------------|----------|
+| Open the Dashboard | Stay in Claude, Codex, or Grok |
+| Click through menus and forms | Give a plain-language command |
+| Switch between tools | Keep working in one place |
+
+**Examples of what you can ask after connecting:**
+
+- “List my AI agents”
+- “Create a new outbound agent for lead follow-up”
+- “Show recent call history”
+- “Which phone numbers are available?”
+
+You describe the task. Your agent uses AI Sync through MCP.
+
+## 🧭 One-time setup
+
+Do this once per client. After that, you only give commands.
+
+1. Open **MCP** (Connect to AI Sync MCP).
+2. Pick your client: **Claude**, **Codex**, or **Grok**.
+3. Click **Copy** and run the command in your terminal.
+4. Approve access in your browser when asked.
+
+<Note>
+Setup is only for connecting the client. Day-to-day use is just talking to your agent.
+</Note>
+
+## 🟣 Claude
+
+1. Select the **Claude** tab.
+2. Run these commands:
+
+```bash
+claude mcp add --transport http ai-sync https://mcp.aisync.link/mcp-oauth
+claude mcp login ai-sync
+```
+
+3. The second command opens your browser — log in and approve the connection.
+
+<img
+  src="/images/mcp/claude.png"
+  alt="Claude MCP setup commands"
+  className="rounded-lg border shadow-sm"
+/>
+
+## 🟦 Codex
+
+1. Select the **Codex** tab.
+2. Run this command:
+
+```bash
+codex mcp add ai-sync --url https://mcp.aisync.link/mcp-oauth
+```
+
+3. Codex opens your browser the first time it needs to authorize.
+
+<img
+  src="/images/mcp/codex.png"
+  alt="Codex MCP setup command"
+  className="rounded-lg border shadow-sm"
+/>
+
+## 🟨 Grok
+
+1. Select the **Grok** tab.
+2. Run this command:
+
+```bash
+grok mcp add --transport http ai-sync https://mcp.aisync.link/mcp-oauth
+```
+
+3. Grok opens your browser the first time it needs to authorize.
+
+<img
+  src="/images/mcp/grok.png"
+  alt="Grok MCP setup command"
+  className="rounded-lg border shadow-sm"
+/>
+
+## ✅ How to use it every day
+
+After setup:
+
+1. Open Claude, Codex, or Grok as usual.
+2. Ask for what you need in plain language.
+3. Your agent uses AI Sync MCP in the background.
+4. You do **not** need to open the Dashboard for those tasks.
+
+You only return to **MCP** if you need to reconnect, switch clients, or set up a new machine.
+
+## 🛠️ If something goes wrong
+
+| Problem | What to try |
+|---------|-------------|
+| Command not found | Install the Claude, Codex, or Grok CLI first |
+| Browser does not open | Re-run the connect/login command for your client |
+| Agent cannot reach AI Sync | Open **MCP**, copy the command again, and reconnect |
+| Wrong client | Use the matching tab before copying the command |
+

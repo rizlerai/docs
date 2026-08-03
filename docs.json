@@ -19,7 +19,8 @@
             "icon": "rocket",
             "pages": [
               "index",
-              "demo"
+              "demo",
+              "mcp"
             ]
           },
           {
