@@ -14,31 +14,31 @@ icon: "credit-card"
 />
 
 
-## 📝 Fields and controls (top row)
+## 📝 Top Row: Main Settings
 
- **🏷️ Nickname (Optional)**
+**🏷️ Nickname (Required)**
 
-- This is a **short label** you can give the number so you recognize it later (for example a team or campaign name).
-- **Important:** The label says “Optional,” but **when you press Purchase Number**, the system **requires a nickname**. If you leave it blank, you may see a message asking you to **enter a nickname** before the purchase can finish.
-
+- Give your new number a short, meaningful label (like a team, use case, or campaign name). 
+- **Note:** The field appears as "Optional," but you **must** enter a nickname to complete a purchase. If left empty, the system will ask you to supply one before you can proceed.
 
 **🤖 Inbound Agent**
 
-- Chooses which **AI agent** should handle **calls coming in** to this number.
-- The list shows **agent names** from your company. You can **search inside the list** by typing (the box behaves like a searchable list, not only a plain scroll).
-- You can also **clear** your choice using the clear option on the control, if your setup allows it.
+- Select the AI agent that should handle **incoming calls** to this number.
+- You can pick from any agent available in your organization. The selection box supports typing to search.
+- Clearing your selection is available if your configuration allows it.
 
 **🚀 Outbound Agent**
 
-- Chooses which **AI agent** should be used for **outgoing** use associated with this number, according to how your account is set up.
-- Same kind of **searchable list** as Inbound Agent, with the same agents available.
+- Choose the AI agent to be associated with **outgoing use** from this number.
+- Works just like the Inbound Agent field—same options and searchable list.
 
-**Together:** Inbound and Outbound define **who answers incoming calls** and **which agent profile applies for outbound** behavior for this number after it is purchased and linked.
+**Quick Tip:** Inbound Agent determines who answers calls to this number; Outbound Agent sets the agent identity for outbound actions.
 
+---
 
-## 🔍 Fields and controls (search row)
+## 🔍 Search Row: Finding Available Numbers
 
-These fields control **where and how** the system looks for **available** numbers **before** you buy. They do **not** complete the purchase by themselves—you still use **Search**, then **Purchase Number**.
+This section lets you set filters to search for phone numbers before you purchase one. Use these controls, click **Search**, and then select from the list.
 
 <img
   src="/images/ai/purchase-number/search.png"
@@ -48,36 +48,35 @@ These fields control **where and how** the system looks for **available** number
 
 **🛰️ Provider**
 
-- Picks **which phone service connection** to use when **searching** and **buying**:
-  - **Twilio** — one option.
-  - The **second option** uses your product’s **branded name** (it is the **AI Sync** option in the system).
+- Choose which phone service to use:
+  - **Twilio**
+  - **AI Sync** (your product’s branded provider)
 
-**🌐 Countries**
+**🌐 Country**
 
-- Limits the search to numbers in:
-  - **USA**, or
+- Restrict your search to either:
+  - **USA**
   - **Canada**
-- Pick the country where you want the number to be located.
 
 **🔠 Search By**
 
-- Tells the system **how to interpret** what you type in the next box:
-  - **AreaCode** — search by dialing area (for example a three-digit area code where that applies).
-  - **Region** — search by region.
-  - **City** — search by city name or label, depending on what the service supports.
+- Decide how your search input should be interpreted:
+  - **AreaCode** (e.g. 415)
+  - **Region**
+  - **City** (name or label, as available)
 
-**📝 AreaCode / Region / City (single text box)**
+**📝 Search Value**
 
-- This is the **actual search text** (code, region, or city) matching the option you chose under **Search By**.
-- It works together with **Countries** and **Provider** to narrow the list.
+- Enter the code, region, or city that matches what you wish to search for, based on your selection in “Search By.”
+- This input, along with country and provider, determines what numbers are shown.
 
-**🔎 Search (button)**
+**🔎 Search Button**
 
-- **You must type something** in the AreaCode/Region/City box before Search does anything useful.
-- If that box is **empty**, the page shows a short message asking you to **fill the fields** (meaning: enter a search value).
-- If you did enter a value, the page first shows a **“please wait”** style message while the lookup runs.
-- When the lookup **succeeds**, a **table** fills with rows of numbers.
-- When it **fails**, a **message** appears explaining the problem (for example, nothing found, or your account is not set up for that provider).
+- You **must** enter something in the Search Value box for Search to work.
+    - If empty: You’ll see a prompt asking you to provide a value.
+    - If filled: You’ll see a loading message while numbers are fetched.
+    - On success: The results table will show available numbers.
+    - On failure: A message will explain the error (nothing found, setup issues, etc.).
 
 
 ## 📋 The results table
