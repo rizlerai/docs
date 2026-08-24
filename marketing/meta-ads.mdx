@@ -1,0 +1,219 @@
+---
+title: "Meta Ads"
+description: "Connect Facebook, manage ads, view analytics, and send Lead Forms into PowerLists."
+icon: "facebook"
+---
+
+**Meta Ads** lets you connect Facebook, manage campaigns and ads, check performance, and send Lead Form submissions into AI Sync as contacts.
+
+<Note>
+Open from **Marketing → Meta Ads**, or **Settings → Integrations → Facebook Lead Ads** → **Manage**.
+</Note>
+
+## ✨ What you can do
+
+- Connect Facebook and sync ad accounts, Pages, and Lead Forms
+- Pause or activate **campaigns** and **ads**
+- Review **spend, clicks, leads**, and cost per lead
+- Turn on lead delivery and send forms into **PowerLists**
+
+## 📑 Tabs at a glance
+
+| Tab | Use it to… |
+|-----|------------|
+| **Overview** | See connected account, businesses, and ad accounts |
+| **Ad Accounts** | Pick which ad account to work on |
+| **Campaigns** | Create, pause, or activate campaigns |
+| **Ads** | Manage individual ads and creatives |
+| **Analytics** | View spend and results by date range |
+| **Pages & Lead Forms** | Turn leads on, assign PowerLists, map fields |
+
+---
+
+## 🔌 Connect Facebook
+
+<Steps>
+  <Step title="Connect">
+    Go to **Marketing → Meta Ads** (or [Integrations](/settings/social-sign-in-integration)) → **Connect Facebook** → sign in and approve permissions.
+  </Step>
+  <Step title="Sync">
+    Click **Sync Assets** to pull ad accounts, Pages, and Lead Forms.
+  </Step>
+  <Step title="Select account">
+    Choose an **Ad Account** from the top dropdown.
+  </Step>
+  <Step title="Turn on leads">
+    Open **Pages & Lead Forms** → turn **Leads On** for your Page.
+  </Step>
+</Steps>
+
+<Tip>
+Use a Facebook login with admin access to your Pages and ad accounts. A personal login without business access may show an empty page.
+</Tip>
+
+### 🛠️ Top bar buttons
+
+| Button | When to use |
+|--------|-------------|
+| **Ad Account** | Switch which account you are managing |
+| **Sync Assets** | Refresh data after changes in Facebook |
+| **Reconnect** | Fix expired permissions |
+| **Disconnect** | Unlink Facebook from this workspace |
+
+---
+
+## 📝 Overview
+
+Quick snapshot of your Meta connection — not for editing ads.
+
+<img
+  src="/images/marketing/meta-ads/overview.png"
+  alt="Meta Ads Overview tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+**You will see:**
+
+- **Connected Account** — Facebook name and token expiry
+- **Businesses / Ad Accounts / Pages** — summary counts
+- Tables listing businesses and ad accounts with status and currency
+
+Numbers look wrong? Click **Sync Assets**.
+
+---
+
+## 💼 Ad Accounts
+
+Pick the ad account for campaigns, ads, and analytics.
+
+<img
+  src="/images/marketing/meta-ads/ad-accounts.png"
+  alt="Meta Ads Ad Accounts tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Name** | Ad account name |
+| **Account ID** | Meta account ID |
+| **Status** | Active, Disabled, etc. |
+| **Currency / Timezone** | Billing and reporting settings |
+
+- Click **Manage** to use an account
+- **Selected** means it is active in the header dropdown
+- Click **Refresh from Facebook** to update the list
+
+---
+
+## 📣 Campaigns
+
+Create and control campaigns for the selected ad account.
+
+| Column | Meaning |
+|--------|---------|
+| **Campaign** | Name and Facebook ID |
+| **Objective** | Leads, Traffic, Sales, etc. |
+| **Status** | Your switch — Active or Paused |
+| **Effective Status** | What Facebook is actually doing |
+| **Actions** | Rename, Pause, or Activate |
+
+**Create a campaign**
+
+1. Select ad account → **Create Campaign**
+2. Enter name and choose objective
+3. Click **Create Campaign**
+
+<Warning>
+New campaigns start **Paused**. Nothing spends until you click **Activate**.
+</Warning>
+
+- Click the **arrow** on a row to expand and view **Ad Sets**
+- **Pause** = stop spend fast | **Activate** = confirm to start delivery
+
+---
+
+## 🖼️ Ads
+
+Manage individual ads. Filter by campaign or ad set.
+
+<img
+  src="/images/marketing/meta-ads/ads.png"
+  alt="Meta Ads Ads tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Creative** | Ad image thumbnail |
+| **Ad** | Ad name and ID |
+| **Campaign / Ad Set** | Parent campaign and ad set |
+| **Status** | Active or Paused (your switch) |
+| **Effective Status** | Real delivery state (e.g. `CAMPAIGN_PAUSED`) |
+| **Actions** | Edit, Pause, or Activate |
+
+**Create an ad**
+
+1. **Create Ad** → enter name
+2. Pick **Campaign** → **Ad Set** → **Creative** (must exist in Facebook first)
+3. Click **Create Ad**
+
+<Warning>
+New ads start **Paused**. Creatives are built in Facebook Ads Manager — AI Sync reuses them, it does not design them.
+</Warning>
+
+---
+
+## 📊 Analytics
+
+Performance for the selected ad account and date range.
+
+<img
+  src="/images/marketing/meta-ads/analytics.png"
+  alt="Meta Ads Analytics tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+**Filter:** Pick **Date Range** (or custom From/To) → click **Apply**
+
+**Summary cards:** Spend · Impressions · Reach · Clicks · CTR · CPC · Leads · Cost / Lead
+
+**By Campaign table:** Same metrics broken down per campaign.
+
+<Tip>
+Use **PowerLists** to see leads that actually arrived in AI Sync. Analytics shows what Facebook reported — they can differ.
+</Tip>
+
+---
+
+## 📄 Pages & Lead Forms
+
+Turn Facebook form fills into contacts you can call or text.
+
+<img
+  src="/images/marketing/meta-ads/pages-lead-forms.png"
+  alt="Meta Ads Pages and Lead Forms tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Page** | Facebook Page name and ID |
+| **Status** | **Leads On** or **Off** |
+| **Forms** | Number of Lead Forms — click to open |
+
+**For each form:**
+
+1. Turn **Leads On** for the Page
+2. Click **Forms** → assign a **PowerList**
+3. Click **Map Fields** → match Facebook questions to contact fields → **Save Mapping**
+
+| Facebook question | Map to |
+|-------------------|--------|
+| Full name | Name fields |
+| Phone | Phone |
+| Email | Email |
+| City / State / Zip | Address fields |
+
+<Warning>
+Leads need all four: **Leads On** + **PowerList** + **field mapping** + Facebook connected. Map phone and email for follow-up to work.
+</Warning>

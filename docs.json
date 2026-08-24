@@ -178,6 +178,13 @@
             ]
           },
           {
+            "group": "Marketing",
+            "icon": "bullhorn",
+            "pages": [
+              "marketing/meta-ads"
+            ]
+          },
+          {
             "group": "Setup",
             "icon": "wrench",
             "pages": [
