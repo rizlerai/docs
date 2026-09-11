@@ -1,0 +1,262 @@
+---
+title: "Google Ads"
+description: "Connect Google Ads, manage campaigns and ads, view analytics, and send Lead Forms into PowerLists."
+icon: "google"
+---
+
+**Google Ads** lets you connect a Google Ads login, manage campaigns and ads, check performance, and send Lead Form submissions into AI Sync as contacts.
+
+<Note>
+Open from **Marketing → Google Ads**, or **Settings → Integrations → Google Ads** → **Manage**.
+
+This is **not** the same as Google Sign-In or Google Calendar. Connect Google Ads separately.
+</Note>
+
+## ✨ What you can do
+
+- Connect Google Ads and sync ad accounts and Lead Forms
+- Create a paused Search campaign, then **Pause** or **Resume** campaigns and ads
+- Review **spend, impressions, clicks, leads**, and cost per lead
+- Turn on lead delivery and send forms into **PowerLists**
+
+## 📑 Tabs at a glance
+
+| Tab | Use it to… |
+|-----|------------|
+| **Overview** | See connected account, ad accounts, and Lead Forms |
+| **Ad Accounts** | Pick which ad account to work on |
+| **Campaigns** | Create paused campaigns; pause or resume |
+| **Ads** | Pause or resume individual ads |
+| **Analytics** | View last-7-day results by campaign |
+| **Lead Forms** | Webhook URL, Leads On, PowerList, map fields |
+
+---
+
+## 🔌 Connect Google Ads
+
+<Steps>
+  <Step title="Connect">
+    Go to **Marketing → Google Ads** (or **Settings → Integrations**) → **Connect Google Ads** → sign in and approve access.
+  </Step>
+  <Step title="Sync">
+    Click **Sync Assets** so account names and Lead Forms fill in.
+  </Step>
+  <Step title="Select account">
+    Choose an **Ad account** from the top dropdown.
+  </Step>
+  <Step title="Set up leads">
+    Open **Lead Forms** → paste the **Webhook URL** in Google Ads → turn **Leads On** → **Map Fields**.
+  </Step>
+</Steps>
+
+<Tip>
+Use a Google login with access to the Ads accounts you manage. A personal Gmail without Ads access may show an empty page.
+</Tip>
+
+### 🛠️ Top bar buttons
+
+| Button | When to use |
+|--------|-------------|
+| **Ad account** | Switch which account you are managing |
+| **Sync Assets** | Refresh accounts and forms from Google |
+| **Reconnect** | Fix expired permissions |
+| **Disconnect** | Unlink Google Ads from this workspace |
+
+---
+
+## 📝 Overview
+
+Quick snapshot of your Google Ads connection — not for editing ads.
+
+<img
+  src="/images/marketing/google-ads/overview.png"
+  alt="Google Ads Overview tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+**You will see:**
+
+- **Connected Account** — Google name on this connection
+- **Ad Accounts** — how many accounts were found
+- **Lead Forms** — how many forms were found
+- **Leads On** — how many forms deliver into AI Sync
+
+Numbers look wrong? Click **Sync Assets**.
+
+---
+
+## 💼 Ad Accounts
+
+Pick the ad account for campaigns, ads, and analytics.
+
+<img
+  src="/images/marketing/google-ads/ad-accounts.png"
+  alt="Google Ads Ad Accounts tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Name** | Ad account name |
+| **ID** | Google Ads account ID |
+| **Status** | Enabled, etc. |
+| **Currency / Timezone** | Billing and reporting settings |
+
+- Select the account in the top **Ad account** dropdown
+- Click **Refresh** (or **Sync Assets**) to update the list
+- Names still look like numbers? Click **Sync Assets** once
+
+<Note>
+You do not create ad accounts in AI Sync. Create them in Google Ads.
+</Note>
+
+---
+
+## 📣 Campaigns
+
+Create and control campaigns for the selected ad account.
+
+<img
+  src="/images/marketing/google-ads/campaigns.png"
+  alt="Google Ads Campaigns tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Name** | Campaign name |
+| **ID** | Google campaign ID |
+| **Channel** | Type (for example Search) |
+| **Status** | Active or Paused |
+| **Actions** | Pause or Resume |
+
+**Create a campaign**
+
+1. Select ad account
+2. Type a **Campaign name**
+3. Click **Create paused**
+
+<Warning>
+New campaigns start **Paused**. Nothing spends until you click **Resume**.
+
+This creates a paused **Search** campaign with a starter budget. Finish keywords, ads, and locations in Google Ads.
+</Warning>
+
+- **Pause** = stop spend fast
+- **Resume** = may start delivery if ads, budget, and billing are ready
+
+---
+
+## 🖼️ Ads
+
+Pause or resume individual ads for the selected ad account.
+
+<img
+  src="/images/marketing/google-ads/ads.png"
+  alt="Google Ads Ads tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Name** | Ad name |
+| **ID** | Google ad ID |
+| **Campaign** | Parent campaign |
+| **Status** | Active or Paused |
+| **Actions** | Pause or Resume |
+
+You can pause a single ad without pausing the whole campaign.
+
+<Note>
+You do **not** create ads here. Build creatives in Google Ads, then pause or resume them on this tab.
+</Note>
+
+---
+
+## 📊 Analytics
+
+Performance for the selected ad account over the **last 7 days**.
+
+<img
+  src="/images/marketing/google-ads/analytics.png"
+  alt="Google Ads Analytics tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Campaign** | Campaign name |
+| **Spend** | Amount spent |
+| **Impr.** | Impressions |
+| **Clicks** | Clicks |
+| **Leads** | Conversions Google reported |
+| **CPL** | Cost per lead (when Google reported at least one lead) |
+
+Currency follows the selected ad account.
+
+<Warning>
+Metrics cannot be requested for a **manager (MCC)** account. Select a client ad account under the manager to load Analytics.
+</Warning>
+
+<Tip>
+Use **PowerLists** for leads that actually arrived in AI Sync. Analytics shows what Google reported — they can differ.
+</Tip>
+
+---
+
+## 📄 Lead Forms
+
+Turn Google form fills into contacts you can call or text.
+
+<img
+  src="/images/marketing/google-ads/lead-forms.png"
+  alt="Google Ads Lead Forms tab"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Column | Meaning |
+|--------|---------|
+| **Form** | Lead Form name |
+| **Customer** | Related Google Ads customer / account |
+| **Leads** | Lead delivery status |
+| **PowerList** | Where new contacts are stored |
+
+**Empty list?** Click **Sync Assets**. Create the form in Google Ads first if it still does not appear.
+
+### 🔗 Webhook URL
+
+The yellow box shows your **Webhook URL**. AI Sync does **not** attach it for you.
+
+1. Copy the **Webhook URL** from this tab
+2. Open that Lead Form in **Google Ads**
+3. Paste the URL into the form’s webhook / lead delivery setting
+4. Enter the **webhook key** your AI Sync admin provided
+
+Do this on **each** form you care about.
+
+### ✅ Turn leads on
+
+| Status | Meaning |
+|--------|---------|
+| **Leads On** | AI Sync should accept leads from that form (after the URL is pasted in Google Ads) |
+| **Leads Off** | New leads from that form will not be stored here |
+
+If no PowerList is assigned, contacts go to the company **Default** PowerList.
+
+### 🗺️ Map Fields
+
+1. Click **Map Fields** on the form
+2. Match each Google question to an AI Sync contact field
+3. Choose **skip** for questions you do not want imported
+4. Click **Save mapping**
+
+| Google question | Map to |
+|-----------------|--------|
+| Name / first / last | Name fields |
+| Phone | Phone |
+| Email | Email |
+| City / State / Zip | Address fields |
+
+<Warning>
+Leads need: **Sync Assets** + **Webhook URL pasted in Google Ads** + **Leads On** + **field mapping**. Map phone and email for follow-up to work.
+</Warning>

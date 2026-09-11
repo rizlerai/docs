@@ -181,7 +181,8 @@
             "group": "Marketing",
             "icon": "bullhorn",
             "pages": [
-              "marketing/meta-ads"
+              "marketing/meta-ads",
+              "marketing/google-ads"
             ]
           },
           {
