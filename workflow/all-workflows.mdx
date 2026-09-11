@@ -252,37 +252,55 @@ Triggers start the workflow. Actions run after a trigger fires. Use the **+** co
 
 ### ⚡ Available Triggers
 
-Drag a **Trigger** block from the left sidebar onto the canvas, then choose a **Trigger Event** from the dropdown in the right panel.
+Drag a **Trigger** block from the left sidebar (**TRIGGERS → Trigger**) onto the canvas. Click it to open **CONFIGURE trigger** in the right panel, then choose a **Trigger Event**.
 
-Common trigger events include:
 
-| Trigger | When it runs |
-|---------|--------------|
-| **Contact Created** | A new contact is added to RizzDial |
-| **Contact Changed** | An existing contact's details are updated |
-| **Contact Tag Added / Removed** | A tag is added to or removed from a contact |
-| **Disposition Change** | A call disposition is set or updated |
-| **Note Added** | A note is added to a contact |
-| **Pipeline Stage Change** | A contact is moved to a different pipeline stage |
-| **Appointment Status** | An appointment status changes (for example booked, confirmed, or missed) |
-| **Customer Booked Appointment** | A contact books an appointment through your calendar or booking flow |
-| **Incoming SMS** | A contact sends an inbound SMS to your number |
-| **Dialer Call Details** | A dialer call ends or reaches a specific call outcome |
-| **AI Call Details** | An AI call ends or reaches a specific call outcome |
 
-You can add **filters** on any trigger to narrow when the workflow should run — for example, only when a contact is created in a specific PowerList or when a tag equals **Hot Lead**.
+**Configure fields**
 
-### ⚡ Configure a Trigger or Action
+| Field | What it does |
+|-------|--------------|
+| **Label** | Name shown on the canvas block (for example, Contact Created) |
+| **Trigger Event** | The event that starts the workflow |
+| **Filters** | Optional conditions — Select Field, operator (Equals), and Value. Click **+ Add Filter** to add more |
 
-Click any block on the canvas to open its settings in the right panel.
+Filters are saved on the trigger and matched by the workflow engine before the workflow runs.
+
+**Trigger events**
+
+Open the **Trigger Event** dropdown to pick from these groups:
 
 <img
-  src="/images/workflow/workflow-builder-config.png"
-  alt="Workflow Builder with Contact Created trigger selected and configuration panel open"
+  src="/images/workflow/trigger-events.png"
+  alt="Trigger Event dropdown showing Contacts, Messaging, AI, Appointments, Pipeline, and Facebook options"
   className="rounded-lg border shadow-sm"
 />
 
-From here you can update the label, choose the trigger event, add filters, and configure action-specific options.
+| Group | Trigger | When it runs |
+|-------|---------|--------------|
+| **Contacts** | **Contact created** | A new contact is added |
+| | **Contact changed** | An existing contact's details are updated |
+| | **Contact tag added** | A tag is added to a contact |
+| | **Contact tag removed** | A tag is removed from a contact |
+| | **Note added** | A note is added to a contact |
+| | **Disposition changed** | A call disposition is set or updated |
+| | **DND changed** | Do Not Disturb status for a contact is changed |
+| **Messaging** | **New Message** | A new message is received or created |
+| | **Customer replied** | A contact replies to a message |
+| | **Dialer call details** | A dialer call ends or reaches a specific call outcome |
+| **AI** | **AI call details** | An AI call ends or reaches a specific call outcome |
+| | **AI appointment failed** | An AI appointment booking attempt fails |
+| **Appointments** | **Appointment booked** | An appointment is booked |
+| **Pipeline** | **Pipeline stage changed** | A contact is moved to a different pipeline stage |
+| **Facebook** | **Facebook lead form submitted** | A Facebook Lead Form submission arrives |
+
+<Tip>
+Use filters to narrow when the workflow runs — for example, only when a contact is created in a specific PowerList or when a field equals a value.
+</Tip>
+
+### ⚡ Configure a Trigger or Action
+
+Click any block on the canvas to open its settings in the right panel. Update the label, choose the trigger event, add filters, or configure action-specific options.
 
 ### ⚙️ Workflow Settings
 
