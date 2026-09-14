@@ -1,69 +1,174 @@
 ---
 title: "Endpoint"
-
-description: "Configure and manage detailed endpoint settings for AI agent integrations and webhook communications."
+description: "Use an agent’s unique call URL for outbound dials or inbound SIP connections from your website, form, or CRM."
 icon: "globe"
 ---
 
-## 📝 Basic Endpoint Information
-- **Title** - Agent identifier associated with the endpoint (e.g., n60hIfrJ8r)
-- **URL** - Complete webhook URL for API communications
-  
-- **Method** - HTTP POST method for API calls
-- **Back Button** - Return to agent listing without saving changes
+**Endpoints** is the API reference for an agent’s unique call URL. Send a **POST** with JSON to start a call from your website, form, or CRM.
 
-![](/images/ai/AI-agent/endpoint/image1.png)
+| Mode | What happens |
+|------|----------------|
+| **Outbound** | AI Sync places the call. The person’s phone rings. |
+| **Inbound** | AI Sync does **not** ring the phone. It returns a SIP address (`dialSip`) so your phone system can connect the caller to the agent. |
 
-## 🛠️ Dynamic Field Management
+<Note>
+Open from **AI → AI Agents** → agent **Actions → Endpoints**.
+</Note>
 
-**📖 Overview**
-Dynamic Field Management allows companies to customize and configure data fields according to their specific business requirements. This flexible system enables organizations to collect relevant customer information that aligns with their CRM structure and business processes.
+## ✨ What you can do
 
-### 📋 Form Data
+- Copy the agent’s unique **POST** URL
+- Send **outbound** or **inbound** calls with the same URL
+- Pass contact fields (name, email, and more) with the call
+- Copy request examples in PHP, JavaScript, cURL, or Python
 
-- **phone_number** – Customer phone number
-- **email** – Customer email address
-- **first_name** – Customer's first name
-- **last_name** – Customer's last name
-- **email_Address** – Alternate email address
-- **address** – Street address
-- **city** – City name
-- **zip_code** – Postal/ZIP code
-- **country** – Country information
-- **phone_number1** – Additional/alternative phone number
-- **audiencecalbid** – Audience Calendar ID
-- **new_user_field** – Custom user-provided field
-- **wayan_cf** – Wayan custom field (purpose defined by workflow)
-- **ghl_contact_id** – GoHighLevel contact ID
-- **override_agent_id** – Override default agent ID
-- **local_presence_number** – Yes/No.
+## 📑 What you see on the page
 
->
-### 📞 **How local presence number selection works:**
-> When **local_presence_number** is enabled (Yes):
-> - The system tries to auto-pick a number matching the recipient's area code for local presence effect.
-> - The number must belong to the same company as the AI agent.
-> - Only numbers with a **Spam Status** of `Clean` are eligible.
-> - The number must not have reached its daily outbound call limit (**calls_per_number**). By default, this is 50 calls per day, but each company can configure this limit in their AI settings profile.
-> - The system counts today's outbound calls for each number (`ai_call_histories` where `direction = "outbound"` and `created_at` is today) and only considers numbers still below the limit.
->
-> If a qualifying number is found, it dynamically overrides the default `from_number` for this call. If no such number is available, the agent's default caller ID is used.
+The page has two tabs: **Outbound** and **Inbound**. Switching tabs updates the hint, sample body, and response. The URL stays the same.
 
-![](/images/ai/AI-agent/endpoint/image2.png)
+| Area | What it shows |
+|------|---------------|
+| **POST URL** | Agent’s unique webhook URL — use **Copy URL** |
+| **Body · application/json** | Fields you can send (required marked) |
+| **Request example** | Ready-made snippets by language |
+| **Response** | Sample replies for 201, 400, 403, 404, 422 |
 
-## ⚡ Quick Actions
+<Warning>
+This URL belongs only to this agent. Do not share it publicly. Always copy it from this page.
+</Warning>
 
-<CardGroup cols={2}>
-  <Card title="View Endpoint Details" icon="eye">
-    Access complete endpoint configuration and URL parameters
-  </Card>
-  <Card title="Test Endpoint" icon="play">
-    Validate endpoint functionality with test data submissions
-  </Card>
-  <Card title="Monitor Activity" icon="chart-line">
-    Track endpoint usage and response performance
-  </Card>
-  <Card title="Update Configuration" icon="gear">
-    Modify endpoint settings and form data parameters
-  </Card>
-</CardGroup> 
+---
+
+## 📋 Fields you can send
+
+Same body shape on both tabs. Extra contact fields are passed through so the agent can use them on the call.
+
+| Field | Required | Notes |
+|-------|----------|--------|
+| `phone_number` | Yes | E.164 format, starting with `+` (for example `+12137771235`) |
+| `call_mode` | For inbound, yes | `outbound` (default if omitted) or `inbound` |
+| `override_agent_id` | No | Use a different agent for this call only |
+| `ghl_contact_id` | No | Attach a CRM contact to the call |
+| `local_presence_number` | No | `Yes` or `No` — if Yes, place the outbound call from a local presence number |
+| Other contact fields | No | Listed under **Optional contact fields** on the page |
+
+---
+
+## 📤 Outbound
+
+Use **Outbound** when you want the agent to dial someone.
+
+<img
+  src="/images/ai/agents/endpoint/outbound.png"
+  alt="Endpoint Details Outbound tab with POST URL, body fields, PHP example, and 201 response"
+  className="rounded-lg border shadow-sm"
+/>
+
+1. Open **Endpoints** and stay on the **Outbound** tab.
+2. Copy the URL, or copy a request example in your language.
+3. Send a **POST** with JSON.
+
+**Example body**
+
+```json
+{
+  "phone_number": "+12137771235",
+  "first_name": "John",
+  "last_name": "Doe",
+  "call_mode": "outbound"
+}
+```
+
+You can leave `call_mode` out. If it is missing, outbound is used.
+
+**Success (201)**
+
+```json
+{
+  "status": "success",
+  "msg": "successfully make a call.",
+  "call_id": "..."
+}
+```
+
+The person’s phone should ring. There is no `dialSip` on outbound.
+
+---
+
+## 📥 Inbound
+
+Use **Inbound** when the person already called you (or will be connected by your phone system).
+
+<img
+  src="/images/ai/agents/endpoint/inbound.png"
+  alt="Endpoint Details Inbound tab with call_mode inbound and dialSip in the 201 response"
+  className="rounded-lg border shadow-sm"
+/>
+
+1. Open **Endpoints** and switch to the **Inbound** tab.
+2. Copy the URL or the inbound example. The URL is the same — only the body changes.
+
+**Example body**
+
+```json
+{
+  "phone_number": "+12137771235",
+  "first_name": "John",
+  "last_name": "Doe",
+  "call_mode": "inbound"
+}
+```
+
+`call_mode` must be `inbound`.
+
+**Success (201)**
+
+```json
+{
+  "status": "success",
+  "msg": "successfully make a call.",
+  "call_id": "...",
+  "dialSip": "sip:...@..."
+}
+```
+
+This request does **not** ring a phone. That is expected.
+
+- `call_id` — id of the registered call
+- `dialSip` — address your phone system uses to connect the live caller to the agent
+
+---
+
+## 💻 Request examples
+
+Language tabs on the page:
+
+| Tab | What it is |
+|-----|------------|
+| **Php** | PHP snippet |
+| **JavaScript** | Browser / Node `fetch` snippet |
+| **cURL** | Command-line snippet |
+| **Python** | Python snippet |
+
+**Copy** copies the selected language. Replace the sample number and names before you run it. All examples send JSON with `Content-Type: application/json`.
+
+## 📨 Response codes
+
+| Code | Meaning |
+|------|---------|
+| **201** | Success. Outbound returns `call_id`. Inbound also returns `dialSip`. |
+| **400** | The request format is invalid. |
+| **403** | The agent is inactive, or the account cannot place the call (for example insufficient balance). |
+| **404** | The agent was not found, or no phone number is assigned. |
+| **422** | The call could not be created. |
+
+---
+
+## ✅ Before you send a request
+
+- The agent must be **Active**
+- A phone number must be assigned to the agent
+- Your account must have call balance
+- Use a real `phone_number` in `+` (E.164) format
+
+If something fails, the response includes `status: error` and a short message. Match it to the **403** / **404** / **422** samples on the page.
