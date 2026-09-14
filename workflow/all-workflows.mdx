@@ -236,7 +236,7 @@ When you click **Create Workflow**, a workflow name, or **Edit** from the action
 
 <img
   src="/images/workflow/workflow-builder.png"
-  alt="Workflow Builder canvas with trigger and action blocks, sidebar, and top toolbar"
+  alt="Workflow Builder with Contact Created trigger, left sidebar actions, and top toolbar including Test, History, and Enrollment history"
   className="rounded-lg border shadow-sm"
 />
 
@@ -248,13 +248,27 @@ The builder has three main areas:
 - **Center canvas** — visual grid where your workflow is built
 - **Right panel** — configure the selected trigger or action
 
+**Left sidebar groups**
+
+| Group | Blocks |
+|-------|--------|
+| **Triggers** | Trigger — start the workflow |
+| **Messaging** | Send SMS, Send Email, AI Call, Send Transcript |
+| **Calendar** | Book Appointment, Google Calendar Event |
+| **Logic** | Wait, If / Else |
+| **Contact** | Add / Remove Contact Tag, Add / Change / Remove Disposition |
+
 Triggers start the workflow. Actions run after a trigger fires. Use the **+** controls on the canvas to add more steps and connect them into a flow.
 
 ### ⚡ Available Triggers
 
 Drag a **Trigger** block from the left sidebar (**TRIGGERS → Trigger**) onto the canvas. Click it to open **CONFIGURE trigger** in the right panel, then choose a **Trigger Event**.
 
-
+<img
+  src="/images/workflow/available-triggers.png"
+  alt="Workflow Builder with Contact Created trigger selected and configure panel with Trigger Event and Filters"
+  className="rounded-lg border shadow-sm"
+/>
 
 **Configure fields**
 
@@ -321,6 +335,112 @@ Available settings include:
 
 Click **Save Settings** when you are done.
 
+### 🧪 Test, History, and Enrollment history
+
+These three buttons sit in the builder header next to Settings, Activate, and Save. They apply to **this workflow only** — open the workflow first.
+
+<img
+  src="/images/workflow/workflow-builder.png"
+  alt="Workflow Builder with Contact Created trigger, left sidebar actions, and top toolbar including Test, History, and Enrollment history"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Button | What it answers |
+|--------|-----------------|
+| **Test** | If this workflow ran for this contact right now, what would happen? |
+| **History** | What happened on the last few runs — did each step succeed or fail? |
+| **Enrollment history** | Who is in this workflow, why they entered, and where they are now? |
+
+- **Test** — practice run you start yourself
+- **History** — log of runs (tests and live)
+- **Enrollment history** — roster of contacts who entered this workflow
+
+Save the workflow first. Test stays unavailable while there are unsaved changes or the canvas is empty.
+
+#### ▶ Test
+
+Use **Test** to walk the path on the canvas without waiting for a real-life event.
+
+**What a test does**
+
+- Runs this workflow for a **contact you pick**
+- Steps light up on the canvas so you can see the path
+- **Wait** steps finish immediately (no real delay)
+- **SMS, email, and similar messages are not actually sent** — the test pretends they succeeded
+- After a test, **View Activity** opens that contact’s activity timeline
+
+A green “Test completed” message means the practice run finished — **not** that a text or email went out.
+
+**How to run a test**
+
+1. Add your trigger and actions on the canvas
+2. Click **Save**
+3. Click **▶ Test**
+4. Choose **Trigger to test** if there is more than one trigger
+5. For a call-details trigger, also choose a **Call status** (for example No-answer)
+6. Under **Phone / Contact**, search and select a contact (required)
+7. Click **▶ Run test**
+
+Watch the canvas. Then open **History** for step results, or **View Activity** for that contact.
+
+**If Test will not start**
+
+- Add at least one node to the canvas
+- Click **Save** if it is available
+- Select a contact in the Test window
+
+#### 📜 History
+
+**History** (panel title: **Execution history**) is the run log for this workflow. It shows the **last 50 runs**.
+
+Each row typically shows:
+
+- Contact name (or a run number)
+- Steps finished vs total
+- **FAILED** badge if any step failed
+- Phone, trigger, and how long ago it ran
+- Status icon: completed, failed, running, paused, or other
+
+Click a run to expand:
+
+- Trigger and overall status
+- Started and Completed times
+- Each step in order with completed / failed / running
+- Red **error message** if something failed
+- Short execution log in time order
+
+If the list is empty, run **▶ Test** to create the first row.
+
+Use History when a live SMS or email did not arrive — it shows whether the workflow ran and which step stopped.
+
+#### 👥 Enrollment history
+
+**Enrollment history** is the contact roster for this workflow (last **30 days**).
+
+| | Enrollment history | History |
+|--|--------------------|---------|
+| Focus | The **contact** in this workflow | One **run** and its steps |
+| Question | Who is enrolled, and where are they? | Did this run succeed? |
+| Remove | You can take a contact **out** if still in progress | View only |
+
+| Column | Meaning |
+|--------|---------|
+| **Contact** | Name and phone |
+| **Enrollment reason** | Why they entered (trigger or event) |
+| **Date enrolled** | When they entered |
+| **Current action** | Step they are on now (for example Wait, Send SMS) |
+| **Current status** | In progress, waiting, paused, completed, or failed |
+| **Next execution on** | When the next step is due — dash means nothing scheduled |
+| **Actions** | **Remove** if they can still be taken out |
+
+**Filters:** Start / End date · Event · Contact search · refresh · Previous / Next
+
+**Remove** appears only while the contact is still **in progress**. Confirm to stop them in this workflow — they are not deleted from your contacts list.
+
+<Warning>
+A successful **Test** does not send live SMS or email. Check **History** after a **live** trigger (workflow Active, real event) to confirm a real send.
+</Warning>
+
 ### ✨ Build with AI
 
 Click **Build with AI** in the builder to describe a workflow in plain language. The AI lays out triggers and actions on the canvas based on your prompt.
@@ -337,4 +457,12 @@ You can iterate by asking the AI to add or change steps — for example, *"add a
 
 Use **Save** in the builder toolbar to store your design. Use **Activate** to turn the workflow on once it is ready. Use **Back** to return to the **All Workflows** list.
 
-For past run history, see [Execution Logs](/workflow/execution-logs).
+| I want to… | Do this |
+|------------|---------|
+| Practice a run | **Save** → **▶ Test** → pick contact → **Run test** |
+| See step results | **History** → expand a run |
+| See who is enrolled | **Enrollment history** |
+| Stop a contact mid-flow | Enrollment history → **Remove** |
+| Turn the workflow on | **Activate** |
+
+For organization-wide past runs, see [Execution Logs](/workflow/execution-logs).
