@@ -1,0 +1,102 @@
+---
+title: "Go Live Overview"
+description: "Everything needed to take a client from signup to a working call centre, in the order it should be done."
+icon: 'map'
+---
+
+Feature documentation tells you what a screen does. This section tells you **what to do, in what order, and how to know it worked**.
+
+<Note>
+Written for our team taking a client live. Pages are ordered — work through them top to bottom rather than dipping in.
+</Note>
+
+---
+
+## 🧭 Start here
+
+<CardGroup cols={2}>
+<Card title="Take a Client Live" icon="rocket" href="/go-live/client-onboarding">
+The main runbook. Eight steps from connecting GoHighLevel to a proving call, with a check at every step.
+</Card>
+<Card title="Dispositions & Pipeline Mapping" icon="diagram-project" href="/go-live/dispositions-and-pipeline">
+The naming rule that decides whether leads move automatically. The most common silent failure in setup.
+</Card>
+<Card title="Inbound Calls & Texting" icon="phone-arrow-down-left" href="/go-live/inbound-and-texting">
+Where callbacks land, how an AI agent answers, and getting texting registered and routed.
+</Card>
+<Card title="Rep Guide" icon="headset" href="/go-live/rep-guide">
+One page to hand the client's reps before their first shift.
+</Card>
+<Card title="Troubleshooting" icon="wrench" href="/go-live/troubleshooting">
+Organised by what the customer says, because that is what arrives on a ticket.
+</Card>
+</CardGroup>
+
+---
+
+## ⏱️ How long it takes
+
+| Phase | Time | Can it run in parallel? |
+| --- | --- | --- |
+| Number registration (A2P 10DLC) | 1–3 business days | **Start this first** — everything else can happen while you wait |
+| GoHighLevel connection | 10 minutes | Yes |
+| Dispositions and pipeline | 20 minutes | Yes |
+| Lists and rep accounts | 15 minutes | Yes |
+| Inbound and texting setup | 20 minutes | Yes |
+| The proving call | 15 minutes | No — do it last |
+
+<Warning>
+**Number registration is the only thing that can delay a go-live date.** Start it the day the client signs, not the day before they want to dial.
+</Warning>
+
+---
+
+## ✅ Before you hand over
+
+Do not consider a client live until every one of these is true.
+
+<AccordionGroup>
+
+<Accordion title="A real call connected, both ways">
+You dialed a number you control from the client's list and it connected. An inbound call to their main number reached the intended destination.
+</Accordion>
+
+<Accordion title="A real appointment booked and confirmed">
+Booked from the call screen, showed **Confirmed by GoHighLevel**, and you verified it in GoHighLevel on the right calendar at the right time.
+</Accordion>
+
+<Accordion title="The booked lead moved and left the list">
+They are in the Appointment Set stage and are no longer eligible for redial.
+</Accordion>
+
+<Accordion title="A text sent and a reply came back">
+Sent from the dialer, arrived on a real phone, and your reply appeared against the right contact.
+</Accordion>
+
+<Accordion title="Every rep can log in and shows Ready">
+Own account each, correct role, headset tested.
+</Accordion>
+
+<Accordion title="They have the rep guide">
+And they understand the two things that matter: only **Confirmed** means an appointment exists, and leads in **Callbacks** are real people who picked up.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 🤝 What to tell the client on handover
+
+Three sentences that prevent most support tickets:
+
+<Steps>
+<Step title="Hard refresh at the start of each day">
+`Cmd/Ctrl + Shift + R`. Updates ship often and this puts them on the current version.
+</Step>
+<Step title="Only 'Confirmed by GoHighLevel' means an appointment exists">
+Anything else needs a human to check. Never rebook on a guess.
+</Step>
+<Step title="Callbacks are real pickups">
+A lead who answered while a rep was busy is waiting there. They must be called back.
+</Step>
+</Steps>

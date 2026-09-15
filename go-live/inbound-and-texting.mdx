@@ -1,0 +1,201 @@
+---
+title: "Inbound Calls & Texting"
+description: "Route incoming calls to a rep, an AI agent, or both, and set up SMS so replies reach the right person."
+icon: 'phone-arrow-down-left'
+---
+
+Outbound dialing is only half the job. When a lead calls back or replies to a text, it has to reach someone. This page covers both and links to the screen-by-screen detail.
+
+<Note>
+Set this up **before** the client's first dialing shift. Leads return calls within minutes of a voicemail, and an inbound call with nowhere to go is a lost deal.
+</Note>
+
+---
+
+## 📞 Inbound calls
+
+### Choose where calls land
+
+Each user sets their own inbound preference in **Profile → Personal Settings**.
+
+<CardGroup cols={2}>
+<Card title="Dialer" icon="phone">
+Rings inside the app. Best when reps are at their desks with the dialer open.
+</Card>
+<Card title="Phone" icon="mobile-screen">
+Forwards to their mobile. Best for owners and closers who are not always at a desk.
+</Card>
+<Card title="AI" icon="robot">
+An AI agent answers and handles the conversation. Best for after-hours and overflow.
+</Card>
+<Card title="Dialer + AI" icon="phone-arrow-up-right">
+Rings the rep first, falls back to the AI if nobody picks up. The usual choice for a staffed floor.
+</Card>
+</CardGroup>
+
+Full detail, including the AI fallback behaviour: [Incoming Call Routing](/dialer/incoming-call-routing).
+
+### Who the call is matched to
+
+Before the routing preference applies, AI Sync decides **whose** call it is, in this order:
+
+<Steps>
+<Step title="Recent outbound call">
+If a rep called that number recently, it goes back to them. This is what makes callbacks feel personal.
+</Step>
+<Step title="Assigned number">
+If the number dialed is assigned to a specific user, that user gets it.
+</Step>
+<Step title="Power List ownership">
+If the caller is on a list that a rep owns, it goes to that rep.
+</Step>
+<Step title="Company default">
+Otherwise it falls to the company's fallback user.
+</Step>
+</Steps>
+
+<Tip>
+**Set the company default deliberately.** It is the safety net for every unknown caller. Leaving it unset or pointing it at someone who has left is how inbound calls vanish.
+</Tip>
+
+### When the rep is already busy
+
+If a rep is on a call, or one is already ringing for them, a second incoming call is **not** put through to them. It continues down the routing chain instead — an AI agent if one is configured, then voicemail. The caller is never simply dropped.
+
+<Warning>
+**Tell reps this during handover.** They will see a call ring and then stop, and without the explanation it looks broken. It is the system protecting the conversation they are already having. Previously a second caller could take over a live call, leaving the rep talking to a different person mid-conversation.
+</Warning>
+
+This makes AI fallback and voicemail matter more, not less — they are what catches the overflow.
+
+### Setting up an AI agent to answer
+
+<Steps>
+<Step title="Build the agent">
+Voice, language, greeting and what it is allowed to do. See [AI Agents](/ai/agents/listing).
+</Step>
+<Step title="Give it a number">
+Assign an inbound number to the agent. See [AI Phone Numbers](/ai/phone-numbers).
+</Step>
+<Step title="Decide what it does with a live lead">
+Book straight into a calendar, or transfer to a human. See [Call Handling](/ai/manage-agent/call-handling).
+</Step>
+<Step title="Connect it to the client's data">
+So it knows who is calling and can write back what happened. See [Integration](/ai/manage-agent/integration).
+</Step>
+</Steps>
+
+<Warning>
+**Test with a real inbound call before the client relies on it.** Call the number from a phone that is not in the system and listen to the whole conversation, including what happens at the end. An AI agent that answers well but never books, transfers or records anything is worse than no agent, because everyone assumes it is working.
+</Warning>
+
+<Info>
+**Check:** call the client's main number from an unknown phone. It reaches the intended destination, and the call appears in history afterwards.
+</Info>
+
+---
+
+## 💬 Texting
+
+### Before any text can send
+
+<Steps>
+<Step title="Register for A2P 10DLC">
+Carriers filter or block unregistered business texting. Start this at the same time as buying numbers — approval takes days, not minutes.
+
+[Brand](/setup/10dlc/brand) → [Campaign](/setup/10dlc/campaign) → [Profile](/setup/10dlc/profile)
+</Step>
+<Step title="Confirm the number is SMS-capable">
+Not every number can text. Check before promising the client it can.
+</Step>
+</Steps>
+
+<Warning>
+Sending business texts on unregistered numbers gets messages silently dropped by carriers. The client sees "sent" and the customer receives nothing. Do not skip registration.
+</Warning>
+
+### Where replies go
+
+Inbound texts route by number. Set this so a reply reaches the rep who sent the original message rather than a shared inbox nobody watches.
+
+Full detail: [SMS Number Routing](/sms-routing-flow/sms-numbers-routings).
+
+### Templates
+
+Templates are what reps actually send, so write them with the client rather than for them.
+
+<CardGroup cols={2}>
+<Card title="Set them up" icon="message" href="/manage/sms-template">
+Reusable messages reps pick during or after a call.
+</Card>
+<Card title="Keep them short" icon="scissors">
+Two sentences. Long templates read as marketing and get ignored or reported.
+</Card>
+</CardGroup>
+
+<Steps>
+<Step title="Write the handful reps need daily">
+Missed call, appointment confirmation, follow-up after a good conversation.
+</Step>
+<Step title="Include an opt-out on the first message to a new contact">
+"Reply STOP to opt out." It is a compliance requirement, not a nicety.
+</Step>
+<Step title="Send one to yourself before handing over">
+Check it arrives, reads correctly on a phone, and that your reply comes back to the right place.
+</Step>
+</Steps>
+
+<Info>
+**Check:** text a phone you own from the dialer. It arrives, and your reply appears in the conversation view against the right contact.
+</Info>
+
+---
+
+## 🔁 Putting both together
+
+A working setup for a typical client:
+
+| Situation | Where it goes |
+| --- | --- |
+| Lead calls back during business hours | Dialer + AI — rep first, AI catches the overflow |
+| Lead calls back after hours | AI agent, books into the calendar |
+| Lead replies to a rep's text | Back to that rep's conversation |
+| Unknown number calls the main line | Company default user, then AI fallback |
+
+<Tip>
+Walk the client through this table in their own words during handover. "If someone calls you back at 9pm, here is exactly what happens" is the moment they understand what they bought.
+</Tip>
+
+---
+
+## If inbound is not working
+
+<AccordionGroup>
+
+<Accordion title="Inbound calls are not reaching anyone">
+Check the company default user is set and that the person is still active. This is the safety net for every unmatched caller.
+</Accordion>
+
+<Accordion title="Calls reach the wrong rep">
+Matching is by recent outbound call first. If a different rep called that lead more recently, they get it. Working as designed — assign the number directly to override.
+</Accordion>
+
+<Accordion title="A call rings for a second and then stops">
+That rep was already on a call or had one ringing. The caller was passed on to an AI agent or voicemail rather than interrupting the live conversation.
+
+Nothing to fix — this is intended. Make sure AI fallback and voicemail are actually configured, because that is where those callers land.
+</Accordion>
+
+<Accordion title="The AI agent answers but nothing is recorded">
+The agent has no integration configured, so it is having conversations that go nowhere. See [Integration](/ai/manage-agent/integration).
+</Accordion>
+
+<Accordion title="Texts say sent but never arrive">
+Almost always A2P 10DLC registration. Confirm brand and campaign are approved, not merely submitted.
+</Accordion>
+
+<Accordion title="Replies are not reaching the rep">
+SMS routing for that number points somewhere else. See [SMS Number Routing](/sms-routing-flow/sms-numbers-routings).
+</Accordion>
+
+</AccordionGroup>

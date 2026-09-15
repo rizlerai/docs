@@ -1,0 +1,198 @@
+---
+title: "Dispositions & Pipeline Mapping"
+description: "How call outcomes move leads through stages automatically, and the naming rule that makes it work."
+icon: 'diagram-project'
+---
+
+This is the part of setup that quietly fails. Everything looks configured, reps dial happily, and a week later the client asks why nothing is moving in their pipeline.
+
+The cause is almost always the same: **a disposition and a stage that do not share a name.**
+
+<Note>
+**The rule in one line:** when a rep saves a call, AI Sync looks for a pipeline stage whose name matches the disposition they chose. Match found, the lead moves. No match, the lead stays exactly where it was.
+</Note>
+
+---
+
+## 🧩 How the pieces connect
+
+<CardGroup cols={3}>
+<Card title="Disposition" icon="tag">
+What the **rep picks** at the end of a call. "Not Interested", "App Set", "Call Back".
+</Card>
+<Card title="Pipeline stage" icon="list-check">
+Where the **lead sits** in the sales process. "New Lead", "Contacted", "Appointment Set".
+</Card>
+<Card title="The link" icon="link">
+The **name**. Matching names move the lead automatically. Nothing else is required.
+</Card>
+</CardGroup>
+
+### What happens when a rep saves a call
+
+<Steps>
+<Step title="The rep picks a disposition and presses Save">
+Their notes, tags and callback time save with it.
+</Step>
+<Step title="AI Sync looks for a stage with that name">
+It searches the pipelines belonging to that company.
+</Step>
+<Step title="If exactly one stage matches, the lead moves">
+The move is recorded and visible immediately in the pipeline view.
+</Step>
+<Step title="If nothing matches, the lead stays put">
+The call still saves. Notes, disposition and recording are all kept. Only the stage move is skipped.
+</Step>
+</Steps>
+
+<Warning>
+**Two stages with the same name in different pipelines** is treated as ambiguous and nothing moves. This is deliberate — guessing which pipeline the client meant would put leads in the wrong place, which is worse than leaving them alone.
+</Warning>
+
+---
+
+## ✍️ Setting up dispositions
+
+Build the disposition list first. The pipeline is shaped to match it, not the other way round.
+
+<Steps>
+<Step title="Write down how the client already describes call outcomes">
+Use their words. If they say "DQ" rather than "Not Qualified", call it DQ. Reps pick the right option faster when it sounds like how they talk.
+</Step>
+<Step title="Keep the list short">
+Six to ten is healthy. A rep scanning twenty options mid-call picks whatever is nearest, and your reporting becomes fiction.
+</Step>
+<Step title="Set exactly one Didn't Answer default">
+One disposition is wired to the **Didn't Answer** button. It is also what feeds voicemail detection learning, so it must be set.
+</Step>
+<Step title="Include one appointment outcome">
+"App Set", "Appointment Set", whatever they call it. This is the one that matters most for reporting.
+</Step>
+</Steps>
+
+Full screen reference: [Dispositions](/manage/disposition).
+
+---
+
+## 🗂️ Setting up the pipeline
+
+<Steps>
+<Step title="Create the stages in the order a lead actually travels">
+Left to right should read like the real sales process.
+</Step>
+<Step title="Name the outcome stages exactly like the dispositions">
+This is the whole mechanism. "App Set" the disposition needs "App Set" the stage.
+</Step>
+<Step title="Confirm the Appointment Set stage">
+Every pipeline has one. Check it exists and sits where the client expects it.
+</Step>
+</Steps>
+
+Full screen reference: [Pipelines](/pipeline/pipeline).
+
+---
+
+## ✅ A mapping that works
+
+Here is a setup where every meaningful outcome moves the lead.
+
+| Rep picks (disposition) | Lead lands in (stage) | Moves? |
+| --- | --- | --- |
+| App Set | **App Set** | ✅ Yes |
+| Not Interested | **Not Interested** | ✅ Yes |
+| Wrong Number | **Wrong Number** | ✅ Yes |
+| Follow Up | **Follow Up** | ✅ Yes |
+| Didn't Answer / Call Again | *(no stage — deliberate)* | ⬜ Stays put |
+
+<Tip>
+**"Didn't Answer" should not have a stage.** A lead who did not pick up has not progressed, and moving them would make the pipeline meaningless. Leave them where they are so they stay in the calling rotation.
+</Tip>
+
+### A mapping that silently fails
+
+| Rep picks | Stage that exists | Result |
+| --- | --- | --- |
+| App Set | Appointment Set | ❌ Names differ — no move |
+| Not Interested | Closed Lost | ❌ Names differ — no move |
+| Booked | Appointment Set | ❌ Names differ — no move |
+
+Every one of these looks fine on screen. Reps dial, calls save, notes appear. The pipeline just never changes, and nobody notices for a week.
+
+---
+
+## 📅 Booked leads are handled separately
+
+An appointment is important enough to have its own path, independent of disposition naming.
+
+<Steps>
+<Step title="The rep books and GoHighLevel confirms">
+The status on their screen reads **Confirmed by GoHighLevel**.
+</Step>
+<Step title="The lead moves to the Appointment Set stage">
+In their own pipeline. A lead is never moved into a different pipeline.
+</Step>
+<Step title="The lead leaves the dial list">
+They will not be auto-dialed again. Calling them from the keypad to confirm does not put them back.
+</Step>
+</Steps>
+
+<Warning>
+If GoHighLevel **refuses** the booking, the lead returns to the list and to their previous stage — but only if nobody has moved them since. A stage a manager set by hand is never overwritten.
+</Warning>
+
+<Note>
+**AI Sync pipelines and GoHighLevel pipelines are separate systems.** Creating a stage in GoHighLevel does not create it in AI Sync, and the automatic move reads the AI Sync pipeline. Set up both if the client wants both to reflect reality.
+</Note>
+
+---
+
+## 🧪 Proving it works
+
+Do not trust the configuration screen. Test it.
+
+<Steps>
+<Step title="Pick a test contact you can safely move">
+Note which stage they are in now.
+</Step>
+<Step title="Save a call against them with a mapped disposition">
+Use one you expect to move them.
+</Step>
+<Step title="Open the pipeline and confirm the move">
+Immediate. No refresh delay.
+</Step>
+<Step title="Repeat for the appointment path">
+Book a real appointment on a number you control, wait for **Confirmed**, and check both the stage and that they left the dial list.
+</Step>
+</Steps>
+
+<Info>
+**Check:** every disposition the client will actually use either moves the lead to the stage you expect, or deliberately does not — like Didn't Answer.
+</Info>
+
+---
+
+## If leads are not moving
+
+<AccordionGroup>
+
+<Accordion title="Nothing moves for any disposition">
+Names do not match. Put the disposition list and the stage list side by side and compare them character by character. "App Set" and "App set" are different.
+</Accordion>
+
+<Accordion title="Some move, others do not">
+The ones that fail have no matching stage. Either rename the stage or rename the disposition — either works, but pick one and be consistent.
+</Accordion>
+
+<Accordion title="Booked leads are not reaching Appointment Set">
+Check the booking status the rep saw. Only **Confirmed by GoHighLevel** triggers the move. "Needs review" means the booking is uncertain and the lead deliberately stays put.
+</Accordion>
+
+<Accordion title="A lead moved to the wrong stage">
+Two stages share that name across different pipelines. Rename one so each name is unique within the company.
+</Accordion>
+
+<Accordion title="It worked yesterday and stopped today">
+Someone renamed a stage or a disposition. That silently breaks the link.
+</Accordion>
+
+</AccordionGroup>

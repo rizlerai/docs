@@ -1,0 +1,256 @@
+---
+title: "Take a Client Live"
+description: "The complete path from a new company to reps making calls, in order, with the check that proves each step worked."
+icon: 'rocket'
+---
+
+This is the runbook our team follows to take a client from signup to reps dialing. Work top to bottom. **Every step has a check** — do not move on until the check passes, because a skipped step surfaces later as a rep saying "it isn't working" with no obvious cause.
+
+<Note>
+**Time required:** about 45 minutes for a straightforward client, plus 1–3 business days of waiting if they need new numbers registered for A2P 10DLC.
+</Note>
+
+## Before you start
+
+Collect these from the client. Chasing them mid-setup is what turns a 45-minute job into a two-day one.
+
+<CardGroup cols={2}>
+<Card title="GoHighLevel access" icon="link">
+Which **sub-account (location)** their appointments live in, and an admin who can approve the connection.
+</Card>
+<Card title="Calling hours and area" icon="clock">
+Which time zones they call into, and their business hours.
+</Card>
+<Card title="The lead list" icon="table">
+A CSV. Confirm it has a phone column and that the numbers are real.
+</Card>
+<Card title="Rep names and emails" icon="users">
+One account per rep. Shared logins break reporting and call attribution.
+</Card>
+</CardGroup>
+
+---
+
+## 🔌 Step 1 — Connect GoHighLevel
+
+GoHighLevel is the booking authority. AI Sync displays the confirmed booking and its sync status; it never creates a competing calendar.
+
+<Steps>
+<Step title="Open Settings → Integrations">
+Start the GoHighLevel connection and sign in as the client's admin.
+</Step>
+<Step title="Choose the correct sub-account">
+Pick the **location** where their contacts and calendar already live. Connecting the agency account instead of the client's sub-account is the single most common setup error, and every later step will look fine while writing to the wrong place.
+</Step>
+<Step title="Approve the permissions">
+Accept the requested scopes. If the client's admin declines any, booking or contact sync will fail later with an authorization error.
+</Step>
+</Steps>
+
+<Info>
+**Check:** open any contact in AI Sync that also exists in GoHighLevel. The GoHighLevel contact ID should be populated. If it is blank, the connection is pointing at the wrong location.
+</Info>
+
+---
+
+## ☎️ Step 2 — Numbers
+
+<Steps>
+<Step title="Buy or import numbers">
+Buy numbers in the client's calling area codes, or import their existing Twilio numbers. See [Phone Numbers](/phone-numbers/phone-numbers).
+</Step>
+<Step title="Register for A2P 10DLC">
+Required before numbers can carry traffic reliably. Start this **first** — approval takes 1–3 business days and it is the usual reason a go-live slips. See [10DLC](/setup/10dlc/brand).
+</Step>
+<Step title="Assign the numbers to the dialer">
+An unassigned number will not appear in the rep's **From Number** list.
+</Step>
+<Step title="Turn on Local Presence if they have area coverage">
+Matches caller ID to the lead's area code. Only useful if they own numbers in those area codes.
+</Step>
+</Steps>
+
+<Warning>
+Numbers on retired carriers will not dial. If a rep reports "Selected caller number is unavailable", the number is on a deprecated carrier or is not verified — move them to a Twilio-backed number.
+</Warning>
+
+<Info>
+**Check:** open the dialer as a rep and confirm the number appears in the **From Number** dropdown.
+</Info>
+
+---
+
+## 🏷️ Step 3 — Dispositions
+
+Dispositions are what a rep picks at the end of a call. They drive reporting, automation and pipeline movement, so define them before anyone dials.
+
+<Steps>
+<Step title="Create the client's outcomes">
+Mirror how they already talk about calls. Keep the list short — a rep who has to scan twenty options picks the wrong one under time pressure.
+</Step>
+<Step title="Set the Didn't Answer default">
+Exactly one disposition must be wired to the **Didn't Answer** button. This one also feeds voicemail detection learning.
+</Step>
+<Step title="Include an appointment disposition">
+"App Set", "Appointment Set", or their wording. This is what moves a booked lead in the pipeline.
+</Step>
+</Steps>
+
+<Info>
+**Check:** [Dispositions](/manage/disposition) shows exactly one entry marked as the Didn't Answer default, and one appointment outcome.
+</Info>
+
+---
+
+## 🗂️ Step 4 — Pipeline
+
+<Steps>
+<Step title="Confirm an Appointment Set stage exists">
+Every pipeline gets one automatically. Confirm it is there and positioned where the client expects it.
+</Step>
+<Step title="Match disposition names to stage names">
+When a disposition and a stage share a name, a saved call moves the lead automatically. Mismatched names mean the lead stays put and someone has to move it by hand.
+</Step>
+</Steps>
+
+<Note>
+AI Sync pipelines and GoHighLevel pipelines are **separate**. Adding a stage in GoHighLevel does not create it in AI Sync, and the automatic move reads the AI Sync pipeline.
+</Note>
+
+<Info>
+**Check:** save a test contact with the appointment disposition and confirm it lands in the Appointment Set stage.
+</Info>
+
+---
+
+## 📅 Step 5 — Calendars
+
+Reps book onto the client's existing GoHighLevel calendars.
+
+<Steps>
+<Step title="Confirm each bookable calendar has a user assigned">
+A calendar with no team member assigned returns **no available times**, and the rep sees an empty slot list with no explanation. This is the most common booking complaint and it is always a configuration issue, never a bug.
+</Step>
+<Step title="Check the calendar's availability rules">
+Business hours, slot duration and buffers all come from GoHighLevel.
+</Step>
+</Steps>
+
+<Info>
+**Check:** on a live or test call, open the booking picker, choose each calendar the client intends to use, and confirm times appear.
+</Info>
+
+---
+
+## 📋 Step 6 — Power List
+
+<Steps>
+<Step title="Upload the CSV">
+Map the phone column carefully. See [Power Lists](/manage/powerlists).
+</Step>
+<Step title="Set dial-at-a-time">
+**3 is the right starting point.** Higher numbers reach more leads per hour but increase the chance a second lead answers while the rep is already talking. Those leads go to Callbacks and must be called back.
+</Step>
+<Step title="Assign the reps">
+Only assigned reps see the list.
+</Step>
+</Steps>
+
+<Info>
+**Check:** the list shows the number of contacts you expect. A large drop means rows were rejected for invalid phone numbers.
+</Info>
+
+---
+
+## 👤 Step 7 — Rep accounts
+
+<Steps>
+<Step title="Create one account per rep">
+Never share logins. Reporting, recordings and call attribution are all per user.
+</Step>
+<Step title="Assign roles">
+Roles control what each person can do in the platform. See [Roles](/user-management/roles).
+
+**Be straight with the client about visibility:** anyone with dialer access can currently see company-wide statistics, not only their own. If they need reps walled off from each other's numbers, raise it before handover rather than after a rep notices.
+</Step>
+<Step title="Have each rep test their headset">
+Audio Settings, select the correct microphone, place one test call to their own phone.
+</Step>
+</Steps>
+
+<Info>
+**Check:** each rep can log in, shows **Ready**, and their name appears in the team view.
+</Info>
+
+---
+
+## ✅ Step 8 — The proving call
+
+Do not hand the client over until you have done this yourself, on a real number you control.
+
+<Steps>
+<Step title="Dial your own phone from the list">
+Confirm it rings, connects, and the contact card appears with the right name.
+</Step>
+<Step title="Book an appointment">
+Pick a calendar and a time. Watch for **"Booking with GoHighLevel…"** then **"Confirmed by GoHighLevel"** with the correct date.
+</Step>
+<Step title="Verify in GoHighLevel">
+Open the contact there. The appointment must be on the right calendar at the right time.
+</Step>
+<Step title="Confirm the lead moved and left the list">
+They should be in the Appointment Set stage and no longer eligible for redial.
+</Step>
+<Step title="Check the recording">
+In **History**, play the call back and use **Download** to confirm the file saves. If the client also has GoHighLevel delivery enabled, check the recording there too.
+</Step>
+</Steps>
+
+<Warning>
+If the booking status shows **Needs review** instead of Confirmed, stop. It means GoHighLevel's answer was unclear and the appointment may or may not exist. Do not rebook — check GoHighLevel directly first, or you will double-book the customer.
+</Warning>
+
+---
+
+## Handing over
+
+Send the client:
+
+<CardGroup cols={2}>
+<Card title="The rep guide" icon="book-open" href="/go-live/rep-guide">
+One page their reps read before the first shift.
+</Card>
+<Card title="Their login URL" icon="link">
+Plus the reminder to hard refresh on the first load after any update.
+</Card>
+</CardGroup>
+
+Tell them two things in plain language:
+
+1. **Only "Confirmed by GoHighLevel" means the appointment exists.** Anything else needs a human to check.
+2. **A lead who answers but does not reach the rep goes to Callbacks.** The banner says which of four reasons applied. All are real pickups and someone must call them back.
+3. **An incoming call may ring and then stop.** If the rep is already on a call, a second caller is passed to an AI agent or voicemail rather than interrupting. That is deliberate. Check Callbacks and voicemail.
+
+---
+
+## If something is wrong
+
+<AccordionGroup>
+<Accordion title="Reps can log in but Start is greyed out">
+The rep is Offline. Set to Ready. If it will not stay Ready, the browser tab lost its connection — hard refresh.
+</Accordion>
+<Accordion title="No numbers in the From Number list">
+The number is not assigned to the dialer, or it is not verified, or it is on a retired carrier. Revisit Step 2.
+</Accordion>
+<Accordion title="Booking picker shows no times">
+That calendar has no user assigned in GoHighLevel. Revisit Step 5. This is configuration, not a fault.
+</Accordion>
+<Accordion title="Booked leads are not moving stages">
+The disposition name and the stage name do not match, or the contact sits in a pipeline with no appointment stage. Revisit Steps 3 and 4.
+</Accordion>
+<Accordion title="Recordings are not appearing in GoHighLevel">
+Recording delivery is enabled per client. If this client has not been enabled, contact the platform team.
+</Accordion>
+</AccordionGroup>
+
+Anything not listed here goes to [Troubleshooting](/go-live/troubleshooting).

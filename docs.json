@@ -24,6 +24,19 @@
             ]
           },
           {
+            "group": "Go Live",
+            "icon": "rocket",
+            "pages": [
+              "go-live/overview",
+              "go-live/client-onboarding",
+              "go-live/dispositions-and-pipeline",
+              "go-live/inbound-and-texting",
+              "go-live/rep-guide",
+              "go-live/troubleshooting",
+              "go-live/changelog"
+            ]
+          },
+          {
             "group": "Dashboard",
             "icon": "chart-line",
             "pages": [
@@ -81,7 +94,6 @@
               "conversation/conversations"
             ]
           },
-       
           {
             "group": "Messages",
             "icon": "envelope",
@@ -89,7 +101,6 @@
               "messages/messages"
             ]
           },
-       
           {
             "group": "Phone Numbers",
             "icon": "phone",
@@ -101,9 +112,9 @@
             "group": "Business Management",
             "icon": "briefcase",
             "pages": [
-                     "business-management/stripe-setup",
-                     "business-management/reselling-setup",
-                    "business-management/companies"
+              "business-management/stripe-setup",
+              "business-management/reselling-setup",
+              "business-management/companies"
             ]
           },
           {
@@ -286,7 +297,6 @@
               "api-reference/introduction"
             ]
           },
-
           {
             "group": "Authorization",
             "icon": "plug",
@@ -313,7 +323,6 @@
               "api-reference/ai-number/list-numbers"
             ]
           }
-
         ]
       },
       {

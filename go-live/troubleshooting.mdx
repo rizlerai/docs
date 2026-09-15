@@ -1,0 +1,216 @@
+---
+title: "Troubleshooting"
+description: "What a customer reports, what is actually happening, and what to do about it."
+icon: 'wrench'
+---
+
+Organised by **what the person tells you**, because that is what you get on a ticket. Each entry gives the likely cause, the fix, and when to escalate.
+
+<Note>
+**Ask for three things every time:** what they saw (a screenshot is best), which lead it happened on, and roughly what time. With those three, almost anything here can be traced.
+</Note>
+
+---
+
+## 📞 Calling
+
+<AccordionGroup>
+
+<Accordion title="'Start is greyed out'">
+**Cause:** the rep is Offline.
+
+**Fix:** set to Ready. If it flips straight back, their browser lost its connection — hard refresh, then check their internet.
+</Accordion>
+
+<Accordion title="'It won't let me pick a number' / 'Selected caller number is unavailable'">
+**Cause:** the number is unassigned, unverified, or on a retired carrier.
+
+**Fix:** confirm it is assigned to the dialer and is Twilio-backed. Numbers on the old carriers will not dial at all.
+</Accordion>
+
+<Accordion title="'It says the call was not placed and my list stopped'">
+**Cause:** a call ended before connecting. Between batches the dialer pauses briefly to line up the next set, which is normal and does not trigger this.
+
+**Fix:** if the message says "Restarting the list…", it continues on its own. If it says "Press Start to continue", they press Start and carry on from where they were.
+
+**Escalate if:** it happens repeatedly to the same rep in one shift, or to several reps at once. Get the times.
+</Accordion>
+
+<Accordion title="'A lead went to Callbacks and I want to know why'">
+**Cause:** the banner now states it. One of: the rep was genuinely on another call; two leads answered at the same moment; the lead picked up into an empty call; or the cause could not be determined.
+
+**Fix:** all four mean the same action — call the lead back from **Callbacks**. They are a genuine pickup.
+
+**Escalate if:** the banner repeatedly says the rep was on a call when they were demonstrably idle. Get the rep's name and the time.
+</Accordion>
+
+<Accordion title="'A call rang and then stopped before I could answer'">
+**Cause:** expected behaviour. If the rep is already on a call, or one is already ringing for them, a second incoming call is not put through — it is passed to an AI agent or voicemail instead of interrupting the live conversation.
+
+**Fix:** none needed. Tell the rep to check **Callbacks** and voicemail. Previously that second call could take over the live one, so the rep ended up talking to a different person mid-conversation.
+</Accordion>
+
+<Accordion title="'I pressed Didn't Answer and nothing happened'">
+**Cause:** either the message "Waiting for this call's details before saving that outcome" appeared, or the page is stale.
+
+**Fix:** if they saw that message, wait a moment and press again — the system is matching the outcome to the right call. If there was no message at all, hard refresh (`Cmd/Ctrl + Shift + R`), confirm the page reloaded, and try again.
+</Accordion>
+
+<Accordion title="'We cannot confirm that a previous call has ended'">
+**Cause:** the system is holding a line open because it cannot prove an earlier call finished. It pauses new calls rather than risk overlapping calls.
+
+**Fix:** **escalate.** This needs someone to check the call records and clear it. Do not tell the rep to restart repeatedly — it will not help and the lines stay held.
+
+Give the platform team the **rep's name** and **the time it started**.
+</Accordion>
+
+<Accordion title="'Nobody can hear me' / 'The keypad does nothing'">
+**Cause:** microphone permission or a stale device selection, usually after changing headsets.
+
+**Fix:** Audio Settings, re-select the microphone, allow the browser permission prompt, hard refresh.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 📅 Booking
+
+<AccordionGroup>
+
+<Accordion title="'There are no times in the calendar'">
+**Cause:** that calendar has no user assigned in GoHighLevel. A calendar with nobody on it has no availability to offer.
+
+**Fix:** assign a team member to the calendar in GoHighLevel. Configuration, not a fault.
+</Accordion>
+
+<Accordion title="'It says Needs review'">
+**Cause:** GoHighLevel's answer was unclear. The appointment may or may not exist.
+
+**Fix:** check GoHighLevel directly. If it is there, nothing to do. If it is not, book it again.
+
+<Warning>
+Tell the rep **not** to rebook on their own when they see this. Booking "just in case" is how customers get double-booked.
+</Warning>
+</Accordion>
+
+<Accordion title="'I booked it but the system called them again'">
+**Cause:** the booking did not complete. A booked lead comes off the dial list automatically; a lead still being called was never confirmed.
+
+**Fix:** check what the booking status actually said. If it said Confirmed and they were still called, escalate with the lead's name and time.
+</Accordion>
+
+<Accordion title="'The booking went in on the wrong day'">
+**Cause:** the rep read the time without the date. Every slot shows both.
+
+**Fix:** move the appointment in GoHighLevel and point the rep at the date in the slot label.
+</Accordion>
+
+<Accordion title="'Booked leads aren't moving in the pipeline'">
+**Cause:** the disposition name does not match a stage name, or the lead is in a pipeline with no appointment stage.
+
+**Fix:** align the names. Remember AI Sync pipelines and GoHighLevel pipelines are separate — adding a stage in GoHighLevel does not create it here.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 📊 Reporting
+
+<AccordionGroup>
+
+<Accordion title="'My numbers look wrong'">
+**Cause:** usually reading team totals as personal ones — but some dashboard counts genuinely read higher than they should, connect rate in particular.
+
+**Fix:** **Your Talk** is that rep alone; **Team Talk** is everyone on the list. The top strip is today across all lists; the list panel is the selected list only.
+
+Treat dashboard figures as trend indicators, not as a record. Call history is the reliable source for what happened on a specific call. Statistics accuracy is actively being worked on — do not promise a client the numbers are exact.
+</Accordion>
+
+<Accordion title="'Remaining isn't going down'">
+**Cause:** not a fault. A lead that was not reached can return for another attempt, so the count does not fall by one per call.
+
+**Fix:** explain it. Escalate only if it is completely frozen while calls are clearly being made.
+</Accordion>
+
+<Accordion title="'I can't find a call I definitely made'">
+**Cause:** usually a date range.
+
+**Fix:** History accepts a phone number typed any way. If nothing matches it widens to 90 days and says so. If it is still missing, escalate with the number and the approximate time.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 🎙️ Recordings and transcripts
+
+<AccordionGroup>
+
+<Accordion title="'The recording isn't in GoHighLevel'">
+**Cause:** delivery into GoHighLevel is enabled per client and is separate from playback inside AI Sync.
+
+**Fix:** confirm with the platform team whether this client is enabled. The rep can still play and download the call from **History** either way.
+</Accordion>
+
+<Accordion title="'There's no Play button on this call'">
+**Cause:** that call was never recorded — usually because it never connected. The column shows "-".
+
+**Fix:** none. Previously a Play button appeared and then failed, which looked like a broken recording. Showing "-" is the honest answer.
+</Accordion>
+
+<Accordion title="'I need to send a recording to someone'">
+**Fix:** **Download** beside Play in History saves the file, named for the call. Anyone who can play a recording can download it.
+</Accordion>
+
+<Accordion title="'The transcript gets words wrong'">
+**Cause:** expected. Automatic transcription on phone audio is imperfect, especially with background noise, accents and crosstalk.
+
+**Fix:** the transcript is an aid, not a record. The recording is the source of truth. Do not promise a specific accuracy level.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 🔐 Access
+
+<AccordionGroup>
+
+<Accordion title="'Page Expired' after logging out and back in">
+**Cause:** a stale browser session.
+
+**Fix:** it returns them to the sign-in page with a message. They sign in again. If it repeats, clear cookies for the site.
+</Accordion>
+
+<Accordion title="'I can see other reps' numbers' or 'I can't see my team'">
+**Cause:** role assignment.
+
+**Fix:** reps see their own; managers see the team. See [Roles](/user-management/roles).
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## When to escalate
+
+Send it to the platform team when:
+
+<CardGroup cols={2}>
+<Card title="Lines are held" icon="lock">
+"We cannot confirm that a previous call has ended" — always escalate.
+</Card>
+<Card title="It affects several reps at once" icon="users">
+One rep is usually local. Several at the same time is not.
+</Card>
+<Card title="A confirmed booking behaved wrongly" icon="calendar-xmark">
+Confirmed should mean it exists and the lead stops being called.
+</Card>
+<Card title="It repeats after a hard refresh" icon="rotate-right">
+A refresh clears most browser-side problems. If it survives one, it is real.
+</Card>
+</CardGroup>
+
+**Include:** the rep's name, the lead, the time, and a screenshot. Without the time it is significantly harder to find.

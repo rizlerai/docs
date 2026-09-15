@@ -1,0 +1,93 @@
+---
+title: "What's New"
+description: "Changes reps and clients will notice, newest first."
+icon: 'clock-rotate-left'
+---
+
+Only changes that alter what someone sees or does. Internal work is not listed.
+
+---
+
+## 15 September 2026 — call handling and recordings
+
+<Update label="15 Sep 2026" description="Call path">
+
+**A second incoming call can no longer interrupt a live one.**
+While you are on a call, or one is already ringing for you, another incoming call is passed to an AI agent or voicemail instead of ringing through.
+
+You may see **a call ring and then stop**. That is the system protecting the conversation you are already having. Check **Callbacks** and voicemail — the caller is not lost. Previously a second caller could take over a live call, leaving a rep talking to a different person mid-conversation.
+
+**The Callbacks banner now says what actually happened.**
+Instead of always claiming you were on another call, it states the real reason:
+
+- They picked up — you were already on a call
+- They answered at the same time as another lead
+- They answered but no one was on the line
+- They answered but the call did not reach you
+
+All four mean the same action: call them back from Callbacks.
+
+**The name on screen matches the person on the line.**
+A previous caller's name could linger over a new incoming call. The name now appears only when the number matches; otherwise you see the number. Audio was always correct — the screen was not.
+
+**"Didn't Answer / VM" no longer refuses a lead you can see.**
+It sometimes answered "This lead has no authenticated call log yet." It now saves. If the call's details have genuinely not arrived, you see **"Waiting for this call's details before saving that outcome. Try again in a moment."** — wait a second and press again.
+
+**Recordings: download, and no more dead Play buttons.**
+A **Download** button sits beside Play in History, saving a file named for the call so you can send it on. Anyone who can play a recording can download it.
+
+Calls that were never recorded now show **"-"** instead of a Play button that fails. Short real recordings still play.
+
+</Update>
+
+<Note>
+**Not yet proven in the field.** This release is deployed and healthy, but no live rep call has exercised the new inbound protection, the recording download or the Didn't Answer fix at time of writing. Report anything that behaves differently from the above.
+</Note>
+
+---
+
+## 14 September 2026 — booking, recordings and pipeline
+
+<Update label="14 Sep 2026" description="Booking and pipeline">
+
+**Book from the live call screen.** Choose a GoHighLevel calendar and a time without leaving the call. Every slot shows the date as well as the time.
+
+**A booking status you can trust.** The screen reports pending, confirmed, needs review, or back on the list. **Only "Confirmed by GoHighLevel" means the appointment exists.**
+
+**Booked leads leave the dial list** and move to an **Appointment Set** stage in their pipeline. Calling them from the keypad to confirm does not put them back.
+
+**Every pipeline has an Appointment Set stage.**
+
+**Call recordings can be delivered into GoHighLevel**, where they appear on the contact's conversation. Enabled per client.
+
+**Talk time past 24 hours** no longer resets to zero.
+
+**History search** accepts a phone number typed any way — dashes, spaces, `+1`. If nothing matches it widens to 90 days and says so.
+
+</Update>
+
+---
+
+## Known limitations
+
+Worth knowing before you rely on something.
+
+<AccordionGroup>
+
+<Accordion title="Dashboard statistics are still being refined">
+Some counts read higher than they should — connect rate in particular. Use the dashboard for trends and the call history for what actually happened on a given call. This is being worked on.
+</Accordion>
+
+<Accordion title="Everyone with dialer access sees company-wide statistics">
+Reps are not currently walled off from each other's numbers. Being addressed separately.
+</Accordion>
+
+<Accordion title="Transcription is an aid, not a record">
+The live transcript helps you follow a conversation. It is not exact, and its accuracy has not been measured on real call audio. The recording is the source of truth.
+</Accordion>
+
+<Accordion title="Warm transfer to an external phone">
+Under investigation. Do not rely on it for a client workflow yet.
+</Accordion>
+
+</AccordionGroup>
