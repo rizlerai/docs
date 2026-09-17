@@ -15,7 +15,7 @@ The layout is split so you do not need to jump between different pages for the s
 |------|-------------------|
 | **Left** | Choose **who** you are working with (three tabs: Contacts, Chat, Calls). |
 | **Middle** | Read the **conversation** and **send SMS**. |
-| **Right** | Open sections to **edit contact info**, **disposition**, **tags**, **notes**, **appointments**, **SMS numbers**, **pipeline**, and **do not disturb**. |
+| **Right** | Open sections to **edit contact info**, **disposition**, **tags**, **notes**, **appointments**, **workflows**, **SMS numbers**, **pipeline**, and **do not disturb**. |
 
 <img
   src="/images/conversation/overview.png"
@@ -122,8 +122,8 @@ Below the timeline you see controls for sending:
 
 | Control | What it does |
 |--------|--------------|
-| **Platform options** | Shows **SMS**, and may show **iMessage** or other labels. SMS is the mode that sends via your business numbers. |
-| **Assign** | Assigns the contact to **Company**, a specific **team member**, **Unassign**. Saved for the contact. |
+| **SMS / iMessage** | Choose how to send. **SMS** sends via your business numbers. **iMessage** appears when available for that contact. |
+| **Assign** | Assigns the contact to **Company**, a specific **team member**, or **Unassign**. Saved for the contact. |
 | **Emoji** | Opens an emoji picker to insert symbols into your message. |
 | **Text box** | Where you type your message. |
 | **Send** | Sends the message when all requirements are met. |
@@ -195,6 +195,45 @@ Shows appointments connected to this contact.
 - You may see **View** actions for full details or links to join online meetings.
 - Use **Add** to book new appointments when calendar integration is active.
 
+### 🔄 Workflows
+
+**Workflows** in the contact sidebar shows automations tied to this person.
+
+<img
+  src="/images/conversation/workflows.png"
+  alt="Contact sidebar Workflows section with Active workflows and Past workflows"
+  className="rounded-lg border shadow-sm"
+/>
+
+| Section | Meaning |
+|---------|---------|
+| **Active workflows** | Published workflows that are **scheduled and running** (or waiting to start) for this contact |
+| **Past workflows** | Workflows this contact has **already used** — finished or no longer active for them |
+
+If none are enrolled, you see **No active workflows** or **No past workflows**.
+
+#### ➕ Add automation
+
+Click the **+** next to **Active workflows** to schedule a published workflow for this contact.
+
+<img
+  src="/images/conversation/add-automation.png"
+  alt="Add automation modal with workflow search, start date, and start time"
+  className="rounded-lg border shadow-sm"
+/>
+
+1. Open **Workflows** on the right for the selected contact
+2. Click **+** under **Active workflows**
+3. Search and select a **Workflow** (required — published workflows only)
+4. Set **Event start date** and **Event start time**
+5. Click **Add** (or **Cancel** to close)
+
+The workflow starts for this contact at the selected date and time, then appears under **Active workflows**. When it finishes, it moves to **Past workflows**.
+
+<Tip>
+Only published workflows can be added here. Build and activate workflows under [Workflows](/workflow/all-workflows) first.
+</Tip>
+
 ### 🏗️ Pipeline
 
 The **Pipeline** section links this contact to a **pipeline** and **stage** (for example New → Qualified → Won).
@@ -221,7 +260,3 @@ Do Not Disturb settings let you respect contact preferences and regulations.
 - **DND Inbound Calls and SMS** — an extra setting for how the system handles incoming calls and texts.
 
 Checking individual channels can clear or adjust the “all channels” option so the logic stays consistent. Many DND options **save as soon as you click** them; some can also be saved alongside **Contact Info** when you press **Save Changes**.
-
----
-
-

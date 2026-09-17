@@ -3,275 +3,291 @@ title: "Pipeline"
 icon: "diagram-project"
 ---
 
+**Pipeline** is a kanban board for your sales or follow-up process. Each board is a pipeline. Each column is a stage. Each card is a contact.
 
+This page does **not** create contacts. Contacts come from PowerLists, imports, conversations, and the rest of the workspace. Pipeline only **places** those contacts into stages.
 
-This guide explains how the **Pipeline** screen works so anyone using the product can follow it without a technical background. Read it in order the first time, or jump to a section when you need a reminder—many ideas are repeated on purpose so you do not have to hunt for them.
+## ✨ What you can do
+
+- See where every lead sits in your process
+- Drag a contact from one stage to the next
+- Create, rename, reorder, or delete pipelines and stages
+- Open a contact for details, notes, appointments, and messages
+- Optional: sync the board with a connected **LeadConnector** (GHL) location
+
+**🔗 How the pieces fit together**
+
+**Pipeline → Stages → Contacts**
+
+| Piece | What it is | Example |
+|-------|------------|---------|
+| **Pipeline** | The whole board | Sales Funnel |
+| **Stage** | One column on that board | New Lead, Contacted, Closed |
+| **Contact card** | A person currently in that stage | Sara, +1… |
+
+If LeadConnector is connected:
+
+**LeadConnector location → pipelines → stages → deals**
+
+- Each location has its **own** pipelines
+- Choosing a location on a pipeline creates that board on that location too
+- A **deal** is that contact sitting on a LeadConnector stage
+- Or keep a pipeline local with **Don’t sync to GHL**
+
+---
+
+## 📋 What you see on the page
 
 <img
   src="/images/pipeline/overview.png"
-  alt="Pipeline board with columns for each stage and contact cards"
+  alt="Pipeline board with location, pipeline, users, and PowerList filters plus stage columns"
   className="rounded-lg border shadow-sm"
 />
 
+| Control | What it does |
+|---------|----------------|
+| **Location** | Which pipelines to show: **All**, **Don’t sync**, or a LeadConnector location |
+| **Pipeline** | Which board to display |
+| **All Assigned Users** | Limit cards to one teammate (when available) |
+| **All Powerlists** | Limit cards to one PowerList |
+| **SOPs** | Built-in standard operating procedures |
+| **Manage** | Add, edit, or delete boards |
 
-## 🛠️ What Pipeline is for
+Below the header: one column per stage, contact cards, count badge, and **Dial** on each column.
 
-Pipeline is a workspace where you see your workflow as **columns**. Each column is a **stage**. **Contacts** show up as **cards** in the stage where they belong.
+**🆕 First time: no pipelines yet**
 
-**What you can do here**
+If none exist, you see **No Pipeline Created** and **Create Pipeline**.
 
-- **See** contacts grouped by stage in a Kanban-style board.
-- **Move** cards from one stage to another by dragging and dropping.
-- **Open** a contact from a card to review or edit details, add **Notes**, manage **Appointments**, and use the **Log** tab to send texts and see the conversation thread.
-- **Set up** your process under **Pipeline Management**: create **pipelines**, name **stages**, and put stages in the order you want.
+1. Click **Create Pipeline** (or **Manage**)
+2. Click **Add Pipeline**
+3. Follow [Create a pipeline](#-create-a-pipeline)
 
-Think of a **pipeline** as a named process (for example a sales funnel or onboarding flow). Think of **stages** as the steps along that process. The board is simply that process drawn as columns left to right.
+---
 
-## ⬆️ Top of the page
+## 📍 Location filter
 
-These controls sit at the top of the Pipeline screen. Each one is explained again in the sections below where it matters most.
+Appears when LeadConnector locations are connected. Filters **which pipelines** you see — it does not move contacts.
 
-**🧭 Breadcrumb**
+| Option | What you see |
+|--------|----------------|
+| **All** (default) | Every pipeline, synced or not |
+| **Don’t sync** | Only pipelines **not** linked to LeadConnector |
+| **A location name** | Only pipelines linked to that location |
 
-**Pages → Pipeline** shows where you are in the app. It is a simple location marker.
+Empty states may say **No pipelines synced**, **No unsynced pipelines**, or **No pipelines** — switch the filter or open **Manage**.
 
-<img
-  src="/images/pipeline/header.png"
-  alt="Pipeline board with columns for each stage and contact cards"
-  className="rounded-lg border shadow-sm"
-/>
-### 🛠️ Pipeline Management
+---
 
-Open **Pipeline Management** from the top of the Pipeline page. This is the **only** place to add pipelines, edit names and stages, and delete pipelines (aside from shortcuts like **Create Pipeline** when the board is empty).
+## 🗂️ The board
+
+Pick a pipeline from the **Pipeline** dropdown. Columns appear left to right in stage order.
+
+Each column shows:
+
+- Stage name + pencil (rename)
+- **Dial** — opens the Dialer for contacts in that stage
+- Contact count
+- Cards (scroll to load more)
+
+Empty columns say **No contacts in this stage**.
+
+### 🧑‍💼 Contact cards
+
+Each card shows name, phone, email, **Call**, and **Message** (opens [Conversations](/conversation/conversations)).
+
+- Click the **card** (not Message) to open **Contact Details**
+- **Drag** a card to another column to change stage — **Contact moved** confirms it
+
+<Tip>
+Contacts appear only after they are **assigned to a stage**. Being in a PowerList is not enough by itself.
+</Tip>
+
+---
+
+## 👤 Contact Details
+
+Click a card. Tabs:
+
+| Tab | What it is |
+|-----|------------|
+| **Contact Info** | Review and save contact fields |
+| **Notes** | Notes on this contact — **Add Note** |
+| **Appointments** | Calendar appointments |
+| **Log** | Message and call history — send SMS from here |
+
+Close when done. The board stays on the same pipeline.
+
+---
+
+## ⚙️ Pipeline Management
+
+Click **Manage** in the header.
 
 <img
   src="/images/pipeline/pipeline-management.png"
-  alt="Pipeline Management list with edit and delete actions"
+  alt="Pipeline Management list with Add Pipeline, Edit, and Delete"
   className="rounded-lg border shadow-sm"
 />
 
-### 📋 List
+| Column | What it is |
+|--------|------------|
+| **#** | Row number |
+| **Pipeline Name** | Board name |
+| **Stages** | How many stages |
+| **Created At** | When created |
+| **Actions** | Edit (pencil) and Delete (trash) |
 
-The list shows each pipeline with information such as:
+---
 
-- **Name**
-- **Number of stages**
-- **Created** date (or similar metadata)
-- Actions to **edit** or **delete**
-
-### ➕ Add or edit
-
-**Add:** From the management window, use **Add Pipeline** (or **+ Add Pipeline**) to open the form.
-
-**Edit:** Pick a pipeline in the list and use **Edit** to open the same style of form for that pipeline.
+## ➕ Create a pipeline
 
 <img
   src="/images/pipeline/add-pipeline.png"
-  alt="Add or edit pipeline form with name and stages"
+  alt="Add Pipeline form with name, GHL Location, Powerlists, and stages"
   className="rounded-lg border shadow-sm"
 />
 
-**Pipeline name**
+1. Click **Manage** → **Add Pipeline**
+2. Enter a **Pipeline Name** (required)
+3. **GHL Location** (if LeadConnector is connected):
+   - **Don’t sync to GHL** — workspace only
+   - A location — board and stages are created there when you save
+4. **Powerlists** (optional) — search and select one or more lists
+5. **Pipeline Stages** — defaults: New Lead, Contacted, Proposal Sent, Closed
+6. **Add Stage** for more columns; drag to reorder
+7. Click **Save Pipeline**
 
-- **Required.** Use a clear name (for example a funnel name or process name like “Sales” or “Onboarding”).
+You need at least one stage, and every stage needs a name.
 
-**Pipeline stages**
+---
 
-- At least **one** stage is always required. You cannot save a pipeline with zero stages.
-- **Add Stage** adds a new row. Enter a **stage name** in each row before you rely on the save.
-- **Delete** (trash) removes a stage. You **cannot** remove the **last** stage—the product will warn you.
-- Drag the **handle** on the left of each row to **reorder** stages. Order here is the same order as columns left to right on the board.
+## ✏️ Edit a pipeline
 
-**Saving behavior (said twice on purpose):**
+1. **Manage** → pencil on that row (**Edit Pipeline**)
+2. Change name, PowerLists, or stages
+3. **Save Pipeline**
 
-- For a pipeline that **already exists**, reordering stages may **store automatically** when you drag—still use **Save Pipeline** whenever you change **names** or **add/remove** stages so nothing is left half-saved.
-- **Save Pipeline** (bottom of the form) stores the full configuration and **refreshes** the page so the **Pipeline** dropdown and the **board** stay in sync.
+**🔒 GHL Location when editing**
 
-New pipelines often start with **default** stage names (for example “New Lead”, “Contacted”, “Proposal Sent”, “Closed”). You can **rename**, **delete**, or **add** stages to match your process before or after the first save.
+- Not linked yet → you can pick a location or leave **Don’t sync to GHL**
+- Already linked → location is locked (*cannot be changed*)
 
-### 🗑️ Delete
+Saving a linked pipeline also updates that board in LeadConnector.
 
-1. Open **Pipeline Management**.
-2. Find the pipeline.
-3. Choose **Delete** and confirm when asked.
+**Stages in the form**
 
-Deleting a pipeline **cannot be undone**. Stages and configuration for that pipeline go away. Check with your team before removing a pipeline others rely on.
+- **Add Stage** → then **Save Pipeline**
+- Rename in the stage box
+- Drag to reorder
+- Trash a stage (you cannot remove the last one) → **Save Pipeline** or it is not removed
 
+**✏️ Rename a stage from the board**
 
-## 📨 Messages and confirmations
+1. Click the pencil on the column header
+2. Type the new name → Enter or click away (Escape cancels)
+3. **Stage name updated** confirms it
 
-Small **notices** or **toasts** may appear when you:
+On a linked pipeline, the name updates in LeadConnector too.
 
-- Save a pipeline or contact
-- Move a card between stages
-- Assign a contact
-- Send a text from the Log
-- Hit an error (network, permissions, validation)
+---
 
-Read them—they usually tell you whether the action **finished** or **failed**.
+## 🗑️ Delete a pipeline
 
+1. **Manage** → trash icon
+2. Confirm **Are you sure you want to delete this pipeline?**
 
-### 🔽 Pipeline (dropdown)
+<Warning>
+If the pipeline is linked to LeadConnector, that board is deleted there too — including deals on it. Unlinked pipelines (**Don’t sync to GHL**) are removed from this workspace only.
+</Warning>
 
-<img
-  src="/images/pipeline/header.png"
-  alt="Pipeline board with columns for each stage and contact cards"
-  className="rounded-lg border shadow-sm"
-/>
+---
 
-The **Pipeline** dropdown chooses **which pipeline** you are viewing. The board always shows **one** pipeline at a time: its name and its stages as columns.
+## 📌 Put a contact on a pipeline
 
-- When the page **first loads**, one pipeline is selected for you—typically the **newest** in the list (unless your product behaves differently; if in doubt, check what is highlighted in the dropdown i.e; "Noah Testing").
-- When you **pick another pipeline**, the board **reloads** so the columns match **that** pipeline’s stages and order.
+**From Conversations**
 
+1. Open the contact → **Pipelines** section
+2. Choose **Pipeline** and **Pipeline Stage** → save
 
-### 📄 SOPs
+**From the board**
 
-**SOPs** opens **Standard Operating Procedures** built into the product: formal, step-by-step language for creating pipelines, editing stages, selecting a pipeline, and related rules. Use **SOPs** when your organization wants written procedures; use this guide for a plain-language tour. A screenshot and short summary appear in [SOPs (Standard Operating Procedures)](#sops-standard-operating-procedures).
+Drag a card between stages (move, not first placement).
 
-### 👥 All assigned users (team-wide filter)
+**From a workflow**
 
-This show  for users who can view all contacts within their company.
+Use **Pipeline stage changed** as a trigger, or set pipeline/stage as an action in the [workflow builder](/workflow/all-workflows).
 
-- **All assigned users** means: show **every** contact in each stage for users, but not limited to one assignee.
-- Choosing a **specific person** limits cards to contacts **assigned to that person**.
-- **Changing** this filter **refreshes** every column so counts and cards stay accurate.
+---
 
+## 🔄 LeadConnector (GHL) sync
 
-**🆕 When nothing is set up yet**
+Connect locations first; sync second.
 
-If **no pipeline** exists yet, you see a short message instead of a full board. You will typically see **Create Pipeline** (or similar), which opens **Pipeline Management** so you can add your first pipeline and stages.
+**🔌 Connect a location**
 
-Until at least one pipeline exists with at least one **stage**, there is nothing to show as columns. After you save a pipeline, return to the main Pipeline page and pick it from the **Pipeline** dropdown if needed.
+1. **Settings → Integration → LeadConnector**
+2. **Connect New** (or **Re-Connect** if expired)
+3. Finish login and pick the location
 
+Each location has its own pipelines. Actions include **Sync Pipeline**, **Re-Connect**, and **Disconnect**.
 
+**🔄 Sync Pipeline (LeadConnector → this workspace)**
 
-## 🗂️ The board (columns and cards)
+Use when boards already exist in LeadConnector.
 
-Once a pipeline exists and has **stages**, the main area shows **one column per stage**, in the **order** defined for that pipeline (left to right matches the order in Pipeline Management).
+1. **Settings → Integration → LeadConnector**
+2. On that location’s row, click **Sync Pipeline**
+3. Wait for sync to finish
 
-**🏷️ Column header**
+| Result | Meaning |
+|--------|---------|
+| **New** | Board did not exist here — created with stages |
+| **Linked** | Matching board was already here — connected, not duplicated |
+| **Stages** | Stages created or matched |
 
-<img
-  src="/images/pipeline/card.png"
-  alt="Pipeline board with columns for each stage and contact cards"
-  width={1200}
-  height={400}
-  className="rounded-lg border shadow-sm"
-/>  
+Sync is **per location**. Syncing Location A does not import Location B.
 
-Each column header usually includes:
+**➡️ Create or edit here (this workspace → LeadConnector)**
 
-- **Stage name** — the label you gave that step (for example “New lead” or “Proposal sent”).
-- **Count** — how many contacts are in that stage **for your access level** and **for the assigned-user filter** when you use it. If you filter to one person, counts reflect that person’s contacts only.
-- **Dial** — opens the dialer for **this pipeline** and **this stage** so outbound calling matches the column you are working in. Use **Dial** when you want calls to line up with that stage’s queue.
+No Sync click needed — **saving** is enough.
 
-**📦 Inside a column**
+| You do this | What happens in LeadConnector |
+|-------------|-------------------------------|
+| Create pipeline + choose location | Board and stages created there |
+| Edit linked pipeline | Linked board updated |
+| Rename stage from board | Stage name updated |
+| Delete linked pipeline | Board deleted there too |
+| **Don’t sync to GHL** | Nothing created in LeadConnector |
 
-- Cards may load in **small groups**. **Scroll down** inside a column to load more when there are many contacts.
-- If a stage has **no** contacts, you see a simple empty message.
+**💼 Deals when a contact changes stage**
 
-**🧑‍💼 Each contact card**
+When you move a contact (board or Conversations):
 
-Each card is a **contact** in that stage. You will usually see:
+- **Contact linked to LeadConnector** → deal created or moved to the matching stage
+- **Contact not linked** → they still move on **your** board; no deal over there
 
+Sync alone does **not** push everyone already on the board as deals. The contact must actually be linked (came from LeadConnector or contact sync).
 
+---
 
-- **Name** (first and last when the system has them).
-- **Phone** and **email**, or a short “not available” style label when something is missing.
-- **Call** — quick way to start a call to this contact, consistent with calling elsewhere in the product.
-- **Message** — takes you to **Conversations** for that contact.
-
-
-
-**🔀 Moving contacts between stages**
-
-1. **Drag** a card from one column.
-2. **Drop** it on another column (another stage).
-
-The contact’s **stage** updates to match the column you dropped on. **Counts** in the headers refresh. If something fails, a **short message** may appear so you know to try again or ask an admin.
-
-
-## 📋 Contact Details 
-
-Click the **card** (the main body of the contact tile) to open **Contact Details**. This panel or window is where you work on one contact without leaving Pipeline.
-
-The following tabs and areas are described in order. Screenshots match the older walkthrough where helpful.
-
-### 📝 Contact Information
-
-<img
-  src="/images/pipeline/contact-details.png"
-  alt="Contact Details tab with profile fields and Save"
-  className="rounded-lg border shadow-sm"
-/>
-
-- Common contact information fields include: **First Name**, **Last Name**, **Phone Number**, **Email Address**,  **ZipCode**,**City**, and **Country** .
-
-
-### 🗒️ Notes
-
-<img
-  src="/images/pipeline/notes.png"
-  alt="Notes tab with add note and list of notes"
-  className="rounded-lg border shadow-sm"
-/>
-
-- Lists **notes** for this contact.
-- **Add Note** opens a form: enter text, save, and the note stays on the contact.
-- When **edit** actions are available, you can adjust an existing note the same way you would elsewhere.
-
-Notes are for context, follow-ups, and handoffs between teammates as the contact moves through stages.
-
-### 📅 Appointments
-
-<img
-  src="/images/pipeline/appointment.png"
-  alt="Appointments tab with table of meetings"
-  className="rounded-lg border shadow-sm"
-/>
-
-- Shows a **table** of appointments (for example date, time, duration, calendar, status, location, notes, and actions—exact columns depend on your product).
-
-### 💬 Log
-
-<img
-  src="/images/pipeline/log.png"
-  alt="Log tab with messaging controls and thread"
-  className="rounded-lg border shadow-sm"
-/>
-
-Select the **Log** tab to load the conversation-style thread and messaging controls.
-
-- **SMS** / **iMessage** — switches context; **From** and **To** lines match **SMS** use when SMS is active.
-- **From** — choose which of **your approved numbers** to send from.
-- **To** — the contact’s number (usually **read-only**).
-- **Assign** — set **Company**, a **team member**, or for Company accounts **Unassign**, to control **who owns** the contact.
-- Type in the message box and press **Send** or **Enter** to send when a valid **From** number and the contact’s number are present.
-- An optional **emoji** control may let you insert symbols into the message.
-
-Use the Log when you need to text from Pipeline while seeing the same thread you would care about for follow-up.
-
-
-
-
-## 📑 SOPs (Standard Operating Procedures)
+## 📑 SOPs
 
 <img
   src="/images/pipeline/SOPS.png"
-  alt="SOPs window with collapsible sections for pipeline procedures"
+  alt="Pipeline Module Standard Operating Procedures accordion"
   className="rounded-lg border shadow-sm"
 />
 
-The **SOPs** button opens an in-product reference written in more **formal** language than this guide. It covers ideas such as:
-
-- **Purpose and scope** of the Pipeline module
-- **Definitions** (pipeline, stage, Kanban board, stage order)
-- **Who** needs access and **prerequisites**
-- **Procedures** for creating, modifying, and deleting pipelines; selecting a pipeline; managing stages; and using the Kanban interface
-- **Rules** (for example at least one stage per pipeline, independence of multiple pipelines, irreversible deletion)
-- **Best practices** (clear naming, reviewing configuration, documenting purpose, testing before wide rollout)
-
-**How the SOPs window behaves:** Sections are often **collapsible**—click a header to expand or collapse so you can focus on one topic.
+**SOPs** opens formal procedures for purpose, definitions, prerequisites, and create / modify / delete / navigate. Sections are collapsible. Use SOPs for written procedures; use this guide for day-to-day steps.
 
 
+## 💡 Typical uses
+
+| Use | How |
+|-----|-----|
+| Sales board | New Lead → Contacted → Proposal Sent → Closed — drag as you go |
+| Same board in LeadConnector | Create here, choose location, save — or **Sync Pipeline** if it already exists there |
+| Local-only process | **Don’t sync to GHL** |
+| Call a stage | **Dial** on the column |
+| Text from the board | **Message** on the card → Conversations |
