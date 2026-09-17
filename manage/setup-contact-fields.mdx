@@ -3,148 +3,152 @@ title: "Setup Contact Fields"
 icon: "table-cells"
 ---
 
-This guide explains **Setup Contact Fields** in simple language. It focuses on what users do day to day: manage field cards, add new fields, map them to GHL, and understand delete behavior.
+**Setup Contact Fields** is the list of information a contact can have for your company — first name, phone, email, and any custom fields you add.
+
+This page does **not** edit a person’s contact record. Changing a default here does not overwrite names, phones, or emails already saved on contacts.
+
+<Note>
+Open from **Manage → Setup Contact Fields**. The page title is **Contact Fields**.
+</Note>
+
+## ✨ What you can do
+
+- See every field a contact can have
+- Add extra fields (for example City, Lead Source, or a custom note)
+- Copy the **Fields Key** for SMS, email, workflows, and similar messages
+- Set a **Custom Default Value** used only when that field is empty on a contact
+
 
 <img
   src="/images/manage/setup-contact/overview.png"
-  alt="Setup Contact Fields main screen"
+  alt="Contact Fields table with Label, Fields Key, Custom Default Value, and Save"
   className="rounded-lg border shadow-sm"
 />
 
+The header has **Add**. **Save** sits on the right of the **Custom Default Value** column header.
 
-**Contact Fields** decide what information can be stored on contacts in your workspace (for example name, email, address, and custom details).
+| Column | What it is |
+|--------|------------|
+| (trash icon) | Deletes a custom field. Core fields do not show a trash icon. |
+| **Label** | Friendly name, such as First Name or Phone Number |
+| **Fields Key** | Placeholder for messages, such as `{{contact.first_name}}` |
+| **Custom Default Value** | Optional fallback text when that field is empty on the contact |
 
+Click **Save** after you type or clear defaults. A success message confirms they were saved.
 
-`Manage -> Setup Contact Fields`
+### 🔒 Core fields (cannot delete)
 
+- Phone Number
+- Email
+- First Name
+- Last Name
 
-## 🗃️ Field cards
+---
 
-All fields appear as cards in a grid.
+## 🔑 Fields Key
 
-On each card:
+A Fields Key is a placeholder. When a message is sent, it is replaced with that contact’s value.
 
-- Field name is shown in readable format.
-- Internal underscores are displayed as spaces.
-- Words are capitalized (for example `zip_code` displays as **Zip Code**).
-- Delete (trash) appears only for fields that can be removed.
+Example: `{{contact.first_name}}` → **Dev** if the contact’s first name is Dev.
 
-### 🔒 Core fields that cannot be deleted
+Use the key **exactly** as it appears in the table. Do not change spelling or capitalization.
 
-- **Phone Number**
-- **Email**
-- **First Name**
-- **Last Name**
+- Paste the key into an SMS, email, note, or template
+- In the **workflow builder**, use **Insert field** to pick the same keys from a dropdown
 
-These are treated as required core identity fields and remain fixed.
+---
 
-**🗑️ Deletable fields**
+## 📝 Custom Default Value
 
-Other custom fields can be deleted. Deletion asks for confirmation before removing.
+A Custom Default Value is company-wide fallback text for one field. It is **not** the contact’s saved value.
 
+**When the default is used**
 
+| Contact has a value? | Default saved? | What goes into the message |
+|----------------------|----------------|----------------------------|
+| Yes | Yes or no | The **contact’s** value. Default is ignored. |
+| No (empty) | Yes | The **Custom Default Value** |
+| No (empty) | No | Blank — no error |
 
-## ➕ Creating a new field
+**What a default does not do**
 
-Click **Add** to open the create form. Use **Back** to return to card list without saving.
+- Does not change Contacts, PowerLists, or import files
+- Does not replace a field that already has data on that contact
+- Does not fill the Contacts screen
+
+**How to save a default**
+
+1. Open **Setup Contact Fields**
+2. Type the fallback in **Custom Default Value**
+3. Click **Save** in that column header
+4. Clear a box and click **Save** to remove that field’s default
+
+Example: First Name default **Dev** is used only when first name is blank. A contact named **Sara** still gets **Sara**.
+
+**Where defaults and keys are used**
+
+After you save, they apply wherever a message uses a Fields Key and that field is empty:
+
+- Conversations SMS
+- Workflow SMS, email, RCS, and notes
+- Google Calendar event title and description
+- Chatbot SMS replies
+- AI agent calendar booking text
+
+If the contact already has a value, that value is always used.
+
+---
+
+## ➕ Add a contact field
+
+Use **Add** when you need a new piece of information on contacts.
 
 <img
   src="/images/manage/setup-contact/add-new.png"
-  alt="Add contact field form"
+  alt="Add Contact Fields form with name, field type, and length"
   className="rounded-lg border shadow-sm"
 />
 
-### 🏷️ Contact Field (name)
+1. Click **Add**
+2. Enter the field name using **lowercase letters, numbers, and underscores** only (spaces become underscores) — for example `lead_source`, `phone_number1`
+3. Choose the field type:
+   - **Small String** — short text (you can set a length)
+   - **Text** — medium text
+   - **Long Text** — large blocks of text
+4. Click **Submit**
 
-Use naming rules:
+The label under the name box shows how the name will look (underscores become spaces).
 
-- Lowercase letters
-- Numbers
-- Underscores for spaces
+<Tip>
+For multiple phone numbers, add `phone_number1`, `phone_number2`, `phone_number3`, and so on.
+</Tip>
 
-Examples:
+Reserved names (main phone, email, first/last name) cannot be created again. Choose a different name if you see that message.
 
-- `company_name`
-- `date_of_birth`
-- `preferred_language`
+---
 
-As you type, a preview label shows how the field will appear in readable UI form.
+## 🗑️ Delete a contact field
 
-If a name is numeric-only, system normalizes it to a safe format so processing does not break.
+Only custom fields show a trash icon. You cannot delete Phone Number, Email, First Name, or Last Name.
 
-Help icons next to labels show short tooltips when hovered.
+1. Click the trash icon
+2. Confirm
 
-### 🔠 Field Type
+That column is removed from contacts, and any Custom Default Value for that field is removed too.
 
-Choose one:
+---
 
-1. **Small String** (short text)
-2. **Text** (medium text)
-3. **Long Text** (long content, notes)
+## 🔧 Insert field in the workflow builder
 
-If **Small String** is selected, a **Length** input appears:
+When a workflow step has a message (SMS, email, notes, calendar title, and similar):
 
-- Sets max character length.
-- If left empty, default length is used.
+1. Open the step in the builder
+2. Use **Insert field** next to the text box
+3. Choose a contact field
+4. The matching Fields Key is inserted
 
-### 📞 Extra phone numbers
+The list includes your company’s fields from Setup Contact Fields, including custom fields you added.
 
-If you need multiple phone numbers, use this naming pattern:
-
-- `phone_number1`
-- `phone_number2`
-- `phone_number3`
-
-For these extra phone fields, the system also creates companion area-code metadata used by dialer logic.
-
-**✅ Submit**
-
-Click **Submit** to create the field.
-
-- On success: confirmation appears, then page reloads with new field.
-- On validation/error: message explains what to fix.
-
-
-## 🔗 GoHighLevel Mapping
-
-Click **Dialer GHL Mapped** to open **Field Mappings** modal.
-
-This is where you map your internal contact fields to **GoHighLevel (GHL)** fields so syncing, dialer flows, and personalization tokens use the right data.
-
-<img
-  src="/images/manage/setup-contact/fields-mapping.png"
-  alt="Field mapping modal for GHL"
-  className="rounded-lg border shadow-sm"
-/>
-
-### 📍 GHL Location
-
-Choose the target GHL location first.
-
-- Field options are location-dependent.
-- Changing location reloads available GHL fields.
-- You may see loading or error messages while options fetch.
-
-### 🗂️ Mapping rows
-
-Each internal contact field appears as one row:
-
-- **Left side:** readable label + internal key (read-only).
-- **Right side:** **Map to GHL Field** selector.
-
-Selector includes standard + custom GHL fields for selected location and usually supports search.
-
-Saved mappings can rehydrate when location reloads.
-
-**💾 Save / ❌ Cancel**
-
-- **Save**: stores mappings and applies changes.
-- **Cancel**: closes modal without saving.
-
-Important behavior:
-
-- Save replaces previous mapping set for your organization.
-- Rows left empty are treated as unlinked.
-
+---
 
 
