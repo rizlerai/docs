@@ -12,6 +12,70 @@ Organised by **what the person tells you**, because that is what you get on a ti
 
 ---
 
+## 📊 Reports and numbers
+
+<AccordionGroup>
+
+<Accordion title="'The dashboard shows zero but we're dialling'">
+**Cause:** almost always the time zone on the profile, or a stale page.
+
+**Fix:** hard refresh first (**Cmd+Shift+R** / **Ctrl+F5**). Then open the profile in the top right and confirm the time zone matches where the reps sit. If it is wrong, today's calls are filed under a different day — the data is there, under the wrong date.
+</Accordion>
+
+<Accordion title="'Our connect rate dropped but we're dialling the same'">
+**Cause:** usually the numbers, not the reps.
+
+**Fix:** open [Dialer Performance](/dashboard/dialer-performance) and look at the outcome bar. Rising **Declined** or **Screened** means your caller IDs are getting flagged. Rising **Bad number** means the list needs cleaning. See [Caller ID and number health](/dialer/caller-id-and-numbers).
+</Accordion>
+
+<Accordion title="'A rep shows a dash instead of a connect rate'">
+**Cause:** working as designed. Under 10 dials there is not enough to rate.
+
+**Fix:** nothing. A rate off four dials is noise, and showing it as a percentage is how a good rep gets judged on nothing. It appears as soon as they have the dials.
+</Accordion>
+
+<Accordion title="'Voicemails are being counted as connects'">
+**Cause:** they are not. Voicemail, answering machines and screened calls can never be connects.
+
+**Fix:** check which number they are reading. **Answered** includes voicemail; **Connects** does not. See [How calls actually work](/dialer/how-calls-work).
+</Accordion>
+
+<Accordion title="'The chart doesn't match the total above it'">
+**Cause:** usually inbound versus outbound. **All calls** includes inbound; the outcome breakdown and the daily chart are outbound dials only.
+
+**Fix:** the tile subtitle states how many were dialled out — that is the figure the panels below reconcile to. If the outcome segments genuinely do not add up to the dial count, that is a real bug. Report it.
+</Accordion>
+
+<Accordion title="'My AI agent gave me a different number than the dashboard'">
+**Cause:** nearly always a different window or scope.
+
+**Fix:** ask the agent *"what date range and which reps did that cover?"* and compare like for like. See [Asking your agent about your data](/agents/asking-about-your-data).
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## 🛡️ Screening
+
+<AccordionGroup>
+
+<Accordion title="'The screening message never played on my phone'">
+**Cause:** iPhone Screening off for that call, or no script selected.
+
+**Fix:** confirm the **iPhone Screening** toggle is on and an **iPhone Script** is selected in the dialer panel, then test by dialling your own screened phone. See [iPhone and carrier screening](/dialer/iphone-screening).
+</Accordion>
+
+<Accordion title="'A screened call got marked as a machine'">
+**Cause:** a screening prompt sounds like a recorded greeting, so systems judging audio rhythm alone mistake it for voicemail.
+
+**Fix:** AI Sync reads the words rather than the cadence, so report specific calls with the time and the lead's number and they can be traced.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
 ## 📞 Calling
 
 <AccordionGroup>

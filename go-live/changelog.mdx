@@ -8,6 +8,33 @@ Only changes that alter what someone sees or does. Internal work is not listed.
 
 ---
 
+## 22 September 2026 — dialer reporting rebuilt
+
+<Update label="22 Sep 2026" description="Reporting and pacing">
+
+**The Dialer dashboard now shows what happened to every single dial.**
+"No Answer" used to be one bucket holding several very different outcomes. It is now split into outcomes that never overlap and always add up to your dial count exactly: connected, answered with no rep, voicemail, screened, no answer, declined, rep hung up first, bad number, busy and carrier problems.
+
+Three of those are money you can act on the day you see them. **Declined** means people are actively rejecting the call, usually a caller ID problem rather than a rep problem. **Rep hung up first** is pacing. **Bad number** is spend on numbers that do not exist. See [Dialer Performance](/dashboard/dialer-performance).
+
+**Three numbers were corrected.**
+Average talk time now counts every conversation rather than only calls over 30 seconds, so it reflects the real floor instead of a flattering subset. Connect rate now counts voicemail-answered dials in the denominator, because a dial that reached a machine is still a dial. The daily chart now counts outbound calls only, bucketed in your own time zone rather than the server's — an evening call no longer lands on the next day's bar.
+
+Your connect rate may read slightly lower than before. It was previously overstated; nothing about your calling changed.
+
+**Screened calls are their own outcome.**
+iPhone and carrier screening is no longer folded in with voicemail. A screened call means a handset answered on the lead's behalf and that person may still call you back, which is a different situation from an answering machine. Neither is ever counted as a conversation. See [iPhone and carrier screening](/dialer/iphone-screening).
+
+**The leaderboard moved into the Dialer section.**
+Ranking reps is a dialer question and it was sitting one tab away from the numbers it ranks on. Sort by connects, dials, connect rate or talk time, and export the whole thing as CSV. A rep under 10 dials shows a dash rather than a percentage and cannot top a rate-based sort.
+
+**Predictive pacing for live reps is available.**
+The engine paces a shared list across your floor instead of each rep choosing their own lines. It needs at least two reps online, holds itself well under the 3% abandonment limit, and takes two deliberate steps to switch on so nothing goes live by accident. See [Predictive pacing](/dialer/predictive-pacing).
+
+</Update>
+
+---
+
 ## 15 September 2026 — call handling and recordings
 
 <Update label="15 Sep 2026" description="Call path">

@@ -24,6 +24,15 @@
             ]
           },
           {
+            "group": "Working with AI Agents",
+            "icon": "robot",
+            "pages": [
+              "connect-mcp",
+              "agents/asking-about-your-data",
+              "agents/running-your-dialer"
+            ]
+          },
+          {
             "group": "Go Live",
             "icon": "rocket",
             "pages": [
@@ -40,6 +49,7 @@
             "group": "Dashboard",
             "icon": "chart-line",
             "pages": [
+              "dashboard/dialer-performance",
               "dashboard/analytics"
             ]
           },
@@ -47,8 +57,12 @@
             "group": "Dialer",
             "icon": "phone",
             "pages": [
+              "dialer/how-calls-work",
               "dialer/predictive-dialer",
               "dialer/power-dialer",
+              "dialer/predictive-pacing",
+              "dialer/iphone-screening",
+              "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/outbound-call-routing"
             ]
