@@ -28,6 +28,7 @@
             "icon": "robot",
             "pages": [
               "connect-mcp",
+              "agents/docs-mcp",
               "agents/asking-about-your-data",
               "agents/running-your-dialer"
             ]
