@@ -71,3 +71,18 @@ When you set Local Presence to **No**:
 - The dialer uses your normal **Calling From** / **From Number** choice (for example your main company number or another configured outbound line).
 - Dialing order is still based on your power list in a sensible sequence.
 - If the "busiest" region does not have enough ready contacts for a full round, the system **can add more contacts from other regions within the same batch**. This helps you stay closer to your configured **dial at a time** behavior instead of stopping short.
+
+## 🆕 What changed recently
+
+<Update label="22 Sep 2026" description="Outbound">
+**When two people answer at once, the second one goes to another free rep**
+instead of being dropped. If nobody is free and you have an AI agent enabled, it
+takes the call. Failing both, the person hears a short message rather than
+silence.
+
+**Phone screening is detected as its own outcome.** A handset that answers on
+the lead's behalf is no longer recorded as voicemail or as a conversation. See
+[iPhone and carrier screening](/dialer/iphone-screening).
+</Update>
+
+See [What's New](/go-live/changelog) for the full history.

@@ -99,3 +99,16 @@ Caller in PowerList with AI agent? → Yes: use that AI
    ↓ No
 Use default PowerList AI agent
 ```
+
+## 🆕 What changed recently
+
+<Update label="22 Sep 2026" description="Inbound">
+**A callback goes to the rep who actually spoke to that lead**, not to whoever
+dialled them last. A missed dial no longer claims ownership of a lead, so reps
+stop inheriting each other's callbacks.
+
+If that rep is busy, the call goes to whoever has been free longest, then to an
+AI agent if one is set up, then to voicemail. It never reaches dead air.
+</Update>
+
+See [What's New](/go-live/changelog) for the full history.
