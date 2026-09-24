@@ -7,6 +7,14 @@ icon: 'book-open-reader'
 There are **two** AI Sync connections, and they do different jobs. Most teams
 want both.
 
+<Warning>
+**`docs.aisync.link/mcp` is not a web page.** It is a machine endpoint — open it
+in a browser and you get a raw JSON error, because it only speaks to AI clients
+over the MCP protocol.
+
+**This page is the documentation for it.** You are in the right place.
+</Warning>
+
 <CardGroup cols={2}>
 <Card title="📚 Docs MCP — reads the manual" icon="book">
 `https://docs.aisync.link/mcp`
@@ -21,6 +29,32 @@ Answers *what are my numbers* and makes changes. Needs your login. See
 [Connect MCP](/connect-mcp).
 </Card>
 </CardGroup>
+
+## 🗺️ How the two connections fit together
+
+```mermaid
+graph TB
+    A[🧑 You, in Claude or Codex] --> B{What are you asking?}
+
+    B -->|How does this work?| C[📚 Docs MCP<br/>docs.aisync.link/mcp]
+    B -->|What are MY numbers?| D[🔧 Product MCP<br/>mcp.aisync.link]
+
+    C --> E[📖 These documentation pages]
+    D --> F[(🗄️ Your AI Sync account)]
+
+    E --> G[💬 An answer from the manual]
+    F --> H[💬 An answer from your data]
+
+    G --> I[🎯 Diagnosis:<br/>the number AND what it means]
+    H --> I
+
+    style C fill:#2a4d7a,color:#fff
+    style D fill:#1f7a4d,color:#fff
+    style I fill:#6b3fa0,color:#fff
+```
+
+Neither connection alone gives you the last box. The docs know what a falling
+connect rate usually means; only your account knows that yours fell.
 
 <Note>
 The docs connection is the quicker win. It needs no account, so you can give it
@@ -70,6 +104,28 @@ Add to your MCP settings:
 That last one is worth using. If your agent gives you a wrong or confusing
 answer from the docs, tell it to submit feedback. The page gets fixed for
 everyone.
+</Tip>
+
+## 🔄 What happens when you ask
+
+```mermaid
+sequenceDiagram
+    participant Y as 🧑 You
+    participant A as 🤖 Your agent
+    participant M as 📚 Docs MCP
+    participant P as 📄 The pages
+
+    Y->>A: "Why would a connect rate drop<br/>without dials dropping?"
+    A->>M: search_docs("connect rate drop")
+    M->>P: find the relevant passages
+    P-->>M: matching sections + links
+    M-->>A: text and page links
+    A-->>Y: An answer grounded in the docs,<br/>with links you can open
+```
+
+<Tip>
+Your agent cites the page it used. If an answer looks wrong, open the link and
+check it — and if the page itself is wrong, tell your agent to submit feedback.
 </Tip>
 
 ## 💬 Questions it answers well

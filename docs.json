@@ -387,5 +387,27 @@
       "github": "https://app.rizzdial.com/",
       "linkedin": "https://app.rizzdial.com/"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/mcp-docs",
+      "destination": "/agents/docs-mcp"
+    },
+    {
+      "source": "/docs-mcp",
+      "destination": "/agents/docs-mcp"
+    },
+    {
+      "source": "/agents",
+      "destination": "/agents/docs-mcp"
+    },
+    {
+      "source": "/ai-agents",
+      "destination": "/agents/docs-mcp"
+    },
+    {
+      "source": "/mcp-setup",
+      "destination": "/connect-mcp"
+    }
+  ]
 }
