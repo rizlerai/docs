@@ -7,7 +7,7 @@ icon: 'rocket'
 This is the runbook our team follows to take a client from signup to reps dialing. Work top to bottom. **Every step has a check** — do not move on until the check passes, because a skipped step surfaces later as a rep saying "it isn't working" with no obvious cause.
 
 <Note>
-**Time required:** about 45 minutes for a straightforward client, plus 1–3 business days of waiting if they need new numbers registered for A2P 10DLC.
+**Time required:** about 45 minutes for a straightforward client, plus waiting on carrier approval if they need new numbers registered for A2P 10DLC. That wait is outside our control and has ranged from minutes to weeks — start it first and plan around it.
 </Note>
 
 ## Before you start
@@ -60,7 +60,7 @@ Accept the requested scopes. If the client's admin declines any, booking or cont
 Buy numbers in the client's calling area codes, or import their existing Twilio numbers. See [Phone Numbers](/phone-numbers/phone-numbers).
 </Step>
 <Step title="Register for A2P 10DLC">
-Required before numbers can carry traffic reliably. Start this **first** — approval takes 1–3 business days and it is the usual reason a go-live slips. See [10DLC](/setup/10dlc/brand).
+Required before numbers can carry traffic reliably. Start this **first**. Approval is done by the carriers, not by us, and the wait is unpredictable — some clear in minutes, some sit for weeks. It is the usual reason a go-live slips, so submit it the day the client signs and check back rather than assuming a date. See [10DLC](/setup/10dlc/brand).
 </Step>
 <Step title="Assign the numbers to the dialer">
 An unassigned number will not appear in the rep's **From Number** list.
@@ -71,7 +71,7 @@ Matches caller ID to the lead's area code. Only useful if they own numbers in th
 </Steps>
 
 <Warning>
-Numbers on retired carriers will not dial. If a rep reports "Selected caller number is unavailable", the number is on a deprecated carrier or is not verified — move them to a Twilio-backed number.
+Numbers on retired carriers will not dial. If a rep reports "a number will not select", the number is on a deprecated carrier or is not verified — move them to a Twilio-backed number.
 </Warning>
 
 <Info>
@@ -108,8 +108,10 @@ Exactly one disposition must be wired to the **Didn't Answer** button. This one 
 <Step title="Confirm an Appointment Set stage exists">
 Every pipeline gets one automatically. Confirm it is there and positioned where the client expects it.
 </Step>
-<Step title="Match disposition names to stage names">
-When a disposition and a stage share a name, a saved call moves the lead automatically. Mismatched names mean the lead stays put and someone has to move it by hand.
+<Step title="Test that a disposition actually moves a lead">
+The link between a disposition and a stage is built when the account is created — it is **not** based on the names, so renaming either is safe. But a disposition **added** after signup has no link behind it and will never move a lead.
+
+Dial one test contact, save an outcome disposition, and confirm it moved in the pipeline. Two minutes, and it is the only way to know. See [Dispositions and pipeline mapping](/go-live/dispositions-and-pipeline).
 </Step>
 </Steps>
 
@@ -246,7 +248,7 @@ The number is not assigned to the dialer, or it is not verified, or it is on a r
 That calendar has no user assigned in GoHighLevel. Revisit Step 5. This is configuration, not a fault.
 </Accordion>
 <Accordion title="Booked leads are not moving stages">
-The disposition name and the stage name do not match, or the contact sits in a pipeline with no appointment stage. Revisit Steps 3 and 4.
+Usually the disposition was added after the account was created, so nothing links it to a stage. Renaming will not fix it. Run the test in [Dispositions and pipeline mapping](/go-live/dispositions-and-pipeline); if a starter disposition moves a lead and this one does not, raise it with support.
 </Accordion>
 <Accordion title="Recordings are not appearing in GoHighLevel">
 Recording delivery is enabled per client. If this client has not been enabled, contact the platform team.

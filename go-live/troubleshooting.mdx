@@ -63,7 +63,7 @@ Organised by **what the person tells you**, because that is what you get on a ti
 <Accordion title="'The screening message never played on my phone'">
 **Cause:** iPhone Screening off for that call, or no script selected.
 
-**Fix:** confirm the **iPhone Screening** toggle is on and an **iPhone Script** is selected in the dialer panel, then test by dialling your own screened phone. See [iPhone and carrier screening](/dialer/iphone-screening).
+**Fix:** confirm the **iPhone Screening** toggle is on and a **recorded** iPhone Script is selected — a typed script cannot play and the dialer blocks Start until an audio one is chosen, then test by dialling your own screened phone. See [iPhone and carrier screening](/dialer/iphone-screening).
 </Accordion>
 
 <Accordion title="'A screened call got marked as a machine'">
@@ -86,7 +86,7 @@ Organised by **what the person tells you**, because that is what you get on a ti
 **Fix:** set to Ready. If it flips straight back, their browser lost its connection — hard refresh, then check their internet.
 </Accordion>
 
-<Accordion title="'It won't let me pick a number' / 'Selected caller number is unavailable'">
+<Accordion title="'It won't let me pick a number'">
 **Cause:** the number is unassigned, unverified, or on a retired carrier.
 
 **Fix:** confirm it is assigned to the dialer and is Twilio-backed. Numbers on the old carriers will not dial at all.
@@ -103,7 +103,7 @@ Organised by **what the person tells you**, because that is what you get on a ti
 <Accordion title="'A lead went to Callbacks and I want to know why'">
 **Cause:** the banner now states it. One of: the rep was genuinely on another call; two leads answered at the same moment; the lead picked up into an empty call; or the cause could not be determined.
 
-**Fix:** all four mean the same action — call the lead back from **Callbacks**. They are a genuine pickup.
+**Fix:** read the wording. "They picked up" means a real person. "We could not tell if anyone picked up" means the system could not confirm one — still worth a call, but not a warm lead. "A voicemail answered" means a machine, and that one is not added to Callbacks at all.
 
 **Escalate if:** the banner repeatedly says the rep was on a call when they were demonstrably idle. Get the rep's name and the time.
 </Accordion>
@@ -171,9 +171,9 @@ Tell the rep **not** to rebook on their own when they see this. Booking "just in
 </Accordion>
 
 <Accordion title="'Booked leads aren't moving in the pipeline'">
-**Cause:** the disposition name does not match a stage name, or the lead is in a pipeline with no appointment stage.
+**Cause:** the disposition was added after the account was created, so no rule links it to a stage. Names are not the mechanism, or the lead is in a pipeline with no appointment stage.
 
-**Fix:** align the names. Remember AI Sync pipelines and GoHighLevel pipelines are separate — adding a stage in GoHighLevel does not create it here.
+**Fix:** renaming will not help. Test a starter disposition first — if that moves a lead and the new one does not, this is the known limitation. See [Dispositions and pipeline mapping](/go-live/dispositions-and-pipeline). Remember AI Sync pipelines and GoHighLevel pipelines are separate — adding a stage in GoHighLevel does not create it here.
 </Accordion>
 
 </AccordionGroup>
