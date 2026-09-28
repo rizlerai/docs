@@ -28,6 +28,7 @@
             "icon": "robot",
             "pages": [
               "connect-mcp",
+              "agents/use-your-chatgpt-plan",
               "agents/docs-mcp",
               "agents/asking-about-your-data",
               "agents/running-your-dialer"
@@ -63,6 +64,7 @@
               "dialer/power-dialer",
               "dialer/predictive-pacing",
               "dialer/iphone-screening",
+              "dialer/missed-answer-message",
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/outbound-call-routing"

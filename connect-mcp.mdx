@@ -83,7 +83,15 @@ claude mcp login ai-sync
 codex mcp add ai-sync --url https://mcp.aisync.link/mcp-oauth
 ```
 
-3. Codex opens your browser the first time it needs to authorize.
+3. Codex opens your browser so you can sign in and approve. If it doesn't, run
+   `codex mcp login ai-sync`.
+
+<Tip>
+Codex runs on **your own ChatGPT plan**, so building agents, prompts and
+workflows this way costs nothing extra. Keep Codex up to date
+(`npm install -g @openai/codex@latest`). See
+[Use your ChatGPT plan with AI Sync](/agents/use-your-chatgpt-plan).
+</Tip>
 
 <img
   src="/images/mcp/codex.png"
