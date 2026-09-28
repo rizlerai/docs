@@ -65,6 +65,7 @@
               "dialer/predictive-pacing",
               "dialer/iphone-screening",
               "dialer/missed-answer-message",
+              "dialer/automations",
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/outbound-call-routing"
