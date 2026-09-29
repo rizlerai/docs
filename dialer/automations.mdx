@@ -36,9 +36,11 @@ Only the account owner or an admin can change automations. Reps can see them.
 | Not interested: tag and stop | Tags the contact; sends nothing |
 | Custom text | One text you write yourself |
 
-Texts go out from **the same number that called the lead**, and
-`{{first_name}}` (or any contact field) is filled in for each person. Waits
-count business days only.
+Texts go out from the lead's **texting line**, not the number that called
+them, so a lead always hears from one number and replies reach the right rep.
+See [Texting lines](/dialer/texting-lines). `{{first_name}}` (or any contact
+field) is filled in for each person. Waits count business days only. Contacts
+marked Do Not Text are skipped.
 
 <Tip>
 Want to text someone **during** the call? Use the **Text** tab under the contact

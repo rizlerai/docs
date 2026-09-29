@@ -1,0 +1,166 @@
+---
+title: 'Texting & Inbox with Your AI Assistant'
+description: 'Have Claude, ChatGPT or Codex check your texting setup, give every rep a line, and work through replies, safely.'
+icon: 'comments'
+---
+
+Once your AI assistant is connected to AI Sync (see [Connect MCP](/connect-mcp)
+or [Use your ChatGPT plan](/agents/use-your-chatgpt-plan)), it can do
+everything on this page by asking. It works as **you**, with your permissions.
+
+<Warning>
+**Texts are real.** When your assistant sends a text, a real person gets it
+from your number. Have it show you the message and the number it will send
+from, then say "send".
+</Warning>
+
+## 🩺 1. Check your texting setup
+
+Paste this into your assistant:
+
+```text
+Check my AI Sync texting setup and give me a short report:
+1. List my phone numbers. For each: A2P linked or not, routed to which rep,
+   and whether an AI agent uses it.
+2. Which reps have their own texting line, and which will use the team line?
+3. Is there at least one team line (A2P linked, not routed to anyone, not
+   used by an AI agent)?
+4. Anything that would stop a rep from texting.
+Don't change anything.
+```
+
+What a good answer looks like:
+
+| Check | Healthy |
+|---|---|
+| Numbers that can text | Every number meant for texting shows **A2P linked** |
+| Rep lines | Each rep who texts has a number routed to them, **or** a team line exists |
+| AI agent numbers | Kept separate; they're never used as texting lines |
+
+Background: [Texting lines](/dialer/texting-lines).
+
+## 👤 2. Give a rep their own line
+
+```text
+Route +1 555 010 2233 to Maria Gomez so it becomes her texting line.
+Tell me what will change first, then wait for my OK.
+```
+
+The number must be A2P linked first. If it isn't, AI Sync refuses and your
+assistant tells you so. Link it to your 10DLC campaign on the Phone Numbers
+page.
+
+<Note>
+Routing a number to a rep also sends that number's **incoming calls** to that
+rep. Usually that's what you want: the lead calls back the number that texted
+them and reaches the same person.
+</Note>
+
+## 🔍 3. Check which number a lead will get
+
+```text
+What number will a text to Jordan Lee go out from, and why?
+```
+
+Your assistant looks it up with the same rule the dialer uses: the number the
+lead was last texted from, else your line, else the team line. Ask this
+whenever a rep says "it texted from the wrong number".
+
+## 📥 4. Work through the Inbox
+
+```text
+Show my unread conversations. For each: who, what they said, and a
+suggested reply. Don't send anything yet.
+```
+
+Then:
+
+```text
+Send the reply to Jordan Lee. Leave the others.
+```
+
+More things to ask:
+
+- *"How many conversations are waiting on a reply?"*
+- *"Show only conversations routed to me."*
+- *"Show the full conversation with Sam Patel, including emails."*
+- *"Mark Sam Patel's conversation as read."*
+
+<Tip>
+Don't pass a "from" number unless you mean to change it. Left out, every text
+uses the lead's texting line, so replies keep coming back to the right rep.
+</Tip>
+
+AI Sync refuses to text anyone marked **Do Not Text**, whoever is sending. If
+your assistant reports that, don't try to get around it.
+
+## ⚙️ 5. Automate the follow-up
+
+```text
+Add the voicemail follow-up text to my Voicemail disposition and turn it on.
+```
+
+Automation texts use the same texting lines. See
+[Dialer Automations](/dialer/automations).
+
+## 🧰 For people building their own agents
+
+If you're writing standing instructions for an agent that works your inbox,
+start from these:
+
+```text
+- Before sending any text, show the message and the "from" number, and wait
+  for approval.
+- Never set a "from" number unless the user names one.
+- Never text anyone who replied STOP or is marked Do Not Text.
+- Ask before "mark all read"; it clears every rep's unread list.
+- Send one message per lead per decision. Never loop.
+```
+
+<AccordionGroup>
+
+<Accordion title="The tools behind these requests" icon="screwdriver-wrench">
+
+| What you ask | Tool |
+|---|---|
+| List numbers, A2P status and who they're routed to | `settings_phone_numbers_list` |
+| Who a number can be routed to | `settings_phone_numbers_assignable` |
+| Route a number to a rep | `settings_phone_numbers_assign` |
+| Which number a lead will be texted from | `texting_line_get` |
+| Conversations (filters: unread, mine, with emails) | `messages_threads_list` |
+| One whole conversation | `messages_thread_get` |
+| Send a text | `messages_send` |
+| Mark one read / all read | `messages_mark_read` / `messages_mark_all_read` |
+| Unread count | `messages_unread_count` |
+| Disposition follow-ups | `dialer_automations_list`, `dialer_automations_add` |
+
+Your assistant picks these itself. You never need to name them.
+</Accordion>
+
+</AccordionGroup>
+
+## 🧯 If something is off
+
+<AccordionGroup>
+
+<Accordion title="&quot;No texting line set up&quot;">
+There's no A2P-linked number your assistant can text from. Ask it:
+*"Which of my numbers are A2P linked?"* Then link one on the Phone Numbers
+page.
+</Accordion>
+
+<Accordion title="&quot;This contact is marked Do Not Text&quot;">
+Working as intended. The contact opted out. Don't text them.
+</Accordion>
+
+<Accordion title="The assistant says it sent, but the lead never got it">
+Check the number is A2P linked and your 10DLC campaign is **approved**. See
+[Texting lines](/dialer/texting-lines#-if-something-is-off).
+</Accordion>
+
+<Accordion title="The assistant can't see the new inbox tools">
+Reconnect AI Sync in your assistant so it loads the latest tools. See
+[Connect MCP](/connect-mcp).
+</Accordion>
+
+</AccordionGroup>

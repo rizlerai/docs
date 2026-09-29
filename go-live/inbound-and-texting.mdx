@@ -114,11 +114,17 @@ Not every number can text. Check before promising the client it can.
 Sending business texts on unregistered numbers gets messages silently dropped by carriers. The client sees "sent" and the customer receives nothing. Do not skip registration.
 </Warning>
 
-### Where replies go
+### Give reps a texting line
 
-Inbound texts route by number. Set this so a reply reaches the rep who sent the original message rather than a shared inbox nobody watches.
+Calls rotate caller IDs; texts don't. Each lead is texted from one number, and
+the reply goes to the rep who owns the conversation, live in the dialer's
+[Inbox](/dialer/inbox).
 
-Full detail: [SMS Number Routing](/sms-routing-flow/sms-numbers-routings).
+- **Per rep:** route one A2P-linked number to each rep (Phone Numbers → **Route to a User**).
+- **Shared:** leave one A2P-linked number unrouted as the team line.
+
+Then run the two-minute reply test. Full detail:
+[Texting lines & reply routing](/dialer/texting-lines).
 
 ### Templates
 
@@ -141,12 +147,12 @@ Missed call, appointment confirmation, follow-up after a good conversation.
 "Reply STOP to opt out." It is a compliance requirement, not a nicety.
 </Step>
 <Step title="Send one to yourself before handing over">
-Check it arrives, reads correctly on a phone, and that your reply comes back to the right place.
+Check it arrives, reads correctly on a phone, and that your reply shows up in the dialer's Inbox for the right rep.
 </Step>
 </Steps>
 
 <Info>
-**Check:** text a phone you own from the dialer. It arrives, and your reply appears in the conversation view against the right contact.
+**Check:** text a phone you own from the dialer. It arrives, your reply appears in the dialer's **Inbox** against the right contact, and a second text goes from the same number.
 </Info>
 
 ---
@@ -159,7 +165,7 @@ A working setup for a typical client:
 | --- | --- |
 | Lead calls back during business hours | Dialer + AI — rep first, AI catches the overflow |
 | Lead calls back after hours | AI agent, books into the calendar |
-| Lead replies to a rep's text | Back to that rep's conversation |
+| Lead replies to a rep's text | That rep's Inbox, live |
 | Unknown number calls the main line | Company default user, then AI fallback |
 
 <Tip>
@@ -195,7 +201,7 @@ Almost always A2P 10DLC registration. Confirm brand and campaign are approved, n
 </Accordion>
 
 <Accordion title="Replies are not reaching the rep">
-SMS routing for that number points somewhere else. See [SMS Number Routing](/sms-routing-flow/sms-numbers-routings).
+The number, or the Twilio Messaging Service it belongs to, sends replies somewhere else. See [Make sure replies actually reach AI Sync](/dialer/texting-lines#make-sure-replies-actually-reach-ai-sync).
 </Accordion>
 
 </AccordionGroup>

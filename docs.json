@@ -31,7 +31,8 @@
               "agents/use-your-chatgpt-plan",
               "agents/docs-mcp",
               "agents/asking-about-your-data",
-              "agents/running-your-dialer"
+              "agents/running-your-dialer",
+              "agents/texting-and-inbox"
             ]
           },
           {
@@ -66,6 +67,8 @@
               "dialer/iphone-screening",
               "dialer/missed-answer-message",
               "dialer/automations",
+              "dialer/inbox",
+              "dialer/texting-lines",
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/outbound-call-routing"
@@ -182,13 +185,6 @@
                   "manage/tags/powerlist-tags"
                 ]
               }
-            ]
-          },
-          {
-            "group": "SMS Routing Flow",
-            "icon": "random",
-            "pages": [
-              "sms-routing-flow/sms-numbers-routings"
             ]
           },
           {
@@ -411,6 +407,10 @@
     {
       "source": "/mcp-setup",
       "destination": "/connect-mcp"
+    },
+    {
+      "source": "/sms-routing-flow/sms-numbers-routings",
+      "destination": "/dialer/texting-lines"
     }
   ]
 }
