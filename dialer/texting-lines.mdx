@@ -25,19 +25,20 @@ graph LR
 
 ## 🧩 What counts as a texting line
 
-A texting line is a phone number that:
+A texting line is either:
 
-1. Is a **Twilio number connected to AI Sync**.
-2. Shows **A2P linked** on the Phone Numbers page. Carriers block texts from
-   unregistered numbers. See [10DLC](/setup/10dlc/brand).
-3. Is **not** assigned to an AI agent. AI agent numbers are kept for the agent.
+- **A Beam number.** Every active number in your connected Beam workspace. See
+  [Connect Beam](/dialer/beam).
+- **A Twilio number** connected to AI Sync that shows **A2P linked** on the
+  Phone Numbers page and isn't assigned to an AI agent. Carriers block texts
+  from unregistered numbers. See [10DLC](/setup/10dlc/brand).
 
 There are two kinds:
 
 | Kind | How you make one | Who texts from it |
 |---|---|---|
-| **A rep's own line** | Phone Numbers → the number → **Set inbound routing → Route to a User** | That rep |
-| **Team line** | An A2P-linked number that isn't routed to anyone | Any rep who has no line of their own |
+| **A rep's own line** | Beam: pick the rep on the Beam page. Twilio: Phone Numbers → the number → **Set inbound routing → Route to a User** | That rep |
+| **Team line** | A Beam or A2P-linked Twilio number not given to anyone | Any rep who has no line of their own |
 
 <Tip>
 **The simplest good setup:** one A2P-linked number per rep, each routed to that
@@ -49,8 +50,9 @@ from that team line, and replies still reach the right rep (see
 [Where replies go](#-where-replies-go)).
 </Tip>
 
-If a rep has several numbers routed to them, texts go from the first one you
-added. With several team lines, the first one added is used.
+If a rep has several lines, Beam comes first, then the first Twilio number
+you added. Among team lines: Beam's default number, then other Beam numbers,
+then Twilio numbers in the order you added them.
 
 ---
 
@@ -192,7 +194,7 @@ minute?** See the Messaging Service accordion above, then contact support.
 
 | You want | Do this |
 |---|---|
-| Each rep texts from their own number | Route one A2P-linked number to each rep |
+| Each rep texts from their own number | Give each rep a Beam number on the Beam page, or route an A2P-linked Twilio number to them |
 | Everyone texts from one company number | Leave one A2P-linked number unrouted |
 | A rep takes over a lead | They pick their own line in **From** once |
 | An automation always uses one number | Set that number in the workflow's Send SMS step |
@@ -209,8 +211,9 @@ Setting this up with Claude, ChatGPT or Codex instead? See
 <AccordionGroup>
 
 <Accordion title="&quot;No texting line set up&quot;">
-There's no A2P-linked Twilio number that isn't used by an AI agent. Link a
-number to your 10DLC campaign on the Phone Numbers page.
+There's no Beam number and no A2P-linked Twilio number that isn't used by an
+AI agent. [Connect Beam](/dialer/beam), or link a number to your 10DLC
+campaign on the Phone Numbers page.
 </Accordion>
 
 <Accordion title="Texts go from a number I didn't expect">
