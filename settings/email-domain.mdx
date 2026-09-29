@@ -36,7 +36,7 @@ graph LR
 <Step title="Enter your domain">
 Go to **Settings → Email Setting** and click **Set up your domain** on the
 *Send from your own domain* card. Type your domain, like `harbordental.com`,
-and click **Continue**.
+and click **Continue →**.
 
 <Frame caption="Enter just the domain: the part after the @ in your business email.">
   <img src="/images/email-domain/enter-domain.png" alt="Send from your own domain page with a domain field and Continue button" />
@@ -44,24 +44,35 @@ and click **Continue**.
 </Step>
 
 <Step title="Add the three records to your DNS">
-AI Sync shows three **CNAME** records. In your domain provider, open **DNS**
-and add each one. Use the **Copy** buttons so nothing is mistyped.
+AI Sync shows three **CNAME** records. Pick where your domain is managed and
+the page shows exactly where to click there. Add each record with the **Copy**
+buttons so nothing is mistyped.
+
+Someone else runs your website? Click **Copy instructions for your web
+person** and paste it into an email to them.
 
 <Frame caption="Three CNAME records. The Status column updates each time you check. Sample data.">
   <img src="/images/email-domain/dns-records.png" alt="Three CNAME records with Copy buttons and a Found or Not yet status for each" />
 </Frame>
 
-<Tip>
-Some providers add your domain to the end of **Host** automatically. If yours
-does, paste only the first part, for example `aisync` or `s1._domainkey`.
-Don't change or delete any records that are already there.
-</Tip>
+| Provider | Where | Host / Name field | Value field | Watch out |
+|---|---|---|---|---|
+| GoDaddy | My Products → domain → **DNS** → Add New Record | **Name**: `aisync` | **Value** | |
+| Cloudflare | domain → **DNS → Records** → Add record | **Name**: `aisync` | **Target** | Set **Proxy status** to **DNS only** (grey cloud) |
+| Namecheap | Domain List → Manage → **Advanced DNS** | **Host**: `aisync` | **Value** | Click the green ✓ to save |
+| Squarespace / Google | Domains → domain → **DNS** | **Host**: `aisync` | **Data** | |
+| Other | DNS settings where the domain is registered or hosted | The short name | The value | If it asks for the full name, use `aisync.yourdomain.com` |
+
+The table shows record 1. Records 2 and 3 work the same way with
+`s1._domainkey` and `s2._domainkey`. Don't change or delete any records that
+are already there.
 </Step>
 
 <Step title="Click Check DNS">
-Back in AI Sync, click **Check DNS**. New records usually show up within a few
-minutes, sometimes up to an hour. When all three say **✓ Found**, the badge
-turns green: **Verified**.
+Click **Check DNS now**. Leave the page open and it checks again every minute
+by itself. New records usually show up within a few minutes, sometimes up to
+an hour. When all three say **✓ Found**, you land on **Verified**, with a
+preview of exactly what your leads will see.
 
 <Frame caption="Verified: emails to leads now go out from your domain.">
   <img src="/images/email-domain/verified.png" alt="Verified badge and all DNS records showing Found" />
@@ -73,6 +84,46 @@ Under **Who emails come from**, set the company address (for example `hello`)
 and your company name. Click **Save**.
 </Step>
 </Steps>
+
+---
+
+## 🤖 Or let your AI assistant do it
+
+With Claude, ChatGPT or Codex connected to AI Sync (see
+[Connect MCP](/connect-mcp)), paste this:
+
+```text
+Set up my business email domain in AI Sync so emails to leads go out from my
+own domain. Use my AI Sync connection: look up the email domain setup, add my
+domain if it isn't there yet, and show me the three DNS records in a simple
+table with exactly what to type for my DNS provider. If you can reach my DNS
+provider, add them for me (Cloudflare: proxy off). Then check DNS until it's
+verified, and tell me in one line when it's done.
+```
+
+The same prompt is on the setup page, with a **Copy prompt** button.
+
+- **Your assistant can reach your DNS** (for example Cloudflare's own
+  connector): it adds the records itself, and you just approve.
+- **It can't:** it gives you a table of exactly what to type, then checks for
+  you.
+
+<AccordionGroup>
+<Accordion title="For people building agents: the tools" icon="screwdriver-wrench">
+
+| Tool | What it does |
+|---|---|
+| `email_domain_get` | Status (`not_set_up`, `pending`, `verified`), the 3 records and a plain `next_step` |
+| `email_domain_setup` | Add the domain; returns the records. Safe to repeat. |
+| `email_domain_check` | Check DNS now. Wait a minute between checks. |
+| `email_domain_sender` | Set the company address (e.g. `hello`) and name |
+| `email_domain_remove` | Remove it. Confirm with the user first. |
+
+Each record has `host` (full name) and `host_short` (what most providers
+want). Only the account owner can use these. The API behind them is
+`/api/settings/email-domain`.
+</Accordion>
+</AccordionGroup>
 
 ---
 
@@ -116,10 +167,11 @@ also keeps it.
 
 <AccordionGroup>
 
-<Accordion title="Still &quot;Waiting for DNS&quot; after an hour">
+<Accordion title="Records still &quot;Not found yet&quot; after an hour">
 Check each record's **Host** in your provider. The most common mistake is the
-domain added twice, like `aisync.harbordental.com.harbordental.com`. If your
-provider adds the domain for you, enter only the first part.
+domain added twice, like `aisync.harbordental.com.harbordental.com`: enter
+only the short name. On **Cloudflare**, the proxy must be off (grey cloud,
+"DNS only").
 </Accordion>
 
 <Accordion title="&quot;Use your business domain&quot;">
