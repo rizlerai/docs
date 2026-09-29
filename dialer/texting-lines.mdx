@@ -35,10 +35,33 @@ A texting line is either:
 
 There are two kinds:
 
-| Kind | How you make one | Who texts from it |
-|---|---|---|
-| **A rep's own line** | Beam: pick the rep on the Beam page. Twilio: Phone Numbers → the number → **Set inbound routing → Route to a User** | That rep |
-| **Team line** | A Beam or A2P-linked Twilio number not given to anyone | Any rep who has no line of their own |
+| Kind | Who texts from it |
+|---|---|
+| **A rep's own line** | That rep, and replies to it always go to them |
+| **Team line** | Any rep who has no line of their own |
+
+## 🗂️ Manage them all in one place
+
+**Settings → Texting lines** (also a **Texting lines** button on the Phone
+Numbers page) lists every number that can text, Beam and Twilio together.
+Pick who texts from each one and click **Save**.
+
+<Frame caption="Every number that can text, and who texts from it. Sample data.">
+  <img src="/images/texting-lines.png" alt="Texting Lines page listing Beam and Twilio numbers with a Who texts from it dropdown for each, and a Can't text yet panel" />
+</Frame>
+
+- It only decides who **texts** from a number and gets its replies. Where
+  the number's **calls** ring stays on the Phone Numbers page.
+- A Twilio number whose calls you routed to a rep starts as that rep's
+  texting line. You can change it here.
+- **Can't text yet** explains every other number: not registered for texting
+  (A2P), assigned to an AI agent, or calling-only.
+- **Registered numbers missing?** If you attached numbers to your campaign
+  in Twilio's own console, click **↻ Refresh from Twilio** at the top. AI Sync
+  reads which numbers are really registered and updates the list. It also
+  tells you about registered numbers you haven't imported into AI Sync yet.
+- Reps can open the page too. They see which line is theirs but can't change
+  anything.
 
 <Tip>
 **The simplest good setup:** one A2P-linked number per rep, each routed to that
@@ -194,7 +217,7 @@ minute?** See the Messaging Service accordion above, then contact support.
 
 | You want | Do this |
 |---|---|
-| Each rep texts from their own number | Give each rep a Beam number on the Beam page, or route an A2P-linked Twilio number to them |
+| Each rep texts from their own number | **Settings → Texting lines**: pick a rep for each number |
 | Everyone texts from one company number | Leave one A2P-linked number unrouted |
 | A rep takes over a lead | They pick their own line in **From** once |
 | An automation always uses one number | Set that number in the workflow's Send SMS step |

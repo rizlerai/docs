@@ -42,7 +42,7 @@ Background: [Texting lines](/dialer/texting-lines).
 ## 👤 2. Give a rep their own line
 
 ```text
-Route +1 555 010 2233 to Maria Gomez so it becomes her texting line.
+Make +1 555 010 2233 Maria Gomez's texting line.
 Tell me what will change first, then wait for my OK.
 ```
 
@@ -51,9 +51,9 @@ assistant tells you so. Link it to your 10DLC campaign on the Phone Numbers
 page.
 
 <Note>
-Routing a number to a rep also sends that number's **incoming calls** to that
-rep. Usually that's what you want: the lead calls back the number that texted
-them and reaches the same person.
+This only changes who **texts** from the number and gets its replies. To
+also send the number's **calls** to Maria, ask: *"Route that number's calls
+to Maria too."*
 </Note>
 
 ## 🔍 3. Check which number a lead will get
@@ -125,7 +125,9 @@ start from these:
 |---|---|
 | List numbers, A2P status and who they're routed to | `settings_phone_numbers_list` |
 | Who a number can be routed to | `settings_phone_numbers_assignable` |
-| Route a number to a rep | `settings_phone_numbers_assign` |
+| Every number that can text, and who texts from it | `texting_lines_list` |
+| Set who texts from a number | `texting_lines_assign` |
+| Route a number's calls to a rep | `settings_phone_numbers_assign` |
 | Which number a lead will be texted from | `texting_line_get` |
 | Conversations (filters: unread, mine, with emails) | `messages_threads_list` |
 | One whole conversation | `messages_thread_get` |
