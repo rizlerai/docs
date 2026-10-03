@@ -1,114 +1,78 @@
 ---
 title: 'Incoming Call Routing'
-description: 'Configure how incoming calls are handled and understand the user assignment and AI routing logic'
+description: 'Who answers when a lead calls one of your numbers, where callbacks ring, and how to send calls to an AI agent'
 icon: 'phone-arrow-down-left'
 ---
 
-The Incoming Call Routing feature lets you decide how inbound calls are processed. From **Personal Settings**, set the **Incoming Call** preference so calls go to the dialer, your phone, an AI agent, or a hybrid path.
+When a lead calls one of your numbers, AI Sync decides **who** answers (a rep or your AI agent) and **where** it rings (in the dialer or on the rep's phone). Both are set in the dialer's settings panel, under **Inbound calls** and **Calls back to you**.
 
-## ⚙️ Configuration
+![Inbound calls and Calls back to you in the dialer](/images/dialer/incoming-call-routing/rail-settings.png)
 
-Update your incoming call route here:
+## Who answers: Team or AI
 
-👉 **Profile → Personal Settings**: [https://app.aisync.link/profile](https://app.aisync.link/profile)
+Each of your numbers is set to **Team** or **AI**. Open **Inbound calls** in the dialer to see every number and change it.
 
-1. Open the **Personal Settings** tab.
-2. Find the **Incoming Call** field.
-3. Choose your preferred routing option.
-4. Click **Update** to save (or **Cancel** to discard changes).
-
-![Incoming Call field in Personal Settings](/images/dialer/incoming-call-routing/profile-personal.png)
-
-### 📞 Incoming Call options
+![Each number set to Team or AI](/images/dialer/incoming-call-routing/numbers-team-ai.png)
 
 <CardGroup cols={2}>
-  <Card title="Dialer" icon="phone">
-    Calls ring in the dialer interface so you or your team can answer them from within the app.
-  </Card>
-  <Card title="Phone" icon="mobile-screen">
-    Calls forward to your linked phone number.
+  <Card title="Team (recommended)" icon="users">
+    Your reps ring first. If nobody picks up within 25 seconds, the number's AI agent answers. With no AI agent attached, the call goes to voicemail.
   </Card>
   <Card title="AI" icon="robot">
-    Calls are routed straight to an AI agent, which handles the conversation automatically.
-  </Card>
-  <Card title="Dialer + AI" icon="phone-arrow-up-right">
-    Calls first ring the dialer. If unanswered, the call goes to the AI agent as fallback.
+    The AI agent answers every call to this number. No rep rings.
   </Card>
 </CardGroup>
 
-## 🔍 How User Assignment Works
-
-Calls are always matched to a user before the selected **Incoming Call** option is applied. The system uses this logic (in priority order):
-
-### 1️⃣ Last Outbound Call
-
-- If you have recently called the incoming number, you are selected as the responsible user.
-
-### 2️⃣ Assigned Number
-
-- If the "To" number (the system DID receiving the call) is strictly assigned to a user, that user is chosen next.
-
-### 3️⃣ PowerList Membership
-
-- If the caller belongs to a PowerList that you own, you receive the inbound call.
-
-### 4️⃣ Company Default
-
-- If none of the above apply, the call defaults to the company’s fallback user.
-
 <Note>
-As soon as a match is found, the system assigns the user, maximizing relevance and continuity.
+**AI** is greyed out on a number until an AI agent is attached to it. Attach one in the web app under **AI → Numbers**, then come back and choose AI or Team.
 </Note>
 
-## 🤖 If AI Is Involved
+### Send inbound calls to an AI agent
 
-If you pick an option that uses an AI agent (**AI**, or **Dialer + AI** as fallback):
-
-- **Contact exists in a PowerList with an AI agent?**  
-  → That PowerList's agent answers.
-
-- **Caller is unknown (not in any PowerList)?**  
-  → The default PowerList AI agent handles the call.
+1. In the web app, open **AI → Numbers** and attach your inbound AI agent to the number.
+2. In the dialer, open **Inbound calls** and find the number.
+3. Choose **AI** to have the agent answer every call, or **Team** to ring your reps first with the agent as the backup.
 
 <Tip>
-Assign specific AI agents to different PowerLists for more tailored and effective conversations.
+Most teams choose **Team**: a person gets the first chance at a hot callback, and the AI agent makes sure nobody reaches a dead end.
 </Tip>
 
-## 📊 Visual Flow
+## Which rep it rings
 
-### 👥 User Assignment
+A lead who calls back rings the rep who **last had a real conversation with them**, as long as that rep is **Online and not already on a call**. If that rep can't take it, it rings the next free rep: reps assigned to the number, then reps on the lead's list, then the account owner.
 
-```
-Incoming Call
-   ↓
-Recent outbound user? → Yes: assign user
-   ↓ No
-DID assigned to user? → Yes: assign user
-   ↓ No
-Caller in user's PowerList? → Yes: assign user
-   ↓ No
-Fallback to default user
-```
+Only a real conversation earns a callback. A rep who dialed the lead and got no answer doesn't take over that lead's callbacks.
 
-### 🤖 AI Routing
+<Note>
+**Direct lines:** a number assigned to one rep as their own line rings only that rep. If they can't answer, it goes to that number's backup (voicemail, the AI agent, or the team), as set on the number.
+</Note>
 
-```
-AI needed?
-   ↓
-Caller in PowerList with AI agent? → Yes: use that AI
-   ↓ No
-Use default PowerList AI agent
-```
+## Where it rings: in the dialer or on your phone
 
-## 🆕 What changed recently
+Each rep chooses under **Calls back to you**:
 
-<Update label="22 Sep 2026" description="Inbound">
-**A callback goes to the rep who actually spoke to that lead**, not to whoever
-dialled them last. A missed dial no longer claims ownership of a lead, so reps
-stop inheriting each other's callbacks.
+![Calls back to you](/images/dialer/incoming-call-routing/calls-back-to-you.png)
 
-If that rep is busy, the call goes to whoever has been free longest, then to an
-AI agent if one is set up, then to voicemail. It never reaches dead air.
-</Update>
+- **In the dialer:** the call pops up in the dialer with the lead's name and *They called you back*. Keep the dialer open in one browser tab.
+- **On my phone:** the call forwards to your cell. Enter your personal cell the first time you choose it. Your company's own numbers can't be used, because they would ring themselves. Your phone shows the incoming number, not the lead's name.
 
-See [What's New](/go-live/changelog) for the full history.
+You can also change this in the web app under **Profile → Personal Settings → Incoming Call**: [app.rizzdial.com/profile](https://app.rizzdial.com/profile). That page has two more options:
+
+- **AI**: send every call meant for you to the AI agent.
+- **Dialer + AI**: ring the dialer first, with the AI agent as the backup.
+
+![Incoming Call field in Personal Settings](/images/dialer/incoming-call-routing/profile-personal.png)
+
+## Quick answers
+
+<AccordionGroup>
+  <Accordion title="I'm dialing. Will a callback reach me?">
+    Only when you're free. A rep already on a call is skipped, so the lead rings the next free rep, then the number's backup.
+  </Accordion>
+  <Accordion title="Can a callback go straight to my phone?">
+    Yes. Choose **On my phone** under **Calls back to you** and enter your cell.
+  </Accordion>
+  <Accordion title="Can the AI take every inbound call?">
+    Yes. Attach an AI agent to the number in **AI → Numbers**, then set the number to **AI** under **Inbound calls**.
+  </Accordion>
+</AccordionGroup>
