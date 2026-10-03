@@ -16,7 +16,7 @@ Each of your numbers is set to **Team** or **AI**. Open **Inbound calls** in the
 
 <CardGroup cols={2}>
   <Card title="Team (recommended)" icon="users">
-    Your reps ring first. If nobody picks up within 25 seconds, the number's AI agent answers. With no AI agent attached, the call goes to voicemail.
+    One rep rings first (see below). If they don't pick up within 25 seconds, or no rep is free, the number's AI agent answers. With no AI agent attached, the call goes to voicemail.
   </Card>
   <Card title="AI" icon="robot">
     The AI agent answers every call to this number. No rep rings.
@@ -24,6 +24,8 @@ Each of your numbers is set to **Team** or **AI**. Open **Inbound calls** in the
 </CardGroup>
 
 <Note>
+A number can also be set to **reps only** (no AI backup), where an unanswered call goes to voicemail. The dialer shows it as Team with "Reps only, no AI fallback".
+
 **AI** is greyed out on a number until an AI agent is attached to it. Attach one in the web app under **AI → Numbers**, then come back and choose AI or Team.
 </Note>
 
@@ -39,9 +41,15 @@ Most teams choose **Team**: a person gets the first chance at a hot callback, an
 
 ## Which rep it rings
 
-A lead who calls back rings the rep who **last had a real conversation with them**, as long as that rep is **Online and not already on a call**. If that rep can't take it, it rings the next free rep: reps assigned to the number, then reps on the lead's list, then the account owner.
+A lead who calls back rings **one rep**:
 
-Only a real conversation earns a callback. A rep who dialed the lead and got no answer doesn't take over that lead's callbacks.
+1. **The rep who last had a real conversation with them**: a call of 30 seconds or more, or one a person answered, in the last 7 days. A rep who dialed the lead and got no answer doesn't take over the callback.
+2. If that rep isn't free, the **free rep who has waited longest** among the reps on that number or the lead's list.
+3. If none of them is free, the free rep who has waited longest on the rest of the team.
+
+**Free** means: Online in the dialer, not already on a call, and inside their working hours. This applies on **On my phone** too: a rep who is Offline in the dialer is never rung.
+
+If the rep doesn't pick up within **25 seconds**, the call does not move on to another rep. It goes to the number's backup: the AI agent, or voicemail when no agent is attached.
 
 <Note>
 **Direct lines:** a number assigned to one rep as their own line rings only that rep. If they can't answer, it goes to that number's backup (voicemail, the AI agent, or the team), as set on the number.
@@ -54,12 +62,13 @@ Each rep chooses under **Calls back to you**:
 ![Calls back to you](/images/dialer/incoming-call-routing/calls-back-to-you.png)
 
 - **In the dialer:** the call pops up in the dialer with the lead's name and *They called you back*. Keep the dialer open in one browser tab.
-- **On my phone:** the call forwards to your cell. Enter your personal cell the first time you choose it. Your company's own numbers can't be used, because they would ring themselves. Your phone shows the incoming number, not the lead's name.
+- **On my phone:** the call forwards to your cell. Enter your personal cell the first time you choose it. Your company's own numbers can't be used, because they would ring themselves. Your phone shows a caller ID, not the lead's name, so check the dialer or the lead's record to see who called.
 
-You can also change this in the web app under **Profile → Personal Settings → Incoming Call**: [app.rizzdial.com/profile](https://app.rizzdial.com/profile). That page has two more options:
+You can also change this in the web app under **Profile → Personal Settings → Incoming Call**: [app.rizzdial.com/profile](https://app.rizzdial.com/profile). Choosing **AI** there takes you out of ringing: your callbacks go to the next free rep or the number's backup. **Dialer + AI** rings the same as **Dialer**.
 
-- **AI**: send every call meant for you to the AI agent.
-- **Dialer + AI**: ring the dialer first, with the AI agent as the backup.
+<Note>
+Whether the AI agent answers is decided by the **number** (Team or AI), not by a rep's own setting.
+</Note>
 
 ![Incoming Call field in Personal Settings](/images/dialer/incoming-call-routing/profile-personal.png)
 
@@ -67,10 +76,10 @@ You can also change this in the web app under **Profile → Personal Settings �
 
 <AccordionGroup>
   <Accordion title="I'm dialing. Will a callback reach me?">
-    Only when you're free. A rep already on a call is skipped, so the lead rings the next free rep, then the number's backup.
+    Only when you're free: Online, not on a call, and inside your working hours. If you're on a call, the lead rings the next free rep. If nobody is free, it goes to the number's backup.
   </Accordion>
   <Accordion title="Can a callback go straight to my phone?">
-    Yes. Choose **On my phone** under **Calls back to you** and enter your cell.
+    Yes. Choose **On my phone** under **Calls back to you** and enter your cell. Stay Online in the dialer, or the call won't ring you.
   </Accordion>
   <Accordion title="Can the AI take every inbound call?">
     Yes. Attach an AI agent to the number in **AI → Numbers**, then set the number to **AI** under **Inbound calls**.
