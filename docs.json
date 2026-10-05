@@ -73,6 +73,7 @@
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/transfer-lines",
+              "dialer/incoming-calls-per-number",
               "dialer/outbound-call-routing"
             ]
           },

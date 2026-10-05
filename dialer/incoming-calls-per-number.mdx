@@ -1,0 +1,59 @@
+---
+title: 'Incoming calls per number'
+description: 'Choose what happens when someone calls each of your numbers: an AI agent answers, or your team rings first and the AI agent picks up if nobody does.'
+---
+
+Every number on the **Numbers** page can have its own **Incoming calls** setup. You pick one of four choices:
+
+| Choice | What happens |
+|---|---|
+| **AI agent answers** | The call goes straight to the AI voice agent you pick. Nothing rings. |
+| **Ring a team** | Everyone on the team rings at once. People who join the team later ring too. |
+| **Ring one rep** | One person rings. |
+| **Ring several** | Any mix of reps and outside phone numbers ring at once. |
+
+For the three ringing choices, the **first person to accept** gets the caller and every other phone stops. If nobody accepts within the ring time (10 seconds by default), the call goes to your AI agent. The panel shows one plain sentence so you know exactly what will happen, for example: *"Rings Saad, Amrit and (469) 555-0100 for 10 seconds, then Sky Assistant answers."*
+
+<Note>
+Numbers you don't set up keep working exactly as they do today.
+</Note>
+
+## Set up a number
+
+<Steps>
+<Step title="Open the number">
+Go to **Numbers** and click the **Incoming** text on the number's row, or open the **⋯** menu and choose **Incoming calls…**.
+</Step>
+<Step title="Pick a choice">
+Click one of the four cards. For **Ring several**, tick reps and add outside numbers (US or Canada) with **Add**. Your account rings up to 5 phones at once (up to 10 if raised).
+</Step>
+<Step title="Set the ring time and the AI agent">
+**Ring for** is 5 to 60 seconds. **If nobody answers** starts on the AI agent already connected to the number; you can pick any AI voice agent on your account instead.
+</Step>
+<Step title="Save">
+Check the sentence above **Save**, then save.
+</Step>
+</Steps>
+
+The account owner turns the feature on once with **Turn on** at the top of the panel. It is off until then.
+
+## What the person being rung hears
+
+Cell phones and outside numbers hear a short message before they connect, then must **press 1**:
+
+*"Incoming call to Main line from Maria Lopez. Press 1 to take it."*
+
+The number's name is used (or "your line"), and the caller's name if they are a saved contact (otherwise their number). A voicemail can't press 1, so it can never take the call. Reps signed in to the dialer get the transfer card with **Accept** instead.
+
+## Warnings you may see
+
+- **Red: "No AI agent connected — missed calls go to voicemail."** The number has no AI agent and you didn't pick one. Missed calls go to voicemail. Pick an agent under **If nobody answers** to fix it. A red dot shows on the number's row too.
+- **"The last phone starts ringing late."** Carriers start about one call per second, so with many phones and a short ring time the last phone rings for less of the wait. Use 15 seconds or more, or fewer phones.
+
+## Numbers an AI agent answers directly
+
+Some numbers send calls straight to an AI agent, so they never reach your team. The panel says so. Click **Route through AI Sync…** and confirm to send that number's calls through AI Sync first; your AI agent still answers when nobody picks up. **Undo** puts it back exactly as it was. (Twilio numbers only for now. If the button isn't there, contact support.)
+
+## How it relates to Transfer Lines
+
+Incoming calls uses the same ringing as [Transfer Lines](/dialer/transfer-lines): the same press 1, whisper and accept card. These setups don't appear in the Transfer Lines list, and they show in the Transfer Lines report under the number's name. A number already on a transfer line can't also have its own setup.
