@@ -1,5 +1,7 @@
 ---
-title: "Power Dialer" 
+title: 'Power Dialer'
+description: 'Dial a power list with your own lines, reset a list daily, and find any call in Call history: transcripts, sentiment, search and CSV export.'
+keywords: ['power dialer', 'power list', 'reset daily', 'start over', 'redial', 'power list resets', 'list restarts', 'call history', 'transcript', 'sentiment', 'positive negative', 'export calls', 'csv', 'call history search', 'download calls']
 icon: 'phone'
 --- 
 
@@ -197,29 +199,59 @@ While the Power Dialer automates most calling, manual dialing is useful for:
 
 ### 📋 Call History Management
 
-<img src="/images/dialer/power-dialer/call-history.png" alt="Power Dialer Call History" className="rounded-lg border shadow-sm" />
+Open **History** in the dialer to see every call. Each row shows who you called, the numbers, the outcome, how long you talked, the lead's **sentiment** and when it happened.
 
-Comprehensive call tracking includes:
+<Frame caption="Call history with sentiment pills. Example data.">
+  <img src="/images/dialer/power-dialer/call-history-sentiment.png" alt="Call History table with Positive, Neutral and Negative sentiment pills, Play and Call Again buttons" />
+</Frame>
 
-**🔍 Advanced Filtering**
-- **Date Range Selection**: Last Week (Sun - Sat)
-- **Custom Date Ranges**: 08/24/2025 - 08/30/2025
-- **Status Filtering**: All, Completed, Cancelled, etc.
-- **Search Functionality**: Search through call logs
+#### Read the transcript
 
-#### 📊 Call Log Details
-| Column | Information |
-|--------|-------------|
-| **Sr.No** | Sequential call number |
-| **From/To Number** | Complete phone number details |
-| **Status** | Call outcome (Completed, Cancel) |
-| **Date** | Timestamp of call |
-| **Actions** | Call/SMS follow-up buttons |
+Click **Transcript** under a name to open the call. You'll see the sentiment, a short summary and the full transcript. Click **Hide transcript** to close it. Calls without a recording show **Details** instead.
 
-**🎵 Audio Playback**
-- **Call Recording Access**: Play recorded conversations
-- **Audio Controls**: Play, pause, volume adjustment
-- **Call Duration**: 0:00 timestamp display
+<Frame caption="An expanded call: sentiment, summary and transcript.">
+  <img src="/images/dialer/power-dialer/call-history-transcript.png" alt="Call History row opened to show Sentiment Positive, a one-line summary and the call transcript" />
+</Frame>
+
+#### Sentiment
+
+AI Sync scores how the lead sounded once a call has a transcript:
+
+| Pill | Meaning |
+| --- | --- |
+| **Positive** | The lead sounded interested or happy |
+| **Neutral** | Neither positive nor negative |
+| **Negative** | The lead sounded unhappy or not interested |
+| **–** (Not scored) | No transcript, or too short to judge |
+
+Use the **Sentiment** filter (All, Positive, Neutral, Negative, Not scored) and click **Filter** to show only those calls.
+
+<Frame caption="Sentiment set to Negative.">
+  <img src="/images/dialer/power-dialer/call-history-sentiment-filter.png" alt="Call History with the Sentiment filter set to Negative and one matching call" />
+</Frame>
+
+#### Search by name or number
+
+Type a name or phone number in **Search Log** and press Enter. If you haven't picked a date range, search looks back over the last 90 days, so you can find older calls without changing the dates.
+
+<Frame caption="Searching for a lead by name.">
+  <img src="/images/dialer/power-dialer/call-history-search.png" alt="Call History search box with a name typed, the note Searching the last 90 days, and the matching call" />
+</Frame>
+
+#### Download CSV
+
+Click **Download CSV** to save the calls you're looking at as a spreadsheet, with transcripts. It uses the same date range, filters and search as the table.
+
+#### Other filters
+
+- **Date Range**: Today, other presets, or Custom start and end dates
+- **Status** and **Direction** (inbound or outbound)
+- **Call Duration**: for example only calls with talk time, or 1+ minute
+- **Play** and download recordings, and **Call Again** from any row
+
+<Frame caption="Call history in dark mode.">
+  <img src="/images/dialer/power-dialer/call-history-dark.png" alt="Call History table in dark mode with sentiment pills" />
+</Frame>
 
 **🎧 Audio Device Management**
 
@@ -292,6 +324,18 @@ The status dashboard provides real-time visibility into your dialer's operationa
 - It's a switch in the dialer's left panel under **Text if missed**, labelled **Reset daily · this list**.
 - It's **off** unless you turn it on. With it off, the dialer keeps working down the list, so leads you've never called get reached.
 - Turning it on shows a short explanation first. Every change is logged with who made it and when.
+
+<Frame caption="Reset daily in the dialer's left panel, off (the default).">
+  <img src="/images/dialer/power-dialer/reset-daily-off.png" alt="Reset daily, this list, switch turned off" />
+</Frame>
+
+<Frame caption="Turning it on explains what happens first.">
+  <img src="/images/dialer/power-dialer/reset-daily-dialog.png" alt="Reset this list every night? dialog explaining every lead goes back to New and can be called up to 2 times a day, with Cancel and Turn on" />
+</Frame>
+
+<Frame caption="On: the list starts over every night, and it shows who turned it on.">
+  <img src="/images/dialer/power-dialer/reset-daily-on.png" alt="Reset daily switch on, with Starts over every night, changed by a teammate" />
+</Frame>
 
 <Note>
 With Reset daily on, leads you've never called can sit behind leads you already called. For a fresh list, leave it off until everyone has been called once.
