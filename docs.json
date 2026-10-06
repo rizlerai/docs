@@ -73,6 +73,8 @@
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
               "dialer/transfer-lines",
+              "dialer/do-not-contact",
+              "dialer/ai-calling-hours",
               "dialer/outbound-call-routing"
             ]
           },
