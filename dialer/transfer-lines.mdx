@@ -1,7 +1,7 @@
 ---
 title: 'Transfer Lines (live transfer to your team)'
 description: 'Send a live caller to your team. AI Sync rings your reps in waves, tells them who is calling, and connects the first one to press 1.'
-keywords: ['transfer', 'transfer line', 'ring group', 'live transfer', 'warm transfer', 'press 1', 'whisper', 'hand off call', 'transfer to rep']
+keywords: ['wave', 'waves', 'pick each wave', 'priority', 'tiers', 'best closers', 'first wave', 'second wave', 'transfer', 'transfer line', 'ring group', 'live transfer', 'warm transfer', 'press 1', 'whisper', 'hand off call', 'transfer to rep']
 ---
 
 A **transfer line** is a team phone line for live transfers. When an AI agent or a rep transfers a caller to it, AI Sync:
@@ -46,6 +46,7 @@ Choose how the line rings:
 | **Best closers first** | Several people ring together, highest close rate first. A sale counts fully, an appointment counts half. |
 | **One at a time, in order** | One person rings at a time, in the order you set. |
 | **Take turns** | One person rings at a time, starting with someone new each time, so calls spread evenly. |
+| **You pick each wave** | You choose who rings in wave 1, wave 2 and so on, up to 5 waves. See [Pick who rings in each wave](#pick-who-rings-in-each-wave). |
 
 **Phones per wave** sets how many ring together. **Each wave rings** sets how long before the next group starts.
 
@@ -78,6 +79,41 @@ Check the summary, then click **Create line**.
 ![Connect](/images/dialer/transfer-lines/connect.png)
 </Step>
 </Steps>
+
+## Pick who rings in each wave
+
+Use this when you want your best closers to get the first shot at every transfer.
+
+<Steps>
+<Step title="Choose You pick each wave">
+Open the line, go to **How it rings**, and pick **You pick each wave**.
+
+![You pick each wave](/images/dialer/transfer-lines/pick-each-wave.png)
+</Step>
+<Step title="Put each person in a wave">
+Under **Who rings in each wave**, click **1** to **5** next to each person. Everyone starts in wave 1.
+
+![Who rings in each wave](/images/dialer/transfer-lines/wave-picker.png)
+</Step>
+<Step title="Set how long each wave rings">
+**Each wave rings** sets how long a wave rings before the next one starts, for example 12 seconds. **Give up after** sets itself to cover all your waves.
+</Step>
+<Step title="Check the plan and save">
+The plan shows who rings in each wave and when each wave starts. Continue through the steps and click **Save changes**.
+
+![Wave plan](/images/dialer/transfer-lines/wave-plan.png)
+</Step>
+</Steps>
+
+**How a call rings:**
+1. Everyone in wave 1 rings at once.
+2. If nobody presses 1 in time, wave 1 stops and wave 2 rings.
+3. This repeats through your last wave, then the line's **If nobody answers** choice runs.
+
+**Good to know:**
+- Reps don't need the dialer open. Anyone who isn't in the dialer is rung on their cell and presses 1 to take the caller. They need a cell number on their profile.
+- Someone who is **Away**, outside working hours, or already on a call is skipped. If a whole wave is skipped, the next wave rings right away.
+- A wave can hold more people than your account rings at once. If it does, that wave rings in groups before the next wave starts.
 
 ## Big teams
 
@@ -123,6 +159,7 @@ If your AI assistant (for example Claude) is connected to AI Sync, you can ask i
 - *"Add Maya and Jordan to Solar closers."*
 - *"Attach Solar closers to my Sky Assistant agent."*
 - *"Show me last week's transfer report."*
+- *"Set Solar closers to pick each wave, and put Maya and Jordan in wave 1."*
 
 ## Try it in 5 minutes
 
