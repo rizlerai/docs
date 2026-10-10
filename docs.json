@@ -69,6 +69,7 @@
               "dialer/automations",
               "dialer/inbox",
               "dialer/texting-lines",
+              "dialer/gohighlevel-sync",
               "dialer/beam",
               "dialer/caller-id-and-numbers",
               "dialer/incoming-call-routing",
