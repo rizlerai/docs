@@ -1,7 +1,7 @@
 ---
 title: 'Transfer Lines (live transfer to your team)'
 description: 'Send a live caller to your team. AI Sync rings your reps in waves, tells them who is calling, and connects the first one to press 1.'
-keywords: ['wave', 'waves', 'pick each wave', 'priority', 'tiers', 'best closers', 'first wave', 'second wave', 'transfer', 'transfer line', 'ring group', 'live transfer', 'warm transfer', 'press 1', 'whisper', 'hand off call', 'transfer to rep']
+keywords: ['dedicated number', 'transfer number', 'rank closers', 'closer order', 'wave', 'waves', 'pick each wave', 'priority', 'tiers', 'best closers', 'first wave', 'second wave', 'transfer', 'transfer line', 'ring group', 'live transfer', 'warm transfer', 'press 1', 'whisper', 'hand off call', 'transfer to rep']
 ---
 
 A **transfer line** is a team phone line for live transfers. When an AI agent or a rep transfers a caller to it, AI Sync:
@@ -43,7 +43,7 @@ Choose how the line rings:
 | Option | What happens |
 | --- | --- |
 | **Ring a group at once** (recommended) | Several people ring together. Whoever has waited longest rings first. |
-| **Best closers first** | Several people ring together, highest close rate first. A sale counts fully, an appointment counts half. |
+| **Best closers first** | Several people ring together, in the order you rank them. See [Rank your closers](#rank-your-closers). |
 | **One at a time, in order** | One person rings at a time, in the order you set. |
 | **Take turns** | One person rings at a time, starting with someone new each time, so calls spread evenly. |
 | **You pick each wave** | You choose who rings in wave 1, wave 2 and so on, up to 5 waves. See [Pick who rings in each wave](#pick-who-rings-in-each-wave). |
@@ -70,7 +70,7 @@ Edit what reps hear before pressing 1, then press play to hear a sample. You can
 ![Whisper](/images/dialer/transfer-lines/whisper.png)
 </Step>
 <Step title="Connect">
-Pick the **line number**, which is the number callers and AI agents transfer to.
+Pick the line's **Dedicated number**. Calls to this number ring the line, and AI agents and reps transfer to it. The number is kept for the line only. See [The dedicated number](#the-dedicated-number).
 
 To have an AI agent send qualified callers to this line, turn on **Use for an AI agent** and pick the agent.
 
@@ -79,6 +79,48 @@ Check the summary, then click **Create line**.
 ![Connect](/images/dialer/transfer-lines/connect.png)
 </Step>
 </Steps>
+
+## The dedicated number
+
+Each line has one **dedicated number**. It's reserved for transfers, so it never gets tied up by a rep's call:
+
+- Calls to it ring the line.
+- Reps can't call out from it. If someone tries, the dialer stops the call and asks them to pick another number.
+- **Auto-rotate**, the **From** number list, AI agents and per-rep number assignments all skip it.
+
+The line's card shows its dedicated number. Click it to change it. A line with no number shows **Set a number**. Reps can still transfer to it from **Transfer Call → To Line**.
+
+![Line card with its dedicated number](/images/dialer/transfer-lines/line-card.png)
+
+<Note>
+To use a number for normal calling again, remove it from the line first (**Dialer → More → Transfer Lines**, open the line, **Connect** step).
+</Note>
+
+<Tip>
+Buy one extra number for each transfer line. Keep the numbers your reps call from separate.
+</Tip>
+
+## Rank your closers
+
+With **Best closers first**, you set the order. Your #1 rings first.
+
+<Steps>
+<Step title="Choose Best closers first">
+Open the line, go to **How it rings**, and pick **Best closers first**.
+</Step>
+<Step title="Put your closers in order">
+Under **Rank your closers**, use the arrows to move each person up or down. Each person shows their sales from the last 30 days of transfers to help you decide. Click **Sort by close rate** to start from the numbers, then adjust.
+
+![Rank your closers](/images/dialer/transfer-lines/rank-closers.png)
+</Step>
+<Step title="Save">
+Continue through the steps and click **Save changes**.
+</Step>
+</Steps>
+
+The top people ring together (as many as **Phones per wave**), then the next group. People with the same rank are ordered by close rate. Outside people (cell only) ring after your ranked team.
+
+**One at a time, in order** uses the same list, called **Ring order**: #1 rings, then #2, and so on.
 
 ## Pick who rings in each wave
 
@@ -147,7 +189,7 @@ Click **Report** on the Transfer Lines page. It shows:
 - each rep's rings, takes, misses and close rate;
 - every transfer with who got it, who missed it, and the outcome.
 
-Mark an outcome (Sale, Appointment) to feed **Best closers first**. Missed transfers have a **Call back** button.
+Mark an outcome (Sale, Appointment) so the close rates shown in **Rank your closers** stay accurate. Missed transfers have a **Call back** button.
 
 ![Report](/images/dialer/transfer-lines/report.png)
 
@@ -160,6 +202,7 @@ If your AI assistant (for example Claude) is connected to AI Sync, you can ask i
 - *"Attach Solar closers to my Sky Assistant agent."*
 - *"Show me last week's transfer report."*
 - *"Set Solar closers to pick each wave, and put Maya and Jordan in wave 1."*
+- *"Make (602) 555-0188 the dedicated number for Solar closers."*
 
 ## Try it in 5 minutes
 
@@ -178,3 +221,5 @@ If your AI assistant (for example Claude) is connected to AI Sync, you can ask i
 | A rep never rings | Check they're on the line, set to **Available**, inside working hours, and have a cell number on their profile. |
 | The phone rang but pressing 1 did nothing | Press 1 while the whisper is playing or just after. You have 15 seconds. |
 | "Reaches 25 of 34" warning | Raise **Phones per wave** or **Give up after**. |
+| A rep gets "is the dedicated number for the … line" when dialing | That number is reserved for the transfer line. Pick another number to call from, or add one in **Settings → Phone Numbers**. |
+| A number won't save as a rep's or agent's number | It's a line's dedicated number. Remove it from the line first. |
